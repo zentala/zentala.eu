@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Vision for European Cooperation and Integration
 description: Principles for designing a unified future for the European Union addressing demographic, economic, and security challenges.
 tags: EU, Reform, Integration, Demographics, Security, Cooperation

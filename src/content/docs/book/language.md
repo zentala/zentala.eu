@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "EU Language Integration"
 description: "Let's introduce English as the official language of the European Union and as a second official language in every EU member state!"
 tags: "EU, Reform, Integration"
