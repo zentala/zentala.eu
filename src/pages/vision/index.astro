@@ -3,6 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import Card from '../../components/Card.astro';
 import CardGrid from '../../components/CardGrid.astro';
 import ContentBox from '../../components/ContentBox.astro';
+
+const isDev = import.meta.env.DEV;
 ---
 
 <Layout title="European Integration Vision">
@@ -33,6 +35,7 @@ import ContentBox from '../../components/ContentBox.astro';
                 </ul>
               </ContentBox>
               
+              {isDev && (
               <ContentBox title="Learn More" color="indigo">
                 <ul class="space-y-1">
                   <li><a href="/vision/language-integration">→ Language Integration Overview</a></li>
@@ -41,6 +44,7 @@ import ContentBox from '../../components/ContentBox.astro';
                   <li><a href="/book/economic-growth-language-unity">→ Economic Growth Through Language</a></li>
                 </ul>
               </ContentBox>
+              )}
             </div>
           </Card>
 
@@ -57,6 +61,7 @@ import ContentBox from '../../components/ContentBox.astro';
                 </ul>
               </ContentBox>
               
+              {isDev && (
               <ContentBox title="Learn More" color="blue">
                 <ul class="space-y-1">
                   <li><a href="/vision/digital-integration">→ Digital Integration Overview</a></li>
@@ -66,6 +71,7 @@ import ContentBox from '../../components/ContentBox.astro';
                   <li><a href="/book/european-blockchain-archives">→ European Blockchain Archives</a></li>
                 </ul>
               </ContentBox>
+              )}
             </div>
           </Card>
 
@@ -81,6 +87,7 @@ import ContentBox from '../../components/ContentBox.astro';
                   <li><strong>Circular Economy</strong>: Enhanced recycling through automation</li>
                 </ul>
               </ContentBox>
+              {isDev && (
               <ContentBox title="Learn More" color="green">
                 <ul class="space-y-1">
                   <li><a href="/vision/robotic-reindustrialization">→ Robotic Reindustrialization Overview</a></li>
@@ -89,6 +96,7 @@ import ContentBox from '../../components/ContentBox.astro';
                   <li><a href="/book/robotic-agriculture">→ Robotic Agriculture</a></li>
                 </ul>
               </ContentBox>
+              )}
             </div>
           </Card>
         </div>

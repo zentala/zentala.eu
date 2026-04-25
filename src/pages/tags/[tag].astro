@@ -3,30 +3,23 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
+  function normalizeTags(tags: string | string[] | undefined): string[] {
+    if (!tags) return [];
+    if (Array.isArray(tags)) return tags.map(t => t.trim()).filter(Boolean);
+    return tags.split(',').map(t => t.trim()).filter(Boolean);
+  }
+
   const allDocs = await getCollection('docs');
   const uniqueTags = new Set<string>();
-  
-  // Extract all unique tags
+
   allDocs.forEach(doc => {
-    if (doc.data.tags) {
-      const tagList = doc.data.tags.split(',').map(tag => tag.trim());
-      tagList.forEach(tag => {
-        if (tag) {
-          uniqueTags.add(tag);
-        }
-      });
-    }
+    normalizeTags(doc.data.tags).forEach(tag => uniqueTags.add(tag));
   });
-  
-  // Create a path for each tag
+
   return Array.from(uniqueTags).map((tag: string) => {
-    // Find all documents with this tag
-    const filteredDocs = allDocs.filter(doc => {
-      if (!doc.data.tags) return false;
-      
-      const docTags = doc.data.tags.split(',').map(t => t.trim());
-      return docTags.includes(tag);
-    });
+    const filteredDocs = allDocs.filter(doc =>
+      normalizeTags(doc.data.tags).includes(tag)
+    );
     
     // Create a path parameter from the tag
     const tagSlug = tag.toLowerCase().replace(/\s+/g, '-');
@@ -43,6 +36,12 @@ export async function getStaticPaths() {
 }
 
 const { tag, tagSlug, documents } = Astro.props;
+
+function normalizeTags(tags: string | string[] | undefined): string[] {
+  if (!tags) return [];
+  if (Array.isArray(tags)) return tags.map(t => t.trim()).filter(Boolean);
+  return tags.split(',').map(t => t.trim()).filter(Boolean);
+}
 ---
 
 <Layout title={`${tag} - Content Tag`}>
@@ -70,12 +69,11 @@ const { tag, tagSlug, documents } = Astro.props;
             <p class="text-gray-400 mb-4">{doc.data.description}</p>
           )}
           <div class="flex flex-wrap gap-2">
-            {doc.data.tags && doc.data.tags.split(',').map(t => {
-              const tagText = t.trim();
+            {normalizeTags(doc.data.tags).map(tagText => {
               const tagUrl = tagText.toLowerCase().replace(/\s+/g, '-');
               return (
-                <a 
-                  href={`/tags/${tagUrl}`} 
+                <a
+                  href={`/tags/${tagUrl}`}
                   class={`px-3 py-1 text-sm rounded-full ${tagUrl === tagSlug ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
                 >
                   {tagText}

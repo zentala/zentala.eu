@@ -1,6 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
+if (!import.meta.env.DEV) {
+  return Astro.redirect('/', 301);
+}
+
 // Manually define book documents for reliability
 const bookDocs = [
   {

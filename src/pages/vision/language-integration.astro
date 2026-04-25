@@ -1,5 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+if (!import.meta.env.DEV) {
+  return Astro.redirect('/vision', 301);
+}
 ---
 
 <Layout title="Language Integration: English as the Lingua Franca of Europe">

@@ -6,22 +6,19 @@ import DisplayTitle from '../components/DisplayTitle.astro';
 // Get all docs entries
 const allDocs = await getCollection('docs');
 
+function normalizeTags(tags: string | string[] | undefined): string[] {
+  if (!tags) return [];
+  if (Array.isArray(tags)) return tags.map(t => t.trim()).filter(Boolean);
+  return tags.split(',').map(t => t.trim()).filter(Boolean);
+}
+
 // Extract and count all tags
-const tagMap = new Map();
+const tagMap = new Map<string, number>();
 
 allDocs.forEach(doc => {
-  if (doc.data.tags) {
-    const tagList = doc.data.tags.split(',').map(tag => tag.trim());
-    tagList.forEach(tag => {
-      if (tag) {
-        if (tagMap.has(tag)) {
-          tagMap.set(tag, tagMap.get(tag) + 1);
-        } else {
-          tagMap.set(tag, 1);
-        }
-      }
-    });
-  }
+  normalizeTags(doc.data.tags).forEach(tag => {
+    tagMap.set(tag, (tagMap.get(tag) ?? 0) + 1);
+  });
 });
 
 // Convert to array and sort by count

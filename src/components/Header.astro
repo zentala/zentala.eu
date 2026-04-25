@@ -5,13 +5,17 @@ import EuFlagLogo from '../assets/eu-flag.svg';
 import AlgoliaSearch from './AlgoliaSearch.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
+const isDev = import.meta.env.DEV;
+
 const links = [
   { href: '/', text: 'Overview' },
   { href: '/why', text: 'Why' },
   { href: '/vision', text: 'Vision' },
   { href: '/benefits', text: 'Benefits' },
-  { href: '/support', text: 'Support' }
+  { href: '/support', text: 'Support' },
 ]
+
+const visibleLinks = isDev ? links : links.filter(l => !(l as any).devOnly);
 ---
 
 <header id="header" class="sticky top-0 z-50 backdrop-blur shadow-md transition-colors duration-300" style="background-color: var(--color-bg-secondary); background-opacity: 0.95;">
@@ -27,7 +31,7 @@ const links = [
       </div>
       
       <nav class="hidden md:flex space-x-6 items-center">
-        {links.map(link => (
+        {visibleLinks.map(link => (
           <a 
             href={link.href} 
             class="text-lg font-medium transition-colors hover:text-blue-400"
@@ -57,7 +61,7 @@ const links = [
         <AlgoliaSearch placeholder="Search the vision..." />
       </div>
       <nav class="flex flex-col space-y-4">
-        {links.map(link => (
+        {visibleLinks.map(link => (
           <a 
             href={link.href} 
             class="text-xl font-medium transition-colors hover:text-blue-400 py-2"
