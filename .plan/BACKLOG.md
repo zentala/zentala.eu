@@ -22,6 +22,11 @@ Open ideas and future improvements not yet assigned to an epic.
 - [ ] Fix all broken links (see `missing_links.md`)
 - [ ] Sidebar navigation for content browsing
 
+## Infrastructure / Integrations
+
+- [ ] Configure Appwrite email templates for newsletter confirmation to look like a proper subscription confirmation (not default Appwrite emails)
+  - URL: https://cloud.appwrite.io/console/project-eu/auth/templates
+
 ## Data & Integrations
 
 - [ ] Replace hardcoded sample stats in `InteractiveSection.astro` with real Eurostat API data
