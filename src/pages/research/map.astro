@@ -1,0 +1,563 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { researchTopics } from '../../data/research-topics'
+import { conceptGroups } from '../../data/concept-groups'
+
+const tierMeta = {
+  1: { label: 'Tier 1: Foundational', priority: 'Critical', colorClass: 'tier-1' },
+  2: { label: 'Tier 2: Pillar Support', priority: 'High', colorClass: 'tier-2' },
+  3: { label: 'Tier 3: Supporting Narratives', priority: 'Medium', colorClass: 'tier-3' },
+  4: { label: 'Tier 4: Enrichment', priority: 'Medium-Low', colorClass: 'tier-4' },
+} as const
+
+const totalTopics = researchTopics.length
+const completedTopics = researchTopics.filter((t) => t.status === 'complete').length
+
+const topicsByTier = [1, 2, 3, 4].map((tier) => ({
+  tier: tier as 1 | 2 | 3 | 4,
+  meta: tierMeta[tier as 1 | 2 | 3 | 4],
+  topics: researchTopics.filter((t) => t.tier === tier),
+  completed: researchTopics.filter((t) => t.tier === tier && t.status === 'complete').length,
+}))
+
+const allConcepts = [...new Set(researchTopics.flatMap((t) => t.relatedConcepts))]
+const conceptLabelMap = Object.fromEntries(conceptGroups.map((c) => [c.id, c.name]))
+---
+
+<Layout title="Research Map">
+  <main class="container mx-auto max-w-7xl px-4 sm:px-6 py-10">
+    <!-- Header -->
+    <div class="mb-10">
+      <p class="text-sm uppercase tracking-widest mb-2" style="color: var(--color-accent-primary);">Research Roadmap</p>
+      <h1 class="text-4xl font-bold mb-4" style="font-family: 'Playfair Display', serif; color: var(--color-text-primary);">
+        Research Map
+      </h1>
+      <p class="text-lg max-w-3xl" style="color: var(--color-text-secondary);">
+        20 research topics that back the zentala.eu manifest with data, precedents, and analysis.
+        Organised by strategic priority — from foundational arguments to enrichment layers.
+      </p>
+    </div>
+
+    <!-- Progress tracker -->
+    <div class="rounded-xl p-6 mb-8" style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
+      <div class="flex flex-wrap gap-6 items-center justify-between mb-4">
+        <div>
+          <span class="text-2xl font-bold" style="color: var(--color-text-primary);" id="progress-count">{completedTopics}/{totalTopics}</span>
+          <span class="text-sm ml-2" style="color: var(--color-text-secondary);">research topics complete</span>
+        </div>
+        <div class="flex gap-4 flex-wrap text-sm" style="color: var(--color-text-secondary);">
+          {topicsByTier.map(({ tier, meta, topics, completed }) => (
+            <span>
+              <span class={`tier-badge tier-badge--${meta.colorClass}`}>{meta.priority}</span>
+              {' '}{completed}/{topics.length}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div class="w-full rounded-full h-2" style="background-color: var(--color-border);">
+        <div
+          class="h-2 rounded-full transition-all duration-500"
+          style={`width: ${totalTopics > 0 ? Math.round((completedTopics / totalTopics) * 100) : 0}%; background-color: var(--color-accent-primary);`}
+          id="progress-bar"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="rounded-xl p-5 mb-8" style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
+      <div class="flex flex-wrap gap-4 items-start">
+        <!-- Search -->
+        <div class="flex-1 min-w-48">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search topics..."
+            class="w-full px-4 py-2 rounded-lg text-sm"
+            style="background-color: var(--color-bg-primary); border: 1px solid var(--color-border); color: var(--color-text-primary);"
+          />
+        </div>
+
+        <!-- Effort filter -->
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-sm self-center" style="color: var(--color-text-secondary);">Effort:</span>
+          {['Low', 'Medium', 'High'].map((effort) => (
+            <button
+              class="filter-btn"
+              data-filter="effort"
+              data-value={effort}
+              style="border: 1px solid var(--color-border);"
+            >
+              {effort}
+            </button>
+          ))}
+        </div>
+
+        <!-- Tier filter -->
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-sm self-center" style="color: var(--color-text-secondary);">Tier:</span>
+          {[1, 2, 3, 4].map((t) => (
+            <button
+              class="filter-btn"
+              data-filter="tier"
+              data-value={String(t)}
+              style="border: 1px solid var(--color-border);"
+            >
+              T{t}
+            </button>
+          ))}
+        </div>
+
+        <!-- Concept filter -->
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-sm self-center" style="color: var(--color-text-secondary);">Concept:</span>
+          {allConcepts.slice(0, 8).map((concept) => (
+            <button
+              class="filter-btn"
+              data-filter="concept"
+              data-value={concept}
+              style="border: 1px solid var(--color-border);"
+            >
+              {conceptLabelMap[concept] ?? concept}
+            </button>
+          ))}
+        </div>
+
+        <!-- Clear filters -->
+        <button
+          id="clear-filters"
+          class="text-sm px-3 py-1.5 rounded-lg hidden"
+          style="color: var(--color-accent-primary); border: 1px solid var(--color-accent-primary);"
+        >
+          Clear filters
+        </button>
+      </div>
+
+      <!-- Active filter chips -->
+      <div id="active-filters" class="flex flex-wrap gap-2 mt-3 empty:hidden"></div>
+    </div>
+
+    <!-- Results count -->
+    <p class="text-sm mb-6" style="color: var(--color-text-secondary);" id="results-count">
+      Showing all {totalTopics} topics
+    </p>
+
+    <!-- Topics by tier -->
+    <div id="topics-container">
+      {topicsByTier.map(({ tier, meta, topics }) => (
+        <section class="tier-section mb-8" data-tier={String(tier)}>
+          <!-- Tier header (collapsible) -->
+          <button
+            class="tier-toggle w-full text-left flex items-center justify-between p-4 rounded-xl mb-3 transition-all"
+            data-tier={String(tier)}
+            style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);"
+          >
+            <div class="flex items-center gap-3">
+              <span class={`tier-badge tier-badge--${meta.colorClass}`}>{meta.priority}</span>
+              <span class="font-semibold text-lg" style="color: var(--color-text-primary);">{meta.label}</span>
+              <span class="text-sm" style="color: var(--color-text-secondary);">{topics.length} topics</span>
+            </div>
+            <span class="tier-chevron text-lg transition-transform" style="color: var(--color-text-secondary);">▾</span>
+          </button>
+
+          <!-- Topic cards grid -->
+          <div class="tier-content topics-grid" data-tier={String(tier)}>
+            {topics.map((topic) => (
+              <article
+                class="topic-card rounded-xl overflow-hidden"
+                data-id={topic.id}
+                data-tier={String(topic.tier)}
+                data-effort={topic.effort}
+                data-value={String(topic.strategicValue)}
+                data-concepts={topic.relatedConcepts.join(',')}
+                data-title={topic.title.toLowerCase()}
+                data-description={topic.description.toLowerCase()}
+                style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);"
+              >
+                <!-- Card header (always visible) -->
+                <button
+                  class="card-toggle w-full text-left p-5"
+                  data-card={topic.id}
+                >
+                  <div class="flex items-start justify-between gap-3 mb-3">
+                    <span class="topic-id-badge font-mono text-xs">{topic.id}</span>
+                    <div class="flex items-center gap-2 flex-shrink-0">
+                      <span class={`status-badge status--${topic.status}`} aria-label={`Status: ${topic.status}`}>
+                        {topic.status === 'not-started' ? '⚪' : topic.status === 'in-progress' ? '🔵' : '✅'}
+                      </span>
+                      <span class={`effort-badge effort--${topic.effort.toLowerCase()}`}>{topic.effort}</span>
+                    </div>
+                  </div>
+
+                  <h3 class="text-base font-semibold leading-snug mb-2" style="color: var(--color-text-primary);">
+                    {topic.title}
+                  </h3>
+
+                  <!-- Strategic value stars -->
+                  <div class="flex gap-0.5 mb-3" aria-label={`Strategic value: ${topic.strategicValue} out of 5`}>
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <span class={i < topic.strategicValue ? 'star-filled' : 'star-empty'}>★</span>
+                    ))}
+                  </div>
+
+                  <!-- Concept tags (always visible) -->
+                  <div class="flex flex-wrap gap-1">
+                    {topic.relatedConcepts.slice(0, 3).map((c) => (
+                      <span class="concept-tag text-xs px-2 py-0.5 rounded-full">{conceptLabelMap[c] ?? c}</span>
+                    ))}
+                    {topic.relatedConcepts.length > 3 && (
+                      <span class="concept-tag text-xs px-2 py-0.5 rounded-full">+{topic.relatedConcepts.length - 3}</span>
+                    )}
+                  </div>
+
+                  <div class="flex items-center justify-end mt-3">
+                    <span class="card-chevron text-sm transition-transform" style="color: var(--color-text-secondary);">▾</span>
+                  </div>
+                </button>
+
+                <!-- Expanded content -->
+                <div class="card-content hidden px-5 pb-5" data-card={topic.id}>
+                  <hr class="mb-4" style="border-color: var(--color-border);" />
+
+                  <p class="text-sm leading-relaxed mb-4" style="color: var(--color-text-secondary);">
+                    {topic.description}
+                  </p>
+
+                  <div class="mb-4">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--color-accent-primary);">
+                      Research Approach
+                    </p>
+                    <ul class="space-y-1">
+                      {topic.researchApproach.map((step) => (
+                        <li class="text-sm flex gap-2" style="color: var(--color-text-secondary);">
+                          <span class="flex-shrink-0 mt-0.5" style="color: var(--color-accent-primary);">→</span>
+                          {step}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {topic.existingContent && (
+                    <div class="mb-4">
+                      <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--color-accent-primary);">
+                        Related Pages
+                      </p>
+                      <p class="text-sm" style="color: var(--color-text-secondary);">{topic.existingContent}</p>
+                    </div>
+                  )}
+
+                  <div class="flex items-center justify-between">
+                    <div class="flex flex-wrap gap-1">
+                      {topic.relatedConcepts.map((c) => (
+                        <span class="concept-tag text-xs px-2 py-0.5 rounded-full">{conceptLabelMap[c] ?? c}</span>
+                      ))}
+                    </div>
+                    {topic.status === 'complete' && topic.researchPath && (
+                      <a
+                        href={topic.researchPath}
+                        class="text-sm font-medium flex items-center gap-1"
+                        style="color: var(--color-accent-primary);"
+                      >
+                        View research →
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <!-- No results -->
+    <div id="no-results" class="hidden text-center py-16" style="color: var(--color-text-secondary);">
+      <p class="text-xl mb-2">No topics match your filters.</p>
+      <p class="text-sm">Try adjusting your search or clearing filters.</p>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Tier badges */
+  .tier-badge {
+    @apply text-xs font-semibold px-2 py-0.5 rounded-full uppercase tracking-wide;
+  }
+  .tier-badge--tier-1 { background-color: #fee2e2; color: #991b1b; }
+  .tier-badge--tier-2 { background-color: #fed7aa; color: #9a3412; }
+  .tier-badge--tier-3 { background-color: #fef08a; color: #713f12; }
+  .tier-badge--tier-4 { background-color: #d1fae5; color: #065f46; }
+
+  :global(.dark) .tier-badge--tier-1 { background-color: #7f1d1d; color: #fca5a5; }
+  :global(.dark) .tier-badge--tier-2 { background-color: #7c2d12; color: #fdba74; }
+  :global(.dark) .tier-badge--tier-3 { background-color: #713f12; color: #fde68a; }
+  :global(.dark) .tier-badge--tier-4 { background-color: #064e3b; color: #6ee7b7; }
+
+  /* Topic ID badge */
+  .topic-id-badge {
+    @apply text-xs px-2 py-0.5 rounded font-mono;
+    background-color: var(--color-bg-primary);
+    color: var(--color-accent-primary);
+    border: 1px solid var(--color-border);
+  }
+
+  /* Effort badges */
+  .effort-badge {
+    @apply text-xs font-medium px-2 py-0.5 rounded;
+  }
+  .effort--low    { background-color: #d1fae5; color: #065f46; }
+  .effort--medium { background-color: #fef3c7; color: #92400e; }
+  .effort--high   { background-color: #fee2e2; color: #991b1b; }
+
+  :global(.dark) .effort--low    { background-color: #064e3b; color: #6ee7b7; }
+  :global(.dark) .effort--medium { background-color: #78350f; color: #fde68a; }
+  :global(.dark) .effort--high   { background-color: #7f1d1d; color: #fca5a5; }
+
+  /* Stars */
+  .star-filled { color: #f59e0b; font-size: 0.875rem; }
+  .star-empty  { color: var(--color-border); font-size: 0.875rem; }
+
+  /* Concept tags */
+  .concept-tag {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+  }
+
+  /* Topics grid */
+  .topics-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+
+  /* Filter buttons */
+  .filter-btn {
+    @apply text-xs px-3 py-1.5 rounded-lg transition-all;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-secondary);
+  }
+  .filter-btn:hover {
+    border-color: var(--color-accent-primary) !important;
+    color: var(--color-accent-primary);
+  }
+  .filter-btn.active {
+    background-color: var(--color-accent-primary);
+    color: #ffffff;
+    border-color: var(--color-accent-primary) !important;
+  }
+
+  /* Topic card hover */
+  .topic-card {
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .topic-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  /* Hidden tier content */
+  .tier-content.collapsed { display: none; }
+
+  /* Chevron rotation */
+  .tier-toggle.collapsed .tier-chevron { transform: rotate(-90deg); }
+  .card-toggle.open .card-chevron      { transform: rotate(180deg); }
+</style>
+
+<script>
+  interface ActiveFilter {
+    type: 'effort' | 'tier' | 'concept'
+    value: string
+    label: string
+  }
+
+  let searchQuery = ''
+  const activeFilters: ActiveFilter[] = []
+  const collapsedTiers = new Set<string>()
+  const expandedCards = new Set<string>()
+
+  const $ = <T extends Element>(sel: string, ctx: ParentNode = document) =>
+    ctx.querySelector<T>(sel)
+
+  const $$ = <T extends Element>(sel: string, ctx: ParentNode = document) =>
+    Array.from(ctx.querySelectorAll<T>(sel))
+
+  document.addEventListener('DOMContentLoaded', () => {
+    bindSearch()
+    bindFilterButtons()
+    bindClearFilters()
+    bindTierToggles()
+    bindCardToggles()
+  })
+
+  function bindSearch() {
+    const input = $<HTMLInputElement>('#search-input')
+    if (!input) return
+    input.addEventListener('input', () => {
+      searchQuery = input.value.toLowerCase()
+      applyFilters()
+    })
+  }
+
+  function bindFilterButtons() {
+    $$<HTMLButtonElement>('.filter-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const type = btn.dataset.filter as ActiveFilter['type']
+        const value = btn.dataset.value ?? ''
+        const label = btn.textContent?.trim() ?? value
+
+        const idx = activeFilters.findIndex((f) => f.type === type && f.value === value)
+        if (idx >= 0) {
+          activeFilters.splice(idx, 1)
+          btn.classList.remove('active')
+        } else {
+          activeFilters.push({ type, value, label })
+          btn.classList.add('active')
+        }
+        renderActiveFilters()
+        applyFilters()
+      })
+    })
+  }
+
+  function bindClearFilters() {
+    const btn = $<HTMLButtonElement>('#clear-filters')
+    if (!btn) return
+    btn.addEventListener('click', () => {
+      activeFilters.length = 0
+      searchQuery = ''
+      const input = $<HTMLInputElement>('#search-input')
+      if (input) input.value = ''
+      $$<HTMLButtonElement>('.filter-btn').forEach((b) => b.classList.remove('active'))
+      renderActiveFilters()
+      applyFilters()
+    })
+  }
+
+  function renderActiveFilters() {
+    const container = $<HTMLDivElement>('#active-filters')
+    const clearBtn = $<HTMLButtonElement>('#clear-filters')
+    if (!container || !clearBtn) return
+
+    // Clear using safe DOM method
+    while (container.firstChild) container.removeChild(container.firstChild)
+
+    const hasFilters = activeFilters.length > 0 || searchQuery
+    clearBtn.classList.toggle('hidden', !hasFilters)
+
+    activeFilters.forEach((f, idx) => {
+      const chip = document.createElement('span')
+      chip.className = 'inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full cursor-pointer'
+      chip.style.cssText = 'background-color: var(--color-accent-primary); color: #fff;'
+
+      const label = document.createTextNode(f.label + ' ')
+      const x = document.createElement('span')
+      x.textContent = '×'
+      chip.appendChild(label)
+      chip.appendChild(x)
+
+      chip.addEventListener('click', () => {
+        activeFilters.splice(idx, 1)
+        $$<HTMLButtonElement>(`.filter-btn[data-filter="${f.type}"][data-value="${f.value}"]`)
+          .forEach((b) => b.classList.remove('active'))
+        renderActiveFilters()
+        applyFilters()
+      })
+      container.appendChild(chip)
+    })
+  }
+
+  function applyFilters() {
+    const cards = $$<HTMLElement>('.topic-card')
+    let visibleCount = 0
+
+    cards.forEach((card) => {
+      const matches = cardMatches(card)
+      card.classList.toggle('hidden', !matches)
+      if (matches) visibleCount++
+    })
+
+    $$<HTMLElement>('.tier-section').forEach((section) => {
+      const visible = $$<HTMLElement>('.topic-card:not(.hidden)', section).length
+      section.classList.toggle('hidden', visible === 0)
+    })
+
+    const noResults = $<HTMLElement>('#no-results')
+    if (noResults) noResults.classList.toggle('hidden', visibleCount > 0)
+
+    const resultsEl = $<HTMLElement>('#results-count')
+    if (resultsEl) {
+      resultsEl.textContent =
+        visibleCount === cards.length
+          ? `Showing all ${cards.length} topics`
+          : `Showing ${visibleCount} of ${cards.length} topics`
+    }
+  }
+
+  function cardMatches(card: HTMLElement): boolean {
+    if (searchQuery) {
+      const title = card.dataset.title ?? ''
+      const desc = card.dataset.description ?? ''
+      if (!title.includes(searchQuery) && !desc.includes(searchQuery)) return false
+    }
+
+    const byType = new Map<string, string[]>()
+    activeFilters.forEach((f) => {
+      if (!byType.has(f.type)) byType.set(f.type, [])
+      byType.get(f.type)!.push(f.value)
+    })
+
+    for (const [type, values] of byType) {
+      let passes = false
+      for (const value of values) {
+        if (type === 'effort' && card.dataset.effort === value) { passes = true; break }
+        if (type === 'tier'   && card.dataset.tier   === value) { passes = true; break }
+        if (type === 'concept') {
+          const concepts = (card.dataset.concepts ?? '').split(',')
+          if (concepts.includes(value)) { passes = true; break }
+        }
+      }
+      if (!passes) return false
+    }
+
+    return true
+  }
+
+  function bindTierToggles() {
+    $$<HTMLButtonElement>('.tier-toggle').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const tier = btn.dataset.tier ?? ''
+        const content = $<HTMLElement>(`.tier-content[data-tier="${tier}"]`)
+        if (!content) return
+
+        if (collapsedTiers.has(tier)) {
+          collapsedTiers.delete(tier)
+          content.classList.remove('collapsed')
+          btn.classList.remove('collapsed')
+        } else {
+          collapsedTiers.add(tier)
+          content.classList.add('collapsed')
+          btn.classList.add('collapsed')
+        }
+      })
+    })
+  }
+
+  function bindCardToggles() {
+    $$<HTMLButtonElement>('.card-toggle').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.card ?? ''
+        const body = $<HTMLElement>(`.card-content[data-card="${id}"]`)
+        if (!body) return
+
+        if (expandedCards.has(id)) {
+          expandedCards.delete(id)
+          body.classList.add('hidden')
+          btn.classList.remove('open')
+        } else {
+          expandedCards.add(id)
+          body.classList.remove('hidden')
+          btn.classList.add('open')
+        }
+      })
+    })
+  }
+</script>
