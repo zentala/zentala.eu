@@ -215,6 +215,24 @@ test.describe('/resources/research/map', () => {
     await expect(tags).toBeVisible()
   })
 
+  // ── Concept filter ────────────────────────────────────────────────────────
+  test('concept filter shows only cards with that concept', async ({ page }) => {
+    await page.click('.filter-btn[data-filter="concept"][data-value="robotics"]')
+    const visible = page.locator('.topic-card:not(.hidden)')
+    const count = await visible.count()
+    expect(count).toBeGreaterThan(0)
+    expect(count).toBeLessThan(21)
+    for (let i = 0; i < count; i++) {
+      const concepts = await visible.nth(i).getAttribute('data-concepts')
+      expect(concepts).toContain('robotics')
+    }
+  })
+
+  test('all 14 concept filter buttons are rendered', async ({ page }) => {
+    const conceptBtns = page.locator('.filter-btn[data-filter="concept"]')
+    await expect(conceptBtns).toHaveCount(14)
+  })
+
   // ── Accessibility ─────────────────────────────────────────────────────────
   test('search input is labelled with placeholder', async ({ page }) => {
     const input = page.locator('#search-input')
