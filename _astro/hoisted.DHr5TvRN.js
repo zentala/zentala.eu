@@ -1,1 +1,0 @@
-import"./hoisted.CXVZGqf8.js";document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector('button[onclick^="navigator.clipboard"]');t&&t.addEventListener("click",()=>{navigator.clipboard.writeText("https://eu.zentala.io"),t.textContent="Copied!",setTimeout(()=>{t.textContent="Copy"},2e3)})});
