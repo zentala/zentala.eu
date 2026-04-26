@@ -1,0 +1,142 @@
+---
+import '../styles/global.scss'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+interface Props {
+  title: string
+  date?: string
+  datetime?: string
+}
+
+const { title, date, datetime } = Astro.props
+const displayTime = datetime ?? date
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <meta name="generator" content={Astro.generator} />
+    <title>[PRIVATE] {title}</title>
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      })();
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      window.localStorage.setItem('theme', theme);
+    </script>
+  </head>
+  <body class="min-h-screen">
+    <div class="fixed inset-0 z-[-1] opacity-50 transition-colors duration-300 bg-gradient-to-b" style={{
+      backgroundImage: `linear-gradient(to bottom, var(--color-bg-gradient-from), var(--color-bg-gradient-to))`
+    }}></div>
+    <Header />
+    <main class="max-w-3xl mx-auto px-6 py-12">
+      <div class="mb-8 pb-6 border-b border-amber-500/30">
+        <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-mono px-3 py-1 rounded mb-4">
+          🔒 PRYWATNA SEKCJA — nie indeksowana, nie linkowana publicznie
+        </div>
+        <h1 class="text-3xl font-bold mb-2" style="font-family: 'Playfair Display', serif">{title}</h1>
+        {displayTime && <p class="text-sm opacity-50 font-mono">{displayTime.replace('T', ' ')}</p>}
+      </div>
+      <article class="prose-private">
+        <slot />
+      </article>
+      <div class="mt-12 pt-6 border-t border-opacity-20">
+        <a href="/private" class="text-sm opacity-50 hover:opacity-100 transition-opacity">← Wszystkie prywatne notatki</a>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .prose-private h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(128,128,128,0.2);
+  }
+  .prose-private h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .prose-private p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    opacity: 0.9;
+  }
+  .prose-private ul, .prose-private ol {
+    margin: 0.75rem 0 1rem 1.5rem;
+  }
+  .prose-private li {
+    margin-bottom: 0.4rem;
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+  .prose-private strong {
+    font-weight: 600;
+  }
+  .prose-private hr {
+    margin: 2rem 0;
+    opacity: 0.2;
+  }
+  .prose-private table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+  .prose-private th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(128,128,128,0.3);
+  }
+  .prose-private td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid rgba(128,128,128,0.15);
+    opacity: 0.85;
+  }
+  .prose-private blockquote {
+    border-left: 3px solid rgba(245,158,11,0.5);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    opacity: 0.8;
+    font-style: italic;
+  }
+  .prose-private code {
+    font-size: 0.875rem;
+    background: rgba(128,128,128,0.1);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+  }
+</style>
