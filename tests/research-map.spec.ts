@@ -8,12 +8,12 @@ test.describe('/resources/research/map', () => {
   // ── Page structure ────────────────────────────────────────────────────────
   test('renders page title and description', async ({ page }) => {
     await expect(page.locator('h1')).toContainText('Research Map')
-    await expect(page.getByText('20 research topics')).toBeVisible()
+    await expect(page.locator('p.text-lg').filter({ hasText: '21 research topics' })).toBeVisible()
   })
 
-  test('renders all 20 topic cards', async ({ page }) => {
+  test('renders all 21 topic cards', async ({ page }) => {
     const cards = page.locator('.topic-card')
-    await expect(cards).toHaveCount(20)
+    await expect(cards).toHaveCount(21)
   })
 
   test('renders 4 tier sections', async ({ page }) => {
@@ -27,9 +27,9 @@ test.describe('/resources/research/map', () => {
   })
 
   // ── Progress tracker ──────────────────────────────────────────────────────
-  test('progress tracker shows 0/20 initially', async ({ page }) => {
+  test('progress tracker shows 0/21 initially', async ({ page }) => {
     const count = page.locator('#progress-count')
-    await expect(count).toContainText('0/20')
+    await expect(count).toContainText('0/21')
   })
 
   test('progress bar starts at 0%', async ({ page }) => {
@@ -71,7 +71,9 @@ test.describe('/resources/research/map', () => {
 
   test('expanded card shows research approach', async ({ page }) => {
     await page.locator('.card-toggle').first().click()
-    await expect(page.getByText('Research Approach')).toBeVisible()
+    const firstCard = page.locator('.topic-card').first()
+    await expect(firstCard.locator('.card-content')).not.toHaveClass(/hidden/)
+    await expect(firstCard.locator('text=Research Approach')).toBeVisible()
   })
 
   // ── Stars ─────────────────────────────────────────────────────────────────
@@ -90,7 +92,7 @@ test.describe('/resources/research/map', () => {
   // ── Effort badges ─────────────────────────────────────────────────────────
   test('effort badges are visible on each card', async ({ page }) => {
     const badges = page.locator('.effort-badge')
-    await expect(badges).toHaveCount(20)
+    await expect(badges).toHaveCount(21)
   })
 
   // ── Tier collapse/expand ──────────────────────────────────────────────────
@@ -111,10 +113,10 @@ test.describe('/resources/research/map', () => {
 
   // ── Search ────────────────────────────────────────────────────────────────
   test('search filters cards by title', async ({ page }) => {
-    await page.fill('#search-input', 'Estonia')
+    await page.fill('#search-input', 'Draghi Report')
     const visibleCards = page.locator('.topic-card:not(.hidden)')
     await expect(visibleCards).toHaveCount(1)
-    await expect(visibleCards.first().locator('h3')).toContainText('Estonia')
+    await expect(visibleCards.first().locator('h3')).toContainText('Draghi')
   })
 
   test('search with no matches shows no-results message', async ({ page }) => {
@@ -123,10 +125,10 @@ test.describe('/resources/research/map', () => {
   })
 
   test('clearing search input restores all cards', async ({ page }) => {
-    await page.fill('#search-input', 'Estonia')
+    await page.fill('#search-input', 'Draghi Report')
     await page.fill('#search-input', '')
     const visibleCards = page.locator('.topic-card:not(.hidden)')
-    await expect(visibleCards).toHaveCount(20)
+    await expect(visibleCards).toHaveCount(21)
   })
 
   // ── Effort filter ─────────────────────────────────────────────────────────
@@ -135,7 +137,7 @@ test.describe('/resources/research/map', () => {
     const visible = page.locator('.topic-card:not(.hidden)')
     const count = await visible.count()
     expect(count).toBeGreaterThan(0)
-    expect(count).toBeLessThan(20)
+    expect(count).toBeLessThan(21)
     for (let i = 0; i < count; i++) {
       const badge = await visible.nth(i).locator('.effort-badge').textContent()
       expect(badge?.trim()).toBe('Low')
@@ -165,35 +167,35 @@ test.describe('/resources/research/map', () => {
     await expect(page.locator('#clear-filters')).not.toHaveClass(/hidden/)
   })
 
-  test('clear filters button restores all 20 cards', async ({ page }) => {
+  test('clear filters button restores all 21 cards', async ({ page }) => {
     await page.click('.filter-btn[data-filter="tier"][data-value="1"]')
     await page.click('#clear-filters')
     const visible = page.locator('.topic-card:not(.hidden)')
-    await expect(visible).toHaveCount(20)
+    await expect(visible).toHaveCount(21)
   })
 
   // ── Active filter chips ───────────────────────────────────────────────────
   test('active filter chip appears when filter is selected', async ({ page }) => {
     await page.click('.filter-btn[data-filter="tier"][data-value="1"]')
-    const chips = page.locator('#active-filters span')
+    const chips = page.locator('#active-filters > span')
     await expect(chips).toHaveCount(1)
   })
 
   test('clicking filter chip removes it and deactivates filter', async ({ page }) => {
     await page.click('.filter-btn[data-filter="tier"][data-value="1"]')
-    await page.locator('#active-filters span').first().click()
+    await page.locator('#active-filters > span').first().click()
     const visible = page.locator('.topic-card:not(.hidden)')
-    await expect(visible).toHaveCount(20)
+    await expect(visible).toHaveCount(21)
   })
 
   // ── Results count ─────────────────────────────────────────────────────────
-  test('results count shows "Showing all 20 topics" by default', async ({ page }) => {
-    await expect(page.locator('#results-count')).toContainText('Showing all 20 topics')
+  test('results count shows "Showing all 21 topics" by default', async ({ page }) => {
+    await expect(page.locator('#results-count')).toContainText('Showing all 21 topics')
   })
 
   test('results count updates after filtering', async ({ page }) => {
     await page.click('.filter-btn[data-filter="tier"][data-value="1"]')
-    await expect(page.locator('#results-count')).toContainText('Showing 5 of 20 topics')
+    await expect(page.locator('#results-count')).toContainText('Showing 5 of 21 topics')
   })
 
   // ── Combined filters ──────────────────────────────────────────────────────
