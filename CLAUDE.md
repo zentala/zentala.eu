@@ -17,9 +17,15 @@
 - `/src/components/` - Astro components
 - `/src/layouts/` - Page layouts
 - `/src/pages/` - Route pages
-- `/src/pages/resources/` - Working notes and research materials (private, noindex).
-  New documents: add `.md` file with frontmatter: `layout`, `title`, `datetime`, `description`.
-  Auto-listed on `/resources` index via `import.meta.glob`.
+- `/src/pages/resources/` - **PRIVATE section. Never publish. Never link from public pages.**
+  All EU research, concepts, visions, reports, analysis, and working notes live here.
+  - All pages use `noindex, nofollow` (enforced via `Layout noindex={true}` or `ResourcesLayout`)
+  - Notes: add `.md` file with frontmatter: `layout`, `title`, `datetime`, `description`.
+    Auto-listed on `/resources` index via `import.meta.glob`.
+  - Interactive tools (e.g. research map): add `.astro` page in a subdirectory, link manually from `resources/index.astro`.
+  - Subdirectory: `/src/pages/resources/research/` — research maps, topic explorers, data visualizations.
+  - **[CRITICAL]** Never create EU research/vision/report pages outside `/resources/`.
+    If it's working material, analysis, or anything not ready for public — it goes in `/resources/`.
 
 ## Tech Stack
 - Astro with strict TypeScript

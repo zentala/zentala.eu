@@ -1,7 +1,7 @@
 ---
-import Layout from '../../layouts/Layout.astro'
-import { researchTopics } from '../../data/research-topics'
-import { conceptGroups } from '../../data/concept-groups'
+import Layout from '../../../layouts/Layout.astro'
+import { researchTopics } from '../../../data/research-topics'
+import { conceptGroups } from '../../../data/concept-groups'
 
 const tierMeta = {
   1: { label: 'Tier 1: Foundational', priority: 'Critical', colorClass: 'tier-1' },
@@ -13,9 +13,9 @@ const tierMeta = {
 const totalTopics = researchTopics.length
 const completedTopics = researchTopics.filter((t) => t.status === 'complete').length
 
-const topicsByTier = [1, 2, 3, 4].map((tier) => ({
-  tier: tier as 1 | 2 | 3 | 4,
-  meta: tierMeta[tier as 1 | 2 | 3 | 4],
+const topicsByTier = ([1, 2, 3, 4] as const).map((tier) => ({
+  tier,
+  meta: tierMeta[tier],
   topics: researchTopics.filter((t) => t.tier === tier),
   completed: researchTopics.filter((t) => t.tier === tier && t.status === 'complete').length,
 }))
@@ -24,7 +24,7 @@ const allConcepts = [...new Set(researchTopics.flatMap((t) => t.relatedConcepts)
 const conceptLabelMap = Object.fromEntries(conceptGroups.map((c) => [c.id, c.name]))
 ---
 
-<Layout title="Research Map">
+<Layout title="Research Map" noindex={true}>
   <main class="container mx-auto max-w-7xl px-4 sm:px-6 py-10">
     <!-- Header -->
     <div class="mb-10">
@@ -46,7 +46,7 @@ const conceptLabelMap = Object.fromEntries(conceptGroups.map((c) => [c.id, c.nam
           <span class="text-sm ml-2" style="color: var(--color-text-secondary);">research topics complete</span>
         </div>
         <div class="flex gap-4 flex-wrap text-sm" style="color: var(--color-text-secondary);">
-          {topicsByTier.map(({ tier, meta, topics, completed }) => (
+          {topicsByTier.map(({ meta, topics, completed }) => (
             <span>
               <span class={`tier-badge tier-badge--${meta.colorClass}`}>{meta.priority}</span>
               {' '}{completed}/{topics.length}

@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test'
 
-test.describe('/research/map', () => {
+test.describe('/resources/research/map', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/research/map')
+    await page.goto('/resources/research/map')
   })
 
   // ── Page structure ────────────────────────────────────────────────────────
