@@ -24,7 +24,7 @@ const displayTime = datetime ?? date
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <meta name="generator" content={Astro.generator} />
-    <title>[PRIVATE] {title}</title>
+    <title>[RESOURCES] {title}</title>
     <script is:inline>
       const theme = (() => {
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -56,11 +56,11 @@ const displayTime = datetime ?? date
         <h1 class="text-3xl font-bold mb-2" style="font-family: 'Playfair Display', serif">{title}</h1>
         {displayTime && <p class="text-sm opacity-50 font-mono">{displayTime.replace('T', ' ')}</p>}
       </div>
-      <article class="prose-private">
+      <article class="prose-resources">
         <slot />
       </article>
       <div class="mt-12 pt-6 border-t border-opacity-20">
-        <a href="/private" class="text-sm opacity-50 hover:opacity-100 transition-opacity">← Wszystkie prywatne notatki</a>
+        <a href="/resources" class="text-sm opacity-50 hover:opacity-100 transition-opacity">← Wszystkie prywatne notatki</a>
       </div>
     </main>
     <Footer />
@@ -75,7 +75,7 @@ const displayTime = datetime ?? date
     font-family: 'Playfair Display', serif;
   }
 
-  .prose-private h2 {
+  .prose-resources h2 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-top: 2.5rem;
@@ -83,57 +83,57 @@ const displayTime = datetime ?? date
     padding-bottom: 0.5rem;
     border-bottom: 1px solid rgba(128,128,128,0.2);
   }
-  .prose-private h3 {
+  .prose-resources h3 {
     font-size: 1.15rem;
     font-weight: 600;
     margin-top: 1.75rem;
     margin-bottom: 0.5rem;
   }
-  .prose-private p {
+  .prose-resources p {
     margin-bottom: 1rem;
     line-height: 1.75;
     opacity: 0.9;
   }
-  .prose-private ul, .prose-private ol {
+  .prose-resources ul, .prose-resources ol {
     margin: 0.75rem 0 1rem 1.5rem;
   }
-  .prose-private li {
+  .prose-resources li {
     margin-bottom: 0.4rem;
     line-height: 1.6;
     opacity: 0.85;
   }
-  .prose-private strong {
+  .prose-resources strong {
     font-weight: 600;
   }
-  .prose-private hr {
+  .prose-resources hr {
     margin: 2rem 0;
     opacity: 0.2;
   }
-  .prose-private table {
+  .prose-resources table {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
     font-size: 0.9rem;
   }
-  .prose-private th {
+  .prose-resources th {
     text-align: left;
     padding: 0.5rem 0.75rem;
     font-weight: 600;
     border-bottom: 2px solid rgba(128,128,128,0.3);
   }
-  .prose-private td {
+  .prose-resources td {
     padding: 0.5rem 0.75rem;
     border-bottom: 1px solid rgba(128,128,128,0.15);
     opacity: 0.85;
   }
-  .prose-private blockquote {
+  .prose-resources blockquote {
     border-left: 3px solid rgba(245,158,11,0.5);
     padding-left: 1rem;
     margin: 1rem 0;
     opacity: 0.8;
     font-style: italic;
   }
-  .prose-private code {
+  .prose-resources code {
     font-size: 0.875rem;
     background: rgba(128,128,128,0.1);
     padding: 0.1em 0.3em;

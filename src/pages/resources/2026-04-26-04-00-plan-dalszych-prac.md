@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PrivateLayout.astro
+layout: ../../layouts/ResourcesLayout.astro
 title: "Plan dalszych prac — backlog uporządkowany"
 datetime: "2026-04-26T04:00"
 ---
@@ -15,7 +15,7 @@ datetime: "2026-04-26T04:00"
 | Element | Status | Plik |
 |---|---|---|
 | `WRITING.md` + `.arch/VISION.md` + `CLAUDE.md` linkowanie | ✅ wdrożone | korzeń projektu |
-| `/private/` — prywatna sekcja edytorska | ✅ działa | `src/pages/private/` |
+| `/resources/` — prywatna sekcja edytorska | ✅ działa | `src/pages/resources/` |
 | `research/` folder na materiały źródłowe | ✅ stworzony | `research/` |
 | `/principles` — 6 zasad, kultura przeformułowana, #6 build-vs-administer | ✅ wdrożone, **w REVIEW** | `src/pages/principles.astro` |
 | `/vision/digital-integration` — health AI jako case study zasady #2 | ✅ wdrożone | `src/pages/vision/digital-integration.astro` |
@@ -29,7 +29,7 @@ datetime: "2026-04-26T04:00"
 
 ---
 
-## Część II — Pozostałe pozycje z edytorskiego dokumentu (`/private/2026-04-25-23-30-pytania-redaktora`)
+## Część II — Pozostałe pozycje z edytorskiego dokumentu (`/resources/2026-04-25-23-30-pytania-redaktora`)
 
 ### A7 — FAQ przepisany z defensywnego na asertywny
 
@@ -115,7 +115,7 @@ Każde pytanie stawia autora w pozycji ofensywnej, nie obronnej. Treść pytań 
 **Co warte zrobienia:**
 - Idea Trójmorza zasługuje na własną stronę, nie na ukrycie w FAQ
 - Można dodać `/vision/trimarium` lub osobną sekcję w `/benefits` "Where the manifesto lands first"
-- Bazuje na materiale z `/private/2026-04-25-22-27-cee-sojusznicy`
+- Bazuje na materiale z `/resources/2026-04-25-22-27-cee-sojusznicy`
 
 **Rozmiar:** 1-2 godziny. Albo nowa strona, albo wzbogacenie istniejącej sekcji CEE w `/benefits`.
 
@@ -220,4 +220,4 @@ Po twoich odpowiedziach: aktualizuję ten plan, dopiero wtedy wdrażamy.
 
 ---
 
-*Powiązane dokumenty: [/private/2026-04-25-23-30-pytania-redaktora](/private/2026-04-25-23-30-pytania-redaktora) · [/private/2026-04-26-00-30-odpowiedzi-b1-b3](/private/2026-04-26-00-30-odpowiedzi-b1-b3)*
+*Powiązane dokumenty: [/resources/2026-04-25-23-30-pytania-redaktora](/resources/2026-04-25-23-30-pytania-redaktora) · [/resources/2026-04-26-00-30-odpowiedzi-b1-b3](/resources/2026-04-26-00-30-odpowiedzi-b1-b3)*

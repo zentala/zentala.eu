@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PrivateLayout.astro
+layout: ../../layouts/ResourcesLayout.astro
 title: "Trzy podejścia do serwisu: manifest, platforma ruchowa, policy paper"
 datetime: "2026-04-25T21:20"
 ---

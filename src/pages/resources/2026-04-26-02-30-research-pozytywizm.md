@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PrivateLayout.astro
+layout: ../../layouts/ResourcesLayout.astro
 title: "Research: Polski pozytywizm — geneza, idee, możliwe zastosowania w manifeście"
 datetime: "2026-04-26T02:30"
 ---

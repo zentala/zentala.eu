@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PrivateLayout.astro
+layout: ../../layouts/ResourcesLayout.astro
 title: "CEE jako naturalni sojusznicy — dlaczego i jak o tym mówić"
 datetime: "2026-04-25T22:27"
 ---
@@ -122,4 +122,4 @@ To rozróżnienie jest ważne: nie buduję policy paper z paragrafami. Stawiam t
 
 ---
 
-*[/private/2026-04-25-22-13-strategia-manifestu](/private/2026-04-25-22-13-strategia-manifestu) · [/private/2026-04-25-22-16-vision](/private/2026-04-25-22-16-vision)*
+*[/resources/2026-04-25-22-13-strategia-manifestu](/resources/2026-04-25-22-13-strategia-manifestu) · [/resources/2026-04-25-22-16-vision](/resources/2026-04-25-22-16-vision)*

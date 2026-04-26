@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PrivateLayout.astro
+layout: ../../layouts/ResourcesLayout.astro
 title: "Zasady v2 — pełna rewizja, 6 zasad, kultura przeformułowana"
 datetime: "2026-04-26T02:00"
 ---
@@ -97,7 +97,7 @@ Dotąd wdrożone:
 - ✅ `/principles` — 6 zasad, pełna filozofia (v2)
 - ✅ `/vision/digital-integration` — health AI jako sztandarowy case study
 
-Do zrobienia (z `/private/2026-04-25-23-30-pytania-redaktora`):
+Do zrobienia (z `/resources/2026-04-25-23-30-pytania-redaktora`):
 1. **Strona `/about`** — sen o statku kosmicznym, osobista historia, perspektywa inżyniera
 2. **Hero strony głównej** — argument emerytalny, pierwsza osoba, krótki bio
 3. **`/support`** — usunięcie "Time Is Running Out", przepisanie na pilność opartą na danych
@@ -110,4 +110,4 @@ Każde wdrożenie = osobna sesja.
 
 ---
 
-*[/private/2026-04-26-01-15-wdrozenie-zasad](/private/2026-04-26-01-15-wdrozenie-zasad) · [/private/2026-04-25-23-30-pytania-redaktora](/private/2026-04-25-23-30-pytania-redaktora)*
+*[/resources/2026-04-26-01-15-wdrozenie-zasad](/resources/2026-04-26-01-15-wdrozenie-zasad) · [/resources/2026-04-25-23-30-pytania-redaktora](/resources/2026-04-25-23-30-pytania-redaktora)*

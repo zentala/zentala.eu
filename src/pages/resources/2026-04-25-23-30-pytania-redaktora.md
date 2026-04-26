@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PrivateLayout.astro
+layout: ../../layouts/ResourcesLayout.astro
 title: "Pytania redaktora — co zmienić, co uzupełnić, co poprawić"
 datetime: "2026-04-25T23:30"
 ---
@@ -23,7 +23,7 @@ datetime: "2026-04-25T23:30"
 | Benefits | `/benefits` | DE, FR, PL + reszta krajów | **Asymetria — brak Bałtyków, Ukrainy, Skandynawii** |
 | Support | `/support` | Patreon, share, "Time Is Running Out" | **Sekcja "Time Is Running Out" do usunięcia lub przepisania** |
 
-**Sekcje prywatne** (`/private/`):
+**Sekcje prywatne** (`/resources/`):
 - Wizja (`.arch/VISION.md`)
 - Strategia manifestu
 - Trzy podejścia (manifest/platforma/policy)
@@ -184,7 +184,7 @@ Obecnie: "Draghi Report (September 2024) diagnosed Europe's critical weakness". 
 W /vision/language-integration jest timeline 16 lat. To brzmi wiarygodnie, ale może też być punkt ataku ("16 lat to za długo"). Albo dopracuj uzasadnienie etapów, albo zastąp ogólną tezą "to będzie pokoleniowy proces, ale każdy etap przynosi korzyści".
 
 ### C6. Trójmorze — dorób publiczną sekcję
-Obecnie w FAQ pojawia się "Intermarium 2.0" jako odpowiedź na pytanie "What if Germany doesn't agree". Ta idea zasługuje na własną sekcję — nie pochowaną w FAQ. Notatki w `/private/cee-sojusznicy` to baza.
+Obecnie w FAQ pojawia się "Intermarium 2.0" jako odpowiedź na pytanie "What if Germany doesn't agree". Ta idea zasługuje na własną sekcję — nie pochowaną w FAQ. Notatki w `/resources/cee-sojusznicy` to baza.
 
 ### C7. Sekcja "moja perspektywa inżyniera"
 Brakuje wprost wyłożonego frame'u: "patrzę na to jako architekt systemów, dlatego widzę X, czego nie widzą politycy". Zrób z tego osobną sekcję, krótką, na stronie głównej lub /about.
@@ -223,4 +223,4 @@ Jeśli chcesz to zrealizować w kolejnych sesjach:
 
 ---
 
-*[/private/2026-04-25-22-27-cee-sojusznicy](/private/2026-04-25-22-27-cee-sojusznicy) · [/private/2026-04-25-22-13-strategia-manifestu](/private/2026-04-25-22-13-strategia-manifestu)*
+*[/resources/2026-04-25-22-27-cee-sojusznicy](/resources/2026-04-25-22-27-cee-sojusznicy) · [/resources/2026-04-25-22-13-strategia-manifestu](/resources/2026-04-25-22-13-strategia-manifestu)*

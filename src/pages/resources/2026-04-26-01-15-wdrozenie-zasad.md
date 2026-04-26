@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PrivateLayout.astro
+layout: ../../layouts/ResourcesLayout.astro
 title: "Wdrożenie: nowe /principles + sekcja health AI jako case study"
 datetime: "2026-04-26T01:15"
 ---
@@ -62,12 +62,12 @@ To zamyka pętlę: zasada → przykład → zasada. Czytelnik trafiający z `/pr
 
 ## Co dalej (rekomendowana kolejność)
 
-Z dotychczasowych dokumentów `/private/` mam materiał na następujące sesje wdrożeniowe:
+Z dotychczasowych dokumentów `/resources/` mam materiał na następujące sesje wdrożeniowe:
 
 1. **Strona `/about` — z otwarciem snem o statku kosmicznym** (punkt A z prośby autora). Najnaturalniejsze następne wdrożenie — dużo bogatego materiału z B1.
-2. **Hero strony głównej** — argument emerytalny, pierwsza osoba, krótki bio autora. Konkretna propozycja tekstu w `/private/2026-04-25-23-30-pytania-redaktora` punkt A1.
-3. **Sekcja "Time Is Running Out" na `/support`** — usunięcie, propozycja zastąpienia w `/private/2026-04-25-23-30-pytania-redaktora` punkt A3.
-4. **Sekcje CEE w `/benefits`** — szablon w `/private/2026-04-25-23-30-pytania-redaktora` punkt A4.
+2. **Hero strony głównej** — argument emerytalny, pierwsza osoba, krótki bio autora. Konkretna propozycja tekstu w `/resources/2026-04-25-23-30-pytania-redaktora` punkt A1.
+3. **Sekcja "Time Is Running Out" na `/support`** — usunięcie, propozycja zastąpienia w `/resources/2026-04-25-23-30-pytania-redaktora` punkt A3.
+4. **Sekcje CEE w `/benefits`** — szablon w `/resources/2026-04-25-23-30-pytania-redaktora` punkt A4.
 5. **Oczyszczenie kontrowersyjnych zdań w `/why` (pkt 6 i 8)** — gotowe propozycje w punkach A5 i A6.
 6. **AI Review jako blurb pod hero** — konkretna propozycja w punkcie A8.
 7. **PDF download w navbar** — dodać do backloga jako visual plan.
@@ -76,4 +76,4 @@ Każde wdrożenie = osobna sesja (max 1-2 strony naraz, żeby utrzymać jakość
 
 ---
 
-*Powiązane: [/private/2026-04-25-23-30-pytania-redaktora](/private/2026-04-25-23-30-pytania-redaktora) · [/private/2026-04-26-00-30-odpowiedzi-b1-b3](/private/2026-04-26-00-30-odpowiedzi-b1-b3)*
+*Powiązane: [/resources/2026-04-25-23-30-pytania-redaktora](/resources/2026-04-25-23-30-pytania-redaktora) · [/resources/2026-04-26-00-30-odpowiedzi-b1-b3](/resources/2026-04-26-00-30-odpowiedzi-b1-b3)*

@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PrivateLayout.astro
+layout: ../../layouts/ResourcesLayout.astro
 title: "Strategia: zentala.eu jako manifest osobisty"
 datetime: "2026-04-25T22:13"
 ---
@@ -124,5 +124,5 @@ Każdy film może być jedną sekcją na stronie. Każda sekcja na stronie może
 
 ---
 
-*Pełna analiza trzech podejść: [/private/2026-04-25-21-20-trzy-podejscia](/private/2026-04-25-21-20-trzy-podejscia)*
-*Feedback z sesji: [/private/2026-04-25-21-19-feedback](/private/2026-04-25-21-19-feedback)*
+*Pełna analiza trzech podejść: [/resources/2026-04-25-21-20-trzy-podejscia](/resources/2026-04-25-21-20-trzy-podejscia)*
+*Feedback z sesji: [/resources/2026-04-25-21-19-feedback](/resources/2026-04-25-21-19-feedback)*
