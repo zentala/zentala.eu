@@ -1,268 +1,228 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import DisplayTitle from '../components/DisplayTitle.astro';
+
+const principles = [
+  {
+    n: 1,
+    title: 'National Sovereignty Is the Foundation, Not the Obstacle',
+    short: 'I propose shared tools, not a shared government. Each member state retains the right to decide what matters to it.',
+  },
+  {
+    n: 2,
+    title: 'Shared Interest, Not Shared Burden',
+    short: 'We do together what every country gains from individually — and where economies of scale make the result dramatically better. We do not pool what is a cost for some and a benefit for others.',
+  },
+  {
+    n: 3,
+    title: 'A Direction, Not a Specification',
+    short: 'I propose three pillars — language, digitisation, robotisation. The exact shape of each system is for those who will implement it.',
+  },
+  {
+    n: 4,
+    title: 'Synthesis Builds Culture; Force Cannot',
+    short: 'A common European culture is valuable, but it can only emerge from cooperation. Every attempt to legislate it has produced performance, not culture.',
+  },
+  {
+    n: 5,
+    title: 'Additive Reform — New Programmes, Old Institutions Stay',
+    short: 'Nothing I propose requires dismantling existing EU or national institutions. Every reform is a new programme that countries can join when ready, alongside what already works.',
+  },
+  {
+    n: 6,
+    title: 'Positivism as Method',
+    short: 'Focus on what works, not on what does not. Identify low-hanging fruit. Frame everything as growth, not redistribution. Build, then propose.',
+  },
+];
 ---
 
-<Layout title="Guiding Principles for European Integration">
-  <main class="container mx-auto max-w-6xl px-4 py-8">
-    <DisplayTitle title="Guiding Principles" />
-    
+<Layout title="Principles">
+  <main class="container mx-auto max-w-5xl px-4 py-8">
+    <DisplayTitle title="Principles" />
+
     <div class="mb-10 text-xl" style="color: var(--color-text-secondary);">
-      Our framework for European integration is built on core principles that ensure reforms benefit all member states while making Europe stronger and more competitive globally.
+      Six principles that define what kind of European reform I propose — and what I do not.
+      They are deliberately few, deliberately specific, and they stand apart from both Brussels federalism
+      and Eurosceptic rejection. Read these before you read anything else on this site.
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-      <!-- Principle 1 -->
-      <div class="principle p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <div class="flex items-center mb-4">
-          <div class="flex-shrink-0 bg-gradient-to-br rounded-full w-10 h-10 flex items-center justify-center mr-3" 
-               style="background: linear-gradient(to bottom right, var(--color-accent-primary), var(--color-accent-secondary));">
-            <span class="text-xl font-bold text-white">1</span>
+    <!-- Six principle cards: 2 per row, 3 rows -->
+    <div class="grid md:grid-cols-2 gap-6 mb-16">
+      {principles.map(p => (
+        <div class="p-6 rounded-lg shadow-md transition-colors duration-300"
+             style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
+          <div class="flex items-center mb-4">
+            <div class="flex-shrink-0 rounded-full w-10 h-10 flex items-center justify-center mr-3"
+                 style="background: linear-gradient(to bottom right, var(--color-accent-primary), var(--color-accent-secondary));">
+              <span class="text-xl font-bold text-white">{p.n}</span>
+            </div>
+            <h3 class="font-bold text-base leading-tight" style="color: var(--color-text-primary);">{p.title}</h3>
           </div>
-          <h3 class="font-bold" style="color: var(--color-text-primary);">Seeking Mutual Benefit</h3>
+          <p class="text-sm" style="color: var(--color-text-secondary);">{p.short}</p>
         </div>
-        <p style="color: var(--color-text-secondary);">Focus on reforms that provide clear advantages to all member states, fostering a spirit of collective progress rather than zero-sum competition.</p>
-      </div>
-      
-      <!-- Principle 2 -->
-      <div class="principle p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <div class="flex items-center mb-4">
-          <div class="flex-shrink-0 bg-gradient-to-br rounded-full w-10 h-10 flex items-center justify-center mr-3" 
-               style="background: linear-gradient(to bottom right, var(--color-accent-primary), var(--color-accent-secondary));">
-            <span class="text-xl font-bold text-white">2</span>
-          </div>
-          <h3 class="font-bold" style="color: var(--color-text-primary);">Leveraging Economies of Scale</h3>
-        </div>
-        <p style="color: var(--color-text-secondary);">Develop solutions collectively that would be too expensive or complex for individual nations to create independently.</p>
-      </div>
-      
-      <!-- Principle 3 -->
-      <div class="principle p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <div class="flex items-center mb-4">
-          <div class="flex-shrink-0 bg-gradient-to-br rounded-full w-10 h-10 flex items-center justify-center mr-3" 
-               style="background: linear-gradient(to bottom right, var(--color-accent-primary), var(--color-accent-secondary));">
-            <span class="text-xl font-bold text-white">3</span>
-          </div>
-          <h3 class="font-bold" style="color: var(--color-text-primary);">Building a Common Culture</h3>
-        </div>
-        <p style="color: var(--color-text-secondary);">Foster a European identity alongside national cultures through shared systems, language, and infrastructure.</p>
-      </div>
-      
-      <!-- Principle 4 -->
-      <div class="principle p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <div class="flex items-center mb-4">
-          <div class="flex-shrink-0 bg-gradient-to-br rounded-full w-10 h-10 flex items-center justify-center mr-3" 
-               style="background: linear-gradient(to bottom right, var(--color-accent-primary), var(--color-accent-secondary));">
-            <span class="text-xl font-bold text-white">4</span>
-          </div>
-          <h3 class="font-bold" style="color: var(--color-text-primary);">Improving Quality of Life</h3>
-        </div>
-        <p style="color: var(--color-text-secondary);">Address challenges too big for individual nations through radical reforms and shifting appropriate competencies to the EU level.</p>
-      </div>
+      ))}
     </div>
 
-    <!-- Extended Principles Section -->
-    <DisplayTitle level={2} title="Applying Our Principles" class="mt-12 mb-6" />
-    
-    <div class="grid md:grid-cols-2 gap-8 mb-12">
-      <div class="p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <h3 class="text-xl font-bold mb-4" style="color: var(--color-text-primary);">Economic Integration</h3>
-        <p class="mb-4" style="color: var(--color-text-secondary);">
-          Our approach to economic integration focuses on reducing transaction costs and administrative barriers, enabling businesses of all sizes to operate seamlessly across the European market.
-        </p>
-        <p style="color: var(--color-text-secondary);">
-          By implementing unified digital payment systems, standardized administrative procedures, and blockchain-based contracts, we can eliminate millions of hours wasted on redundant paperwork and create true economic efficiency.
-        </p>
-      </div>
-      
-      <div class="p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <h3 class="text-xl font-bold mb-4" style="color: var(--color-text-primary);">Cultural Approach</h3>
-        <p class="mb-4" style="color: var(--color-text-secondary);">
-          Rather than forcing artificial cultural integration, our vision relies on building shared infrastructure and systems that naturally bring Europeans together through daily interactions and collaboration.
-        </p>
-        <p style="color: var(--color-text-secondary);">
-          Language integration serves as the foundation, enabling Europeans to communicate directly while preserving linguistic diversity and national cultural identities.
-        </p>
-      </div>
-      
-      <div class="p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <h3 class="text-xl font-bold mb-4" style="color: var(--color-text-primary);">Technological Leadership</h3>
-        <p class="mb-4" style="color: var(--color-text-secondary);">
-          European integration must position the continent as a technological leader, particularly in fields where we have existing strengths: industrial automation, precision engineering, and sustainable technologies.
-        </p>
-        <p style="color: var(--color-text-secondary);">
-          By establishing unified robotics standards, shared research initiatives, and continent-wide manufacturing policies, we can create a new European industrial renaissance.
-        </p>
-      </div>
-      
-      <div class="p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <h3 class="text-xl font-bold mb-4" style="color: var(--color-text-primary);">Pragmatic Implementation</h3>
-        <p class="mb-4" style="color: var(--color-text-secondary);">
-          Our vision embraces a pragmatic approach to implementation, starting with willing member states and expanding as benefits become apparent to others.
-        </p>
-        <p style="color: var(--color-text-secondary);">
-          This allows for faster experimentation, adaptation based on real-world feedback, and avoids the paralysis that can occur when trying to achieve unanimous agreement among all member states simultaneously.
-        </p>
-      </div>
-    </div>
+    <!-- Deep dive sections -->
 
-    <!-- Comprehensive Principles Section -->
-    <div class="relative mt-16 p-8 rounded-xl shadow-lg transition-colors duration-300" 
-         style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-      <div class="absolute top-0 right-0 left-0 h-2 rounded-t-xl" 
-           style="background: linear-gradient(to right, var(--color-accent-primary), var(--color-accent-secondary));"></div>
-      
-      <DisplayTitle level={2} title="Vision for European Cooperation and Integration" class="mb-8" />
-      
-      <div class="prose prose-lg max-w-none transition-colors duration-300" 
-           style="color: var(--color-text-secondary);">
-        
-        <h3 style="color: var(--color-text-primary);">Principles of Mutual Benefit</h3>
+    <section class="mb-16">
+      <DisplayTitle level={2} title="1. National sovereignty is the foundation" class="mb-6" />
+      <div class="prose prose-lg max-w-none" style="color: var(--color-text-secondary);">
         <p>
-          The proposed reforms are designed with a fundamental principle: creating value for all member states through strategic cooperation. This vision isn't about compromise - it's about identifying and developing areas where cooperation naturally generates greater value than individual action.
-        </p>
-        
-        <h3 style="color: var(--color-text-primary);">Nothing unites people more than common business.</h3>
-        <p>
-          The proposed reforms aren't just about integration - they're about reaching for extraordinary opportunities that emerge when we work together. This vision is futuristic and pragmatic at the same time: it identifies futuristic areas where cooperation can generate significant economic growth and quality of life improvements for all Europeans. By working together, we can achieve things that would be impossible to reach separately. This proposal outlines specific areas of cooperation and ways to organize them to maximize our collective potential.
-        </p>
-        
-        <h3 style="color: var(--color-text-primary);">Shared Aspirations for a Secure Future</h3>
-        <p>
-          As Europeans, we share a common goal: to create a dynamic, secure, and sustainable Union that meets the challenges of tomorrow while preserving the values of today.
+          The reform I propose is not a step toward a federal European super-state. It is a proposal for a small number of <strong>shared tools</strong> — language, digital infrastructure, robotic capacity — that make cooperation between sovereign nations easier and cheaper.
         </p>
         <p>
-          A shared realistic vision of prosperity and security may unite Europeans. At the heart of this vision is a simple yet powerful idea: Europeans want to design a secure, dignified future for themselves, especially as they age.
+          Member states keep the right to decide what they care about. Education, taxation, social policy, cultural life — these belong to nations. The reform makes it easier for nations to cooperate where they want to, not easier for Brussels to impose what nations do not want.
+        </p>
+        <p style="color: var(--color-text-primary);">
+          <strong>Why this matters:</strong> any reform that ignores sovereignty fails politically, and rightly so. I would rather propose less and have it accepted than propose everything and have nothing happen.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <DisplayTitle level={2} title="2. Shared interest, not shared burden" class="mb-6" />
+      <div class="prose prose-lg max-w-none" style="color: var(--color-text-secondary);">
+        <p>
+          This is the line that separates what we should do together from what we should not.
+        </p>
+        <p style="color: var(--color-text-primary);"><strong>Do together:</strong> things every country gains from individually, especially where economies of scale make the result dramatically better.</p>
+        <p>
+          The European Union's greatest successes — the single market, free movement, common research programmes — all relied on the same insight: certain things become dramatically cheaper, better, or possible at all when done at scale. The next phase of integration applies the same logic to the digital economy.
         </p>
         <p>
-          Today's 30-somethings represent the last demographic surplus generation. They have the unique responsibility and opportunity to design systems that will ensure a peaceful and comfortable retirement for themselves without overburdening future generations or relying excessively on migration. Digitalization provides opportunities through advanced automation, robotics, and smart systems that can create sustainable solutions for aging populations without disadvantaging the younger workforce.
+          The clearest example is <a href="/vision/digital-integration" style="color: var(--color-accent-primary);">predictive healthcare powered by shared anonymised medical data</a>. Every aging society in Europe needs better early diagnosis. An AI model trained on data from 450 million Europeans is dramatically better than one trained on 5, 10 or 30 million. The model is shared. Each national health system uses it locally. No country pays for another's care — every country saves money and saves lives.
         </p>
         <p>
-          Moreover, achieving this vision requires ensuring the European Union's security across all dimensions – economic, industrial, technological, military, and political. A secure and resilient EU is essential to achieving a sustainable and enjoyable future for all citizens. This vision is not just a policy objective but a core principle guiding the proposed reforms.
+          The pandemic taught the same lesson the hard way. Twenty-seven EU countries each built their own e-learning system from scratch. The modules — gradebook, video classroom, chat, attendance, parent portal — were near-identical. The waste was in the hundreds of millions of euros, possibly billions. One shared open-source backbone with national customisation on top would have cost a small fraction and produced better software for everyone.
         </p>
-        
-        <h3 style="color: var(--color-text-primary);">Beyond National Limitations</h3>
-        <p>Today's challenges demand solutions at a European scale. These include:</p>
-        
-        <div class="mt-6">
-          <div class="flex items-start mb-4">
-            <div class="flex-shrink-0 bg-gradient-to-br rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1" 
-                 style="background: linear-gradient(to bottom right, var(--color-accent-primary), var(--color-accent-secondary)); min-width: 2rem;">
-              <span class="text-white text-sm">1</span>
-            </div>
-            <div>
-              <h4 class="font-bold" style="color: var(--color-text-primary);">Aging populations require a new retirement model</h4>
-              <p>One that is independent of intergenerational reliance and instead built on self-sustaining systems supported by automation and digital advancements.</p>
-            </div>
-          </div>
-          
-          <div class="flex items-start mb-4">
-            <div class="flex-shrink-0 bg-gradient-to-br rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1" 
-                 style="background: linear-gradient(to bottom right, var(--color-accent-primary), var(--color-accent-secondary)); min-width: 2rem;">
-              <span class="text-white text-sm">2</span>
-            </div>
-            <div>
-              <h4 class="font-bold" style="color: var(--color-text-primary);">Healthcare systems under strain</h4>
-              <p>Existing systems must adapt to serve the growing needs of an aging population while maintaining high standards of care.</p>
-            </div>
-          </div>
-          
-          <div class="flex items-start mb-4">
-            <div class="flex-shrink-0 bg-gradient-to-br rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1" 
-                 style="background: linear-gradient(to bottom right, var(--color-accent-primary), var(--color-accent-secondary)); min-width: 2rem;">
-              <span class="text-white text-sm">3</span>
-            </div>
-            <div>
-              <h4 class="font-bold" style="color: var(--color-text-primary);">Industrial autonomy in a competitive global market</h4>
-              <p>Europe must strive for technological and industrial self-reliance to compete effectively on the global stage.</p>
-            </div>
-          </div>
-          
-          <div class="flex items-start mb-4">
-            <div class="flex-shrink-0 bg-gradient-to-br rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1" 
-                 style="background: linear-gradient(to bottom right, var(--color-accent-primary), var(--color-accent-secondary)); min-width: 2rem;">
-              <span class="text-white text-sm">4</span>
-            </div>
-            <div>
-              <h4 class="font-bold" style="color: var(--color-text-primary);">Public administration inefficiencies</h4>
-              <p>Streamlining and digitalizing government functions can lead to greater efficiency and citizen satisfaction. The complexity of modern European social states, offering numerous public services and administrative solutions, can be transformed into a strength through comprehensive digital innovation. By deeply digitalizing administrative systems, the EU can preserve its intricate processes while accelerating, simplifying, and automating operations.</p>
-            </div>
-          </div>
-          
-          <div class="flex items-start mb-4">
-            <div class="flex-shrink-0 bg-gradient-to-br rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1" 
-                 style="background: linear-gradient(to bottom right, var(--color-accent-primary), var(--color-accent-secondary)); min-width: 2rem;">
-              <span class="text-white text-sm">5</span>
-            </div>
-            <div>
-              <h4 class="font-bold" style="color: var(--color-text-primary);">Comprehensive security</h4>
-              <p>Ensuring the safety and resilience of the EU across all dimensions to guarantee a peaceful environment for future generations.</p>
-            </div>
-          </div>
-        </div>
-        
-        <h3 style="color: var(--color-text-primary);">Designing a Sustainable Future</h3>
         <p>
-          This vision recognizes that many contemporary challenges require solutions at a European scale. Instead of limiting expectations, it proposes radical reforms that transfer competencies to the EU level specifically in areas where collective action proves more effective than national efforts.
+          Other examples in this category: a unified payment zone, common defence R&D, robotic logistics standards, shared border-control technology, a European cloud for public-sector data, common digital identity layer.
         </p>
-        <p>Key objectives include:</p>
-        <ul class="space-y-2">
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Establishing a retirement system supported by automation and innovation, enabling aging populations to enjoy their later years without placing undue pressure on younger generations.</span>
-          </li>
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Leveraging robotics, AI, and advanced digital technologies to sustain high-quality public services.</span>
-          </li>
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Creating a cohesive framework for industrial and economic resilience to maintain Europe's competitiveness.</span>
-          </li>
+        <p style="color: var(--color-text-primary);"><strong>Do not pool:</strong> things that are a cost for some and a benefit for others.</p>
+        <p>
+          A common European pension system would be such a thing. Some countries have saved (Scandinavia, Germany), some have not. A pooled scheme would mean transferring savings — and the savers will refuse, correctly. The same applies to debt mutualisation, harmonised taxation, or any other "let us put money together" proposal. They are politically poisonous and they should be — they ask one country to subsidise another's choices.
+        </p>
+        <p>
+          Note the line: we can share the <em>technology</em> of pension administration (predictive solvency models, demographic forecasting tools, automated benefit calculation) without sharing the <em>fund</em>. The technology is shared interest. The fund is shared burden. Same domain, opposite verdicts.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <DisplayTitle level={2} title="3. A direction, not a specification" class="mb-6" />
+      <div class="prose prose-lg max-w-none" style="color: var(--color-text-secondary);">
+        <p>
+          I am not writing a policy paper with paragraph numbers. I am proposing a direction:
+        </p>
+        <ul class="list-disc ml-6 my-4">
+          <li>A common European working language (English as the second official language of the EU)</li>
+          <li>A common digital backbone for public administration</li>
+          <li>Common robotic and automation capacity for public services and defence</li>
         </ul>
-        
-        <h3 style="color: var(--color-text-primary);">A Win-Win Cooperation Model</h3>
         <p>
-          The success of this vision depends on member states' willingness to embrace empathetic cooperation over egocentric competition. While concerns and fears are natural, the proposed framework deliberately focuses on areas where integration benefits all participants. The goal is to create a cooperation model where:
+          The exact shape of each system — which protocols, which suppliers, which timelines — must be worked out by the people who will implement it. I am an engineer; I know that the difference between a good system and a bad one is in details that no manifesto can decide in advance.
         </p>
-        <ul class="space-y-2">
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Every member state gains more than they invest.</span>
-          </li>
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Collective efficiency increases through integration.</span>
-          </li>
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Shared solutions address common challenges.</span>
-          </li>
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Innovation and progress benefit all participants.</span>
-          </li>
-        </ul>
-        
-        <p class="mt-8">
-          By looking 20 years into the future, we imagine a European Union that has adapted to a world where four retirees rely on one working individual – not as a burden, but as a testament to the power of innovation and cooperation. The ultimate goal is to design systems that allow Europeans to live dignified, enjoyable lives, supported by the fruits of their collective work and technological advancements.
+        <p style="color: var(--color-text-primary);">
+          <strong>What this means in practice:</strong> if you find a paragraph on this site that proposes a specific implementation detail and you disagree with it, fine. The detail is not the point. The direction is.
         </p>
       </div>
-    </div>
-    
-    <!-- Call to Action Section -->
+    </section>
+
+    <section class="mb-16">
+      <DisplayTitle level={2} title="4. Synthesis builds culture; force cannot" class="mb-6" />
+      <div class="prose prose-lg max-w-none" style="color: var(--color-text-secondary);">
+        <p>
+          A common European culture — a shared way of debating, working, and building things — is something I consider valuable. It would be a real achievement and a long-term goal worth pursuing. I do not want this misread as an Eurosceptic dismissal of common culture. It is the opposite.
+        </p>
+        <p>
+          But common culture cannot be created by decree, harmonisation directive, or any other form of imposition from above. Every time European institutions have tried this — through cultural campaigns, mandated curricula, or symbolic legislation — the result has been not common culture but a hollow performance of common culture. That performance feeds Eurosceptic backlash and makes real cooperation harder. Force does not produce culture; it produces pose.
+        </p>
+        <p>
+          Real culture only ever emerges from <strong>synthesis</strong>. People working together produce shared vocabulary. People trading together produce shared norms. People building things together produce shared standards of what counts as good work. This is how every cultural community in history has actually formed — by participation, never by fiat.
+        </p>
+        <p style="color: var(--color-text-primary);"><strong>What this means in practice:</strong></p>
+        <ul class="list-disc ml-6 my-4">
+          <li>A common working language (English) creates the conditions for shared debate. It does not produce the debate; the debate emerges when there is something to debate about.</li>
+          <li>A common digital administration creates the conditions for shared business culture. It does not impose how business is done; that emerges from millions of cross-border transactions running on the same infrastructure.</li>
+          <li>Fast continental logistics creates the conditions for a shared trading culture. A package from Warsaw to Lisbon arriving in two days does more for European identity than any cultural directive ever has.</li>
+          <li>Joint European projects — predictive healthcare, defence R&D, robotic logistics — create the conditions for a shared engineering culture, built by Europeans solving real problems together.</li>
+        </ul>
+        <p>
+          Whether these conditions ultimately produce a recognisable "European culture" in some thicker sense — common heroes, shared narratives, mutual literary references — is for future generations to discover. Our job is to build the conditions, not to dictate the result. Culture identifies itself, eventually. We do not get to specify it in advance.
+        </p>
+        <p>
+          This is, in part, the Polish contribution to the debate: do not give up on common culture, but refuse to fake it. Build the conditions, respect the diversity, let synthesis do its work across generations.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <DisplayTitle level={2} title="5. Additive reform — new programmes, old institutions stay" class="mb-6" />
+      <div class="prose prose-lg max-w-none" style="color: var(--color-text-secondary);">
+        <p>
+          The biggest fear any proposal for European reform triggers, especially in countries with strong national identities, is the fear of being dismantled. "If we agree to this, what we have will be taken away from us."
+        </p>
+        <p>
+          I want to be unambiguous about this: <strong>nothing I propose requires dismantling existing institutions.</strong> The Commission, Council, and Parliament keep their current functions. National courts, ministries, and social systems keep their current sovereignty. Every reform on this site is additive.
+        </p>
+        <p style="color: var(--color-text-primary);"><strong>What additive means in practice:</strong></p>
+        <ul class="list-disc ml-6 my-4">
+          <li><strong>A common working language</strong> sits alongside national languages. No one is asked to give up Polish, French, or German. English becomes the second official language for cross-border work, not the only one.</li>
+          <li><strong>Aurora</strong> (a basket-currency layer for cross-border settlements) sits above existing national currencies and the Euro. No one is forced to give up the złoty, the krone, or the Euro. Member States that choose to use Aurora for European-scale transactions can do so without ever joining the Euro.</li>
+          <li><strong>A European Health AI Initiative</strong> is a new programme. National health ministries keep their authority over national systems. The shared AI model is infrastructure that any country can plug into, on its own terms.</li>
+          <li><strong>A common digital identity layer</strong> sits alongside national IDs. Estonian e-Residency does not replace a passport; the European layer would not either.</li>
+        </ul>
+        <p>
+          This is evolution, not revolution. Lower political cost (countries can join when ready). Lower implementation risk (you can start small). Reversible (you can stop using a programme without dismantling anything).
+        </p>
+        <p>
+          A second benefit: this addresses the legitimate Eurosceptic argument that integration is always one-way and irreversible. With additive reform, joining a programme is a positive choice and not joining is also a positive choice. The European institutional landscape becomes a menu of options rather than a single package to swallow whole.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <DisplayTitle level={2} title="6. Positivism as method" class="mb-6" />
+      <div class="prose prose-lg max-w-none" style="color: var(--color-text-secondary);">
+        <p>
+          Poland has historically been seen in Europe as a country of complainers and a blocker. I do not accept this role.
+        </p>
+        <p>
+          Polish positivism — the 19th-century intellectual movement that responded to political defeat by building schools, businesses, and institutions instead of complaining about the political defeat — is the right method for European reform too. It is what I think Poland can offer to the European debate that it does not currently offer: a positive method, not just opposition.
+        </p>
+        <p style="color: var(--color-text-primary);"><strong>The method, in four moves:</strong></p>
+        <p>
+          <strong>1. Focus on what works, not on what does not.</strong> The European Union has many working pieces — single market, free movement, common standards, common research programmes, Erasmus, the regulatory weight that gave us GDPR and the AI Act. Build on what works. Do not start by attacking it. Even if you disagree with parts of the EU, the credible reformer is the one who acknowledges the working parts before proposing additions.
+        </p>
+        <p>
+          <strong>2. Identify the lowest-hanging fruit.</strong> Things that are obviously broken, obviously fixable, and that almost everyone could agree on if proposed clearly. A package from China to Poland arrives faster than a letter from Poland to Portugal. Twenty-seven national e-learning platforms were built from scratch during the pandemic. A Polish engineer working in Germany has to fight German bureaucracy in German. These are obvious problems with obvious answers. They do not need a constitutional convention. They need someone to point at them and say: <em>let us fix this one.</em>
+        </p>
+        <p>
+          <strong>3. Frame everything as growth, not redistribution.</strong> Economic growth that benefits every member state is the only kind of integration that survives the next political cycle. Integration framed as "those who have should give to those who do not" gets reversed by the first electoral backlash, no matter how morally appealing it is. Integration framed as "let us make a bigger pie together" survives.
+        </p>
+        <p>
+          <strong>4. Build, then propose.</strong> The most credible advocate of any reform is someone who has shown a working prototype. I would rather see one functioning European programme that nobody can argue with than ten elegant proposals that never ship.
+        </p>
+        <p>
+          This is what Polish positivism brings: a refusal to be the blocker, a refusal to be the complainer, an insistence on building.
+        </p>
+      </div>
+    </section>
+
+    <!-- Closing synthesis -->
+    <section class="mb-16 p-8 rounded-xl"
+             style="background-color: var(--color-bg-secondary); border-left: 4px solid var(--color-accent-primary);">
+      <p class="text-lg leading-relaxed" style="color: var(--color-text-primary);">
+        Read together, these six principles define a particular kind of European reform: <strong>ambitious in direction, modest in mechanism, respectful of sovereignty, additive rather than substitutive, positive rather than reactive.</strong> They are the conditions under which I think the European Union can survive the next twenty years. They are also the conditions under which I, as a Pole and an engineer, am willing to advocate for it.
+      </p>
+    </section>
+
+    <!-- Call to Action -->
     <div class="mt-12 text-center">
-      <a href="/vision" class="inline-block px-8 py-4 rounded-lg font-medium transition-colors duration-300" 
+      <a href="/vision" class="inline-block px-8 py-4 rounded-lg font-medium transition-colors duration-300"
          style="background: linear-gradient(to right, var(--color-accent-primary), var(--color-accent-secondary)); color: white;">
-        Explore the Full Vision
+        See the Full Vision
       </a>
     </div>
   </main>
