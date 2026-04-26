@@ -24,3 +24,4 @@ pnpm-debug.log*
 
 # temporary content folder
 src/pages/vision/add/*
+.gstack/
