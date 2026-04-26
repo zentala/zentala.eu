@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/ResourcesLayout.astro
 title: "Wdrożenie: nowe /principles + sekcja health AI jako case study"
+description: "Notatka z wdrożenia 5 nowych zasad i sztandarowego case study cyfrowej opieki zdrowotnej. Co zrobione, co dalej."
 datetime: "2026-04-26T01:15"
 ---
 

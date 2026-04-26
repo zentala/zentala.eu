@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/ResourcesLayout.astro
 title: "Zasady v2 — pełna rewizja, 6 zasad, kultura przeformułowana"
+description: "Druga rewizja /principles. 6 zasad zamiast 5. Nowa #5 (Additive Reform). Zasada o kulturze przeformułowana — nie odrzuca wspólnej kultury, ale buduje ją przez syntezę."
 datetime: "2026-04-26T02:00"
 ---
 

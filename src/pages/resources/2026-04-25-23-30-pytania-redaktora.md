@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/ResourcesLayout.astro
 title: "Pytania redaktora — co zmienić, co uzupełnić, co poprawić"
+description: "Plan działań na stronie + pytania, na które autor musi odpowiedzieć by domknąć manifest. Trzy sekcje: zmiany, uzupełnienia, refinementy."
 datetime: "2026-04-25T23:30"
 ---
 

@@ -1,84 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 
-const pages = [
-  {
-    slug: '2026-04-26-04-00-plan-dalszych-prac',
-    title: 'Plan dalszych prac — backlog uporządkowany',
-    datetime: '2026-04-26T04:00',
-    description: 'Pełny przegląd: co zrobione, co z dokumentu redaktora zostało, co nowe się pojawiło w rozmowie. Cztery warianty kolejności + 5 pytań do decyzji autora.',
-  },
-  {
-    slug: '2026-04-26-02-30-research-pozytywizm',
-    title: 'Research: Polski pozytywizm — geneza, idee, możliwe zastosowania',
-    datetime: '2026-04-26T02:30',
-    description: 'Notatka badawcza o polskim pozytywizmie — od powstania styczniowego do dziś. Co pasuje do manifestu, co nie, 5 propozycji sformułowań zasady #6. Autor: subagent Claude Sonnet 4.6.',
-  },
-  {
-    slug: '2026-04-26-02-00-zasady-v2-przepisane',
-    title: 'Zasady v2 — pełna rewizja, 6 zasad, kultura przeformułowana',
-    datetime: '2026-04-26T02:00',
-    description: 'Druga rewizja /principles. 6 zasad zamiast 5. Nowa #5 (Additive Reform). Zasada o kulturze przeformułowana — nie odrzuca wspólnej kultury, ale buduje ją przez syntezę.',
-  },
-  {
-    slug: '2026-04-26-01-15-wdrozenie-zasad',
-    title: 'Wdrożenie: nowe /principles + health AI jako case study',
-    datetime: '2026-04-26T01:15',
-    description: 'Notatka z wdrożenia 5 nowych zasad i sztandarowego case study cyfrowej opieki zdrowotnej. Co zrobione, co dalej.',
-  },
-  {
-    slug: '2026-04-26-00-30-odpowiedzi-b1-b3',
-    title: 'Odpowiedzi autora na pytania B1-B3 — surowy materiał',
-    datetime: '2026-04-26T00:30',
-    description: 'Surowy materiał źródłowy do manifestu. Osobista narracja, sen o statku kosmicznym, mama w sądzie, Aurora, demokracja cyfrowa, pozycje na sporne tematy.',
-  },
-  {
-    slug: '2026-04-25-23-30-pytania-redaktora',
-    title: 'Pytania redaktora — co zmienić, co uzupełnić, co poprawić',
-    datetime: '2026-04-25T23:30',
-    description: 'Plan działań na stronie + pytania, na które autor musi odpowiedzieć by domknąć manifest. Trzy sekcje: zmiany, uzupełnienia, refinementy.',
-  },
-  {
-    slug: '2026-04-25-22-27-cee-sojusznicy',
-    title: 'CEE jako naturalni sojusznicy',
-    datetime: '2026-04-25T22:27',
-    description: 'Polska jako lider, Ukraina bez akcesji, Skandynawia — trzy koalicje i narracja "nowej Europy".',
-  },
-  {
-    slug: '2026-04-25-22-16-vision',
-    title: 'Wizja serwisu (.arch/VISION.md)',
-    datetime: '2026-04-25T22:16',
-    description: 'Podgląd VISION.md — czym jest serwis, metafora OS, hierarchia argumentów, głos, audience.',
-  },
-  {
-    slug: '2026-04-25-22-13-strategia-manifestu',
-    title: 'Strategia: zentala.eu jako manifest osobisty',
-    datetime: '2026-04-25T22:13',
-    description: 'Decyzja strategiczna, wytyczne komunikacyjne, hierarchia argumentów, lista TODO.',
-  },
-  {
-    slug: '2026-04-25-21-20-trzy-podejscia',
-    title: 'Trzy podejścia: manifest, platforma, policy paper',
-    datetime: '2026-04-25T21:20',
-    description: 'Analiza porównawcza trzech możliwych strategii — co wybrać, co usunąć, na czym skupić.',
-  },
-  {
-    slug: '2026-04-25-21-19-feedback',
-    title: 'Feedback: zentala.eu',
-    datetime: '2026-04-25T21:19',
-    description: 'Recenzja serwisu z perspektywy pisarza, publicysty i aktywisty. Autorstwo: Claude AI.',
-  },
-].sort((a, b) => b.datetime.localeCompare(a.datetime))
+const modules = import.meta.glob('./*.md', { eager: true })
+
+const pages = Object.entries(modules)
+  .map(([path, mod]: [string, any]) => ({
+    slug: path.replace('./', '').replace('.md', ''),
+    title: mod.frontmatter.title,
+    datetime: mod.frontmatter.datetime,
+    description: mod.frontmatter.description,
+  }))
+  .sort((a, b) => b.datetime.localeCompare(a.datetime))
 ---
 
-<Layout title="Prywatne notatki">
+<Layout title="Notatki i zasoby">
   <main class="max-w-3xl mx-auto px-6 py-12">
     <div class="mb-10">
       <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-mono px-3 py-1 rounded mb-4">
-        🔒 PRYWATNA SEKCJA
+        🔒 SEKCJA ROBOCZA
       </div>
-      <h1 class="text-3xl font-bold mb-3" style="font-family: 'Playfair Display', serif">Notatki robocze</h1>
-      <p class="opacity-60 text-sm">Dokumenty wygenerowane przez Claude AI. Posortowane od najnowszego.<br>Nie publiczne, nieindeksowane.</p>
+      <h1 class="text-3xl font-bold mb-3" style="font-family: 'Playfair Display', serif">Notatki i zasoby</h1>
+      <p class="opacity-60 text-sm">Materiały źródłowe do manifestu. Posortowane od najnowszego.<br>Nie publiczne, nieindeksowane.</p>
     </div>
 
     <div class="space-y-4">

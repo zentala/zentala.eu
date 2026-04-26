@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/ResourcesLayout.astro
 title: "Strategia: zentala.eu jako manifest osobisty"
+description: "Decyzja strategiczna, wytyczne komunikacyjne, hierarchia argumentów, lista TODO."
 datetime: "2026-04-25T22:13"
 ---
 

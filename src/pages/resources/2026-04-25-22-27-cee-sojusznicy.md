@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/ResourcesLayout.astro
 title: "CEE jako naturalni sojusznicy — dlaczego i jak o tym mówić"
+description: "Polska jako lider, Ukraina bez akcesji, Skandynawia — trzy koalicje i narracja 'nowej Europy'."
 datetime: "2026-04-25T22:27"
 ---
 

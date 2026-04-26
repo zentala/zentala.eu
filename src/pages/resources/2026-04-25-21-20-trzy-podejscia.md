@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/ResourcesLayout.astro
 title: "Trzy podejścia do serwisu: manifest, platforma ruchowa, policy paper"
+description: "Analiza porównawcza trzech możliwych strategii — co wybrać, co usunąć, na czym skupić."
 datetime: "2026-04-25T21:20"
 ---
 

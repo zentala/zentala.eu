@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/ResourcesLayout.astro
 title: "Plan dalszych prac — backlog uporządkowany"
+description: "Pełny przegląd: co zrobione, co z dokumentu redaktora zostało, co nowe się pojawiło w rozmowie. Cztery warianty kolejności + 5 pytań do decyzji autora."
 datetime: "2026-04-26T04:00"
 ---
 

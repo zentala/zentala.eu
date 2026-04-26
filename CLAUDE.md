@@ -17,6 +17,9 @@
 - `/src/components/` - Astro components
 - `/src/layouts/` - Page layouts
 - `/src/pages/` - Route pages
+- `/src/pages/resources/` - Working notes and research materials (private, noindex).
+  New documents: add `.md` file with frontmatter: `layout`, `title`, `datetime`, `description`.
+  Auto-listed on `/resources` index via `import.meta.glob`.
 
 ## Tech Stack
 - Astro with strict TypeScript

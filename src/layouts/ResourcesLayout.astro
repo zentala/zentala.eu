@@ -51,7 +51,7 @@ const displayTime = datetime ?? date
     <main class="max-w-3xl mx-auto px-6 py-12">
       <div class="mb-8 pb-6 border-b border-amber-500/30">
         <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-mono px-3 py-1 rounded mb-4">
-          🔒 PRYWATNA SEKCJA — nie indeksowana, nie linkowana publicznie
+          🔒 SEKCJA ROBOCZA — nie indeksowana, nie linkowana publicznie
         </div>
         <h1 class="text-3xl font-bold mb-2" style="font-family: 'Playfair Display', serif">{title}</h1>
         {displayTime && <p class="text-sm opacity-50 font-mono">{displayTime.replace('T', ' ')}</p>}
@@ -60,7 +60,7 @@ const displayTime = datetime ?? date
         <slot />
       </article>
       <div class="mt-12 pt-6 border-t border-opacity-20">
-        <a href="/resources" class="text-sm opacity-50 hover:opacity-100 transition-opacity">← Wszystkie prywatne notatki</a>
+        <a href="/resources" class="text-sm opacity-50 hover:opacity-100 transition-opacity">← Wszystkie zasoby</a>
       </div>
     </main>
     <Footer />

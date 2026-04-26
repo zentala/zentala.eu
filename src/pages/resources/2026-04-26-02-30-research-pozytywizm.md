@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/ResourcesLayout.astro
 title: "Research: Polski pozytywizm — geneza, idee, możliwe zastosowania w manifeście"
+description: "Notatka badawcza o polskim pozytywizmie — od powstania styczniowego do dziś. Co pasuje do manifestu, co nie, 5 propozycji sformułowań zasady #6. Autor: subagent Claude Sonnet 4.6."
 datetime: "2026-04-26T02:30"
 ---
 
