@@ -33,6 +33,15 @@
 - Use descriptive naming for files and components
 - All code comments must be in English, even if communication is in Polish
 
+## [CRITICAL] Before writing any content
+
+**Read `WRITING.md` before writing or editing any content, copy, or page text.**
+
+It contains: voice rules, the central metaphor, argument hierarchy, target audience, what to avoid.
+Full vision: `.arch/VISION.md`
+
+When in doubt: ask "does this sound like a Polish engineer speaking directly?" If no — rewrite.
+
 ## Content Guidelines
 - Store documentation in MDX format with required frontmatter: title, description, tags, author
 - All content should be written in English
