@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro'
+import DisplayTitle from '../components/DisplayTitle.astro'
+---
+
+<Layout title="About — Paweł Żentała">
+  <main class="container mx-auto max-w-3xl px-6 py-12">
+
+    <!-- Hero -->
+    <section class="flex flex-col md:flex-row gap-8 items-start mb-16">
+      <div class="flex-shrink-0">
+        <div class="relative w-40 h-40 rounded-full overflow-hidden border-4" style="border-color: var(--color-border);">
+          <img
+            src="https://id.zentala.io/pawel-zentala-scaled.6e896144.jpg"
+            alt="Paweł Żentała"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+      <div>
+        <h1 class="text-4xl font-bold mb-3" style="font-family: 'Playfair Display', serif; color: var(--color-text-primary);">
+          Paweł Żentała
+        </h1>
+        <p class="text-xl mb-2" style="color: var(--color-text-secondary);">
+          Polish software architect. Innovation activist.
+        </p>
+        <p class="text-base" style="color: var(--color-text-secondary); opacity: 0.8;">
+          I write about innovation. European reform is one of my topics — the one that shapes the future of where I live and where my parents live.
+        </p>
+      </div>
+    </section>
+
+    <!-- Opening: the dream -->
+    <section class="mb-16">
+      <div class="p-8 rounded-xl" style="background-color: var(--color-bg-secondary); border-left: 4px solid var(--color-accent-primary);">
+        <p class="text-sm uppercase tracking-wider mb-4" style="color: var(--color-accent-primary);">
+          A dream I had
+        </p>
+        <div class="prose prose-lg max-w-none" style="color: var(--color-text-secondary);">
+          <p class="italic leading-relaxed">
+            I dreamt that I was on a generation ship, somewhere deep in interstellar space. The third or fourth generation, I think. The people who built the ship were long dead. The first crew had carried their knowledge across the void, but as years became decades and decades became lifetimes, the knowledge was not passed on — because the ship worked so well that no one needed it.
+          </p>
+          <p class="italic leading-relaxed">
+            Now we were on board, and the ship was failing. Steam was leaking from joints we had no name for. We patched the breaches with insulating tape and prayed. We did not know how to repair what we did not understand.
+          </p>
+          <p class="italic leading-relaxed">
+            I woke up and recognised it: <strong style="color: var(--color-text-primary);">this is the system we live in.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Origins -->
+    <section class="mb-12">
+      <DisplayTitle level={2} title="How I came to write this" class="mb-6" />
+      <div class="prose prose-lg max-w-none" style="color: var(--color-text-secondary);">
+        <p>
+          More than five years ago, I had a conversation with a friend who told me, almost in passing, that Poland was being seen across Europe as a blocker — the country that complains, vetoes, and refuses to play along. The remark stuck with me. We are one of the most pro-European societies in the Union by every poll, and yet our political reputation is the opposite. Germans, French, Italians put forward proposals for European reform. Poland reacts. Poland blocks. Poland complains.
+        </p>
+        <p>
+          That bothered me enough to start asking the obvious question: why don't we propose something? Not a counter-veto, not a defensive position — an actual reform proposal that comes from us, that reflects our interests and our experience, that gives Europe a Polish voice that says <em>yes, here is what I would build.</em>
+        </p>
+        <p>
+          The answer started with language. Polish, French, Italian, German diplomats sit in Brussels and translate everything three times to do business they could do directly in English — the language they all already use when they actually want to get something done. It was the most obvious low-hanging fruit I had ever seen.
+        </p>
+        <p>
+          Then came other observations. My parents send packages to friends in Portugal; the packages take more than a month each way. A package from China to Poland arrives in a week. We are supposed to be one economic union, and Chinese logistics outperform European logistics across our own continent. That is not a quirk; that is a structural failure.
+        </p>
+        <p>
+          During the pandemic, I watched twenty-seven EU countries each build their own national e-learning platform from scratch. Same modules: gradebook, video classroom, attendance, parent portal. Hundreds of millions of euros of public money spent on duplicating each other's work, badly. If the same money had gone into one shared open-source backbone with national customisation, we would have built something genuinely good. Instead, we got twenty-seven mediocre systems, all of them late.
+        </p>
+        <p>
+          These are not abstract complaints. They are what convinced me that Europe needs a different approach: practical, additive, focused on what works at scale. That is the manifesto.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why now -->
+    <section class="mb-12">
+      <DisplayTitle level={2} title="Why now" class="mb-6" />
+      <div class="prose prose-lg max-w-none" style="color: var(--color-text-secondary);">
+        <p>
+          I considered emigrating from Europe last year. Many of my generation did. The economic logic was clear: better salaries elsewhere, lower taxes, more career options. I started looking seriously.
+        </p>
+        <p>
+          And then I realised something that changed my mind. <strong style="color: var(--color-text-primary);">If the European Union fails, there is nowhere to emigrate to.</strong> The world Europe built — open borders, scientific cooperation, rule of law, the assumption that countries solve disputes by talking instead of shooting — does not exist anywhere else at the same scale. If it disappears here, it disappears everywhere I would want to live.
+        </p>
+        <p>
+          The war in Ukraine and the collapse of the post-1945 international order made this concrete. We are not in a stable world that occasionally has a crisis. We are in a transition where the previous certainties are gone and the new ones have not formed yet. In transitions like this, you either fight for the world you want, or you accept the one you are given.
+        </p>
+        <p>
+          My parents live in Radzyń Podlaski, between thirty and seventy kilometres from the Belarusian border. I work from there sometimes. I am, in the most literal geographic sense, on the potential frontline of any future European war. That is not a metaphor. That is where I sit when I write this.
+        </p>
+        <p>
+          So I am writing it.
+        </p>
+      </div>
+    </section>
+
+    <!-- What I do -->
+    <section class="mb-12">
+      <DisplayTitle level={2} title="What I do" class="mb-6" />
+      <div class="prose prose-lg max-w-none" style="color: var(--color-text-secondary);">
+        <p>
+          I am a software architect. I have spent over a decade designing and building systems — web applications, IoT, robotics — and watching what makes some systems good and others terrible. The patterns are surprisingly consistent across domains.
+        </p>
+        <p>
+          Alongside my engineering work, I have been studying futurology for over ten years. I used to run a "Futures Studies" group on Facebook where I shared what I was learning about emerging technologies — many of which have since become reality. That habit of looking forward, of asking what is technically possible and what would actually improve human life, shaped how I think about reform.
+        </p>
+        <p>
+          I lean toward Polish positivism as a method: rather than complaining about the political system, build the things that make the system better. The 19th-century Polish positivists, denied a state of their own, built schools, factories, scientific institutions, and a press. They did not wait for permission. <em>Pracujmy</em> — let us work — was the slogan. I find it a more useful starting point than any of the modern political vocabularies.
+        </p>
+      </div>
+    </section>
+
+    <!-- What this site is -->
+    <section class="mb-12">
+      <DisplayTitle level={2} title="What this site is" class="mb-6" />
+      <div class="prose prose-lg max-w-none" style="color: var(--color-text-secondary);">
+        <p>
+          This site is my proposal for European reform. It is one of several innovation topics I work on — this one happens to be about Europe, because Europe is where I live and where my parents live and where my future depends on.
+        </p>
+        <p>
+          It is a manifesto, not a movement. I am not building an organisation. I am writing down what I think Europe should do, in the hope that it gives others a useful place to start.
+        </p>
+        <p>
+          The argument has a few moving parts: a common European working language, a common digital backbone for public administration, common robotic and automation capacity for public services and defence, and a particular philosophy about how to do all of this — additively, respecting national sovereignty, building rather than complaining. The <a href="/principles" style="color: var(--color-accent-primary);">principles page</a> sets out the conditions I think any reform must meet.
+        </p>
+        <p>
+          I am also, frankly, afraid of being alone in this. Writing it down is the only thing I can do that might not leave me alone. I was told once that words and thoughts can change the world. I would like to find out whether it is true.
+        </p>
+      </div>
+    </section>
+
+    <!-- Where to find me -->
+    <section class="mb-12">
+      <DisplayTitle level={2} title="Where to find me" class="mb-6" />
+      <div class="flex flex-wrap gap-3">
+        <a href="https://www.linkedin.com/in/zentala/" target="_blank" rel="noopener noreferrer"
+           class="flex items-center gap-2 px-4 py-2 rounded-lg transition-colors"
+           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border); color: var(--color-text-primary);">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/zentala" target="_blank" rel="noopener noreferrer"
+           class="flex items-center gap-2 px-4 py-2 rounded-lg transition-colors"
+           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border); color: var(--color-text-primary);">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://twitter.com/pawelzentala" target="_blank" rel="noopener noreferrer"
+           class="flex items-center gap-2 px-4 py-2 rounded-lg transition-colors"
+           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border); color: var(--color-text-primary);">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+          </svg>
+          Twitter / X
+        </a>
+      </div>
+      <p class="mt-6 text-sm" style="color: var(--color-text-secondary); opacity: 0.7;">
+        A YouTube channel for these ideas is coming. The site you are reading is the written ground for it.
+      </p>
+    </section>
+
+  </main>
+</Layout>
