@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<researchProposal>
+  <metadata>
+    <purpose>
+      Propose research topics to deepen content on zentala.eu. Each topic is cross-linked
+      with existing ideas on the site, and ranked by depth, effort, and strategic value.
+    </purpose>
+    <targetingStrategy>
+      - DEPTH: Understand what the manifest claims, where claims need backing
+      - CREDIBILITY: Fill gaps with data, precedents, success case studies
+      - NARRATIVE: Find stories and examples that illustrate abstract ideas
+      - REGIONAL: Support claims about Central/Eastern Europe naturally
+    </targetingStrategy>
+  </metadata>
+
+  <conceptMap>
+    <theme id="demographic">
+      <name>Demographic Crisis &amp; Aging Europe</name>
+      <coreArgument>Europe's aging population is the economic and social foundation for all other reforms</coreArgument>
+      <concepts>
+        <concept>Old-age dependency ratio (2 workers per pensioner by 2050)</concept>
+        <concept>Emigration losses (Poland, Romania)</concept>
+        <concept>Fertility rates vs. life expectancy trends</concept>
+        <concept>Pension system sustainability</concept>
+        <concept>Healthcare costs with aging (preventive vs. curative)</concept>
+        <concept>Labor shortages in key sectors (care, infrastructure)</concept>
+        <concept>Migration as demographic necessity</concept>
+        <concept>Robotization as solution to care shortage</concept>
+      </concepts>
+      <relevantPages>/why, /support, /benefits</relevantPages>
+      <researchFit>CORE — This is the emotional and logical engine of the entire manifest</researchFit>
+    </theme>
+
+    <theme id="language">
+      <name>Language Integration &amp; Bilingual Europe</name>
+      <coreArgument>Shared language is the infrastructure for all other integration</coreArgument>
+      <concepts>
+        <concept>English adoption rates by country, age, education</concept>
+        <concept>Language barriers in cross-border mobility</concept>
+        <concept>CEFR proficiency levels (B1+ is functional)</concept>
+        <concept>Cost-benefit of bilingual public administration</concept>
+        <concept>Education policy (when/how to teach English)</concept>
+        <concept>Language-economy link (GDP growth with unified language)</concept>
+        <concept>National identity + bilingualism (can both exist?)</concept>
+        <concept>Precedents: Belgium, Luxembourg, Switzerland</concept>
+        <concept>Learning models: immersion vs. traditional</concept>
+      </concepts>
+      <relevantPages>/docs/ideas/culture/language-integration, /docs/book/language, /docs/book/economic-growth-language-unity</relevantPages>
+      <researchFit>HIGH — Central to Pillar 1, but often asserted without deep support</researchFit>
+    </theme>
+
+    <theme id="egov">
+      <name>Digital Government (e-Gov) &amp; Public Service Digitization</name>
+      <coreArgument>Unified digital government is economically transformative and politically feasible</coreArgument>
+      <concepts>
+        <concept>Estonia's e-government model (digital-first, secure)</concept>
+        <concept>EU eIDAS regulation (digital identity framework)</concept>
+        <concept>Once-only principle (enter data once, reuse across agencies)</concept>
+        <concept>Cost savings from unified vs. fragmented systems</concept>
+        <concept>Cybersecurity requirements for sensitive data</concept>
+        <concept>Interoperability standards (APIs, data formats)</concept>
+        <concept>Privacy by design in digital government</concept>
+        <concept>Citizen trust and digital literacy barriers</concept>
+        <concept>Implementation timeline (Estonia took 20+ years)</concept>
+        <concept>Digital divide (elderly, rural, low-income access)</concept>
+      </concepts>
+      <relevantPages>/docs/book/eGov-vison, /docs/book/eGov-challenges, /docs/ideas/governance/european-egovernment</relevantPages>
+      <researchFit>VERY HIGH — Pillar 2, but challenges acknowledged; needs solutions research</researchFit>
+    </theme>
+
+    <theme id="blockchain">
+      <name>Blockchain, Digital Records &amp; Immutable Archives</name>
+      <coreArgument>Blockchain provides secure, tamper-proof record-keeping for state and citizens</coreArgument>
+      <concepts>
+        <concept>Blockchain use cases beyond cryptocurrency (contracts, records, voting)</concept>
+        <concept>Smart contracts for automated legal agreements</concept>
+        <concept>Decentralized identity (self-sovereign identity, SSI)</concept>
+        <concept>Digital receipts (ledger of citizen-state transactions)</concept>
+        <concept>Public records integrity (land titles, property, licenses)</concept>
+        <concept>Health record portability across EU borders</concept>
+        <concept>Regulatory concerns (GDPR, data minimization)</concept>
+        <concept>Scalability challenges (throughput, energy consumption)</concept>
+        <concept>Interledger protocols (connecting national blockchains)</concept>
+        <concept>Governance: who controls the nodes?</concept>
+      </concepts>
+      <relevantPages>/docs/book/european-blockchain-archives, /docs/ideas/governance/blockchain-state, /docs/ideas/finance/</relevantPages>
+      <researchFit>HIGH — Bold but underdeveloped. Needs technical + policy research</researchFit>
+    </theme>
+
+    <theme id="payment">
+      <name>Unified Payment Zone &amp; Financial Integration</name>
+      <coreArgument>Near-zero transaction costs unlock cross-border commerce and integration</coreArgument>
+      <concepts>
+        <concept>Current cross-border payment costs (SEPA vs. international)</concept>
+        <concept>Instant payments (ISO 20022, Real Time Gross Settlement)</concept>
+        <concept>Central bank digital currency (CBDC) EU design</concept>
+        <concept>Cryptocurrency vs. CBDC tradeoffs</concept>
+        <concept>Anti-money laundering (AML) in instant payment systems</concept>
+        <concept>Currency conversion friction (hedging costs)</concept>
+        <concept>Shadow banking and financial stability risks</concept>
+        <concept>Digital wallets and accessibility (unbanked populations)</concept>
+        <concept>Target2 architecture (European backbone, exists)</concept>
+        <concept>Precedents: China's digital yuan, Singpore's Project Dunbar</concept>
+      </concepts>
+      <relevantPages>/docs/book/unified-payment-zone, /docs/book/near-zero-transaction-costs, /docs/ideas/finance/</relevantPages>
+      <researchFit>MEDIUM-HIGH — Specific, measurable, but technically complex. Needs deep finance research</researchFit>
+    </theme>
+
+    <theme id="transportation">
+      <name>Autonomous Transportation &amp; Logistics Integration</name>
+      <coreArgument>EU-wide autonomous mobility creates economies of scale and labor reallocation</coreArgument>
+      <concepts>
+        <concept>Autonomous vehicle maturity by category (trucks, buses, last-mile, trains)</concept>
+        <concept>Regulatory harmonization (vehicle standards, liability, data)</concept>
+        <concept>Infrastructure for autonomous systems (5G, wireless charging, V2X)</concept>
+        <concept>Labor displacement and retraining (drivers → other sectors)</concept>
+        <concept>Logistics cost reduction potential (fuel, driver hours, accidents)</concept>
+        <concept>Supply chain resilience (single EU logistics network vs. national silos)</concept>
+        <concept>Environmental impact (electric fleets, reduced congestion)</concept>
+        <concept>Safety record of autonomous vs. human drivers (data needed)</concept>
+        <concept>Cross-border coordination (trucks, trains, seamless networks)</concept>
+        <concept>Private vs. public operation (who owns the network?)</concept>
+      </concepts>
+      <relevantPages>/docs/ideas/transportation/autonomous-transportation, /docs/ideas/transportation/autonomous-multimodal</relevantPages>
+      <researchFit>HIGH — Pillar 3 implication, but needs technical + economic specifics</researchFit>
+    </theme>
+
+    <theme id="robotics">
+      <name>Robotization &amp; Reindustrialization</name>
+      <coreArgument>Europe can lead a global robotics revolution; robots solve the aging problem</coreArgument>
+      <concepts>
+        <concept>Robotic adoption by sector (manufacturing, healthcare, agriculture, logistics)</concept>
+        <concept>Care robots for elderly (exoskeleton, social robots, mobile manipulation)</concept>
+        <concept>Industrial robotics (advanced manufacturing return to Europe)</concept>
+        <concept>Upskilling workforce for robotics jobs (programming, maintenance, design)</concept>
+        <concept>EU robotics research leaders (KUKA, ABB, newer startups)</concept>
+        <concept>Comparison: US robotics dominance, China roboticization</concept>
+        <concept>Economic ROI: labor cost savings vs. capital investment</concept>
+        <concept>Job displacement vs. new job creation (historical patterns)</concept>
+        <concept>Digital infrastructure for swarms of robots (5G, edge computing)</concept>
+        <concept>Ethical concerns (automation bias, consent, privacy in care)</concept>
+      </concepts>
+      <relevantPages>/docs/ideas/technology/autonomous-robotics-system, /docs/book/predictive-healthcare-system (care context)</relevantPages>
+      <researchFit>VERY HIGH — Central to Pillar 3 ("Robotization"), but speculative. Needs data-backed scenarios</researchFit>
+    </theme>
+
+    <theme id="healthcare">
+      <name>Predictive Healthcare &amp; EU-wide Health Data</name>
+      <coreArgument>Unified health data enables preventive medicine and cost control</coreArgument>
+      <concepts>
+        <concept>Health data interoperability (EHR standards, HL7 FHIR)</concept>
+        <concept>Cross-border health data sharing (GDPR compliance, consent models)</concept>
+        <concept>Predictive analytics (ML on population health data)</concept>
+        <concept>Precision medicine (genetic data, personalized treatment)</concept>
+        <concept>AI diagnostics (accuracy vs. human radiologists, regulatory approval)</concept>
+        <concept>Aging-related disease prediction (dementia, frailty, falls)</concept>
+        <concept>Remote monitoring (wearables, home sensors, IoT)</concept>
+        <concept>Digital therapeutics (apps replacing pills, evidence needed)</concept>
+        <concept>Regulatory barriers (national health ministries, insurance systems)</concept>
+        <concept>Cost-benefit (savings from prevention vs. data infrastructure investment)</concept>
+      </concepts>
+      <relevantPages>/docs/book/predictive-healthcare-system</relevantPages>
+      <researchFit>HIGH — Directly addresses aging crisis + digital integration, but needs medical data + policy research</researchFit>
+    </theme>
+
+    <theme id="education">
+      <name>European e-Learning &amp; Skills Certification</name>
+      <coreArgument>Unified education platform creates portable credentials and lifelong learning</coreArgument>
+      <concepts>
+        <concept>Digital learning outcomes (ECTS for skills, not degrees)</concept>
+        <concept>Microcredentials and stackable certificates</concept>
+        <concept>Learning management systems (LMS) interoperability</concept>
+        <concept>Lifelong learning culture and access (adult learners, rural areas)</concept>
+        <concept>Skills gap analysis by country and sector</concept>
+        <concept>GDPR in education tech (student data, learning analytics)</concept>
+        <concept>Teacher training for digital delivery</concept>
+        <concept>Accessibility (multilingual, disabilities, low-bandwidth)</concept>
+        <concept>Precedents: Coursera, EdX, EU's OpenLearning)</concept>
+        <concept>Proof of Skill vs. diploma (recognition, labor market value)</concept>
+      </concepts>
+      <relevantPages>/docs/book/european-elearning-system, /docs/ideas/education/european-proof-of-skill</relevantPages>
+      <researchFit>MEDIUM — Supportive but not central. Research adds depth to career mobility argument</researchFit>
+    </theme>
+
+    <theme id="culture">
+      <name>Cultural Integration &amp; Shared European Identity</name>
+      <coreArgument>Shared infrastructure naturally creates cultural bonds without erasing national identity</coreArgument>
+      <concepts>
+        <concept>Cultural exchange history (Erasmus+, EU film, music industries)</concept>
+        <concept>Media infrastructure (streaming, broadcasting, cross-border rights)</concept>
+        <concept>European identity research (survey data on national vs. European identity)</concept>
+        <concept>Symbols and narratives (flag, anthem, shared heroes vs. national pride)</concept>
+        <concept>Religion and identity in secular Europe</concept>
+        <concept>Immigration and cultural integration (inclusion models)</concept>
+        <concept>Soft power: EU as cultural model vs. US, China</concept>
+        <concept>Street naming as identity (standardized EU addressing system)</concept>
+      </concepts>
+      <relevantPages>/docs/book/media-cultural-integration, /docs/ideas/infrastructure/european-street-naming, /docs/ideas/culture/language-integration</relevantPages>
+      <researchFit>MEDIUM — Important but less urgent than technical topics. Good for humanizing the vision</researchFit>
+    </theme>
+
+    <theme id="security">
+      <name>Technological Sovereignty &amp; Cybersecurity</name>
+      <coreArgument>Digital independence is political independence; Europe needs own tech infrastructure</coreArgument>
+      <concepts>
+        <concept>EU tech dependence on US (cloud, semiconductors, AI models)</concept>
+        <concept>Geopolitical risks (sanctions, access cutoffs, Ukraine example)</concept>
+        <concept>Cybersecurity frameworks (NIS2, GDPR, critical infrastructure protection)</concept>
+        <concept>Quantum computing threats to current encryption</concept>
+        <concept>Open-source infrastructure as sovereignty strategy</concept>
+        <concept>Semiconductor manufacturing in EU (Intel, TSMC, GlobalFoundries plans)</concept>
+        <concept>AI sovereignty (EU AI Act, homegrown AI models)</concept>
+        <concept>Zero-trust architecture for government systems</concept>
+        <concept>Precedents: China's tech stack, Russia's sovereign internet</concept>
+        <concept>Cost of digital independence vs. integration benefits</concept>
+      </concepts>
+      <relevantPages>/docs/why (Technological Independence argument), Articles on cybersecurity</relevantPages>
+      <researchFit>VERY HIGH — Core to "why now" argument but needs technical + geopolitical depth</researchFit>
+    </theme>
+
+    <theme id="migration">
+      <name>Migration, Identity &amp; Digital Borders</name>
+      <coreArgument>Digital identity systems enable fair migration; not a wall, but the foundation of justice</coreArgument>
+      <concepts>
+        <concept>Current EU migration policy and challenges (Dublin III, border control)</concept>
+        <concept>Digital identity and border verification tech (biometrics, blockchain ID)</concept>
+        <concept>Asylum processing timelines and bottlenecks</concept>
+        <concept>Integration outcomes (language, employment, housing by country)</concept>
+        <concept>Brain drain from Central/Eastern Europe (push factors, EU opportunity)</concept>
+        <concept>Migration demographics (aging West vs. young East/South)</concept>
+        <concept>Skills recognition for migrants (credentials, licensing)</concept>
+        <concept>Refugee vs. economic migrant distinction (legal, practical)</concept>
+        <concept>Remote monitoring alternatives (tracking, surveillance ethics)</concept>
+      </concepts>
+      <relevantPages>/docs/why (migration argument), /benefits (regional specifics)</relevantPages>
+      <researchFit>HIGH — Sensitive topic but crucial to Central/Eastern Europe narrative and practical integration</researchFit>
+    </theme>
+
+    <theme id="environment">
+      <name>Environmental Integration &amp; Sustainability</name>
+      <coreArgument>EU environmental standards are unified; digital systems enable enforcement</coreArgument>
+      <concepts>
+        <concept>EU Green Deal targets and timelines</concept>
+        <concept>Emissions trading system (ETS) and carbon pricing</concept>
+        <concept>Renewable energy grid integration across borders</concept>
+        <concept>Circular economy requirements (waste, recycling)</concept>
+        <concept>Agricultural sustainability (precision farming, robotics)</concept>
+        <concept>Environmental monitoring (satellites, IoT sensors, data)</concept>
+        <concept>Just transition (job losses in fossil fuel regions)</concept>
+        <concept>Precedents: Nordic model, Costa Rica decarbonization</concept>
+        <concept>Biodiversity loss and species protection</concept>
+      </concepts>
+      <relevantPages>/docs/ideas/environment/environment</relevantPages>
+      <researchFit>MEDIUM-LOW — Not core to manifest, but reinforces urgency + regional opportunity</researchFit>
+    </theme>
+  </conceptMap>
+
+  <researchTopics>
+    <!-- ==================== TIER 1: FOUNDATIONAL (High Impact, Essential for Credibility) ==================== -->
+    <tier name="TIER 1: Foundational" priority="CRITICAL">
+      <description>
+        These research topics are essential to the manifest's core claims.
+        Missing research here undermines the entire argument.
+      </description>
+
+      <topic>
+        <id>T1.1</id>
+        <title>Europe's Demographic Crisis: Data, Projections, and Policy Implications</title>
+        <description>
+          Assemble the demographic foundation: Eurostat data on old-age dependency ratio,
+          fertility rates by country, emigration losses (Poland, Romania especially),
+          life expectancy trends, pension system stress tests.
+        </description>
+        <depth>Deep (10–15 pages equivalent)</depth>
+        <effort>Medium (data exists, needs synthesis)</effort>
+        <strategicValue>
+          This is THE OPENING ARGUMENT. Without solid numbers, the manifest sounds speculative.
+          Need: projections to 2050, policy impacts, cost of inaction vs. reform.
+        </strategicValue>
+        <research_approach>
+          - Eurostat (official EU statistics) for baseline data
+          - OECD aging societies reports
+          - Pension sustainability reports (EIOPA)
+          - Emigration/migration databases (UN, EU)
+          - Comparative analysis: Japan, Korea (aging precedents)
+        </research_approach>
+        <relatedConcepts>demographic, healthcare, robotics, migration</relatedConcepts>
+        <existingContent>/why, /support, /benefits</existingContent>
+      </topic>
+
+      <topic>
+        <id>T1.2</id>
+        <title>Draghi Report Deep Dive: EU Competitiveness Crisis &amp; Policy Recommendations</title>
+        <description>
+          Synthesize the 2024 Draghi Report on EU competitiveness. What does it actually say?
+          Why do GDP projections shrink? What are the policy recommendations Draghi makes?
+          How does the manifest align with or diverge from Draghi?
+        </description>
+        <depth>Medium (5–8 pages)</depth>
+        <effort>Medium (report exists, needs analysis + translation for some languages)</effort>
+        <strategicValue>
+          This is the LEGITIMACY PILLAR. Using Draghi as an authority (not a think tank)
+          makes the manifest credible to policymakers.
+        </strategicValue>
+        <research_approach>
+          - Read full Draghi Report (Mario Draghi, 2024, European Commission)
+          - Extract key findings, recommendations, timeline
+          - Compare with manifest proposals (alignment + divergences)
+          - Look for media analysis and policy response
+        </research_approach>
+        <relatedConcepts>egov, language, robotics, security</relatedConcepts>
+        <existingContent>/support (mentions Draghi), /why-reforms (uses Draghi argument)</existingContent>
+      </topic>
+
+      <topic>
+        <id>T1.3</id>
+        <title>Estonia's e-Government Model: 20-Year Case Study of Digital Transformation</title>
+        <description>
+          Estonia went digital-first. How? What was the architecture, timeline, costs, and outcomes?
+          What can Europe learn? What are the pitfalls?
+        </description>
+        <depth>Medium-Deep (8–12 pages)</depth>
+        <effort>Medium (Estonia is a favorite case study; data is available)</effort>
+        <strategicValue>
+          PROOF THAT PILLAR 2 IS FEASIBLE. "Look, it's been done at national scale."
+          Also addresses Central/Eastern Europe (Estonia = role model for region).
+        </strategicValue>
+        <research_approach>
+          - Estonia's digital government (e-governance portal, digital ID, blockchain)
+          - Timeline: 1990s–2020s development
+          - Cost-benefit analysis (savings, efficiency gains)
+          - Technical architecture (public key infrastructure, interoperability)
+          - Lessons and challenges (cultural shift, elderly access, cost of updates)
+          - Media/reports: Estonian government, EU case studies, academic papers
+        </research_approach>
+        <relatedConcepts>egov, language, security</relatedConcepts>
+        <existingContent>/docs/book/eGov-vison (mentions Estonia briefly, needs depth)</existingContent>
+      </topic>
+
+      <topic>
+        <id>T1.4</id>
+        <title>English Language Adoption in Europe: Proficiency, Barriers, and Policy Models</title>
+        <description>
+          Current English proficiency levels by country, age, education level.
+          What are the barriers? What policy models work (immersion, traditional teaching)?
+          What's the ROI of bilingual administration?
+        </description>
+        <depth>Medium (6–10 pages)</depth>
+        <effort>Medium (EF English Proficiency Index, Eurostat language surveys)</effort>
+        <strategicValue>
+          PILLAR 1 depends on this. "English is easy" ≠ "Everyone can do it."
+          Need data on what's realistic and what policy changes it.
+        </strategicValue>
+        <research_approach>
+          - EF English Proficiency Index (annual rankings by country)
+          - Eurostat language proficiency surveys (EU citizens)
+          - National education policy (when English taught, hours, outcomes)
+          - Case studies: Belgium, Luxembourg, Netherlands (successful models)
+          - Economic cost-benefit (business case for bilingual admin)
+        </research_approach>
+        <relatedConcepts>language, education, migration</relatedConcepts>
+        <existingContent>/docs/ideas/culture/language-integration (claims bilingual is feasible, needs data)</existingContent>
+      </topic>
+
+      <topic>
+        <id>T1.5</id>
+        <title>Central &amp; Eastern Europe's Tech Readiness and Strategic Position</title>
+        <description>
+          Why are Poland, Baltics, Ukraine natural allies? Data on tech sectors,
+          demographic crisis (emigration losses), security concerns, e-government maturity.
+        </description>
+        <depth>Deep (10–15 pages)</depth>
+        <effort>Medium-High (requires country-specific research)</effort>
+        <strategicValue>
+          REGIONAL ARGUMENT. The manifest says CEE are natural allies. Prove it with data.
+          This also serves as narrative for addressing those audiences directly.
+        </strategicValue>
+        <research_approach>
+          - DESI Index (Digital Economy and Society Index) scores by country
+          - Tech sector size and growth (startup ecosystems, employment)
+          - Emigration data (Poland, Romania, Bulgaria — where did they go, why?)
+          - Demographics (birth rates, aging, workforce trends)
+          - Security perception (Russia proximity, NATO membership)
+          - Tech leaders (Estonia, Poland startups, Czech academic centers)
+          - Surveys: European identity, EU support by country
+        </research_approach>
+        <relatedConcepts>egov, language, robotics, migration, security</relatedConcepts>
+        <existingContent>/benefits (added CEE section, needs supporting data)</existingContent>
+      </topic>
+    </tier>
+
+    <!-- ==================== TIER 2: PILLAR SUPPORT (Deep Topic Deep-Dives) ==================== -->
+    <tier name="TIER 2: Pillar Support" priority="HIGH">
+      <description>
+        These topics strengthen each of the Three Pillars.
+        Less critical than Tier 1, but each adds significant depth to a pillar.
+      </description>
+
+      <!-- PILLAR 1: Language Integration -->
+      <topic>
+        <id>T2.1</id>
+        <title>Language as Economic Infrastructure: GDP Growth from Unified Markets</title>
+        <description>
+          The link between language unity and economic integration.
+          How much of GDP growth in single-language markets is due to unified language?
+          What's the cost of language fragmentation?
+        </description>
+        <depth>Medium (6–8 pages)</depth>
+        <effort>High (requires economics research, CGE modeling may be needed)</effort>
+        <strategicValue>
+          Makes Pillar 1 tangible: "Your salary will be higher in a bilingual Europe."
+          Moves from cultural argument to economic.
+        </strategicValue>
+        <research_approach>
+          - Gravity models of trade (language as trade facilitator)
+          - Single market research (trade growth post-euro-zone)
+          - Tech industry: English as competitive advantage
+          - Comparative analysis: US internal market (single language) vs. EU
+          - Labor mobility literature (language as barrier/facilitator)
+        </research_approach>
+        <relatedConcepts>language, education</relatedConcepts>
+      </topic>
+
+      <topic>
+        <id>T2.2</id>
+        <title>Blockchain in Government: From Theory to Implementation Challenges</title>
+        <description>
+          When is blockchain actually useful in government? Where are the hype-kills?
+          What are the real use cases (digital records, smart contracts, identity)?
+          What are the regulatory and technical barriers?
+        </description>
+        <depth>Medium (6–8 pages)</depth>
+        <effort>Medium (blockchain literature is huge; need to filter signal from noise)</effort>
+        <strategicValue>
+          Pillar 2 technical depth. "Blockchain is not magic; here's what it actually solves."
+          Reduces credibility risk of sounding speculative.
+        </strategicValue>
+        <research_approach>
+          - Academic papers: blockchain for identity, smart contracts, public records
+          - Government pilots: Estonia, EU, UK (what worked, what didn't)
+          - Technical specs: scalability (throughput, storage), energy (PoW vs. PoS)
+          - Legal: GDPR compliance (right to be forgotten, blockchain immutability conflict)
+          - Precedents: Singapore, UAE digital government (no blockchain; why?), El Salvador Bitcoin
+        </research_approach>
+        <relatedConcepts>blockchain, egov, security</relatedConcepts>
+      </topic>
+
+      <topic>
+        <id>T2.3</id>
+        <title>Digital Payment Infrastructure: CBDC vs. Stablecoins vs. Instant Payments</title>
+        <description>
+          What are the options for near-zero transaction costs?
+          Central bank digital currency (CBDC), cryptocurrency, or just better instant payments?
+          Tradeoffs: control, privacy, speed, cost.
+        </description>
+        <depth>Medium-Deep (8–12 pages)</depth>
+        <effort>High (fintech + central banking expertise needed)</effort>
+        <strategicValue>
+          Makes Pillar 2 (financial integration) concrete and grounded.
+          Avoids "just use Bitcoin" naivety; shows real options.
+        </strategicValue>
+        <research_approach>
+          - CBDC projects: EU (digital euro), US (research stage), China (DCEP)
+          - Instant payments: ISO 20022, SEPA, Target Instant Payment Settlement
+          - Stablecoins: technical design, regulatory status, adoption
+          - Privacy tradeoff: surveillance vs. anonymity in payments
+          - Unbanked access (digital wallet ecosystems)
+          - Precedents: China's digital yuan (design, adoption), El Salvador Bitcoin
+        </research_approach>
+        <relatedConcepts>payment, blockchain, security</relatedConcepts>
+      </topic>
+
+      <!-- PILLAR 3: Robotization -->
+      <topic>
+        <id>T2.4</id>
+        <title>Care Robots and Aging in Place: Current Maturity and Future Scenarios</title>
+        <description>
+          What robots exist today for elderly care? What's the timeline to maturity?
+          Cost per robot, training needs, acceptance, regulatory status?
+          Does this actually scale to solve the aging crisis?
+        </description>
+        <depth>Medium-Deep (10–12 pages)</depth>
+        <effort>High (robotics R&amp;D data + scenario modeling)</effort>
+        <strategicValue>
+          Bridges Pillar 3 (robotics) with Tier 1 argument (aging crisis).
+          "Here's how your retirement is actually solved."
+        </strategicValue>
+        <research_approach>
+          - Robotics companies: exoskeleton makers, social robots (Pepper, Aibo, newer), manipulation robots
+          - Academic research: acceptance studies, safety, ethics
+          - Cost projections: capital cost, maintenance, training
+          - Regulatory: medical device status, liability, insurance
+          - Precedents: Japan (robotics for care), South Korea (public robot standards)
+          - Scenarios: 2030, 2040 adoption rates by region
+        </research_approach>
+        <relatedConcepts>robotics, healthcare, demographic</relatedConcepts>
+      </topic>
+
+      <topic>
+        <id>T2.5</id>
+        <title>Autonomous Vehicles for Logistics: Timeline, ROI, and Labor Displacement</title>
+        <description>
+          How far are autonomous trucks/buses? What's the ROI per vehicle?
+          How many driving jobs will be lost, to when? Where will those workers go?
+          What infrastructure (5G, road sensors) is needed?
+        </description>
+        <depth>Medium (8–10 pages)</depth>
+        <effort>Medium (auto industry + labor economics)</effort>
+        <strategicValue>
+          Pillar 3 technical realism. "Autonomous vehicles are not 10 years away; here's the timeline."
+          Also addresses labor concerns (displacement, retraining).
+        </strategicValue>
+        <research_approach>
+          - AV maturity by vehicle class: trucks (furthest), buses, last-mile, trains
+          - Companies: Tesla, Waymo, Uber, Volvo, autonomous truck startups
+          - SAE automation levels (0–5) and realistic timelines per level
+          - Infrastructure requirements: V2X communication, mapping, coverage
+          - Cost-benefit: fuel, driver hours, accident reduction
+          - Labor displacement: how many drivers, where they're concentrated, retraining options
+          - Precedents: Singapore autonomous bus trial, Phoenix Waymo deployment
+        </research_approach>
+        <relatedConcepts>transportation, robotics, labor</relatedConcepts>
+      </topic>
+
+      <topic>
+        <id>T2.6</id>
+        <title>Manufacturing Robotics and EU Reindustrialization Potential</title>
+        <description>
+          Can robots bring manufacturing back to Europe? What sectors (automotive, electronics, pharma)?
+          What's the cost vs. Asian labor? Timelines? Policy enablers?
+        </description>
+        <depth>Medium (7–9 pages)</depth>
+        <effort>Medium (industrial economics, supply chain data)</effort>
+        <strategicValue>
+          Pillar 3 economic case. "Robots make high-wage manufacturing viable again."
+          Addresses "why robotics solves economic challenges" concretely.
+        </strategicValue>
+        <research_approach>
+          - Industrial robotics adoption rates by sector and region
+          - Cost of automation vs. labor (wage parity analysis)
+          - Supply chain complexity (why some industries localize, others don't)
+          - Policy incentives: German "Industry 4.0", EU's digital agenda
+          - Precedents: Apple manufacturing, German automotive (still in EU)
+          - Skills needed: technicians, engineers, supervisors (career paths)
+        </research_approach>
+        <relatedConcepts>robotics, transportation, education</relatedConcepts>
+      </topic>
+    </tier>
+
+    <!-- ==================== TIER 3: SUPPORTING NARRATIVES (Humanizing &amp; Credibility) ==================== -->
+    <tier name="TIER 3: Supporting Narratives" priority="MEDIUM">
+      <description>
+        These topics add texture, examples, and credibility checks.
+        They humanize the abstract argument and provide counter-argument preparation.
+      </description>
+
+      <topic>
+        <id>T3.1</id>
+        <title>Successful Large-Scale Digital Integration: Case Studies Beyond Estonia</title>
+        <description>
+          What else has Europe or the world gotten right on this scale?
+          Digital payment systems (SEPA, instant payments), healthcare (NHS, VA), education (UK Open University).
+        </description>
+        <depth>Medium (6–8 pages, multiple case studies)</depth>
+        <effort>Low (case studies are documented)</effort>
+        <strategicValue>
+          Addresses skepticism: "This sounds nice, but has large-scale digital integration ever worked?"
+          Show examples of success and failure modes.
+        </strategicValue>
+        <research_approach>
+          - SEPA (Single Euro Payments Area): took 10+ years, now works
+          - NHS (UK National Health Service): centralized healthcare administration
+          - UK Open University: distance learning at scale (precedent for e-learning)
+          - India's Aadhaar (digital ID for 1.4B people): success and privacy concerns
+          - Singapore's digital government (smaller, faster than Estonia)
+        </research_approach>
+        <relatedConcepts>egov, education, healthcare</relatedConcepts>
+      </topic>
+
+      <topic>
+        <id>T3.2</id>
+        <title>Where Digitalization Fails: Cautionary Tales and Why They Matter</title>
+        <description>
+          What digital government projects have failed? Why? Healthcare.gov (US), various EU attempts.
+          What do failures teach us?
+        </description>
+        <depth>Medium (5–7 pages)</depth>
+        <effort>Medium (failure analysis is available but less celebrated)</effort>
+        <strategicValue>
+          Credibility: manifest acknowledges risks. "This is hard. Here's why others failed and how to avoid it."
+          Addresses eGov-challenges (already listed as a page, needs depth).
+        </strategicValue>
+        <research_approach>
+          - Healthcare.gov (2013 fiasco: why it failed, how it was fixed)
+          - EU ITMS digitalization projects (various national attempts)
+          - UK's digital by default strategy (successes and stumbles)
+          - Blockchain hype cycles (promises vs. reality)
+          - Lessons: scope, timeline, stakeholder alignment, legacy system migration
+        </research_approach>
+        <relatedConcepts>egov, blockchain, security</relatedConcepts>
+      </topic>
+
+      <topic>
+        <id>T3.3</id>
+        <title>Geopolitical Competitors: US Tech Dominance, China's Digital State</title>
+        <description>
+          How are competitors doing digital integration?
+          US (fragmented, private sector-led), China (centralized, state-controlled).
+          What can Europe learn or learn from?
+        </description>
+        <depth>Medium-Deep (8–10 pages)</depth>
+        <effort>Medium-High (geopolitical analysis, requires nuance)</effort>
+        <strategicValue>
+          Supports security argument: "Without our own stack, we're dependent."
+          Shows what competitors are building.
+        </strategicValue>
+        <research_approach>
+          - US tech policy: fragmentation, innovation, but no unified government digital backbone
+          - China: digital ID, social credit, state surveillance, central platform
+          - Russia: sovereign internet architecture (isolation model)
+          - India: Aadhaar digital ID (comparison point)
+          - Tech sovereignty: EU AI Act, DMA, Digital Services Act (comparing to US/China regulatory approach)
+        </research_approach>
+        <relatedConcepts>security, egov, robotics</relatedConcepts>
+      </topic>
+
+      <topic>
+        <id>T3.4</id>
+        <title>Migration as Economic Opportunity: Data on Benefits and Integration</title>
+        <description>
+          European skeptics see migration as threat. Data on economic benefits:
+          fiscal contribution, labor filling, innovation, cultural enrichment.
+          What makes integration work? When does it fail?
+        </description>
+        <depth>Medium (6–8 pages)</depth>
+        <effort>Medium (labor economics + integration literature)</effort>
+        <strategicValue>
+          Softens migration argument (appeared defensive in /why).
+          Shows this isn't either/or: demographics forces AND opportunity for managed inflow.
+        </strategicValue>
+        <research_approach>
+          - Fiscal impact studies (tax contribution vs. benefit usage, varies by skill level)
+          - Labor market impact (wage pressure, sectors, skill match)
+          - Innovation contribution (immigrant entrepreneurs, patents)
+          - Integration outcomes by policy (housing, education, social support, language)
+          - Precedents: Canada (points-based), Germany (Willkommenskultur/Willkommenspolitik), Switzerland (integration policy)
+        </research_approach>
+        <relatedConcepts>migration, demographic, language</relatedConcepts>
+      </topic>
+
+      <topic>
+        <id>T3.5</id>
+        <title>EU's Existing Digital Initiatives: eIDAS, GDPR, Digital Services Act, and Lessons</title>
+        <description>
+          What has the EU already started? eIDAS (digital identity regulation),
+          GDPR (privacy), DSA (platform governance). Are these aligned with the manifest?
+          Gaps and opportunities.
+        </description>
+        <depth>Medium (6–8 pages)</depth>
+        <effort>Low (regulations are published, need synthesis)</effort>
+        <strategicValue>
+          Shows manifest isn't starting from zero. "Here are the foundations we already have."
+          Grounds manifest in existing EU policy.
+        </strategicValue>
+        <research_approach>
+          - eIDAS Regulation (2014, updated 2024): digital identity framework, cross-border recognition
+          - GDPR (2018): privacy by design, data portability, consent (conflicts with surveillance?)
+          - Digital Services Act (2022): platform governance, liability
+          - Digital Markets Act (2022): tech monopoly regulation
+          - Digital Decade targets (2030: 90% digital skills, etc.)
+        </research_approach>
+        <relatedConcepts>egov, blockchain, security, privacy</relatedConcepts>
+      </topic>
+    </tier>
+
+    <!-- ==================== TIER 4: ENRICHMENT (Context &amp; Depth) ==================== -->
+    <tier name="TIER 4: Enrichment" priority="MEDIUM-LOW">
+      <description>
+        These topics add richness and address deeper questions.
+        Not essential to the core argument, but strengthen peripheral claims.
+      </description>
+
+      <topic>
+        <id>T4.1</id>
+        <title>Environmental Sustainability and Digital Infrastructure: Greening EU Digitalization</title>
+        <description>
+          Digital infrastructure has environmental costs (data centers, semiconductors, e-waste).
+          How can EU balance digital transformation with climate goals?
+        </description>
+        <depth>Medium (5–7 pages)</depth>
+        <effort>Medium (sustainability + tech data)</effort>
+        <strategicValue>
+          Addresses potential criticism: "More digitalization = more energy consumption?"
+          Shows manifest is climate-aware.
+        </strategicValue>
+        <research_approach>
+          - Energy footprint of data centers (Google, AWS, Azure emissions)
+          - Renewable energy powering digital infrastructure
+          - Chip manufacturing sustainability (TSMC, Intel emissions)
+          - E-waste and recycling (WEEE directive, rare earth metals)
+          - Green computing: efficiency improvements reducing power per computation
+        </research_approach>
+        <relatedConcepts>environment, egov, robotics</relatedConcepts>
+      </topic>
+
+      <topic>
+        <id>T4.2</id>
+        <title>Cultural Resistance to Digital Government: Trust, Privacy, and Adoption Barriers</title>
+        <description>
+          Not everyone wants to give their data to the government.
+          How deep is the privacy concern? Can it be addressed? Consent models, transparency.
+        </description>
+        <depth>Medium (5–7 pages)</depth>
+        <effort>Medium (survey data, qualitative research)</effort>
+        <strategicValue>
+          Real implementation challenge. "People might not trust this; here's how to build trust."
+          Softens utopian tone with realism.
+        </strategicValue>
+        <research_approach>
+          - Pew/Eurobarometer surveys on digital government trust by country
+          - Privacy concerns vs. convenience tradeoff (research findings)
+          - Transparency and audit mechanisms (how to build trust)
+          - GDPR as privacy floor (enforcement, data subject rights)
+          - Lessons from China (surveillance state) vs. Estonia (security without surveillance)
+        </research_approach>
+        <relatedConcepts>egov, privacy, migration</relatedConcepts>
+      </topic>
+
+      <topic>
+        <id>T4.3</id>
+        <title>Public Services Design for Equity: Digital Divide and Rural Access</title>
+        <description>
+          Digitalization can exclude: elderly, rural areas (bandwidth), low-income (devices).
+          How does the manifest ensure no one is left behind?
+        </description>
+        <depth>Medium (5–7 pages)</depth>
+        <effort>Medium (equity research + rural broadband data)</effort>
+        <strategicValue>
+          Addresses social justice concern. "This isn't just for urban tech-savvy people."
+          Implementation realism.
+        </strategicValue>
+        <research_approach>
+          - Digital divide metrics (access, skills, usage by demographics)
+          - Rural broadband coverage and investment (EU Connecting Europe Facility)
+          - Device access and affordability (public device programs)
+          - Accessibility standards (WCAG, elderly usability)
+          - Hybrid service delivery (digital + in-person options)
+        </research_approach>
+        <relatedConcepts>egov, education, digital divide</relatedConcepts>
+      </topic>
+
+      <topic>
+        <id>T4.4</id>
+        <title>Skills and Workforce Retraining: Who Works in a Digitalized Europe?</title>
+        <description>
+          Digitalization + robotization = massive labor market shifts.
+          What jobs disappear? What jobs appear? Who retrains whom?
+        </description>
+        <depth>Medium-Deep (8–10 pages)</depth>
+        <effort>High (labor market projections, training data)</effort>
+        <strategicValue>
+          Addresses "but what about jobs?" fear. Shows manifest has thought-through labor transition.
+        </strategicValue>
+        <research_approach>
+          - WEF Future of Jobs reports (skill displacement by sector)
+          - Occupational outlook (EU, US comparisons)
+          - Retraining success stories and failures (what works)
+          - Lifelong learning infrastructure (where are the gaps?)
+          - Income support during transition (UBI, active labor policies)
+        </research_approach>
+        <relatedConcepts>robotics, education, transportation, labor</relatedConcepts>
+      </topic>
+
+      <topic>
+        <id>T4.5</id>
+        <title>Timeline Realism: When Do These Changes Actually Happen? 2030, 2040, 2050?</title>
+        <description>
+          Manifest says "build for 2050." But what happens 2026–2030?
+          Realistic phasing, quick wins, longer-term bets.
+        </description>
+        <depth>Medium (5–7 pages)</depth>
+        <effort>Low (synthesis of existing timelines)</effort>
+        <strategicValue>
+          Builds credibility: "This isn't vaporware; here's what happens when."
+          Helps identify 2026–2030 policy priorities vs. 2040–2050 visions.
+        </strategicValue>
+        <research_approach>
+          - Existing technology roadmaps (autonomous vehicles, robotics, 5G/6G, quantum)
+          - Policy timelines (eIDAS implementation, AI Act roll-out)
+          - Infrastructure build times (precedents from other large EU projects)
+          - Investment cycles (FP9, Recovery Fund spending)
+          - Quick wins vs. long-term bets: what can start 2026–2030, what needs prep
+        </research_approach>
+        <relatedConcepts>All (cross-cutting)</relatedConcepts>
+      </topic>
+    </tier>
+
+  </researchTopics>
+
+  <executionStrategy>
+    <phase name="Phase 1: Foundation (Tier 1)">
+      <timeline>Weeks 1–6</timeline>
+      <topics>T1.1, T1.2, T1.3, T1.4, T1.5</topics>
+      <output>
+        5 deep research documents becoming:
+        - Homepage + /why rewrite with data
+        - /support expansion
+        - /benefits regional deep-dive
+        New pages: /research/demographics, /research/draghi, /research/estonia, /research/language
+      </output>
+    </phase>
+    <phase name="Phase 2: Pillar Deep-Dives (Tier 2)">
+      <timeline>Weeks 7–14</timeline>
+      <topics>T2.1–T2.6 (split by pillar)</topics>
+      <output>
+        Pillar 1 (Language): new pages on language-economy link, education policy
+        Pillar 2 (Digital): blockchain spec, payment systems comparison
+        Pillar 3 (Robotics): care robots, autonomous logistics, manufacturing
+        New pages: /ideas/ expansions with specific use cases and data
+      </output>
+    </phase>
+    <phase name="Phase 3: Credibility &amp; Realism (Tier 3)">
+      <timeline>Weeks 15–20</timeline>
+      <topics>T3.1–T3.5</topics>
+      <output>
+        New pages: /research/case-studies, /research/failures, /research/competitors, /research/policy-foundation
+        Site-wide credibility boost: acknowledges challenges, shows thinking through counterarguments
+      </output>
+    </phase>
+    <phase name="Phase 4: Richness (Tier 4)</phase>
+      <timeline>Weeks 21–26 (ongoing)</timeline>
+      <topics>T4.1–T4.5</topics>
+      <output>
+        Supporting pages on equity, environment, jobs, timelines
+        Integrated throughout as linked resources
+      </output>
+    </phase>
+  </executionStrategy>
+
+  <priorityMatrix>
+    <axis x="Strategic Importance" y="Effort to Research" />
+    <quadrant name="Quick Wins (High Impact, Low Effort)">
+      T1.3 (Estonia), T3.1 (Case studies), T3.5 (EU policy), T4.5 (Timeline)
+    </quadrant>
+    <quadrant name="Big Bets (High Impact, High Effort)">
+      T1.1 (Demographics), T1.2 (Draghi), T2.4 (Care robots), T2.5 (Autonomous vehicles), T4.4 (Jobs retraining)
+    </quadrant>
+    <quadrant name="Nice to Have (Medium Impact, Low Effort)">
+      T3.2 (Failures), T4.1 (Environment), T4.2 (Trust barriers)
+    </quadrant>
+    <quadrant name="Defer (Medium Impact, High Effort)">
+      T2.2 (Blockchain detail), T2.3 (Payment systems), T3.4 (Migration data)
+    </quadrant>
+  </priorityMatrix>
+
+</researchProposal>

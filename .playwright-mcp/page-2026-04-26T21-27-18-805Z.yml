@@ -1,0 +1,191 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "European Union Reform Vision EU Reform Vision" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "European Union Reform Vision" [ref=e7]
+        - generic [ref=e8]: EU Reform Vision
+      - navigation [ref=e9]:
+        - link "Overview" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "Why" [ref=e11] [cursor=pointer]:
+          - /url: /why
+        - link "Vision" [ref=e12] [cursor=pointer]:
+          - /url: /vision
+        - link "Benefits" [ref=e13] [cursor=pointer]:
+          - /url: /benefits
+        - link "Support" [ref=e14] [cursor=pointer]:
+          - /url: /support
+        - button "Toggle theme" [ref=e15] [cursor=pointer]:
+          - img [ref=e16]
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - generic [ref=e21]: 🔒 PRYWATNA SEKCJA
+      - heading "Notatki robocze" [level=1] [ref=e22]
+      - paragraph [ref=e23]:
+        - text: Dokumenty wygenerowane przez Claude AI. Posortowane od najnowszego.
+        - text: Nie publiczne, nieindeksowane.
+    - generic [ref=e24]:
+      - 'link "Plan dalszych prac — backlog uporządkowany Pełny przegląd: co zrobione, co z dokumentu redaktora zostało, co nowe się pojawiło w rozmowie. Cztery warianty kolejności + 5 pytań do decyzji autora. 2026-04-26 04:00" [ref=e25] [cursor=pointer]':
+        - /url: /resources/2026-04-26-04-00-plan-dalszych-prac
+        - generic [ref=e26]:
+          - generic [ref=e27]:
+            - heading "Plan dalszych prac — backlog uporządkowany" [level=2] [ref=e28]
+            - paragraph [ref=e29]: "Pełny przegląd: co zrobione, co z dokumentu redaktora zostało, co nowe się pojawiło w rozmowie. Cztery warianty kolejności + 5 pytań do decyzji autora."
+          - generic [ref=e30]: 2026-04-26 04:00
+      - 'link "Research: Polski pozytywizm — geneza, idee, możliwe zastosowania Notatka badawcza o polskim pozytywizmie — od powstania styczniowego do dziś. Co pasuje do manifestu, co nie, 5 propozycji sformułowań zasady #6. Autor: subagent Claude Sonnet 4.6. 2026-04-26 02:30" [ref=e31] [cursor=pointer]':
+        - /url: /resources/2026-04-26-02-30-research-pozytywizm
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - 'heading "Research: Polski pozytywizm — geneza, idee, możliwe zastosowania" [level=2] [ref=e34]'
+            - paragraph [ref=e35]: "Notatka badawcza o polskim pozytywizmie — od powstania styczniowego do dziś. Co pasuje do manifestu, co nie, 5 propozycji sformułowań zasady #6. Autor: subagent Claude Sonnet 4.6."
+          - generic [ref=e36]: 2026-04-26 02:30
+      - 'link "Zasady v2 — pełna rewizja, 6 zasad, kultura przeformułowana Druga rewizja /principles. 6 zasad zamiast 5. Nowa #5 (Additive Reform). Zasada o kulturze przeformułowana — nie odrzuca wspólnej kultury, ale buduje ją przez syntezę. 2026-04-26 02:00" [ref=e37] [cursor=pointer]':
+        - /url: /resources/2026-04-26-02-00-zasady-v2-przepisane
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - heading "Zasady v2 — pełna rewizja, 6 zasad, kultura przeformułowana" [level=2] [ref=e40]
+            - paragraph [ref=e41]: "Druga rewizja /principles. 6 zasad zamiast 5. Nowa #5 (Additive Reform). Zasada o kulturze przeformułowana — nie odrzuca wspólnej kultury, ale buduje ją przez syntezę."
+          - generic [ref=e42]: 2026-04-26 02:00
+      - 'link "Wdrożenie: nowe /principles + health AI jako case study Notatka z wdrożenia 5 nowych zasad i sztandarowego case study cyfrowej opieki zdrowotnej. Co zrobione, co dalej. 2026-04-26 01:15" [ref=e43] [cursor=pointer]':
+        - /url: /resources/2026-04-26-01-15-wdrozenie-zasad
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - 'heading "Wdrożenie: nowe /principles + health AI jako case study" [level=2] [ref=e46]'
+            - paragraph [ref=e47]: Notatka z wdrożenia 5 nowych zasad i sztandarowego case study cyfrowej opieki zdrowotnej. Co zrobione, co dalej.
+          - generic [ref=e48]: 2026-04-26 01:15
+      - link "Odpowiedzi autora na pytania B1-B3 — surowy materiał Surowy materiał źródłowy do manifestu. Osobista narracja, sen o statku kosmicznym, mama w sądzie, Aurora, demokracja cyfrowa, pozycje na sporne tematy. 2026-04-26 00:30" [ref=e49] [cursor=pointer]:
+        - /url: /resources/2026-04-26-00-30-odpowiedzi-b1-b3
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - heading "Odpowiedzi autora na pytania B1-B3 — surowy materiał" [level=2] [ref=e52]
+            - paragraph [ref=e53]: Surowy materiał źródłowy do manifestu. Osobista narracja, sen o statku kosmicznym, mama w sądzie, Aurora, demokracja cyfrowa, pozycje na sporne tematy.
+          - generic [ref=e54]: 2026-04-26 00:30
+      - 'link "Pytania redaktora — co zmienić, co uzupełnić, co poprawić Plan działań na stronie + pytania, na które autor musi odpowiedzieć by domknąć manifest. Trzy sekcje: zmiany, uzupełnienia, refinementy. 2026-04-25 23:30" [ref=e55] [cursor=pointer]':
+        - /url: /resources/2026-04-25-23-30-pytania-redaktora
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - heading "Pytania redaktora — co zmienić, co uzupełnić, co poprawić" [level=2] [ref=e58]
+            - paragraph [ref=e59]: "Plan działań na stronie + pytania, na które autor musi odpowiedzieć by domknąć manifest. Trzy sekcje: zmiany, uzupełnienia, refinementy."
+          - generic [ref=e60]: 2026-04-25 23:30
+      - link "CEE jako naturalni sojusznicy Polska jako lider, Ukraina bez akcesji, Skandynawia — trzy koalicje i narracja \"nowej Europy\". 2026-04-25 22:27" [ref=e61] [cursor=pointer]:
+        - /url: /resources/2026-04-25-22-27-cee-sojusznicy
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - heading "CEE jako naturalni sojusznicy" [level=2] [ref=e64]
+            - paragraph [ref=e65]: Polska jako lider, Ukraina bez akcesji, Skandynawia — trzy koalicje i narracja "nowej Europy".
+          - generic [ref=e66]: 2026-04-25 22:27
+      - link "Wizja serwisu (.arch/VISION.md) Podgląd VISION.md — czym jest serwis, metafora OS, hierarchia argumentów, głos, audience. 2026-04-25 22:16" [ref=e67] [cursor=pointer]:
+        - /url: /resources/2026-04-25-22-16-vision
+        - generic [ref=e68]:
+          - generic [ref=e69]:
+            - heading "Wizja serwisu (.arch/VISION.md)" [level=2] [ref=e70]
+            - paragraph [ref=e71]: Podgląd VISION.md — czym jest serwis, metafora OS, hierarchia argumentów, głos, audience.
+          - generic [ref=e72]: 2026-04-25 22:16
+      - 'link "Strategia: zentala.eu jako manifest osobisty Decyzja strategiczna, wytyczne komunikacyjne, hierarchia argumentów, lista TODO. 2026-04-25 22:13" [ref=e73] [cursor=pointer]':
+        - /url: /resources/2026-04-25-22-13-strategia-manifestu
+        - generic [ref=e74]:
+          - generic [ref=e75]:
+            - 'heading "Strategia: zentala.eu jako manifest osobisty" [level=2] [ref=e76]'
+            - paragraph [ref=e77]: Decyzja strategiczna, wytyczne komunikacyjne, hierarchia argumentów, lista TODO.
+          - generic [ref=e78]: 2026-04-25 22:13
+      - 'link "Trzy podejścia: manifest, platforma, policy paper Analiza porównawcza trzech możliwych strategii — co wybrać, co usunąć, na czym skupić. 2026-04-25 21:20" [ref=e79] [cursor=pointer]':
+        - /url: /resources/2026-04-25-21-20-trzy-podejscia
+        - generic [ref=e80]:
+          - generic [ref=e81]:
+            - 'heading "Trzy podejścia: manifest, platforma, policy paper" [level=2] [ref=e82]'
+            - paragraph [ref=e83]: Analiza porównawcza trzech możliwych strategii — co wybrać, co usunąć, na czym skupić.
+          - generic [ref=e84]: 2026-04-25 21:20
+      - 'link "Feedback: zentala.eu Recenzja serwisu z perspektywy pisarza, publicysty i aktywisty. Autorstwo: Claude AI. 2026-04-25 21:19" [ref=e85] [cursor=pointer]':
+        - /url: /resources/2026-04-25-21-19-feedback
+        - generic [ref=e86]:
+          - generic [ref=e87]:
+            - 'heading "Feedback: zentala.eu" [level=2] [ref=e88]'
+            - paragraph [ref=e89]: "Recenzja serwisu z perspektywy pisarza, publicysty i aktywisty. Autorstwo: Claude AI."
+          - generic [ref=e90]: 2026-04-25 21:19
+  - contentinfo [ref=e91]:
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - generic [ref=e94]:
+          - generic [ref=e95]:
+            - img "EU Reform Vision" [ref=e96]
+            - generic [ref=e97]: EU Reform Vision
+          - paragraph [ref=e98]: A comprehensive vision for European integration through technological innovation, language unity, and administrative reform.
+          - paragraph [ref=e100]:
+            - text: It was created by
+            - link "Paweł Żentała" [ref=e101] [cursor=pointer]:
+              - /url: http://linkedin.com/in/zentala
+            - text: ", a Polish Software Engineer and Innovation Activist."
+        - generic [ref=e102]:
+          - heading "Vision" [level=3] [ref=e103]
+          - list [ref=e104]:
+            - listitem [ref=e105]:
+              - link "Overview" [ref=e106] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e107]:
+              - link "Why Reforms?" [ref=e108] [cursor=pointer]:
+                - /url: /why
+            - listitem [ref=e109]:
+              - link "Vision" [ref=e110] [cursor=pointer]:
+                - /url: /vision
+            - listitem [ref=e111]:
+              - link "Benefits" [ref=e112] [cursor=pointer]:
+                - /url: /benefits
+            - listitem [ref=e113]:
+              - link "Principles" [ref=e114] [cursor=pointer]:
+                - /url: /principles
+        - generic [ref=e115]:
+          - heading "Resources" [level=3] [ref=e116]
+          - list [ref=e117]:
+            - listitem [ref=e118]:
+              - link "Vision Book" [ref=e119] [cursor=pointer]:
+                - /url: /book
+            - listitem [ref=e120]:
+              - link "Transcripts" [ref=e121] [cursor=pointer]:
+                - /url: /transcripts
+            - listitem [ref=e122]:
+              - link "Support Us" [ref=e123] [cursor=pointer]:
+                - /url: /support
+            - listitem [ref=e124]:
+              - link "Sitemap" [ref=e125] [cursor=pointer]:
+                - /url: /sitemap.xml
+            - listitem [ref=e126]:
+              - link "UI Demo" [ref=e127] [cursor=pointer]:
+                - /url: /ui
+        - generic [ref=e128]:
+          - heading "Topics" [level=3] [ref=e129]
+          - list [ref=e130]:
+            - listitem [ref=e131]:
+              - link "Language Integration" [ref=e132] [cursor=pointer]:
+                - /url: /vision/language-integration
+            - listitem [ref=e133]:
+              - link "Digital Integration" [ref=e134] [cursor=pointer]:
+                - /url: /vision/digital-integration
+            - listitem [ref=e135]:
+              - link "Robotic Future" [ref=e136] [cursor=pointer]:
+                - /url: /vision/robotic-reindustrialization
+            - listitem [ref=e137]:
+              - link "Blockchain State" [ref=e138] [cursor=pointer]:
+                - /url: /docs/ideas/governance/blockchain-state
+            - listitem [ref=e139]:
+              - link "Autonomous Logistics" [ref=e140] [cursor=pointer]:
+                - /url: /docs/ideas/transportation/autonomous-transportation
+            - listitem [ref=e141]:
+              - link "European Healthcare" [ref=e142] [cursor=pointer]:
+                - /url: /docs/book/predictive-healthcare-system
+            - listitem [ref=e143]:
+              - link "Financial Reforms" [ref=e144] [cursor=pointer]:
+                - /url: /docs/ideas/finance/european-cryptocurrency
+      - generic [ref=e145]:
+        - paragraph [ref=e146]:
+          - text: © 2026
+          - link "European Union Reform Vision" [ref=e147] [cursor=pointer]:
+            - /url: /
+          - text: . All rights reserved.
+        - generic [ref=e148]:
+          - link "Tags" [ref=e149] [cursor=pointer]:
+            - /url: /tags
+          - link "Privacy" [ref=e150] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms" [ref=e151] [cursor=pointer]:
+            - /url: /terms

@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <metadata>
+    <name>zentala.eu - EU Reform Vision Manifest</name>
+    <type>Personal Innovation Manifest</type>
+    <author>Paweł Żentała (Polish Software Architect & YouTube Innovator)</author>
+    <language>English (with Polish voice and perspective)</language>
+    <domain>zentala.eu (EU personal)</domain>
+    <lastUpdated>2026-04-25</lastUpdated>
+  </metadata>
+
+  <projectVision>
+    <description>
+      A system architect's refactoring proposal for Europe. Not a political manifesto, think tank,
+      or policy paper — a first-person argument by someone who sees the EU as legacy software
+      desperately needing modernization. Companion to author's YouTube channel (spójna narracja).
+    </description>
+    <centralMetaphor>
+      Europe is an obsolete operating system built in the industrial era, patched for decades,
+      running on infrastructure not designed for a digital economy. Time to refactor from zero.
+    </centralMetaphor>
+    <targetAudience>
+      <primary>Europeans 25–45 with technical or scientific thinking, worried about EU future</primary>
+      <secondary>Central/Eastern Europe (Poland, Baltics, Ukraine, Romania) — natural allies due to:
+        - Security concerns (Russian proximity)
+        - Demographic crisis (emigration, aging)
+        - Digital readiness (Estonia e-gov leaders, Poland tech sector)
+      </secondary>
+      <crossover>YouTube viewers (consistency across formats matters)</crossover>
+    </targetAudience>
+    <voice>
+      - Always first person: "I propose", "I see" — never "this vision proposes"
+      - Bold, not defensive — manifest states thesis, doesn't excuse itself
+      - Engineering metaphors: refactoring, legacy debt, technical debt, MVP
+      - No institutional jargon ("fostering synergies") — plain speech
+      - Test: "Does this sound like a Polish engineer speaking directly?"
+    </voice>
+  </projectVision>
+
+  <argumentHierarchy>
+    <argument level="1" importance="PRIMARY">
+      <name>Retirement &amp; Demographics</name>
+      <description>
+        "We are the last baby-boom generation. What we build today—a roboticized public services
+        and care system—becomes our retirement system tomorrow. There is no other."
+      </description>
+      <keyData>
+        - Europe ages rapidly
+        - By 2050: 2 workers per pensioner (down from 4 in 2010)
+        - Personal, verifiable, urgent
+      </keyData>
+      <role>Opening hook, most emotionally resonant</role>
+    </argument>
+
+    <argument level="2" importance="CORE">
+      <name>Legacy OS Metaphor</name>
+      <description>
+        System redesign framing. Makes abstract EU problems concrete and memorable.
+      </description>
+      <usage>Central conceptual framework throughout</usage>
+    </argument>
+
+    <argument level="3" importance="LEGITIMACY">
+      <name>Draghi Report</name>
+      <description>
+        2024 EU competitiveness report: without productivity boost, GDP shrinks by 2050.
+        Legitimizes argument via institutional authority.
+      </description>
+      <keyData>
+        - Post-1945 order thinning
+        - US renegotiating commitments
+        - Russia testing borders
+        - Public confidence falling
+      </keyData>
+    </argument>
+
+    <argument level="4" importance="STRUCTURE">
+      <name>Three Pillars (Escalation Logic)</name>
+      <description>
+        Language → Digital Integration → Roboticization. Each builds on previous.
+      </description>
+      <sequence>
+        1. Language: Common working language (English bilingual)
+        2. Digital: Unified e-government, digital services
+        3. Robotic: Autonomous systems, reindustrialization
+      </sequence>
+    </argument>
+
+    <argument level="5" importance="REGIONAL">
+      <name>Central/Eastern Europe as Natural Allies</name>
+      <description>
+        Address Poland, Baltics, Ukraine directly. They have stronger reasons than Western Europe.
+      </description>
+      <drivers>
+        - Security (Russian proximity)
+        - Demography (emigration losses)
+        - Tech readiness (Estonia model)
+      </drivers>
+    </argument>
+  </argumentHierarchy>
+
+  <contentStructure>
+    <section id="core">
+      <name>Core Vision Pages</name>
+      <pages>
+        <page>
+          <path>/</path>
+          <title>Homepage</title>
+          <status>ACTIVE - Redesigned with retirement argument</status>
+          <content>
+            Hero section with retirement argument. Benefits split by stakeholder
+            (citizens, businesses, regions, integration).
+          </content>
+        </page>
+        <page>
+          <path>/why-reforms</path>
+          <title>Why Reforms Are Needed</title>
+          <status>ACTIVE</status>
+          <sections>
+            1. Digital economy, industrial-era admin
+            2. Europe as unified economic organism
+            3. Economic imperative (1 system vs 27)
+            4. Demographic crisis &amp; retirement
+            5. Technological independence = political independence
+            6. US/China draining talents and resources
+          </sections>
+          <depth>Deep, 6 argument cards with metaphors</depth>
+        </page>
+        <page>
+          <path>/support/time-is-running-out</path>
+          <title>Why the Timing Matters</title>
+          <status>ACTIVE</status>
+          <content>
+            Urgency grounded in data, not panic. Timeline: 2050 projections, Draghi Report,
+            post-1945 order collapse, falling public confidence.
+          </content>
+        </page>
+      </pages>
+    </section>
+
+    <section id="benefits">
+      <name>Benefits &amp; Outcomes</name>
+      <pages>
+        <page>
+          <path>/benefits</path>
+          <title>How This Will Transform Europe</title>
+          <status>ACTIVE - Redesigned with Central/Eastern Europe focus</status>
+          <sections>
+            - For Citizens: services, freedom, opportunity
+            - For Businesses: simplified operations, reduced burden
+            - For Regional Development: equitable growth
+            - For Integration: practical, tangible benefits
+            - Central/Eastern Europe specifics (added 2026-04-25)
+          </sections>
+        </page>
+      </pages>
+    </section>
+
+    <section id="book">
+      <name>Book (Systematic Ideas)</name>
+      <pages>
+        <page>
+          <path>/docs/book/summary</path>
+          <title>Book Overview &amp; Summary</title>
+          <status>ACTIVE</status>
+        </page>
+        <page>
+          <path>/docs/book/principles</path>
+          <title>Guiding Principles</title>
+          <status>ACTIVE</status>
+          <principles>
+            1. Mutual benefit (all states gain)
+            2. Economies of scale (collective what individuals can't do)
+            3. Common culture (EU identity + national cultures)
+            4. Quality of life (radical reforms, shift competencies)
+          </principles>
+        </page>
+
+        <idea>
+          <name>Language Integration</name>
+          <paths>/docs/book/language, /docs/ideas/culture/language-integration</paths>
+          <status>ACTIVE</status>
+          <core>Bilingual Europe: native language + English as common 2nd official language</core>
+          <implications>
+            - Administrative integration (all laws bilingual)
+            - Cross-border mobility
+            - Education system alignment
+          </implications>
+        </idea>
+
+        <idea>
+          <name>Digital Government (e-Gov)</name>
+          <paths>/docs/book/eGov-vison, /docs/book/eGov-challenges, /docs/ideas/governance/european-egovernment</paths>
+          <status>ACTIVE</status>
+          <core>Unified EU digital government instead of 27 separate national systems</core>
+          <components>
+            - Digital receipts (blockchain ledger of all citizen-state interactions)
+            - Predictive healthcare system
+            - Digital democracy
+            - Tax/legal process optimization
+          </components>
+          <depth>Multiple pages, challenges acknowledged</depth>
+        </idea>
+
+        <idea>
+          <name>Autonomous Transportation</name>
+          <paths>/docs/ideas/transportation/autonomous-transportation, /docs/ideas/transportation/autonomous-multimodal</paths>
+          <status>ACTIVE</status>
+          <core>Seamless EU-wide autonomous transport network (trains, trucks, buses, last-mile)</core>
+          <benefits>
+            - Logistics integration
+            - Labor automation
+            - Reduced accidents
+            - Economic efficiency
+          </benefits>
+        </idea>
+
+        <idea>
+          <name>Financial Reforms</name>
+          <paths>/docs/book/unified-payment-zone, /docs/book/near-zero-transaction-costs, /docs/ideas/finance/</paths>
+          <status>ACTIVE</status>
+          <subideas>
+            - Unified payment zone (instant, frictionless cross-border)
+            - Near-zero transaction costs (blockchain/digital)
+            - European cryptocurrency
+            - Digital payment zones
+          </subideas>
+        </idea>
+
+        <idea>
+          <name>Education Reform</name>
+          <paths>/docs/book/european-elearning-system, /docs/ideas/education/european-proof-of-skill</paths>
+          <status>ACTIVE</status>
+          <components>
+            - EU-wide e-learning platform
+            - European Proof of Skill (credentials recognized across EU)
+            - Lifelong learning support
+          </components>
+        </idea>
+
+        <idea>
+          <name>Healthcare &amp; Robotics</name>
+          <paths>/docs/book/predictive-healthcare-system</paths>
+          <status>ACTIVE</status>
+          <core>Predictive healthcare using EU-wide data and robotics for care</core>
+          <robotization>Addresses aging—robots as care workers for retirees</robotization>
+        </idea>
+
+        <idea>
+          <name>Digital Records &amp; Archives</name>
+          <paths>/docs/book/european-blockchain-archives</paths>
+          <status>ACTIVE</status>
+          <core>Immutable EU-wide record system (health, legal, historical)</core>
+        </idea>
+
+        <idea>
+          <name>Cultural Integration</name>
+          <paths>/docs/book/media-cultural-integration</paths>
+          <status>ACTIVE</status>
+          <core>Shared media, narratives, and cultural infrastructure</core>
+        </idea>
+
+        <idea>
+          <name>Economic Growth &amp; Language</name>
+          <paths>/docs/book/economic-growth-language-unity</paths>
+          <status>ACTIVE</status>
+          <core>Language unity as driver of GDP growth and market integration</core>
+        </idea>
+      </pages>
+    </section>
+
+    <section id="ideas">
+      <name>Ideas (Categorized Collection)</name>
+      <categories>
+        <category name="Governance">
+          <idea>Digital Democracy</idea>
+          <idea>Blockchain State</idea>
+          <idea>Customized Local Law</idea>
+          <idea>European e-Government</idea>
+        </category>
+        <category name="Culture">
+          <idea>Language Integration</idea>
+          <idea>Media &amp; Cultural Integration</idea>
+          <idea>European Street Naming (standardized addressing)</idea>
+        </category>
+        <category name="Education">
+          <idea>European e-Learning System</idea>
+          <idea>European Proof of Skill</idea>
+        </category>
+        <category name="Transportation">
+          <idea>Autonomous Multimodal Transportation</idea>
+          <idea>Autonomous Transportation Network</idea>
+        </category>
+        <category name="Finance">
+          <idea>Unified Payment Zone</idea>
+          <idea>Near-Zero Transaction Costs</idea>
+          <idea>European Cryptocurrency</idea>
+          <idea>Digital Receipts</idea>
+        </category>
+        <category name="Technology &amp; Innovation">
+          <idea>Autonomous Robotics System (reindustrialization)</idea>
+          <idea>Supporting Mid-Sized Companies (tech startups)</idea>
+          <idea>Blockchain Archives</idea>
+        </category>
+        <category name="Environment">
+          <idea>Environmental Protection</idea>
+          <idea>Agricultural Policy (autonomous farming hinted)</idea>
+        </category>
+        <category name="Health">
+          <idea>Predictive Healthcare System</idea>
+        </category>
+      </categories>
+    </section>
+
+    <section id="articles">
+      <name>Articles from Transcripts</name>
+      <status>Early stage (5 articles)</status>
+      <articles>
+        <article>Blockchain State</article>
+        <article>Learning from China (comparative governance)</article>
+        <article>Cybersecurity and Digital Defense</article>
+        <article>Environmental and Health Concerns</article>
+        <article>Promoting Innovation and Technology</article>
+      </articles>
+      <note>These appear to be transcribed from videos, tagged with broader themes</note>
+    </section>
+
+    <section id="archive">
+      <name>Content Archive (Old, Not Active)</name>
+      <path>/content-old/</path>
+      <status>ARCHIVED - Not in active site navigation</status>
+      <folders>
+        - aging-society
+        - blockchain-state
+        - cultural-integration (with sub-topics)
+        - education
+        - environment
+        - finance-reforms
+        - health-care
+        - ideas-for-poland (Polish-specific)
+        - introduction
+        - social-politics
+        - transport-and-logistics
+      </folders>
+      <note>
+        This represents older iterations and Polish-language content.
+        Some ideas have been migrated to /docs/book or /docs/ideas, others not yet integrated.
+      </note>
+    </section>
+
+    <section id="reference">
+      <name>Reference &amp; Utilities</name>
+      <pages>
+        <page>
+          <path>/docs/reference/</path>
+          <content>Example template and documentation patterns</content>
+        </page>
+        <page>
+          <path>/ui</path>
+          <content>Component library (Testimonials, Cards, etc.)</content>
+          <note>Exists but mostly not used on main site yet</note>
+        </page>
+      </pages>
+    </section>
+  </contentStructure>
+
+  <technicalStack>
+    <framework>Astro (static site with dynamic components)</framework>
+    <styling>TailwindCSS + DaisyUI + SCSS</styling>
+    <language>TypeScript (strict)</language>
+    <content>MDX (Markdown + React components)</content>
+    <search>Algolia (in progress—oversized records need fixing)</search>
+    <newsletter>Appwrite (auth, forms)</newsletter>
+    <deployment>GitHub Pages</deployment>
+    <testing>Link checker (internal + external), URL validator, site crawler</testing>
+  </technicalStack>
+
+  <writingConventions>
+    <rule id="1">
+      <title>Voice: Always First Person</title>
+      <requirement>"I propose", "I see" — never "this vision proposes", never befogged "we"</requirement>
+    </rule>
+    <rule id="2">
+      <title>Tone: Bold, Not Defensive</title>
+      <requirement>Manifest states thesis. Does not excuse its existence.</requirement>
+    </rule>
+    <rule id="3">
+      <title>Metaphors: Engineering, Not Political</title>
+      <requirement>Use: refactoring, legacy system, technical debt, MVP. Avoid: "fostering synergies".</requirement>
+    </rule>
+    <rule id="4">
+      <title>Language: English, Polish Voice</title>
+      <requirement>
+        All content in English. But sound like Polish engineer speaking directly.
+        Test: "Does this sound real, not like marketing copy?"
+      </requirement>
+    </rule>
+    <rule id="5">
+      <title>Hierarchy: Argument order matters</title>
+      <requirement>
+        Lead with retirement (personal). Then metaphor. Then Draghi. Then pillars.
+        Then regional allies.
+      </requirement>
+    </rule>
+    <rule id="6">
+      <title>Avoid: Defensiveness &amp; Lists</title>
+      <requirement>
+        No defensive FAQ. No emotional checklists. Build urgency from data, not fear.
+        No institutional jargon.
+      </requirement>
+    </rule>
+  </writingConventions>
+
+  <currentStatus>
+    <lastSession>2026-04-25</lastSession>
+    <completedThis Session>
+      - Redesigned homepage hero with retirement argument
+      - Added Central/Eastern Europe section to /benefits
+      - Rewrote three passages in /why (focus on personal stakes)
+      - Rewrote urgency section in /support
+      - AI review feedback captured (Claude Sonnet 4.6)
+    </completedThisSession>
+    <outstandingWork>
+      - Fix 62 broken links (see missing_links.md)
+      - Integrate archive content (Polish pieces, old iterations)
+      - Replace hardcoded demo data with real Eurostat API
+      - Expand articles from transcripts
+      - Add expert testimonials (component exists, unused)
+      - Mobile navigation improvements
+      - Video integration (YouTube → site bridge)
+      - Algolia search fix (oversized records)
+    </outstandingWork>
+  </currentStatus>
+
+  <opportunities>
+    <researchGaps>
+      Multiple areas exist where research would deepen credibility and narrative:
+      - Demographic projections and retirement math
+      - EU policy precedents (GDPR, eIDAS, digital services)
+      - International comparisons (Estonia e-gov, China governance, US tech dominance)
+      - Economic models (CGE models for EU integration scenarios)
+      - Robotics &amp; automation impact on labor/aging
+      - Language policy historical analysis
+      - Migration data and integration success factors
+      - Cybersecurity and digital sovereignty
+      - Tech stack comparisons (blockchain, payments, digital ID)
+    </researchGaps>
+    <contentStrengthOpportunities>
+      Currently strongest: Argument structure, metaphor, high-level vision
+      Weakest: Specific implementations, cost/benefit quantification, success case studies
+
+      Research should fill: Data backing claims, precedents, technical feasibility studies
+    </contentStrengthOpportunities>
+  </opportunities>
+
+</project>

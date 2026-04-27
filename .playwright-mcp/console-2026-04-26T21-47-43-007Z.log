@@ -1,0 +1,343 @@
+[      58ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[      58ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[      59ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[      59ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[      59ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[      59ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[      61ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[      61ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[      61ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[      61ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[      61ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[    1875ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[    1875ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[    1875ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[    1875ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[    1875ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[    1875ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[    1876ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[    1876ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[    1876ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[    1876ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[    1876ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[  151474ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[  151474ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[  151474ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[  151474ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[  151474ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[  151474ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[  151593ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[  151593ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[  151593ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[  151593ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[  151593ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 1826321ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:4322/@vite/client:1243
+[ 1827959ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 1827959ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 1827959ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 1827959ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 1827959ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 1827960ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 1828073ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 1828073ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 1828073ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 1828073ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 1828073ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 1984700ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 1984700ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 1984700ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 1984700ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 1984700ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 1984700ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 1985372ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 1985372ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 1985372ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 1985372ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 1985372ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 1991573ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 1991573ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 1991573ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 1991573ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 1991573ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 1991573ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 1991922ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 1991923ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 1991923ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 1991923ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 1991923ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 1997908ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 1997908ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 1997908ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 1997908ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 1997908ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 1997909ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 1998231ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 1998231ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 1998231ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 1998231ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 1998231ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2000782ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2000782ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2000782ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2000782ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2000782ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2000782ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2000784ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2000784ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2000784ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2000784ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2000784ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2004032ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2004032ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2004032ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2004032ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2004032ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2004032ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2004111ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2004111ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2004111ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2004111ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2004111ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2013480ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2013480ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2013480ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2013480ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2013480ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2013480ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2013773ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2013773ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2013773ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2013773ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2013773ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2045477ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2045477ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2045477ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2045477ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2045477ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2045477ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2046099ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2046099ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2046099ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2046099ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2046099ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2058881ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2058881ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2058881ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2058881ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2058881ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2058881ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2058968ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2058968ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2058969ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2058969ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2058969ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2059398ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2059398ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2059398ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2059398ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2059398ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2059398ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2059506ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2059506ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2059506ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2059506ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2059506ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2064407ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2064407ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2064408ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2064408ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2064408ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2064408ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2064497ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2064497ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2064497ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2064498ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2064498ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2071646ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2071646ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2071646ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2071646ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2071646ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2071647ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2071779ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2071779ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2071779ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2071779ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2071779ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2084716ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2084716ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2084716ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2084716ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2084716ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2084716ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2084801ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2084801ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2084801ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2084801ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2084801ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2094596ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2094596ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2094596ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2094596ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2094596ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2094596ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2095012ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2095012ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2095012ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2095012ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2095012ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2107217ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2107218ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2107218ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2107218ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2107218ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2107218ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2107296ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2107297ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2107297ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2107297ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2107297ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2111491ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2111491ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2111491ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2111492ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2111492ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2111492ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2111592ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2111592ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2111592ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2111593ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2111593ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2119640ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2119641ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2119641ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2119641ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2119641ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2119641ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2119718ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2119718ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2119718ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2119718ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2119718ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2127528ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2127528ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2127528ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2127528ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2127528ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2127528ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2128282ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2128282ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2128282ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2128282ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2128282ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2148659ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2148659ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2148659ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2148659ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2148659ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2148659ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2149055ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2149055ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2149055ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2149055ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2149055ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2155640ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2155640ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2155640ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2155641ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2155641ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2155641ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2155735ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2155735ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2155736ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2155736ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2155736ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2164049ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2164049ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2164049ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2164049ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2164049ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2164049ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2164132ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2164132ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2164132ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2164132ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2164132ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2172040ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2172040ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2172040ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2172040ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2172040ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2172040ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2172462ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2172462ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2172462ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2172462ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2172462ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2183349ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2183349ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2183349ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2183349ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2183349ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2183349ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2183967ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2183967ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2183967ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2183968ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2183968ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2197802ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2197802ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2197802ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2197802ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2197802ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2197802ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2198491ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2198491ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2198491ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2198492ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2198492ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2203757ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2203757ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2203757ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2203757ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2203757ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2203757ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2203845ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2203845ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2203845ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2203845ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2203845ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2213672ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2213672ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2213672ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2213672ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2213672ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2213672ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2214070ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2214070ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2214070ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2214071ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2214071ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2223716ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:4322/@vite/client:1243
+[ 2228204ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2228204ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2228204ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2228204ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2228204ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2228204ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2228212ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2228212ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2228212ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2228213ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2228213ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
+[ 2297843ms] [LOG] Initializing Algolia client... @ http://localhost:4322/src/lib/algoliaClient.ts:24
+[ 2297843ms] [LOG] Environment variables: {appId: undefined, apiKey: undefined, indexName: undefined} @ http://localhost:4322/src/lib/algoliaClient.ts:28
+[ 2297843ms] [LOG] Using mock Algolia client @ http://localhost:4322/src/lib/algoliaClient.ts:37
+[ 2297843ms] [LOG] Final searchClient type: object @ http://localhost:4322/src/lib/algoliaClient.ts:43
+[ 2297843ms] [LOG] Final searchIndex: eu_zentala_io @ http://localhost:4322/src/lib/algoliaClient.ts:44
+[ 2297843ms] [LOG] Final searchClient methods: [search] @ http://localhost:4322/src/lib/algoliaClient.ts:45
+[ 2297926ms] [LOG] AlgoliaSearch component initializing... @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:2
+[ 2297927ms] [LOG] searchClient type: object @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:3
+[ 2297927ms] [LOG] searchClient methods: [search] @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:4
+[ 2297927ms] [LOG] searchIndex: eu_zentala_io @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:5
+[ 2297927ms] [LOG] AlgoliaSearch component initialized @ http://localhost:4322/src/components/AlgoliaSearch.astro?astro&type=script&index=0&lang.ts:123
