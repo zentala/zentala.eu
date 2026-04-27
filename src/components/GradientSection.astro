@@ -13,7 +13,8 @@ interface Props {
 const {
   variant = 'primary',
   opacity = 0.5,
-  rounded = false,
+  // TODO(E000-T02): unused — re-enable together with `roundedClass` below
+  // rounded = false,
   padding = 'lg',
   class: className = '',
   id,
@@ -31,8 +32,8 @@ const paddingClasses = {
   xl: "py-16 px-4 sm:px-6 lg:px-8",
 };
 
-// Rounded class
-const roundedClass = rounded ? "rounded-lg" : "";
+// TODO(E000-T02): unused — re-enable when rounded class is applied to wrapper
+// const roundedClass = rounded ? "rounded-lg" : "";
 
 // Gradient variations (using CSS variables for theme support)
 const gradientStyles = {

@@ -1,12 +1,14 @@
 ---
 interface Props {
   placeholder?: string;
+  // TODO(E000-T02): unused — kept in API surface for future button-mode rendering
   buttonText?: string;
 }
 
-const { 
+const {
   placeholder = "Search the EU Digital Reform Vision...",
-  buttonText = "Search"
+  // TODO(E000-T02): unused — see Props comment above
+  // buttonText = "Search"
 } = Astro.props;
 ---
 

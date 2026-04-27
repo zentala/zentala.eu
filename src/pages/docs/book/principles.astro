@@ -6,7 +6,7 @@ const destination = '/principles';
 
 <meta http-equiv="refresh" content={`0;url=${destination}`}>
 
-<script define:vars={{ destination }}>
+<script is:inline define:vars={{ destination }}>
   window.location.href = destination;
 </script>
 

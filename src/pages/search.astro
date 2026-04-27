@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import AlgoliaSearch from '../components/AlgoliaSearch.astro';
-import { searchClient, searchIndex } from '../lib/algoliaClient.ts';
+// TODO(E000-T02): unused — Algolia integration paused (mocked in <script> below). Re-enable when Algolia is live.
+// import { searchClient, searchIndex } from '../lib/algoliaClient.ts';
 ---
 
 <Layout title="Search - EU Reform Vision">
@@ -95,8 +96,9 @@ import { searchClient, searchIndex } from '../lib/algoliaClient.ts';
 </style>
 
 <script>
-  import { searchClient, searchIndex } from '../lib/algoliaClient.ts';
-  
+  // TODO(E000-T02): unused — Algolia integration paused (mocked below). Re-enable when Algolia is live.
+  // import { searchClient, searchIndex } from '../lib/algoliaClient.ts';
+
   document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('algolia-search-input') as HTMLInputElement;
     const initialMessage = document.getElementById('initial-message');
@@ -117,8 +119,8 @@ import { searchClient, searchIndex } from '../lib/algoliaClient.ts';
     
     // FIXME: Algolia API has changed, this needs to be updated
 // const index = searchClient.initIndex(searchIndex); 
-const index = { 
-  search: async (query: string, options: any) => ({ hits: [] }) 
+const index = {
+  search: async (_query: string, _options: any) => ({ hits: [] })
 };
     
     // If URL has search query param, perform search

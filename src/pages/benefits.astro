@@ -470,7 +470,8 @@ import StakeholderBenefits from '../components/StakeholderBenefits.astro';
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    const benefitsContainer = document.getElementById('benefits-container');
+    // TODO(E000-T02): unused — re-enable if container-level handler is added
+    // const benefitsContainer = document.getElementById('benefits-container');
     const countryBenefits = document.querySelectorAll('.country-benefits');
     const defaultBenefits = document.getElementById('default-benefits');
     const countrySearch = document.getElementById('country-search') as HTMLInputElement;
