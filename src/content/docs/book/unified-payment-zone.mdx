@@ -1,9 +1,150 @@
 ---
 title: Unified Payment Zone
-description: Simplifying financial transactions across the EU.
-draft: true
+description: Cross-border payments in the EU still work like it's 1995. Instant SEPA and the digital euro are the infrastructure fix — the equivalent of laying highway between member states.
+tags: ["payments", "sepa", "digital-euro", "infrastructure", "eu-reform"]
+author: zentala
 ---
 
-## Unified Payment Zone
+# Unified Payment Zone
 
-This article outlines the concept of a unified payment zone to facilitate seamless financial transactions across the European Union. 
+I want to send €500 from my Polish bank account to a freelancer in Barcelona. It should
+take a tenth of a second. It should cost nothing. The money should arrive before I finish
+closing the laptop.
+
+Instead, depending on which bank I use, it takes up to three business days and costs
+between 0.5% and 3% of the transfer amount. If I go through a third-party service like
+Wise or Revolut — designed specifically to paper over this gap — I pay a fee to a
+private intermediary for solving a problem the EU should have already solved itself.
+
+This is not a technology problem. The technology exists. It has existed since 2017.
+This is a legacy system problem — the same structural inertia that keeps Europe running
+on processes designed for the pre-internet era.
+
+## The Toll Booth Between Member States
+
+The EU is supposed to be a single market. One of the four fundamental freedoms is the
+free movement of capital. But when money crosses a border — even between two eurozone
+members — it often passes through a tangle of correspondent banks, intermediary clearing
+houses, and exchange systems that each take a cut, add latency, and introduce opacity.
+
+For individuals, this is an irritant. For businesses, it is a structural tax. A Polish
+SME with clients in Germany, France, and the Netherlands is paying a per-transaction
+toll every time money moves. A Romanian freelancer with clients in Amsterdam is losing
+1–2% on every invoice settled. These costs are invisible in macroeconomic statistics
+but very visible in household accounts and startup balance sheets.
+
+The Draghi report on European competitiveness, published in 2024, identified fragmented
+financial infrastructure as one of the structural disadvantages holding Europe back. This
+is not a fringe position — it is the formal diagnosis of the EU's own analysis.
+
+## What Already Exists — And Why It Is Not Deployed
+
+SEPA Instant Credit Transfer (SCT Inst) has been technically available since 2017. It
+enables euro transfers between bank accounts within the SEPA zone — settled in under
+ten seconds, any time of day, any day of the year. The ECB's TARGET Instant Payment
+Settlement platform (TIPS) processes these transfers at a cost of €0.002 per transaction.
+Not 0.2%. Two hundredths of a euro cent.
+
+The infrastructure is there. The capacity is there. The cost is effectively zero.
+
+So why isn't every bank in Europe using it?
+
+Because 70 banks missed the January 2025 deadline. Despite the scheme existing for eight
+years, market adoption was sluggish. Banks had no competitive incentive to invest in
+24/7 infrastructure when customers weren't demanding it and regulators weren't enforcing it.
+This is the European pattern: we build technically excellent systems, then fail to deploy
+them uniformly because each member state and institution operates on its own timeline.
+
+The 2024 Instant Payments Regulation changed that. Starting from January 2025 for
+receiving and October 2025 for sending, all eurozone payment service providers are
+required to be capable of instant payments. Fees for instant transfers cannot exceed fees
+for standard SEPA transfers. This is the legislative override that the market refused to
+provide organically.
+
+Non-eurozone EU members — Poland, Sweden, Czech Republic — must comply by April 2026.
+
+## The Digital Euro: Sovereignty Infrastructure, Not a Consumer Product
+
+The digital euro is scheduled for a first issuance in 2029. The ECB estimates the build
+cost at approximately €1.3 billion, with annual operating costs of around €320 million.
+This is not cheap. But the argument for it is not primarily about cost — it is about
+strategic autonomy.
+
+Visa and Mastercard handle approximately 70% of EU card payments. Both are US companies.
+Alipay and WeChat Pay are Chinese. Europe's retail payment infrastructure — the pipes
+through which everyday economic life flows — is owned by non-European entities subject
+to non-European jurisdiction.
+
+I find this alarming in a way that has nothing to do with technology. It is the equivalent
+of having your electricity grid controlled by a foreign power that can flip a switch.
+Sanctions, geopolitical crises, and policy changes in Washington or Beijing all become
+leverage points against European economic activity. This is not a hypothetical — it has
+happened with payment systems in other contexts.
+
+The digital euro, if designed correctly, would be a direct claim on the ECB — like cash,
+but digital. A public, sovereign payment rail that does not extract interchange fees and
+does not depend on the willingness of foreign corporations to keep processing European
+transactions.
+
+## The Privacy Design Problem
+
+I have one serious concern about the digital euro, and I want to name it directly rather
+than bury it in a footnote: surveillance risk is real.
+
+The ECB's stated design includes cash-like privacy for offline small transactions and
+tiered privacy for online payments. The holding limit is set at €3,000 per person, with
+automatic overflow to commercial bank accounts. The ECB says it will not track individual
+transactions.
+
+I believe the current ECB leadership means this. I am less confident about what a future
+government in a future political climate would do with the same infrastructure. The
+technical architecture that enables privacy by default also enables monitoring by policy
+change. China's experience with e-CNY is instructive: even in a less privacy-conscious
+society, users resisted government-visible payment monitoring. European users — with
+stronger civil liberties traditions — will be more sensitive, not less.
+
+The digital euro will need legally binding technical constraints on surveillance, not just
+policy commitments. Privacy architecture should be built into the protocol, not bolted
+on as a promise.
+
+## What Unified Means
+
+A Unified Payment Zone is not just "instant payments exist somewhere." It means:
+
+**Universal deployment** — every bank account in the EU can send and receive instant
+payments. Not 67%, not "all major banks", but every account. The 2024 regulation is a
+start. Enforcement with real penalties is the follow-through.
+
+**Uniform pricing** — sending money from Warsaw to Barcelona costs the same as sending
+money within Warsaw. Regulation 924/2009 already mandates this for card payments. The
+same logic should apply to all euro transfers across the single market.
+
+**Cross-border reach** — the SEPA zone currently covers 36 countries. But real-time
+cross-border settlement between non-eurozone EU members and eurozone members is still
+not seamless. The regulatory framework needs to catch up with the geographic reality.
+
+**Sovereign infrastructure** — a payment rail that is publicly owned, interoperable,
+and not dependent on private US or Chinese companies to keep European commerce running.
+
+This is infrastructure. Like roads, like the electrical grid, like the internet backbone.
+Nobody asks whether roads should turn a profit on each journey. The economy runs on them.
+Payment infrastructure is the same category of thing.
+
+## The Pattern We Keep Repeating
+
+The EU builds excellent technical standards and then deploys them incompletely. SEPA was
+created in 2008. Instant SEPA was created in 2017. Full mandatory deployment is arriving
+in 2025–2026. That is an eight-year gap between a working protocol and universal
+availability — eight years during which European businesses paid unnecessary fees and
+European freelancers sent money through private intermediaries.
+
+I am not interested in building new systems. I am interested in actually deploying the
+ones we have, uniformly, with deadlines and consequences for non-compliance.
+
+The Unified Payment Zone is not a vision of the future. The technical foundation exists
+today. What is missing is the political commitment to treat payment infrastructure like
+the public good it is — and to enforce that commitment with the same seriousness we
+applied to GDPR.
+
+What "sending money costs effectively nothing and arrives in seconds" means economically
+is the argument on the [next page](/book/near-zero-transaction-costs).
