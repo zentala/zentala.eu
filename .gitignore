@@ -25,3 +25,10 @@ pnpm-debug.log*
 # temporary content folder
 src/pages/vision/add/*
 .gstack/
+
+# playwright MCP session logs
+.playwright-mcp/
+
+# session handoff files (ephemeral, local only)
+.plan/handoffs/
+.plan/HANDOFF-*.md
