@@ -30,13 +30,24 @@ Open ideas and future improvements not yet assigned to an epic.
 ## Data & Integrations
 
 - [ ] Replace hardcoded sample stats in `InteractiveSection.astro` with real Eurostat API data
-  - Currently: hardcoded language %, DESI scores, fictional GDP gains
-  - File: `src/components/InteractiveSection.astro` lines 27-53
-  - Note at bottom: "Data is for illustrative purposes"
+  - **Currently NOT used in production.** `<InteractiveSection>` is commented out on home
+    page (E000-T02). Only renders in dev-only `/ui` library page.
+  - Decision required first: does `<InteractiveSection>` come back to home? If no →
+    delete the component instead of wiring Eurostat.
+  - Hardcoded data: language %, DESI scores, fictional GDP gains
+    (`src/components/InteractiveSection.astro` lines 27-53)
 - [ ] Algolia: fix oversized records before full integration (3 transcripts exceed 10KB limit)
-  - Files listed in `todo_algolia.md`
-  - Run `npm run index-algolia` after fixing
-  - `algoliaClient.ts` currently uses mock client — needs real init after env vars confirmed
+  - **Currently NOT used in production.** Mock client returns empty results. Search bar
+    HIDDEN from navbar (E000-T03). `/search` page still reachable via sitemap but empty.
+  - Reactivation steps documented at the top of `src/lib/algoliaClient.ts`.
+  - File list of oversized records: was in `todo_algolia.md` but file is missing — need
+    to regenerate by running indexer and capturing the size errors.
+
+## Mock features hidden from UI
+
+- [ ] **Algolia search** — hidden from navbar via E000-T03 (`5e300a2`). Currently mock-only,
+  returns empty results. To reactivate: see top-of-file comment in `src/lib/algoliaClient.ts`.
+  Linked from sitemap; `/search` page still loads but returns nothing.
 
 ## Visual / UX
 
@@ -49,16 +60,13 @@ Open ideas and future improvements not yet assigned to an epic.
 
 ## Technical Debt
 
-**E000-T02 (2026-04-27, commit `6aad746`) — closed 31 of 33 astro check hints.**
-Pattern: comment with `TODO(E000-T02)` markers, no deletions, full visibility preserved.
-Stale BACKLOG items dropped (frameborder, EUStatisticsChart, Footer.isDevelopment,
-WhyDigitalReform vars — all already clean). Extras found and fixed beyond original list.
+**Closed 2026-04-27.**
+- E000-T02 (`6aad746`) — 31 of 33 astro check hints commented with TODO markers
+- E000-T03 (`5e300a2`) — last 2 hints fixed by support.astro `onclick` → `addEventListener` refactor
 
-Remaining:
-- [ ] `src/pages/support.astro:191` — TS6133 hints on `textContent` in inline `onclick`
-  attribute. Workaround requires refactor: extract handler to `<script>` block with
-  `addEventListener`. Out of scope for E000-T02 (separate decision: keep inline-script
-  pattern or modernize).
+Current `astro check`: **0 errors / 0 warnings / 0 hints.** Clean baseline established.
+
+Next debt items, when they arise, get tracked here.
 
 ## Performance
 

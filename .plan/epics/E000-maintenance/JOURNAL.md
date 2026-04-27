@@ -102,3 +102,47 @@ merge `0514bdc`.
   search.astro stubs.
 - Dyskusja Eurostat: live data czy zostawiamy hardcoded sample? `InteractiveSection` na
   home jest zakomentowany — najpierw decyzja czy ten komponent w ogóle wraca.
+
+---
+
+## Session 2026-04-27 (E000-T03)
+
+### Hide mock search from navbar + A3 refactor + backlog cleanup
+
+User decyzja po E000-T02: skoro Algolia jest mock (zwraca puste wyniki), search nie powinien
+być w navbarze — straszy użytkowników. Plus A3 (`support.astro` inline `onclick`)
+refactor, bo to ostatnie 2 hinty w `astro check`.
+
+**Worktree** `feat/E000-T03-hide-mock-search`, atomic commit `5e300a2`, merge `081e98f`.
+
+**Co zostało zrobione:**
+- `Header.astro`: import `AlgoliaSearch` + 2 użycia (desktop nav + mobile menu) zakomentowane
+  z TODO markerami pokazującymi jak przywrócić
+- `src/lib/algoliaClient.ts`: prominent header comment dokumentujący mock-only state
+  i 5-krokową procedurę włączenia prawdziwego Algolia
+- `support.astro`: button id="copy-url-btn", inline `onclick` usunięty, istniejący
+  `<script>` na dole pliku zaktualizowany — celował w stary selektor `button[onclick^=...]`
+  który po refactorze już nie istniał (chytry bug — gdyby skipnąć update, button
+  przestałby działać po refactorze!)
+- BACKLOG: nowa sekcja "Mock features hidden from UI" z pozycją Algolia. Sekcja
+  "Data & Integrations" przepisana — dodane info że Eurostat (`InteractiveSection`)
+  jest *currently NOT used in production*, decyzja czy ten komponent w ogóle wraca
+  jest blokerem dla Eurostat. Sekcja "Technical Debt" zamknięta — 0/0/0 baseline.
+
+**Decyzje:**
+- `/search` page i sitemap entry zostają (user explicit)
+- Komentowanie zamiast usuwania (kontynuacja patternu z E000-T02)
+- A3 refactor preferowany nad zostawieniem inline-onclick — zysk: clean baseline +
+  CSP-friendly + identyczne UX
+
+**Findings:**
+- W `support.astro` na dole był już `<script>` z `addEventListener` celujący w stary
+  selektor — czyli button miał DUBLOWANY handler (inline `onclick` + `<script>`).
+  Po usunięciu inline, script przestałby działać bo selektor `button[onclick^=...]`
+  nic by nie znalazł. Złapane w trakcie refactora i naprawione.
+- Po E000-T02+T03: **0 errors / 0 warnings / 0 hints** w `astro check` (91 plików).
+
+**Następne (z planu A — wciąż otwarte):**
+- Algolia: do dyskusji czy w ogóle przywracamy. Jeśli tak — fix oversized transcripts +
+  real client init. Jeśli nie — usunąć całą infrastrukturę.
+- Eurostat: blokowane decyzją czy `<InteractiveSection>` wraca na home.
