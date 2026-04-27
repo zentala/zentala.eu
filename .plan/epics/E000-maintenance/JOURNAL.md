@@ -56,3 +56,49 @@ Wszystkie 5 fixów z `TASK-research-map-fixes.md` wdrożone w poprzedniej sesji 
 - Fix 5: podział 563-liniowego map.astro na 3 pliki
 
 Testy: 36/36 passing. Task file usunięty, wpis w DONE.md.
+
+---
+
+## Session 2026-04-27 (E000-T02)
+
+### Lint cleanup — astro check 33 hints → 2
+
+User wybrał plan B (czystka bez Algolia/Eurostat decyzji). Worktree
+`feat/E000-T02-lint-cleanup`, 18 plików zmienionych, atomic commit `6aad746`,
+merge `0514bdc`.
+
+**Co zostało zrobione:**
+- 5 unused imports w `index.astro` (Testimonials, InteractiveSection, RobotIcon,
+  DigitalIcon, LanguageIcon)
+- 4 unused SVG icons w `index.astro` (ArrowRightIcon, GlobeIcon, QuestionIcon, BookIcon)
+- `CardColor` type + `isProduction` w `ui/index.astro`
+- `Card`/`CardGrid` w 3 vision pages
+- `searchClient`/`searchIndex` w `search.astro` (frontmatter + `<script>`),
+  prefix `_` na unused mock fn args
+- `getEntry` w `transcripts/[...slug].astro`
+- Dodana dyrektywa `is:inline` w `docs/book/principles.astro`
+- `Card`/`CardGrid` w `content/docs/all.mdx`
+- Komponenty: AlgoliaSearch.astro `buttonText`, Card.astro `lightModeColors`+`lightColors`,
+  EuropeMap.astro `defaultCountries` (block-comment), FAQ.astro `index`→`_index`,
+  GradientSection.astro `rounded`+`roundedClass`, Header.astro `EuLogo`,
+  TimelineContainer.astro `children` destructure
+
+**Decyzje podczas pracy:**
+- Komentowanie zamiast usuwania (wybór usera) — pattern `TODO(E000-T02): unused — re-enable when ...`
+- `support.astro` `textContent` w inline `onclick` — poza scope (wymaga refactora na
+  `addEventListener`, osobna decyzja)
+- BACKLOG "Technical Debt" przepisany — stare pozycje (frameborder, EUStatisticsChart,
+  isDevelopment, WhyDigitalReform vars) były **już clean** — astro check ich nie flaguje;
+  były to false-positives z TODO_CLEANUP.md sprzed czasu
+
+**Findings:**
+- BACKLOG mocno nieaktualny — astro check znalazł rzeczy których BACKLOG nie wymieniał
+  (4 ikony w index.astro, 7 unused vars w komponentach, TimelineContainer slot pattern)
+- Worktree build wyrzuca warning "Could not find Sharp" — to artefakt środowiska worktree
+  (sharp w głównym `node_modules`, nie w worktree's). Build exit 0, pages OK.
+
+**Następne kroki (z planu A — odłożone):**
+- Dyskusja Algolia: zostawiamy mock czy podłączamy? Zależnie od decyzji odkomentować
+  search.astro stubs.
+- Dyskusja Eurostat: live data czy zostawiamy hardcoded sample? `InteractiveSection` na
+  home jest zakomentowany — najpierw decyzja czy ten komponent w ogóle wraca.

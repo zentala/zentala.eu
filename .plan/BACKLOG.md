@@ -47,18 +47,18 @@ Open ideas and future improvements not yet assigned to an epic.
 - [ ] "Continue reading" / "related topics" at end of each page
 - [ ] Table of contents for long articles
 
-## Technical Debt (from TODO_CLEANUP.md)
+## Technical Debt
 
-- [ ] Fix TypeScript warnings in `EUStatisticsChart.astro` (Chart ID handling)
-- [ ] Remove unused imports in `src/pages/index.astro` (ArrowRightIcon, RobotIcon, DigitalIcon, LanguageIcon, InteractiveSection, Testimonials)
-- [ ] Remove unused var `isDevelopment` in `src/components/Footer.astro`
-- [ ] Remove unused vars `borderColorClass`, `bgColorClass` in `WhyDigitalReform.astro`
-- [ ] Remove unused var `benefitsContainer` in `src/pages/benefits.astro`
-- [ ] Remove unused var `statusMessage` in `src/pages/confirm.astro`
-- [ ] Remove unused var `isProduction` in `src/pages/ui/index.astro`
-- [ ] Remove unused imports `Card`, `CardGrid` in vision components
-- [ ] Fix deprecated `frameborder` → `border-0` class in all iframes
-- [ ] Fix CardGrid usage in `content/docs/all.mdx`
+**E000-T02 (2026-04-27, commit `6aad746`) — closed 31 of 33 astro check hints.**
+Pattern: comment with `TODO(E000-T02)` markers, no deletions, full visibility preserved.
+Stale BACKLOG items dropped (frameborder, EUStatisticsChart, Footer.isDevelopment,
+WhyDigitalReform vars — all already clean). Extras found and fixed beyond original list.
+
+Remaining:
+- [ ] `src/pages/support.astro:191` — TS6133 hints on `textContent` in inline `onclick`
+  attribute. Workaround requires refactor: extract handler to `<script>` block with
+  `addEventListener`. Out of scope for E000-T02 (separate decision: keep inline-script
+  pattern or modernize).
 
 ## Performance
 
