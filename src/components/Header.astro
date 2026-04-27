@@ -3,7 +3,10 @@ import { Image } from 'astro:assets';
 // TODO(E000-T02): unused — header uses EuFlagLogo; re-enable if EuLogo png variant returns
 // import EuLogo from '../assets/eu.png';
 import EuFlagLogo from '../assets/eu-flag.svg';
-import AlgoliaSearch from './AlgoliaSearch.astro';
+// TODO(E000-T03): Algolia is currently mocked (see src/lib/algoliaClient.ts).
+// Search bar hidden from navbar to avoid showing empty results to users.
+// Re-enable when real Algolia is wired up: uncomment import + both <AlgoliaSearch> below.
+// import AlgoliaSearch from './AlgoliaSearch.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
 const isDev = import.meta.env.DEV;
@@ -27,10 +30,12 @@ const visibleLinks = isDev ? links : links.filter(l => !(l as any).devOnly);
         <span class="text-2xl font-semibold tracking-tight theme-text-primary">EU Reform <span style="color: var(--color-accent-primary);">Vision</span></span>
       </a>
       
+      {/* TODO(E000-T03): hidden — Algolia mocked, returns empty results
       <div class="hidden lg:block w-full max-w-sm mx-6">
         <AlgoliaSearch placeholder="Search the vision..." />
       </div>
-      
+      */}
+
       <nav class="hidden md:flex space-x-6 items-center">
         {visibleLinks.map(link => (
           <a 
@@ -58,9 +63,11 @@ const visibleLinks = isDev ? links : links.filter(l => !(l as any).devOnly);
   <!-- Mobile menu, hidden by default -->
   <div id="mobile-menu" class="md:hidden hidden pb-4" style="background-color: var(--color-bg-primary);">
     <div class="container mx-auto px-4">
+      {/* TODO(E000-T03): hidden — Algolia mocked, returns empty results
       <div class="py-4">
         <AlgoliaSearch placeholder="Search the vision..." />
       </div>
+      */}
       <nav class="flex flex-col space-y-4">
         {visibleLinks.map(link => (
           <a 

@@ -1,4 +1,24 @@
-// Algolia client implementation with mock client
+// ============================================================================
+// MOCK ONLY — Algolia is NOT wired up.
+// ============================================================================
+// `searchClient` is always set to `mockSearchClient` below, which returns empty
+// results regardless of input. Real Algolia init is commented out in
+// `initAlgoliaClient()` to avoid TS errors with the current SDK version.
+//
+// The Algolia search UI is currently HIDDEN from the navbar (see Header.astro
+// E000-T03 comments). The /search page is still reachable via sitemap but
+// returns no results.
+//
+// To enable real search:
+//   1. Fix oversized transcripts (3 files exceed Algolia 10KB record limit —
+//      see todo_algolia.md if it exists, or grep `index-algolia` script output)
+//   2. Wire real Algolia client in `initAlgoliaClient()` below using
+//      `searchClient = algoliasearch(appId, apiKey)`
+//   3. Run `npm run index-algolia`
+//   4. Uncomment <AlgoliaSearch> in Header.astro (E000-T03 markers)
+//   5. Uncomment imports in src/pages/search.astro (E000-T02 markers)
+// ============================================================================
+
 // Using any type to avoid TypeScript errors
 let searchClient: any = null;
 let searchIndex: string = 'eu_zentala_io';
