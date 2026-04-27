@@ -46,6 +46,8 @@
 
 **Read `WRITING.md` before writing or editing any content, copy, or page text.**
 
+**Read `RESEARCH_INDEX.md` before writing any manifest page** — it lists all 28 research files with key data points so you know what sources are available without scanning the whole `src/content/docs/research/` directory.
+
 It contains: voice rules, the central metaphor, argument hierarchy, target audience, what to avoid.
 Full vision: `.arch/VISION.md`
 
