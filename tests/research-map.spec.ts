@@ -233,6 +233,13 @@ test.describe('/resources/research/map', () => {
     await expect(conceptBtns).toHaveCount(14)
   })
 
+  // ── Research links ────────────────────────────────────────────────────────
+  test('complete topic card shows "View research" link when expanded', async ({ page }) => {
+    const card = page.locator('.topic-card[data-id="T1.1"]')
+    await card.locator('.card-toggle').click()
+    await expect(card.locator('a[href="/docs/research/t1-1-demographic-crisis"]')).toBeVisible()
+  })
+
   // ── Accessibility ─────────────────────────────────────────────────────────
   test('search input is labelled with placeholder', async ({ page }) => {
     const input = page.locator('#search-input')
