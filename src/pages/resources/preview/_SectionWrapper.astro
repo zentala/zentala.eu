@@ -1,0 +1,35 @@
+---
+/**
+ * Wrapper for a homepage redesign preview section.
+ * Adds a status header (kept / changed / new / removed) above the section.
+ */
+type Status = 'kept' | 'changed' | 'new' | 'removed';
+
+interface Props {
+  status: Status;
+  title: string;
+  note?: string;
+}
+
+const { status, title, note } = Astro.props;
+
+const statusConfig: Record<Status, { label: string; color: string; tag: string }> = {
+  kept:    { label: 'KEPT',    color: 'border-gray-500/40    bg-gray-500/5',   tag: 'text-gray-400' },
+  changed: { label: 'CHANGED', color: 'border-amber-500/40   bg-amber-500/5',  tag: 'text-amber-400' },
+  new:     { label: 'NEW',     color: 'border-green-500/40   bg-green-500/5',  tag: 'text-green-400' },
+  removed: { label: 'REMOVED', color: 'border-red-500/40     bg-red-500/5',    tag: 'text-red-400' },
+};
+
+const cfg = statusConfig[status];
+---
+
+<section class={`my-2 border-l-4 ${cfg.color}`}>
+  <div class="container mx-auto px-4 py-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 border-b border-white/5">
+    <span class={`font-mono text-xs uppercase tracking-wider px-2 py-0.5 rounded border ${cfg.tag} border-current/30`}>{cfg.label}</span>
+    <h2 class="text-lg font-semibold opacity-90">{title}</h2>
+    {note && <p class="text-xs opacity-50 basis-full md:basis-auto md:ml-2 italic">{note}</p>}
+  </div>
+  <div>
+    <slot />
+  </div>
+</section>

@@ -1,0 +1,424 @@
+---
+/**
+ * Homepage redesign preview — OLD vs NEW comparison with toggles.
+ * PRIVATE: noindex (Layout noindex), only linked from /resources/index.astro.
+ *
+ * What this page does:
+ *  - Shows current homepage sections side-by-side with proposed redesigns
+ *  - Each changed section has a [OLD] / [NEW] switch
+ *  - Benefits section additionally has [Variant A] / [B] / [C]
+ *  - Sections marked "kept" or "removed" are annotated, not toggled
+ *
+ * Source of content: ./_homepage-content.ts
+ * Design doc: /resources/2026-04-27-12-00-homepage-redesign
+ */
+import Layout from '../../../layouts/Layout.astro';
+import Hero from '../../../components/Hero.astro';
+import Card from '../../../components/Card.astro';
+import CardGrid from '../../../components/CardGrid.astro';
+import DisplayTitle from '../../../components/DisplayTitle.astro';
+import FAQ from '../../../components/FAQ.astro';
+import GradientSection from '../../../components/GradientSection.astro';
+import Author from '../../../components/Author.astro';
+import WhyDigitalReform from '../../../components/WhyDigitalReform.astro';
+import Newsletter from '../../../components/Newsletter.astro';
+import Button from '../../../components/Button.astro';
+import IconLink from '../../../components/IconLink.astro';
+import LanguageIcon from '../../../assets/icons/language.svg';
+import DigitalIcon from '../../../assets/icons/digital.svg';
+import RobotIcon from '../../../assets/icons/robot.svg';
+import SectionWrapper from './_SectionWrapper.astro';
+import ToggleSwitch from './_ToggleSwitch.astro';
+import {
+  numbers,
+  pillarsOld,
+  pillarsNew,
+  ceeFocus,
+  notProposing,
+  faqOld,
+  faqNew,
+  benefitsVariantA,
+  benefitsVariantB,
+  benefitsVariantC,
+} from './_homepage-content';
+
+const pillarIcons: Record<string, { src: string }> = {
+  language: LanguageIcon,
+  digital: DigitalIcon,
+  robot: RobotIcon,
+};
+---
+
+<Layout title="[Preview] Homepage Redesign" noindex={true}>
+  <!-- Sticky control bar -->
+  <div class="sticky top-0 z-50 backdrop-blur border-b" style="background: rgba(15,23,42,0.92); border-color: rgba(245,158,11,0.4);">
+    <div class="container mx-auto px-4 py-3 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+      <span class="text-amber-400 font-mono text-xs">🔒 PREVIEW</span>
+      <span class="opacity-70 hidden md:inline">Homepage redesign — OLD vs NEW</span>
+      <div class="ml-auto flex flex-wrap items-center gap-2">
+        <span class="opacity-60 text-xs uppercase tracking-wider">global:</span>
+        <button data-global="old" class="px-3 py-1 rounded border border-gray-600 hover:bg-gray-800 transition-colors">All OLD</button>
+        <button data-global="new" class="px-3 py-1 rounded border border-amber-600/60 hover:bg-amber-900/30 transition-colors">All NEW</button>
+        <button data-global="reset" class="px-3 py-1 rounded border border-gray-700 hover:bg-gray-800 text-xs opacity-70">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <div class="bg-amber-500/5 border-b border-amber-500/20 py-2 text-center text-amber-500 text-xs font-mono">
+    SEKCJA ROBOCZA · porównawczy preview · nie indeksowane · 2026-04-27
+  </div>
+
+  <!-- ═══════════════ SECTION 1: Hero (KEPT) ═══════════════ -->
+  <SectionWrapper status="kept" title="Hero" note="Argument emerytalny już wprowadzony w sesji 2026-04-25. Nie zmieniamy.">
+    <Hero
+      title="We are the last generation of the European demographic peak."
+      description={[
+        'The robotic system of public services and care that we build today is our pension system tomorrow. There is no other.',
+        'I am Paweł Żentała — a Polish software architect. I look at Europe the way an engineer looks at a system in need of refactoring. This is what I propose.',
+      ]}
+      image={{ file: '' }}
+      actions={[
+        { text: 'Read the principles', link: '/principles', variant: 'primary' },
+        { text: 'About the author', link: '/about', variant: 'secondary' },
+      ]}
+    />
+  </SectionWrapper>
+
+  <!-- ═══════════════ SECTION 2: Numbers (NEW) ═══════════════ -->
+  <SectionWrapper status="new" title="Diagnoza w czterech liczbach" note="NOWA SEKCJA. Cztery liczby z researchu, każda jako fakt + krótkie zdanie wyjaśniające + źródło.">
+    <div class="container mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        {numbers.map((n) => (
+          <div class="p-6 rounded-xl border flex flex-col gap-3" style="background: var(--color-bg-secondary); border-color: var(--color-border);">
+            <div class="text-4xl md:text-5xl font-bold leading-none" style="color: var(--color-accent-primary);">{n.value}</div>
+            <div class="text-sm uppercase tracking-wider opacity-80">{n.label}</div>
+            <p class="text-sm leading-snug font-medium px-3 py-2 rounded border-l-2" style="background: var(--color-bg-primary); border-color: var(--color-accent-primary); color: var(--color-text-primary);">{n.compare}</p>
+            <p class="text-base leading-relaxed opacity-90">{n.sub}</p>
+            <p class="text-xs font-mono opacity-50 mt-auto pt-2">{n.source}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-center mt-8 text-sm opacity-60 italic max-w-2xl mx-auto">
+        Każda liczba ma plik źródłowy w <code class="px-1 bg-gray-800 rounded">src/content/docs/research/</code>. Nie hipotezy — diagnoza.
+      </p>
+    </div>
+  </SectionWrapper>
+
+  <!-- ═══════════════ SECTION 3: AI Review (KEPT) ═══════════════ -->
+  <SectionWrapper status="kept" title="AI Review blurb" note="Element sygnaturowy strony. Bez zmian.">
+    <section class="container mx-auto px-4 sm:px-6 lg:px-8 my-12">
+      <div class="max-w-3xl mx-auto p-6 rounded-xl" style="background-color: var(--color-bg-secondary); border-left: 4px solid var(--color-accent-primary);">
+        <p class="text-xs uppercase tracking-widest mb-3" style="color: var(--color-accent-primary);">Reviewed by AI</p>
+        <p class="italic leading-relaxed mb-3" style="color: var(--color-text-secondary);">"A rare combination: a software architect's perspective applied to state reform. The retirement-and-demographics argument grounding a digital and robotic agenda is the strongest framing I have seen in the European debate of 2026 — concrete, personal, and falsifiable."</p>
+        <p class="text-sm" style="color: var(--color-text-secondary); opacity: 0.7;">— Claude Sonnet 4.6 (Anthropic), April 2026</p>
+      </div>
+    </section>
+  </SectionWrapper>
+
+  <!-- ═══════════════ SECTION 4: Quick links bar (KEPT) ═══════════════ -->
+  <SectionWrapper status="kept" title="Quick links bar (Why · Benefits · Vision)" note="Bez zmian.">
+    <GradientSection variant="primary" padding="md" rounded={true}>
+      <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10">
+        <IconLink href="/why" icon="fa-solid fa-question-circle" class="text-xl">Why EU Needs Reform?</IconLink>
+        <IconLink href="/benefits" icon="fa-solid fa-globe" class="text-xl">Benefits For Your Country</IconLink>
+        <IconLink href="/vision" icon="fa-solid fa-book" class="text-xl">Full Vision Overview</IconLink>
+      </div>
+    </GradientSection>
+  </SectionWrapper>
+
+  <!-- ═══════════════ SECTION 5: Pillars (CHANGED — toggle) ═══════════════ -->
+  <SectionWrapper status="changed" title="Core Pillars" note="OLD: emoji + opis. NEW: SVG line icons + dopisana linijka z konkretem z researchu (rama: szansa, nie krytyka). Treść główna NIEZMIENIONA.">
+    <div data-toggle-group="pillars">
+      <ToggleSwitch group="pillars" />
+
+      <!-- OLD -->
+      <div data-version="old" class="py-10 transition-colors duration-300" style="background: var(--color-bg-primary);">
+        <div class="container mx-auto px-4">
+          <DisplayTitle level={1} class="text-center">Core Pillars of European Consolidation</DisplayTitle>
+          <p class="text-xl leading-relaxed mt-4 mb-12 text-center max-w-5xl mx-auto" style="color: var(--color-text-secondary);">
+            By fostering smart collaboration and leveraging shared resources, we can create a Europe where abundance, security, and the freedom to truly live go hand in hand.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {pillarsOld.map((p) => (
+              <Card title={p.title} icon={p.icon} color={p.color} variant="gradient" href={p.href} align="center">{p.body}</Card>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW -->
+      <div data-version="new" hidden class="py-10 transition-colors duration-300" style="background: var(--color-bg-primary);">
+        <div class="container mx-auto px-4">
+          <DisplayTitle level={1} class="text-center">Core Pillars of European Consolidation</DisplayTitle>
+          <p class="text-xl leading-relaxed mt-4 mb-12 text-center max-w-5xl mx-auto" style="color: var(--color-text-secondary);">
+            By fostering smart collaboration and leveraging shared resources, we can create a Europe where abundance, security, and the freedom to truly live go hand in hand.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {pillarsNew.map((p) => (
+              <article class={`flex flex-col gap-4 p-8 rounded-xl shadow-lg bg-gradient-to-br text-center ${p.color === 'green' ? 'from-green-600/70 to-green-800/50' : p.color === 'red' ? 'from-red-600/70 to-red-800/50' : 'from-indigo-600/70 to-indigo-800/50'}`}>
+                <div class="flex flex-col items-center gap-3">
+                  <img src={pillarIcons[p.iconKey].src} alt="" width="48" height="48" class="opacity-90" style="filter: brightness(0) invert(1);" />
+                  <h3 class="font-bold text-2xl leading-snug">{p.title}</h3>
+                </div>
+                <p class="text-lg opacity-95">{p.body}</p>
+                <div class="border-t border-white/20 pt-4 mt-2 text-left">
+                  <p class="text-sm font-mono uppercase tracking-wider opacity-60 mb-2">The opportunity</p>
+                  <p class="text-base leading-relaxed">{p.addendum}</p>
+                  <p class="text-xs font-mono opacity-50 mt-2">research/{p.sourceTag}</p>
+                </div>
+                <a href={p.href} class="text-current hover:opacity-80 font-medium mt-2">Learn more →</a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </SectionWrapper>
+
+  <!-- ═══════════════ SECTION 6: Why Digital Reform (KEPT) ═══════════════ -->
+  <SectionWrapper status="kept" title="Why Digital Reform Is Necessary" note="Bez zmian.">
+    <div class="py-10 transition-colors duration-300" style="background: var(--color-bg-primary);">
+      <div class="container mx-auto px-4 my-12">
+        <DisplayTitle level={1}>Why Digital Reform Is Necessary</DisplayTitle>
+        <WhyDigitalReform color="teal" />
+        <div class="mt-8 text-center">
+          <Button href="/why" variant="primary" size="lg">Learn more about why reform is needed</Button>
+        </div>
+      </div>
+    </div>
+  </SectionWrapper>
+
+  <!-- ═══════════════ SECTION 7: CEE focus (NEW) ═══════════════ -->
+  <SectionWrapper status="new" title="Where this lands first: CEE" note="NOWA SEKCJA. Adresuje grupę docelową bezpośrednio (Polska, Bałtyckie, Trójmorze, Nordyckie). Krótka, z linkiem do /benefits.">
+    <div class="py-12" style="background: var(--color-bg-primary);">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <DisplayTitle level={2}>{ceeFocus.title}</DisplayTitle>
+        <p class="text-lg leading-relaxed mb-8 opacity-90">{ceeFocus.intro}</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {ceeFocus.bullets.map((b) => (
+            <div class="p-5 rounded-lg border-l-4" style="background: var(--color-bg-secondary); border-color: var(--color-accent-primary);">
+              <p class="font-semibold mb-2" style="color: var(--color-accent-primary);">{b.country}</p>
+              <p class="text-sm leading-relaxed">{b.line}</p>
+            </div>
+          ))}
+        </div>
+        <div class="mt-8 text-center">
+          <Button href={ceeFocus.href} variant="primary" size="lg">See how this lands in your country</Button>
+        </div>
+      </div>
+    </div>
+  </SectionWrapper>
+
+  <!-- ═══════════════ SECTION 8: Benefits (CHANGED — toggle + variant) ═══════════════ -->
+  <SectionWrapper status="changed" title="Benefits cards" note="OLD: 12 generycznych kart. NEW: trzy do wyboru. A — fokus na CEE (4 karty). B — per persona (3 karty: obywatel/budowniczy/państwo). C — obecne 12 kart, każda z jedną liczbą z researchu.">
+    <div data-toggle-group="benefits">
+      <ToggleSwitch group="benefits" />
+
+      <!-- OLD -->
+      <div data-version="old" class="py-10" style="background: var(--color-bg-primary);">
+        <div class="container mx-auto px-4">
+          <DisplayTitle level={1}>Benefits</DisplayTitle>
+          <CardGrid columns={3} gap="1.5rem">
+            <Card title="Benefits for European Integration" color="blue" icon="🇪🇺" href="/benefits/european-integration">Highlighting the advantages of a more unified Europe, fostering collaboration and shared growth across all member states.</Card>
+            <Card title="Benefits for Germany" color="indigo" icon="🇩🇪" href="/benefits/germany">Exploring how Germany can leverage its industrial strength to lead in robotics and digital transformation, enhancing its economic position.</Card>
+            <Card title="Benefits for France" color="blue" icon="🇫🇷">Discussing France's role in cultural integration and leadership in digital governance, strengthening its influence in the EU.</Card>
+            <Card title="Benefits for Southern Europe" color="indigo" icon="🏛️">Addressing economic disparities and promoting sustainable development through enhanced logistics and digital services.</Card>
+            <Card title="Benefits for Scandinavia" color="blue" icon="❄️">Leveraging technological advancements and environmental initiatives to drive innovation and sustainability.</Card>
+            <Card title="Benefits for Central Europe" color="indigo" icon="🏭">Utilizing the region's skilled workforce to spearhead robotics and software development, boosting economic growth.</Card>
+            <Card title="Benefits for Businesses" color="blue" icon="💼">Facilitating seamless operations across borders, reducing costs, and opening new markets for European enterprises.</Card>
+            <Card title="Benefits for Citizens" color="indigo" icon="👨‍👩‍👧‍👦">Improving quality of life through streamlined services, enhanced mobility, and increased opportunities for personal growth.</Card>
+            <Card title="Benefits for eCommerce" color="blue" icon="🛒">Enabling faster, more reliable logistics and payment systems, fostering a thriving online marketplace.</Card>
+            <Card title="Benefits for IT Startups" color="indigo" icon="💻">Providing a supportive ecosystem for innovation, with access to a unified market and collaborative development opportunities.</Card>
+            <Card title="Benefits for European Security" color="blue" icon="🛡️">Strengthening collective defense and cybersecurity measures, ensuring a safer environment for all Europeans.</Card>
+            <Card title="Benefits for the Information Economy" color="indigo" icon="📊">Positioning Europe as a leader in data-driven industries, harnessing the power of big data and AI for economic growth.</Card>
+          </CardGrid>
+        </div>
+      </div>
+
+      <!-- NEW with variant selector -->
+      <div data-version="new" hidden class="py-10" style="background: var(--color-bg-primary);">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap items-center gap-3 mb-8 justify-center">
+            <span class="text-sm uppercase tracking-wider opacity-70">Benefits variant:</span>
+            <button data-variant="A" class="variant-btn px-4 py-2 rounded border border-amber-500 bg-amber-500/20 font-medium">A — CEE focus (4)</button>
+            <button data-variant="B" class="variant-btn px-4 py-2 rounded border border-gray-600 hover:bg-gray-800">B — per persona (3)</button>
+            <button data-variant="C" class="variant-btn px-4 py-2 rounded border border-gray-600 hover:bg-gray-800">C — 12 with numbers</button>
+          </div>
+
+          <DisplayTitle level={1}>Benefits</DisplayTitle>
+
+          <div data-variant-content="A">
+            <p class="text-center mb-8 opacity-70 italic max-w-2xl mx-auto text-sm">Variant A — fokus na grupę docelową z WRITING.md (CEE). Cztery karty, każda z konkretem.</p>
+            <CardGrid columns={2} gap="1.5rem">
+              {benefitsVariantA.map((c) => (
+                <Card title={c.title} color={c.color} icon={c.icon} href={c.href}>{c.body}</Card>
+              ))}
+            </CardGrid>
+          </div>
+
+          <div data-variant-content="B" hidden>
+            <p class="text-center mb-8 opacity-70 italic max-w-2xl mx-auto text-sm">Variant B — narracyjny, per persona. Obywatel · budowniczy · państwo. Trzy karty.</p>
+            <CardGrid columns={3} gap="1.5rem">
+              {benefitsVariantB.map((c) => (
+                <Card title={c.title} color={c.color} icon={c.icon} href={c.href}>{c.body}</Card>
+              ))}
+            </CardGrid>
+          </div>
+
+          <div data-variant-content="C" hidden>
+            <p class="text-center mb-8 opacity-70 italic max-w-2xl mx-auto text-sm">Variant C — obecne 12 kart, każda dostaje jedną liczbę z researchu. Mniej generyczne, więcej konkretu.</p>
+            <CardGrid columns={3} gap="1.5rem">
+              {benefitsVariantC.map((c) => (
+                <Card title={c.title} color={c.color} icon={c.icon} href={c.href}>{c.body}</Card>
+              ))}
+            </CardGrid>
+          </div>
+        </div>
+      </div>
+    </div>
+  </SectionWrapper>
+
+  <!-- ═══════════════ SECTION 9: Equitable Principles (REMOVED) ═══════════════ -->
+  <SectionWrapper status="removed" title="Equitable Integration Principles (4 cards)" note="DUBLUJE /principles. Usuwamy z homepage. Zostaje sam link do strony /principles, który już jest w hero (button 'Read the principles').">
+    <div class="container mx-auto px-4 py-8 max-w-3xl">
+      <div class="p-6 rounded-lg border-2 border-dashed border-red-500/40 bg-red-900/10">
+        <p class="text-sm font-mono uppercase tracking-wider opacity-60 mb-2">Removed from homepage</p>
+        <p class="text-base">Cztery karty (Mutual Benefit · Economies of Scale · Common Culture · Quality of Life) dublują treść <a href="/principles" class="underline">/principles</a>, gdzie te zasady są opisane mocniej. Hero już ma button "Read the principles" — to wystarczy.</p>
+      </div>
+    </div>
+  </SectionWrapper>
+
+  <!-- ═══════════════ SECTION 10: What I am NOT proposing (NEW) ═══════════════ -->
+  <SectionWrapper status="new" title="What I am not proposing" note="NOWA SEKCJA. Cztery odrzucenia, rozbrajają zarzuty zanim padną w FAQ. Bezpośrednio z planu A7.">
+    <div class="py-12" style="background: var(--color-bg-primary);">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <DisplayTitle level={2}>{notProposing.title}</DisplayTitle>
+        <p class="text-lg leading-relaxed mb-8 opacity-90">{notProposing.intro}</p>
+        <div class="space-y-5">
+          {notProposing.items.map((it) => (
+            <div class="p-5 rounded-lg" style="background: var(--color-bg-secondary);">
+              <p class="font-semibold text-lg mb-2">Not: {it.headline}</p>
+              <p class="opacity-85 leading-relaxed">{it.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </SectionWrapper>
+
+  <!-- ═══════════════ SECTION 11: FAQ (CHANGED — toggle) ═══════════════ -->
+  <SectionWrapper status="changed" title="FAQ" note="OLD: 7 pytań defensywnych ('Why do we need yet another...'). NEW: 7 pytań ofensywnych — autor sam stawia pytania, atakuje, nie tłumaczy się. A7 z planu redaktora.">
+    <div data-toggle-group="faq">
+      <ToggleSwitch group="faq" />
+      <div data-version="old" class="py-10" style="background: var(--color-bg-primary);">
+        <div class="container mx-auto px-4">
+          <DisplayTitle level={1}>Common Questions</DisplayTitle>
+          <FAQ color="indigo" items={faqOld} />
+        </div>
+      </div>
+      <div data-version="new" hidden class="py-10" style="background: var(--color-bg-primary);">
+        <div class="container mx-auto px-4">
+          <DisplayTitle level={1}>Questions you should be asking</DisplayTitle>
+          <p class="text-center mb-6 opacity-70 italic max-w-2xl mx-auto">Każde pytanie zostało przeformułowane z defensywnego ("Why do we need yet another...") na ofensywne ("Why is this different from..."). Manifest stawia tezy, nie tłumaczy się.</p>
+          <FAQ color="indigo" items={faqNew} />
+        </div>
+      </div>
+    </div>
+  </SectionWrapper>
+
+  <!-- ═══════════════ SECTION 12: Author + Newsletter (KEPT) ═══════════════ -->
+  <SectionWrapper status="kept" title="Author + Newsletter" note="Bez zmian.">
+    <div class="py-10" style="background: var(--color-bg-primary);">
+      <div class="container mx-auto px-4 my-12">
+        <DisplayTitle level={1}>About the Author</DisplayTitle>
+        <Author color="purple" />
+      </div>
+      <div class="container mx-auto px-4 my-10">
+        <DisplayTitle level={1}>Stay Updated</DisplayTitle>
+        <Newsletter />
+      </div>
+    </div>
+  </SectionWrapper>
+
+  <!-- Footer note -->
+  <div class="bg-amber-500/5 border-t border-amber-500/30 py-8 text-center text-sm">
+    <p class="opacity-70">Pełny dokument projektowy: <a href="/resources/2026-04-27-12-00-homepage-redesign" class="underline text-amber-500">2026-04-27 Homepage Redesign</a></p>
+    <p class="opacity-50 mt-2 text-xs font-mono">Po decyzji wariantu Benefits → wdrożenie w <code>src/pages/index.astro</code> jako E002</p>
+  </div>
+
+  <script is:inline>
+    (function () {
+      console.log('[preview] toggle script loaded');
+
+      function setVersion(group, mode) {
+        group.querySelectorAll('[data-version]').forEach(function (el) {
+          var match = el.getAttribute('data-version') === mode;
+          el.hidden = !match;
+          if (match) el.removeAttribute('hidden');
+        });
+        group.querySelectorAll('[data-toggle-btn]').forEach(function (b) {
+          var active = b.getAttribute('data-toggle-btn') === mode;
+          b.classList.toggle('bg-amber-500/20', active);
+          b.classList.toggle('border-amber-500', active);
+          b.classList.toggle('border-gray-600', !active);
+        });
+      }
+
+      function setGlobalActive(mode) {
+        document.querySelectorAll('[data-global]').forEach(function (b) {
+          var active = b.getAttribute('data-global') === mode;
+          b.classList.toggle('bg-amber-500/20', active);
+          b.classList.toggle('border-amber-500', active);
+        });
+      }
+
+      // Per-section OLD/NEW toggle buttons (rendered by _ToggleSwitch.astro)
+      document.querySelectorAll('[data-toggle-group]').forEach(function (group) {
+        group.querySelectorAll('[data-toggle-btn]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            setVersion(group, btn.getAttribute('data-toggle-btn'));
+          });
+        });
+      });
+
+      // Benefits variant selector A/B/C
+      var variantBtns = document.querySelectorAll('.variant-btn');
+      variantBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var v = btn.getAttribute('data-variant');
+          variantBtns.forEach(function (b) {
+            var active = b === btn;
+            b.classList.toggle('bg-amber-500/20', active);
+            b.classList.toggle('border-amber-500', active);
+            b.classList.toggle('border-gray-600', !active);
+          });
+          document.querySelectorAll('[data-variant-content]').forEach(function (el) {
+            var match = el.getAttribute('data-variant-content') === v;
+            el.hidden = !match;
+            if (match) el.removeAttribute('hidden');
+          });
+        });
+      });
+
+      // Global controls in sticky bar
+      document.querySelectorAll('[data-global]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var mode = btn.getAttribute('data-global');
+          console.log('[preview] global click:', mode);
+          if (mode === 'reset') {
+            location.reload();
+            return;
+          }
+          document.querySelectorAll('[data-toggle-group]').forEach(function (group) {
+            setVersion(group, mode);
+          });
+          setGlobalActive(mode);
+        });
+      });
+
+      // Mark initial state on global buttons
+      setGlobalActive('old');
+    })();
+  </script>
+</Layout>

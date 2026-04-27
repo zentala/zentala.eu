@@ -1,0 +1,18 @@
+---
+/**
+ * OLD/NEW toggle switch for a section group.
+ * Wired by vanilla JS in the parent page (data-toggle-group / data-toggle-btn).
+ */
+interface Props {
+  group: string;
+}
+
+const { group } = Astro.props;
+---
+
+<div class="container mx-auto px-4 py-3 flex items-center gap-2 text-sm">
+  <span class="opacity-60 text-xs uppercase tracking-wider mr-2">view:</span>
+  <button data-toggle-btn="old" class="px-3 py-1 rounded border border-amber-500 bg-amber-500/20 transition-colors">OLD</button>
+  <button data-toggle-btn="new" class="px-3 py-1 rounded border border-gray-600 hover:bg-gray-800 transition-colors">NEW</button>
+  <span class="ml-auto text-xs opacity-40 font-mono">group: {group}</span>
+</div>
