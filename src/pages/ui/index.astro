@@ -15,7 +15,8 @@ import Timeline from '../../components/Timeline.astro';
 
 // Sample data for examples
 const cardColors = ["blue", "indigo", "green", "yellow", "red", "purple", "teal"] as const;
-type CardColor = typeof cardColors[number];
+// TODO(E000-T02): unused type — re-enable when typed against component props
+// type CardColor = typeof cardColors[number];
 
 const sampleChartData = [
   { label: 'Category A', value: 65, color: 'rgba(75, 192, 192, 0.8)' },
@@ -833,10 +834,11 @@ import FAQ from '../components/FAQ.astro';
 <script>
   // This script will hide the UI library link in production mode
   document.addEventListener('DOMContentLoaded', () => {
-    const isProduction = window.location.hostname !== 'localhost' && 
-                         !window.location.hostname.includes('127.0.0.1') &&
-                         !window.location.hostname.includes('.local');
-    
+    // TODO(E000-T02): unused — server-side handles dev/prod gating; re-enable if client-side check needed
+    // const isProduction = window.location.hostname !== 'localhost' &&
+    //                      !window.location.hostname.includes('127.0.0.1') &&
+    //                      !window.location.hostname.includes('.local');
+
     // Logic to show UI link only in development mode will be handled by server-side code
     
     // Additional UI helper functions

@@ -3,7 +3,8 @@ interface Props {
   children: any;
 }
 
-const { children } = Astro.props;
+// TODO(E000-T02): children flows through <slot/> below; destructure not needed
+// const { children } = Astro.props;
 ---
 
 <div class="timeline-container bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-lg">

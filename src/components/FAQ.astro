@@ -40,7 +40,7 @@ if (color === "blue") {
   {title && <h2 class="text-3xl font-bold text-white mb-6">{title}</h2>}
   
   <div class="space-y-4">
-    {items.map((item, index) => (
+    {items.map((item, _index) => (
       <div class="faq-item">
         <details class="group">
           <summary class={`flex justify-between items-center font-medium cursor-pointer p-4 rounded-lg ${questionColorClass} ${questionHoverClass} text-white transition-all duration-300`}>
