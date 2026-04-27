@@ -21,32 +21,32 @@ Wave 2a and Wave 1 can run simultaneously — they don't share files.
 
 ### Wave 1 — Research Batch 9
 
-- [ ] **T01** — Swiss Direct Democracy & EU Referendum Models → `t5-1-direct-democracy-models.md`
-- [ ] **T02** — Liquid Democracy, Participatory Systems & Weighted Voting → `t5-2-liquid-democracy.md`
-- [ ] **T03** — Robotic Agriculture, Polyculture & Food Sovereignty → `t5-3-robotic-agriculture.md`
-- [ ] **T04** — Defense Robotics & EU Strategic Autonomy → `t5-4-defense-robotics.md`
-- [ ] **T05** — Smart Homes & Elderly Care Logistics → `t5-5-smart-homes-elderly.md`
+- [x] **T01** — Swiss Direct Democracy & EU Referendum Models → `t5-1-direct-democracy-models.md` (5a6d8db)
+- [x] **T02** — Liquid Democracy, Participatory Systems & Weighted Voting → `t5-2-liquid-democracy.md` (b211120)
+- [x] **T03** — Robotic Agriculture, Polyculture & Food Sovereignty → `t5-3-robotic-agriculture.md` (abbb4d7)
+- [x] **T04** — Defense Robotics & EU Strategic Autonomy → `t5-4-defense-robotics.md` (e049ecd)
+- [x] **T05** — Smart Homes & Elderly Care Logistics → `t5-5-smart-homes-elderly.md` (2bd10c3)
 
 ### Wave 2a — Manifest Pages (existing research)
 
-- [ ] **T06** — Robotization manifest page (new)
-- [ ] **T07** — Economic Growth Through Language Unity
-- [ ] **T08** — Predictive Healthcare System
-- [ ] **T09** — European Blockchain Archives
-- [ ] **T10** — Unified Payment Zone + Near-Zero Transaction Costs
-- [ ] **T11** — Digital Receipts
-- [ ] **T12** — Media & Cultural Integration
+- [x] **T06** — Robotization manifest page (new) (0861707)
+- [x] **T07** — Economic Growth Through Language Unity (5e6858c)
+- [x] **T08** — Predictive Healthcare System (c9d1bbb)
+- [x] **T09** — European Blockchain Archives (c1ca9ca)
+- [x] **T10** — Unified Payment Zone + Near-Zero Transaction Costs (054e50a)
+- [x] **T11** — Digital Receipts (03e55f3)
+- [x] **T12** — Media & Cultural Integration (83029c7)
 
 ### Wave 2b — Manifest Pages (needs Wave 1)
 
-- [ ] **T13** — Digital Democracy manifest page (needs T01+T02)
-- [ ] **T14** — Robotic Agriculture manifest page (needs T03)
-- [ ] **T15** — Defense Robotics section (needs T04)
+- [x] **T13** — Digital Democracy manifest page (057733e)
+- [x] **T14** — Robotic Agriculture manifest page (a4142b5 → fixed 13b39bf)
+- [x] **T15** — Defense Robotics section (bbd496f → fixed 13b39bf)
 
 ### Post-Wave
 
 - [ ] **T16** — Update research-map data (add T5.x topics to tier-4.ts or new tier-5.ts)
-- [ ] **T17** — npm run build — verify build passes, no broken links
+- [x] **T17** — npm run build — build passes (sharp SVG warning is pre-existing, unrelated)
 
 ---
 
