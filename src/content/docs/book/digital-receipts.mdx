@@ -1,9 +1,165 @@
 ---
 title: Digital Receipts
-description: Streamlining record-keeping with digital receipts in the EU.
-draft: true
+description: Every card payment already auto-generates a digital record. We just don't store it for citizens. One mandate changes everything — warranty claims, VAT audits, retailer costs, consumer protection.
+tags: ["digitalization", "consumer-rights", "fintech", "eu-reform"]
+author: zentala
 ---
 
-## Digital Receipts
+# Digital Receipts
 
-This article explores the benefits of automatically generating digital receipts for all card payments in the European Union. 
+Every card payment you make produces a digital record at the moment of the transaction.
+The bank has it. The retailer's system has it. The payment network has it.
+What nobody has is you.
+
+That record disappears from your practical reach within seconds of the payment clearing.
+You walk out of the store with a strip of thermal paper that fades in six months
+and cannot be filed, searched, or proved to anyone automatically.
+This is not a technical limitation. It is a design choice nobody ever made consciously —
+it just grew that way, like most legacy systems.
+
+I propose we change it with one regulation: every card payment in the EU automatically
+generates a digital receipt, stored in the citizen's digital identity wallet.
+Not a new technology. Not a new infrastructure. An instruction to use what already exists.
+
+---
+
+## Germany Already Did It — Partially
+
+Germany introduced the *Belegpflicht* (receipt issuance obligation) in January 2020.
+Every business using a cash register must issue a receipt after every transaction.
+The intent was tax fraud prevention: if every transaction must produce a paper trail,
+manipulating cash register software becomes harder.
+
+Germany solved the right problem with the wrong instrument.
+Thermal paper fulfills the legal obligation but defeats the practical purpose —
+a receipt that fades in the customer's pocket does not create an audit trail.
+It creates waste.
+
+As of the most recent measurement, only 26% of German retailers offer any form of digital
+receipt option — compared to 84% in the UK. Among those that do, 45% require an email address
+just to receive it. The others use QR codes. None of this is integrated with any identity wallet,
+tax system, or warranty registry.
+
+Germany proved the mandate is politically achievable and legally uncontroversial.
+What it did not prove is that paper receipts are the right outcome.
+The EU can mandate the same behavior — but specify the right output format from the start.
+
+---
+
+## What the Proposal Actually Is
+
+Simple version: when you pay by card in any EU country, your bank's infrastructure
+receives transaction data. Today, that data contains merchant name, amount, timestamp,
+and a transaction ID. It does not reliably contain the product line items — that information
+stays inside the retailer's point-of-sale system.
+
+The change I am proposing has two layers:
+
+**Layer 1 — What exists today:** Mandate that card payment data already flowing through
+the banking system is automatically forwarded to the citizen's eIDAS-linked digital wallet.
+Transaction amount, merchant, date, category. No new infrastructure required.
+The data already moves. We just need a rule saying it must land somewhere the citizen can access.
+
+**Layer 2 — What requires retailer cooperation:** For purchases where itemized detail matters
+(electronics, appliances, anything with a warranty), mandate that retailers transmit structured
+line-item data alongside the payment. This is the harder part — it requires POS system upgrades
+and a standardized data format across 27 member states. Doable, but not instant.
+
+Start with Layer 1. It costs almost nothing and creates immediate value.
+Add Layer 2 over a five-year implementation window, the same way the EU mandated
+SEPA Instant Payments — passing the regulation in 2024 for infrastructure that had
+existed since 2017, with hard deadlines and real penalties for non-compliance.
+
+---
+
+## The Systemic Impacts Are Larger Than They Look
+
+### Tax authorities get an automatic VAT audit trail
+
+Every digital receipt in the citizen's wallet is simultaneously a VAT record.
+Right now, VAT compliance relies on self-reporting and spot-check audits.
+A digital receipt mandate means every B2C card transaction is automatically
+cross-referenced against the declared VAT return — no manual records request needed.
+Cash fraud survives. Card fraud does not.
+Estonia's e-Tax system demonstrates what follows: when transaction records are
+structured and machine-readable, audit becomes algorithmic rather than investigative.
+
+### Retailers eliminate thermal printing as an operating cost
+
+Thermal paper is a supply chain, a maintenance cost, and an environmental problem —
+much of it unrecyclable because of the BPA coating used for thermal printing.
+For large retail chains, the cost of paper, printer maintenance, and staff time managing
+roll replacements is non-trivial at scale. Digital receipts eliminate this entirely.
+
+### Consumer protection becomes effortless to enforce
+
+The EU has strong consumer protection rules. Directive 2019/771 guarantees a two-year
+minimum statutory warranty on all goods sold in the EU. The practical obstacle to exercising
+that warranty right is almost always the same: proving you bought the product, from that
+seller, on that date.
+
+A receipt you cannot find is a right you cannot exercise.
+The retailer knows this. The warranty gap is not primarily a legal problem —
+it is a documentation problem. A digital receipt stored automatically in your wallet
+closes that gap completely. The product is in your wallet, linked to the purchase date,
+the retailer, the amount paid. The claim is unfakeable and unarguable.
+
+This is low-hanging fruit in the legal sense: no new rights created,
+no new courts needed. Just a mechanism that makes existing rights actually usable.
+
+---
+
+## The Infrastructure Is Already There
+
+The eIDAS 2.0 regulation, agreed in 2024, mandates that all EU member states offer
+a Digital Identity Wallet to their citizens by 2026. The wallet is explicitly designed
+to hold transaction records alongside credentials, qualifications, and licences.
+
+The payment rails are also already there. SEPA Instant Payments settles transactions
+in under 10 seconds at a per-transaction infrastructure cost of €0.002.
+The data flow that digital receipts require rides on top of existing payment messaging —
+a metadata addition, not a new protocol.
+
+This is why I call it low-hanging fruit: not because it is politically simple,
+but because it does not require inventing anything new.
+We need to route existing data to a new destination.
+Compare that to building a digital euro from scratch at an estimated €1.3 billion.
+
+---
+
+## What "All Your Receipts, Forever, in One Place" Actually Means
+
+Let me be concrete. I bought a coffee machine three years ago. I need the receipt
+for a warranty claim because the heating element failed. I have no idea where
+the physical receipt is — it was probably in a shopping bag with other receipts,
+folded twice, left in a drawer, and thrown away during some cleaning session.
+The retailer's records exist, but getting them means calling a support line,
+explaining the situation, waiting for a case number, and hoping someone in their
+back-office system can reconstruct the purchase from my loyalty card data —
+which I may or may not have had.
+
+That is three hours of my time to exercise a legal right that takes the retailer
+thirty seconds to confirm or deny once they can see the record.
+
+Under the system I am proposing, this conversation does not happen.
+I open my digital wallet, search "coffee machine", and see the receipt: date, store,
+model, price, transaction ID. I share a verified digital copy with the manufacturer's
+warranty portal in one tap. The claim is automatically validated against the purchase date.
+The repair or replacement process starts.
+
+The friction removed is significant not because each case is unbearably hard —
+it is annoying but survivable — but because the aggregate effect, multiplied across
+hundreds of millions of EU consumers making millions of warranty-eligible purchases every year,
+is that most people do not bother. Rights are abandoned not because people do not want them,
+but because exercising them costs more energy than the benefit seems worth.
+
+A digital receipt changes that calculation. Infrastructure cost: near-zero.
+Citizen benefit: immediate, concrete, personal. Fiscal benefit to tax authorities: real.
+Environmental benefit to retailers: real.
+
+This is what refactoring legacy systems looks like when it works — not a grand transformation,
+but a small routing change that makes existing rules actually function as designed.
+
+---
+
+*Related:* [eIDAS 2.0 and the EU Digital Identity Wallet](/book/digital-identity) · [Instant Payments and the EU Payment Infrastructure](/book/instant-payments)
