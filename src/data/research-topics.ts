@@ -66,7 +66,8 @@ export const researchTopics: ResearchTopic[] = [
     ],
     relatedConcepts: ['demographic', 'healthcare', 'robotics', 'migration'],
     existingContent: '/why, /support, /benefits',
-    status: 'not-started',
+    status: 'complete',
+    researchPath: '/docs/research/t1-1-demographic-crisis',
   },
   {
     id: 'T1.2',
@@ -85,7 +86,8 @@ export const researchTopics: ResearchTopic[] = [
     ],
     relatedConcepts: ['egov', 'language', 'robotics', 'security'],
     existingContent: '/support (mentions Draghi), /why-reforms (uses Draghi argument)',
-    status: 'not-started',
+    status: 'complete',
+    researchPath: '/docs/research/t1-2-draghi-report',
   },
   {
     id: 'T1.3',
@@ -106,7 +108,8 @@ export const researchTopics: ResearchTopic[] = [
     ],
     relatedConcepts: ['egov', 'language', 'security'],
     existingContent: '/docs/book/eGov-vison (mentions Estonia briefly, needs depth)',
-    status: 'not-started',
+    status: 'complete',
+    researchPath: '/docs/research/t1-3-estonia-egovernment',
   },
   {
     id: 'T1.4',
@@ -126,7 +129,8 @@ export const researchTopics: ResearchTopic[] = [
     ],
     relatedConcepts: ['language', 'education', 'migration'],
     existingContent: '/docs/ideas/culture/language-integration (claims bilingual is feasible, needs data)',
-    status: 'not-started',
+    status: 'complete',
+    researchPath: '/docs/research/t1-4-english-language-adoption',
   },
   {
     id: 'T1.5',
@@ -148,7 +152,8 @@ export const researchTopics: ResearchTopic[] = [
     ],
     relatedConcepts: ['egov', 'language', 'robotics', 'migration', 'security'],
     existingContent: '/benefits (added CEE section, needs supporting data)',
-    status: 'not-started',
+    status: 'complete',
+    researchPath: '/docs/research/t1-5a-poland-tech-emigration',
   },
 
   // ── TIER 2: Pillar Support ───────────────────────────────────────────────
@@ -170,7 +175,8 @@ export const researchTopics: ResearchTopic[] = [
     ],
     relatedConcepts: ['language', 'education'],
     existingContent: '',
-    status: 'not-started',
+    status: 'complete',
+    researchPath: '/docs/research/t2-1-language-gdp',
   },
   {
     id: 'T2.2',
@@ -190,7 +196,8 @@ export const researchTopics: ResearchTopic[] = [
     ],
     relatedConcepts: ['blockchain', 'egov', 'security'],
     existingContent: '/docs/book/european-blockchain-archives',
-    status: 'not-started',
+    status: 'complete',
+    researchPath: '/docs/research/t2-23-web3-digital-finance',
   },
   {
     id: 'T2.3',
@@ -211,7 +218,8 @@ export const researchTopics: ResearchTopic[] = [
     ],
     relatedConcepts: ['payment', 'blockchain', 'security'],
     existingContent: '/docs/book/unified-payment-zone',
-    status: 'not-started',
+    status: 'complete',
+    researchPath: '/docs/research/t2-23-web3-digital-finance',
   },
   {
     id: 'T2.4',
@@ -232,7 +240,8 @@ export const researchTopics: ResearchTopic[] = [
     ],
     relatedConcepts: ['robotics', 'healthcare', 'demographic'],
     existingContent: '/docs/book/predictive-healthcare-system (care context)',
-    status: 'not-started',
+    status: 'complete',
+    researchPath: '/docs/research/t2-4a-care-robotics',
   },
   {
     id: 'T2.5',
@@ -254,7 +263,8 @@ export const researchTopics: ResearchTopic[] = [
     ],
     relatedConcepts: ['transportation', 'robotics', 'labor'],
     existingContent: '/docs/ideas/transportation/autonomous-transportation',
-    status: 'not-started',
+    status: 'complete',
+    researchPath: '/docs/research/t2-5-autonomous-vehicles',
   },
   {
     id: 'T2.6',
@@ -275,7 +285,8 @@ export const researchTopics: ResearchTopic[] = [
     ],
     relatedConcepts: ['robotics', 'transportation', 'education'],
     existingContent: '/docs/ideas/technology/autonomous-robotics-system',
-    status: 'not-started',
+    status: 'complete',
+    researchPath: '/docs/research/t2-6-manufacturing-robotics',
   },
 
   // ── TIER 3: Supporting Narratives ───────────────────────────────────────
@@ -297,7 +308,8 @@ export const researchTopics: ResearchTopic[] = [
     ],
     relatedConcepts: ['egov', 'education', 'healthcare'],
     existingContent: '',
-    status: 'not-started',
+    status: 'complete',
+    researchPath: '/docs/research/t3-1-digital-integration-case-studies',
   },
   {
     id: 'T3.2',
@@ -377,7 +389,8 @@ export const researchTopics: ResearchTopic[] = [
     ],
     relatedConcepts: ['egov', 'blockchain', 'security', 'privacy'],
     existingContent: '',
-    status: 'not-started',
+    status: 'complete',
+    researchPath: '/docs/research/t3-5-eu-digital-initiatives',
   },
 
   // ── TIER 4: Enrichment ───────────────────────────────────────────────────
