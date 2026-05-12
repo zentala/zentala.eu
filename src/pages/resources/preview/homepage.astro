@@ -9,7 +9,7 @@
  *  - Benefits section additionally has [Variant A] / [B] / [C]
  *  - Sections marked "kept" or "removed" are annotated, not toggled
  *
- * Source of content: ./_homepage-content.ts
+ * Source of content: src/data/homepage.ts
  * Design doc: /resources/2026-04-27-12-00-homepage-redesign
  */
 import Layout from '../../../layouts/Layout.astro';
@@ -41,7 +41,7 @@ import {
   benefitsVariantA,
   benefitsVariantB,
   benefitsVariantC,
-} from './_homepage-content';
+} from '../../../data/homepage';
 
 const pillarIcons: Record<string, { src: string }> = {
   language: LanguageIcon,

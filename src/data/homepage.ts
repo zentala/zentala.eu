@@ -1,12 +1,21 @@
 /**
- * Content data for homepage redesign preview.
- * Single source of truth for OLD/NEW copies and 3 Benefits variants.
- * Used only by /resources/preview/homepage.astro (private, noindex).
+ * Public homepage content.
+ * Single source of truth for live homepage sections and the historical
+ * /resources/preview/homepage.astro comparison page.
  */
 
 export interface FAQItem {
   question: string;
   answer: string;
+  /** Subtle visual weight — heavier left border + larger summary padding. */
+  emphasis?: boolean;
+}
+
+export interface AdoptionWave {
+  label: string;
+  horizon: string;
+  regions: string[];
+  rationale: string;
 }
 
 export interface NumberStat {
@@ -227,6 +236,7 @@ export const faqNew: FAQItem[] = [
     question: 'Why is this different from previous EU integration plans?',
     answer:
       'Previous plans started from politics — treaties, institutions, votes. I start from a deadline: in 2035 the workforce that funds European pensions retires. The argument is not ideological, it is arithmetic. Every reform here is judged by one test: does it keep retirement viable when the worker-to-retiree ratio halves? Most policy debates fail that test. This one is built around it.',
+    emphasis: true,
   },
   {
     question: 'Isn\'t a second official language a threat to national languages?',
@@ -403,5 +413,29 @@ export const benefitsVariantC: BenefitCard[] = [
     icon: '📊',
     color: 'indigo',
     body: 'European data, European AI training, European citizens not as a product but as a constituency. Digital euro and SEPA Instant under one roof.',
+  },
+];
+
+export const adoptionWaves: AdoptionWave[] = [
+  {
+    label: 'Wave 1',
+    horizon: 'now → 5 years',
+    regions: ['Poland', 'Baltic states', 'Ukraine', 'Czechia', 'Scandinavia'],
+    rationale:
+      'Demographic curve is steeper, the security threat is at the border, and the digital base — Estonia, Polish tech, Czech industry, Nordic e-government — is already strong enough to lead. English is operational here.',
+  },
+  {
+    label: 'Wave 2',
+    horizon: '5 → 10 years',
+    regions: ['Germany', 'France', 'Benelux'],
+    rationale:
+      'Economic gravity follows once the toolkit is proven. Harder to move first because legacy administrative systems are deeper — easier to adopt once the migration path is documented by the first wave.',
+  },
+  {
+    label: 'Wave 3',
+    horizon: '10 → 15 years',
+    regions: ['Southern Europe'],
+    rationale:
+      'Catching up once the platform is mature and the migration patterns are well-trodden. Joining late is not a failure — it is the rational moment when the cost of adoption drops below the cost of staying out.',
   },
 ];

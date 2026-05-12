@@ -6,37 +6,7 @@
 // platform is mature.
 // Stacked rows are identical on desktop + mobile by design — no breakpoint logic.
 import DisplayTitle from '../DisplayTitle.astro';
-
-interface Wave {
-  label: string;
-  horizon: string;
-  regions: string[];
-  rationale: string;
-}
-
-const waves: Wave[] = [
-  {
-    label: 'Wave 1',
-    horizon: 'now → 5 years',
-    regions: ['Poland', 'Baltic states', 'Ukraine', 'Czechia', 'Scandinavia'],
-    rationale:
-      'Demographic curve is steeper, the security threat is at the border, and the digital base — Estonia, Polish tech, Czech industry, Nordic e-government — is already strong enough to lead. English is operational here.',
-  },
-  {
-    label: 'Wave 2',
-    horizon: '5 → 10 years',
-    regions: ['Germany', 'France', 'Benelux'],
-    rationale:
-      'Economic gravity follows once the toolkit is proven. Harder to move first because legacy administrative systems are deeper — easier to adopt once the migration path is documented by the first wave.',
-  },
-  {
-    label: 'Wave 3',
-    horizon: '10 → 15 years',
-    regions: ['Southern Europe'],
-    rationale:
-      'Catching up once the platform is mature and the migration patterns are well-trodden. Joining late is not a failure — it is the rational moment when the cost of adoption drops below the cost of staying out.',
-  },
-];
+import { adoptionWaves as waves } from '../../data/homepage';
 ---
 
 <div
