@@ -1,39 +1,29 @@
 ---
-// FAQ section wrapper — current copy preserved.
-// TODO(E002-T10): rewrite Q2 (offense-first English) + Q7 (elderly suicide evidence). Sharpen tone.
+// FAQ section wrapper — offense-first rewrite (E002-T10).
+// Source of truth: faqNew from preview content. Q2 + Q7 sharpened per editor's spec.
 import FAQ from '../FAQ.astro';
 import DisplayTitle from '../DisplayTitle.astro';
+import { faqNew } from '../../pages/resources/preview/_homepage-content';
 
-const items = [
-  {
-    question: "Why do we need yet another European integration project?",
-    answer: "This vision addresses today's multipolar world challenges, focusing on strategic independence and economic efficiency. Without a new cooperation framework, Europe risks internal economic conflicts and external manipulation. We need a practical approach to keep Europe competitive and united."
-  },
-  {
-    question: "Isn't English as a second language unfair to non-English speaking countries?",
-    answer: "A common language allows us to function as one economic entity. It enables European-scale companies and eliminates translation barriers for goods, services, and contracts. Embracing English—already the language of innovation and commerce—creates a unified economic space while preserving national languages and identities."
-  },
-  {
-    question: "How will these changes benefit ordinary citizens?",
-    answer: "Citizens gain EU-wide digital healthcare with predictive analytics, universal e-learning platforms, and streamlined administration. The digital infrastructure we build will support a future economy with robotized retirement solutions as populations age. This creates a Europe with fewer bureaucratic obstacles and greater opportunities."
-  },
-  {
-    question: "What if Germany or other powerful countries don't agree?",
-    answer: "The initiative could begin as an Intermarium 2.0 project among Central European, Baltic, and Scandinavian nations. Given eastern security threats, regional integration is necessary. Would skeptical nations risk being left behind? The voluntary model allows countries to join when benefits become apparent, while creating economic pressure on those who remain outside."
-  },
-  {
-    question: "How would this be funded?",
-    answer: "We've already mobilized enormous resources for COVID-19 and security challenges. The issue isn't funding capacity but directing funds wisely. Centralizing digital development saves costs across 27 countries. Strategic borrowing for high-return projects creates self-sustaining improvements that generate resources for repayment."
-  },
-  {
-    question: "How long would implementation take?",
-    answer: "We must begin immediately given the Russian threat and changing geopolitical landscape. English language adoption can start now with formal agreements and implementation within a year. Robotization and AI projects should launch immediately as they're critical for defense against Russian aggression while simultaneously building civilian capabilities. Digital administration systems will enhance our collaborative defense efficiency during wartime. Rather than waiting for perfect conditions, we should adopt these innovations urgently as they directly strengthen our security posture while forming the foundation for long-term prosperity."
-  },
-  {
-    question: "What are the main challenges?",
-    answer: "First, effectively communicating this vision to Europeans and building broad support. Second, executing them successfully, being adaptive if needed, and hopefully efficiently solving Europe's challenges within this framework. We must navigate regulatory complexity, address resistance from status quo beneficiaries, and ensure technological transformations remain inclusive."
+// Override Q2 (English-as-threat → reframed as absence-of-shared-language, Estonia as proof)
+// and Q7 (economic euthanasia → append elderly-suicide evidence anchor).
+const items = faqNew.map((item, idx) => {
+  if (idx === 1) {
+    return {
+      question: 'Isn\'t a second official language a threat to national languages?',
+      answer:
+        'The threat is the opposite — the absence of a shared working language is what hollows out national ones. Without it, intra-EU migration traps people: a Polish engineer in Lisbon, a Romanian nurse in Stockholm, neither can fully participate in the country they live in nor stay tethered to the one they left. Estonia is the proof in the other direction: 30 years after adopting English as the working language for business and tech, Estonian is more alive — more published, more spoken by young people, more present online — than it was in 1991. A second official layer protects the first, it does not erode it.',
+    };
   }
-];
+  if (idx === 6) {
+    return {
+      question: 'What is the biggest risk if we do not act?',
+      answer:
+        'Economic euthanasia — the slow, dignified decline of countries that did not modernize their public services in time. Pension funds run dry, hospitals run short of staff, courts stop processing, public services degrade until people stop trusting them. It does not look catastrophic from the outside. It just looks like everything getting slower, every year, until you cannot get out. The downstream signal is already documented elsewhere: Japan and South Korea, the two societies furthest into the demographic curve, both report rising suicide rates among the elderly in regions where long-term care collapsed first. That is the human cost of waiting too long to build the system.',
+    };
+  }
+  return item;
+});
 ---
 
 <div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary); border-top: 1px solid var(--color-border);">
@@ -41,7 +31,6 @@ const items = [
     <DisplayTitle level={1}>Common Questions</DisplayTitle>
 
     <div class="relative">
-      <div class="absolute inset-0 bg-gradient-to-r from-purple-900 to-indigo-900 opacity-10 blur-xl"></div>
       <div class="relative">
         <FAQ color="indigo" items={items} />
       </div>
