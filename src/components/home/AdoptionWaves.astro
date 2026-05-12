@@ -1,12 +1,110 @@
 ---
-// Adoption Waves — placeholder.
-// TODO(E002-T07-b): render 3 stacked full-width rows.
-// Fala 1: PL/Baltics/Ukraine/Czechia/Scandinavia (now / 5y)
-// Fala 2: DE/FR/Benelux (5–10y)
-// Fala 3: South (10–15y)
-// Each row: time-marker bar + region list + one-sentence rationale.
-// Identical layout desktop + mobile (stacked rows are mobile-friendly by design).
-// Framing: opportunity for all, CEE pressure-driven first-movers.
+// Adoption Waves — 3 stacked full-width rows.
+// Time dimension of regional adoption. Framing: opportunity for all, never punishment.
+// CEE moves first because demographic + security pressure converge here. Western
+// Europe follows once the toolkit is proven. Southern Europe catches up once the
+// platform is mature.
+// Stacked rows are identical on desktop + mobile by design — no breakpoint logic.
+import DisplayTitle from '../DisplayTitle.astro';
+
+interface Wave {
+  label: string;
+  horizon: string;
+  regions: string[];
+  rationale: string;
+}
+
+const waves: Wave[] = [
+  {
+    label: 'Wave 1',
+    horizon: 'now → 5 years',
+    regions: ['Poland', 'Baltic states', 'Ukraine', 'Czechia', 'Scandinavia'],
+    rationale:
+      'Demographic curve is steeper, the security threat is at the border, and the digital base — Estonia, Polish tech, Czech industry, Nordic e-government — is already strong enough to lead. English is operational here.',
+  },
+  {
+    label: 'Wave 2',
+    horizon: '5 → 10 years',
+    regions: ['Germany', 'France', 'Benelux'],
+    rationale:
+      'Economic gravity follows once the toolkit is proven. Harder to move first because legacy administrative systems are deeper — easier to adopt once the migration path is documented by the first wave.',
+  },
+  {
+    label: 'Wave 3',
+    horizon: '10 → 15 years',
+    regions: ['Southern Europe'],
+    rationale:
+      'Catching up once the platform is mature and the migration patterns are well-trodden. Joining late is not a failure — it is the rational moment when the cost of adoption drops below the cost of staying out.',
+  },
+];
 ---
 
-<!-- TODO E002-T07-b Adoption waves -->
+<div
+  class="py-10 mb-16 transition-colors duration-300"
+  style="background: var(--color-bg-primary); border-top: 1px solid var(--color-border);"
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12">
+    <DisplayTitle level={1}>Adoption waves</DisplayTitle>
+
+    <p
+      class="max-w-3xl mb-12 text-lg"
+      style="color: var(--color-text-secondary);"
+    >
+      The reform is a 15-year programme, not a single vote. It rolls out in waves
+      — each region joins when the case for joining is strongest. This is an
+      opportunity sequence, not a ranking.
+    </p>
+
+    <div class="flex flex-col">
+      {
+        waves.map((wave, idx) => (
+          <div
+            class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-8 md:py-10"
+            style={
+              idx < waves.length - 1
+                ? 'border-bottom: 1px solid var(--color-border);'
+                : ''
+            }
+          >
+            <div class="md:col-span-3">
+              <div
+                class="text-sm uppercase tracking-widest mb-2"
+                style="color: var(--color-accent-primary);"
+              >
+                {wave.label}
+              </div>
+              <div
+                class="text-2xl font-semibold leading-tight"
+                style="color: var(--color-text-primary);"
+              >
+                {wave.horizon}
+              </div>
+            </div>
+
+            <div class="md:col-span-4">
+              <ul class="flex flex-col gap-2">
+                {wave.regions.map((region) => (
+                  <li
+                    class="text-lg"
+                    style="color: var(--color-text-primary);"
+                  >
+                    {region}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="md:col-span-5">
+              <p
+                class="text-lg leading-relaxed"
+                style="color: var(--color-text-secondary);"
+              >
+                {wave.rationale}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
