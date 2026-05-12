@@ -24,6 +24,7 @@ import WhyDigitalReform from '../../../components/WhyDigitalReform.astro';
 import Newsletter from '../../../components/Newsletter.astro';
 import Button from '../../../components/Button.astro';
 import IconLink from '../../../components/IconLink.astro';
+import UeLogo from '../../../assets/eu.png';
 import LanguageIcon from '../../../assets/icons/language.svg';
 import DigitalIcon from '../../../assets/icons/digital.svg';
 import RobotIcon from '../../../assets/icons/robot.svg';
@@ -69,6 +70,14 @@ const pillarIcons: Record<string, { src: string }> = {
     SEKCJA ROBOCZA · porównawczy preview · nie indeksowane · 2026-04-27
   </div>
 
+  <!-- E002 closure note: this preview is the historical decision record for the
+       homepage redesign. The "NEW" toggles reflect what shipped on 2026-05-12.
+       See live homepage at <a href="/">/</a>. Kept as reference, not maintained. -->
+  <div class="bg-emerald-500/5 border-b border-emerald-500/30 py-3 text-center text-emerald-300 text-sm">
+    <strong>Final shipped state — see <a href="/" class="underline hover:text-emerald-200">live homepage</a>.</strong>
+    Historical reference for E002 decisions; the live page is the source of truth.
+  </div>
+
   <!-- ═══════════════ SECTION 1: Hero (KEPT) ═══════════════ -->
   <SectionWrapper status="kept" title="Hero" note="Argument emerytalny już wprowadzony w sesji 2026-04-25. Nie zmieniamy.">
     <Hero
@@ -77,7 +86,7 @@ const pillarIcons: Record<string, { src: string }> = {
         'The robotic system of public services and care that we build today is our pension system tomorrow. There is no other.',
         'I am Paweł Żentała — a Polish software architect. I look at Europe the way an engineer looks at a system in need of refactoring. This is what I propose.',
       ]}
-      image={{ file: '' }}
+      image={{ file: UeLogo.src }}
       actions={[
         { text: 'Read the principles', link: '/principles', variant: 'primary' },
         { text: 'About the author', link: '/about', variant: 'secondary' },

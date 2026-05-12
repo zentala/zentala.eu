@@ -1,18 +1,21 @@
 ---
-updated: 2026-05-12T13:35:00Z
+updated: 2026-05-12T18:10:00Z
 active_epic: E002
 active_epic_path: .plan/epics/E002-2026-04-27-homepage-redesign
-current_wave: 4
+current_wave: done
 ---
 
 ## Status
 
 E001 (content expansion) complete — see DONE.md.
-E002 Wave 1 done (preview shipped).
-E002 Wave 2 done: T00 (DESIGN.md + --color-text-muted token), T11 (SourceRef + research route + Playwright tests).
-E002 Wave 2.5 done: T08-split (homepage refactored into src/components/home/ per-section components).
-E002 Wave 3 done: T04 Pillars, T05 Numbers, T06 CEEFocus, T07-a Benefits (3 perspectives), T07-b AdoptionWaves, T09 NotProposing, T10 FAQ rewrite. 7 parallel worktrees, zero conflicts, `astro check` 0/0/0.
-All three reviews done (copy, design, eng).
+E002 ALL WAVES DONE 2026-05-12.
+- Wave 1: preview shipped.
+- Wave 2: T00 DESIGN.md + `--color-text-muted` token, T11 SourceRef + Playwright tests.
+- Wave 2.5: T08-split refactor — homepage split into `src/components/home/` per-section components.
+- Wave 3: 7 parallel worktrees (T04 Pillars, T05 Numbers, T06 CEEFocus, T07-a Benefits, T07-b AdoptionWaves, T09 NotProposing, T10 FAQ). Zero merge conflicts.
+- Wave 4: Sharp 0.32→0.33.4 bump (fixes pre-existing build blocker), `/research/[...slug]` double-prefix fix, search.astro `<script>`-in-comment fix, Playwright suite 41/41, preview historical-reference banner.
+
+All three reviews done (copy, design, eng). Epic ready to close.
 
 ## Recent commits (E002 Wave 3 merges)
 
@@ -26,15 +29,11 @@ All three reviews done (copy, design, eng).
 
 ## Active Tasks
 
-None in progress. Wave 4 is the next gate — T12 build/smoke verify (BLOCKED on pre-existing Sharp issue in `.plan/IMPROVEMENTS.md`) and T13 preview disposition.
-
-## Pre-existing issue (NOT caused by E002)
-
-`npm run build` content/check passes, but post-build image optimization fails because `loadSharp` cannot find Sharp at runtime. Affects production deploy. Add to `.plan/IMPROVEMENTS.md` and address before T12 verification.
+None. E002 complete.
 
 ## Next Steps
 
-1. **Resolve Sharp build issue** (see `.plan/IMPROVEMENTS.md`) — blocks T12.
-2. **Wave 4 T12:** `npm run build` + Playwright `tests/source-ref.spec.ts` + manual smoke at 375/768/1280 viewports.
-3. **Wave 4 T13:** mark `/resources/preview/homepage` as historical reference.
-4. Close epic — triage epic's IMPROVEMENTS.md and update `.arch/HISTORY.md`.
+1. Triage epic's `IMPROVEMENTS.md` with user (3 open follow-ups: public-vs-private content boundary, missing `adoptionWaves` export, `<FAQ>` per-item emphasis prop).
+2. Update `.arch/HISTORY.md` with E002 summary.
+3. Append entry to `.plan/DONE.md`.
+4. Optional: CEO/ADR for the Sharp version-pin decision.

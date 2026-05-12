@@ -1,10 +1,9 @@
 # Global Improvements — cross-cutting open TODOs
 
-### [ ] Fix Sharp image optimization at build time
-- **Problem:** `npm run build` fails at post-content stage. `astro:assets` calls `loadSharp` which cannot find Sharp at runtime in `dist/chunks/`. Reproduces on clean `dev` branch — pre-existing, NOT caused by E002. Blocks production deploy of any change.
-- **Proposed fix:** options — (a) reinstall Sharp with platform-specific binary (`pnpm rebuild sharp` or `npm rebuild sharp --os=win32 --cpu=x64`); (b) switch Astro to `image.service: passthroughImageService()` if optimization is not actually needed for this site; (c) audit `astro.config.mjs` for misconfiguration.
-- **Triggered by:** E002 Wave 4 T12 prep (2026-05-12). Surfaced when attempting `npm run build` to verify SourceRef + research-route changes; the same failure reproduces on a clean checkout of `dev`.
-- **Blocks:** E002-T12 (final build verification before epic close).
+### [x] Fix Sharp image optimization at build time
+- **Problem:** `npm run build` failed at post-content stage. `astro:assets` calls `loadSharp` which could not find Sharp at runtime in `dist/chunks/`. Pre-existing, NOT caused by E002.
+- **Fixed in:** E002 Wave 4 (2026-05-12). Root cause: `package.json` pinned `sharp ^0.32.6` but `astro@4.11.0` nested `sharp@0.33.4`. The top-level 0.32 was being resolved by `loadSharp()` and lacks the `@img/sharp-win32-x64` runtime layout used by 0.33. Bumped top-level pin to `sharp ^0.33.4` → dedupes with astro's nested dep; build now ships all 337 pages with image optimization passing.
+- **Fixed in:** JOURNAL.md session 2026-05-12 Wave 4 + commit `<see Wave 4 commit>`.
 
 ### [ ] Resolve public-vs-private content boundary for homepage copy
 - **Problem:** Wave 3 sections import from `src/pages/resources/preview/_homepage-content.ts` — `/resources/` is the private section (noindex, never linked publicly). Public homepage components depending on private content is a layering smell. T04 (Pillars) inlined copy instead; T05/T06/T07-a/T07-b/T09/T10 import. Inconsistent.

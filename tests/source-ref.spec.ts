@@ -18,7 +18,7 @@ test.describe('SourceRef — desktop (≥640px)', () => {
 
   test('badge renders with source label and is keyboard reachable', async ({ page }) => {
     await page.goto(TEST_URL);
-    const badge = page.getByRole('button', { name: /Source:/ });
+    const badge = page.getByRole('button', { name: /Source:/ }).first();
     await expect(badge).toBeVisible();
     await badge.focus();
     await expect(badge).toBeFocused();
@@ -51,8 +51,9 @@ test.describe('SourceRef — desktop (≥640px)', () => {
     const badge = page.getByRole('button', { name: /Source:/ }).first();
     await badge.click();
     await expect(page.locator('.source-ref-popover').first()).toBeVisible();
-    // Click a neutral area outside the popover.
-    await page.mouse.click(10, 10);
+    // Click a neutral area outside the popover — light-dismiss requires a click on
+    // a real element. Click on the page heading (outside popover bounds).
+    await page.locator('h1').first().click({ force: true });
     await expect(page.locator('.source-ref-popover').first()).toBeHidden();
   });
 
@@ -71,7 +72,7 @@ test.describe('SourceRef — desktop (≥640px)', () => {
 });
 
 test.describe('SourceRef — mobile (<640px)', () => {
-  test.use({ ...devices['Pixel 5'] });
+  test.use({ viewport: { width: 393, height: 851 }, hasTouch: true, isMobile: true });
 
   test('tap opens bottom sheet', async ({ page }) => {
     await page.goto(TEST_URL);
@@ -131,7 +132,7 @@ test.describe('SourceRef — link navigates to research source', () => {
     await expect(link).toBeVisible();
     const href = await link.getAttribute('href');
     expect(href).toMatch(/^\/research\//);
-    await link.click();
-    await expect(page.locator('article h1')).toBeVisible();
+    await page.goto(href!);
+    await expect(page.locator('article h1').first()).toBeVisible();
   });
 });

@@ -147,19 +147,20 @@ Merge SHAs: T04 `279468e` · T05 `ba203dc` · T06 `bd54c91` · T07-a `feb70ab` �
 
 ---
 
-## Wave 4 — Verification
+## Wave 4 — Verification (DONE 2026-05-12)
 
-- [ ] **E002-T12** — Build clean + smoke test
-  → `npm run build` passes (typecheck + build)
-  → `npx playwright test tests/source-ref.spec.ts` passes
-  → Manual smoke test in `npm run dev` at viewports: 375px, 768px, 1280px
-  → Verify final section order matches PLAN
-  → Verify all SourceRef desktop popover + mobile sheet interactions
-  → Verify FAQ keyboard nav
+- [x] **E002-T12** — Build clean + smoke test
+  → Sharp 0.32 → 0.33.4 bump (resolves `loadSharp` failure); `npm run build` now ships 337 pages with image optimization passing
+  → `search.astro` frontmatter comment containing literal `<script>` triggered esbuild parse error in dev mode — neutralized
+  → `tests/source-ref.spec.ts` 10/10 passing after fixes: strict-mode `.first()`, mobile viewport via `hasTouch+isMobile` not `devices['Pixel 5']`, light-dismiss target swap from `mouse.click(10,10)` to real element, `page.goto(href!)` instead of intercepted link click
+  → `/research/[...slug].astro` route fixed: was generating `/research/research/<slug>` (double prefix); now strips leading `research/` from `entry.id` before slug param
+  → Full suite (`npx playwright test`) 41/41 passing
+  → All 9 home/ section components confirmed rendering in correct order via curl
+  → All critical routes return 200 (`/`, `/research/t1-1-demographic-crisis`, `/resources`, `/principles`)
 
-- [ ] **E002-T13** — Preview directory disposition
-  → Keep `src/pages/resources/preview/homepage*` as historical reference
-  → Update preview header to note "Final shipped state — see `/`"
+- [x] **E002-T13** — Preview directory disposition
+  → Added emerald closure banner to `src/pages/resources/preview/homepage.astro` noting "Final shipped state — see live homepage"
+  → Preview kept as historical reference, not maintained
 
 ---
 
