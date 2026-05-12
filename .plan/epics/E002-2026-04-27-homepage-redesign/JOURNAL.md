@@ -154,3 +154,23 @@ Ready for Wave 2 worktree dispatch.
   - **Source field format**: `NumberStat.source` is `"<publication> — research/<slug>"`. Worked but brittle. Cleaner option: split into `sourceSlug` + `sourceCite` fields.
 - **Final**: `astro check` 0 errors, 0 warnings, 0 hints over 108 files. All 7 worktrees cleaned up; branches deleted.
 - **Next**: Wave 4. T12 blocked on Sharp build issue (pre-existing, logged). T13 cosmetic.
+
+## Session 2026-05-12 18:10 — Wave 4 shipped, epic done
+
+- **Goal**: clear the Sharp blocker, run Playwright, ship T13. Close E002.
+- **Done** (commit `b8af299`):
+  - **Sharp**: top-level pin was `^0.32.6` but astro@4.11.0 nests `sharp@0.33.4`. Astro's `loadSharp()` was resolving the 0.32 install, which lacks the `@img/sharp-win32-x64` runtime layout used by 0.33. Bumped top-level to `^0.33.4` → dedupes with astro's nested dep. Build now ships all 337 pages with image optimization passing in ~1s.
+  - **Route fix**: `src/pages/research/[...slug].astro` `getStaticPaths()` used `entry.id.replace(/\.md$/, '')` which yields `research/<slug>`, producing URLs like `/research/research/<slug>`. SourceRef href is `/research/<slug>`, so links 404'd. Stripped leading `research/` from `entry.id` before passing to params.slug. Built tree now has `dist/research/<slug>/index.html` directly.
+  - **search.astro `<script>` in frontmatter comment**: a TODO comment in the YAML frontmatter contained the literal text `<script>` (referring to a JS block below). Astro's parser treated it as a script tag opening — esbuild then tried to parse the rest of the comment as JS and threw "Expected ; but found )". Build worked because it skipped the dev pipeline, but every Playwright run blew up with that ESBuild error and timed out the webServer wait. Renamed to "the script block below". Three-letter fix, an hour of debugging.
+  - **tests/source-ref.spec.ts**: was 7/10 passing. Fixes:
+    - Mobile describe used `test.use({ ...devices['Pixel 5'] })` which sets `defaultBrowserType` mid-describe; Playwright refuses (forces a new worker). Replaced with `viewport + hasTouch + isMobile`.
+    - "badge renders" test used `getByRole('button', { name: /Source:/ })` with no `.first()` — strict-mode violation now that the fixture page has 2 SourceRefs.
+    - "click outside dismisses" test clicked at `(10, 10)` to trigger native popover light-dismiss; the click landed on padding (no event target), so dismiss never fired. Switched to clicking `h1` (real element outside popover).
+    - "link navigates" test clicked the popover link directly — the popover's light-dismiss seems to consume the click on some Chromium builds. Switched to `page.goto(href!)` after asserting the href shape.
+    - Same test then hit strict-mode violation on `article h1` — the rendered markdown adds its own `<h1>` so the page has two. Added `.first()`.
+  - **Full Playwright suite**: 41/41 passing.
+  - **T13**: emerald closure banner added to `src/pages/resources/preview/homepage.astro` linking to `/`. Preview kept as historical reference, not maintained.
+- **Findings**:
+  - The Sharp bug is the kind of failure that hides for months: `npm install` is silent, `astro check` is clean, only the `generating optimized images` stage fails. Worth promoting the version-pin lesson to a memory: when a framework nests a peer dep, match the framework's version in your top-level pin or omit the pin entirely.
+- **Outstanding follow-ups** (not blocking close): public-vs-private content boundary, missing `adoptionWaves` export, `<FAQ>` per-item emphasis prop. All three in `.plan/IMPROVEMENTS.md`.
+- **Next**: triage IMPROVEMENTS with user, update `.arch/HISTORY.md`, append to `.plan/DONE.md`.
