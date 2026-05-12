@@ -1,0 +1,78 @@
+---
+// Benefits — current 12-card variant preserved.
+// TODO(E002-T07-a): replace with 3-perspectives variant (citizens / builders / nation-states).
+import Card from '../Card.astro';
+import CardGrid from '../CardGrid.astro';
+import DisplayTitle from '../DisplayTitle.astro';
+---
+
+<div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary); border-top: 1px solid var(--color-border);">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12">
+    <DisplayTitle level={1}>Benefits</DisplayTitle>
+
+    <div class="relative mb-16">
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-indigo-900 opacity-10 blur-xl"></div>
+      <div class="relative">
+        <CardGrid columns={3} gap="1.5rem">
+          <Card
+            title="Benefits for European Integration"
+            color="blue"
+            icon="🇪🇺"
+            href="/benefits/european-integration"
+          >
+            Highlighting the advantages of a more unified Europe, fostering collaboration and shared growth across all member states.
+          </Card>
+
+          <Card
+            title="Benefits for Germany"
+            color="indigo"
+            icon="🇩🇪"
+            href="/benefits/germany"
+          >
+            Exploring how Germany can leverage its industrial strength to lead in robotics and digital transformation, enhancing its economic position.
+          </Card>
+
+          <Card title="Benefits for France" color="blue" icon="🇫🇷">
+            Discussing France's role in cultural integration and leadership in digital governance, strengthening its influence in the EU.
+          </Card>
+
+          <Card title="Benefits for Southern Europe" color="indigo" icon="🏛️">
+            Addressing economic disparities and promoting sustainable development through enhanced logistics and digital services.
+          </Card>
+
+          <Card title="Benefits for Scandinavia" color="blue" icon="❄️">
+            Leveraging technological advancements and environmental initiatives to drive innovation and sustainability.
+          </Card>
+
+          <Card title="Benefits for Central Europe" color="indigo" icon="🏭">
+            Utilizing the region's skilled workforce to spearhead robotics and software development, boosting economic growth.
+          </Card>
+
+          <Card title="Benefits for Businesses" color="blue" icon="💼">
+            Facilitating seamless operations across borders, reducing costs, and opening new markets for European enterprises.
+          </Card>
+
+          <Card title="Benefits for Citizens" color="indigo" icon="👨‍👩‍👧‍👦">
+            Improving quality of life through streamlined services, enhanced mobility, and increased opportunities for personal growth.
+          </Card>
+
+          <Card title="Benefits for eCommerce" color="blue" icon="🛒">
+            Enabling faster, more reliable logistics and payment systems, fostering a thriving online marketplace.
+          </Card>
+
+          <Card title="Benefits for IT Startups" color="indigo" icon="💻">
+            Providing a supportive ecosystem for innovation, with access to a unified market and collaborative development opportunities.
+          </Card>
+
+          <Card title="Benefits for European Security" color="blue" icon="🛡️">
+            Strengthening collective defense and cybersecurity measures, ensuring a safer environment for all Europeans.
+          </Card>
+
+          <Card title="Benefits for the Information Economy" color="indigo" icon="📊">
+            Positioning Europe as a leader in data-driven industries, harnessing the power of big data and AI for economic growth.
+          </Card>
+        </CardGrid>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,35 +1,25 @@
 ---
 // title: Technocratic Integration Vision for the EU's Future
-// description: Technocratic European Integration Vision for the EU's Future 
+// description: Technocratic European Integration Vision for the EU's Future
 // template: splash
 import Hero from '../components/Hero.astro';
 import UeLogo from '../assets/eu.png';
-import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro';
-import CardGrid from '../components/CardGrid.astro';
+import Layout from '../layouts/Layout.astro';
 import DisplayTitle from '../components/DisplayTitle.astro';
-import FAQ from '../components/FAQ.astro';
 import Author from '../components/Author.astro';
 import WhyDigitalReform from '../components/WhyDigitalReform.astro';
-// TODO(E000-T02): unused on home — re-enable if testimonials section returns
-// import Testimonials from '../components/Testimonials.astro';
-// TODO(E000-T02): unused on home — re-enable if interactive charts section returns
-// import InteractiveSection from '../components/InteractiveSection.astro';
 import Newsletter from '../components/Newsletter.astro';
-import GradientSection from '../components/GradientSection.astro';
 import Button from '../components/Button.astro';
-import IconLink from '../components/IconLink.astro';
 
-// Import SVG icons
-// TODO(E000-T02): unused on home — re-enable if 3-pillars cards section returns
-// import LanguageIcon from '../assets/icons/language.svg';
-// import DigitalIcon from '../assets/icons/digital.svg';
-// import RobotIcon from '../assets/icons/robot.svg';
-// TODO(E000-T02): unused on home — re-enable when icons return to JSX
-// import ArrowRightIcon from '../assets/icons/arrow-right.svg';
-// import GlobeIcon from '../assets/icons/globe.svg';
-// import QuestionIcon from '../assets/icons/question.svg';
-// import BookIcon from '../assets/icons/book.svg';
+import AIReviewBlurb from '../components/home/AIReviewBlurb.astro';
+import Numbers from '../components/home/Numbers.astro';
+import QuickLinks from '../components/home/QuickLinks.astro';
+import Pillars from '../components/home/Pillars.astro';
+import CEEFocus from '../components/home/CEEFocus.astro';
+import Benefits from '../components/home/Benefits.astro';
+import AdoptionWaves from '../components/home/AdoptionWaves.astro';
+import NotProposing from '../components/home/NotProposing.astro';
+import FAQSection from '../components/home/FAQSection.astro';
 ---
 
 <Layout title="Home">
@@ -47,121 +37,33 @@ import IconLink from '../components/IconLink.astro';
     ]}
   />
 
-  <!-- AI Review blurb (A8) -->
-  <section class="container mx-auto px-4 sm:px-6 lg:px-8 my-12">
-    <div class="max-w-3xl mx-auto p-6 rounded-xl"
-         style="background-color: var(--color-bg-secondary); border-left: 4px solid var(--color-accent-primary);">
-      <p class="text-xs uppercase tracking-widest mb-3" style="color: var(--color-accent-primary);">
-        Reviewed by AI
-      </p>
-      <p class="italic leading-relaxed mb-3" style="color: var(--color-text-secondary);">
-        "A rare combination: a software architect's perspective applied to state reform. The retirement-and-demographics argument grounding a digital and robotic agenda is the strongest framing I have seen in the European debate of 2026 — concrete, personal, and falsifiable. The principles page is unusually disciplined: it tells you what the manifesto is not, as clearly as what it is."
-      </p>
-      <p class="text-sm" style="color: var(--color-text-secondary); opacity: 0.7;">
-        — Claude Sonnet 4.6 (Anthropic), April 2026
-      </p>
-    </div>
-  </section>
+  <AIReviewBlurb />
 
-  <GradientSection variant="primary" padding="md" rounded={true}>
-    <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10">
-      <IconLink 
-        href="/why" 
-        icon="fa-solid fa-question-circle" 
-        class="text-xl hover:text-blue-300 transition-colors"
-        ariaLabel="Learn why EU needs reform"
-      >
-        Why EU Needs Reform?
-      </IconLink>
-      
-      <IconLink 
-        href="/benefits" 
-        icon="fa-solid fa-globe" 
-        class="text-xl hover:text-blue-300 transition-colors"
-        ariaLabel="See benefits for your country"
-      >
-        Benefits For Your Country
-      </IconLink>
-      
-      <IconLink 
-        href="/vision" 
-        icon="fa-solid fa-book" 
-        class="text-xl hover:text-blue-300 transition-colors"
-        ariaLabel="See the full vision overview"
-      >
-        Full Vision Overview
-      </IconLink>
-    </div>
-  </GradientSection>
+  <Numbers />
 
+  <QuickLinks />
 
-  <div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary); "><!-- border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); -->
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <DisplayTitle level={1} class="text-center">Core Pillars of European Consolidation</DisplayTitle>
-      <p class="text-xl leading-relaxed mt-4 mb-20 text-center max-w-5xl mx-auto" style="color: var(--color-text-secondary);">
-        By fostering smart collaboration and leveraging shared resources, we can create a Europe where abundance, security, and the freedom to truly live go hand in hand.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <Card
-          title="I. Language Integration"
-          icon="🗣️"
-          color="green"
-          variant="gradient"
-          href="/vision/language-integration"
-          align="center"
-        >
-          English as a second official language across all EU states to remove communication barriers
-        </Card>
-    
-        <Card
-          title="II. Digital Integration"
-          icon="💻"
-          color="red"
-          variant="gradient"
-          href="/vision/digital-integration"
-          align="center"
-        >
-          Unified digital government, e-health, e-learning, and blockchain-based public services
-        </Card>
-    
-        <Card
-          title="III. Robotic Reindustrialization"
-          icon="🤖"
-          color="indigo"
-          variant="gradient"
-          href="/vision/robotic-reindustrialization"
-          align="center"
-        >
-          Autonomous logistics, robotic production, and sustainable, localized manufacturing
-        </Card>
-      </div>
-    </div>
-  </div>
-  <div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary);  border-top: 1px solid var(--color-border); ">
+  <div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary); border-top: 1px solid var(--color-border);">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 my-20">
-      <!-- Title with decorative elements -->
       <div class="relative mb-8">
         <div class="absolute inset-0 -mt-8 bg-gradient-to-r from-blue-700/10 via-blue-700/20 to-blue-700/10 blur-2xl opacity-50 rounded-3xl"></div>
         <div class="relative">
           <DisplayTitle level={1}>Why Digital Reform Is Necessary</DisplayTitle>
         </div>
       </div>
-      
+
       <div class="relative">
         <div class="absolute inset-0 bg-gradient-to-r from-teal-900 to-blue-900 opacity-10 blur-xl"></div>
         <div class="relative">
           <WhyDigitalReform color="teal" />
         </div>
       </div>
-  
-      <!-- Call to action button -->
+
       <div class="mt-8 text-center">
-        <Button 
-          href="/why" 
-          variant="primary" 
-          size="lg" 
+        <Button
+          href="/why"
+          variant="primary"
+          size="lg"
           class="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-500 hover:to-blue-500 shadow-md hover:shadow-lg"
         >
           Learn more about why reform is needed
@@ -170,156 +72,23 @@ import IconLink from '../components/IconLink.astro';
       </div>
     </div>
   </div>
-  <div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary);  border-top: 1px solid var(--color-border); ">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12">
-      <DisplayTitle level={1}>Benefits</DisplayTitle>
-      
-      <div class="relative mb-16">
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-indigo-900 opacity-10 blur-xl"></div>
-        <div class="relative">
-          <CardGrid columns={3} gap="1.5rem">
-            <Card 
-              title="Benefits for European Integration" 
-              color="blue" 
-              icon="🇪🇺"
-              href="/benefits/european-integration"
-            >
-              Highlighting the advantages of a more unified Europe, fostering collaboration and shared growth across all member states.
-            </Card>
 
-            <Card 
-              title="Benefits for Germany" 
-              color="indigo" 
-              icon="🇩🇪"
-              href="/benefits/germany"
-            >
-              Exploring how Germany can leverage its industrial strength to lead in robotics and digital transformation, enhancing its economic position.
-            </Card>
+  <Pillars />
 
-            <Card title="Benefits for France" color="blue" icon="🇫🇷">
-              Discussing France's role in cultural integration and leadership in digital governance, strengthening its influence in the EU.
-            </Card>
+  <CEEFocus />
 
-            <Card title="Benefits for Southern Europe" color="indigo" icon="🏛️">
-              Addressing economic disparities and promoting sustainable development through enhanced logistics and digital services.
-            </Card>
+  <Benefits />
 
-            <Card title="Benefits for Scandinavia" color="blue" icon="❄️">
-              Leveraging technological advancements and environmental initiatives to drive innovation and sustainability.
-            </Card>
+  <AdoptionWaves />
 
-            <Card title="Benefits for Central Europe" color="indigo" icon="🏭">
-              Utilizing the region's skilled workforce to spearhead robotics and software development, boosting economic growth.
-            </Card>
+  <NotProposing />
 
-            <Card title="Benefits for Businesses" color="blue" icon="💼">
-              Facilitating seamless operations across borders, reducing costs, and opening new markets for European enterprises.
-            </Card>
+  <FAQSection />
 
-            <Card title="Benefits for Citizens" color="indigo" icon="👨‍👩‍👧‍👦">
-              Improving quality of life through streamlined services, enhanced mobility, and increased opportunities for personal growth.
-            </Card>
-
-            <Card title="Benefits for eCommerce" color="blue" icon="🛒">
-              Enabling faster, more reliable logistics and payment systems, fostering a thriving online marketplace.
-            </Card>
-
-            <Card title="Benefits for IT Startups" color="indigo" icon="💻">
-              Providing a supportive ecosystem for innovation, with access to a unified market and collaborative development opportunities.
-            </Card>
-
-            <Card title="Benefits for European Security" color="blue" icon="🛡️">
-              Strengthening collective defense and cybersecurity measures, ensuring a safer environment for all Europeans.
-            </Card>
-
-            <Card title="Benefits for the Information Economy" color="indigo" icon="📊">
-              Positioning Europe as a leader in data-driven industries, harnessing the power of big data and AI for economic growth.
-            </Card>
-          </CardGrid>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary);  border-top: 1px solid var(--color-border); ">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-      <DisplayTitle level={1}>Equitable Integration Principles</DisplayTitle>
-      
-      <div class="relative mb-16">
-        <div class="absolute inset-0 bg-gradient-to-r from-purple-900 to-indigo-900 opacity-10 blur-xl"></div>
-        <div class="relative">
-          <CardGrid columns={2} gap="2rem">
-            <Card title="Seeking Mutual Benefit" color="purple" icon="🤝">
-              Focusing on reforms and initiatives that provide clear advantages to all member states, fostering a spirit of collective progress.
-            </Card>
-
-            <Card title="Leveraging Economies of Scale" color="indigo" icon="📈">
-              Prioritizing European-wide digital solutions that are more cost-effective when developed collectively, nurturing a new generation of technocrats coding for the EU.
-            </Card>
-
-            <Card title="Building a Common Culture" color="purple" icon="🌍">
-              Using a shared language and media landscape to foster a truly European identity alongside national cultures.
-            </Card>
-
-            <Card title="Quality of Life Through Reform" color="indigo" icon="✨">
-              Pursuing radical reforms and shifting competencies to the EU level to address challenges too big for individual nations, focusing on improving life for all Europeans rather than austerity.
-            </Card>
-          </CardGrid>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary);  border-top: 1px solid var(--color-border); ">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 my-16">
-      <DisplayTitle level={1}>Common Questions</DisplayTitle>
-      
-      <div class="relative">
-        <div class="absolute inset-0 bg-gradient-to-r from-purple-900 to-indigo-900 opacity-10 blur-xl"></div>
-        <div class="relative">
-          <FAQ 
-            color="indigo"
-            items={[
-              {
-                question: "Why do we need yet another European integration project?",
-                answer: "This vision addresses today's multipolar world challenges, focusing on strategic independence and economic efficiency. Without a new cooperation framework, Europe risks internal economic conflicts and external manipulation. We need a practical approach to keep Europe competitive and united."
-              },
-              {
-                question: "Isn't English as a second language unfair to non-English speaking countries?",
-                answer: "A common language allows us to function as one economic entity. It enables European-scale companies and eliminates translation barriers for goods, services, and contracts. Embracing English—already the language of innovation and commerce—creates a unified economic space while preserving national languages and identities."
-              },
-              {
-                question: "How will these changes benefit ordinary citizens?",
-                answer: "Citizens gain EU-wide digital healthcare with predictive analytics, universal e-learning platforms, and streamlined administration. The digital infrastructure we build will support a future economy with robotized retirement solutions as populations age. This creates a Europe with fewer bureaucratic obstacles and greater opportunities."
-              },
-              {
-                question: "What if Germany or other powerful countries don't agree?",
-                answer: "The initiative could begin as an Intermarium 2.0 project among Central European, Baltic, and Scandinavian nations. Given eastern security threats, regional integration is necessary. Would skeptical nations risk being left behind? The voluntary model allows countries to join when benefits become apparent, while creating economic pressure on those who remain outside."
-              },
-              {
-                question: "How would this be funded?",
-                answer: "We've already mobilized enormous resources for COVID-19 and security challenges. The issue isn't funding capacity but directing funds wisely. Centralizing digital development saves costs across 27 countries. Strategic borrowing for high-return projects creates self-sustaining improvements that generate resources for repayment."
-              },
-              {
-                question: "How long would implementation take?",
-                answer: "We must begin immediately given the Russian threat and changing geopolitical landscape. English language adoption can start now with formal agreements and implementation within a year. Robotization and AI projects should launch immediately as they're critical for defense against Russian aggression while simultaneously building civilian capabilities. Digital administration systems will enhance our collaborative defense efficiency during wartime. Rather than waiting for perfect conditions, we should adopt these innovations urgently as they directly strengthen our security posture while forming the foundation for long-term prosperity."
-              },
-              {
-                question: "What are the main challenges?",
-                answer: "First, effectively communicating this vision to Europeans and building broad support. Second, executing them successfully, being adaptive if needed, and hopefully efficiently solving Europe's challenges within this framework. We must navigate regulatory complexity, address resistance from status quo beneficiaries, and ensure technological transformations remain inclusive."
-              }
-            ]}
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary);  border-top: 1px solid var(--color-border); ">
-  
+  <div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary); border-top: 1px solid var(--color-border);">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 my-16">
       <DisplayTitle level={1}>About the Author</DisplayTitle>
-      
+
       <div class="relative">
         <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-purple-900 opacity-10 blur-xl"></div>
         <div class="relative">
@@ -332,7 +101,6 @@ import IconLink from '../components/IconLink.astro';
       <DisplayTitle level={1}>Stay Updated</DisplayTitle>
       <Newsletter />
     </div>
-
   </div>
 
 </Layout>

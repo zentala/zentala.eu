@@ -1,0 +1,35 @@
+---
+import GradientSection from '../GradientSection.astro';
+import IconLink from '../IconLink.astro';
+---
+
+<GradientSection variant="primary" padding="md" rounded={true}>
+  <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10">
+    <IconLink
+      href="/why"
+      icon="fa-solid fa-question-circle"
+      class="text-xl hover:text-blue-300 transition-colors"
+      ariaLabel="Learn why EU needs reform"
+    >
+      Why EU Needs Reform?
+    </IconLink>
+
+    <IconLink
+      href="/benefits"
+      icon="fa-solid fa-globe"
+      class="text-xl hover:text-blue-300 transition-colors"
+      ariaLabel="See benefits for your country"
+    >
+      Benefits For Your Country
+    </IconLink>
+
+    <IconLink
+      href="/vision"
+      icon="fa-solid fa-book"
+      class="text-xl hover:text-blue-300 transition-colors"
+      ariaLabel="See the full vision overview"
+    >
+      Full Vision Overview
+    </IconLink>
+  </div>
+</GradientSection>
