@@ -91,35 +91,37 @@ Sequential: T00 specs `<SourceRef />`, T11 implements it. Both must merge to dev
 
 ---
 
-## Wave 3 — Section implementations (parallel worktrees, AFTER T08-split merged)
+## Wave 3 — Section implementations (DONE 2026-05-12, 7 parallel worktrees merged conflict-free)
 
 Each task edits its own component file from T08-split. No `src/pages/index.astro` edits. Real parallelism, zero conflicts.
 
-- [ ] **E002-T04** — Pillars: 3-col + Roman-numeral backdrop + addenda + `<SourceRef />`
+Merge SHAs: T04 `279468e` · T05 `ba203dc` · T06 `bd54c91` · T07-a `feb70ab` · T07-b `954206d` · T09 `1e9781d` · T10 `02d86b3`. `astro check` 0/0/0 after all merges.
+
+- [x] **E002-T04** — Pillars: 3-col + Roman-numeral backdrop + addenda + `<SourceRef />`
   → File: `src/components/home/Pillars.astro`
   → Content from `_homepage-content.ts:pillarsNew`
   → SourceRefs: `slug="research/t2-1-language-gdp"`, `"research/t1-3-estonia-egovernment"`, `"research/t2-4b-healthcare-ai"`
   → Worktree: `feat/E002-T04-pillars`
 
-- [ ] **E002-T05** — Numbers section: 4 huge numbers with prominent `compare` benchmark
+- [x] **E002-T05** — Numbers section: 4 huge numbers with prominent `compare` benchmark
   → File: `src/components/home/Numbers.astro`
   → Content from `_homepage-content.ts:numbers`
   → Layout: 4-col desktop / 2x2 tablet / 1-col mobile
   → Visual hierarchy: number (huge) → compare/benchmark (large) → narrative (small) → `<SourceRef />`
   → Worktree: `feat/E002-T05-numbers`
 
-- [ ] **E002-T06** — CEE Focus + bridge line
+- [x] **E002-T06** — CEE Focus + bridge line
   → File: `src/components/home/CEEFocus.astro`
   → Bridge sentence above CEE: *"These three pillars are the system. The next question is where we start building it."*
   → Content from `_homepage-content.ts:ceeFocus`
   → Worktree: `feat/E002-T06-cee`
 
-- [ ] **E002-T07-a** — Benefits perspectives (3 cards)
+- [x] **E002-T07-a** — Benefits perspectives (3 cards)
   → File: `src/components/home/Benefits.astro`
   → Content from `_homepage-content.ts:benefitsVariantB` (citizens / builders / nation-states)
   → Worktree: `feat/E002-T07a-benefits-perspectives`
 
-- [ ] **E002-T07-b** — Adoption Waves (3 stacked rows) — NEW component
+- [x] **E002-T07-b** — Adoption Waves (3 stacked rows) — NEW component
   → File: `src/components/home/AdoptionWaves.astro`
   → 3 rows: Fala 1 (PL/Baltics/Ukraine/Czechia/Scandinavia, now/5y) — Fala 2 (DE/FR/Benelux, 5–10y) — Fala 3 (South, 10–15y)
   → Each row: time-marker bar + region list + one-sentence rationale
@@ -127,14 +129,14 @@ Each task edits its own component file from T08-split. No `src/pages/index.astro
   → Framing: opportunity for all, CEE pressure-driven first-movers
   → Worktree: `feat/E002-T07b-waves`
 
-- [ ] **E002-T09** — "What I am not proposing" + disarming icons + extended item
+- [x] **E002-T09** — "What I am not proposing" + disarming icons + extended item
   → File: `src/components/home/NotProposing.astro`
   → Content from `_homepage-content.ts:notProposing`, replace "Cultural unification" → "Cultural synthesis, not unification within the system"
   → Each item: `x-circle` outline icon (or similar) + headline + detail
   → Layout: 2-col desktop / 1-col mobile
   → Worktree: `feat/E002-T09-not-proposing`
 
-- [ ] **E002-T10** — FAQ rewrite (offensive) with sharpened Q2 + Q7
+- [x] **E002-T10** — FAQ rewrite (offensive) with sharpened Q2 + Q7
   → File: `src/components/home/FAQSection.astro` (wraps `src/components/FAQ.astro` `<details>` pattern)
   → 7 questions from `_homepage-content.ts:faqNew` with rewrites:
     - **Q2 (English threat):** rewrite per JOURNAL 2026-05-12 — offense-first, Estonia precedent, threat = absence not presence

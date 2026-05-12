@@ -135,3 +135,22 @@ Ready for Wave 2 worktree dispatch.
   - **Sharp build failure (pre-existing, blocks T12)**: `npm run build` fails at post-content image optimization (`loadSharp` cannot find Sharp in `dist/chunks/`). Reproduces on clean `dev` branch — not caused by E002. Must be resolved before T12 verification can claim "build passes". Added as global improvement (see `.plan/IMPROVEMENTS.md`).
   - **Missing research route**: SourceRef links target `/research/<slug>` but `src/pages/research/` only had `map.astro`. T11 added `[...slug].astro` with `getStaticPaths()` to render the `docs` collection — a gap the eng review missed.
 - **Next**: Wave 3 parallel dispatch (7 worktrees: T04, T05, T06, T07-a, T07-b, T09, T10). Each touches its own component file in `src/components/home/` — zero merge conflicts expected.
+
+## Session 2026-05-12 (Wave 3) — 7 parallel subagents shipped
+
+- **Goal**: implement all 7 Wave 3 section components in parallel worktrees
+- **Method**: 7 subagents dispatched in a single message, each given its own worktree, its own file to edit, content source pointer, and a strict no-cross-file boundary. T08-split's refactor made this safe — no two agents touched the same file.
+- **Done** (merge SHA / file):
+  - T04 `279468e` → `Pillars.astro` — 3-col plain-div layout, Roman numerals (Playfair, `clamp(8rem,18vw,16rem)`, opacity 0.06, `aria-hidden`, `pointer-events:none`), addendum + `<SourceRef />` per pillar. Subagent inlined copy directly rather than importing from `_homepage-content.ts` (private `/resources/preview/` file feeding public homepage felt wrong).
+  - T05 `ba203dc` → `Numbers.astro` — 1/2x2/4-col responsive grid, value (clamp 3.5–5.5rem Playfair) → `compare` (clamp 1.25–1.75rem) → label (uppercase Inter) → narrative + inline `<SourceRef>`. Subagent wrote a small parser to split `NumberStat.source` ("publication — research/slug") into `cite` + `slug` props.
+  - T06 `bd54c91` → `CEEFocus.astro` — bridge sentence above (italic, centered, muted), then 3-card grid (Poland / Baltics+Ukraine / Trójmorze 2.0).
+  - T07-a `feb70ab` → `Benefits.astro` — 3 perspectives (For citizens / For builders & businesses / For nation-states), typography-driven, numbered eyebrows, no `<Card>` chrome.
+  - T07-b `954206d` → `AdoptionWaves.astro` — 3 stacked rows in 12-col grid (3/4/5: marker + regions + rationale). Copy was a fallback (no `adoptionWaves` export in content file) — opportunity framing, no shaming. `_homepage-content.ts` should be extended with this export in a follow-up.
+  - T09 `1e9781d` → `NotProposing.astro` — 4-item 2-col grid with inline x-circle SVGs, "Cultural unification" sharpened in-place to "Cultural synthesis, not unification within the system" via `.map()` override (kept source data untouched).
+  - T10 `02d86b3` → `FAQSection.astro` — uses `faqNew` from content file but patches Q2 and Q7 inline: Q2 reframed offense-first using Estonia precedent, Q7 appended Japan/Korea elderly suicide rates. Removed hardcoded purple-gradient blur (DESIGN.md forbids hex/opacity hacks). Q1 visual emphasis flagged for follow-up — `FAQ.astro` component lacks per-item styling props (added to global IMPROVEMENTS.md).
+- **Findings**:
+  - **Public-vs-private content boundary**: T04 noted that importing from `/resources/preview/_homepage-content.ts` (private, noindex) into a public home section is a smell. T04 inlined; other agents kept imports. Consistency follow-up: either promote the export to a public content path (e.g. `src/content/data/homepage.ts`) or have all sections inline. Logged to global IMPROVEMENTS.
+  - **Missing `adoptionWaves` export**: T07-b fell back to task brief copy. Add an `adoptionWaves` export in `_homepage-content.ts` (or its successor) so the copy lives outside the component.
+  - **Source field format**: `NumberStat.source` is `"<publication> — research/<slug>"`. Worked but brittle. Cleaner option: split into `sourceSlug` + `sourceCite` fields.
+- **Final**: `astro check` 0 errors, 0 warnings, 0 hints over 108 files. All 7 worktrees cleaned up; branches deleted.
+- **Next**: Wave 4. T12 blocked on Sharp build issue (pre-existing, logged). T13 cosmetic.
