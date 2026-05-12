@@ -1,78 +1,61 @@
 ---
-// Benefits — current 12-card variant preserved.
-// TODO(E002-T07-a): replace with 3-perspectives variant (citizens / builders / nation-states).
-import Card from '../Card.astro';
-import CardGrid from '../CardGrid.astro';
+// Benefits — 3 perspectives variant (E002-T07-a).
+// Source of truth for copy: benefitsVariantB in
+// src/pages/resources/preview/_homepage-content.ts
 import DisplayTitle from '../DisplayTitle.astro';
+
+const perspectives = [
+  {
+    label: 'For citizens',
+    body:
+      'A retirement that still works in 2050. AI healthcare that catches what tired doctors miss. Public services you do not have to physically queue for. Cross-border life that does not need a translator or a lawyer for every form.',
+  },
+  {
+    label: 'For builders & businesses',
+    body:
+      'A real single market — one language, one digital identity, one regulatory surface. €507B/year of friction unlocked. Capital flows to where engineers can build at European scale instead of fragmenting into 27 sub-markets.',
+  },
+  {
+    label: 'For nation-states',
+    body:
+      'Sovereignty on a stronger foundation, not a thinner one. Shared digital and robotic infrastructure costs less than building it 27 times. Strategic autonomy in defense, energy, and tech — without giving up identity.',
+  },
+];
 ---
 
-<div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary); border-top: 1px solid var(--color-border);">
+<div
+  class="py-10 mb-16 transition-colors duration-300"
+  style="background: var(--color-bg-primary); border-top: 1px solid var(--color-border);"
+>
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12">
     <DisplayTitle level={1}>Benefits</DisplayTitle>
 
-    <div class="relative mb-16">
-      <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-indigo-900 opacity-10 blur-xl"></div>
-      <div class="relative">
-        <CardGrid columns={3} gap="1.5rem">
-          <Card
-            title="Benefits for European Integration"
-            color="blue"
-            icon="🇪🇺"
-            href="/benefits/european-integration"
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+      {perspectives.map((p, idx) => (
+        <article
+          class="flex flex-col pt-6"
+          style="border-top: 2px solid var(--color-accent-primary);"
+        >
+          <div
+            class="text-sm font-mono mb-3 tracking-wide"
+            style="color: var(--color-text-muted);"
           >
-            Highlighting the advantages of a more unified Europe, fostering collaboration and shared growth across all member states.
-          </Card>
-
-          <Card
-            title="Benefits for Germany"
-            color="indigo"
-            icon="🇩🇪"
-            href="/benefits/germany"
+            {String(idx + 1).padStart(2, '0')}
+          </div>
+          <h3
+            class="text-2xl font-semibold mb-4"
+            style="color: var(--color-text-primary);"
           >
-            Exploring how Germany can leverage its industrial strength to lead in robotics and digital transformation, enhancing its economic position.
-          </Card>
-
-          <Card title="Benefits for France" color="blue" icon="🇫🇷">
-            Discussing France's role in cultural integration and leadership in digital governance, strengthening its influence in the EU.
-          </Card>
-
-          <Card title="Benefits for Southern Europe" color="indigo" icon="🏛️">
-            Addressing economic disparities and promoting sustainable development through enhanced logistics and digital services.
-          </Card>
-
-          <Card title="Benefits for Scandinavia" color="blue" icon="❄️">
-            Leveraging technological advancements and environmental initiatives to drive innovation and sustainability.
-          </Card>
-
-          <Card title="Benefits for Central Europe" color="indigo" icon="🏭">
-            Utilizing the region's skilled workforce to spearhead robotics and software development, boosting economic growth.
-          </Card>
-
-          <Card title="Benefits for Businesses" color="blue" icon="💼">
-            Facilitating seamless operations across borders, reducing costs, and opening new markets for European enterprises.
-          </Card>
-
-          <Card title="Benefits for Citizens" color="indigo" icon="👨‍👩‍👧‍👦">
-            Improving quality of life through streamlined services, enhanced mobility, and increased opportunities for personal growth.
-          </Card>
-
-          <Card title="Benefits for eCommerce" color="blue" icon="🛒">
-            Enabling faster, more reliable logistics and payment systems, fostering a thriving online marketplace.
-          </Card>
-
-          <Card title="Benefits for IT Startups" color="indigo" icon="💻">
-            Providing a supportive ecosystem for innovation, with access to a unified market and collaborative development opportunities.
-          </Card>
-
-          <Card title="Benefits for European Security" color="blue" icon="🛡️">
-            Strengthening collective defense and cybersecurity measures, ensuring a safer environment for all Europeans.
-          </Card>
-
-          <Card title="Benefits for the Information Economy" color="indigo" icon="📊">
-            Positioning Europe as a leader in data-driven industries, harnessing the power of big data and AI for economic growth.
-          </Card>
-        </CardGrid>
-      </div>
+            {p.label}
+          </h3>
+          <p
+            class="text-base leading-relaxed"
+            style="color: var(--color-text-secondary);"
+          >
+            {p.body}
+          </p>
+        </article>
+      ))}
     </div>
   </div>
 </div>
