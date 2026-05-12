@@ -1,0 +1,50 @@
+---
+// Pillars (3) — current behavior-preserving extract.
+// TODO(E002-T04): rewrite as 3-col + Roman-numeral backdrop + addenda + <SourceRef />.
+import Card from '../Card.astro';
+import DisplayTitle from '../DisplayTitle.astro';
+---
+
+<div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary);">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <DisplayTitle level={1} class="text-center">Core Pillars of European Consolidation</DisplayTitle>
+    <p class="text-xl leading-relaxed mt-4 mb-20 text-center max-w-5xl mx-auto" style="color: var(--color-text-secondary);">
+      By fostering smart collaboration and leveraging shared resources, we can create a Europe where abundance, security, and the freedom to truly live go hand in hand.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <Card
+        title="I. Language Integration"
+        icon="🗣️"
+        color="green"
+        variant="gradient"
+        href="/vision/language-integration"
+        align="center"
+      >
+        English as a second official language across all EU states to remove communication barriers
+      </Card>
+
+      <Card
+        title="II. Digital Integration"
+        icon="💻"
+        color="red"
+        variant="gradient"
+        href="/vision/digital-integration"
+        align="center"
+      >
+        Unified digital government, e-health, e-learning, and blockchain-based public services
+      </Card>
+
+      <Card
+        title="III. Robotic Reindustrialization"
+        icon="🤖"
+        color="indigo"
+        variant="gradient"
+        href="/vision/robotic-reindustrialization"
+        align="center"
+      >
+        Autonomous logistics, robotic production, and sustainable, localized manufacturing
+      </Card>
+    </div>
+  </div>
+</div>
