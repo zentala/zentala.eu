@@ -123,3 +123,15 @@ T08-split (Wave 2.5) is the most important new task. Splits `src/pages/index.ast
 ### Next
 
 Ready for Wave 2 worktree dispatch.
+
+## Session 2026-05-12 (continued) — Wave 2 + Wave 2.5 shipped
+
+- **Wave 2 done**:
+  - T00 (`a757d3b`): `DESIGN.md` at repo root (current-state token audit + spec for `<SourceRef />` and Roman-numeral backdrop) + `--color-text-muted` token added to `global.scss` (WCAG AA verified: 4.83:1 light / 4.61:1 dark).
+  - T11 (`0ac346e`): `<SourceRef />` component with native Popover API (desktop) + CSS-driven bottom sheet (mobile). `src/pages/research/[...slug].astro` route added for source deep-links. Playwright suite (`tests/source-ref.spec.ts`, 11 tests) covers desktop click/Esc/light-dismiss/keyboard + mobile tap/sheet/backdrop + 44×44 touch target + link nav.
+- **Wave 2.5 done** (`742863a`):
+  - T08-split refactor: `src/pages/index.astro` split into 9 per-section components in `src/components/home/`. Five extracted as-is (AIReviewBlurb, QuickLinks, Pillars, Benefits, FAQSection), four are TODO-tagged placeholders for Wave 3 (Numbers→T05, CEEFocus→T06, AdoptionWaves→T07-b, NotProposing→T09). Equitable Principles section removed (duplicates `/principles`). `astro check`: 0 errors, 0 warnings.
+- **Findings**:
+  - **Sharp build failure (pre-existing, blocks T12)**: `npm run build` fails at post-content image optimization (`loadSharp` cannot find Sharp in `dist/chunks/`). Reproduces on clean `dev` branch — not caused by E002. Must be resolved before T12 verification can claim "build passes". Added as global improvement (see `.plan/IMPROVEMENTS.md`).
+  - **Missing research route**: SourceRef links target `/research/<slug>` but `src/pages/research/` only had `map.astro`. T11 added `[...slug].astro` with `getStaticPaths()` to render the `docs` collection — a gap the eng review missed.
+- **Next**: Wave 3 parallel dispatch (7 worktrees: T04, T05, T06, T07-a, T07-b, T09, T10). Each touches its own component file in `src/components/home/` — zero merge conflicts expected.

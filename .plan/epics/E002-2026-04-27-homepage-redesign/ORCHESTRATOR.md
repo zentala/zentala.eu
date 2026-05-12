@@ -50,9 +50,9 @@ Sequential: T00 specs `<SourceRef />`, T11 implements it. Both must merge to dev
 
 ---
 
-## Wave 2.5 — Section split refactor (CRITICAL — enables Wave 3 parallelism)
+## Wave 2.5 — Section split refactor (DONE 2026-05-12, merge `742863a`)
 
-### E002-T08-split — Split homepage into per-section Astro components
+### [x] E002-T08-split — Split homepage into per-section Astro components
 
 **Purpose:** Make Wave 3 actually parallel by giving each task its own file to edit. Without this, all Wave 3 tasks edit `src/pages/index.astro` → guaranteed merge conflicts.
 
