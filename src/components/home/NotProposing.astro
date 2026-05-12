@@ -1,9 +1,75 @@
 ---
-// "What I am not proposing" — placeholder.
-// TODO(E002-T09): render 4–5 explicit non-claims with disarming x-circle icons.
-// Items: national languages, federal super-state, common pension, cultural synthesis (not unification within the system).
-// Layout: 2-col desktop / 1-col mobile.
-// Content from `_homepage-content.ts:notProposing`.
+// "What I am not proposing" — disarms common objections up front.
+// Renders 4 explicit non-claims with x-circle icons in a 2-col grid.
+// Content source: `_homepage-content.ts:notProposing`.
+// One item sharpened in-place: "Cultural unification" → "Cultural synthesis, not unification within the system".
+import { notProposing } from '../../pages/resources/preview/_homepage-content';
+import DisplayTitle from '../DisplayTitle.astro';
+
+const items = notProposing.items.map((item) =>
+  item.headline === 'Cultural unification.'
+    ? { ...item, headline: 'Cultural synthesis, not unification within the system.' }
+    : item,
+);
 ---
 
-<!-- TODO E002-T09 What I am not proposing -->
+<div
+  class="py-10 mb-16 transition-colors duration-300"
+  style="background: var(--color-bg-primary); border-top: 1px solid var(--color-border);"
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12">
+    <DisplayTitle level={1}>{notProposing.title}</DisplayTitle>
+
+    {
+      notProposing.intro && (
+        <p
+          class="max-w-3xl mb-12 text-lg leading-relaxed"
+          style="color: var(--color-text-secondary);"
+        >
+          {notProposing.intro}
+        </p>
+      )
+    }
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {
+        items.map((item) => (
+          <div class="flex gap-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 flex-shrink-0 mt-1"
+              style="color: var(--color-text-muted);"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+            <div>
+              <h3
+                class="font-semibold text-lg mb-2"
+                style="color: var(--color-text-primary);"
+              >
+                {item.headline}
+              </h3>
+              {item.detail && (
+                <p
+                  class="leading-relaxed"
+                  style="color: var(--color-text-secondary);"
+                >
+                  {item.detail}
+                </p>
+              )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
