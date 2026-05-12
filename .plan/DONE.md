@@ -4,6 +4,22 @@ Index of completed tasks.
 
 ---
 
+## 2026-05-12 — E002 homepage redesign (epic closed)
+
+- **E002-T00** — `DESIGN.md` at repo root (token audit + `<SourceRef />` + Roman backdrop specs). `--color-text-muted` token added (WCAG AA 4.83:1 / 4.61:1). Commit: `a757d3b`.
+- **E002-T11** — `<SourceRef />` component (native Popover desktop / `<dialog>` mobile). Build-time slug resolution, throws on miss. `src/pages/research/[...slug].astro` route added. Playwright suite 11 tests. Commit: `0ac346e`.
+- **E002-T08-split** — Behavior-preserving refactor: `src/pages/index.astro` split into 9 per-section components in `src/components/home/`. Removed duplicate Equitable Principles section. Enabled parallel Wave 3. Commit: `742863a`.
+- **E002-T04** — Pillars: 3-col + Roman backdrop (Playfair clamp 8–16rem, opacity 0.06, aria-hidden), addendum + `<SourceRef />` per pillar. Commits: `279468e` / `5cffef6`.
+- **E002-T05** — Numbers: 4 huge stats with prominent `compare` benchmark, narrative, source ref. Responsive 1/2x2/4-col. Commits: `ba203dc` / `222dd36`.
+- **E002-T06** — CEE Focus + bridge sentence. 3 cards: Poland / Baltics+Ukraine / Trójmorze 2.0. Commits: `bd54c91` / `a7324c1`.
+- **E002-T07-a** — Benefits: 3 perspective cards (citizens / builders / nation-states). Replaced 12 marketing cards. Commits: `feb70ab` / `027e6ba`.
+- **E002-T07-b** — Adoption Waves: 3 stacked rows (Wave 1 CEE+Nordic / Wave 2 DE+FR+BNL / Wave 3 South EU), marker+regions+rationale in 12-col grid. Commits: `954206d` / `8a57f27`.
+- **E002-T09** — "What I am not proposing": 4-item 2-col with x-circle SVGs; sharpened "Cultural unification" → "Cultural synthesis, not unification within the system". Commits: `1e9781d` / `d24cdc6`.
+- **E002-T10** — FAQ rewrite (offense-first). Q2 via Estonia precedent; Q7 anchored to Japan/Korea elderly suicide data. Commits: `02d86b3` / `f4419cf`.
+- **E002-T12** — Wave 4 verification. Sharp 0.32→0.33.4 (unblocks build), `/research/[...slug]` double-prefix fix, `search.astro` `<script>`-in-comment fix, 4 latent Playwright bugs fixed. Build 337 pages clean, Playwright 41/41. Commit: `b8af299`.
+- **E002-T13** — Preview disposition: emerald closure banner on `/resources/preview/homepage` linking to live `/`. Commit: `b8af299`.
+- **E002-cleanup** — IMPROVEMENTS triage (3 follow-ups). Moved `_homepage-content.ts` → `src/data/homepage.ts` (public canonical source); added `adoptionWaves` export, `AdoptionWaves.astro` consumes it; `<FAQ>` gains `emphasis?: boolean`, applied to `faqNew[0]`. Playwright 43/43. Commit: `e3a93a0`.
+
 ## 2026-04-27 (session 3 — E001 execution)
 
 - **[E001-T01](epics/E001-2026-04-27-content-expansion/tasks/T01-direct-democracy-research.md)** — Research: Swiss Direct Democracy & EU Referendum Models. 4212 words, all questions answered. Key finding: 0 binding ECI outcomes in 13 years. Commit: `5a6d8db`.
