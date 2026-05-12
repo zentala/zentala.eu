@@ -1,0 +1,41 @@
+---
+/**
+ * Dynamic route for individual research files in src/content/docs/research/.
+ *
+ * Enables SourceRef links to deep-link to the full source document.
+ * Each research file is rendered with its title, description, and full markdown
+ * body inside the standard site Layout.
+ */
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('docs', ({ id }) =>
+    id.startsWith('research/'),
+  );
+  return entries.map((entry) => ({
+    params: { slug: entry.id.replace(/\.md$/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+  <article class="container mx-auto max-w-3xl px-4 py-12 prose prose-lg dark:prose-invert">
+    <p class="text-sm" style="color: var(--color-text-muted)">
+      <a href="/" style="color: var(--color-text-muted)">&larr; Home</a>
+      &nbsp;|&nbsp; Research source
+    </p>
+    <h1>{entry.data.title}</h1>
+    {entry.data.description && (
+      <p class="lead" style="color: var(--color-text-secondary); font-size: 1.125rem; line-height: 1.5;">
+        {entry.data.description}
+      </p>
+    )}
+    <hr />
+    <Content />
+  </article>
+</Layout>

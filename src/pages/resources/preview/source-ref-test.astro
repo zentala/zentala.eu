@@ -1,0 +1,27 @@
+---
+/**
+ * Test fixture page for SourceRef Playwright suite (E002-T11).
+ * Private (noindex), only referenced by tests/source-ref.spec.ts.
+ */
+import Layout from '../../../layouts/Layout.astro';
+import SourceRef from '../../../components/SourceRef.astro';
+---
+
+<Layout title="SourceRef test fixture" noindex={true}>
+  <main class="container mx-auto px-4 py-12">
+    <h1>SourceRef test fixture</h1>
+    <p>
+      This page mounts the <code>&lt;SourceRef&gt;</code> component with a real
+      slug from the docs collection so end-to-end interactions can be exercised
+      by Playwright. Not linked from the public site.
+    </p>
+    <p>
+      EU fertility hit 1.46 in 2024 <SourceRef slug="research/t1-1-demographic-crisis" cite="t1-1" />
+      &mdash; thirty percent below replacement.
+    </p>
+    <p>
+      Estonia saves roughly EUR 1,500 per citizen per year through its
+      e-government platform <SourceRef slug="research/t1-3-estonia-egovernment" cite="t1-3" />.
+    </p>
+  </main>
+</Layout>
