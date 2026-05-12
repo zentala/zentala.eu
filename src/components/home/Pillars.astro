@@ -1,50 +1,128 @@
 ---
-// Pillars (3) — current behavior-preserving extract.
-// TODO(E002-T04): rewrite as 3-col + Roman-numeral backdrop + addenda + <SourceRef />.
-import Card from '../Card.astro';
+// Pillars (3) — E002-T04 rewrite.
+// 3-column grid with oversized Roman-numeral backdrop, addendum copy, and
+// inline <SourceRef /> citation for each pillar. No <Card /> here because the
+// Roman-numeral backdrop technique clashes with Card's gradient variant.
 import DisplayTitle from '../DisplayTitle.astro';
+import SourceRef from '../SourceRef.astro';
+
+interface Pillar {
+  numeral: 'I' | 'II' | 'III';
+  title: string;
+  body: string;
+  addendum: string;
+  sourceSlug: string;
+}
+
+const pillars: Pillar[] = [
+  {
+    numeral: 'I',
+    title: 'Language Integration',
+    body: 'English as a second official language across all EU states to remove communication barriers.',
+    addendum:
+      '€507B/year is the upside of one shared working language across the single market — that is the prize, not a punishment for anyone.',
+    sourceSlug: 'research/t2-1-language-gdp',
+  },
+  {
+    numeral: 'II',
+    title: 'Digital Integration',
+    body: 'Unified digital government, e-health, e-learning, and blockchain-based public services.',
+    addendum:
+      'Estonia proves it works: 99% of services online, €2B/year saved. The opportunity is to apply that method across 27 countries — including Poland, where digital court reform alone would unblock years of backlog.',
+    sourceSlug: 'research/t1-3-estonia-egovernment',
+  },
+  {
+    numeral: 'III',
+    title: 'Robotic Reindustrialization',
+    body: 'Autonomous logistics, robotic production, and sustainable, localized manufacturing.',
+    addendum:
+      'The MASAI study shows AI radiology detects 28% more cancers than human-only screening. Robotization is not "replacing humans" — it is the only way to keep services running when half the workforce retires.',
+    sourceSlug: 'research/t2-4b-healthcare-ai',
+  },
+];
 ---
 
 <div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary);">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <DisplayTitle level={1} class="text-center">Core Pillars of European Consolidation</DisplayTitle>
-    <p class="text-xl leading-relaxed mt-4 mb-20 text-center max-w-5xl mx-auto" style="color: var(--color-text-secondary);">
+    <p
+      class="text-xl leading-relaxed mt-4 mb-20 text-center max-w-5xl mx-auto"
+      style="color: var(--color-text-secondary);"
+    >
       By fostering smart collaboration and leveraging shared resources, we can create a Europe where abundance, security, and the freedom to truly live go hand in hand.
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <Card
-        title="I. Language Integration"
-        icon="🗣️"
-        color="green"
-        variant="gradient"
-        href="/vision/language-integration"
-        align="center"
-      >
-        English as a second official language across all EU states to remove communication barriers
-      </Card>
-
-      <Card
-        title="II. Digital Integration"
-        icon="💻"
-        color="red"
-        variant="gradient"
-        href="/vision/digital-integration"
-        align="center"
-      >
-        Unified digital government, e-health, e-learning, and blockchain-based public services
-      </Card>
-
-      <Card
-        title="III. Robotic Reindustrialization"
-        icon="🤖"
-        color="indigo"
-        variant="gradient"
-        href="/vision/robotic-reindustrialization"
-        align="center"
-      >
-        Autonomous logistics, robotic production, and sustainable, localized manufacturing
-      </Card>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+      {
+        pillars.map((pillar) => (
+          <div class="pillar-column">
+            <span class="pillar-numeral" aria-hidden="true">
+              {pillar.numeral}
+            </span>
+            <div class="pillar-content">
+              <h3 class="pillar-title" style="color: var(--color-text-primary);">
+                {pillar.title}
+              </h3>
+              <p class="pillar-body" style="color: var(--color-text-secondary);">
+                {pillar.body}
+              </p>
+              <p class="pillar-addendum" style="color: var(--color-text-secondary);">
+                {pillar.addendum}{' '}
+                <SourceRef slug={pillar.sourceSlug} cite="source" />
+              </p>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </div>
+
+<style>
+  .pillar-column {
+    position: relative;
+    padding: 1rem 0.5rem 0;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .pillar-numeral {
+    position: absolute;
+    top: -0.15em;
+    left: -0.05em;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(8rem, 18vw, 16rem);
+    line-height: 0.85;
+    opacity: 0.06;
+    color: var(--color-text-primary);
+  }
+
+  .pillar-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .pillar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0 0 1rem;
+  }
+
+  .pillar-body {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+  }
+
+  .pillar-addendum {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>
