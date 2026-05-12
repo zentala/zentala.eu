@@ -1,8 +1,114 @@
 ---
-// Diagnosis in 4 numbers — placeholder.
-// TODO(E002-T05): render 4 huge numbers (1.46, 4.1M, €800B/yr, €1,500) with prominent
-// `compare` benchmark as sub-headline. 4-col desktop / 2x2 tablet / 1-col mobile.
-// Each number gets a <SourceRef />. Content from `_homepage-content.ts:numbers`.
+/**
+ * Numbers — "The diagnosis in four numbers".
+ *
+ * Opening argument of the manifesto: four hard numbers, each paired with a
+ * `compare` benchmark that gives the number meaning. Without the benchmark,
+ * a big number is just noise — so `compare` is rendered as a prominent
+ * sub-headline directly under the value, not as a footnote.
+ *
+ * Layout: 4-col desktop, 2x2 tablet (md), 1-col mobile.
+ * Data: `numbers` from src/pages/resources/preview/_homepage-content.ts.
+ */
+import { numbers } from '../../pages/resources/preview/_homepage-content';
+import SourceRef from '../SourceRef.astro';
+
+/** Extract the research slug from a `source` string like
+ *  "Eurostat 2024 — research/t1-1-demographic-crisis.md".
+ *  Returns the slug without the .md suffix (what `getEntry('docs', slug)` expects). */
+function extractSlug(source: string): string {
+  const match = source.match(/(research\/[a-z0-9-]+)\.md/i);
+  if (!match) {
+    throw new Error(`Numbers: cannot extract research slug from source string "${source}"`);
+  }
+  return match[1];
+}
+
+/** Extract the citation label (everything before the em-dash). */
+function extractCite(source: string): string {
+  const idx = source.indexOf('—');
+  return idx === -1 ? source : source.slice(0, idx).trim();
+}
+
+const cards = numbers.map((n) => ({
+  ...n,
+  slug: extractSlug(n.source),
+  cite: extractCite(n.source),
+}));
 ---
 
-<!-- TODO E002-T05 Numbers section -->
+<section class="container mx-auto px-4 sm:px-6 lg:px-8 my-16">
+  <h2 class="numbers-heading mb-10 md:mb-14">The diagnosis in four numbers</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+    {cards.map((card) => (
+      <article class="number-card">
+        <div class="number-value">{card.value}</div>
+        <p class="number-compare">{card.compare}</p>
+        <p class="number-label">{card.label}</p>
+        <p class="number-sub">
+          {card.sub}{' '}
+          <SourceRef slug={card.slug} cite={card.cite} />
+        </p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .numbers-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--color-text-primary);
+    text-align: center;
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .number-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.5rem;
+  }
+
+  .number-value {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 7vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--color-accent-primary);
+  }
+
+  .number-compare {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.25rem, 1.8vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .number-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .number-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+</style>
