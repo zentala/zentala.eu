@@ -1,9 +1,55 @@
 ---
-// CEE Focus + bridge line — placeholder.
-// TODO(E002-T06): render bridge sentence then CEE focus section (Poland / Baltics+Ukraine /
-// Trójmorze 2.0) framed as regional opportunity, welcoming framing for others.
-// Bridge: "These three pillars are the system. The next question is where we start building it."
-// Content from `_homepage-content.ts:ceeFocus`.
+// CEE Focus + bridge line (E002-T06).
+// Bridge sentence connects the universal 3 pillars to the regional starting point.
+// CEE section content sourced from `_homepage-content.ts:ceeFocus`.
+import { ceeFocus } from '../../pages/resources/preview/_homepage-content';
 ---
 
-<!-- TODO E002-T06 CEE focus + bridge -->
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 my-16">
+  <p
+    class="text-center italic text-lg leading-relaxed max-w-3xl mx-auto"
+    style="color: var(--color-text-muted);"
+  >
+    These three pillars are the system. The next question is where we start building it.
+  </p>
+</div>
+
+<div
+  class="py-10 mb-16 transition-colors duration-300"
+  style="background: var(--color-bg-primary); border-top: 1px solid var(--color-border);"
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-12">
+    <header class="max-w-3xl mx-auto text-center mb-12">
+      <h2
+        class="text-3xl sm:text-4xl font-bold mb-6 leading-tight"
+        style="color: var(--color-text-primary);"
+      >
+        {ceeFocus.title}
+      </h2>
+      <p class="text-lg leading-relaxed" style="color: var(--color-text-secondary);">
+        {ceeFocus.intro}
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      {
+        ceeFocus.bullets.map((bullet) => (
+          <article
+            class="p-6 rounded-xl h-full"
+            style="background-color: var(--color-bg-secondary); border-left: 4px solid var(--color-accent-primary);"
+          >
+            <h3
+              class="text-xl font-semibold mb-3"
+              style="color: var(--color-text-primary);"
+            >
+              {bullet.country}
+            </h3>
+            <p class="leading-relaxed" style="color: var(--color-text-secondary);">
+              {bullet.line}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</div>
