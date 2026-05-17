@@ -106,5 +106,5 @@ All documentation is stored in MDX format with the following frontmatter require
 For all I login with GitHub account `zentala@gmail.com`:
 
 - [GitHub Pages](https://github.com/zentala/zentala.eu/settings/pages) for static hosting
-- [Appwrite](https://cloud.appwrite.io/console/project-eu/overview/platforms) for newsletter
+- Newsletter is served by **[hub.zentala.io](https://hub.zentala.io)** (Cloudflare Workers). See [`zentala/hub`](https://github.com/zentala/hub). The Appwrite function in `functions/newsletter/` is deprecated and no longer wired up.
 - [Angolia](https://dashboard.algolia.com/apps/N0RZJY4T6S/dashboard) for search

@@ -1,71 +1,358 @@
 ---
-// Newsletter component for collecting email subscriptions
+/**
+ * Newsletter signup form.
+ *
+ * Posts subscriptions to hub.zentala.io (Cloudflare Workers). The hub returns
+ * `{ message: "Check your inbox to confirm." }` on success; this component
+ * shows inline status only — no `alert()`.
+ *
+ * UX per E006 PLAN/Design review:
+ *   - Stacked layout (input row, button row right-aligned)
+ *   - Min 44px touch targets
+ *   - Brand navy primary (#1e3a5f)
+ *   - System sans (no webfont in form context)
+ *   - Honeypot field is `hp_url` (must match hub backend); offscreen + aria-hidden
+ *   - State machine: idle | loading | success | error with role="status"
+ *   - Captures UTM params from window.location.search
+ *   - Reduced-motion respected for spinner
+ */
 ---
 
-<div class="relative">
-  <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-indigo-900 opacity-10 blur-xl"></div>
-  <div class="relative bg-blue-900/30 border border-blue-700/50 rounded-xl p-8 shadow-lg">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-2xl font-bold text-white mb-4">Subscribe to Our Newsletter</h2>
-      <p class="text-gray-300 mb-6">Join our community of forward-thinking Europeans. Get updates on the latest developments and be part of shaping Europe's digital future.</p>
-      
-      <form class="flex flex-col sm:flex-row gap-4 justify-center mb-4" id="newsletter-form">
-        <input 
-          type="email" 
-          name="email"
-          required
-          placeholder="Your email address" 
-          class="px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full sm:w-auto sm:flex-1 max-w-md"
-        />
-        <button 
-          type="submit" 
-          class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg transition-colors duration-300"
-        >
-          Subscribe
+<section class="newsletter-card">
+  <div class="newsletter-inner">
+    <h2 class="newsletter-headline">Get the next dispatch</h2>
+    <p class="newsletter-sub">
+      Updates on Europe's digital reform — no filler, unsubscribe any time.
+    </p>
+
+    <form id="newsletter-form" class="newsletter-form" novalidate>
+      <label for="newsletter-email" class="sr-only">Email address</label>
+      <input
+        id="newsletter-email"
+        class="newsletter-input"
+        type="email"
+        name="email"
+        required
+        minlength="3"
+        autocomplete="email"
+        placeholder="your@email.com"
+        aria-label="Email address"
+      />
+
+      {/* Honeypot — keep name="hp_url" in sync with hub backend */}
+      <input
+        type="text"
+        name="hp_url"
+        tabindex="-1"
+        autocomplete="off"
+        aria-hidden="true"
+        style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"
+      />
+
+      <div class="newsletter-actions">
+        <button type="submit" class="newsletter-submit" id="newsletter-submit">
+          <span class="spinner" id="newsletter-spinner" aria-hidden="true" hidden></span>
+          <span class="newsletter-submit-label" id="newsletter-submit-label">Subscribe →</span>
         </button>
-      </form>
-      <p class="text-gray-400 text-sm">We respect your privacy. Unsubscribe at any time.</p>
-    </div>
+      </div>
+
+      <div
+        id="newsletter-status"
+        class="newsletter-status"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      ></div>
+    </form>
   </div>
-</div>
+</section>
+
+<style>
+  .newsletter-card {
+    --brand-primary: #1e3a5f;
+    --brand-primary-hover: #284e80;
+    --brand-card-border: rgba(30, 58, 95, 0.25);
+    --brand-success: #15803d;
+    --brand-error: #b91c1c;
+
+    background: var(--color-bg-elevated, #ffffff);
+    border: 1px solid var(--brand-card-border);
+    border-radius: 14px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .newsletter-inner {
+    max-width: 38rem;
+    margin: 0 auto;
+  }
+
+  .newsletter-headline {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary, #0f172a);
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.01em;
+  }
+
+  .newsletter-sub {
+    color: var(--color-text-secondary, #475569);
+    margin: 0 0 1.25rem 0;
+    font-size: 0.95rem;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .newsletter-input {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.6rem 0.9rem;
+    border: 1.5px solid var(--brand-card-border);
+    border-radius: 8px;
+    background: var(--color-bg-primary, #ffffff);
+    color: var(--color-text-primary, #0f172a);
+    font-size: 1rem;
+    transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+  }
+
+  .newsletter-input:focus-visible {
+    outline: none;
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.18);
+  }
+
+  .newsletter-input[aria-invalid="true"] {
+    border-color: var(--brand-error);
+  }
+
+  .newsletter-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .newsletter-submit {
+    min-height: 44px;
+    padding: 0 1.25rem;
+    background: var(--brand-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 200ms ease-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .newsletter-submit:hover:not(:disabled) {
+    background: var(--brand-primary-hover);
+  }
+
+  .newsletter-submit:focus-visible {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
+  }
+
+  .newsletter-submit:disabled {
+    opacity: 0.7;
+    cursor: progress;
+  }
+
+  .newsletter-status {
+    min-height: 1.25rem;
+    font-size: 0.95rem;
+    transition: color 200ms ease-out;
+  }
+
+  .newsletter-status[data-state="success"] {
+    color: var(--brand-success);
+  }
+
+  .newsletter-status[data-state="error"] {
+    color: var(--brand-error);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: nl-spin 0.8s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spinner {
+      animation: none;
+      border-top-color: rgba(255, 255, 255, 0.45);
+    }
+  }
+
+  @keyframes nl-spin {
+    to { transform: rotate(360deg); }
+  }
+</style>
 
 <script>
-  // Client-side form handling
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('#newsletter-form');
-    
-    // Check if form exists before adding event listener
-    if (!form) {
-      console.error('Newsletter form not found');
-      return;
+  const HUB_ENDPOINT = 'https://hub.zentala.io/api/public/newsletter/subscribe';
+  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'] as const;
+
+  function collectUtm(search: string): Record<string, string> {
+    const params = new URLSearchParams(search);
+    const out: Record<string, string> = {};
+    for (const key of UTM_KEYS) {
+      const value = params.get(key);
+      if (value) out[key] = value;
     }
-    
+    return out;
+  }
+
+  function reducedMotion(): boolean {
+    return typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function init() {
+    const form = document.getElementById('newsletter-form') as HTMLFormElement | null;
+    const input = document.getElementById('newsletter-email') as HTMLInputElement | null;
+    const submit = document.getElementById('newsletter-submit') as HTMLButtonElement | null;
+    const submitLabel = document.getElementById('newsletter-submit-label') as HTMLElement | null;
+    const spinner = document.getElementById('newsletter-spinner') as HTMLElement | null;
+    const status = document.getElementById('newsletter-status') as HTMLDivElement | null;
+    const honeypot = form?.querySelector('input[name="hp_url"]') as HTMLInputElement | null;
+
+    if (!form || !input || !submit || !submitLabel || !spinner || !status) return;
+
+    let inFlight = false;
+
+    function setIdle() {
+      input!.removeAttribute('readonly');
+      input!.removeAttribute('aria-invalid');
+      submit!.disabled = false;
+      submitLabel!.textContent = 'Subscribe →';
+      spinner!.hidden = true;
+      status!.removeAttribute('data-state');
+      status!.textContent = '';
+    }
+
+    function setLoading() {
+      input!.setAttribute('readonly', 'readonly');
+      submit!.disabled = true;
+      if (reducedMotion()) {
+        spinner!.hidden = true;
+        submitLabel!.textContent = 'Working…';
+      } else {
+        spinner!.hidden = false;
+        submitLabel!.textContent = 'Subscribing…';
+      }
+      status!.removeAttribute('data-state');
+      status!.textContent = '';
+    }
+
+    function setSuccess(message: string) {
+      input!.removeAttribute('readonly');
+      input!.value = '';
+      submit!.disabled = false;
+      spinner!.hidden = true;
+      submitLabel!.textContent = 'Subscribe →';
+      status!.setAttribute('data-state', 'success');
+      status!.textContent = message;
+    }
+
+    function setError(message: string) {
+      input!.removeAttribute('readonly');
+      input!.setAttribute('aria-invalid', 'true');
+      submit!.disabled = false;
+      spinner!.hidden = true;
+      submitLabel!.textContent = 'Subscribe →';
+      status!.setAttribute('data-state', 'error');
+      status!.textContent = message;
+    }
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const emailInput = form.querySelector('input[name="email"]') as HTMLInputElement;
-      
-      // Check if email input exists
-      if (!emailInput) {
-        console.error('Email input not found');
+      if (inFlight) return;
+
+      if (!input.checkValidity()) {
+        input.reportValidity();
         return;
       }
-      
-      const email = emailInput.value;
-      
+
+      const email = input.value.trim();
+      const hpValue = honeypot?.value ?? '';
+
+      // Honeypot tripped: fake success, no network call. Spam bots see the same
+      // UX as a real subscribe and move on without retrying.
+      if (hpValue.length > 0) {
+        setSuccess('Check your inbox to confirm');
+        return;
+      }
+
+      inFlight = true;
+      setLoading();
+
+      const payload: Record<string, unknown> = {
+        email,
+        source: 'zentala.eu',
+        hp_url: '',
+      };
+      const utm = collectUtm(window.location.search);
+      if (Object.keys(utm).length > 0) payload.utm = utm;
+
       try {
-        const res = await fetch('https://cloud.appwrite.io/v1/functions/{import.meta.env.PUBLIC_APPWRITE_NEWSLETTER_FUNCTION_ID}/executions', {
+        const res = await fetch(HUB_ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email }),
+          body: JSON.stringify(payload),
         });
-        
-        const data = await res.json();
-        alert(data.message || 'Sprawdź swoją skrzynkę!');
-        emailInput.value = '';
-      } catch (error) {
-        console.error('Error submitting form:', error);
-        alert('An error occurred while subscribing. Please try again later.');
+
+        let data: { message?: string; error?: string } = {};
+        try { data = await res.json(); } catch { /* non-JSON body */ }
+
+        if (res.ok) {
+          setSuccess(data.message || 'Check your inbox to confirm');
+        } else if (res.status === 400) {
+          setError(data.error === 'Invalid email'
+            ? 'That email doesn’t look right. Try again.'
+            : "Couldn't subscribe. Try again, or email zentala@gmail.com.");
+        } else if (res.status === 429) {
+          setError('Too many attempts — wait a moment and try again.');
+        } else {
+          setError("Couldn't subscribe. Try again, or email zentala@gmail.com.");
+        }
+      } catch {
+        setError("Couldn't subscribe. Try again, or email zentala@gmail.com.");
+      } finally {
+        inFlight = false;
       }
     });
-  });
-</script> 
+
+    setIdle();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+</script>
