@@ -1,3 +1,11 @@
+> **DEPRECATED 2026-05-17.** Newsletter is now served by **hub.zentala.io**
+> (Cloudflare Workers). See [`zentala/hub`](https://github.com/zentala/hub).
+> This Appwrite function is no longer wired up — `src/components/Newsletter.astro`
+> and `src/pages/confirm.astro` both point at the hub. Kept here for historical
+> reference only; do not deploy.
+
+---
+
 # ⚡ Newsletter Subscription Function (Appwrite)
 
 This function handles newsletter subscriptions, confirmations, unsubscriptions, and autoresponders using Appwrite.
