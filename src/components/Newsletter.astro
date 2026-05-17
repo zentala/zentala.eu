@@ -201,6 +201,11 @@
     animation: nl-spin 0.8s linear infinite;
   }
 
+  /* HTML `hidden` attr loses to `.spinner { display: inline-block }` without this. */
+  .spinner[hidden] {
+    display: none;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .spinner {
       animation: none;
