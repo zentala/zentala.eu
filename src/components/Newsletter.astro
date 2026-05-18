@@ -9,13 +9,20 @@
  * UX per E006 PLAN/Design review:
  *   - Stacked layout (input row, button row right-aligned)
  *   - Min 44px touch targets
- *   - Brand navy primary (#1e3a5f)
+ *   - Brand navy primary (from shared brand tokens — see src/lib/brand-tokens.ts)
  *   - System sans (no webfont in form context)
  *   - Honeypot field is `hp_url` (must match hub backend); offscreen + aria-hidden
  *   - State machine: idle | loading | success | error with role="status"
  *   - Captures UTM params from window.location.search
  *   - Reduced-motion respected for spinner
+ *
+ * Brand colors are sourced from `src/lib/brand-tokens.ts` — a vendored mirror
+ * of hub's `packages/shared-brand`. To change the navy or hover, update
+ * BOTH files together.
  */
+
+import { BRAND_TOKENS } from '../lib/brand-tokens';
+const C = BRAND_TOKENS.colors;
 ---
 
 <section class="newsletter-card">
@@ -67,13 +74,20 @@
   </div>
 </section>
 
-<style>
+<style define:vars={{
+  brandPrimary: C.primary,
+  brandPrimaryHover: C.primaryHoverAlt,
+  brandCardBorder: C.cardBorderTinted,
+  brandFocusRing: C.focusRingTint,
+  brandSuccess: C.success,
+  brandError: C.danger,
+}}>
   .newsletter-card {
-    --brand-primary: #1e3a5f;
-    --brand-primary-hover: #284e80;
-    --brand-card-border: rgba(30, 58, 95, 0.25);
-    --brand-success: #15803d;
-    --brand-error: #b91c1c;
+    --brand-primary: var(--brandPrimary);
+    --brand-primary-hover: var(--brandPrimaryHover);
+    --brand-card-border: var(--brandCardBorder);
+    --brand-success: var(--brandSuccess);
+    --brand-error: var(--brandError);
 
     background: var(--color-bg-elevated, #ffffff);
     border: 1px solid var(--brand-card-border);
@@ -123,7 +137,7 @@
   .newsletter-input:focus-visible {
     outline: none;
     border-color: var(--brand-primary);
-    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.18);
+    box-shadow: 0 0 0 3px var(--brandFocusRing);
   }
 
   .newsletter-input[aria-invalid="true"] {
