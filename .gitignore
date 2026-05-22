@@ -32,3 +32,11 @@ src/pages/vision/add/*
 # session handoff files (ephemeral, local only)
 .plan/handoffs/
 .plan/HANDOFF-*.md
+
+# Hook artifacts + git worktrees (see global ~/.config/git/ignore for rationale)
+.claude/.last-done-nudge
+.claude/.last-cleanup
+.claude/.auto-build.log
+.claude/.error-counts.tmp
+.plan/.error-counts.tmp
+.claude/worktrees/
