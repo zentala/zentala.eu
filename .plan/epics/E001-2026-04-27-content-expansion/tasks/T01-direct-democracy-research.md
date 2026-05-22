@@ -1,9 +1,10 @@
 ---
 id: E001-T01
 epic: E001
-status: not-started
+status: pending
 branch: feat/E001-T01-democracy-research
 output: src/content/docs/research/t5-1-direct-democracy-models.md
+title: Research — Swiss Direct Democracy & EU Referendum Models
 ---
 
 # E001-T01: Research — Swiss Direct Democracy & EU Referendum Models

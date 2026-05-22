@@ -1,13 +1,14 @@
 ---
 id: E000-T03
 epic: E000
-status: done
+status: completed
 created: 2026-04-27
 completed: 2026-04-27
 branch: feat/E000-T03-hide-mock-search
 commits:
   - 5e300a2
   - 081e98f (merge)
+title: Hide mock search from navbar + A3 refactor + backlog cleanup
 ---
 
 ## Result

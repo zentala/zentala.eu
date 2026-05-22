@@ -1,9 +1,10 @@
 ---
 id: E001-T08
 epic: E001
-status: not-started
+status: pending
 branch: feat/E001-T08-manifest-healthcare-ai
 output: src/content/docs/book/predictive-healthcare-system.mdx
+title: Manifest Page — Predictive Healthcare System
 ---
 
 # E001-T08: Manifest Page — Predictive Healthcare System

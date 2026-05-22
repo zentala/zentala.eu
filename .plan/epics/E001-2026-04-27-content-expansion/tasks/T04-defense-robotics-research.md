@@ -1,9 +1,10 @@
 ---
 id: E001-T04
 epic: E001
-status: not-started
+status: pending
 branch: feat/E001-T04-defense-research
 output: src/content/docs/research/t5-4-defense-robotics.md
+title: Research — Defense Robotics & EU Strategic Autonomy
 ---
 
 # E001-T04: Research — Defense Robotics & EU Strategic Autonomy

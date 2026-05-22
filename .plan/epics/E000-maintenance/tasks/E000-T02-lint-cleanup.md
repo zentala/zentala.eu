@@ -1,13 +1,14 @@
 ---
 id: E000-T02
 epic: E000
-status: done
+status: completed
 created: 2026-04-27
 completed: 2026-04-27
 branch: feat/E000-T02-lint-cleanup
 commits:
   - 6aad746
   - 0514bdc (merge)
+title: Lint cleanup — astro check 33 hints → 0
 ---
 
 ## Result

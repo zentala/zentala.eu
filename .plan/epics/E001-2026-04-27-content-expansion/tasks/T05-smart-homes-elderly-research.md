@@ -1,9 +1,10 @@
 ---
 id: E001-T05
 epic: E001
-status: not-started
+status: pending
 branch: feat/E001-T05-smart-homes-research
 output: src/content/docs/research/t5-5-smart-homes-elderly.md
+title: Research — Smart Homes & Elderly Care Logistics
 ---
 
 # E001-T05: Research — Smart Homes & Elderly Care Logistics

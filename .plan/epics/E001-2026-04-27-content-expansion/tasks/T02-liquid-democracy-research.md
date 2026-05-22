@@ -1,9 +1,10 @@
 ---
 id: E001-T02
 epic: E001
-status: not-started
+status: pending
 branch: feat/E001-T02-liquid-democracy-research
 output: src/content/docs/research/t5-2-liquid-democracy.md
+title: Research — Liquid Democracy, Participatory Systems & Weighted Voting
 ---
 
 # E001-T02: Research — Liquid Democracy, Participatory Systems & Weighted Voting

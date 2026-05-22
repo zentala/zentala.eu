@@ -1,9 +1,10 @@
 ---
 id: E001-T11
 epic: E001
-status: not-started
+status: pending
 branch: feat/E001-T11-manifest-digital-receipts
 output: src/content/docs/book/digital-receipts.mdx
+title: Manifest Page — Digital Receipts
 ---
 
 # E001-T11: Manifest Page — Digital Receipts

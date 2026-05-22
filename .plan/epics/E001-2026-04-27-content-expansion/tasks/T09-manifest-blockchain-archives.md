@@ -1,9 +1,10 @@
 ---
 id: E001-T09
 epic: E001
-status: not-started
+status: pending
 branch: feat/E001-T09-manifest-blockchain-archives
 output: src/content/docs/book/european-blockchain-archives.mdx
+title: Manifest Page — European Blockchain Archives
 ---
 
 # E001-T09: Manifest Page — European Blockchain Archives

@@ -1,8 +1,9 @@
 ---
 id: E000-T01
 epic: E000
-status: todo
+status: pending
 created: 2026-04-26
+title: Rename /private to /resources
 ---
 # E000-T01: Rename /private to /resources
 

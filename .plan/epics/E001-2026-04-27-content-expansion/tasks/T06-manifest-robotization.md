@@ -1,9 +1,10 @@
 ---
 id: E001-T06
 epic: E001
-status: not-started
+status: pending
 branch: feat/E001-T06-manifest-robotization
 output: src/content/docs/book/robotization.mdx
+title: Manifest Page — Robotization
 ---
 
 # E001-T06: Manifest Page — Robotization

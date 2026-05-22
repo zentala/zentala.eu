@@ -1,9 +1,10 @@
 ---
 id: E001-T12
 epic: E001
-status: not-started
+status: pending
 branch: feat/E001-T12-manifest-media-culture
 output: src/content/docs/book/media-cultural-integration.mdx
+title: Manifest Page — Media & Cultural Integration
 ---
 
 # E001-T12: Manifest Page — Media & Cultural Integration

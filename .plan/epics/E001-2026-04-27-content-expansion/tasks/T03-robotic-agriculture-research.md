@@ -1,9 +1,10 @@
 ---
 id: E001-T03
 epic: E001
-status: not-started
+status: pending
 branch: feat/E001-T03-agriculture-research
 output: src/content/docs/research/t5-3-robotic-agriculture.md
+title: Research — Robotic Agriculture, Polyculture & Food Sovereignty
 ---
 
 # E001-T03: Research — Robotic Agriculture, Polyculture & Food Sovereignty

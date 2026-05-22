@@ -1,11 +1,12 @@
 ---
 id: E001-T10
 epic: E001
-status: not-started
+status: pending
 branch: feat/E001-T10-manifest-payment-zone
 outputs:
   - src/content/docs/book/unified-payment-zone.mdx
   - src/content/docs/book/near-zero-transaction-costs.md
+title: Manifest Pages — Unified Payment Zone + Near-Zero Transaction Costs
 ---
 
 # E001-T10: Manifest Pages — Unified Payment Zone + Near-Zero Transaction Costs

@@ -1,8 +1,9 @@
 ---
 id: E001-T13-to-T15
 epic: E001
-status: not-started
+status: pending
 depends-on: T01, T02, T03, T04
+title: E001-T13–T15: Manifest Pages (Wave 2b)
 ---
 
 # E001-T13–T15: Manifest Pages (Wave 2b)

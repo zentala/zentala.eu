@@ -1,9 +1,10 @@
 ---
 id: E001-T07
 epic: E001
-status: not-started
+status: pending
 branch: feat/E001-T07-manifest-language-gdp
 output: src/content/docs/book/economic-growth-language-unity.mdx
+title: Manifest Page — Economic Growth Through Language Unity
 ---
 
 # E001-T07: Manifest Page — Economic Growth Through Language Unity
