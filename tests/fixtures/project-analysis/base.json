@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-06-06T10:00:00.000Z",
+  "project": { "name": "zentala.eu", "root": "C:/code/zentala.eu", "branch": "dev", "commit": "base" },
+  "summary": {
+    "fileCount": 2,
+    "sourceFileCount": 2,
+    "routeCount": 1,
+    "componentCount": 1,
+    "contentDocCount": 0,
+    "diagnosticCount": 0,
+    "testCount": 1,
+    "hotspotCount": 1,
+    "orphanCandidateCount": 0
+  },
+  "files": [],
+  "routes": [],
+  "symbols": [],
+  "dependencies": [],
+  "diagnostics": [],
+  "tests": [],
+  "metrics": { "dependencyCount": 1 },
+  "findings": [
+    {
+      "id": "hotspot-src-pages-index-astro",
+      "kind": "refactor",
+      "severity": "medium",
+      "title": "Homepage pressure",
+      "paths": ["src/pages/index.astro"],
+      "evidence": { "fanOut": 5 },
+      "recommendation": "Review composition.",
+      "priority": 70
+    }
+  ],
+  "scores": { "projectRisk": 50 }
+}

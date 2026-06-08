@@ -13,6 +13,7 @@
     "test:urls": "node url-checker.js",
     "test:crawl": "node site-crawler.js",
     "test:links": "node check-links.js",
+    "analysis": "node scripts/project-analysis.mjs",
     "typecheck": "astro check --exclude 'dist/**/*'",
     "prepare": "husky",
     "lint-staged": "lint-staged",
@@ -59,5 +60,6 @@
     "package.json": [
       "npm run pre-commit-check"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.28.0+sha512.05df71d1421f21399e053fde567cea34d446fa02c76571441bfc1c7956e98e363088982d940465fd34480d4d90a0668bc12362f8aa88000a64e83d0b0e47be48"
 }

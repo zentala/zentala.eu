@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-06-06T11:00:00.000Z",
+  "project": { "name": "zentala.eu", "root": "C:/code/zentala.eu", "branch": "dev", "commit": "target" },
+  "summary": {
+    "fileCount": 3,
+    "sourceFileCount": 3,
+    "routeCount": 2,
+    "componentCount": 1,
+    "contentDocCount": 0,
+    "diagnosticCount": 0,
+    "testCount": 1,
+    "hotspotCount": 1,
+    "orphanCandidateCount": 1
+  },
+  "files": [],
+  "routes": [],
+  "symbols": [],
+  "dependencies": [],
+  "diagnostics": [],
+  "tests": [],
+  "metrics": { "dependencyCount": 2 },
+  "findings": [
+    {
+      "id": "orphan-src-data-unused-ts",
+      "kind": "investigate",
+      "severity": "medium",
+      "title": "Unused data file",
+      "paths": ["src/data/unused.ts"],
+      "evidence": { "incomingLinks": 0 },
+      "recommendation": "Confirm use.",
+      "priority": 62
+    }
+  ],
+  "scores": { "projectRisk": 54 }
+}

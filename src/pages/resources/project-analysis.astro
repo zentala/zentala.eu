@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import {
+  compareLatestAnalysis,
+  generateAnalysisSnapshot,
+  loadLatestAnalysis,
+  renderAnalysisCompareMarkdown,
+} from '../../lib/project-analysis'
+
+const snapshot = (await loadLatestAnalysis(process.cwd())) ?? (await generateAnalysisSnapshot(process.cwd()))
+const comparison = await compareLatestAnalysis(process.cwd())
+const metrics = [
+  ['Files', snapshot.summary.fileCount],
+  ['Routes', snapshot.summary.routeCount],
+  ['Tests', snapshot.summary.testCount],
+  ['Findings', snapshot.findings.length],
+]
+const hotspots = snapshot.findings.filter((finding) => finding.id.startsWith('hotspot-')).slice(0, 5)
+const orphans = snapshot.findings.filter((finding) => finding.id.startsWith('orphan-')).slice(0, 5)
+const routes = snapshot.routes.slice(0, 12)
+---
+
+<Layout title="Project Analysis">
+  <main class="mx-auto max-w-6xl px-6 py-10">
+    <section class="mb-8">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-normal text-amber-700 dark:text-amber-300">Internal tooling</p>
+      <h1 class="mb-3 text-4xl font-bold">Project Analysis</h1>
+      <p class="max-w-3xl text-sm opacity-70">
+        Snapshot-driven view of repo health, route structure, weakly connected files, and next maintenance priorities.
+      </p>
+    </section>
+
+    <section class="grid gap-3 md:grid-cols-4">
+      {metrics.map(([label, value]) => (
+        <div class="rounded-md border border-slate-300/50 bg-white/60 p-4 dark:border-slate-700 dark:bg-slate-900/50">
+          <div class="text-xs uppercase tracking-normal opacity-60">{label}</div>
+          <div class="mt-1 text-3xl font-semibold">{value}</div>
+        </div>
+      ))}
+    </section>
+
+    <section class="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+      <div>
+        <h2 class="mb-3 text-xl font-semibold">Top Findings</h2>
+        <div class="space-y-3">
+          {snapshot.findings.slice(0, 8).map((finding) => (
+            <article class="rounded-md border border-slate-300/50 bg-white/60 p-4 dark:border-slate-700 dark:bg-slate-900/50">
+              <div class="mb-2 flex items-center justify-between gap-3">
+                <h3 class="text-base font-semibold">{finding.title}</h3>
+                <span class="text-sm font-semibold">{finding.priority}</span>
+              </div>
+              <p class="mb-2 text-sm opacity-70">{finding.recommendation}</p>
+              <p class="font-mono text-xs opacity-55">{finding.paths.join(', ')}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <aside>
+        <h2 class="mb-3 text-xl font-semibold">Compare</h2>
+        <pre class="min-h-48 overflow-auto rounded-md border border-slate-300/50 bg-slate-950 p-4 text-xs text-slate-100">{comparison
+            ? renderAnalysisCompareMarkdown(comparison)
+            : 'Need at least two snapshots to compare.'}</pre>
+
+        <h2 class="mb-3 mt-6 text-xl font-semibold">Route Graph</h2>
+        <div class="space-y-2">
+          {routes.map((route) => (
+            <div class="rounded-md border border-slate-300/50 p-3 text-sm dark:border-slate-700">
+              <div class="font-mono text-xs opacity-60">{route.url}</div>
+              <div class="font-semibold">{route.path}</div>
+              <div class="mt-1 text-xs opacity-60">{route.components.length} components, {route.dataSources.length} data sources</div>
+            </div>
+          ))}
+        </div>
+      </aside>
+    </section>
+
+    <section class="mt-8 grid gap-6 md:grid-cols-2">
+      <div>
+        <h2 class="mb-3 text-xl font-semibold">Hotspots</h2>
+        <div class="space-y-3">
+          {hotspots.map((finding) => (
+            <article class="rounded-md border border-slate-300/50 p-4 dark:border-slate-700">
+              <h3 class="text-base font-semibold">{finding.title}</h3>
+              <p class="mt-1 text-sm opacity-70">{finding.recommendation}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold">Orphan Candidates</h2>
+        <div class="space-y-3">
+          {orphans.map((finding) => (
+            <article class="rounded-md border border-slate-300/50 p-4 dark:border-slate-700">
+              <h3 class="text-base font-semibold">{finding.title}</h3>
+              <p class="mt-1 text-sm opacity-70">{finding.recommendation}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

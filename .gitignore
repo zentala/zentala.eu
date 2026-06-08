@@ -29,6 +29,9 @@ src/pages/vision/add/*
 # playwright MCP session logs
 .playwright-mcp/
 
+# local project analysis outputs
+.analysis/
+
 # session handoff files (ephemeral, local only)
 .plan/handoffs/
 .plan/HANDOFF-*.md

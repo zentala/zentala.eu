@@ -68,6 +68,13 @@ Current `astro check`: **0 errors / 0 warnings / 0 hints.** Clean baseline estab
 
 Next debt items, when they arise, get tracked here.
 
+## Developer Tooling
+
+- [x] Build internal project analysis system for architecture hotspots, orphan files, test gaps, and snapshot diffs
+  - Architecture docs: [.arch/project-analysis/README.md](../.arch/project-analysis/README.md)
+  - Epic created: [.plan/epics/E003-2026-06-06-project-analysis-system/PLAN.md](epics/E003-2026-06-06-project-analysis-system/PLAN.md)
+- [ ] Rename `/resources/project-analysis` to a clearer internal tooling page name after first use review.
+
 ## Performance
 
 - [ ] Lazy loading for images and heavy elements

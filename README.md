@@ -2,6 +2,12 @@
 
 This repository contains the source code for the EU Reform Vision website built with Astro.
 
+## Project Docs
+
+- [Architecture Index](.arch/ARCHITECTURE.md)
+- [Plan Backlog](.plan/BACKLOG.md)
+- [Current State](.plan/STATE.md)
+
 ## Project Structure
 
 ```tree

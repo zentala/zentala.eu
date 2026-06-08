@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Analysis System Vision</title>
+    <style>
+      :root { --bg:#0f172a; --panel:#111827; --panel2:#172033; --text:#e5eefc; --muted:#9fb0cc; --line:#294061; --accent:#38bdf8; --ok:#22c55e; --warn:#f59e0b; --bad:#f97373; }
+      * { box-sizing:border-box; } body { margin:0; font-family:Inter,Segoe UI,Arial,sans-serif; background:linear-gradient(180deg,#0b1220,var(--bg)); color:var(--text); }
+      .page { max-width:1240px; margin:0 auto; padding:32px 24px 56px; } .hero,.band,.grid,.footer,.compare,.value { margin-top:24px; }
+      .panel,.card,.step { background:rgba(17,24,39,.92); border:1px solid var(--line); border-radius:8px; padding:18px; box-shadow:0 12px 40px rgba(0,0,0,.24); }
+      .hero { display:grid; grid-template-columns:1.3fr .9fr; gap:20px; } .band { display:grid; grid-template-columns:.9fr 1.1fr; gap:20px; }
+      .grid,.flow,.compare,.value,.signal { display:grid; gap:14px; } .grid { grid-template-columns:repeat(4,minmax(0,1fr)); } .flow { grid-template-columns:repeat(4,minmax(0,1fr)); align-items:center; } .compare,.value { grid-template-columns:repeat(3,minmax(0,1fr)); } .signal { grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:14px; }
+      h1,h2,h3,p { margin:0; } h1 { font-size:42px; line-height:1.05; margin-bottom:14px; } h2 { font-size:24px; margin-bottom:14px; } h3 { font-size:16px; margin-bottom:8px; } p,li { color:var(--muted); line-height:1.55; }
+      .eyebrow,.tag { display:inline-block; border:1px solid var(--line); background:rgba(56,189,248,.08); color:var(--accent); border-radius:999px; padding:6px 10px; font-size:12px; margin-bottom:12px; }
+      .stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin-top:18px; } .stat strong { display:block; font-size:28px; margin-bottom:6px; color:#fff; }
+      .mini,.stack { display:grid; gap:10px; } .mini div,.stack div,.grid .card,.signal .card { background:var(--panel2); border:1px solid var(--line); border-radius:8px; padding:14px; }
+      .kpi { color:#fff; font-weight:700; } .step::after { content:"->"; float:right; color:var(--accent); font-weight:700; } .flow .step:last-child::after { content:""; }
+      ul { margin:10px 0 0; padding-left:18px; } li { margin:6px 0; } .signal .card:nth-child(1) .tag { color:var(--bad); } .signal .card:nth-child(2) .tag { color:var(--warn); } .signal .card:nth-child(3) .tag { color:var(--accent); } .signal .card:nth-child(4) .tag { color:var(--ok); }
+      .footer { border-top:1px solid var(--line); padding-top:18px; } .footer p { font-size:14px; }
+      @media (max-width:980px) { .hero,.band,.stats,.grid,.flow,.compare,.value,.signal { grid-template-columns:1fr; } h1 { font-size:34px; } }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <article class="panel">
+          <div class="eyebrow">Internal Vision / Static Briefing</div>
+          <h1>A project analysis system that tells us what to improve next</h1>
+          <p>Existing tools can describe code. They do not tell this project what matters now. Our layer combines semantic code facts, dependency graphs, tests, and repository history into a ranked work queue for maintainers.</p>
+          <div class="stats">
+            <div class="card stat"><strong>Inputs</strong><p>LSP, dependency graph, tests, git, filesystem</p></div>
+            <div class="card stat"><strong>Engine</strong><p>Normalized snapshots and analyzers</p></div>
+            <div class="card stat"><strong>Outputs</strong><p>Hotspots, orphan files, test gaps, compare reports</p></div>
+            <div class="card stat"><strong>Value</strong><p>Clear next actions instead of raw tool noise</p></div>
+          </div>
+        </article>
+        <aside class="panel">
+          <h2>The core problem</h2>
+          <div class="mini">
+            <div><span class="kpi">Tooling today:</span> facts are scattered across editors, CLIs, test logs, and git history.</div>
+            <div><span class="kpi">Team pain:</span> it is hard to see what is risky, stale, central, weakly tested, or safe to remove.</div>
+            <div><span class="kpi">Decision gap:</span> raw diagnostics do not become a prioritized maintenance roadmap.</div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="panel band">
+        <article>
+          <h2>How the system works</h2>
+          <p>We do not rebuild language servers or graph tools. We reuse them, then add a thin project-specific analysis layer on top.</p>
+          <div class="flow">
+            <div class="step">Collect facts</div>
+            <div class="step">Normalize snapshot</div>
+            <div class="step">Run analyzers</div>
+            <div class="step">Show ranked actions</div>
+          </div>
+        </article>
+        <article>
+          <h2>What it orchestrates</h2>
+          <div class="grid">
+            <div class="card"><h3>Collectors</h3><p>LSP, dependency graph, file inventory, tests, git churn.</p></div>
+            <div class="card"><h3>Snapshot</h3><p>One shared JSON model for routes, components, symbols, diagnostics, and metrics.</p></div>
+            <div class="card"><h3>Analyzers</h3><p>Hotspots, orphan files, route graph, test gaps, duplication, trends.</p></div>
+            <div class="card"><h3>Surfaces</h3><p>API, dashboard, compare view, markdown reports, mermaid graphs.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="compare">
+        <article class="panel">
+          <h2>Why not just use existing tools directly?</h2>
+          <ul><li>LSP tells us symbols, references, and diagnostics.</li><li>Dependency tools tell us graph shape and cycles.</li><li>Tests tell us pass or fail.</li><li>None of them ranks repository work for this product.</li></ul>
+        </article>
+        <article class="panel">
+          <h2>What our layer adds</h2>
+          <ul><li>Repository-specific heuristics for routes, content, and shared UI.</li><li>Consistent snapshot storage over time.</li><li>Priority scoring across risk, impact, and effort.</li><li>One place to compare architectural health between runs.</li></ul>
+        </article>
+        <article class="panel">
+          <h2>What it can say</h2>
+          <ul><li>The homepage is a hotspot with growing dependency fan-out.</li><li>These preview pages are unreferenced and removable.</li><li>This public route has no verification signal.</li><li>This data file is becoming a central coupling point.</li></ul>
+        </article>
+      </section>
+
+      <section class="band">
+        <article class="panel">
+          <h2>Signals the system should surface first</h2>
+          <div class="signal">
+            <div class="card"><div class="tag">Risk</div><h3>Hotspots</h3><p>Public entrypoints, high fan-out, high churn, low confidence.</p></div>
+            <div class="card"><div class="tag">Waste</div><h3>Orphan Files</h3><p>Unused components, assets, preview pages, or content without reach.</p></div>
+            <div class="card"><div class="tag">Coverage</div><h3>Test Gaps</h3><p>Important user-facing routes and central components with weak verification.</p></div>
+            <div class="card"><div class="tag">Trend</div><h3>Compare</h3><p>Whether architecture improves or degrades between snapshots.</p></div>
+          </div>
+        </article>
+        <article class="panel">
+          <h2>What success looks like</h2>
+          <div class="stack">
+            <div><h3>For maintainers</h3><p>Faster triage, clearer refactor targets, fewer blind spots.</p></div>
+            <div><h3>For product owners</h3><p>Evidence-backed priorities instead of intuition-only cleanup work.</p></div>
+            <div><h3>For future AI agents</h3><p>A stable fact layer for explaining risk, planning work, and comparing change impact.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="value">
+        <article class="panel">
+          <h2>Before</h2>
+          <ul><li>Many tools, many outputs, no shared memory.</li><li>Manual guessing about what is central or stale.</li><li>No repository health trend.</li><li>Cleanup work competes poorly with feature work.</li></ul>
+        </article>
+        <article class="panel">
+          <h2>After</h2>
+          <ul><li>One snapshot model for code, content, tests, and history.</li><li>Ranked findings with reasons and suggested actions.</li><li>Time-based comparisons across branches or commits.</li><li>Internal dashboard for architecture review.</li></ul>
+        </article>
+        <article class="panel">
+          <h2>Execution path</h2>
+          <ul><li>Phase 1: snapshot generator</li><li>Phase 2: hotspot and orphan analyzers</li><li>Phase 3: compare and trend reporting</li><li>Phase 4: dashboard inside the app</li></ul>
+        </article>
+      </section>
+
+      <section class="value">
+        <article class="panel"><h2>Technical value</h2><ul><li>Reusable facts from proven external tools</li><li>Small custom layer instead of rebuilding LSP or graph engines</li><li>Stable schema for future automation</li></ul></article>
+        <article class="panel"><h2>Operational value</h2><ul><li>Better prioritization of maintenance work</li><li>Higher confidence for refactors</li><li>Lower risk of dead code and hidden regressions</li></ul></article>
+        <article class="panel"><h2>Strategic value</h2><ul><li>A project that can explain itself</li><li>Shared visibility for humans and agents</li><li>A path from diagnostics to architecture decisions</li></ul></article>
+      </section>
+
+      <section class="footer">
+        <p>File: <strong>.arch/project-analysis/vision.html</strong><br />Audience: stakeholders and collaborators outside the implementation context.</p>
+      </section>
+    </main>
+  </body>
+</html>

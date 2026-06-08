@@ -4,6 +4,19 @@ Index of completed tasks.
 
 ---
 
+## 2026-06-07 — E003 project analysis system
+
+- **[E003-T01](epics/E003-2026-06-06-project-analysis-system/tasks/E003-T01-engine-scaffold-and-config.md)** — Engine boundary and local config contract. Added `src/lib/project-analysis/` scaffold and `.repo-analysis.json`.
+- **[E003-T02](epics/E003-2026-06-06-project-analysis-system/tasks/E003-T02-snapshot-schema-and-storage.md)** — Snapshot schema and storage. Added typed snapshot model plus `.analysis/latest.json` and history writer.
+- **[E003-T03](epics/E003-2026-06-06-project-analysis-system/tasks/E003-T03-baseline-collectors.md)** — Baseline collectors for filesystem, git churn, tests, routes, and dependency edges.
+- **[E003-T04](epics/E003-2026-06-06-project-analysis-system/tasks/E003-T04-analyzer-v1.md)** — Analyzer v1 for hotspots, orphan candidates, route graph pressure, and test gaps.
+- **[E003-T05](epics/E003-2026-06-06-project-analysis-system/tasks/E003-T05-compare-and-trends.md)** — Snapshot compare and Markdown trend output.
+- **[E003-T06](epics/E003-2026-06-06-project-analysis-system/tasks/E003-T06-sample-output-verification.md)** — Fixture snapshots and verification tests for output shape.
+- **[E003-T07](epics/E003-2026-06-06-project-analysis-system/tasks/E003-T07-internal-analysis-api.md)** — Internal API endpoints for latest, history, compare, and file analysis.
+- **[E003-T08](epics/E003-2026-06-06-project-analysis-system/tasks/E003-T08-internal-analysis-ui.md)** — Internal dashboard at `/resources/project-analysis`.
+
+Verification: `npm run analysis -- snapshot`, `npm run typecheck`, `npx playwright test tests/project-analysis.spec.ts tests/project-analysis-ui.spec.ts`, `npm run build`.
+
 ## 2026-05-12 — E002 homepage redesign (epic closed)
 
 - **E002-T00** — `DESIGN.md` at repo root (token audit + `<SourceRef />` + Roman backdrop specs). `--color-text-muted` token added (WCAG AA 4.83:1 / 4.61:1). Commit: `a757d3b`.

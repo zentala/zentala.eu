@@ -1,39 +1,28 @@
 ---
-updated: 2026-05-12T18:10:00Z
-active_epic: E002
-active_epic_path: .plan/epics/E002-2026-04-27-homepage-redesign
-current_wave: done
+updated: 2026-06-07T16:39:00Z
+active_epic: E003
+active_epic_path: .plan/epics/E003-2026-06-06-project-analysis-system
+current_wave: implemented
 ---
 
 ## Status
 
-E001 (content expansion) complete — see DONE.md.
-E002 ALL WAVES DONE 2026-05-12.
-- Wave 1: preview shipped.
-- Wave 2: T00 DESIGN.md + `--color-text-muted` token, T11 SourceRef + Playwright tests.
-- Wave 2.5: T08-split refactor — homepage split into `src/components/home/` per-section components.
-- Wave 3: 7 parallel worktrees (T04 Pillars, T05 Numbers, T06 CEEFocus, T07-a Benefits, T07-b AdoptionWaves, T09 NotProposing, T10 FAQ). Zero merge conflicts.
-- Wave 4: Sharp 0.32→0.33.4 bump (fixes pre-existing build blocker), `/research/[...slug]` double-prefix fix, search.astro `<script>`-in-comment fix, Playwright suite 41/41, preview historical-reference banner.
+E001 and E002 are complete — see DONE.md.
+E003 project analysis system implemented on 2026-06-07.
 
-All three reviews done (copy, design, eng). Epic ready to close.
-
-## Recent commits (E002 Wave 3 merges)
-
-- merge T10 FAQ rewrite (SHA `02d86b3`)
-- merge T09 NotProposing (SHA `1e9781d`)
-- merge T07-b AdoptionWaves (SHA `954206d`)
-- merge T07-a Benefits perspectives (SHA `feb70ab`)
-- merge T06 CEE Focus + bridge (SHA `bd54c91`)
-- merge T05 Numbers (SHA `ba203dc`)
-- merge T04 Pillars + Roman backdrop (SHA `279468e`)
+- CLI: `npm run analysis -- snapshot|compare|file <path>`
+- Snapshot storage: `.analysis/latest.json`, `.analysis/snapshots/*.json`
+- Engine: `src/lib/project-analysis/`
+- API: `/api/project-analysis/latest.json`, `history.json`, `compare.json`, `file.json`
+- UI: `/resources/project-analysis`
+- Tests: project-analysis engine fixtures and API/UI smoke tests
 
 ## Active Tasks
 
-None. E002 complete.
+None. E003 implementation is complete pending final review/commit.
 
 ## Next Steps
 
-1. Triage epic's `IMPROVEMENTS.md` with user (3 open follow-ups: public-vs-private content boundary, missing `adoptionWaves` export, `<FAQ>` per-item emphasis prop).
-2. Update `.arch/HISTORY.md` with E002 summary.
-3. Append entry to `.plan/DONE.md`.
-4. Optional: CEO/ADR for the Sharp version-pin decision.
+1. Review diff and remove unrelated generated Playwright artifacts if they are not meant to be committed.
+2. Commit E003 implementation.
+3. Optional follow-up: replace regex import extraction with `dependency-cruiser` once dependency is added intentionally.
