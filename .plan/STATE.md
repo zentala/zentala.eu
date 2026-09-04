@@ -1,20 +1,20 @@
 ---
-updated: 2026-04-26T00:00:00Z
-active_epic: E000
-active_epic_path: .plan/epics/E000-maintenance
+updated: 2026-08-28T00:00:00Z
+planning_epic: E001
+planning_epic_path: .plan/epics/E001-2026-08-28-information-architecture
 ---
 
 ## Status
 
-Projekt bootstrap — pierwsza sesja z .plan strukturą.
+Project bootstrap — planning the public and internal content architecture.
 Poprzednia struktura: luźne pliki TODO/IDEAS w root repo.
 
 ## Active Tasks
 
-Brak aktywnych tasków. Nowe zadania w BACKLOG.md.
+The E001 planning set defines the route migration, internal plan surface and repeatable pillar document pattern.
 
 ## Next Steps
 
-1. Ustalić priorytety z BACKLOG.md
-2. Zdecydować czy integracja Algolii ma być doprowadzona do końca
-3. Zająć się technical debt (TS warnings, unused imports)
+1. Review E001 PLAN.md and task breakdown.
+2. Confirm whether `ue_internal` means a hostname or an application route.
+3. Execute E001-T01 before exposing the internal plan surface.
