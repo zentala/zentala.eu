@@ -1,12 +1,22 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-if (!import.meta.env.DEV) {
-  return Astro.redirect('/', 301);
-}
-
 // Manually define book documents for reliability
-const bookDocs = [
+type BookDoc = {
+  slug: string;
+  data: { title: string; description: string };
+  route?: string;
+};
+
+const bookDocs: BookDoc[] = [
+  {
+    slug: 'european-english',
+    data: {
+      title: 'European English',
+      description: 'A shared European standard: architecture, pilot and governance'
+    },
+    route: '/book/european-english'
+  },
   {
     slug: 'principles',
     data: {
@@ -81,7 +91,7 @@ const sortedDocs = bookDocs.sort((a, b) => a.data.title.localeCompare(b.data.tit
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedDocs.map(doc => (
-          <a href={`/docs/book/${doc.slug}`} class="group">
+            <a href={doc.route || `/docs/book/${doc.slug}`} class="group">
             <div class="bg-gray-800 hover:bg-gray-700 rounded-lg p-6 transition-all duration-300 h-full border border-gray-700 hover:border-blue-600 flex flex-col">
               <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-blue-400">{doc.data.title}</h3>
               {doc.data.description && (

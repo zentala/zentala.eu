@@ -1,0 +1,229 @@
+---
+title: "European English: a proposal for a shared European standard"
+description: "How the EU could develop a clear, neutral and testable English standard without replacing national languages or prescribing one accent."
+tags: "language, culture, integration, english, EU reform"
+customSlug: "european-english"
+---
+
+# European English: a proposal for a shared European standard
+
+## TLDR
+
+English is already the most useful common second language in continental Europe. The practical opportunity is not to invent a new dialect, but to build a **European English Standard (EES)**: a shared layer for administration, education, science, business and cross-border public life.
+
+EES would prefer clear and widely understood forms, document terminology decisions, test them with speakers from different EU language groups, and accept variation in accents and everyday speech. It would add capacity to Europe's multilingual system rather than replace national languages.
+
+The first deliverable should be a tested 60-item vocabulary and usage pilot. Only after measuring frequency, comprehension and the cost of misunderstanding should the project scale to 200, then 2,000+ decisions.
+
+## The proposal
+
+The original idea was to make English an additional official language across the EU and create a European English council able to settle questions such as `chips` or `fries`. This article turns that idea into a buildable proposal.
+
+The council should not decide which accent is correct. It should maintain a **public interoperability standard** for situations in which Europeans with different first languages need to understand one another:
+
+- public forms, notices and digital government interfaces;
+- cross-border contracts, procurement and company operations;
+- European research, education and media;
+- travel, emergency information and consumer products;
+- political communication between European institutions and citizens.
+
+The national language remains the primary language of each country. EES is an additional shared capability and a common drafting target where an EU-wide audience matters.
+
+## Why this is plausible
+
+The 2024 Eurobarometer reported that 47% of Europeans speak English as a foreign language, around seven in ten young Europeans can converse in English, and 98.3% of lower-secondary students learn it. English is therefore the strongest candidate for a shared operational language, even though proficiency and access remain uneven. [European Commission — language Eurobarometer](https://ec.europa.eu/commission/presscorner/api/files/document/print/fen/ip_24_2686/IP_24_2686_EN.pdf)
+
+English is still one of the EU's 24 official and working languages, including after the United Kingdom left the Union. The EU already has language rules, professional translation services and IATE, its shared terminology database. EES would build on that infrastructure. [EU language policy](https://european-union.europa.eu/principles-countries-history/languages_en), [IATE](https://iate.europa.eu/home)
+
+The European Commission's English Style Guide offers a useful precedent: it combines a consistent institutional convention with a strong preference for clear, reader-friendly writing. It explicitly distinguishes EU-specific terminology from the idea that the EU speaks a separate natural language. [European Commission English Style Guide](https://commission.europa.eu/system/files/2023-11/styleguide_english_dgt_en.pdf)
+
+Research on English as a Lingua Franca describes European accents, grammatical transfer and mainland-European vocabulary as normal features of multilingual communication. It suggests that successful interaction and accommodation matter more than imitating a native speaker. [Modiano, 2024](https://onlinelibrary.wiley.com/doi/full/10.1111/weng.12646)
+
+## Architectural decisions
+
+These are the decisions I would make before building the system.
+
+| Decision | Proposal | Why |
+|---|---|---|
+| 1. What is being built? | A standard and resource system, not a new dialect. | A dialect cannot be legislated into existence; a shared drafting standard can. |
+| 2. What is the default? | Plain, contemporary international English. | It reduces translation, teaching and comprehension costs. |
+| 3. Who owns it? | An independent European English Board connected to EU language services and IATE. | The system needs legitimacy, continuity and terminology expertise. |
+| 4. What does the Board regulate? | Recommendations, terminology, style, tests and versioned decisions. | It should guide usage without policing identity or accent. |
+| 5. What does it not regulate? | Native-language varieties, accents, informal speech or literary style. | Variation is an asset and cannot be removed by decree. |
+| 6. How are decisions made? | Evidence first: corpus frequency, comprehension testing and risk assessment. | The most frequent form is not always the safest form. |
+| 7. How are conflicts resolved? | Prefer a transparent compound when a short word is ambiguous: `potato crisps`, `public holiday`. | Explicit meaning beats symbolic victory in a BrE/AmE dispute. |
+| 8. How is law handled? | Separate `EES Plain`, `EES Legal`, `EES Technical` and `EES Spoken` profiles. | One register cannot serve a menu, a statute and a scientific paper. |
+| 9. How is change handled? | Every decision has evidence, confidence, owner, date and review date. | Language changes; the standard must be reversible. |
+| 10. How is fairness handled? | Publish uncertainty and country-level results; do not treat native-speaker intuition as the sole authority. | The users of EES are predominantly multilingual Europeans. |
+
+## How I would test it
+
+### Phase 0 — define the target
+
+Write a one-page specification: audience, domains, risk levels and what “easy” means. “Popular in Europe” is not precise enough. For each item, distinguish:
+
+- frequency in EU institutional writing;
+- frequency in everyday communication;
+- comprehension without context;
+- ability to paraphrase or explain the term;
+- consequences of misunderstanding.
+
+### Phase 1 — the 60-item pilot
+
+Use the initial 60 decisions as hypotheses, not conclusions. Recruit at least five participants from each of twelve EU countries, balanced across major language families and age groups. Include competent non-native speakers, not only English teachers or linguists.
+
+Give participants four tasks:
+
+1. choose the meaning of a word or phrase shown without context;
+2. select the clearest option for a public notice;
+3. paraphrase the chosen expression in their own language or in English;
+4. repeat the comprehension task after 24 hours.
+
+Record `frequency`, `comprehensibility`, `risk`, confidence and country. A decision is a strong EES candidate when it is sufficiently common, broadly understood and low-risk. If no short word wins, recommend an explicit compound.
+
+### Phase 2 — corpus validation
+
+Compare the pilot answers with four types of data: EUR-Lex and DGT Translation Memory for legal language; IATE for EU terminology; ELF/VOICE-style spoken interaction for multilingual conversations; and consumer-facing text from at least ten continental EU countries. Report results by country and genre. An EU institutional corpus is not a proxy for ordinary speech.
+
+### Phase 3 — live prototypes
+
+Test the draft standard in three real products: a bilingual public-service form, a travel or emergency notice, and a cross-border business workflow. Measure task completion, clarification requests, time to comprehension and serious misunderstandings. A good standard should make people complete tasks faster, not merely make editors feel that the prose looks tidy.
+
+## Scaling plan
+
+| Scale | Output | Gate to continue |
+|---|---|---|
+| 60 | Pilot vocabulary, false friends and writing rules | At least one measurable comprehension result per card. |
+| 200 | `EES-0.1` with domain labels and examples | Repeated evidence across countries and genres. |
+| 500 | Public beta dictionary and style guide | External review by linguists, translators and practitioners. |
+| 2,000+ | Terminology graph linked to IATE, EUR-Lex and translation memory | Versioning, governance, appeal and update process in operation. |
+| Continuous | New proposals, usage reports and periodic revisions | No silent changes; every decision remains auditable. |
+
+The data model should be simple enough to maintain:
+
+```text
+entry
+  concept
+  preferred_form
+  allowed_variants
+  avoid_forms
+  domain
+  examples
+  evidence[]
+  comprehension_score
+  risk_level
+  confidence
+  version
+  review_date
+```
+
+## The first decision set
+
+The pilot recommends `fries` for fried potato strips and `potato crisps` for the packaged snack. It prefers forms such as `elevator`, `apartment`, `mobile phone`, `postcode`, `pharmacy`, `football`, `petrol`, `motorway`, `autumn`, `film` and `CV`, while allowing regional variants when context is safe.
+
+It avoids false friends and opaque calques: `actual` should not mean “current”; `eventually` should not mean “possibly”; `make a control` should become `carry out a check`; `advices` and `informations` should remain `advice` and `information`. It prefers `will` over unnecessary `shall`, active voice where possible, explicit dates such as `27 August 2026`, and short sentences.
+
+<details>
+<summary>Open the full 60-item pilot table</summary>
+
+The detailed table is retained as a research instrument. `P` means prefer, `D` allow as a variant, `A` avoid, and `U` use an explicit compound.
+
+| # | Item | EES hypothesis | Decision |
+|---:|---|---|:---:|
+| 1 | chips / fries | `fries`; snack `potato crisps` | U |
+| 2 | lift / elevator | `elevator` | P |
+| 3 | flat / apartment | `apartment` | P |
+| 4 | queue / line | `queue` in transport, `line` generally | D |
+| 5 | holiday / vacation | `holiday`; `public holiday` for a state holiday | P |
+| 6 | timetable / schedule | `schedule` | P |
+| 7 | return / round-trip ticket | `return ticket` | P |
+| 8 | mobile / cell phone | `mobile phone` | P |
+| 9 | postcode / ZIP code | `postcode` | P |
+| 10 | chemist / drugstore | `pharmacy` | P |
+| 11 | trousers / pants | `trousers` unless context is unambiguous | P |
+| 12 | trainers / sneakers | `sports shoes` in instructions | U |
+| 13 | football / soccer | `football` | P |
+| 14 | biscuit / cookie | `biscuit`; `cookie` for a specific product | D |
+| 15 | sweets / candy | `sweets`; technical `confectionery` | P |
+| 16 | aubergine / eggplant | `aubergine` in EU contexts | D |
+| 17 | courgette / zucchini | `courgette` in EU contexts | D |
+| 18 | petrol / gasoline | `petrol`; general `fuel` | P |
+| 19 | lorry / truck | `truck` | P |
+| 20 | boot / trunk | `boot`; `luggage compartment` in instructions | U |
+| 21 | bonnet / hood | `engine hood` | U |
+| 22 | motorway / freeway | `motorway` | P |
+| 23 | pavement / sidewalk | state explicitly that it means a footpath | U |
+| 24 | autumn / fall | `autumn` | P |
+| 25 | torch / flashlight | `torch`; `flashlight` allowed | D |
+| 26 | nappy / diaper | `baby diaper` in instructions | U |
+| 27 | film / movie | `film` | P |
+| 28 | programme / program | `programme`; software `program` | P |
+| 29 | maths / math | formal `mathematics` | P |
+| 30 | actual | `current`, `present` or `real` | A |
+| 31 | eventually | `possibly` or `if necessary` | A |
+| 32 | control | `check`, `inspection` or `monitoring` | A |
+| 33 | make a control | `carry out a check` | A |
+| 34 | sensible / sensitive | preserve the standard meanings | P |
+| 35 | assist | `help` in plain text | P |
+| 36 | participate in | `take part in` in plain text | P |
+| 37 | implement | `implement`; plain `put in place` | D |
+| 38 | competence / competency | `competence` in EU contexts | P |
+| 39 | transposition | `implementation in national law` for citizens | D |
+| 40 | advices / informations | `advice`, `information` | P |
+| 41 | feedbacks | `feedback` | P |
+| 42 | demands | `requests` or `requirements` where neutral | P |
+| 43 | realise / achieve | `realise` = understand; `achieve` = attain | P |
+| 44 | chef / chief | preserve the distinct meanings | P |
+| 45 | agenda / programme | agenda = topics; programme = wider plan | P |
+| 46 | library / bookshop | preserve the distinct meanings | P |
+| 47 | resume / résumé | `CV` in Europe; `resume` = restart | P |
+| 48 | precise / accurate | precise = detailed; accurate = correct | P |
+| 49 | in the framework of | `under`, `within`, `as part of` | P |
+| 50 | competence vs competency | use `competence` in EU language | P |
+| 51 | shall / will | `will`; `shall` only for a legal function | P |
+| 52 | must / should | must = obligation; should = recommendation | P |
+| 53 | passive voice | active voice when the actor is known | P |
+| 54 | nominalisation | `investigate`, not `conduct an investigation` | P |
+| 55 | idioms | avoid idioms and culture-bound jokes | P |
+| 56 | phrasal verbs | prefer an explicit verb in high-risk text | P |
+| 57 | sentence length | usually 15–20 words in public notices | P |
+| 58 | date format | `27 August 2026` | P |
+| 59 | decimal separator | English `12.5`; document data conventions | P |
+| 60 | percentage | `12% of respondents` | P |
+
+</details>
+
+## Governance and safeguards
+
+The European English Board should publish a dictionary, style guide, terminology graph, evidence register, consultation process and changelog. It should include EU translators, lawyer-linguists, teachers, accessibility specialists, domain experts and users from different language communities.
+
+It should not impose one national accent, treat native-speaker intuition as the only authority, confuse EU institutional frequency with everyday frequency, or use language integration to remove national languages. The political promise is **enhancing, not replacing** linguistic diversity.
+
+## First concrete actions
+
+1. Approve the EES charter: scope, principles and safeguards.
+2. Convert the 60-item table into a small open dataset with evidence fields.
+3. Recruit the pilot panel and run the comprehension tests.
+4. Compare results with EU corpora and IATE.
+5. Publish `EES-0.1` with confidence scores and unresolved items.
+6. Test it in one public form, one travel notice and one business workflow.
+7. Decide whether the evidence supports scaling to 200 items.
+
+## Related documents
+
+- [Language Integration overview](/vision/language-integration)
+- [Administrative implementation](/docs/book/language-integration-administrative-implementation)
+- [European media and cultural integration](/docs/book/media-cultural-integration)
+- [Economic growth through language unity](/docs/book/economic-growth-language-unity)
+- [Earlier EU Language Integration draft](/docs/book/language)
+
+## Sources
+
+- [European Commission: Europeans and their languages](https://ec.europa.eu/commission/presscorner/api/files/document/print/fen/ip_24_2686/IP_24_2686_EN.pdf)
+- [EU language rules and the 24 official languages](https://european-union.europa.eu/principles-countries-history/languages_en)
+- [European Commission English Style Guide](https://commission.europa.eu/system/files/2023-11/styleguide_english_dgt_en.pdf)
+- [EU Interinstitutional Style Guide](https://style-guide.europa.eu/en/)
+- [IATE terminology database](https://iate.europa.eu/home)
+- [DGT Translation Memory](https://translation.ec.europa.eu/tools-and-resources/resources-language-professionals_en)
+- [Modiano: Identity and standards for English as a European Union lingua franca](https://onlinelibrary.wiley.com/doi/full/10.1111/weng.12646)
+- [FRA Style Guide: false friends and EU usage](https://fra.europa.eu/sites/default/files/fra-2012-style-guide-for-authors_en.pdf)

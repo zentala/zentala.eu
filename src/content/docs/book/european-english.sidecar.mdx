@@ -1,0 +1,358 @@
+---
+title: "European English — research sidecar"
+description: "Unpublished research notes, hypotheses and working material supporting the European English proposal."
+tags: "language, culture, integration, research, sidecar"
+draft: true
+---
+
+# European English — unpublished research sidecar
+
+Status: internal working material. This file is part of the new content tree but remains a draft and is not intended to be published directly.
+
+## Purpose
+
+The public article is deliberately concise. This sidecar preserves the larger reasoning space behind it so future work does not have to reconstruct the project from a polished summary.
+
+The original idea was stronger and more political than a language guide:
+
+- English as an additional official language in every EU member state;
+- a common language for administration, business, courts, science, education and media;
+- a European English Council able to resolve practical disputes such as `chips` versus `fries`;
+- a way to deepen European identity while preserving national languages;
+- a long-term infrastructure for mobility, pan-European companies and common political debate;
+- a possible bridge between continental Europe and the wider English-speaking world, without making the UK the owner of the project.
+
+The current proposal translates this into a staged, evidence-driven language infrastructure project. The political ambition should not be lost merely because the first deliverable is a vocabulary pilot.
+
+## Core framing options
+
+These are not identical proposals and should remain separate in future discussion:
+
+1. **EU institutional English** — a drafting and terminology standard for EU bodies.
+2. **European English Standard** — a public interoperability standard for multilingual Europeans.
+3. **English as an additional official language** — a legal and administrative reform in member states.
+4. **European English as a cultural project** — a shared identity and media space.
+5. **English-first digital infrastructure** — forms, identifiers, APIs and services that can work across borders.
+
+The first project can be tested without politically committing to all five. The eventual argument may be that the low-cost standard and infrastructure layers are a practical path toward the larger legal and cultural reform.
+
+## What the public article currently does not say in detail
+
+The article keeps these claims implicit and they may deserve future treatment:
+
+- A common second language could reduce the fixed cost of serving multiple national markets, especially for small companies.
+- The largest gain may come from shared digital systems, where the language layer can be versioned, translated and reused.
+- A shared language can support a European media market and a European political public sphere, but only if media incentives, distribution and funding also change.
+- Language is not merely a communication tool: the choice of language affects who can participate in politics, education and economic opportunity.
+- The reform has distributional effects. High-proficiency, urban and younger populations benefit first; rural, older and poorer populations need explicit support.
+- A policy that calls English “official” without funding teachers, interpreters, plain-language services and legal safeguards would create a status symbol, not useful access.
+
+## Working principles
+
+1. **Enhance, do not replace.** National, regional and minority languages remain legally and culturally protected.
+2. **Interoperability before identity.** First make people understand forms and instructions; only later discuss whether a distinct European identity has emerged.
+3. **Non-native users are the primary constituency.** Native-speaker intuition is evidence, not the sovereign source of correctness.
+4. **Clarity beats symbolic uniformity.** `potato crisps` is better than winning a political argument over `chips`.
+5. **Separate registers.** A public notice, statute, scientific paper and conversation need different guidance.
+6. **Evidence is versioned.** Every recommendation has a source, sample, confidence level and review date.
+7. **Do not freeze living language.** The Board publishes a recommendation layer, not a final constitution for English.
+8. **Make disagreement visible.** Preserve regional variants and explain where each one works.
+
+## Hypotheses to test
+
+### Adoption hypotheses
+
+- H1: A neutral EES style is accepted more readily by multilingual Europeans when it is framed as an additional capability rather than a replacement for national languages.
+- H2: Users prefer explicit compounds over short regional forms when they are told the audience is pan-European.
+- H3: People care more about comprehension and task completion than about whether a form is labelled British, American or European.
+- H4: The strongest early adopters are cross-border workers, students, businesses, public servants, researchers and digital-service users.
+
+### Linguistic hypotheses
+
+- H5: A small set of lexical variants causes a disproportionate amount of avoidable confusion.
+- H6: False friends and opaque translation calques are more costly than most BrE/AmE vocabulary differences.
+- H7: Short, explicit sentences improve comprehension across language families more reliably than trying to standardise accent.
+- H8: A two-layer vocabulary is useful: common plain words for public communication and precise domain terms for law, medicine, technology and finance.
+
+### Political hypotheses
+
+- H9: A council gains legitimacy if it is visibly European and multilingual rather than simply a renamed British or American authority.
+- H10: The project will be attacked as linguistic imperialism unless the safeguards and benefits for national-language communities are part of the initial design.
+- H11: The legal reform is much harder than the language standard; the standard can therefore act as a low-risk demonstration project.
+
+## Research corpus plan
+
+Use separate evidence layers. Do not merge them into one popularity ranking.
+
+| Layer | Material | What it can answer |
+|---|---|---|
+| EU law | EUR-Lex, DGT Translation Memory | Which formulations are stable in legislation and translation. |
+| EU terminology | IATE, institutional glossaries | Which concepts already have validated multilingual equivalents. |
+| ELF speech | VOICE and comparable multilingual recordings | What people actually accommodate in cross-cultural interaction. |
+| Public services | Government forms, portals, notices from 10–12 EU countries | What citizens encounter outside Brussels. |
+| Business | Cross-border hiring, banking, logistics and software documentation | Which terms reduce operational friction. |
+| Education | Textbooks, exams and university material | Which forms learners are trained to recognise. |
+| Media | News, subtitles, podcasts and pan-European publications | Which language reaches ordinary audiences. |
+
+Record country, first-language family, age, domain, date, register and whether the writer is native or multilingual. A raw count without this metadata will produce misleading decisions.
+
+## Pilot design in detail
+
+### Sample
+
+Initial target: 12 countries, at least 5 participants per country, 60 participants total. Stratify by:
+
+- Germanic, Romance, Slavic and other first-language backgrounds;
+- younger mobile users and older public-service users;
+- high, medium and lower self-rated English proficiency;
+- people who use English at work and people who mainly encounter it online or while travelling.
+
+This is a feasibility pilot, not a representative EU survey. Its job is to detect bad candidates and improve the instrument.
+
+### Tasks
+
+For each card:
+
+1. show the isolated term and ask for the likely meaning;
+2. show two variants in a public-service sentence and ask which is clearer;
+3. ask the participant to rewrite the sentence for an international audience;
+4. ask for a confidence score;
+5. repeat a subset after 24 hours;
+6. collect a free-text explanation when the answer is uncertain.
+
+For spoken candidates, add an audio task with multiple European accents. Score intelligibility separately from accent preference.
+
+### Metrics
+
+```text
+comprehension_rate       correct interpretation without help
+choice_consensus         agreement on the preferred form
+paraphrase_quality       preservation of meaning
+delayed_recall            comprehension after 24 hours
+clarification_rate       requests for repetition or explanation
+task_time                time to complete the task
+misunderstanding_cost    severity if misunderstood
+confidence                participant's certainty
+```
+
+Do not turn these into one opaque score too early. A low-frequency term can still be excellent for a high-risk domain if its meaning is explicit and consistently taught.
+
+## Decision algorithm
+
+For each candidate:
+
+1. Define the concept, not just the word.
+2. List all regional variants and likely false friends.
+3. Search each corpus layer separately.
+4. Run comprehension testing without leading participants.
+5. Estimate the cost of a wrong interpretation.
+6. Prefer the shortest form that is sufficiently clear.
+7. If no short form is safe, use an explicit compound or definition.
+8. Publish the rejected alternatives and the reason.
+9. Assign confidence and a review date.
+
+Suggested outcome labels:
+
+- `preferred`: default in EES for the stated domain;
+- `allowed`: valid regional alternative where context is safe;
+- `compound`: use an explicit multi-word form;
+- `avoid`: likely to cause confusion, false-friend transfer or unnecessary opacity;
+- `domain-specific`: valid only in law, technology, medicine or another named register;
+- `unresolved`: evidence is insufficient or genuinely divided.
+
+## Expanded decision areas for the next 200 cards
+
+The first 60 cards cover obvious BrE/AmE variants, false friends and plain-writing rules. The next batch should add:
+
+- public administration: `application`, `form`, `permit`, `certificate`, `residence`, `registration`, `appeal`;
+- employment: `employee`, `worker`, `contractor`, `leave`, `holiday`, `sick leave`, `salary`, `wage`;
+- mobility: `platform`, `carriage`, `coach`, `reservation`, `departure`, `arrival`, `route`;
+- health: `appointment`, `prescription`, `medicine`, `drug`, `treatment`, `emergency`, `symptom`;
+- finance: `invoice`, `bill`, `tax`, `fee`, `charge`, `turnover`, `revenue`, `profit`;
+- company law: `undertaking`, `company`, `firm`, `shareholder`, `director`, `board`, `merger`;
+- digital services: `account`, `profile`, `sign in`, `log in`, `register`, `upload`, `download`, `delete`;
+- accessibility: `people with disabilities`, readable dates, units, warnings and error messages;
+- education: `course`, `module`, `subject`, `degree`, `qualification`, `assessment`;
+- climate and energy: `renewable`, `emissions`, `waste`, `recycling`, `energy efficiency`.
+
+These should not be selected only because they are interesting. Select them because they occur in high-volume or high-risk cross-border tasks.
+
+## Grammar and style backlog
+
+Keep these as recommendations, not claims that Europeans have one shared grammar:
+
+- active voice when the actor is known;
+- short sentences and one main action per sentence;
+- concrete verbs instead of nominalisations;
+- explicit subjects and agents;
+- careful use of articles and countability;
+- stable treatment of modal verbs: `must`, `should`, `may`, `can`;
+- no unexplained acronyms on first use;
+- unambiguous dates, numbers, units and decimal separators;
+- no idioms, culture-specific humour or unexplained sports metaphors in public information;
+- avoid phrasal verbs where a high-risk instruction needs one explicit interpretation;
+- distinguish legal obligation from recommendation;
+- preserve the difference between a translation-friendly formal register and natural conversation.
+
+The project should be careful with proposals to accept forms such as `feedbacks`, `advices`, missing third-person `-s` or `the document who`. Such forms may occur in ELF interaction, but describing them is not the same as recommending them in formal writing. The correct policy is register separation and intelligibility testing.
+
+## Pronunciation policy backlog
+
+Do not make pronunciation a first-phase standardisation target. Instead:
+
+- teach clear consonant contrasts that materially affect comprehension;
+- permit regional accents and non-native phonetic realisations;
+- teach repair strategies: repetition, rephrasing, spelling and confirmation;
+- test recordings with multiple European accents;
+- avoid measuring “native-like” pronunciation as the main outcome;
+- create a pronunciation guide for public announcements only where safety requires it.
+
+The goal is intelligibility and accommodation, not accent erasure.
+
+## Board architecture
+
+Possible internal structure:
+
+```text
+European English Board
+├── Evidence and Corpus Unit
+├── Terminology and IATE Liaison
+├── Plain Language and Accessibility Unit
+├── Legal and Institutional Register Unit
+├── Education and Assessment Unit
+├── User Research and Comprehension Testing
+└── Editorial Council with rotating country representation
+```
+
+Minimum governance artifacts:
+
+- charter and scope;
+- public decision register;
+- versioned dictionary and style guide;
+- evidence and corpus policy;
+- conflict-of-interest policy;
+- consultation and appeal process;
+- accessibility and minority-language impact assessment;
+- annual review and change log.
+
+The Board could begin as a non-governmental or academic consortium, then become an EU-supported centre if the pilot demonstrates value. This avoids waiting for treaty-level agreement before testing useful tools.
+
+## Technical system architecture
+
+The long-term system is more than a PDF style guide:
+
+```text
+corpora + surveys + terminology sources
+              ↓
+        evidence registry
+              ↓
+       decision objects
+              ↓
+ dictionary / style guide / API / teaching material
+              ↓
+     forms, portals, contracts, media and education
+              ↑
+      usage reports and new test results
+```
+
+Each decision object should have a stable ID and machine-readable fields:
+
+```json
+{
+  "concept": "fried potato strips",
+  "preferred": "fries",
+  "explicit_form": "French fries",
+  "allowed": ["chips"],
+  "avoid": [],
+  "domains": ["food", "consumer"],
+  "evidence": [],
+  "comprehension": {"sample": 0, "rate": null},
+  "risk": "low",
+  "confidence": "hypothesis",
+  "version": "0.1",
+  "review_date": null
+}
+```
+
+The public interface should expose definitions, examples, alternatives and the reason for a decision. The API could later support editors, translation tools, government form builders and language-learning systems.
+
+## Scale roadmap
+
+### 0–6 months
+
+- charter and research protocol;
+- 60-card pilot;
+- participant recruitment;
+- first public dataset and decision log;
+- three prototype tasks.
+
+### 6–18 months
+
+- 200-card EES-0.1;
+- open consultation;
+- review by translators, teachers, accessibility experts and legal drafters;
+- public style guide and examples;
+- pilot in a real cross-border service.
+
+### 18–36 months
+
+- 500-card beta;
+- domain packs for public administration, business, travel, health and digital services;
+- teacher and editor materials;
+- integration with terminology and translation workflows;
+- annual comprehension benchmark.
+
+### 3+ years
+
+- 2,000+ decision objects;
+- European terminology graph;
+- assessment and certification framework;
+- formal policy proposals for bilingual administrative access;
+- independent impact evaluation.
+
+## Risks and mitigations
+
+| Risk | Mitigation |
+|---|---|
+| Linguistic imperialism | Explicitly preserve national and minority languages; frame EES as an additional layer. |
+| Native-speaker capture | Majority multilingual governance and user testing across language backgrounds. |
+| Artificial language design | Recommend existing forms; only coin or combine words when clarity requires it. |
+| Brussels jargon becoming the norm | Separate institutional terminology from plain public language. |
+| Unequal access | Invest in schools, adult learning, translation and assisted administration. |
+| False confidence from small samples | Publish uncertainty and replicate across countries and genres. |
+| Legal ambiguity | Keep EES guidance separate from authoritative legal language until reviewed by lawyer-linguists. |
+| Political backlash | Start with useful tools and measurable service improvements, not symbolic renaming. |
+| Stale dictionary | Version everything and schedule reviews. |
+| Accent discrimination | No accent ranking; test intelligibility and repair strategies instead. |
+
+## Open questions
+
+- Should the public name be `European English`, `EU English`, `Continental European English` or `European English Standard`?
+- Is `English as an additional official language` the right political demand, or should the first demand be a right to English-language administrative access?
+- Should Irish/British spelling remain the default in EU institutions, or should EES allow a documented dual spelling policy?
+- Is `fries` actually more comprehensible than `French fries` in all surveyed countries?
+- Which countries and language groups are currently underserved by English-first public services?
+- How should legal equivalence work when an English version and a national-language version differ?
+- What minimum English proficiency is needed for a citizen to use a public service safely?
+- Which parts of the standard can be implemented by software before legislation changes?
+- How do we measure economic benefit without attributing every cross-border gain to language?
+- How can the project include citizens who do not speak English yet?
+
+## Sources captured so far
+
+- European Commission press release on the 2024 language Eurobarometer: 47% of Europeans speak English as a foreign language; 7 in 10 young Europeans can converse in English; 98.3% of lower-secondary students learn English.
+- EU language policy page: 24 official languages, multilingualism as a founding principle, English remaining official after Brexit, Regulation No 1.
+- European Commission English Style Guide: institutional convention, Irish/British usage as current spelling reference, plain and reader-friendly writing, distinction between EU terminology and a separate natural language.
+- EU Interinstitutional Style Guide: common style conventions created through cooperation among language services.
+- IATE: shared terminology database used by EU institutions and bodies.
+- DGT Translation Memory: aligned multilingual EU-law sentences useful for terminology extraction and translation research.
+- Modiano, “Identity and standards for English as a European Union lingua franca” (2024): Europeanisation, local accents, substrate transfer, mainland-European lexis, and the case for focusing on multilingual interaction rather than native-speaker imitation.
+- FRA Style Guide for authors: examples involving `controls`, `competence`, `transposition`, false friends and British spelling conventions.
+
+## Link to the public article
+
+The public, progressive-disclosure version is:
+
+`src/content/docs/book/european-english.mdx`
+
+This sidecar should remain the place for raw hypotheses, discarded alternatives, detailed research design and future additions. When a section becomes stable and useful to readers, promote it into the public article through a deliberate edit rather than copying the entire sidecar.
