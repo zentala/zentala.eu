@@ -7,11 +7,24 @@ on:
       - '**.md'
       - 'docs/**'
       - '.plan/**'
+      - 'README*'
+      - 'LICENSE'
+      - 'CHANGELOG*'
   workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
     env:
       PUBLIC_APPWRITE_PROJECT_ID: "eu"
       PUBLIC_APPWRITE_NEWSLETTER_FUNCTION_ID: "67cdf356847084af9bad"
