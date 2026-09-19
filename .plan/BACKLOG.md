@@ -79,3 +79,5 @@ Open ideas and future improvements not yet assigned to an epic.
 - [ ] WCAG compliance audit
 - [ ] Keyboard navigation improvements
 - [ ] Cross-browser and device testing
+
+- [ ] **No check for links pointing to draft pages** — 24 files have `draft: true` (`src/content/config.ts:10`), and drafts are dropped from the prod build (`src/pages/docs/[...slug].astro:10`), so a link to one works in dev and 404s in prod. `check-links.js:8`, `site-crawler.js:7`, `url-checker.js:7` crawl only a running dev server, where drafts are visible, and skip external links (`site-crawler.js:13`). Fix: one static audit script over `src/content` (links → draft/missing targets, external links via HEAD, pages with no incoming link) plus `just check`. (High, 5)
