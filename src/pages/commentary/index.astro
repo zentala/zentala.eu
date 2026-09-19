@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { COMMENTARY_PUBLIC, getCommentary, formatDate } from '../../lib/commentary';
+
+if (!COMMENTARY_PUBLIC) return Astro.redirect('/');
+const entries = await getCommentary();
+---
+
+<Layout title="Commentary - EU Reform">
+  <main class="container mx-auto max-w-3xl px-4 py-8">
+    <h1 class="text-4xl font-bold text-white mb-4">Commentary</h1>
+    <p class="text-xl text-gray-300 mb-10">
+      Short, dated comments by Paweł Żentała on where the European Union is heading.
+    </p>
+    <ul class="space-y-8">
+      {entries.map((e) => (
+        <li class="border-b border-gray-800 pb-6">
+          <time class="text-sm text-gray-400" datetime={formatDate(e.data.date)}>{formatDate(e.data.date)}</time>
+          <span class="text-sm text-blue-400 ml-3">{e.data.topic}</span>
+          <h2 class="text-2xl font-semibold text-white mt-1">
+            <a href={`/commentary/${e.slug}`} class="hover:text-blue-400">{e.data.title}</a>
+          </h2>
+          <p class="text-gray-400 mt-1">Source: <a href={e.data.sourceUrl} class="underline" rel="noopener">{e.data.sourceOutlet}</a></p>
+        </li>
+      ))}
+    </ul>
+  </main>
+</Layout>
