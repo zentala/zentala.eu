@@ -38,3 +38,13 @@
 - All content should be written in English
 - Index.mdx files serve as table of contents for subdirectories
 - Use Astro's content collections API for structured content
+## Commentary (EU reform news + Paweł's comment)
+Every news item Paweł comments on goes to `src/content/commentary/` — never to `docs/`.
+- File: `YYYY-MM-DD-<slug>.md` (date = day of the comment).
+- Frontmatter (schema in `src/content/config.ts`): `title`, `date`, `sourceUrl`,
+  `sourceTitle` (the article's real headline — fetch it, never guess), `sourceOutlet`,
+  `topic`, `tags`, optional `draft`.
+- Body: one paragraph stating what the source reports (facts only), then
+  `**My comment.**` with Paweł's view, written in English in his voice.
+- The section `/commentary` is hidden in production until the build runs with
+  `COMMENTARY_PUBLIC=true` (`src/lib/commentary.ts`); it is always visible in `npm run dev`.

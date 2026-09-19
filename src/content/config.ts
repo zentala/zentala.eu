@@ -32,7 +32,23 @@ const transcriptSchema = baseSchema.extend({
     keyPoints: z.array(z.string()).optional(), // Array of key points from the video
 });
 
+// Commentary: dated notes on EU reform news — source link + Paweł's comment.
+// Hidden in production until COMMENTARY_PUBLIC=true (see src/lib/commentary.ts).
+const commentarySchema = z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    sourceUrl: z.string().url(),
+    sourceTitle: z.string(),
+    sourceOutlet: z.string(),
+    topic: z.string(),
+    tags: z.array(z.string()).default([]),
+    draft: z.boolean().default(false)
+});
+
 export const collections = {
+    commentary: defineCollection({
+        schema: commentarySchema
+    }),
     docs: defineCollection({
         schema: baseSchema
     }),
