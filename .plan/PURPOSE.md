@@ -1,5 +1,21 @@
 # Purpose of EU Reform Vision
 
+## The top-level frame (2026-09-20)
+
+Europe is an aging society. Within twenty to thirty years the model that funds
+retirement — growth plus generational replacement — stops working, and every
+Western society meets the same wall. This site is a proposal for designing that
+retirement now, while there is still a working economy to build it with.
+
+The layers, in order, each making the next possible: **a common economy with
+English as a working language** → **a digital state with direct democracy** →
+**robotics and autonomous systems** carrying the services an aging population
+cannot staff. Running through all three: **who captures the gains.**
+
+The reader is the mechanism, not the audience — ideas of this kind happen when
+enough people carry them. Full argument, political position and editorial
+consequences: [`vision/aging-society-frame.md`](vision/aging-society-frame.md).
+
 ## What this site is
 
 EU Reform Vision is a public working project about practical European integration. It connects political goals with institutional, digital and industrial proposals that can be explained, tested and improved.
