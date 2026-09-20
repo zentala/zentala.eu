@@ -81,3 +81,5 @@ Open ideas and future improvements not yet assigned to an epic.
 - [ ] Cross-browser and device testing
 
 - [ ] **No check for links pointing to draft pages** — 24 files have `draft: true` (`src/content/config.ts:10`), and drafts are dropped from the prod build (`src/pages/docs/[...slug].astro:10`), so a link to one works in dev and 404s in prod. `check-links.js:8`, `site-crawler.js:7`, `url-checker.js:7` crawl only a running dev server, where drafts are visible, and skip external links (`site-crawler.js:13`). Fix: one static audit script over `src/content` (links → draft/missing targets, external links via HEAD, pages with no incoming link) plus `just check`. (High, 5)
+
+- [ ] **The repo has no installed dependencies, and nothing says so** — neither `zentala.eu/node_modules` nor a fresh worktree has them, and `yarn` is not on PATH (use `corepack yarn install`). Cost on 2026-09-19: four wasted build attempts, one killed by the OS (exit 137) before the content audit could run. Fix: say it in `CLAUDE.md` under Commands, and give the repo a `justfile` with `just setup` (`rules/just.md`). (Medium, 2)
