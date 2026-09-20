@@ -1,8 +1,8 @@
 # Content audit — 2026-09-20
 
 ## TLDR
-Scanned 157 built routes, 57 content files, 237 links (18 unique external).
-Found 18 links to draft pages, 9 links to missing pages, 6 dead external links, 11 orphan pages, 19 drafts.
+Scanned 162 built routes, 58 content files, 243 links (18 unique external).
+Found 18 links to draft pages, 9 links to missing pages, 6 dead external links, 9 orphan pages, 19 drafts.
 
 ## Links to draft pages (18) — 404 in production
 | Link | Where | Draft file |
@@ -49,9 +49,7 @@ Found 18 links to draft pages, 9 links to missing pages, 6 dead external links, 
 | https://www.patreon.com/c/zentala | 404 | src/pages/support.astro:31 |
 | https://www.patreon.com/c/zentala | 404 | src/pages/support.astro:103 |
 
-## Orphan pages (11) — built, but no page links to them
-- /book/designing-our-retirement
-- /book/european-egovernment
+## Orphan pages (9) — built, but no page links to them
 - /commentary
 - /confirm
 - /docs/european-english
