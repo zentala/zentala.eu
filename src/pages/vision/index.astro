@@ -1,334 +1,138 @@
 ---
+/**
+ * Vision overview: the demographic frame on top, three layers with a visible
+ * dependency below it, the ownership question beside them, and a call to the
+ * reader at the end. Content lives here; layout lives in components/vision.
+ */
 import Layout from '../../layouts/Layout.astro';
-import Card from '../../components/Card.astro';
-import CardGrid from '../../components/CardGrid.astro';
-import ContentBox from '../../components/ContentBox.astro';
+import FrameIntro from '../../components/vision/FrameIntro.astro';
+import LayerStack from '../../components/vision/LayerStack.astro';
+import CrossCuttingNote from '../../components/vision/CrossCuttingNote.astro';
+import CallToAction from '../../components/vision/CallToAction.astro';
+import type { Action, FrameStep, Layer } from '../../components/vision/types';
 
-const isDev = import.meta.env.DEV;
+const frameSteps: FrameStep[] = [
+  {
+    label: 'The shared condition',
+    text: 'Europe is aging. Birth rates are below replacement across the continent. This is not a national problem with national fixes; it is the same problem everywhere, which makes it the strongest argument for acting together.',
+  },
+  {
+    label: 'The consequence',
+    text: 'Pensions and public services rest on growth plus generational replacement. Both end within twenty to thirty years. The bill arrives whether or not anyone plans for it.',
+  },
+  {
+    label: 'The window',
+    text: 'We have roughly thirty years of working economy left to build what will carry us. This is the last generation that can pay for it, and the technology arrived in time.',
+  },
+  {
+    label: 'The choice',
+    text: 'Money is a claim on someone else\'s labour. That labour comes from people or from machines. There will not be enough people.',
+  },
+];
+
+const layers: Layer[] = [
+  {
+    level: 1,
+    position: 'Floor',
+    title: 'One economy, one working language',
+    summary: 'A shrinking workforce has to be organised well, because there is no slack left. English as the official working language of European business and administration is the precondition.',
+    points: [
+      'English is the bottleneck of the European information economy: the most capable people cannot work with each other across borders without it.',
+      'No common language is the likely reason Europe has produced no startups or corporations of European scale, ones whose capital cannot be called French, German or Dutch.',
+      'A shared working language produces a European political consciousness, not only a business one.',
+      'A shared interest is what keeps us from the next war. The Union was built so there would be no more war; this is the mechanism for this century.',
+    ],
+    href: '/vision/language-integration',
+    linkText: 'Read the language proposal',
+    tone: 'indigo',
+  },
+  {
+    level: 2,
+    position: 'Middle',
+    title: 'The digital state',
+    summary: 'With a common working language the state itself can be rebuilt: digital administration, digital public services, and direct democracy in place of representation that serves lobbies.',
+    points: [
+      'Digital administration and public services cut the cost of running a state that will have fewer taxpayers.',
+      'Direct democracy is the route out of dependence on a political class we did not choose and cannot correct between elections.',
+      'Regulation becomes a tool for improving how the state works, not a substitute for it.',
+    ],
+    href: '/vision/digital-integration',
+    linkText: 'Read the digital state proposal',
+    tone: 'blue',
+  },
+  {
+    level: 3,
+    position: 'Ceiling',
+    title: 'Robotics and autonomous systems',
+    summary: 'On top of a digital state, automation becomes possible at scale. The goal, stated plainly: automate as much of old-age provision as possible, so the few young people left are not crushed carrying it.',
+    points: [
+      'Communal and municipal services: the most mechanical, the most staffed, the first to lose workers.',
+      'Food production and delivery: autonomous farming and logistics.',
+      'Predictive medicine and healthcare: the cost that grows fastest as a population ages.',
+      'Military robotics research funded by the war with Russia can be converted to civilian use afterwards. This is the realistic route to funding robotics at European scale.',
+    ],
+    href: '/vision/robotic-reindustrialization',
+    linkText: 'Read the robotics proposal',
+    tone: 'green',
+  },
+];
+
+const crossCuttingParagraphs = [
+  'If automation replaces the labour our pensions depend on and the returns go to a handful of owners, we have solved production and destroyed the distribution that made it worth solving.',
+  'Ownership will be mixed: state, cooperative, private, dividend. Who owns the robots matters less than one thing: robots must not be expensive.',
+];
+
+const crossCuttingPrinciples = [
+  'Cheap to buy and run',
+  'Available to every municipality, farm and clinic',
+  'Built on open standards',
+  'Hard to monopolise',
+];
+
+const ctaActions: Action[] = [
+  { label: 'Why Europe needs this', href: '/why' },
+  { label: 'What your country gains', href: '/benefits' },
+  { label: 'The principles behind it', href: '/principles' },
+];
 ---
 
 <Layout title="European Integration Vision">
-  <div class="min-h-screen transition-colors duration-300" style="background-color: var(--color-bg-primary); color: var(--color-text-primary);">
-    <main class="container mx-auto max-w-6xl px-4 py-8">
-      <h1 class="text-4xl font-bold mb-8" style="color: var(--color-text-primary);">Core Pillars of European Integration</h1>
-      
-      <div class="text-2xl mb-10 mt-6" style="color: var(--color-text-secondary);">
-        A comprehensive framework for strengthening European unity through practical, mutually beneficial reforms focused on technology, language, and infrastructure.
-      </div>
-    
-    
-    <div class="relative mb-12">
-      <div class="absolute inset-0 opacity-20 blur-xl transition-colors duration-300" style="background: linear-gradient(to right, var(--color-accent-primary), var(--color-accent-secondary));"></div>
-      <div class="relative">
-        <div class="space-y-8">
-          <Card title="I. Language Integration" color="indigo" icon="🗣️">
-            <p class="mb-4">Introducing English as a second official language across the EU. Every member state's public administration becomes bilingual, sharing English as a common tongue.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-              <ContentBox title="Key Components" color="indigo">
-                <ul class="space-y-2">
-                  <li>• English as second official language in all EU countries</li>
-                  <li>• European English Council for standardization</li>
-                  <li>• Bilingual government services everywhere</li>
-                  <li>• Enhanced cross-border communication</li>
-                </ul>
-              </ContentBox>
-              
-              {isDev && (
-              <ContentBox title="Learn More" color="indigo">
-                <ul class="space-y-1">
-                  <li><a href="/vision/language-integration">→ Language Integration Overview</a></li>
-                  <li><a href="/book/european-english">→ European English standard proposal and pilot</a></li>
-                  <li><a href="/book/language-integration-administrative-implementation">→ Administrative Implementation</a></li>
-                  <li><a href="/book/media-cultural-integration">→ Media and Cultural Integration</a></li>
-                  <li><a href="/book/economic-growth-language-unity">→ Economic Growth Through Language</a></li>
-                </ul>
-              </ContentBox>
-              )}
-            </div>
-          </Card>
+  <main class="container mx-auto max-w-6xl px-4 py-8">
+    <FrameIntro
+      eyebrow="The frame"
+      title="We are an aging society. We can design what comes next."
+      steps={frameSteps}
+      conclusion="So the plan is to shift our expectations onto robotics, deliberately, as a strategy, not as a hope. Robotics needs the layers beneath it. Build them in order."
+    />
 
-          <Card title="II. Digital Integration" color="blue" icon="💻">
-            <p class="mb-4">Building a unified European digital government infrastructure and common digital services to streamline administration, improve healthcare, education, and financial services across the EU.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-              <ContentBox title="Key Components" color="blue">
-                <ul class="space-y-1">
-                  <li><strong>Digital Administration</strong>: Unified e-government systems</li>
-                  <li><strong>Digital Healthcare</strong>: Predictive medicine, AI diagnostics</li>
-                  <li><strong>eLearning System</strong>: Personalized, lifelong learning</li>
-                  <li><strong>Financial Reforms</strong>: Digital payments, near-zero fees</li>
-                  <li><strong>Blockchain Archives</strong>: Immutable public records</li>
-                </ul>
-              </ContentBox>
-              
-              {isDev && (
-              <ContentBox title="Learn More" color="blue">
-                <ul class="space-y-1">
-                  <li><a href="/vision/digital-integration">→ Digital Integration Overview</a></li>
-                  <li><a href="/book/predictive-healthcare-system">→ Predictive Healthcare System</a></li>
-                  <li><a href="/book/european-elearning-system">→ European eLearning System</a></li>
-                  <li><a href="/book/unified-payment-zone">→ Unified Payment Zone</a></li>
-                  <li><a href="/book/european-blockchain-archives">→ European Blockchain Archives</a></li>
-                </ul>
-              </ContentBox>
-              )}
-            </div>
-          </Card>
+    <section aria-labelledby="layers-title" class="mb-16">
+      <h2 id="layers-title" class="text-3xl font-bold mb-2">Three layers, in build order</h2>
+      <p class="layers-lead text-lg mb-8 max-w-3xl">Not three parallel pillars. Each level is what makes the next one possible, and the one running through all of them is the ownership question on the right.</p>
 
-          <Card title="III. Robotic Reindustrialization" color="green" icon="🤖">
-            <p class="mb-4">Leading the global robotics revolution to reindustrialize Europe, create autonomous logistics networks, and develop sustainable, localized manufacturing.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-              <ContentBox title="Key Components" color="green">
-                <ul class="space-y-1">
-                  <li><strong>Logistics Integration</strong>: 48-hour delivery across the EU</li>
-                  <li><strong>Robotic Manufacturing</strong>: Localized, sustainable production</li>
-                  <li><strong>Autonomous Transportation</strong>: Self-driving vehicles, drones</li>
-                  <li><strong>Robotic Agriculture</strong>: Sustainable, diverse farming</li>
-                  <li><strong>Circular Economy</strong>: Enhanced recycling through automation</li>
-                </ul>
-              </ContentBox>
-              {isDev && (
-              <ContentBox title="Learn More" color="green">
-                <ul class="space-y-1">
-                  <li><a href="/vision/robotic-reindustrialization">→ Robotic Reindustrialization Overview</a></li>
-                  <li><a href="/book/autonomous-transportation">→ Autonomous Transportation</a></li>
-                  <li><a href="/book/european-logistics-market">→ European Logistics Market</a></li>
-                  <li><a href="/book/robotic-agriculture">→ Robotic Agriculture</a></li>
-                </ul>
-              </ContentBox>
-              )}
-            </div>
-          </Card>
-        </div>
+      <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_20rem] gap-8 items-start">
+        <LayerStack layers={layers} />
+        <CrossCuttingNote
+          eyebrow="Runs through every layer"
+          title="Who captures the gains?"
+          paragraphs={crossCuttingParagraphs}
+          principles={crossCuttingPrinciples}
+        />
       </div>
-    </div>
-    
-    <h2 class="text-3xl font-bold mt-16 mb-8 text-white">Additional Focus Areas</h2>
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 my-16">
-      <div class="flex flex-col p-8 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-white">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-green-500 rounded-full mr-4">
-            <span class="text-white text-xl">🌱</span>
-          </div>
-          <h3 class="text-xl font-bold">Environmental Protection</h3>
-        </div>
-        <p class="text-lg mt-2">Comprehensive approach to sustainability with land reservation, pollution control, and clean energy development.</p>
-      </div>
-      
-      <div class="flex flex-col p-8 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-white">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-indigo-500 rounded-full mr-4">
-            <span class="text-white text-xl">⚖️</span>
-          </div>
-          <h3 class="text-xl font-bold">Customized Local Law</h3>
-        </div>
-        <p class="text-lg mt-2">Allowing regions to customize policies while maintaining core EU principles, enabling local experimentation.</p>
-      </div>
-      
-      <div class="flex flex-col p-8 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-white">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-blue-500 rounded-full mr-4">
-            <span class="text-white text-xl">🗳️</span>
-          </div>
-          <h3 class="text-xl font-bold">European Digital Democracy</h3>
-        </div>
-        <p class="text-lg mt-2">Digitally-enabled participatory democracy with tiered participation models based on decision complexity.</p>
-      </div>
-      
-      <div class="flex flex-col p-8 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-white">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-yellow-500 rounded-full mr-4">
-            <span class="text-white text-xl">🌾</span>
-          </div>
-          <h3 class="text-xl font-bold">Agricultural Policy</h3>
-        </div>
-        <p class="text-lg mt-2">Robotized, sustainable agricultural systems with autonomous farming technology and soil restoration.</p>
-      </div>
-      
-      <div class="flex flex-col p-8 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-white">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-red-500 rounded-full mr-4">
-            <span class="text-white text-xl">🎓</span>
-          </div>
-          <h3 class="text-xl font-bold">Education Reform</h3>
-        </div>
-        <p class="text-lg mt-2">Standardized skills certification system with EU-wide recognition and lifelong learning support.</p>
-      </div>
-      
-      <div class="flex flex-col p-8 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-white">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-teal-500 rounded-full mr-4">
-            <span class="text-white text-xl">🔢</span>
-          </div>
-          <h3 class="text-xl font-bold">European Street Naming</h3>
-        </div>
-        <p class="text-lg mt-2">Standardized addressing alongside traditional street names for better navigation and logistics.</p>
-      </div>
-    </div>
-    
-    <h2 class="text-3xl font-bold mt-16 mb-8 text-white">Benefits by Stakeholder</h2>
-    
-    <div class="my-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-gray-800 shadow-lg rounded-xl overflow-hidden">
-          <div class="bg-blue-700 text-white p-6">
-            <h3 class="text-2xl font-bold">For Citizens</h3>
-          </div>
-          <div class="p-8 text-white">
-            <ul class="space-y-4 text-lg">
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Improved public services through digital innovation</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Easier movement and settlement across the EU</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Enhanced job opportunities through skills recognition</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Faster, cheaper logistics and transportation</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="bg-gray-800 shadow-lg rounded-xl overflow-hidden">
-          <div class="bg-green-700 text-white p-6">
-            <h3 class="text-2xl font-bold">For Businesses</h3>
-          </div>
-          <div class="p-8 text-white">
-            <ul class="space-y-4 text-lg">
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Simplified cross-border operations</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Reduced administrative burden</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Access to EU-wide talent pool</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Efficient logistics for e-commerce</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="bg-gray-800 shadow-lg rounded-xl overflow-hidden">
-          <div class="bg-yellow-700 text-white p-6">
-            <h3 class="text-2xl font-bold">For Regional Development</h3>
-          </div>
-          <div class="p-8 text-white">
-            <ul class="space-y-4 text-lg">
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>More equitable economic development</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Reduced geographic disadvantages</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Local specialization opportunities</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Enhanced infrastructure connectivity</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="bg-gray-800 shadow-lg rounded-xl overflow-hidden">
-          <div class="bg-purple-700 text-white p-6">
-            <h3 class="text-2xl font-bold">For European Integration</h3>
-          </div>
-          <div class="p-8 text-white">
-            <ul class="space-y-4 text-lg">
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Practical, tangible benefits for all citizens</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Natural cultural integration through shared systems</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Enhanced European competitiveness globally</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-400 mr-3 text-xl">✓</span>
-                <span>Economies of scale through shared development</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <h2 class="text-3xl font-bold mt-16 mb-8 text-white">Guiding Principles</h2>
-    
-    <div class="my-16 p-10 bg-gray-800 rounded-xl shadow-lg text-white">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div class="flex flex-col">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-blue-600 rounded-full mr-4">
-              <span class="text-white text-xl font-bold">1</span>
-            </div>
-            <h3 class="text-2xl font-bold">Seeking Mutual Benefit</h3>
-          </div>
-          <p class="ml-16 text-lg">Focus on reforms that provide clear advantages to all member states, fostering a spirit of collective progress rather than zero-sum competition.</p>
-        </div>
-        
-        <div class="flex flex-col">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-blue-600 rounded-full mr-4">
-              <span class="text-white text-xl font-bold">2</span>
-            </div>
-            <h3 class="text-2xl font-bold">Leveraging Economies of Scale</h3>
-          </div>
-          <p class="ml-16 text-lg">Develop solutions collectively that would be too expensive or complex for individual nations to create independently.</p>
-        </div>
-        
-        <div class="flex flex-col">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-blue-600 rounded-full mr-4">
-              <span class="text-white text-xl font-bold">3</span>
-            </div>
-            <h3 class="text-2xl font-bold">Building a Common Culture</h3>
-          </div>
-          <p class="ml-16 text-lg">Foster a European identity alongside national cultures through shared systems, language, and infrastructure.</p>
-        </div>
-        
-        <div class="flex flex-col">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-blue-600 rounded-full mr-4">
-              <span class="text-white text-xl font-bold">4</span>
-            </div>
-            <h3 class="text-2xl font-bold">Improving Quality of Life</h3>
-          </div>
-          <p class="ml-16 text-lg">Address challenges too big for individual nations through radical reforms and shifting appropriate competencies to the EU level.</p>
-        </div>
-      </div>
-    </div>
-    
-    <footer class="mt-20 p-10 bg-gray-800 rounded-xl text-white">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-4">About This Project</h2>
-        <p class="text-lg mb-6">This vision for European integration presents a comprehensive framework for addressing Europe's most pressing challenges through technological innovation, cultural integration, and administrative reform. Rather than focusing on institutional changes, this approach centers on creating the shared infrastructure, language, and digital systems that would naturally bring Europeans closer together.</p>
-        <p class="text-lg italic">By leveraging technology, embracing a common language, and building shared systems, we can create a more united, efficient, and prosperous Europe for all its citizens.</p>
-      </div>
-    </footer>
-    </main>
-  </div>
+    </section>
+
+    <CallToAction
+      title="You are not the audience for this. You are the condition of it."
+      paragraphs={[
+        'Nothing here needs permission to begin. Direct democracy, a working common language, automating what an aging society cannot staff: none of it waits for an institution to approve it. It waits for enough people to want it that wanting it becomes a fact politicians have to answer to.',
+        'If you repeat the idea, argue it, send it to someone, or build a piece of it, the probability of it happening goes up. That is the only way such things have ever happened. The work is underway; this is an invitation into it.',
+      ]}
+      actions={ctaActions}
+    />
+  </main>
 </Layout>
+
+<style>
+  .layers-lead {
+    color: var(--color-text-secondary);
+  }
+</style>

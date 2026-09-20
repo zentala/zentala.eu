@@ -1,0 +1,48 @@
+---
+/**
+ * LayerStack — renders the layers in build order (floor first) and draws the
+ * dependency between them: a vertical rail, a label saying the lower layer
+ * makes the next one possible, and an arrow pointing at the next level.
+ */
+import type { Layer } from './types';
+import LayerCard from './LayerCard.astro';
+
+interface Props {
+  layers: Layer[];
+  /** Text on the connector between two layers. */
+  connectorLabel?: string;
+}
+
+const { layers, connectorLabel = 'makes possible' } = Astro.props;
+const ordered = [...layers].sort((a, b) => a.level - b.level);
+---
+
+<ol class="list-none m-0 p-0">
+  {ordered.map((layer, index) => (
+    <li>
+      <LayerCard {...layer} />
+      {index < ordered.length - 1 && (
+        <div class="flex flex-col items-center py-3" aria-label={`Level ${layer.level} ${connectorLabel} level ${layer.level + 1}`}>
+          <span class="rail w-0.5 h-6" aria-hidden="true"></span>
+          <span class="label text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">{connectorLabel}</span>
+          <span class="rail w-0.5 h-6" aria-hidden="true"></span>
+          <span class="arrow text-2xl leading-none -mt-2" aria-hidden="true">▼</span>
+        </div>
+      )}
+    </li>
+  ))}
+</ol>
+
+<style>
+  .rail {
+    background-color: var(--color-accent-primary);
+  }
+  .arrow {
+    color: var(--color-accent-primary);
+  }
+  .label {
+    color: var(--color-accent-secondary);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-primary);
+  }
+</style>

@@ -1,0 +1,44 @@
+---
+/**
+ * CrossCuttingNote — a principle that applies to every layer.
+ * Rendered beside the stack on wide screens (sticky), under it on phones.
+ */
+interface Props {
+  eyebrow: string;
+  title: string;
+  paragraphs: string[];
+  principles: string[];
+}
+
+const { eyebrow, title, paragraphs, principles } = Astro.props;
+---
+
+<aside class="note rounded-2xl border-2 border-dashed p-6 lg:sticky lg:top-24" aria-labelledby="cross-cutting-title">
+  <p class="eyebrow text-xs font-semibold uppercase tracking-widest mb-2">{eyebrow}</p>
+  <h3 id="cross-cutting-title" class="text-2xl font-bold leading-tight mb-4">{title}</h3>
+
+  {paragraphs.map((text) => (
+    <p class="text-base leading-relaxed mb-3">{text}</p>
+  ))}
+
+  <ul class="mt-4 space-y-2 text-base">
+    {principles.map((principle) => (
+      <li class="flex gap-2">
+        <span class="check flex-shrink-0" aria-hidden="true">✓</span>
+        <span>{principle}</span>
+      </li>
+    ))}
+  </ul>
+</aside>
+
+<style>
+  .note {
+    background-color: var(--color-bg-secondary);
+    border-color: var(--color-accent-primary);
+    color: var(--color-text-primary);
+  }
+  .eyebrow,
+  .check {
+    color: var(--color-accent-secondary);
+  }
+</style>

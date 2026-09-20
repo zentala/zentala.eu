@@ -1,0 +1,49 @@
+---
+/**
+ * FrameIntro — the argument that sits above the layers.
+ * Renders a numbered chain of claims, each leading to the next, and the
+ * conclusion the rest of the page depends on.
+ */
+import type { FrameStep } from './types';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  steps: FrameStep[];
+  conclusion: string;
+}
+
+const { eyebrow, title, steps, conclusion } = Astro.props;
+---
+
+<section class="frame-intro mb-16" aria-labelledby="frame-title">
+  <p class="eyebrow text-sm font-semibold uppercase tracking-widest mb-3">{eyebrow}</p>
+  <h1 id="frame-title" class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-8">{title}</h1>
+
+  <ol class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {steps.map((step, index) => (
+      <li class="step rounded-xl p-5 sm:p-6">
+        <span class="step-index text-xs font-semibold uppercase tracking-widest">{index + 1} · {step.label}</span>
+        <p class="mt-2 text-base sm:text-lg leading-relaxed">{step.text}</p>
+      </li>
+    ))}
+  </ol>
+
+  <p class="conclusion mt-8 text-xl sm:text-2xl font-semibold leading-snug border-l-4 pl-5">{conclusion}</p>
+</section>
+
+<style>
+  .eyebrow,
+  .step-index {
+    color: var(--color-accent-secondary);
+  }
+  .step {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+  }
+  .conclusion {
+    border-color: var(--color-accent-primary);
+    color: var(--color-text-primary);
+  }
+</style>
