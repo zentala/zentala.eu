@@ -19,7 +19,8 @@
     "index-algolia": "node algolia-indexer.js",
     "check-all": "astro check --exclude 'dist/**/*'",
     "pre-commit-check": "astro check --exclude 'dist/**/*'",
-    "test:ui": "playwright test --ui"
+    "test:ui": "playwright test --ui",
+    "audit": "astro build && node scripts/content-audit.mjs --out .plan/reports/content-audit.md"
   },
   "dependencies": {
     "@algolia/client-search": "^5.20.4",

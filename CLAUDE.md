@@ -48,3 +48,9 @@ Every news item Paweł comments on goes to `src/content/commentary/` — never t
   `**My comment.**` with Paweł's view, written in English in his voice.
 - The section `/commentary` is hidden in production until the build runs with
   `COMMENTARY_PUBLIC=true` (`src/lib/commentary.ts`); it is always visible in `npm run dev`.
+
+## Content audit
+`npm run audit` builds the site and runs `scripts/content-audit.mjs` against `dist/`.
+It reports links to draft pages (they 404 in production), links to missing pages,
+dead external links, orphan pages and all drafts. The report goes to
+`.plan/reports/content-audit.md`. Run it after any content or navigation change.
