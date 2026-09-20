@@ -1,6 +1,12 @@
 # CLAUDE.md - AI Assistant Guide
 
 ## Commands
+Run everything through `just` (targets live in `justfile`); it knows this repo's
+package manager so you never have to.
+- **First command in a fresh checkout or worktree: `just setup`.** The repo ships with
+  no `node_modules`, and bare `yarn` is NOT on PATH — it only works through `corepack`.
+  Skipping this costs several failed builds before the cause becomes obvious.
+- `just dev` · `just build` · `just audit` · `just check` (typecheck + audit)
 - Build: `npm run build` (astro check && astro build)
 - Development: `npm run dev` (astro dev)
 - Preview: `npm run preview` (astro preview)
