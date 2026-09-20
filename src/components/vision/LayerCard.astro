@@ -1,0 +1,61 @@
+---
+/**
+ * LayerCard — one level of the stack.
+ * Shows the level number, its position (floor / middle / ceiling), the claim,
+ * the concrete points, and a link to the existing detail page.
+ */
+import type { Layer, LayerTone } from './types';
+
+type Props = Layer;
+
+const { level, position, title, summary, points, href, linkText, tone } = Astro.props;
+
+const toneClasses: Record<LayerTone, { badge: string; ring: string; bullet: string }> = {
+  indigo: { badge: 'bg-indigo-600', ring: 'border-indigo-500/60', bullet: 'text-indigo-400' },
+  blue: { badge: 'bg-blue-600', ring: 'border-blue-500/60', bullet: 'text-blue-400' },
+  green: { badge: 'bg-green-600', ring: 'border-green-500/60', bullet: 'text-green-400' },
+};
+
+const { badge, ring, bullet } = toneClasses[tone];
+---
+
+<article class={`layer rounded-2xl border-2 p-6 sm:p-8 shadow-lg ${ring}`} id={`layer-${level}`}>
+  <header class="flex items-center gap-4 mb-4">
+    <span class={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold text-white ${badge}`} aria-hidden="true">
+      {level}
+    </span>
+    <div>
+      <p class="position text-xs font-semibold uppercase tracking-widest">Level {level} · {position}</p>
+      <h3 class="text-2xl sm:text-3xl font-bold leading-tight">{title}</h3>
+    </div>
+  </header>
+
+  <p class="text-lg leading-relaxed mb-5">{summary}</p>
+
+  <ul class="space-y-2 text-base sm:text-lg">
+    {points.map((point) => (
+      <li class="flex gap-3">
+        <span class={`flex-shrink-0 ${bullet}`} aria-hidden="true">▸</span>
+        <span>{point}</span>
+      </li>
+    ))}
+  </ul>
+
+  <a href={href} class="read-more inline-flex items-center gap-1 mt-6 font-medium group">
+    {linkText}
+    <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+  </a>
+</article>
+
+<style>
+  .layer {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+  }
+  .position {
+    color: var(--color-text-secondary);
+  }
+  .read-more {
+    color: var(--color-accent-secondary);
+  }
+</style>

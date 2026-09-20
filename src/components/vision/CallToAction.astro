@@ -1,0 +1,38 @@
+---
+/**
+ * CallToAction — closes the page by handing the work to the reader.
+ * Title, a few short paragraphs, and links to where the argument continues.
+ */
+import type { Action } from './types';
+import Button from '../Button.astro';
+
+interface Props {
+  title: string;
+  paragraphs: string[];
+  actions: Action[];
+}
+
+const { title, paragraphs, actions } = Astro.props;
+---
+
+<section class="cta rounded-2xl p-8 sm:p-10 mt-16" aria-labelledby="cta-title">
+  <h2 id="cta-title" class="text-3xl sm:text-4xl font-bold leading-tight mb-6">{title}</h2>
+
+  {paragraphs.map((text) => (
+    <p class="text-lg leading-relaxed mb-4 max-w-3xl">{text}</p>
+  ))}
+
+  <div class="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
+    {actions.map((action) => (
+      <Button href={action.href} variant="primary" size="lg">{action.label}</Button>
+    ))}
+  </div>
+</section>
+
+<style>
+  .cta {
+    background-image: linear-gradient(to bottom right, var(--color-bg-gradient-from), var(--color-bg-secondary));
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+  }
+</style>
