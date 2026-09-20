@@ -16,8 +16,9 @@ build:
     corepack yarn build
 
 # audit the built site: links to drafts, missing pages, dead external links, orphans
+# NOTE: `yarn run audit`, not `yarn audit` — the latter is yarn's own package-security audit.
 audit:
-    corepack yarn audit
+    corepack yarn run audit
 
 typecheck:
     corepack yarn typecheck
