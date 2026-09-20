@@ -1,61 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
-// Manually define book documents for reliability
-type BookDoc = {
-  slug: string;
-  data: { title: string; description: string };
-  route?: string;
-};
+// Chapters come from the content collection, so an unpublished draft can never
+// appear here as a link that 404s in production.
+const chapters = await getCollection('docs', (entry) => {
+  const isBook = entry.id.startsWith('book/') && !entry.id.includes('.sidecar');
+  return isBook && (import.meta.env.DEV || !entry.data.draft);
+});
 
-const bookDocs: BookDoc[] = [
-  {
-    slug: 'european-english',
-    data: {
-      title: 'European English',
-      description: 'A shared European standard: architecture, pilot and governance'
-    },
-    route: '/book/european-english'
-  },
-  {
-    slug: 'principles',
-    data: {
-      title: 'Vision Principles',
-      description: 'Core principles of the EU Reform Vision'
-    }
-  },
-  {
-    slug: 'language',
-    data: {
-      title: 'Language Integration',
-      description: 'English as the European lingua franca'
-    }
-  },
-  {
-    slug: 'summary',
-    data: {
-      title: 'Executive Summary',
-      description: 'Overview of the entire EU Reform Vision'
-    }
-  },
-  {
-    slug: 'european-egovernment',
-    data: {
-      title: 'European eGovernment',
-      description: 'Digital government infrastructure for all of Europe'
-    }
-  },
-  {
-    slug: 'unified-payment-zone',
-    data: {
-      title: 'Unified Payment Zone',
-      description: 'Seamless financial transactions across Europe'
-    }
-  }
-];
-
-// Sort by title
-const sortedDocs = bookDocs.sort((a, b) => a.data.title.localeCompare(b.data.title));
+// The frame chapter opens the book; the rest follow alphabetically.
+const FIRST_SLUG = 'designing-our-retirement';
+const sortedDocs = chapters
+  .map((entry) => ({
+    slug: entry.slug.replace(/^book\//, ''),
+    data: { title: entry.data.title, description: entry.data.description }
+  }))
+  .sort((a, b) => {
+    if (a.slug === FIRST_SLUG) return -1;
+    if (b.slug === FIRST_SLUG) return 1;
+    return a.data.title.localeCompare(b.data.title);
+  });
 ---
 
 <Layout title="Vision Book">
@@ -91,7 +56,7 @@ const sortedDocs = bookDocs.sort((a, b) => a.data.title.localeCompare(b.data.tit
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedDocs.map(doc => (
-            <a href={doc.route || `/docs/book/${doc.slug}`} class="group">
+            <a href={`/docs/book/${doc.slug}`} class="group">
             <div class="bg-gray-800 hover:bg-gray-700 rounded-lg p-6 transition-all duration-300 h-full border border-gray-700 hover:border-blue-600 flex flex-col">
               <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-blue-400">{doc.data.title}</h3>
               {doc.data.description && (

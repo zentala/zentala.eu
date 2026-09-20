@@ -1,10 +1,10 @@
 # Content audit — 2026-09-20
 
 ## TLDR
-Scanned 153 built routes, 56 content files, 243 links (18 unique external).
-Found 25 links to draft pages, 12 links to missing pages, 6 dead external links, 10 orphan pages, 19 drafts.
+Scanned 157 built routes, 57 content files, 237 links (18 unique external).
+Found 18 links to draft pages, 9 links to missing pages, 6 dead external links, 11 orphan pages, 19 drafts.
 
-## Links to draft pages (25) — 404 in production
+## Links to draft pages (18) — 404 in production
 | Link | Where | Draft file |
 |---|---|---|
 | /docs/book/language | src/content/docs/book/european-english.mdx:218 | src/content/docs/book/language.md |
@@ -21,19 +21,12 @@ Found 25 links to draft pages, 12 links to missing pages, 6 dead external links,
 | /book/digital-receipts/ | src/content/docs/index.mdx:71 | src/content/docs/book/digital-receipts.mdx |
 | /docs/reference/example | src/content/docs/reference/index.mdx:13 | src/content/docs/reference/example.md |
 | /docs/book/egov-vison | src/pages/docs/all.astro:151 | src/content/docs/book/eGov-vison.mdx |
-| /book/language-integration-administrative-implementation | src/pages/vision/index.astro:41 | src/content/docs/book/language-integration-administrative-implementation.mdx |
-| /book/media-cultural-integration | src/pages/vision/index.astro:42 | src/content/docs/book/media-cultural-integration.mdx |
-| /book/economic-growth-language-unity | src/pages/vision/index.astro:43 | src/content/docs/book/economic-growth-language-unity.mdx |
-| /book/predictive-healthcare-system | src/pages/vision/index.astro:67 | src/content/docs/book/predictive-healthcare-system.mdx |
-| /book/european-elearning-system | src/pages/vision/index.astro:68 | src/content/docs/book/european-elearning-system.mdx |
-| /book/unified-payment-zone | src/pages/vision/index.astro:69 | src/content/docs/book/unified-payment-zone.mdx |
-| /book/european-blockchain-archives | src/pages/vision/index.astro:70 | src/content/docs/book/european-blockchain-archives.mdx |
 | /book/language-integration-administrative-implementation | src/pages/vision/language-integration.astro:206 | src/content/docs/book/language-integration-administrative-implementation.mdx |
 | /book/media-cultural-integration | src/pages/vision/language-integration.astro:207 | src/content/docs/book/media-cultural-integration.mdx |
 | /book/economic-growth-language-unity | src/pages/vision/language-integration.astro:208 | src/content/docs/book/economic-growth-language-unity.mdx |
 | /book/language | src/pages/vision/language-integration.astro:209 | src/content/docs/book/language.md |
 
-## Links to missing pages (12)
+## Links to missing pages (9)
 | Link | Where |
 |---|---|
 | /docs/ideas/technology/autonomous-robotics-system | src/content/docs/ideas/index.mdx:86 |
@@ -45,9 +38,6 @@ Found 25 links to draft pages, 12 links to missing pages, 6 dead external links,
 | /book/language-integration-national-states/ | src/content/docs/index.mdx:34 |
 | /benefits/european-integration | src/pages/index.astro:165 |
 | /benefits/germany | src/pages/index.astro:174 |
-| /book/autonomous-transportation | src/pages/vision/index.astro:93 |
-| /book/european-logistics-market | src/pages/vision/index.astro:94 |
-| /book/robotic-agriculture | src/pages/vision/index.astro:95 |
 
 ## Dead external links (6)
 | URL | Status | Where |
@@ -59,7 +49,8 @@ Found 25 links to draft pages, 12 links to missing pages, 6 dead external links,
 | https://www.patreon.com/c/zentala | 404 | src/pages/support.astro:31 |
 | https://www.patreon.com/c/zentala | 404 | src/pages/support.astro:103 |
 
-## Orphan pages (10) — built, but no page links to them
+## Orphan pages (11) — built, but no page links to them
+- /book/designing-our-retirement
 - /book/european-egovernment
 - /commentary
 - /confirm
