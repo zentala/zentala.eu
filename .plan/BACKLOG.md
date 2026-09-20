@@ -118,3 +118,5 @@ plus the draft review recorded in this session.
 - [ ] **No serious counter-argument anywhere** — sovereignty, the translation industry, states disadvantaged by English, French opposition. The sidecars notice this; the public pages do not. A manifesto that never states the strongest objection reads as propaganda. (High, 3)
 - [ ] **Claims carry no evidence outside `european-english.mdx`** — the single biggest editorial weakness of the whole site. (High, 8)
 - [ ] **Energy is absent entirely; defence lives only in two empty transcripts** despite `principles.md` naming security as a pillar; education is one sentence. (Medium, 5)
+
+- [ ] **husky pre-commit runs full `astro check` (~50 s) and `git stash` on every commit** — `lint-staged` backs up state via stash (`package.json` lint-staged config, `.husky/pre-commit`), which `~/.claude/rules/worktrees.md` forbids inside worktrees; found while committing in `.claude/worktrees/vision` 2026-09-20. Make the check incremental or disable the stash backup (`--no-stash`). (Low, 2)
