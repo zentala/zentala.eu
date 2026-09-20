@@ -31,3 +31,7 @@ check: typecheck audit
 
 clean:
     rm -rf dist
+
+# deploy the static build to server.lan, live at https://eu.internal
+deploy-internal:
+    bash scripts/deploy-internal.sh

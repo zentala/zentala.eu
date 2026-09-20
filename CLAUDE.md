@@ -60,3 +60,11 @@ Every news item Paweł comments on goes to `src/content/commentary/` — never t
 It reports links to draft pages (they 404 in production), links to missing pages,
 dead external links, orphan pages and all drafts. The report goes to
 `.plan/reports/content-audit.md`. Run it after any content or navigation change.
+
+## Internal preview — https://eu.internal
+`just deploy-internal` builds the site and publishes it on `server.lan`
+(`/opt/zentala.eu/releases/<stamp>`, `current` symlink, nginx container `zentala-eu`,
+route in `/opt/zntl-local-servers/config/external-domains.yml`). Two traps it encodes:
+the `current` symlink must be RELATIVE (the container mounts the parent, so an absolute
+target 404s every page), and the internal build sets `COMMENTARY_PUBLIC=true` — the LAN
+preview shows sections that stay hidden on the public site.
