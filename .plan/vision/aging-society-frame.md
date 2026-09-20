@@ -43,17 +43,31 @@ possible.
 
 ### Floor — one economy, one working language
 
+**English is the bottleneck of Europe's information economy.** A plausible reason
+no European startups and no European-scale corporations grew here is that we
+never had one working language. Europe's real failure is the absence of
+companies whose capital cannot be called French, German or Dutch — just
+European. Creating them is the point of language integration, not a side effect
+of it.
+
+There is a second reason, and it is political rather than economic. **European
+political consciousness cannot exist without a shared language.** The awareness
+people build working together in business becomes, over time, the awareness they
+bring to European politics. Without it there is no European public, only
+national publics talking past each other.
+
 A shrinking workforce has to be organised well, because there is no slack left.
 The scarce resource becomes the attention of the most capable people, and we
 already lose them to elsewhere. For them to work with each other inside Europe,
 they need a shared working language.
 
 So: **English as an official working language of European business and
-administration.** Europe's failure is that it has no European-language business.
-It should have one, for a blunt reason — a shared interest is what keeps us from
-turning on each other. The Union was built so there would be no more war. This
-is the mechanism, in this century: a common venture that stays worth more than
-any quarrel.
+administration.**
+
+And there is a blunt third reason, older than the other two. A shared interest is
+what keeps us from turning on each other. The Union was built so there would be
+no more war; a common venture that stays worth more than any quarrel is how that
+works in this century.
 
 ### Middle — the digital state
 
@@ -105,6 +119,95 @@ labour our pensions depend on and the returns go to a handful of owners, we have
 solved production and destroyed the distribution that made it worth solving.
 Every proposal on this site has to answer it.
 
+## Answers to the obvious objections
+
+Dictated 2026-09-20, in response to the gaps the editorial review found. These
+are the author's positions; they still need evidence attached before publication.
+
+### Why robotics and not immigration
+
+Western migration policy is failing, and Europeans are turning against it. The
+honest version of the argument has three parts.
+
+First, it does not add up economically: migrants arriving without the skills the
+economy needs cost more in support than they contribute, and the highly skilled
+ones — who are scarce — do not come here to wipe anyone's backside. Second, we
+cannot point to a European country where large-scale immigration has worked, and
+we would need labour at large scale, not small. Third, there is something
+degrading in the premise itself: planning to import people so they can do the
+care work we will not do is not a policy anyone should be proud of.
+
+Robotics also happens to be arriving anyway. The era of machines, humanoid and
+otherwise, is not a forecast — it is a deployment question. The only open
+issues are whether we deploy it at scale and whether ordinary people see the
+benefit, or whether it lands narrowly and the gains stay with whoever owns it.
+
+And it is an opening for Europe: a new automotive industry, a way to reindustrialise
+while reforming itself. For Germany, for Poland, and specifically for Polish
+software — the layer around robotics is where Central Europe can contribute
+something the rest of Europe needs.
+
+*Author's own caveat, kept deliberately: "I am a programmer, so I see a nail
+everywhere, because I have a hammer."*
+
+### Who should own the robots
+
+The ownership question is the wrong one to settle first. Models will be mixed
+and will differ by what the machine does — state-owned or cooperative for
+municipal services, private elsewhere, dividend-based in some companies.
+
+**What matters more than ownership is that robots are cheap.** The technology
+has to be affordable, easy to implement, built on open standards, and hard to
+monopolise. If it cannot be enclosed and rented out, the ownership question
+largely answers itself. If it can, no ownership model will save us.
+
+### How this happens politically
+
+Dissatisfaction with the Union in its present form is already boiling. The
+missing piece is not anger; it is **a vision people could agree on.** A proposal
+built so that everyone wins can earn the unanimity that treaty change requires —
+and treaty change is then a question of political will, which follows conviction.
+
+### Who pays
+
+Two answers, both of which turn the question around.
+
+**We already pay.** Every member state funds its own digitalisation separately.
+Doing it together is not a new budget, it is a less wasteful use of the one we
+have.
+
+**And we have already saved.** Pension contributions are money set aside for
+exactly this future. Part of it can be invested in the robotics that will serve
+that future — **so that we own it**, publicly, and so that it starts delivering
+public services from the beginning rather than after some distant payoff.
+
+### Where the frame came from
+
+A friend said: you need a frame. The frame was obvious once stated.
+
+The search was for a problem *common to the whole Union*, because the priority —
+from a Polish point of view — is keeping the Union coherent while it transforms
+politically and culturally toward the right and toward nationalism. Staying
+together through that requires something everyone can recognise as sensible.
+Demographics is that thing: everyone talks about the coming crisis, and nobody
+does anything about it.
+
+The second question behind the frame: what can Poland, and Central Europe,
+actually offer? The answer taken here is software, and a share in building
+robotics.
+
+### What the author is afraid of
+
+Not abstractions. Specifically: that governments will patch the demographic hole
+with mass immigration because it is the reflex, at a cost we do not need to pay.
+That there will be chaos because nobody prepared. That retirement will arrive
+and the money will buy nothing, because the system still assumes workers who no
+longer exist — no one to care for us, no one to bring food. And that a
+generation will spend its best years on bullshit jobs instead of on the concrete
+thing that needed building.
+
+**That last fear is the reason this project exists.**
+
 ## The political position
 
 Pro-European, not attached to the European Union in its present shape. The
@@ -112,6 +215,9 @@ current administration is rejected by a large part of the public, and it is not
 the point. What is worth defending is the project underneath: free nations with
 enough shared interest that war stays unthinkable. If the institutions have to
 change form to do that, they change form.
+
+**The reader this is written for is the European engineer.** Not the official,
+not the journalist — the person who could build a piece of it.
 
 **The author's role is watchdog and editor of direction.** The Union is heading
 somewhere; this site reviews where, says what could be done better, and points
