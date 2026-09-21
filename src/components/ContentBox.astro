@@ -7,81 +7,10 @@ interface Props {
 }
 
 const { title, color = 'blue' } = Astro.props;
-
-// Color mapping for both themes
-type ColorTheme = {
-  bg: string;
-  text: string;
-};
-
-const colorMap: Record<BoxColor, { dark: ColorTheme, light: ColorTheme }> = {
-  blue: {
-    dark: {
-      bg: 'rgba(30, 58, 138, 0.3)', // blue-900/30
-      text: '#93c5fd'  // blue-300
-    },
-    light: {
-      bg: 'rgba(219, 234, 254, 0.5)', // blue-100/50
-      text: '#2563eb'  // blue-600
-    }
-  },
-  indigo: {
-    dark: {
-      bg: 'rgba(49, 46, 129, 0.3)', // indigo-900/30
-      text: '#a5b4fc'  // indigo-300
-    },
-    light: {
-      bg: 'rgba(224, 231, 255, 0.5)', // indigo-100/50
-      text: '#4f46e5'  // indigo-600
-    }
-  },
-  green: {
-    dark: {
-      bg: 'rgba(6, 78, 59, 0.3)', // green-900/30
-      text: '#6ee7b7'  // green-300
-    },
-    light: {
-      bg: 'rgba(209, 250, 229, 0.5)', // green-100/50
-      text: '#059669'  // green-600
-    }
-  },
-  red: {
-    dark: {
-      bg: 'rgba(127, 29, 29, 0.3)', // red-900/30
-      text: '#fca5a5'  // red-300
-    },
-    light: {
-      bg: 'rgba(254, 226, 226, 0.5)', // red-100/50
-      text: '#dc2626'  // red-600
-    }
-  },
-  purple: {
-    dark: {
-      bg: 'rgba(76, 29, 149, 0.3)', // purple-900/30
-      text: '#c4b5fd'  // purple-300
-    },
-    light: {
-      bg: 'rgba(243, 232, 255, 0.5)', // purple-100/50
-      text: '#7c3aed'  // purple-600
-    }
-  },
-  teal: {
-    dark: {
-      bg: 'rgba(19, 78, 74, 0.3)', // teal-900/30
-      text: '#5eead4'  // teal-300
-    },
-    light: {
-      bg: 'rgba(204, 251, 241, 0.5)', // teal-100/50
-      text: '#0d9488'  // teal-600
-    }
-  }
-};
-
-const colorStyle = colorMap[color];
 ---
 
-<div 
-  class="content-box p-4 rounded-lg transition-colors duration-300" 
+<div
+  class="content-box p-4 rounded-lg transition-colors duration-300"
   data-color={color}
 >
   {title && <h4 class="font-bold mb-2 title-text">{title}</h4>}
@@ -90,45 +19,48 @@ const colorStyle = colorMap[color];
   </div>
 </div>
 
-<style define:vars={{ 
-  darkBg: colorStyle.dark.bg,
-  darkText: colorStyle.dark.text,
-  lightBg: colorStyle.light.bg,
-  lightText: colorStyle.light.text
-}}>
-  /* Dark theme (default) */
+<style>
+  /* Colours come from the --card-<hue>-{bg,text} tokens in
+     src/styles/_tokens.scss — the same triplets Card.astro uses. */
   .content-box {
-    background-color: var(--darkBg);
+    background-color: var(--card-blue-bg);
   }
-  
   .content-box .title-text {
-    color: var(--darkText);
+    color: var(--card-blue-text);
   }
-  
+
+  .content-box[data-color="indigo"] { background-color: var(--card-indigo-bg); }
+  .content-box[data-color="indigo"] .title-text,
+  .content-box[data-color="indigo"] a { color: var(--card-indigo-text); }
+
+  .content-box[data-color="green"] { background-color: var(--card-green-bg); }
+  .content-box[data-color="green"] .title-text,
+  .content-box[data-color="green"] a { color: var(--card-green-text); }
+
+  .content-box[data-color="red"] { background-color: var(--card-red-bg); }
+  .content-box[data-color="red"] .title-text,
+  .content-box[data-color="red"] a { color: var(--card-red-text); }
+
+  .content-box[data-color="purple"] { background-color: var(--card-purple-bg); }
+  .content-box[data-color="purple"] .title-text,
+  .content-box[data-color="purple"] a { color: var(--card-purple-text); }
+
+  .content-box[data-color="teal"] { background-color: var(--card-teal-bg); }
+  .content-box[data-color="teal"] .title-text,
+  .content-box[data-color="teal"] a { color: var(--card-teal-text); }
+
   .content-box .content-text {
     color: var(--color-text-secondary);
   }
-  
-  /* Light theme */
-  :root:not(.dark) .content-box {
-    background-color: var(--lightBg);
-  }
-  
-  :root:not(.dark) .content-box .title-text {
-    color: var(--lightText);
-  }
-  
-  /* Link styling */
+
   .content-box a {
-    color: var(--darkText);
-    transition: color 0.2s;
+    color: var(--card-blue-text);
+    transition: filter 0.2s;
   }
-  
   .content-box a:hover {
     filter: brightness(1.2);
   }
-  
-  :root:not(.dark) .content-box a {
-    color: var(--lightText);
+  :global(.dark) .content-box a:hover {
+    filter: brightness(1.3);
   }
 </style>

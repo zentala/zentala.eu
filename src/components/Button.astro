@@ -37,13 +37,14 @@ const sizeClasses = {
   xl: "text-xl px-6 py-3",
 };
 
-// Variant variations (with theme variables)
+// Variant variations — colours come from the button-* tokens defined below,
+// which read the shared --color-accent-* tokens (src/styles/_tokens.scss).
 const variantClasses = {
-  primary: "bg-blue-600 hover:bg-blue-700 text-white focus:ring-blue-500",
-  secondary: "bg-indigo-500 hover:bg-indigo-600 text-white focus:ring-indigo-400",
-  outline: "border border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900 focus:ring-blue-500 dark:text-blue-400 dark:border-blue-400",
-  ghost: "text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-gray-800 focus:ring-blue-500",
-  link: "text-blue-600 hover:underline dark:text-blue-400 focus:ring-blue-500 p-0",
+  primary: "button-primary focus:ring-blue-500",
+  secondary: "button-secondary focus:ring-indigo-400",
+  outline: "button-outline focus:ring-blue-500",
+  ghost: "button-ghost focus:ring-blue-500",
+  link: "button-link focus:ring-blue-500 p-0",
 };
 
 // Combine the classes
@@ -63,3 +64,48 @@ const Element = href ? 'a' : 'button';
 >
   <slot />
 </Element>
+
+<style>
+  /* Colours read the shared --color-accent-* / --card-blue-* tokens in
+     src/styles/_tokens.scss — no hardcoded Tailwind palette shade. */
+  :global(.button-primary) {
+    background-color: var(--color-accent-primary);
+    color: var(--color-bg-primary);
+  }
+  :global(.button-primary:hover) {
+    background-color: var(--color-accent-secondary);
+  }
+
+  :global(.button-secondary) {
+    background-color: var(--card-indigo-text);
+    color: var(--color-bg-primary);
+  }
+  :global(.button-secondary:hover) {
+    filter: brightness(1.1);
+  }
+
+  :global(.button-outline) {
+    border: 1px solid var(--color-accent-primary);
+    color: var(--color-accent-primary);
+    background-color: transparent;
+  }
+  :global(.button-outline:hover) {
+    background-color: var(--card-blue-bg);
+  }
+
+  :global(.button-ghost) {
+    color: var(--color-accent-primary);
+    background-color: transparent;
+  }
+  :global(.button-ghost:hover) {
+    background-color: var(--card-blue-bg);
+  }
+
+  :global(.button-link) {
+    color: var(--color-accent-primary);
+    background-color: transparent;
+  }
+  :global(.button-link:hover) {
+    text-decoration: underline;
+  }
+</style>

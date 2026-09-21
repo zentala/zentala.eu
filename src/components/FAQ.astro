@@ -7,43 +7,20 @@ interface FAQItem {
 interface Props {
   items: FAQItem[];
   title?: string;
-  color?: string;
+  color?: 'gray' | 'blue' | 'indigo' | 'purple';
 }
 
 const { items, title = "Frequently Asked Questions", color = "blue" } = Astro.props;
-
-// Dynamically determine background color
-let bgColorClass = "bg-gray-800/30";
-let borderColorClass = "border-gray-700/50";
-let questionColorClass = "bg-gray-800/50";
-let questionHoverClass = "hover:bg-gray-700/70";
-
-if (color === "blue") {
-  bgColorClass = "bg-blue-900/30";
-  borderColorClass = "border-blue-700/50";
-  questionColorClass = "bg-blue-900/50";
-  questionHoverClass = "hover:bg-blue-800/70";
-} else if (color === "indigo") {
-  bgColorClass = "bg-indigo-900/30";
-  borderColorClass = "border-indigo-700/50";
-  questionColorClass = "bg-indigo-900/50";
-  questionHoverClass = "hover:bg-indigo-800/70";
-} else if (color === "purple") {
-  bgColorClass = "bg-purple-900/30";
-  borderColorClass = "border-purple-700/50";
-  questionColorClass = "bg-purple-900/50";
-  questionHoverClass = "hover:bg-purple-800/70";
-}
 ---
 
-<div class={`faq-container ${bgColorClass} border ${borderColorClass} rounded-xl p-6 shadow-lg my-8`}>
-  {title && <h2 class="text-3xl font-bold text-white mb-6">{title}</h2>}
-  
+<div class="faq-container border rounded-xl p-6 shadow-lg my-8" data-color={color}>
+  {title && <h2 class="faq-title text-3xl font-bold mb-6">{title}</h2>}
+
   <div class="space-y-4">
-    {items.map((item, index) => (
+    {items.map((item) => (
       <div class="faq-item">
         <details class="group">
-          <summary class={`flex justify-between items-center font-medium cursor-pointer p-4 rounded-lg ${questionColorClass} ${questionHoverClass} text-white transition-all duration-300`}>
+          <summary class="faq-question flex justify-between items-center font-medium cursor-pointer p-4 rounded-lg transition-all duration-300">
             <span class="text-xl">{item.question}</span>
             <span class="transition-transform duration-300 group-open:rotate-180">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
@@ -51,7 +28,7 @@ if (color === "blue") {
               </svg>
             </span>
           </summary>
-          <div class="text-gray-300 mt-3 group-open:animate-fadeIn px-4 pb-4 text-lg">
+          <div class="faq-answer mt-3 group-open:animate-fadeIn px-4 pb-4 text-lg">
             <p set:html={item.answer}></p>
           </div>
         </details>
@@ -61,18 +38,52 @@ if (color === "blue") {
 </div>
 
 <style>
+  /* Colours come from the --card-<hue>-{bg,border,text} tokens in
+     src/styles/_tokens.scss — the same triplets Card.astro uses — so FAQ
+     reads at AA contrast in both themes instead of hardcoding Tailwind's
+     dark-palette shades. */
+  .faq-container {
+    background-color: var(--card-gray-bg);
+    border-color: var(--card-gray-border);
+    color: var(--card-gray-text);
+  }
+  .faq-container[data-color="blue"] { background-color: var(--card-blue-bg); border-color: var(--card-blue-border); color: var(--card-blue-text); }
+  .faq-container[data-color="indigo"] { background-color: var(--card-indigo-bg); border-color: var(--card-indigo-border); color: var(--card-indigo-text); }
+  .faq-container[data-color="purple"] { background-color: var(--card-purple-bg); border-color: var(--card-purple-border); color: var(--card-purple-text); }
+
+  .faq-title,
+  .faq-question {
+    color: inherit;
+  }
+
+  .faq-question {
+    background-color: var(--color-bg-primary);
+    transition: background-color 0.3s, color 0.3s, filter 0.3s;
+  }
+  .faq-question:hover {
+    filter: brightness(0.97);
+  }
+  :global(.dark) .faq-question:hover {
+    filter: brightness(1.15);
+  }
+
+  .faq-answer {
+    color: inherit;
+    opacity: 0.85;
+  }
+
   details > summary {
     list-style: none;
   }
   details > summary::-webkit-details-marker {
     display: none;
   }
-  
+
   @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(-10px); }
     100% { opacity: 1; transform: translateY(0); }
   }
-  
+
   .group-open .animate-fadeIn {
     animation: fadeIn 0.5s ease-in-out;
   }
