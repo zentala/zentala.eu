@@ -1,9 +1,10 @@
 ---
+import { IS_PREVIEW } from '../../lib/preview';
 import Layout from '../../layouts/Layout.astro';
 import Card from '../../components/Card.astro';
 import CardGrid from '../../components/CardGrid.astro';
 
-if (!import.meta.env.DEV) {
+if (!IS_PREVIEW) {
   return Astro.redirect('/vision', 301);
 }
 ---

@@ -1,9 +1,10 @@
 ---
+import { IS_PREVIEW } from '../lib/preview';
 import { Image } from 'astro:assets';
 import EuFlagLogo from '../assets/eu-flag.svg';
 
 const currentYear = new Date().getFullYear();
-const isDev = import.meta.env.DEV;
+const isDev = IS_PREVIEW;
 
 type FooterLink = { text: string; href: string; devOnly?: boolean };
 type FooterSection = { title: string; links: FooterLink[] };

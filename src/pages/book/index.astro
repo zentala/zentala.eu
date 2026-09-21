@@ -1,4 +1,5 @@
 ---
+import { IS_PREVIEW } from '../../lib/preview';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
@@ -6,7 +7,7 @@ import { getCollection } from 'astro:content';
 // appear here as a link that 404s in production.
 const chapters = await getCollection('docs', (entry) => {
   const isBook = entry.id.startsWith('book/') && !entry.id.includes('.sidecar');
-  return isBook && (import.meta.env.DEV || !entry.data.draft);
+  return isBook && (IS_PREVIEW || !entry.data.draft);
 });
 
 // The frame chapter opens the book; the rest follow alphabetically.

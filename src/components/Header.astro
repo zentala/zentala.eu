@@ -1,11 +1,12 @@
 ---
+import { IS_PREVIEW } from '../lib/preview';
 import { Image } from 'astro:assets';
 import EuLogo from '../assets/eu.png';
 import EuFlagLogo from '../assets/eu-flag.svg';
 import AlgoliaSearch from './AlgoliaSearch.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
-const isDev = import.meta.env.DEV;
+const isDev = IS_PREVIEW;
 
 const links = [
   { href: '/', text: 'Overview' },

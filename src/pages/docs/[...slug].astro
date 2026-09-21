@@ -1,4 +1,5 @@
 ---
+import { IS_PREVIEW } from '../../lib/preview';
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
@@ -7,7 +8,7 @@ export async function getStaticPaths() {
     // Get all docs from the collection
     const allDocs = await getCollection('docs', (doc) => {
       // Filter out drafts in production
-      return import.meta.env.DEV || !doc.data.draft;
+      return IS_PREVIEW || !doc.data.draft;
     });
     
     // Create a mapping for easy lookup

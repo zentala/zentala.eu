@@ -66,5 +66,6 @@ dead external links, orphan pages and all drafts. The report goes to
 (`/opt/zentala.eu/releases/<stamp>`, `current` symlink, nginx container `zentala-eu`,
 route in `/opt/zntl-local-servers/config/external-domains.yml`). Two traps it encodes:
 the `current` symlink must be RELATIVE (the container mounts the parent, so an absolute
-target 404s every page), and the internal build sets `COMMENTARY_PUBLIC=true` — the LAN
-preview shows sections that stay hidden on the public site.
+target 404s every page), and the internal build sets `SITE_PREVIEW=true` (`src/lib/preview.ts`), so
+eu.internal behaves like `just dev`: drafts, commentary and dev-only links are visible.
+Gate dev-only things on `IS_PREVIEW`, never on `import.meta.env.DEV`.

@@ -3,8 +3,8 @@
 #
 # Usage: bash scripts/deploy-internal.sh   (or: just deploy-internal)
 #
-# The internal preview is built with COMMENTARY_PUBLIC=true on purpose: eu.internal
-# is LAN-only, so unpublished sections are visible there and hidden on the public site.
+# The internal preview is built with SITE_PREVIEW=true on purpose: eu.internal is
+# LAN-only and counts as dev mode (src/lib/preview.ts) — drafts and hidden sections show.
 set -euo pipefail
 trap 'echo "DEPLOY_FAILED: line $LINENO" >&2; exit 1' ERR
 
@@ -12,8 +12,8 @@ HOST=server.lan
 ROOT=/opt/zentala.eu
 REL=$(date +%Y%m%d-%H%M%S)
 
-echo "building (COMMENTARY_PUBLIC=true)..."
-COMMENTARY_PUBLIC=true node node_modules/astro/astro.js build >/dev/null
+echo "building preview (SITE_PREVIEW=true: drafts, commentary and dev-only links visible)..."
+SITE_PREVIEW=true node node_modules/astro/astro.js build >/dev/null
 
 PAGES=$(find dist -name '*.html' | wc -l)
 [ "$PAGES" -gt 50 ] || { echo "DEPLOY_FAILED: only $PAGES pages built" >&2; exit 1; }
