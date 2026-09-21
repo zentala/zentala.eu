@@ -13,7 +13,6 @@ interface Props {
   yAxisLabel?: string;
   xAxisLabel?: string;
   height?: string;
-  darkMode?: boolean;
 }
 
 const {
@@ -24,7 +23,6 @@ const {
   yAxisLabel = "",
   xAxisLabel = "",
   height = "400px",
-  darkMode = true
 } = Astro.props;
 
 // Generate a unique ID for this chart
@@ -45,18 +43,31 @@ const defaultColors = [
 
 <div class="chart-container mb-8">
   <div class="mb-4">
-    <h3 class="text-2xl font-bold text-white">{title}</h3>
-    {description && <p class="text-gray-300 mt-2">{description}</p>}
+    <h3 class="chart-title text-2xl font-bold">{title}</h3>
+    {description && <p class="chart-description mt-2">{description}</p>}
   </div>
-  
-  <div class="bg-gray-900/30 border border-gray-700/50 rounded-xl p-6 shadow-lg">
+
+  <div class="chart-card border rounded-xl p-6 shadow-lg">
     <div style={`height: ${height}; width: 100%;`}>
       <canvas id={chartId}></canvas>
     </div>
   </div>
 </div>
 
-<script is:inline define:vars={{ canvas_id: chartId, chartType, data, xAxisLabel, yAxisLabel, darkMode, defaultColors }}>
+<style>
+  .chart-title {
+    color: var(--color-text-primary);
+  }
+  .chart-description {
+    color: var(--color-text-secondary);
+  }
+  .chart-card {
+    background-color: var(--color-bg-secondary);
+    border-color: var(--color-border);
+  }
+</style>
+
+<script is:inline define:vars={{ canvas_id: chartId, chartType, data, xAxisLabel, yAxisLabel, defaultColors }}>
   document.addEventListener('DOMContentLoaded', async () => {
     // Dynamically import Chart.js
     const { Chart, registerables } = await import('chart.js');
@@ -67,7 +78,9 @@ const defaultColors = [
     const values = data.map(item => item.value);
     const colors = data.map((item, index) => item.color || defaultColors[index % defaultColors.length]);
     
-    // Set up chart options
+    // Set up chart options — detect the live theme instead of a static prop,
+    // so the chart is readable regardless of which theme the page loaded in.
+    const darkMode = document.documentElement.classList.contains('dark');
     const theme = darkMode ? {
       color: 'rgba(255, 255, 255, 0.7)',
       backgroundColor: 'transparent',
