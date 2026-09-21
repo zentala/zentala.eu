@@ -32,12 +32,13 @@ const { title } = Astro.props
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
           return localStorage.getItem('theme');
         }
-        // Dark is the default, not a preference. Most of the site hardcodes dark
-        // backgrounds (bg-gray-900) while text colour comes from a theme variable,
-        // so a visitor whose system asks for light gets dark text on a dark
-        // background — an unreadable page. Until those hardcoded colours are
-        // replaced with variables, only an explicit choice switches to light.
-        return 'dark';
+        // No stored choice yet: follow the OS/browser preference. Colours now
+        // come from theme tokens (src/styles/_tokens.scss) with matching
+        // light/dark values, so either theme renders correctly by default.
+        if (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
       })();
       
       if (theme === 'dark') {
@@ -62,12 +63,12 @@ const { title } = Astro.props
 </html>
 <style is:global>
   html {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-sans);
     scroll-behavior: smooth;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-serif);
   }
   
   code {
