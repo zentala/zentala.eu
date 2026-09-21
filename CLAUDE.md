@@ -61,6 +61,16 @@ It reports links to draft pages (they 404 in production), links to missing pages
 dead external links, orphan pages and all drafts. The report goes to
 `.plan/reports/content-audit.md`. Run it after any content or navigation change.
 
+## Theme tokens
+Light/dark colour, typography, radius and shadow live in
+`src/styles/_tokens.scss` (`:root` = light, `.dark` = dark) and the muted
+palette override in `tailwind.config.js`. **No hard-coded colour or font size
+in a component** — use a `var(--color-*)`/`var(--text-*)` token, the
+`theme-*` utility classes in `global.scss`, or a Tailwind class (the palette
+behind `bg-blue-900` etc. is already token-driven via `tailwind.config.js`).
+Default theme follows `prefers-color-scheme` until the visitor picks one via
+`ThemeToggle.astro`; the choice persists in `localStorage` (`src/layouts/Layout.astro`).
+
 ## Internal preview — https://eu.internal
 `just deploy-internal` builds the site and publishes it on `server.lan`
 (`/opt/zentala.eu/releases/<stamp>`, `current` symlink, nginx container `zentala-eu`,

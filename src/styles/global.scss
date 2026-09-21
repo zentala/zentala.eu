@@ -1,45 +1,14 @@
 @use 'tailwindcss/base';
 @use 'tailwindcss/components';
 @use 'tailwindcss/utilities';
-
-// CSS Variables for theming
-:root {
-  /* Light theme (default) */
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f3f4f6;
-  --color-bg-gradient-from: #e0e7ff;
-  --color-bg-gradient-to: #f3f4f6;
-  --color-text-primary: #1f2937;
-  --color-text-secondary: #4b5563;
-  --color-accent-primary: #3b82f6;
-  --color-accent-secondary: #60a5fa;
-  --color-border: #e5e7eb;
-  --color-scrollbar-track: #f1f5f9;
-  --color-scrollbar-thumb: #cbd5e1;
-  --color-scrollbar-thumb-hover: #94a3b8;
-}
-
-.dark {
-  /* Dark theme */
-  --color-bg-primary: #111827;
-  --color-bg-secondary: #1f2937;
-  --color-bg-gradient-from: #172554; /* blue-950 */
-  --color-bg-gradient-to: #111827; /* gray-900 */
-  --color-text-primary: #f3f4f6;
-  --color-text-secondary: #d1d5db;
-  --color-accent-primary: #3b82f6;
-  --color-accent-secondary: #60a5fa;
-  --color-border: #374151;
-  --color-scrollbar-track: #1a202c;
-  --color-scrollbar-thumb: #2d3748;
-  --color-scrollbar-thumb-hover: #4a5568;
-}
+@use 'tokens';
 
 // Global theme styles
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
-  font-size: 20px;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -48,25 +17,25 @@ body {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-// Larger text sizes
+// Type scale driven by the token file, not hardcoded rem values
 .text-lg {
-  font-size: 1.25rem;
+  font-size: var(--text-lg);
 }
 
 .text-xl {
-  font-size: 1.5rem;
+  font-size: var(--text-xl);
 }
 
 .text-2xl {
-  font-size: 1.75rem;
+  font-size: var(--text-2xl);
 }
 
 .text-3xl {
-  font-size: 2.25rem;
+  font-size: var(--text-3xl);
 }
 
 .text-4xl {
-  font-size: 2.75rem;
+  font-size: var(--text-4xl);
 }
 
 // Theme colors - new approach with CSS variables
