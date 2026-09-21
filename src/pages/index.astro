@@ -17,6 +17,28 @@ import Newsletter from '../components/Newsletter.astro';
 import GradientSection from '../components/GradientSection.astro';
 import Button from '../components/Button.astro';
 import IconLink from '../components/IconLink.astro';
+import FrameIntro from '../components/vision/FrameIntro.astro';
+import type { FrameStep } from '../components/vision/types';
+
+// The frame the whole site hangs on: an aging Europe, and thirty years to prepare.
+const frameSteps: FrameStep[] = [
+  {
+    label: 'Generations no longer replace themselves',
+    text: 'Birth rates are below replacement in every member state. Preparing for a future without generational replacement is not speculation about the future; it is one of the most important decisions our societies and economies face.',
+  },
+  {
+    label: 'Governments already know',
+    text: 'They warn of an economic crisis and of changes that could shake the economy. Their answer is to bring in migrants, so that someone is left to do the work.',
+  },
+  {
+    label: 'That is not the only answer',
+    text: 'The warnings show the problem is real. They do not show that importing workers is the only way to deal with it. The question is open: how do we prepare for pensions that no longer have a next generation behind them?',
+  },
+  {
+    label: 'Set a goal',
+    text: 'We can prepare, and we should name how: build a robotic economy that pays for our retirement. Machines that do the work there will not be enough people to do.',
+  },
+];
 
 // Import SVG icons
 import LanguageIcon from '../assets/icons/language.svg';
@@ -31,11 +53,10 @@ import BookIcon from '../assets/icons/book.svg';
 <Layout title="Home">
 
   <Hero 
-    title="Technocratic vision for the next step of European Integration"
+    title="Design the Europe we will grow old in"
     description={[
-      // "Building a unified, prosperous Europe through language integration, digital transformation, and robotic reindustrialization.",
-      "From Challenges to Opportunities: Uniting Europe to Redefine Our Future Through Innovation, Cooperation, and Digital Transformation.",
-      "A visionary framework for addressing Europe's most pressing challenges, rooted in mutual benefit, shared values, and the transformative potential of collective action."
+      "Europe is aging and the pension model is running out of workers to pay for it.",
+      "We have roughly thirty years of working economy left. This is a plan for how to use them."
     ]}
     image={{ file: UeLogo.src }}
     actions={[
@@ -75,10 +96,26 @@ import BookIcon from '../assets/icons/book.svg';
   </GradientSection>
 
 
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 my-16">
+    <FrameIntro
+      as="h2"
+      eyebrow="Why this site exists"
+      title="What should Europe look like when we are old?"
+      steps={frameSteps}
+      conclusion="Let us decide what we want the European Union, and our Europe, to look like when we are older, and use the next thirty years to build it."
+    />
+    <div class="text-center">
+      <Button href="/book/designing-our-retirement" variant="primary" size="lg">
+        Read the full argument
+        <i class="fa-solid fa-arrow-right ml-2"></i>
+      </Button>
+    </div>
+  </div>
+
   <div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary); "><!-- border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); -->
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       
-      <DisplayTitle level={1} class="text-center">Core Pillars of European Consolidation</DisplayTitle>
+      <DisplayTitle level={1} class="text-center">Three layers, built in order</DisplayTitle>
       <p class="text-xl leading-relaxed mt-4 mb-20 text-center max-w-5xl mx-auto" style="color: var(--color-text-secondary);">
         By fostering smart collaboration and leveraging shared resources, we can create a Europe where abundance, security, and the freedom to truly live go hand in hand.
       </p>
@@ -89,7 +126,7 @@ import BookIcon from '../assets/icons/book.svg';
           icon="🗣️"
           color="green"
           variant="gradient"
-          href="/vision/language-integration"
+          href="/docs/book/european-english"
           align="center"
         >
           English as a second official language across all EU states to remove communication barriers
@@ -100,7 +137,7 @@ import BookIcon from '../assets/icons/book.svg';
           icon="💻"
           color="red"
           variant="gradient"
-          href="/vision/digital-integration"
+          href="/docs/book/european-egovernment"
           align="center"
         >
           Unified digital government, e-health, e-learning, and blockchain-based public services
@@ -111,7 +148,7 @@ import BookIcon from '../assets/icons/book.svg';
           icon="🤖"
           color="indigo"
           variant="gradient"
-          href="/vision/robotic-reindustrialization"
+          href="/book/robotic-reindustrialisation"
           align="center"
         >
           Autonomous logistics, robotic production, and sustainable, localized manufacturing

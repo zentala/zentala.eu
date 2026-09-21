@@ -11,17 +11,22 @@ interface Props {
   title: string;
   steps: FrameStep[];
   conclusion: string;
+  /** Heading level of the title; use 'h2' on pages that already have an h1. */
+  as?: 'h1' | 'h2';
 }
 
-const { eyebrow, title, steps, conclusion } = Astro.props;
+const { eyebrow, title, steps, conclusion, as = 'h1' } = Astro.props;
+const titleClass = 'text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-8';
 ---
 
 <section class="frame-intro mb-16" aria-labelledby="frame-title">
   <p class="eyebrow text-sm font-semibold uppercase tracking-widest mb-3">{eyebrow}</p>
-  <h1 id="frame-title" class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-8">{title}</h1>
+  {as === 'h2'
+    ? <h2 id="frame-title" class={titleClass}>{title}</h2>
+    : <h1 id="frame-title" class={titleClass}>{title}</h1>}
 
   <ol class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    {steps.map((step, index) => (
+    {steps.map((step: FrameStep, index: number) => (
       <li class="step rounded-xl p-5 sm:p-6">
         <span class="step-index text-xs font-semibold uppercase tracking-widest">{index + 1} · {step.label}</span>
         <p class="mt-2 text-base sm:text-lg leading-relaxed">{step.text}</p>

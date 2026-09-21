@@ -42,7 +42,7 @@ const layers: Layer[] = [
       'A shared working language produces a European political consciousness, not only a business one.',
       'A shared interest is what keeps us from the next war. The Union was built so there would be no more war; this is the mechanism for this century.',
     ],
-    href: '/vision/language-integration',
+    href: '/docs/book/european-english',
     linkText: 'Read the language proposal',
     tone: 'indigo',
   },
@@ -56,7 +56,7 @@ const layers: Layer[] = [
       'Direct democracy is the route out of dependence on a political class we did not choose and cannot correct between elections.',
       'Regulation becomes a tool for improving how the state works, not a substitute for it.',
     ],
-    href: '/vision/digital-integration',
+    href: '/docs/book/european-egovernment',
     linkText: 'Read the digital state proposal',
     tone: 'blue',
   },
@@ -71,12 +71,14 @@ const layers: Layer[] = [
       'Predictive medicine and healthcare: the cost that grows fastest as a population ages.',
       'Military robotics research funded by the war with Russia can be converted to civilian use afterwards. This is the realistic route to funding robotics at European scale.',
     ],
-    href: '/vision/robotic-reindustrialization',
+    href: '/book/robotic-reindustrialisation',
     linkText: 'Read the robotics proposal',
     tone: 'green',
   },
 ];
 
+// The /vision/<pillar> pages redirect to /vision in production (dev-only work),
+// so each layer links to its published chapter instead.
 const crossCuttingParagraphs = [
   'If automation replaces the labour our pensions depend on and the returns go to a handful of owners, we have solved production and destroyed the distribution that made it worth solving.',
   'Ownership will be mixed: state, cooperative, private, dividend. Who owns the robots matters less than one thing: robots must not be expensive.',

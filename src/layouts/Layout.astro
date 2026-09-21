@@ -32,10 +32,12 @@ const { title } = Astro.props
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
           return localStorage.getItem('theme');
         }
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          return 'dark';
-        }
-        return 'light';
+        // Dark is the default, not a preference. Most of the site hardcodes dark
+        // backgrounds (bg-gray-900) while text colour comes from a theme variable,
+        // so a visitor whose system asks for light gets dark text on a dark
+        // background — an unreadable page. Until those hardcoded colours are
+        // replaced with variables, only an explicit choice switches to light.
+        return 'dark';
       })();
       
       if (theme === 'dark') {
