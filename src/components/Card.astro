@@ -90,8 +90,16 @@ const linkClass = `text-current hover:opacity-80 font-medium flex items-center g
     filter: brightness(1.12);
   }
 
+  /* Body text inherits the card's own hue-text token (set by the
+     data-color rules above) instead of the site-wide secondary grey, so
+     contrast stays correct against every hue's background, not just gray. */
   .card .body {
-    color: var(--color-text-secondary);
+    color: inherit;
+    opacity: 0.92;
+  }
+
+  .card .body :global(strong) {
+    color: inherit;
   }
 
   .card[data-variant="bordered"] {
