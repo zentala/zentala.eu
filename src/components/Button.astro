@@ -40,11 +40,11 @@ const sizeClasses = {
 // Variant variations — colours come from the button-* tokens defined below,
 // which read the shared --color-accent-* tokens (src/styles/_tokens.scss).
 const variantClasses = {
-  primary: "button-primary focus:ring-blue-500",
-  secondary: "button-secondary focus:ring-indigo-400",
-  outline: "button-outline focus:ring-blue-500",
-  ghost: "button-ghost focus:ring-blue-500",
-  link: "button-link focus:ring-blue-500 p-0",
+  primary: "button-primary focus:ring-[var(--color-accent-primary)]",
+  secondary: "button-secondary focus:ring-[var(--color-accent-secondary)]",
+  outline: "button-outline focus:ring-[var(--color-accent-primary)]",
+  ghost: "button-ghost focus:ring-[var(--color-accent-primary)]",
+  link: "button-link focus:ring-[var(--color-accent-primary)] p-0",
 };
 
 // Combine the classes
