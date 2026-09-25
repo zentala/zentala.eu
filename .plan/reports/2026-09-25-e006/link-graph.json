@@ -1,0 +1,1877 @@
+{
+  "generated": "2026-09-25",
+  "scopeNote": "Nodes cover the core argument surface (home, why, vision + legacy layer pages, benefits, principles, support, manifesto, book index + all published/draft chapters, the /docs archive family, commentary, and utility leaves). ideas/articles/reference sub-collections (14 entries) are represented as 3 aggregate nodes, not expanded per-entry -- see scopeNote in report Part C.",
+  "nodes": [
+    {
+      "id": "/book/designing-our-retirement",
+      "type": "chapter",
+      "file": "src/content/docs/book/designing-our-retirement.md",
+      "group": "frame",
+      "draft": false
+    },
+    {
+      "id": "/book/principles",
+      "type": "chapter",
+      "file": "src/content/docs/book/principles.md",
+      "group": "frame",
+      "draft": false
+    },
+    {
+      "id": "/book/redesigning-the-state",
+      "type": "chapter",
+      "file": "src/content/docs/book/redesigning-the-state.md",
+      "group": "frame",
+      "draft": false
+    },
+    {
+      "id": "/book/education-and-migration",
+      "type": "chapter",
+      "file": "src/content/docs/book/education-and-migration.md",
+      "group": "frame",
+      "draft": false
+    },
+    {
+      "id": "/book/european-english",
+      "type": "chapter",
+      "file": "src/content/docs/book/european-english.mdx",
+      "group": "language",
+      "draft": false
+    },
+    {
+      "id": "/book/economic-growth-language-unity",
+      "type": "chapter",
+      "file": "src/content/docs/book/economic-growth-language-unity.mdx",
+      "group": "language",
+      "draft": true
+    },
+    {
+      "id": "/book/language-integration-administrative-implementation",
+      "type": "chapter",
+      "file": "src/content/docs/book/language-integration-administrative-implementation.mdx",
+      "group": "language",
+      "draft": true
+    },
+    {
+      "id": "/book/media-cultural-integration",
+      "type": "chapter",
+      "file": "src/content/docs/book/media-cultural-integration.mdx",
+      "group": "language",
+      "draft": true
+    },
+    {
+      "id": "/book/language",
+      "type": "chapter",
+      "file": "src/content/docs/book/language.md",
+      "group": "language",
+      "draft": true
+    },
+    {
+      "id": "/book/the-total-state",
+      "type": "chapter",
+      "file": "src/content/docs/book/the-total-state.md",
+      "group": "digital",
+      "draft": false
+    },
+    {
+      "id": "/book/european-egovernment",
+      "type": "chapter",
+      "file": "src/content/docs/book/european-egovernment.mdx",
+      "group": "digital",
+      "draft": false
+    },
+    {
+      "id": "/book/eGov-vison",
+      "type": "chapter",
+      "file": "src/content/docs/book/eGov-vison.mdx",
+      "group": "digital",
+      "draft": true
+    },
+    {
+      "id": "/book/eGov-challenges",
+      "type": "chapter",
+      "file": "src/content/docs/book/eGov-challenges.mdx",
+      "group": "digital",
+      "draft": false
+    },
+    {
+      "id": "/book/unified-payment-zone",
+      "type": "chapter",
+      "file": "src/content/docs/book/unified-payment-zone.mdx",
+      "group": "digital",
+      "draft": true
+    },
+    {
+      "id": "/book/near-zero-transaction-costs",
+      "type": "chapter",
+      "file": "src/content/docs/book/near-zero-transaction-costs.md",
+      "group": "digital",
+      "draft": true
+    },
+    {
+      "id": "/book/digital-receipts",
+      "type": "chapter",
+      "file": "src/content/docs/book/digital-receipts.mdx",
+      "group": "digital",
+      "draft": true
+    },
+    {
+      "id": "/book/european-blockchain-archives",
+      "type": "chapter",
+      "file": "src/content/docs/book/european-blockchain-archives.mdx",
+      "group": "digital",
+      "draft": true
+    },
+    {
+      "id": "/book/european-elearning-system",
+      "type": "chapter",
+      "file": "src/content/docs/book/european-elearning-system.mdx",
+      "group": "digital",
+      "draft": true
+    },
+    {
+      "id": "/book/robotic-reindustrialisation",
+      "type": "chapter",
+      "file": "src/content/docs/book/robotic-reindustrialisation.md",
+      "group": "robotics",
+      "draft": false
+    },
+    {
+      "id": "/book/predictive-healthcare-system",
+      "type": "chapter",
+      "file": "src/content/docs/book/predictive-healthcare-system.mdx",
+      "group": "robotics",
+      "draft": true
+    },
+    {
+      "id": "/book/european-science",
+      "type": "chapter",
+      "file": "src/content/docs/book/european-science.md",
+      "group": "robotics",
+      "draft": false
+    },
+    {
+      "id": "/book/the-shorter-week",
+      "type": "chapter",
+      "file": "src/content/docs/book/the-shorter-week.md",
+      "group": "robotics",
+      "draft": false
+    },
+    {
+      "id": "/book/new-cities",
+      "type": "chapter",
+      "file": "src/content/docs/book/new-cities.md",
+      "group": "robotics",
+      "draft": false
+    },
+    {
+      "id": "/book/who-it-earns-for",
+      "type": "chapter",
+      "file": "src/content/docs/book/who-it-earns-for.md",
+      "group": "path",
+      "draft": false
+    },
+    {
+      "id": "/book/cheap-is-wealth",
+      "type": "chapter",
+      "file": "src/content/docs/book/cheap-is-wealth.md",
+      "group": "path",
+      "draft": false
+    },
+    {
+      "id": "/book/direct-democracy",
+      "type": "chapter",
+      "file": "src/content/docs/book/direct-democracy.md",
+      "group": "path",
+      "draft": false
+    },
+    {
+      "id": "/book/safeguards",
+      "type": "chapter",
+      "file": "src/content/docs/book/safeguards.md",
+      "group": "path",
+      "draft": false
+    },
+    {
+      "id": "/book/steering",
+      "type": "chapter",
+      "file": "src/content/docs/book/steering.md",
+      "group": "path",
+      "draft": false
+    },
+    {
+      "id": "/book/choosing-people",
+      "type": "chapter",
+      "file": "src/content/docs/book/choosing-people.md",
+      "group": "path",
+      "draft": false
+    },
+    {
+      "id": "/book/political-path",
+      "type": "chapter",
+      "file": "src/content/docs/book/political-path.md",
+      "group": "path",
+      "draft": false
+    },
+    {
+      "id": "/book/first-move",
+      "type": "chapter",
+      "file": "src/content/docs/book/first-move.md",
+      "group": "path",
+      "draft": false
+    },
+    {
+      "id": "/",
+      "type": "home",
+      "file": "src/pages/index.astro"
+    },
+    {
+      "id": "/home-classic",
+      "type": "page",
+      "file": "src/pages/home-classic.astro",
+      "note": "preview-only, not linked from production nav"
+    },
+    {
+      "id": "/why",
+      "type": "page",
+      "file": "src/pages/why.astro + src/content/docs/why.mdx"
+    },
+    {
+      "id": "/vision",
+      "type": "page",
+      "file": "src/pages/vision/index.astro"
+    },
+    {
+      "id": "/vision/language-integration",
+      "type": "page",
+      "file": "src/pages/vision/language-integration.astro",
+      "note": "301 -> /vision in production"
+    },
+    {
+      "id": "/vision/digital-integration",
+      "type": "page",
+      "file": "src/pages/vision/digital-integration.astro",
+      "note": "301 -> /vision in production"
+    },
+    {
+      "id": "/vision/robotic-reindustrialization",
+      "type": "page",
+      "file": "src/pages/vision/robotic-reindustrialization.astro",
+      "note": "301 -> /vision in production"
+    },
+    {
+      "id": "/benefits",
+      "type": "page",
+      "file": "src/pages/benefits.astro"
+    },
+    {
+      "id": "/principles",
+      "type": "page",
+      "file": "src/pages/principles.astro"
+    },
+    {
+      "id": "/support",
+      "type": "page",
+      "file": "src/pages/support.astro"
+    },
+    {
+      "id": "/manifesto",
+      "type": "manifesto",
+      "file": "src/pages/manifesto.astro + src/content/docs/manifesto.mdx"
+    },
+    {
+      "id": "/book",
+      "type": "page",
+      "file": "src/pages/book/index.astro"
+    },
+    {
+      "id": "/docs",
+      "type": "page",
+      "file": "src/pages/docs/index.astro"
+    },
+    {
+      "id": "/docs/all",
+      "type": "page",
+      "file": "src/pages/docs/all.astro",
+      "note": "hardcoded content, ignores the docs collection entirely"
+    },
+    {
+      "id": "/docs/why",
+      "type": "page",
+      "file": "src/pages/docs/why.astro",
+      "note": "301 -> /why"
+    },
+    {
+      "id": "/docs/for-you",
+      "type": "page",
+      "file": "src/pages/docs/for-you.astro",
+      "note": "meta-refresh -> /benefits"
+    },
+    {
+      "id": "/docs/book",
+      "type": "page",
+      "file": "src/pages/docs/book/index.astro",
+      "note": "301 -> /book"
+    },
+    {
+      "id": "/docs/book/digital-receipts",
+      "type": "page",
+      "file": "src/pages/docs/book/digital-receipts.astro",
+      "note": "redirect -> /book/digital-receipts"
+    },
+    {
+      "id": "/docs/book/economic-growth-language-unity",
+      "type": "page",
+      "file": "src/pages/docs/book/economic-growth-language-unity.astro",
+      "note": "redirect -> /book/economic-growth-language-unity"
+    },
+    {
+      "id": "/docs/book/european-blockchain-archives",
+      "type": "page",
+      "file": "src/pages/docs/book/european-blockchain-archives.astro",
+      "note": "redirect -> /book/european-blockchain-archives"
+    },
+    {
+      "id": "/docs/book/european-elearning-system",
+      "type": "page",
+      "file": "src/pages/docs/book/european-elearning-system.astro",
+      "note": "redirect -> /book/european-elearning-system"
+    },
+    {
+      "id": "/docs/book/language-integration-administrative-implementation",
+      "type": "page",
+      "file": "src/pages/docs/book/language-integration-administrative-implementation.astro",
+      "note": "redirect -> /book/language-integration-administrative-implementation"
+    },
+    {
+      "id": "/docs/book/media-cultural-integration",
+      "type": "page",
+      "file": "src/pages/docs/book/media-cultural-integration.astro",
+      "note": "redirect -> /book/media-cultural-integration"
+    },
+    {
+      "id": "/docs/book/near-zero-transaction-costs",
+      "type": "page",
+      "file": "src/pages/docs/book/near-zero-transaction-costs.astro",
+      "note": "redirect -> /book/near-zero-transaction-costs"
+    },
+    {
+      "id": "/docs/book/predictive-healthcare-system",
+      "type": "page",
+      "file": "src/pages/docs/book/predictive-healthcare-system.astro",
+      "note": "redirect -> /book/predictive-healthcare-system"
+    },
+    {
+      "id": "/docs/book/principles",
+      "type": "page",
+      "file": "src/pages/docs/book/principles.astro",
+      "note": "redirect -> /principles (BUG: goes to the /principles page, not the /book/principles chapter)"
+    },
+    {
+      "id": "/docs/book/unified-payment-zone",
+      "type": "page",
+      "file": "src/pages/docs/book/unified-payment-zone.astro",
+      "note": "redirect -> /book/unified-payment-zone"
+    },
+    {
+      "id": "/docs/ideas",
+      "type": "page",
+      "file": "src/pages/docs/ideas/index.astro",
+      "note": "aggregate node; 10 entries under docs/ideas/* not expanded, out of scope for this report"
+    },
+    {
+      "id": "/docs/articles",
+      "type": "page",
+      "file": "src/pages/docs/articles/index.astro",
+      "note": "aggregate node; 2 entries under docs/articles/* not expanded, out of scope for this report"
+    },
+    {
+      "id": "/docs/reference",
+      "type": "page",
+      "file": "src/pages/docs/reference/index.astro",
+      "note": "aggregate node; 1 entry under docs/reference/* not expanded"
+    },
+    {
+      "id": "/commentary",
+      "type": "page",
+      "file": "src/pages/commentary/index.astro",
+      "note": "redirects to / unless COMMENTARY_PUBLIC=true; hidden from Header nav, devOnly in Footer"
+    },
+    {
+      "id": "/commentary/2026-09-19-euro-office-windows",
+      "type": "commentary",
+      "file": "src/content/commentary/2026-09-19-euro-office-windows.md"
+    },
+    {
+      "id": "/commentary/2026-09-25-europe-must-fill-the-us-security-gap",
+      "type": "commentary",
+      "file": "src/content/commentary/2026-09-25-europe-must-fill-the-us-security-gap.md"
+    },
+    {
+      "id": "/tags",
+      "type": "page",
+      "file": "src/pages/tags.astro",
+      "note": "utility route, content not audited"
+    },
+    {
+      "id": "/search",
+      "type": "page",
+      "file": "src/pages/search.astro",
+      "note": "utility route, content not audited"
+    },
+    {
+      "id": "/privacy",
+      "type": "page",
+      "file": "src/pages/privacy.astro",
+      "note": "utility route, content not audited"
+    },
+    {
+      "id": "/terms",
+      "type": "page",
+      "file": "src/pages/terms.astro",
+      "note": "utility route, content not audited"
+    },
+    {
+      "id": "/confirm",
+      "type": "page",
+      "file": "src/pages/confirm.astro",
+      "note": "utility route, content not audited"
+    },
+    {
+      "id": "/ui",
+      "type": "page",
+      "file": "src/pages/ui/index.astro",
+      "note": "utility route, content not audited"
+    },
+    {
+      "id": "/transcripts",
+      "type": "page",
+      "file": "src/pages/transcripts/index.astro",
+      "note": "utility route, content not audited"
+    },
+    {
+      "id": "(global nav: Header.astro)",
+      "type": "page",
+      "file": "src/components/Header.astro",
+      "note": "synthetic node: represents the global header, rendered on every page. Production links: /, /why, /vision, /benefits, /support. /commentary is devOnly."
+    },
+    {
+      "id": "(global nav: Footer.astro)",
+      "type": "page",
+      "file": "src/components/Footer.astro",
+      "note": "synthetic node: represents the global footer, rendered on every page"
+    }
+  ],
+  "edges": [
+    {
+      "from": "/docs/book/digital-receipts",
+      "to": "/book/digital-receipts",
+      "sourceFile": "src/pages/docs/book/digital-receipts.astro",
+      "sourceLine": 2
+    },
+    {
+      "from": "/docs/book/economic-growth-language-unity",
+      "to": "/book/economic-growth-language-unity",
+      "sourceFile": "src/pages/docs/book/economic-growth-language-unity.astro",
+      "sourceLine": 2
+    },
+    {
+      "from": "/docs/book/european-blockchain-archives",
+      "to": "/book/european-blockchain-archives",
+      "sourceFile": "src/pages/docs/book/european-blockchain-archives.astro",
+      "sourceLine": 2
+    },
+    {
+      "from": "/docs/book/european-elearning-system",
+      "to": "/book/european-elearning-system",
+      "sourceFile": "src/pages/docs/book/european-elearning-system.astro",
+      "sourceLine": 2
+    },
+    {
+      "from": "/docs/book/language-integration-administrative-implementation",
+      "to": "/book/language-integration-administrative-implementation",
+      "sourceFile": "src/pages/docs/book/language-integration-administrative-implementation.astro",
+      "sourceLine": 2
+    },
+    {
+      "from": "/docs/book/media-cultural-integration",
+      "to": "/book/media-cultural-integration",
+      "sourceFile": "src/pages/docs/book/media-cultural-integration.astro",
+      "sourceLine": 2
+    },
+    {
+      "from": "/docs/book/near-zero-transaction-costs",
+      "to": "/book/near-zero-transaction-costs",
+      "sourceFile": "src/pages/docs/book/near-zero-transaction-costs.astro",
+      "sourceLine": 2
+    },
+    {
+      "from": "/docs/book/predictive-healthcare-system",
+      "to": "/book/predictive-healthcare-system",
+      "sourceFile": "src/pages/docs/book/predictive-healthcare-system.astro",
+      "sourceLine": 2
+    },
+    {
+      "from": "/docs/book/principles",
+      "to": "/principles",
+      "sourceFile": "src/pages/docs/book/principles.astro",
+      "sourceLine": 2
+    },
+    {
+      "from": "/docs/book/unified-payment-zone",
+      "to": "/book/unified-payment-zone",
+      "sourceFile": "src/pages/docs/book/unified-payment-zone.astro",
+      "sourceLine": 2
+    },
+    {
+      "from": "/docs/why",
+      "to": "/why",
+      "sourceFile": "src/pages/docs/why.astro",
+      "sourceLine": 2
+    },
+    {
+      "from": "/docs/for-you",
+      "to": "/benefits",
+      "sourceFile": "src/pages/docs/for-you.astro",
+      "sourceLine": 4
+    },
+    {
+      "from": "/docs/book",
+      "to": "/book",
+      "sourceFile": "src/pages/docs/book/index.astro",
+      "sourceLine": 2
+    },
+    {
+      "from": "/commentary",
+      "to": "/commentary/2026-09-19-euro-office-windows",
+      "sourceFile": "src/pages/commentary/index.astro",
+      "sourceLine": 22
+    },
+    {
+      "from": "/commentary",
+      "to": "/commentary/2026-09-25-europe-must-fill-the-us-security-gap",
+      "sourceFile": "src/pages/commentary/index.astro",
+      "sourceLine": 22
+    },
+    {
+      "from": "/",
+      "to": "/why",
+      "sourceFile": "src/pages/index.astro",
+      "sourceLine": 55
+    },
+    {
+      "from": "/",
+      "to": "/benefits",
+      "sourceFile": "src/pages/index.astro",
+      "sourceLine": 64
+    },
+    {
+      "from": "/",
+      "to": "/vision",
+      "sourceFile": "src/pages/index.astro",
+      "sourceLine": 73
+    },
+    {
+      "from": "/",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/pages/index.astro",
+      "sourceLine": 93
+    },
+    {
+      "from": "/",
+      "to": "/why",
+      "sourceFile": "src/pages/index.astro",
+      "sourceLine": 132
+    },
+    {
+      "from": "/",
+      "to": "/book/robotic-reindustrialisation",
+      "sourceFile": "src/pages/index.astro",
+      "sourceLine": 143
+    },
+    {
+      "from": "/",
+      "to": "/benefits",
+      "sourceFile": "src/pages/index.astro",
+      "sourceLine": 154
+    },
+    {
+      "from": "/home-classic",
+      "to": "/why",
+      "sourceFile": "src/pages/home-classic.astro",
+      "sourceLine": 68
+    },
+    {
+      "from": "/home-classic",
+      "to": "/benefits",
+      "sourceFile": "src/pages/home-classic.astro",
+      "sourceLine": 77
+    },
+    {
+      "from": "/home-classic",
+      "to": "/vision",
+      "sourceFile": "src/pages/home-classic.astro",
+      "sourceLine": 86
+    },
+    {
+      "from": "/home-classic",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/pages/home-classic.astro",
+      "sourceLine": 106
+    },
+    {
+      "from": "/home-classic",
+      "to": "/book/european-english",
+      "sourceFile": "src/pages/home-classic.astro",
+      "sourceLine": 127
+    },
+    {
+      "from": "/home-classic",
+      "to": "/book/european-egovernment",
+      "sourceFile": "src/pages/home-classic.astro",
+      "sourceLine": 138
+    },
+    {
+      "from": "/home-classic",
+      "to": "/book/robotic-reindustrialisation",
+      "sourceFile": "src/pages/home-classic.astro",
+      "sourceLine": 149
+    },
+    {
+      "from": "/home-classic",
+      "to": "/why",
+      "sourceFile": "src/pages/home-classic.astro",
+      "sourceLine": 177
+    },
+    {
+      "from": "/home-classic",
+      "to": "/benefits/european-integration",
+      "sourceFile": "src/pages/home-classic.astro",
+      "sourceLine": 200
+    },
+    {
+      "from": "/home-classic",
+      "to": "/benefits/germany",
+      "sourceFile": "src/pages/home-classic.astro",
+      "sourceLine": 209
+    },
+    {
+      "from": "/why",
+      "to": "/vision",
+      "sourceFile": "src/pages/why.astro",
+      "sourceLine": 22
+    },
+    {
+      "from": "/why",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/content/docs/why.mdx",
+      "sourceLine": 40
+    },
+    {
+      "from": "/why",
+      "to": "/vision",
+      "sourceFile": "src/content/docs/why.mdx",
+      "sourceLine": 42
+    },
+    {
+      "from": "/why",
+      "to": "/book/political-path",
+      "sourceFile": "src/content/docs/why.mdx",
+      "sourceLine": 186
+    },
+    {
+      "from": "/",
+      "to": "/book/european-english",
+      "sourceFile": "src/lib/vision-content.ts",
+      "sourceLine": 96
+    },
+    {
+      "from": "/",
+      "to": "/book/european-egovernment",
+      "sourceFile": "src/lib/vision-content.ts",
+      "sourceLine": 118
+    },
+    {
+      "from": "/",
+      "to": "/book/robotic-reindustrialisation",
+      "sourceFile": "src/lib/vision-content.ts",
+      "sourceLine": 146
+    },
+    {
+      "from": "/",
+      "to": "/why",
+      "sourceFile": "src/lib/vision-content.ts",
+      "sourceLine": 182
+    },
+    {
+      "from": "/",
+      "to": "/benefits",
+      "sourceFile": "src/lib/vision-content.ts",
+      "sourceLine": 183
+    },
+    {
+      "from": "/",
+      "to": "/principles",
+      "sourceFile": "src/lib/vision-content.ts",
+      "sourceLine": 184
+    },
+    {
+      "from": "/",
+      "to": "/support",
+      "sourceFile": "src/lib/vision-content.ts",
+      "sourceLine": 185
+    },
+    {
+      "from": "/vision",
+      "to": "/book/european-english",
+      "sourceFile": "src/lib/vision-content.ts",
+      "sourceLine": 96
+    },
+    {
+      "from": "/vision",
+      "to": "/book/european-egovernment",
+      "sourceFile": "src/lib/vision-content.ts",
+      "sourceLine": 118
+    },
+    {
+      "from": "/vision",
+      "to": "/book/robotic-reindustrialisation",
+      "sourceFile": "src/lib/vision-content.ts",
+      "sourceLine": 146
+    },
+    {
+      "from": "/vision",
+      "to": "/why",
+      "sourceFile": "src/lib/vision-content.ts",
+      "sourceLine": 182
+    },
+    {
+      "from": "/vision",
+      "to": "/benefits",
+      "sourceFile": "src/lib/vision-content.ts",
+      "sourceLine": 183
+    },
+    {
+      "from": "/vision",
+      "to": "/principles",
+      "sourceFile": "src/lib/vision-content.ts",
+      "sourceLine": 184
+    },
+    {
+      "from": "/vision",
+      "to": "/support",
+      "sourceFile": "src/lib/vision-content.ts",
+      "sourceLine": 185
+    },
+    {
+      "from": "/vision/language-integration",
+      "to": "/vision",
+      "sourceFile": "src/pages/vision/language-integration.astro",
+      "sourceLine": 13
+    },
+    {
+      "from": "/vision/language-integration",
+      "to": "/book/european-english",
+      "sourceFile": "src/pages/vision/language-integration.astro",
+      "sourceLine": 206
+    },
+    {
+      "from": "/vision/language-integration",
+      "to": "/book/language-integration-administrative-implementation",
+      "sourceFile": "src/pages/vision/language-integration.astro",
+      "sourceLine": 207
+    },
+    {
+      "from": "/vision/language-integration",
+      "to": "/book/media-cultural-integration",
+      "sourceFile": "src/pages/vision/language-integration.astro",
+      "sourceLine": 208
+    },
+    {
+      "from": "/vision/language-integration",
+      "to": "/book/economic-growth-language-unity",
+      "sourceFile": "src/pages/vision/language-integration.astro",
+      "sourceLine": 209
+    },
+    {
+      "from": "/vision/language-integration",
+      "to": "/book/language",
+      "sourceFile": "src/pages/vision/language-integration.astro",
+      "sourceLine": 210
+    },
+    {
+      "from": "/vision/language-integration",
+      "to": "/vision/digital-integration",
+      "sourceFile": "src/pages/vision/language-integration.astro",
+      "sourceLine": 221
+    },
+    {
+      "from": "/vision/language-integration",
+      "to": "/vision/robotic-reindustrialization",
+      "sourceFile": "src/pages/vision/language-integration.astro",
+      "sourceLine": 230
+    },
+    {
+      "from": "/vision/digital-integration",
+      "to": "/vision",
+      "sourceFile": "src/pages/vision/digital-integration.astro",
+      "sourceLine": 15
+    },
+    {
+      "from": "/vision/robotic-reindustrialization",
+      "to": "/vision",
+      "sourceFile": "src/pages/vision/robotic-reindustrialization.astro",
+      "sourceLine": 15
+    },
+    {
+      "from": "/vision/robotic-reindustrialization",
+      "to": "/book/robotic-reindustrialisation",
+      "sourceFile": "src/pages/vision/robotic-reindustrialization.astro",
+      "sourceLine": 157
+    },
+    {
+      "from": "/benefits",
+      "to": "/why",
+      "sourceFile": "src/pages/benefits.astro",
+      "sourceLine": 23
+    },
+    {
+      "from": "/principles",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/pages/principles.astro",
+      "sourceLine": 143
+    },
+    {
+      "from": "/principles",
+      "to": "/vision",
+      "sourceFile": "src/pages/principles.astro",
+      "sourceLine": 208
+    },
+    {
+      "from": "/support",
+      "to": "/support",
+      "sourceFile": "src/pages/support.astro",
+      "sourceLine": 306
+    },
+    {
+      "from": "/manifesto",
+      "to": "/vision",
+      "sourceFile": "src/pages/manifesto.astro",
+      "sourceLine": 40
+    },
+    {
+      "from": "/manifesto",
+      "to": "/principles",
+      "sourceFile": "src/pages/manifesto.astro",
+      "sourceLine": 41
+    },
+    {
+      "from": "/manifesto",
+      "to": "/book/the-total-state",
+      "sourceFile": "src/content/docs/manifesto.mdx",
+      "sourceLine": 223
+    },
+    {
+      "from": "/manifesto",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/content/docs/manifesto.mdx",
+      "sourceLine": 224
+    },
+    {
+      "from": "/book",
+      "to": "/vision",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 88
+    },
+    {
+      "from": "/book",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 105
+    },
+    {
+      "from": "/book",
+      "to": "/book",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 108
+    },
+    {
+      "from": "/book",
+      "to": "/vision",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 140
+    },
+    {
+      "from": "/book",
+      "to": "/why",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 147
+    },
+    {
+      "from": "/book",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/principles",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/redesigning-the-state",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/education-and-migration",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/european-english",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/the-total-state",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/european-egovernment",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/eGov-challenges",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/robotic-reindustrialisation",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/european-science",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/the-shorter-week",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/new-cities",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/who-it-earns-for",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/cheap-is-wealth",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/safeguards",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/steering",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/choosing-people",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/political-path",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/book",
+      "to": "/book/first-move",
+      "sourceFile": "src/pages/book/index.astro",
+      "sourceLine": 120
+    },
+    {
+      "from": "/docs",
+      "to": "/docs/all",
+      "sourceFile": "src/pages/docs/index.astro",
+      "sourceLine": 75
+    },
+    {
+      "from": "/docs/all",
+      "to": "/docs/ideas/culture/language-integration",
+      "sourceFile": "src/pages/docs/all.astro",
+      "sourceLine": 141
+    },
+    {
+      "from": "/docs/all",
+      "to": "/book/language-integration-administrative-implementation",
+      "sourceFile": "src/pages/docs/all.astro",
+      "sourceLine": 142
+    },
+    {
+      "from": "/docs/all",
+      "to": "/book/media-cultural-integration",
+      "sourceFile": "src/pages/docs/all.astro",
+      "sourceLine": 143
+    },
+    {
+      "from": "/docs/all",
+      "to": "/book/economic-growth-language-unity",
+      "sourceFile": "src/pages/docs/all.astro",
+      "sourceLine": 144
+    },
+    {
+      "from": "/docs/all",
+      "to": "/book/egov-vison",
+      "sourceFile": "src/pages/docs/all.astro",
+      "sourceLine": 151
+    },
+    {
+      "from": "/docs/all",
+      "to": "/book/egov-challenges",
+      "sourceFile": "src/pages/docs/all.astro",
+      "sourceLine": 152
+    },
+    {
+      "from": "/docs/all",
+      "to": "/book/predictive-healthcare-system",
+      "sourceFile": "src/pages/docs/all.astro",
+      "sourceLine": 159
+    },
+    {
+      "from": "/docs/all",
+      "to": "/book/european-elearning-system",
+      "sourceFile": "src/pages/docs/all.astro",
+      "sourceLine": 160
+    },
+    {
+      "from": "/docs/all",
+      "to": "/book/european-blockchain-archives",
+      "sourceFile": "src/pages/docs/all.astro",
+      "sourceLine": 161
+    },
+    {
+      "from": "/docs/all",
+      "to": "/book/unified-payment-zone",
+      "sourceFile": "src/pages/docs/all.astro",
+      "sourceLine": 177
+    },
+    {
+      "from": "/docs/all",
+      "to": "/book/near-zero-transaction-costs",
+      "sourceFile": "src/pages/docs/all.astro",
+      "sourceLine": 178
+    },
+    {
+      "from": "/docs/all",
+      "to": "/book/digital-receipts",
+      "sourceFile": "src/pages/docs/all.astro",
+      "sourceLine": 179
+    },
+    {
+      "from": "/docs/ideas",
+      "to": "/docs",
+      "sourceFile": "src/pages/docs/ideas/index.astro",
+      "sourceLine": 45
+    },
+    {
+      "from": "/docs/ideas",
+      "to": "/docs/all",
+      "sourceFile": "src/pages/docs/ideas/index.astro",
+      "sourceLine": 111
+    },
+    {
+      "from": "/docs/articles",
+      "to": "/docs",
+      "sourceFile": "src/pages/docs/articles/index.astro",
+      "sourceLine": 17
+    },
+    {
+      "from": "/docs/articles",
+      "to": "/book",
+      "sourceFile": "src/pages/docs/articles/index.astro",
+      "sourceLine": 60
+    },
+    {
+      "from": "/docs/articles",
+      "to": "/docs/all",
+      "sourceFile": "src/pages/docs/articles/index.astro",
+      "sourceLine": 63
+    },
+    {
+      "from": "/docs/reference",
+      "to": "/docs",
+      "sourceFile": "src/pages/docs/reference/index.astro",
+      "sourceLine": 17
+    },
+    {
+      "from": "/docs/reference",
+      "to": "/docs/all",
+      "sourceFile": "src/pages/docs/reference/index.astro",
+      "sourceLine": 90
+    },
+    {
+      "from": "/confirm",
+      "to": "/",
+      "sourceFile": "src/pages/confirm.astro",
+      "sourceLine": 67
+    },
+    {
+      "from": "(global nav: Header.astro)",
+      "to": "/why",
+      "sourceFile": "src/components/Header.astro",
+      "sourceLine": 13
+    },
+    {
+      "from": "(global nav: Header.astro)",
+      "to": "/vision",
+      "sourceFile": "src/components/Header.astro",
+      "sourceLine": 13
+    },
+    {
+      "from": "(global nav: Header.astro)",
+      "to": "/benefits",
+      "sourceFile": "src/components/Header.astro",
+      "sourceLine": 13
+    },
+    {
+      "from": "(global nav: Header.astro)",
+      "to": "/support",
+      "sourceFile": "src/components/Header.astro",
+      "sourceLine": 13
+    },
+    {
+      "from": "(global nav: Footer.astro)",
+      "to": "/",
+      "sourceFile": "src/components/Footer.astro",
+      "sourceLine": 16
+    },
+    {
+      "from": "(global nav: Footer.astro)",
+      "to": "/manifesto",
+      "sourceFile": "src/components/Footer.astro",
+      "sourceLine": 17
+    },
+    {
+      "from": "(global nav: Footer.astro)",
+      "to": "/why",
+      "sourceFile": "src/components/Footer.astro",
+      "sourceLine": 18
+    },
+    {
+      "from": "(global nav: Footer.astro)",
+      "to": "/vision",
+      "sourceFile": "src/components/Footer.astro",
+      "sourceLine": 19
+    },
+    {
+      "from": "(global nav: Footer.astro)",
+      "to": "/benefits",
+      "sourceFile": "src/components/Footer.astro",
+      "sourceLine": 20
+    },
+    {
+      "from": "(global nav: Footer.astro)",
+      "to": "/principles",
+      "sourceFile": "src/components/Footer.astro",
+      "sourceLine": 21
+    },
+    {
+      "from": "(global nav: Footer.astro)",
+      "to": "/transcripts",
+      "sourceFile": "src/components/Footer.astro",
+      "sourceLine": 29
+    },
+    {
+      "from": "(global nav: Footer.astro)",
+      "to": "/support",
+      "sourceFile": "src/components/Footer.astro",
+      "sourceLine": 30
+    },
+    {
+      "from": "(global nav: Footer.astro)",
+      "to": "/tags",
+      "sourceFile": "src/components/Footer.astro",
+      "sourceLine": 105
+    },
+    {
+      "from": "(global nav: Footer.astro)",
+      "to": "/privacy",
+      "sourceFile": "src/components/Footer.astro",
+      "sourceLine": 106
+    },
+    {
+      "from": "(global nav: Footer.astro)",
+      "to": "/terms",
+      "sourceFile": "src/components/Footer.astro",
+      "sourceLine": 107
+    },
+    {
+      "from": "/book/cheap-is-wealth",
+      "to": "/book/who-it-earns-for",
+      "sourceFile": "src/content/docs/book/cheap-is-wealth.md",
+      "sourceLine": 25
+    },
+    {
+      "from": "/book/cheap-is-wealth",
+      "to": "/book/robotic-reindustrialisation",
+      "sourceFile": "src/content/docs/book/cheap-is-wealth.md",
+      "sourceLine": 51
+    },
+    {
+      "from": "/book/cheap-is-wealth",
+      "to": "/book/who-it-earns-for",
+      "sourceFile": "src/content/docs/book/cheap-is-wealth.md",
+      "sourceLine": 155
+    },
+    {
+      "from": "/book/cheap-is-wealth",
+      "to": "/book/the-shorter-week",
+      "sourceFile": "src/content/docs/book/cheap-is-wealth.md",
+      "sourceLine": 161
+    },
+    {
+      "from": "/book/cheap-is-wealth",
+      "to": "/vision",
+      "sourceFile": "src/content/docs/book/cheap-is-wealth.md",
+      "sourceLine": 181
+    },
+    {
+      "from": "/book/cheap-is-wealth",
+      "to": "/book/who-it-earns-for",
+      "sourceFile": "src/content/docs/book/cheap-is-wealth.md",
+      "sourceLine": 182
+    },
+    {
+      "from": "/book/cheap-is-wealth",
+      "to": "/book/the-shorter-week",
+      "sourceFile": "src/content/docs/book/cheap-is-wealth.md",
+      "sourceLine": 183
+    },
+    {
+      "from": "/book/cheap-is-wealth",
+      "to": "/book/robotic-reindustrialisation",
+      "sourceFile": "src/content/docs/book/cheap-is-wealth.md",
+      "sourceLine": 184
+    },
+    {
+      "from": "/book/cheap-is-wealth",
+      "to": "/manifesto",
+      "sourceFile": "src/content/docs/book/cheap-is-wealth.md",
+      "sourceLine": 185
+    },
+    {
+      "from": "/book/choosing-people",
+      "to": "/book/steering",
+      "sourceFile": "src/content/docs/book/choosing-people.md",
+      "sourceLine": 24
+    },
+    {
+      "from": "/book/choosing-people",
+      "to": "/manifesto",
+      "sourceFile": "src/content/docs/book/choosing-people.md",
+      "sourceLine": 262
+    },
+    {
+      "from": "/book/choosing-people",
+      "to": "/vision",
+      "sourceFile": "src/content/docs/book/choosing-people.md",
+      "sourceLine": 296
+    },
+    {
+      "from": "/book/choosing-people",
+      "to": "/book/steering",
+      "sourceFile": "src/content/docs/book/choosing-people.md",
+      "sourceLine": 296
+    },
+    {
+      "from": "/book/choosing-people",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/content/docs/book/choosing-people.md",
+      "sourceLine": 298
+    },
+    {
+      "from": "/book/choosing-people",
+      "to": "/book/safeguards",
+      "sourceFile": "src/content/docs/book/choosing-people.md",
+      "sourceLine": 299
+    },
+    {
+      "from": "/book/choosing-people",
+      "to": "/manifesto",
+      "sourceFile": "src/content/docs/book/choosing-people.md",
+      "sourceLine": 300
+    },
+    {
+      "from": "/book/designing-our-retirement",
+      "to": "/book/european-english",
+      "sourceFile": "src/content/docs/book/designing-our-retirement.md",
+      "sourceLine": 187
+    },
+    {
+      "from": "/book/designing-our-retirement",
+      "to": "/book/european-egovernment",
+      "sourceFile": "src/content/docs/book/designing-our-retirement.md",
+      "sourceLine": 188
+    },
+    {
+      "from": "/book/designing-our-retirement",
+      "to": "/book/political-path",
+      "sourceFile": "src/content/docs/book/designing-our-retirement.md",
+      "sourceLine": 191
+    },
+    {
+      "from": "/book/direct-democracy",
+      "to": "/book/safeguards",
+      "sourceFile": "src/content/docs/book/direct-democracy.md",
+      "sourceLine": 159
+    },
+    {
+      "from": "/book/direct-democracy",
+      "to": "/book/safeguards",
+      "sourceFile": "src/content/docs/book/direct-democracy.md",
+      "sourceLine": 183
+    },
+    {
+      "from": "/book/direct-democracy",
+      "to": "/book/safeguards",
+      "sourceFile": "src/content/docs/book/direct-democracy.md",
+      "sourceLine": 313
+    },
+    {
+      "from": "/book/direct-democracy",
+      "to": "/book/first-move",
+      "sourceFile": "src/content/docs/book/direct-democracy.md",
+      "sourceLine": 313
+    },
+    {
+      "from": "/book/direct-democracy",
+      "to": "/vision",
+      "sourceFile": "src/content/docs/book/direct-democracy.md",
+      "sourceLine": 364
+    },
+    {
+      "from": "/book/direct-democracy",
+      "to": "/book/political-path",
+      "sourceFile": "src/content/docs/book/direct-democracy.md",
+      "sourceLine": 365
+    },
+    {
+      "from": "/book/direct-democracy",
+      "to": "/book/the-total-state",
+      "sourceFile": "src/content/docs/book/direct-democracy.md",
+      "sourceLine": 366
+    },
+    {
+      "from": "/book/direct-democracy",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/content/docs/book/direct-democracy.md",
+      "sourceLine": 368
+    },
+    {
+      "from": "/book/direct-democracy",
+      "to": "/why",
+      "sourceFile": "src/content/docs/book/direct-democracy.md",
+      "sourceLine": 370
+    },
+    {
+      "from": "/book/education-and-migration",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/content/docs/book/education-and-migration.md",
+      "sourceLine": 12
+    },
+    {
+      "from": "/book/education-and-migration",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/content/docs/book/education-and-migration.md",
+      "sourceLine": 112
+    },
+    {
+      "from": "/book/education-and-migration",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/content/docs/book/education-and-migration.md",
+      "sourceLine": 206
+    },
+    {
+      "from": "/book/education-and-migration",
+      "to": "/book/political-path",
+      "sourceFile": "src/content/docs/book/education-and-migration.md",
+      "sourceLine": 232
+    },
+    {
+      "from": "/book/education-and-migration",
+      "to": "/vision",
+      "sourceFile": "src/content/docs/book/education-and-migration.md",
+      "sourceLine": 265
+    },
+    {
+      "from": "/book/education-and-migration",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/content/docs/book/education-and-migration.md",
+      "sourceLine": 266
+    },
+    {
+      "from": "/book/education-and-migration",
+      "to": "/why",
+      "sourceFile": "src/content/docs/book/education-and-migration.md",
+      "sourceLine": 267
+    },
+    {
+      "from": "/book/education-and-migration",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/content/docs/book/education-and-migration.md",
+      "sourceLine": 270
+    },
+    {
+      "from": "/book/european-science",
+      "to": "/book/european-english",
+      "sourceFile": "src/content/docs/book/european-science.md",
+      "sourceLine": 29
+    },
+    {
+      "from": "/book/european-science",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/content/docs/book/european-science.md",
+      "sourceLine": 40
+    },
+    {
+      "from": "/book/european-science",
+      "to": "/vision",
+      "sourceFile": "src/content/docs/book/european-science.md",
+      "sourceLine": 168
+    },
+    {
+      "from": "/book/european-science",
+      "to": "/book/european-english",
+      "sourceFile": "src/content/docs/book/european-science.md",
+      "sourceLine": 169
+    },
+    {
+      "from": "/book/european-science",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/content/docs/book/european-science.md",
+      "sourceLine": 170
+    },
+    {
+      "from": "/book/first-move",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/content/docs/book/first-move.md",
+      "sourceLine": 12
+    },
+    {
+      "from": "/book/first-move",
+      "to": "/book/political-path",
+      "sourceFile": "src/content/docs/book/first-move.md",
+      "sourceLine": 231
+    },
+    {
+      "from": "/book/first-move",
+      "to": "/vision",
+      "sourceFile": "src/content/docs/book/first-move.md",
+      "sourceLine": 250
+    },
+    {
+      "from": "/book/first-move",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/content/docs/book/first-move.md",
+      "sourceLine": 251
+    },
+    {
+      "from": "/book/first-move",
+      "to": "/book/political-path",
+      "sourceFile": "src/content/docs/book/first-move.md",
+      "sourceLine": 252
+    },
+    {
+      "from": "/book/first-move",
+      "to": "/manifesto",
+      "sourceFile": "src/content/docs/book/first-move.md",
+      "sourceLine": 253
+    },
+    {
+      "from": "/book/political-path",
+      "to": "/vision",
+      "sourceFile": "src/content/docs/book/political-path.md",
+      "sourceLine": 197
+    },
+    {
+      "from": "/book/political-path",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/content/docs/book/political-path.md",
+      "sourceLine": 198
+    },
+    {
+      "from": "/book/political-path",
+      "to": "/book/the-total-state",
+      "sourceFile": "src/content/docs/book/political-path.md",
+      "sourceLine": 202
+    },
+    {
+      "from": "/book/redesigning-the-state",
+      "to": "/manifesto",
+      "sourceFile": "src/content/docs/book/redesigning-the-state.md",
+      "sourceLine": 88
+    },
+    {
+      "from": "/book/redesigning-the-state",
+      "to": "/book/the-total-state",
+      "sourceFile": "src/content/docs/book/redesigning-the-state.md",
+      "sourceLine": 97
+    },
+    {
+      "from": "/book/redesigning-the-state",
+      "to": "/vision",
+      "sourceFile": "src/content/docs/book/redesigning-the-state.md",
+      "sourceLine": 218
+    },
+    {
+      "from": "/book/redesigning-the-state",
+      "to": "/book/the-total-state",
+      "sourceFile": "src/content/docs/book/redesigning-the-state.md",
+      "sourceLine": 219
+    },
+    {
+      "from": "/book/redesigning-the-state",
+      "to": "/book/steering",
+      "sourceFile": "src/content/docs/book/redesigning-the-state.md",
+      "sourceLine": 220
+    },
+    {
+      "from": "/book/redesigning-the-state",
+      "to": "/manifesto",
+      "sourceFile": "src/content/docs/book/redesigning-the-state.md",
+      "sourceLine": 221
+    },
+    {
+      "from": "/book/robotic-reindustrialisation",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/content/docs/book/robotic-reindustrialisation.md",
+      "sourceLine": 11
+    },
+    {
+      "from": "/book/robotic-reindustrialisation",
+      "to": "/book/european-english",
+      "sourceFile": "src/content/docs/book/robotic-reindustrialisation.md",
+      "sourceLine": 13
+    },
+    {
+      "from": "/book/robotic-reindustrialisation",
+      "to": "/book/european-egovernment",
+      "sourceFile": "src/content/docs/book/robotic-reindustrialisation.md",
+      "sourceLine": 15
+    },
+    {
+      "from": "/book/robotic-reindustrialisation",
+      "to": "/vision",
+      "sourceFile": "src/content/docs/book/robotic-reindustrialisation.md",
+      "sourceLine": 154
+    },
+    {
+      "from": "/book/robotic-reindustrialisation",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/content/docs/book/robotic-reindustrialisation.md",
+      "sourceLine": 155
+    },
+    {
+      "from": "/book/robotic-reindustrialisation",
+      "to": "/book/political-path",
+      "sourceFile": "src/content/docs/book/robotic-reindustrialisation.md",
+      "sourceLine": 156
+    },
+    {
+      "from": "/book/safeguards",
+      "to": "/vision",
+      "sourceFile": "src/content/docs/book/safeguards.md",
+      "sourceLine": 398
+    },
+    {
+      "from": "/book/safeguards",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/content/docs/book/safeguards.md",
+      "sourceLine": 399
+    },
+    {
+      "from": "/book/safeguards",
+      "to": "/book/the-total-state",
+      "sourceFile": "src/content/docs/book/safeguards.md",
+      "sourceLine": 400
+    },
+    {
+      "from": "/book/steering",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/content/docs/book/steering.md",
+      "sourceLine": 112
+    },
+    {
+      "from": "/book/steering",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/content/docs/book/steering.md",
+      "sourceLine": 125
+    },
+    {
+      "from": "/book/steering",
+      "to": "/book/safeguards",
+      "sourceFile": "src/content/docs/book/steering.md",
+      "sourceLine": 126
+    },
+    {
+      "from": "/book/steering",
+      "to": "/book/the-total-state",
+      "sourceFile": "src/content/docs/book/steering.md",
+      "sourceLine": 276
+    },
+    {
+      "from": "/book/steering",
+      "to": "/vision",
+      "sourceFile": "src/content/docs/book/steering.md",
+      "sourceLine": 287
+    },
+    {
+      "from": "/book/steering",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/content/docs/book/steering.md",
+      "sourceLine": 288
+    },
+    {
+      "from": "/book/steering",
+      "to": "/book/political-path",
+      "sourceFile": "src/content/docs/book/steering.md",
+      "sourceLine": 289
+    },
+    {
+      "from": "/book/steering",
+      "to": "/book/the-total-state",
+      "sourceFile": "src/content/docs/book/steering.md",
+      "sourceLine": 290
+    },
+    {
+      "from": "/book/steering",
+      "to": "/manifesto",
+      "sourceFile": "src/content/docs/book/steering.md",
+      "sourceLine": 292
+    },
+    {
+      "from": "/book/the-shorter-week",
+      "to": "/book/robotic-reindustrialisation",
+      "sourceFile": "src/content/docs/book/the-shorter-week.md",
+      "sourceLine": 52
+    },
+    {
+      "from": "/book/the-shorter-week",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/content/docs/book/the-shorter-week.md",
+      "sourceLine": 105
+    },
+    {
+      "from": "/book/the-shorter-week",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/content/docs/book/the-shorter-week.md",
+      "sourceLine": 121
+    },
+    {
+      "from": "/book/the-shorter-week",
+      "to": "/manifesto",
+      "sourceFile": "src/content/docs/book/the-shorter-week.md",
+      "sourceLine": 201
+    },
+    {
+      "from": "/book/the-total-state",
+      "to": "/vision",
+      "sourceFile": "src/content/docs/book/the-total-state.md",
+      "sourceLine": 215
+    },
+    {
+      "from": "/book/the-total-state",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/content/docs/book/the-total-state.md",
+      "sourceLine": 216
+    },
+    {
+      "from": "/book/the-total-state",
+      "to": "/book/political-path",
+      "sourceFile": "src/content/docs/book/the-total-state.md",
+      "sourceLine": 217
+    },
+    {
+      "from": "/book/the-total-state",
+      "to": "/book/european-egovernment",
+      "sourceFile": "src/content/docs/book/the-total-state.md",
+      "sourceLine": 219
+    },
+    {
+      "from": "/book/who-it-earns-for",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/content/docs/book/who-it-earns-for.md",
+      "sourceLine": 13
+    },
+    {
+      "from": "/book/who-it-earns-for",
+      "to": "/book/robotic-reindustrialisation",
+      "sourceFile": "src/content/docs/book/who-it-earns-for.md",
+      "sourceLine": 81
+    },
+    {
+      "from": "/book/who-it-earns-for",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/content/docs/book/who-it-earns-for.md",
+      "sourceLine": 113
+    },
+    {
+      "from": "/book/who-it-earns-for",
+      "to": "/book/robotic-reindustrialisation",
+      "sourceFile": "src/content/docs/book/who-it-earns-for.md",
+      "sourceLine": 117
+    },
+    {
+      "from": "/book/who-it-earns-for",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/content/docs/book/who-it-earns-for.md",
+      "sourceLine": 131
+    },
+    {
+      "from": "/book/who-it-earns-for",
+      "to": "/book/political-path",
+      "sourceFile": "src/content/docs/book/who-it-earns-for.md",
+      "sourceLine": 237
+    },
+    {
+      "from": "/book/who-it-earns-for",
+      "to": "/vision",
+      "sourceFile": "src/content/docs/book/who-it-earns-for.md",
+      "sourceLine": 260
+    },
+    {
+      "from": "/book/who-it-earns-for",
+      "to": "/book/designing-our-retirement",
+      "sourceFile": "src/content/docs/book/who-it-earns-for.md",
+      "sourceLine": 261
+    },
+    {
+      "from": "/book/who-it-earns-for",
+      "to": "/book/robotic-reindustrialisation",
+      "sourceFile": "src/content/docs/book/who-it-earns-for.md",
+      "sourceLine": 262
+    },
+    {
+      "from": "/book/who-it-earns-for",
+      "to": "/book/direct-democracy",
+      "sourceFile": "src/content/docs/book/who-it-earns-for.md",
+      "sourceLine": 264
+    },
+    {
+      "from": "/book/who-it-earns-for",
+      "to": "/manifesto",
+      "sourceFile": "src/content/docs/book/who-it-earns-for.md",
+      "sourceLine": 266
+    },
+    {
+      "from": "/book/european-egovernment",
+      "to": "/book/the-total-state",
+      "sourceFile": "src/content/docs/book/european-egovernment.mdx",
+      "sourceLine": 118
+    },
+    {
+      "from": "/book/european-english",
+      "to": "/vision/language-integration",
+      "sourceFile": "src/content/docs/book/european-english.mdx",
+      "sourceLine": 213
+    },
+    {
+      "from": "/book/european-english",
+      "to": "/book/language-integration-administrative-implementation",
+      "sourceFile": "src/content/docs/book/european-english.mdx",
+      "sourceLine": 214
+    },
+    {
+      "from": "/book/european-english",
+      "to": "/book/media-cultural-integration",
+      "sourceFile": "src/content/docs/book/european-english.mdx",
+      "sourceLine": 215
+    },
+    {
+      "from": "/book/european-english",
+      "to": "/book/economic-growth-language-unity",
+      "sourceFile": "src/content/docs/book/european-english.mdx",
+      "sourceLine": 216
+    },
+    {
+      "from": "/book/european-english",
+      "to": "/book/language",
+      "sourceFile": "src/content/docs/book/european-english.mdx",
+      "sourceLine": 217
+    }
+  ],
+  "notes": {
+    "duplicateRouteMechanisms": [
+      {
+        "finding": "docs/all.astro links to /book/egov-vison and /book/egov-challenges (lowercase) while the chapter files are eGov-vison.mdx / eGov-challenges.mdx and book/index.astro GROUPS spells them with capital G/V. If Astro's default collection slug does NOT lowercase the \"eGov\" segment, these two links 404; if it does, then book/index.astro GROUPS (which uses the mixed-case spelling) silently fails to find them and they vanish from the /book index despite draft:false. Either way one of the two mappings is wrong. Unverified without a build — see GAPS.",
+        "files": [
+          "src/pages/docs/all.astro:151-152",
+          "src/pages/book/index.astro:36-37",
+          "src/content/docs/book/eGov-vison.mdx",
+          "src/content/docs/book/eGov-challenges.mdx"
+        ]
+      },
+      {
+        "finding": "Footer.astro devOnly links (not rendered in production): /book, /commentary, /ui, and the entire \"Topics\" section (the three deprecated /vision/<layer> preview pages plus 4 docs/ideas & book links). In production the footer has NO link to /book at all — the book index is reachable only from in-page CTAs on /, /why, /vision, /principles and cross-links inside chapters, never from global nav.",
+        "files": [
+          "src/components/Footer.astro:27-46"
+        ]
+      },
+      {
+        "finding": "src/pages/docs/[...slug].astro generates a /docs/<entry.slug> route for EVERY non-draft docs collection entry, with no folder filter (entry.data.draft check only). This means every published book chapter is ALSO reachable at /docs/book/<slug> via this catch-all -- a live collision with the 10 explicit redirect wrapper pages at the same path (src/pages/docs/book/<slug>.astro), and every non-book docs entry (why, manifesto, index, all, reference/index, support/time-is-running-out, why/scale, and 10+ ideas/articles entries) gets a second URL under /docs/ that duplicates its dedicated page. Entries with a customSlug (european-english, language, why) get a THIRD alternate path (e.g. /docs/why-reforms). Whether the static wrapper or the dynamic catch-all wins the /docs/book/<slug> collision at build time is unverified -- see GAPS.",
+        "files": [
+          "src/pages/docs/[...slug].astro:7-52",
+          "src/content/docs/why.mdx:6 (customSlug: why-reforms)",
+          "src/content/docs/book/european-english.mdx:6 (customSlug: european-english)",
+          "src/content/docs/book/language.md:7 (customSlug: language-official-proposal)"
+        ]
+      },
+      {
+        "finding": "/book/principles (chapter, draft:false, title \"Vision for European Cooperation and Integration\") and /principles (page, \"Guiding Principles for European Integration\") are two different, partly-contradictory documents that share the word \"principles\". src/pages/docs/book/principles.astro -- the legacy redirect for the chapter -- sends readers to /principles (the page) instead of /book/principles (the chapter), which is either a bug or an admission that the chapter is meant to be superseded by the page.",
+        "files": [
+          "src/content/docs/book/principles.md",
+          "src/pages/principles.astro",
+          "src/pages/docs/book/principles.astro:4"
+        ]
+      }
+    ],
+    "outOfScope": {}
+  }
+}
