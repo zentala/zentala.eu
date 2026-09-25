@@ -123,8 +123,15 @@ const shouldNoindex = noindex || IS_PREVIEW
     }
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  /* DESIGN.md Typography → Scale: display/H1/H2/H3 stay serif; H4-H6 are
+     Inter 600, not serif — this rule used to set serif on all six levels. */
+  h1, h2, h3 {
     font-family: var(--font-serif);
+  }
+
+  h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
   }
 
   .skip-link {

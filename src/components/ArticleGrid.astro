@@ -1,0 +1,53 @@
+---
+/**
+ * Named-track grid for long-form pages (DESIGN.md → Layout, "The grid").
+ * Defines three named column tracks inside the site `.container`:
+ * `content` (the `--article-measure` reading column, 66ch), `wide` (90ch)
+ * and `full` (the container's own width, 80rem). Children sit in the
+ * `content` track by default; a child that must break out of the reading
+ * column sets `span-wide` or `span-full` on its own root element (DESIGN.md
+ * → Layout → "The five layouts"). MDX authors never write those classes by
+ * hand — only components do.
+ *
+ * Below 768px the `wide` track collapses onto `content` (DESIGN.md →
+ * Typography → Measure): there is no room for a wider column on a phone.
+ */
+---
+
+<div class="article-grid">
+  <slot />
+</div>
+
+<style>
+  .article-grid {
+    display: grid;
+    grid-template-columns:
+      [full-start] minmax(1rem, 1fr)
+      [wide-start] minmax(0, 12ch)
+      [content-start] minmax(0, var(--article-measure)) [content-end]
+      minmax(0, 12ch) [wide-end]
+      minmax(1rem, 1fr) [full-end];
+    column-gap: 0;
+  }
+
+  .article-grid > :global(*) {
+    grid-column: content;
+  }
+
+  .article-grid > :global(.span-wide) {
+    grid-column: wide;
+  }
+
+  .article-grid > :global(.span-full) {
+    grid-column: full;
+  }
+
+  @media (max-width: 767px) {
+    .article-grid {
+      grid-template-columns:
+        [full-start] minmax(1rem, 1fr)
+        [wide-start content-start] minmax(0, var(--article-measure)) [content-end wide-end]
+        minmax(1rem, 1fr) [full-end];
+    }
+  }
+</style>

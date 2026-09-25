@@ -10,6 +10,7 @@
  * acceptance: exactly one h1 per rendered page).
  */
 import Layout from './Layout.astro'
+import ArticleGrid from '../components/ArticleGrid.astro'
 
 interface Props {
   title: string
@@ -37,7 +38,7 @@ const { title, description, canonical, ogImage, noindex, markdownAlternate, back
 
 <Layout title={title} description={description} canonical={canonical} ogImage={ogImage} noindex={noindex} markdownAlternate={markdownAlternate} type="article" jsonLd={jsonLd}>
   <div class="container mx-auto px-4 py-8">
-    <div class:list={['article-measure', { 'article-measure--wide-body': wideBody }]}>
+    <ArticleGrid>
       <a href={backHref} class="back-link transition-colors" style="color: var(--color-accent-secondary);">
         &larr; {backLabel}
       </a>
@@ -45,41 +46,17 @@ const { title, description, canonical, ogImage, noindex, markdownAlternate, back
         <h1 class="article-title">{title}</h1>
         <slot name="meta" />
       </header>
-      <div class="article-body-wrap">
-        <article class="prose prose-lg max-w-none article-body">
+      <div class:list={['article-body-wrap', { 'span-full': wideBody }]}>
+        <article class="prose prose-lg article-body">
           <slot />
         </article>
       </div>
       <slot name="footer" />
-    </div>
+    </ArticleGrid>
   </div>
 </Layout>
 
 <style>
-  /* One measure for the whole article shell: back-link, header and body
-     all sit inside the same 62-72ch column instead of the body text alone
-     being capped while the header stretches full width. */
-  .article-measure {
-    max-width: var(--article-measure);
-    margin-inline: auto;
-  }
-
-  /* Wide-body pages (transcripts) keep the title/meta at the editorial
-     measure, but let the slotted body (its own two-column layout with a
-     sticky sidebar) use the full container width. */
-  .article-measure--wide-body {
-    max-width: none;
-  }
-
-  .article-measure--wide-body .back-link,
-  .article-measure--wide-body .article-header {
-    max-width: var(--article-measure);
-  }
-
-  .article-measure--wide-body .article-body-wrap {
-    max-width: none;
-  }
-
   .back-link {
     display: inline-block;
     margin-bottom: 2rem;
@@ -93,7 +70,7 @@ const { title, description, canonical, ogImage, noindex, markdownAlternate, back
     font-family: var(--font-serif);
     font-weight: 700;
     font-size: var(--text-4xl);
-    line-height: 1.15;
+    line-height: var(--leading-tight);
     color: var(--color-text-primary);
     text-wrap: balance;
     margin: 0 0 1rem;

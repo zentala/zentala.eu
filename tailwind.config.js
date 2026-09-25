@@ -62,6 +62,29 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         serif: ['Playfair Display', 'serif'],
+        mono: ['var(--font-mono)'],
+      },
+      fontSize: {
+        xs: 'var(--text-xs)',
+        sm: 'var(--text-sm)',
+      },
+      lineHeight: {
+        tight: 'var(--leading-tight)',
+        snug: 'var(--leading-snug)',
+        body: 'var(--leading-body)',
+      },
+      letterSpacing: {
+        eyebrow: 'var(--tracking-eyebrow)',
+      },
+      spacing: {
+        xs: 'var(--space-xs)',
+        sm: 'var(--space-sm)',
+        md: 'var(--space-md)',
+        lg: 'var(--space-lg)',
+        xl: 'var(--space-xl)',
+        '2xl': 'var(--space-2xl)',
+        '3xl': 'var(--space-3xl)',
+        section: 'var(--space-section)',
       },
       borderRadius: {
         sm: 'var(--radius-sm)',
