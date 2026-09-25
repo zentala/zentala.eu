@@ -25,9 +25,12 @@ I could not verify something, I say so rather than rounding it into confidence.
 
 ## What the Swiss system actually is
 
-Three instruments, in plain words.
+Switzerland is a **semi-direct democracy**: it has a parliament and a government
+that work much as ours do, and on top of that citizens hold instruments to
+propose law and to overturn it. Three instruments, in plain words. The first is
+the accelerator, the second is the brake, and the third fires by itself.
 
-**The popular initiative.** Citizens propose a change to the federal
+**The popular initiative** — the Swiss name for a **citizens' initiative**. Citizens propose a change to the federal
 constitution. Any 100,000 people eligible to vote may do so, within 18 months of
 the official publication of their proposal ([Federal Constitution, Art.
 138–139](https://www.fedlex.admin.ch/eli/cc/1999/404/en)). It goes to a national
@@ -181,7 +184,7 @@ parliament hold a referendum and ignore it.
 **What it is.** In Switzerland the result changes the law. An adopted initiative
 amends the constitution; a successful optional referendum kills the act.
 
-**What it is not, here.** Poland already has a citizens' referendum initiative:
+**What it is not, here.** Poland already has a citizens' initiative for a referendum:
 500,000 citizens may petition for one ([Act on the national referendum, Art.
 63](https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20030570507/T/D20030507L.pdf)).
 But the Sejm **is not obliged to call it**, and no deadline compels it to
@@ -223,27 +226,40 @@ temperature of any individual vote, because no ballot is the last word forever.
 **Proposed equivalent.** Fixed dates, same principle, at every level. Bundling
 is what makes frequent voting cheap enough to be real rather than aspirational.
 
-## The arithmetic: what the Swiss thresholds become at our scale
+## The arithmetic: what the thresholds become at our scale
 
-Paweł's instruction was to take the Swiss thresholds and scale them
-proportionally. Here is the arithmetic, explicitly, so that anyone can disagree
-with the method rather than with the number.
+Start with the Swiss numbers as a share of their electorate, because that is the
+only way to compare countries of different sizes. Switzerland had **5,611,289
+registered voters** at the September 2024 federal vote. So, as fact:
 
-Switzerland had **5,611,289 registered voters** at the September 2024 federal
-vote. So:
-
-- 100,000 signatures for an initiative = **1.78% of the electorate**
+- 100,000 signatures for a citizens' initiative = **1.78% of the electorate**
 - 50,000 signatures for an optional referendum = **0.89% of the electorate**
 
-Applying those shares:
+**My proposal is not those numbers.** I round them up to something plainer and
+harder: **2% of the electorate to launch a citizens' initiative, 1% to force an
+optional referendum.** Two reasons. A round figure is a figure people can
+repeat, and an instrument this powerful should be slightly harder to reach than
+the one it is copied from, so that nobody can say it was made easy. The 2:1
+ratio between proposing and vetoing is Swiss; the level is mine.
 
-| | Switzerland | EU (≈359m voters) | Poland (29.0m voters) |
+The arithmetic, shown so that anyone can disagree with the method rather than
+with the number:
+
+- Poland, 29,023,338 voters. 2% = 580,466.76, call it **580,000**. 1% =
+  290,233.38, call it **290,000**.
+- EU, about 359,000,000 voters. 2% = **7,180,000**. 1% = **3,590,000**.
+
+| | Switzerland *(fact)* | EU *(proposed)* | Poland *(proposed)* |
 |---|---|---|---|
-| Initiative (1.78%) | 100,000 | **≈ 6,400,000** | **≈ 517,000** |
-| Optional referendum / veto (0.89%) | 50,000 | **≈ 3,200,000** | **≈ 259,000** |
+| Electorate | 5,611,289 | ≈ 359,000,000 | 29,023,338 |
+| Citizens' initiative | 100,000 *(1.78%)* | **≈ 7,180,000** *(2%)* | **≈ 580,000** *(2%)* |
+| Optional referendum / veto | 50,000 *(0.89%)* | **≈ 3,590,000** *(1%)* | **≈ 290,000** *(1%)* |
 | Collection period, initiative | 18 months | 18 months | 18 months |
 | Collection period, veto | 100 days | *proposed* 6 months | 100 days |
 | Second-chamber majority | 12 of 23 cantons | *proposed* 14 of 27 states | *proposed* 9 of 16 voivodeships |
+
+Everything in the Switzerland column is a fact from the constitution and the
+official register. Everything in the other two columns is my proposal.
 
 Electorate figures: about **359 million** eligible voters at the [2024 European
 Parliament election](https://results.elections.europa.eu/en/) — published
@@ -253,12 +269,12 @@ cut-off date, so treat the European row as accurate to about two per cent — an
 
 Three honest remarks about that table.
 
-**The Polish initiative number lands almost exactly on the threshold Poland
-already uses.** 517,000 against the existing 500,000. That is a coincidence, and
-a useful one: it means the Polish signature bar is already Swiss-calibrated, and
-that **the problem with the Polish instrument is not the threshold — it is that
-the result does not bind and the Sejm does not have to act.** Nobody needs to
-argue about the number. They need to argue about the two words that make it
+**The Polish initiative number lands close to the threshold Poland already
+uses.** 580,000 against the existing 500,000 — sixteen per cent higher, and in
+the same region rather than a different world. That is worth knowing, because it
+means **the problem with the Polish instrument is not the threshold — it is that
+the result does not bind and the Sejm does not have to act.** Almost nobody needs
+to argue about the number. They need to argue about the two words that make it
 real.
 
 **The 100-day veto window does not survive translation to Union scale.** A
@@ -275,8 +291,8 @@ states](https://citizens-initiative.europa.eu/how-it-works_en) within 12 months,
 organised by a committee of seven citizens in seven countries, and the
 Commission must formally respond within six months of submission — but it **is
 not obliged to propose anything**. One million is about 0.28% of the EU
-electorate: a sixth of the scaled Swiss bar, for an instrument with no binding
-force at all. The right reading is not "the EU already has this". It is that the
+electorate: roughly a seventh of the 2% I am proposing, and a sixth of the
+Swiss share, for an instrument with no binding force at all. The right reading is not "the EU already has this". It is that the
 EU built the signature-collection machinery, at a *lower* bar than Switzerland
 uses, and then attached it to nothing. The plumbing exists. The power does not.
 

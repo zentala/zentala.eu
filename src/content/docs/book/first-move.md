@@ -14,7 +14,10 @@ If you agree that [direct democracy](/book/direct-democracy) is the lever, the
 obvious question is the one I kept asking myself: *and what do I do on Monday?*
 There is exactly one instrument in the European Union that lets people who hold
 no office put a demand formally on the Commission's desk, and it is called the
-**European Citizens' Initiative**. It is weak. It binds nobody. I want to do it
+**European Citizens' Initiative**. The name is the right one — a citizens'
+initiative is the instrument by which citizens propose — but the European
+version stops where the Swiss one starts working: it binds nobody, and there is
+no optional referendum beside it to strike a law down. It is weak. It binds nobody. I want to do it
 anyway, and the second half of this chapter explains why the weakness is the
 point.
 
@@ -175,7 +178,8 @@ signs on a market square. Here is my draft:
 Around that line, four commitments, each of them argued elsewhere on this site:
 
 1. **Binding, not consultative.** A vote the institutions may note and ignore is
-   the thing we already have.
+   the thing we already have. Both instruments bind: the citizens' initiative
+   that proposes, and the optional referendum that strikes a passed law down.
 2. **The Swiss model, scaled — copied, not reinvented.** Their thresholds and
    their safeguards, adjusted proportionally to population. Every hour spent
    designing a clever new mechanism is an hour not spent demanding a proven
@@ -225,8 +229,8 @@ I am not going to pretend a chapter is a campaign. Concretely:
 - **Sign somebody else's initiative and watch the machine work.** Learning how
   the collection system behaves costs one signature.
 - **Ask your MEP and your national politicians the question from [The Political
-  Path](/book/political-path):** are you for a binding citizen initiative and
-  referendum, yes or no? Their answer sorts them faster than any manifesto.
+  Path](/book/political-path):** are you for a binding citizens' initiative and
+  a binding optional referendum, yes or no? Their answer sorts them faster than any manifesto.
 
 ## The odds
 
