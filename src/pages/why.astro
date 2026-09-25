@@ -1,9 +1,10 @@
 ---
 /**
- * /why — the argument for reform, sitting under the site's top frame: Europe
- * is aging, the pension model ends with generational replacement, and we have
- * about thirty years to build what replaces it
- * (see .plan/vision/aging-society-frame.md).
+ * /why — the objections page. The frame (Europe is aging, the pension model
+ * ends with generational replacement, thirty years of working economy left) is
+ * argued on / and in the frame chapter; this page answers the reader who
+ * accepts it and doubts the plan (see .plan/vision/aging-society-frame.md,
+ * "Answers to the obvious objections").
  *
  * Layout owns the page's vertical rhythm through the --why-space-* tokens
  * below; the sections themselves consume them (components/why/WhySection).
@@ -26,7 +27,7 @@ const { Content } = await whyEntry.render();
     </a>
 
     <header class="why-header">
-      <DisplayTitle title="Securing our retirement in a changing world" />
+      <DisplayTitle title="The objections, answered" />
       <p class="why-header__sub">{whyEntry.data.description}</p>
     </header>
 
