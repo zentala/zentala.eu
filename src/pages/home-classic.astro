@@ -11,11 +11,9 @@ import CardGrid from '../components/CardGrid.astro';
 import DisplayTitle from '../components/DisplayTitle.astro';
 import FAQ from '../components/FAQ.astro';
 import Author from '../components/Author.astro';
-import WhyDigitalReform from '../components/WhyDigitalReform.astro';
 import Testimonials from '../components/Testimonials.astro';
 import InteractiveSection from '../components/InteractiveSection.astro';
 import Newsletter from '../components/Newsletter.astro';
-import GradientSection from '../components/GradientSection.astro';
 import Button from '../components/Button.astro';
 import IconLink from '../components/IconLink.astro';
 import FrameIntro from '../components/vision/FrameIntro.astro';
@@ -62,36 +60,36 @@ const frameSteps: FrameStep[] = [
     ]}
   />
 
-  <GradientSection variant="primary" padding="md" rounded={true}>
+  <div class="py-8 px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10">
-      <IconLink 
-        href="/why" 
-        icon="circle-help" 
+      <IconLink
+        href="/why"
+        icon="circle-help"
         class="text-xl hover:text-blue-300 transition-colors"
         ariaLabel="Learn why EU needs reform"
       >
         Why EU Needs Reform?
       </IconLink>
-      
-      <IconLink 
-        href="/benefits" 
-        icon="globe" 
+
+      <IconLink
+        href="/benefits"
+        icon="globe"
         class="text-xl hover:text-blue-300 transition-colors"
         ariaLabel="See benefits for your country"
       >
         Benefits For Your Country
       </IconLink>
-      
-      <IconLink 
-        href="/vision" 
-        icon="book" 
+
+      <IconLink
+        href="/vision"
+        icon="book"
         class="text-xl hover:text-blue-300 transition-colors"
         ariaLabel="See the full vision overview"
       >
         Full Vision Overview
       </IconLink>
     </div>
-  </GradientSection>
+  </div>
 
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 my-16">
@@ -123,65 +121,28 @@ const frameSteps: FrameStep[] = [
           title="I. Language Integration"
           icon="languages"
           color="green"
-          variant="gradient"
           href="/book/european-english"
-          align="center"
         >
           English as a second official language across all EU states to remove communication barriers
         </Card>
-    
+
         <Card
           title="II. Digital Integration"
           icon="laptop"
           color="red"
-          variant="gradient"
           href="/book/european-egovernment"
-          align="center"
         >
           Unified digital government, e-health, e-learning, and blockchain-based public services
         </Card>
-    
+
         <Card
           title="III. Robotic Reindustrialization"
           icon="bot"
           color="indigo"
-          variant="gradient"
           href="/book/robotic-reindustrialisation"
-          align="center"
         >
           Autonomous logistics, robotic production, and sustainable, localized manufacturing
         </Card>
-      </div>
-    </div>
-  </div>
-  <div class="py-10 mb-16 transition-colors duration-300" style="background: var(--color-bg-primary);  border-top: 1px solid var(--color-border); ">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 my-20">
-      <!-- Title with decorative elements -->
-      <div class="relative mb-8">
-        <div class="absolute inset-0 -mt-8 bg-gradient-to-r from-blue-700/10 via-blue-700/20 to-blue-700/10 blur-2xl opacity-50 rounded-3xl"></div>
-        <div class="relative">
-          <DisplayTitle level={1}>Why Digital Reform Is Necessary</DisplayTitle>
-        </div>
-      </div>
-      
-      <div class="relative">
-        <div class="absolute inset-0 bg-gradient-to-r from-teal-900 to-blue-900 opacity-10 blur-xl"></div>
-        <div class="relative">
-          <WhyDigitalReform color="teal" />
-        </div>
-      </div>
-  
-      <!-- Call to action button -->
-      <div class="mt-8 text-center">
-        <Button 
-          href="/why" 
-          variant="primary" 
-          size="lg" 
-          class="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-500 hover:to-blue-500 shadow-md hover:shadow-lg"
-        >
-          Learn more about why reform is needed
-          <Icon name="arrow-right" size={20} class="ml-2" />
-        </Button>
       </div>
     </div>
   </div>
@@ -292,8 +253,7 @@ const frameSteps: FrameStep[] = [
       <div class="relative">
         <div class="absolute inset-0 bg-gradient-to-r from-purple-900 to-indigo-900 opacity-10 blur-xl"></div>
         <div class="relative">
-          <FAQ 
-            color="indigo"
+          <FAQ
             items={[
               {
                 question: "Why do we need yet another European integration project?",

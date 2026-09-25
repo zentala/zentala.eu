@@ -21,8 +21,8 @@ const hueByTone: Record<LayerTone, 'indigo' | 'blue' | 'green'> = {
 <Surface
   as="article"
   hue={hueByTone[tone] ?? 'indigo'}
-  variant="bordered"
-  class="layer rounded-2xl p-6 sm:p-8 shadow-lg"
+  variant="flat"
+  class="layer rounded-md p-6 sm:p-8 shadow-lg"
   id={`layer-${level}`}
 >
   <header class="flex items-center gap-4 mb-4">

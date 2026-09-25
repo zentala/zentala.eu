@@ -8,12 +8,14 @@ interface Props {
   title: string;
   paragraphs: string[];
   principles: string[];
+  /** Same-page anchor for this note, e.g. "who-captures-the-gains" on /vision. */
+  id?: string;
 }
 
-const { eyebrow, title, paragraphs, principles } = Astro.props;
+const { eyebrow, title, paragraphs, principles, id } = Astro.props;
 ---
 
-<aside class="note rounded-2xl border-2 border-dashed p-6 lg:sticky lg:top-24" aria-labelledby="cross-cutting-title">
+<aside class="note rounded-2xl border-2 border-dashed p-6 lg:sticky lg:top-24" id={id} aria-labelledby="cross-cutting-title">
   <p class="eyebrow text-xs font-semibold uppercase tracking-widest mb-2">{eyebrow}</p>
   <h3 id="cross-cutting-title" class="text-2xl font-bold leading-tight mb-4">{title}</h3>
 

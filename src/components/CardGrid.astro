@@ -1,18 +1,24 @@
 ---
 interface Props {
-	stagger?: boolean;
-	columns?: number;
+	columns?: 2 | 3;
 	gap?: string;
+	/** 'start' keeps cards top-aligned instead of stretching to the tallest
+	 * in the row — the one thing why/WhyCardGrid.astro did differently. */
+	align?: 'stretch' | 'start';
 }
 
-const { stagger = false, columns = 2, gap = "2rem" } = Astro.props;
+const { columns = 2, gap = "2rem", align = 'stretch' } = Astro.props;
 ---
 
-<div class:list={['card-grid', { stagger }]} data-columns={columns}><slot /></div>
+<div class="card-grid" data-columns={columns} data-align={align}><slot /></div>
 
 <style define:vars={{ columns, gap }}>
 	.card-grid {
 		display: grid;
+		/* minmax(0, …) even in the single-column case: an implicit `auto`
+		   track is sized by content, and a long unbreakable line pushes a
+		   card past the viewport on mobile. */
+		grid-template-columns: minmax(0, 1fr);
 		gap: var(--gap);
 		padding: 1rem 0;
 	}
@@ -22,30 +28,23 @@ const { stagger = false, columns = 2, gap = "2rem" } = Astro.props;
 		margin-bottom: 0 !important;
 	}
 
+	.card-grid[data-align="start"] {
+		align-items: start;
+	}
+
+	.card-grid[data-align="start"] > :global(*) {
+		height: auto !important;
+	}
+
 	@media (min-width: 768px) {
 		.card-grid {
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 	}
 
 	@media (min-width: 1024px) {
 		.card-grid[data-columns="3"] {
-			grid-template-columns: repeat(3, 1fr);
-		}
-		
-		.card-grid[data-columns="4"] {
-			grid-template-columns: repeat(4, 1fr);
-		}
-	}
-
-	.stagger {
-		--stagger-height: 2rem;
-		padding-bottom: var(--stagger-height);
-	}
-
-	@media (min-width: 768px) {
-		.stagger > :global(*):nth-child(2n) {
-			transform: translateY(var(--stagger-height));
+			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
 	}
 </style>

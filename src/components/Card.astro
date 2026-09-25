@@ -1,8 +1,8 @@
 ---
 import Icon from './Icon.astro';
-import Surface, { type SurfaceHue, type SurfaceVariant } from './Surface.astro';
+import Surface, { type SurfaceHue } from './Surface.astro';
 
-type CardAlignment = 'center' | 'left';
+type CardVariant = 'default' | 'bordered';
 
 interface Props {
 	icon?: string;
@@ -10,8 +10,7 @@ interface Props {
 	color?: SurfaceHue;
 	href?: string;
 	linkText?: string;
-	variant?: SurfaceVariant;
-	align?: CardAlignment;
+	variant?: CardVariant;
 }
 
 const {
@@ -20,32 +19,20 @@ const {
 	color = 'gray',
 	href,
 	linkText = 'Learn more',
-	variant = 'flat',
-	align = 'left'
+	variant = 'default'
 } = Astro.props;
 
-const alignmentClasses = {
-	center: 'text-center',
-	left: 'text-left'
-};
+const surfaceVariant = variant === 'bordered' ? 'bordered' : 'flat';
 
 const cardClass = `
-	card flex flex-col gap-4 p-8 rounded-lg shadow-md
-	transition-all duration-300 hover:shadow-lg
-	transform hover:scale-[1.02] h-full
-	${alignmentClasses[align]}
+	card flex flex-col gap-4 p-8 rounded-md shadow-sm
+	transition-shadow duration-300 hover:shadow-md h-full text-left
 `;
-
-const titleClass = `title font-bold text-2xl leading-snug gap-2 mb-4 ${align === 'center' ? 'flex-col' : ''} flex ${align === 'center' ? 'justify-center' : 'justify-start'} items-center`;
-
-const iconClass = `inline-flex ${align === 'center' ? 'mb-2' : ''}`;
-
-const linkClass = `text-current hover:opacity-80 font-medium flex items-center group mt-4 ${align === 'center' ? 'justify-center' : 'justify-start'}`;
 ---
 
-<Surface as="article" hue={color} variant={variant} class={cardClass} data-align={align}>
-	<h3 class={titleClass}>
-		{icon && <span class={iconClass}><Icon name={icon} size={32} /></span>}
+<Surface as="article" hue={color} variant={surfaceVariant} class={cardClass}>
+	<h3 class="title font-bold text-2xl leading-snug gap-2 mb-4 flex justify-start items-center">
+		{icon && <span class="inline-flex"><Icon name={icon} size={32} /></span>}
 		<span set:html={title} />
 	</h3>
 
@@ -54,7 +41,7 @@ const linkClass = `text-current hover:opacity-80 font-medium flex items-center g
 	</div>
 
 	{href && (
-		<a href={href} class={linkClass}>
+		<a href={href} class="text-current hover:opacity-80 font-medium flex items-center group mt-4 justify-start">
 			{linkText}
 			<span class="ml-1 group-hover:translate-x-1 transition-transform inline-flex items-center">
 				<Icon name="arrow-right" size={20} />
@@ -64,15 +51,14 @@ const linkClass = `text-current hover:opacity-80 font-medium flex items-center g
 </Surface>
 
 <style>
+  /* Hover state per DESIGN.md: shadow-md (via the hover:shadow-md class
+     above) and the border moves to the hue's own text token. Surface
+     already sets `color` to that token per hue, so currentColor picks it
+     up without a per-hue rule here. No scale, no brightness filter. */
   .card:hover {
-    filter: brightness(0.97);
-  }
-  :global(.dark) .card:hover {
-    filter: brightness(1.12);
+    border-color: currentColor;
   }
 
-  /* Body text inherits the surface's own hue-text token instead of the
-     site-wide secondary grey, so contrast stays correct against every hue. */
   .card .body {
     color: inherit;
     opacity: 0.92;
@@ -84,15 +70,5 @@ const linkClass = `text-current hover:opacity-80 font-medium flex items-center g
 
   .card a {
     margin-top: auto;
-  }
-
-  .card[data-align="center"] .title {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .card[data-align="left"] .title {
-    flex-direction: row;
-    text-align: left;
   }
 </style>
