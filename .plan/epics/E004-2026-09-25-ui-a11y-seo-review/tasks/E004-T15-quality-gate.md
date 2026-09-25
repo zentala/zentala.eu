@@ -32,10 +32,10 @@ Keep the fixes from regressing. The audit harness from this review (48 runs: 12 
 
 ## Acceptance criteria
 
-- [ ] Playwright test serves dist/ and runs axe (WCAG 2.2 AA) on key pages in both themes; fails on serious/critical
-- [ ] Asserts: unique meta description, canonical present, one h1, skip link, no horizontal overflow at 375px
-- [ ] Optional Lighthouse CI budget (a11y ≥95, SEO ≥95) for / and one essay
-- [ ] Runs in the deploy workflow before publish
+- [x] Playwright test serves dist/ and runs axe (WCAG 2.2 AA) on key pages in both themes; fails on serious/critical
+- [x] Asserts: unique meta description, canonical present, one h1, skip link, no horizontal overflow at 375px
+- [ ] Optional Lighthouse CI budget (a11y ≥95, SEO ≥95) for / and one essay — not implemented (optional)
+- [x] Runs in the deploy workflow before publish
 
 ## Evidence
 
