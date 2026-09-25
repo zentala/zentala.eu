@@ -40,7 +40,9 @@ const titleClass = 'text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-
 <style>
   .eyebrow,
   .step-index {
-    color: var(--color-accent-secondary);
+    /* accent-primary, not -secondary: at this small/bold size, -secondary
+       falls short of 4.5:1 against the card background in light theme. */
+    color: var(--color-accent-primary);
   }
   .step {
     background-color: var(--color-bg-secondary);

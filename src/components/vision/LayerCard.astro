@@ -54,7 +54,9 @@ const { level, position, title, summary, points, href, linkText, tone } = Astro.
     color: var(--color-text-secondary);
   }
   .read-more {
-    color: var(--color-accent-secondary);
+    /* accent-primary, not -secondary: falls short of 4.5:1 on the card
+       background in light theme (E004-T01). */
+    color: var(--color-accent-primary);
   }
 
   .layer-badge {

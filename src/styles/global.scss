@@ -59,9 +59,14 @@ body {
   color: var(--color-accent-primary);
 }
 
-@layer base {
-  /* Light mode prose styles */
-  .prose {
+/* Prose styles: unlayered and selector-matched to `:root .prose` on purpose.
+   Tailwind typography's own .prose rules are unlayered too (unlayered CSS
+   always wins over anything inside @layer, regardless of source order), and
+   daisyUI's own `:root .prose{...}` reset has specificity (0,2,0) — higher
+   than a plain `.prose{...}` override (0,1,0), so it always won regardless
+   of which came later in the file. Matching `:root .prose` ties the
+   specificity so source order (this file, loaded after both) decides. */
+:root .prose {
     --tw-prose-body: var(--color-text-primary);
     --tw-prose-headings: var(--color-text-primary);
     --tw-prose-lead: var(--color-text-secondary);
@@ -179,4 +184,3 @@ body {
       }
     }
   }
-}
