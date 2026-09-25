@@ -7,8 +7,6 @@ tags: ownership, public services, surplus, direct democracy, economics
 author: Paweł Żentała
 ---
 
-# Who It Earns For
-
 You can print as much money as you like. It will not make a nurse appear.
 
 That sentence is the floor under everything else on this site. [The pension

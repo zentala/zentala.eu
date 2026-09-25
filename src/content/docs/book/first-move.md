@@ -7,8 +7,6 @@ tags: European Citizens' Initiative, direct democracy, strategy, organising, ECI
 author: Paweł Żentała
 ---
 
-# The First Move
-
 Everything else on this site is an argument. This chapter is an instruction.
 
 If you agree that [direct democracy](/book/direct-democracy) is the lever, the

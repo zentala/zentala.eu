@@ -7,8 +7,6 @@ tags: robotics, industry, defence, automation, strategy
 author: Paweł Żentała
 ---
 
-# Robotic Reindustrialisation
-
 This is the top of the stack, and it only works because of what sits underneath
 it. [The demographic argument](/docs/book/designing-our-retirement) says why we
 need it: there will not be enough people to do the work our retirement depends

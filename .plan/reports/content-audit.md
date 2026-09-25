@@ -1,13 +1,13 @@
 # Content audit — 2026-09-25
 
 ## TLDR
-Scanned 240 built routes, 66 content files, 425 links (65 unique external).
+Scanned 240 built routes, 66 content files, 421 links (65 unique external).
 Found 27 links to draft pages, 8 links to missing pages, 13 dead external links, 13 orphan pages, 15 drafts, 19 pages missing a meta description, 18 duplicate descriptions.
 
 ## Links to draft pages (27) — 404 in production
 | Link | Where | Draft file |
 |---|---|---|
-| /docs/book/language | src/content/docs/book/european-english.mdx:219 | src/content/docs/book/language.md |
+| /docs/book/language | src/content/docs/book/european-english.mdx:217 | src/content/docs/book/language.md |
 | /docs/book/language | src/content/docs/ideas/culture/language-integration.mdx:169 | src/content/docs/book/language.md |
 | /book/language-integration-administrative-implementation/ | src/content/docs/index.mdx:30 | src/content/docs/book/language-integration-administrative-implementation.mdx |
 | /book/media-cultural-integration/ | src/content/docs/index.mdx:31 | src/content/docs/book/media-cultural-integration.mdx |
@@ -50,16 +50,16 @@ Found 27 links to draft pages, 8 links to missing pages, 13 dead external links,
 ## Dead external links (13)
 | URL | Status | Where |
 |---|---|---|
-| https://www.sciencedirect.com/science/article/pii/S0261379421000500 | 403 (bot block? check by hand) | src/content/docs/book/choosing-people.md:161 |
-| https://academic.oup.com/book/32249/chapter/268436667 | 403 (bot block? check by hand) | src/content/docs/book/choosing-people.md:167 |
-| https://commission.europa.eu/system/files/2023-11/styleguide_english_dgt_en.pdf | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:39 |
-| https://onlinelibrary.wiley.com/doi/full/10.1111/weng.12646 | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:41 |
-| https://commission.europa.eu/system/files/2023-11/styleguide_english_dgt_en.pdf | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:225 |
-| https://onlinelibrary.wiley.com/doi/full/10.1111/weng.12646 | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:229 |
-| https://journals.sagepub.com/doi/full/10.1177/1023263X18824772 | 403 (bot block? check by hand) | src/content/docs/book/first-move.md:125 |
-| https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2022 | 404 | src/content/docs/book/safeguards.md:168 |
-| https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2022 | 404 | src/content/docs/book/safeguards.md:393 |
-| https://www.lovguiden.dk/en/det-offentlige/den-europaeiske-revisionsret/2026-03-24-eus-raadgivende-organer-leverer-udtalelser-for-sent-og-maaler-ikke-effekt | 429 | src/content/docs/book/steering.md:209 |
+| https://www.sciencedirect.com/science/article/pii/S0261379421000500 | 403 (bot block? check by hand) | src/content/docs/book/choosing-people.md:159 |
+| https://academic.oup.com/book/32249/chapter/268436667 | 403 (bot block? check by hand) | src/content/docs/book/choosing-people.md:165 |
+| https://commission.europa.eu/system/files/2023-11/styleguide_english_dgt_en.pdf | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:37 |
+| https://onlinelibrary.wiley.com/doi/full/10.1111/weng.12646 | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:39 |
+| https://commission.europa.eu/system/files/2023-11/styleguide_english_dgt_en.pdf | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:223 |
+| https://onlinelibrary.wiley.com/doi/full/10.1111/weng.12646 | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:227 |
+| https://journals.sagepub.com/doi/full/10.1177/1023263X18824772 | 403 (bot block? check by hand) | src/content/docs/book/first-move.md:123 |
+| https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2022 | 404 | src/content/docs/book/safeguards.md:166 |
+| https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2022 | 404 | src/content/docs/book/safeguards.md:391 |
+| https://www.lovguiden.dk/en/det-offentlige/den-europaeiske-revisionsret/2026-03-24-eus-raadgivende-organer-leverer-udtalelser-for-sent-og-maaler-ikke-effekt | 429 | src/content/docs/book/steering.md:207 |
 | https://www.patreon.com/c/zentala | 404 | src/pages/support.astro:31 |
 | https://www.patreon.com/c/zentala | 404 | src/pages/support.astro:91 |
 | https://www.linkedin.com/in/zentala/ | 999 | src/components/Author.astro:56 |

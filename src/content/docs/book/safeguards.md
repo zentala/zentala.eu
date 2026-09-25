@@ -7,8 +7,6 @@ tags: direct democracy, safeguards, Switzerland, referendums, European Citizens'
 author: Paweł Żentała
 ---
 
-# The Safeguards We Copy Too
-
 I have argued that we should copy the Swiss model of direct democracy and not
 get clever about it. The obvious objection is the one people put to me first:
 what stops a crowd from voting something terrible into the constitution on a bad

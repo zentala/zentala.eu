@@ -93,6 +93,7 @@ body {
     h6 {
       @apply font-serif font-light mt-10 mb-6;
       color: var(--color-text-primary);
+      text-wrap: balance;
     }
 
     h1 {
@@ -108,8 +109,11 @@ body {
     }
 
     p {
-      @apply mb-6 text-xl leading-relaxed;
+      @apply mb-6;
+      font-size: var(--article-body-size);
+      line-height: var(--article-lead);
       color: var(--color-text-primary);
+      text-wrap: pretty;
     }
 
     a {
@@ -135,7 +139,8 @@ body {
     }
 
     li {
-      @apply mb-3 text-xl;
+      @apply mb-3;
+      font-size: var(--article-body-size);
       color: var(--color-text-primary);
       
       &::marker {
@@ -145,7 +150,8 @@ body {
     }
 
     blockquote {
-      @apply pl-6 italic my-6 text-xl;
+      @apply pl-6 italic my-6;
+      font-size: var(--article-body-size);
       border-left: 4px solid var(--color-accent-primary);
       color: var(--color-text-secondary);
     }
@@ -172,6 +178,10 @@ body {
 
     table {
       @apply w-full my-6;
+      font-variant-numeric: tabular-nums;
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
 
       th {
         background-color: var(--color-bg-secondary);

@@ -7,8 +7,6 @@ tags: work, education, automation, direct-democracy, labour
 author: Paweł Żentała
 ---
 
-# The Shorter Week
-
 In the manifesto I wrote that the work is going away and that this is the time
 we need. This chapter is the practical form of that sentence. If the time is
 real, somebody has to say where it comes from, who pays for it and what it is
