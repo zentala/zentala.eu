@@ -8,10 +8,8 @@ interface Props {
 
 const { level = 1, class: className = "", title, marginTop = null } = Astro.props;
 
-// Map the level to the correct heading tag
-const HeadingTag = `h${level}`;
+const Tag = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-// Default classes based on heading level
 let defaultClasses = "";
 switch (level) {
   case 1:
@@ -34,10 +32,9 @@ switch (level) {
     break;
 }
 
-// Combine default classes with any custom classes
 const combinedClasses = `${defaultClasses} ${className}`;
 ---
 
-<Fragment set:html={`<${HeadingTag} class="${combinedClasses}" style="color: var(--color-text-primary);">`} />
+<Tag class={combinedClasses} style="color: var(--color-text-primary);">
   {title ? title : <slot />}
-<Fragment set:html={`</${HeadingTag}>`} />
+</Tag>

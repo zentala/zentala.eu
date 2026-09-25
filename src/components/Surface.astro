@@ -1,0 +1,68 @@
+---
+/**
+ * Surface — shared coloured-box base for Card, LayerCard and the FAQ item.
+ * Owns the --card-<hue>-{bg,border,text} lookup (src/styles/_tokens.scss)
+ * and the `flat` / `bordered` / `gradient` treatments, so every hue-based
+ * box in the site shares one implementation instead of three copies of the
+ * same data-hue CSS switch.
+ */
+export type SurfaceHue =
+  | 'gray' | 'blue' | 'indigo' | 'purple' | 'green' | 'teal' | 'red' | 'yellow';
+export type SurfaceVariant = 'flat' | 'bordered' | 'gradient';
+
+interface Props {
+  hue?: SurfaceHue;
+  variant?: SurfaceVariant;
+  as?: string;
+  class?: string;
+}
+
+const {
+  hue = 'gray',
+  variant = 'flat',
+  as: Tag = 'div',
+  class: className = '',
+  ...rest
+} = Astro.props;
+---
+
+<Tag class={`surface ${className}`} data-hue={hue} data-variant={variant} {...rest}>
+  <slot />
+</Tag>
+
+<style>
+  .surface {
+    background-color: var(--card-gray-bg);
+    border: 1px solid var(--card-gray-border);
+    color: var(--card-gray-text);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+
+  .surface[data-hue="gray"] { background-color: var(--card-gray-bg); border-color: var(--card-gray-border); color: var(--card-gray-text); }
+  .surface[data-hue="blue"] { background-color: var(--card-blue-bg); border-color: var(--card-blue-border); color: var(--card-blue-text); }
+  .surface[data-hue="indigo"] { background-color: var(--card-indigo-bg); border-color: var(--card-indigo-border); color: var(--card-indigo-text); }
+  .surface[data-hue="purple"] { background-color: var(--card-purple-bg); border-color: var(--card-purple-border); color: var(--card-purple-text); }
+  .surface[data-hue="green"] { background-color: var(--card-green-bg); border-color: var(--card-green-border); color: var(--card-green-text); }
+  .surface[data-hue="teal"] { background-color: var(--card-teal-bg); border-color: var(--card-teal-border); color: var(--card-teal-text); }
+  .surface[data-hue="red"] { background-color: var(--card-red-bg); border-color: var(--card-red-border); color: var(--card-red-text); }
+  .surface[data-hue="yellow"] { background-color: var(--card-yellow-bg); border-color: var(--card-yellow-border); color: var(--card-yellow-text); }
+
+  .surface[data-variant="bordered"] {
+    border-width: 2px;
+  }
+
+  /* Gradient variant fades the hue's bg token into its border token, so the
+     gradient stays inside the same calmer palette as the flat surfaces. */
+  .surface[data-variant="gradient"] {
+    background-image: linear-gradient(to bottom right, var(--surface-hue-bg), var(--surface-hue-border));
+    background-color: transparent;
+  }
+  .surface[data-hue="gray"][data-variant="gradient"] { --surface-hue-bg: var(--card-gray-bg); --surface-hue-border: var(--card-gray-border); }
+  .surface[data-hue="blue"][data-variant="gradient"] { --surface-hue-bg: var(--card-blue-bg); --surface-hue-border: var(--card-blue-border); }
+  .surface[data-hue="indigo"][data-variant="gradient"] { --surface-hue-bg: var(--card-indigo-bg); --surface-hue-border: var(--card-indigo-border); }
+  .surface[data-hue="purple"][data-variant="gradient"] { --surface-hue-bg: var(--card-purple-bg); --surface-hue-border: var(--card-purple-border); }
+  .surface[data-hue="green"][data-variant="gradient"] { --surface-hue-bg: var(--card-green-bg); --surface-hue-border: var(--card-green-border); }
+  .surface[data-hue="teal"][data-variant="gradient"] { --surface-hue-bg: var(--card-teal-bg); --surface-hue-border: var(--card-teal-border); }
+  .surface[data-hue="red"][data-variant="gradient"] { --surface-hue-bg: var(--card-red-bg); --surface-hue-border: var(--card-red-border); }
+  .surface[data-hue="yellow"][data-variant="gradient"] { --surface-hue-bg: var(--card-yellow-bg); --surface-hue-border: var(--card-yellow-border); }
+</style>
