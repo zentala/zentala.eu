@@ -88,10 +88,14 @@ const fields: { label: string; items: string[] }[] = [
 
   .provenance-note__value {
     margin: 0;
+    min-width: 0;
     font-family: var(--font-sans);
     font-size: var(--text-sm);
     line-height: 1.5;
     color: var(--color-text-secondary);
+    /* Dump file names and slugs have no break opportunities; without this a
+       375px viewport gets a horizontal scrollbar (a11y gate, E004-T15). */
+    overflow-wrap: anywhere;
   }
 
   .provenance-note__value ul {
