@@ -52,6 +52,17 @@ const redirects = {
   '/docs/book/eGov-challenges': '/book/european-egovernment',
   '/docs/book/egov-challenges': '/book/european-egovernment',
 
+  // Row 7: the three /vision/<layer> preview pages, replaced by anchors on
+  // /vision. Astro 4's static redirects table DOES keep a `#fragment` in the
+  // generated meta-refresh stub (verified by inspecting dist/ output —
+  // confirmed in the E006-T08 task report), so this is the config entry, not
+  // three Astro.redirect() wrapper files. The anchors themselves
+  // (#language, #digital, #robotics) are added to vision/index.astro by
+  // E006-T07, not here.
+  '/vision/digital-integration': '/vision#digital',
+  '/vision/language-integration': '/vision#language',
+  '/vision/robotic-reindustrialization': '/vision#robotics',
+
   // E006-T12 rows (not this task) — left as a marker so the next task finds
   // its place in this table instead of starting a second one:
   // '/tags': '/glossary',

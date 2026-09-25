@@ -4,11 +4,15 @@ import { getCollection } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { breadcrumbSchema, SITE_URL } from '../../lib/jsonld';
 
-const PUBLISHED_PREFIXES = ['ideas/', 'articles/', 'reference/'];
-
 export async function getStaticPaths() {
+  // NOTE: this array must stay inside getStaticPaths — Astro/Vite bundle the
+  // content-collection filter callback into its own chunk, and a module-scope
+  // const referenced only from inside that callback is not always included in
+  // the chunk (`ReferenceError: PUBLISHED_PREFIXES is not defined` at build
+  // time, no dev-server or typecheck symptom). Filed: .plan/BACKLOG.md.
+  const publishedPrefixes = ['ideas/', 'articles/', 'reference/'];
   const allDocs = await getCollection('docs', (doc) => {
-    const isPublishedNamespace = PUBLISHED_PREFIXES.some((prefix) => doc.id.startsWith(prefix));
+    const isPublishedNamespace = publishedPrefixes.some((prefix) => doc.id.startsWith(prefix));
     return isPublishedNamespace && (IS_PREVIEW || !doc.data.draft);
   });
 
