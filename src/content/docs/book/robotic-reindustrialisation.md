@@ -8,11 +8,11 @@ author: Paweł Żentała
 ---
 
 This is the top of the stack, and it only works because of what sits underneath
-it. [The demographic argument](/docs/book/designing-our-retirement) says why we
+it. [The demographic argument](/book/designing-our-retirement) says why we
 need it: there will not be enough people to do the work our retirement depends
-on. A [common working language](/docs/book/european-english) is what lets the
+on. A [common working language](/book/european-english) is what lets the
 engineers who build it work with each other. A [digital
-state](/docs/book/european-egovernment) is what it plugs into. Robotics on its
+state](/book/european-egovernment) is what it plugs into. Robotics on its
 own, without those, is a trade fair.
 
 What follows is how Europe could actually get there.
@@ -152,6 +152,6 @@ and the policy catches up to what is already running. Start with a piece.
 ---
 
 *Part of the [EU Reform Vision](/vision). This chapter is the top layer; the
-[demographic frame](/docs/book/designing-our-retirement) explains why it is
-needed at all, and [The Political Path](/docs/book/political-path) explains how a
+[demographic frame](/book/designing-our-retirement) explains why it is
+needed at all, and [The Political Path](/book/political-path) explains how a
 programme this size gets decided when the institutions would rather it were not.*
