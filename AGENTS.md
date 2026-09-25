@@ -122,6 +122,14 @@ This repository is Paweł's political writing, not only a website.
   the vision in `.plan/vision/`.
 - Never launder Paweł's positions into safer ones. Correct a term, not a belief.
 
+## UI review checklist (vendored skills)
+
+Before landing any UI change (component, layout, typography, colour), apply the
+condensed checklists vendored under `.claude/skills/`: `frontend-design`,
+`web-design-guidelines`, and `accessibility-audit`. They are condensed from the
+sources listed in `.plan/reports/2026-09-25-ui-seo-review/00-skills-shortlist.md`,
+which also covers SEO/GEO and design-system checks not yet vendored as skills.
+
 ## Instruction-file convention
 
 - `AGENTS.md` is the canonical repository instruction source.
