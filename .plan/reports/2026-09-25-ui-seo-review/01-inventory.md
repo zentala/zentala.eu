@@ -1,0 +1,14 @@
+# Static inventory (2026-09-25, from source + dist/)
+
+- Fonts: Google Fonts Inter 300–700 + Playfair Display (Layout.astro:20-22), display=swap; Font Awesome kit render-blocking script (Layout.astro:23-26).
+- Type tokens _tokens.scss:24-33 (base 17px); no line-height / letter-spacing tokens. global.scss:101,128 forces prose p/li to text-xl (~20-22px).
+- Measure: book/[...slug].astro:20-24 max-w-6xl + prose max-w-none (~1100px, >100ch). Same in docs/[...slug] (forced bg-gray-900), transcripts (max-w-5xl). Only /why limits to 70ch.
+- CONTRAST BUG: book/[...slug] and commentary/[...slug] hard-code text-white / prose-invert / gray-300 → light theme shows white h1 on #fafafa.
+- Components: unused ContentBox, Logo, ReasonBlock, SearchBar; Testimonials & InteractiveSection only on /ui; 3 timeline implementations; Card/ContentBox/ReasonBlock/LayerCard/FAQ share --card-<hue> tokens; two homepages (index, home-classic); two book route families (/book/* collection vs /docs/book/*.astro hand-written); /why and /docs/why both render why.mdx.
+- Token violations: hex in InteractiveSection(19), EUStatisticsChart(17), AlgoliaSearch(5), EuropeMap(5), Hero(2), GradientSection, Logo; raw font sizes in AlgoliaSearch, why/WhySection, benefits, search, why; text-white/text-gray-* heavy in ui/index(94), vision/* (60/58/37), docs/all(50), transcripts, docs/book/*.
+- Icons: mixed — Font Awesome kit (IconLink, raw <i> in index/home-classic), emoji (Card.icon, WhyDigitalReform, why.mdx), leftover Starlight icon names rendered as text (docs/index.mdx:17, add-document l.216-287), local SVGs (src/assets/icons, home-classic only), ~40 files with inline <svg>.
+- Head: only title prop; meta description hard-coded identical on all pages (Layout.astro:17); lang=en; no canonical, OG, Twitter, JSON-LD, manifest, theme-color, apple-touch-icon.
+- astro.config.mjs: no `site`, no sitemap integration; @astrojs/starlight unused dependency; @astrojs/mdx not in package.json.
+- public/sitemap.xml hand-written, 21 URLs on wrong domain eu.zentala.io (build has 167 pages). No robots.txt, llms.txt, RSS. /ui and /home-classic not noindex.
+- A11y: no skip link, no sr-only, no focus-visible styles; Newsletter.astro:18 outline-none without ring; Layout has no <main> (missing on index, home-classic, ui, confirm, docs/book/principles, docs/for-you); mobile menu button (Header.astro:49) no aria-label/expanded/controls; ThemeToggle no aria-pressed, SVGs not aria-hidden; logo alt duplicates adjacent text; DisplayTitle.astro:41 opens heading via set:html (fragile); no prefers-reduced-motion, scroll-behavior smooth unconditional (Layout.astro:67); fixed 50% gradient overlay behind content (Layout.astro:54-56).
+- Collections: docs (44 files; book 19 incl. 2 sidecars; ideas 17; articles 3), commentary 2, transcripts 3; stray src/content/arts-from-transcipts (6), src/content/.wip.mdx, pages/vision/add/robotic.md; `ideas` collection schema with no folder.
