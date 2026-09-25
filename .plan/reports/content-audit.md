@@ -1,7 +1,7 @@
 # Content audit — 2026-09-25
 
 ## TLDR
-Scanned 138 built routes, 89 content files, 435 links (75 unique external).
+Scanned 138 built routes, 89 content files, 459 links (75 unique external).
 Found 13 links to draft pages, 8 links to missing pages, 12 dead external links, 21 orphan pages, 16 drafts, 50 pages missing a meta description, 1 duplicate descriptions.
 IA shape checks: ran — 11 pages over two clicks from /, 0 entries missing layer/kind, 0/0 broken glossary hrefs, 0 /docs/ links in chapters, 109 built links to a retired redirect path, 39/18 concepts missing their canonical link.
 
@@ -46,8 +46,8 @@ IA shape checks: ran — 11 pages over two clicks from /, 0 entries missing laye
 | https://journals.sagepub.com/doi/full/10.1177/1023263X18824772 | 403 (bot block? check by hand) | src/content/docs/book/first-move.mdx:158 |
 | https://doi.org/10.1001/jama.2015.10803 | 403 (bot block? check by hand) | src/content/docs/book/new-cities.mdx:86 |
 | https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000349929/ | 403 (bot block? check by hand) | src/content/docs/book/one-working-language.mdx:94 |
-| https://www.patreon.com/c/zentala | 500 | src/pages/support.astro:31 |
-| https://www.patreon.com/c/zentala | 500 | src/pages/support.astro:91 |
+| https://www.patreon.com/c/zentala | 404 | src/pages/support.astro:31 |
+| https://www.patreon.com/c/zentala | 404 | src/pages/support.astro:91 |
 | https://www.linkedin.com/in/zentala/ | 999 | src/components/Author.astro:56 |
 
 ## Orphan pages (21) — built, but no page links to them
