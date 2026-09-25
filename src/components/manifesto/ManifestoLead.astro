@@ -1,0 +1,33 @@
+---
+/**
+ * The opening block of /manifesto — a short standfirst above the body.
+ * Colour and type come from the theme tokens; nothing here is hardcoded.
+ */
+interface Props {
+  paragraphs: string[];
+}
+
+const { paragraphs } = Astro.props;
+---
+
+<div class="manifesto-lead">
+  {paragraphs.map((text) => <p class="manifesto-lead__p">{text}</p>)}
+</div>
+
+<style>
+  .manifesto-lead {
+    margin-bottom: 3rem;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--color-accent-primary);
+  }
+
+  .manifesto-lead__p {
+    color: var(--color-text-secondary);
+    font-size: var(--text-xl);
+    line-height: 1.6;
+  }
+
+  .manifesto-lead__p + .manifesto-lead__p {
+    margin-top: 1rem;
+  }
+</style>

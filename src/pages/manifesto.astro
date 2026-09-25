@@ -1,0 +1,91 @@
+---
+/**
+ * /manifesto — the most personal page on the site: why it exists at all, the
+ * bet behind it, and the one demand it makes of the reader (know what you
+ * want). Source: .plan/vision/2026-09-25-direct-democracy-dump.md, parts 3, 4
+ * and 8, dictated by Paweł.
+ *
+ * Follows the /why pattern: prose lives in the docs collection, this file is
+ * the frame. Body colours come from the .prose token rules in
+ * src/styles/global.scss.
+ */
+import { getEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import DisplayTitle from '../components/DisplayTitle.astro';
+import ManifestoLead from '../components/manifesto/ManifestoLead.astro';
+
+const entry = await getEntry('docs', 'manifesto');
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+  <main class="manifesto-page container mx-auto px-4 sm:px-6 py-10 md:py-16">
+    <header class="manifesto-header">
+      <p class="manifesto-eyebrow">A manifesto</p>
+      <DisplayTitle title="Know what you want" marginTop="mt-0" />
+    </header>
+
+    <ManifestoLead
+      paragraphs={[
+        "I am a positivist. I started writing this because everyone around me could tell me what is broken and nobody could tell me what they wanted instead.",
+        "This page is my own voice rather than a proposal — why the site exists, what I am betting on, and the one thing I am asking of you.",
+      ]}
+    />
+
+    <article class="manifesto-body prose prose-lg max-w-none">
+      <Content />
+    </article>
+
+    <nav class="manifesto-next" aria-label="Continue reading">
+      <a class="manifesto-next__link" href="/vision">Read the vision</a>
+      <a class="manifesto-next__link" href="/principles">See the principles</a>
+    </nav>
+  </main>
+</Layout>
+
+<style>
+  .manifesto-page {
+    max-width: 52rem;
+  }
+
+  .manifesto-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .manifesto-eyebrow {
+    margin-bottom: 0.5rem;
+    color: var(--color-accent-primary);
+    font-size: var(--text-base);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .manifesto-body :global(h2) {
+    margin-top: 3.5rem;
+  }
+
+  .manifesto-next {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .manifesto-next__link {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .manifesto-next__link:hover {
+    border-color: var(--color-accent-primary);
+    color: var(--color-accent-primary);
+  }
+</style>

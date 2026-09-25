@@ -1,0 +1,51 @@
+---
+/**
+ * The one sentence the manifesto is built around, set apart from the prose.
+ * Used for the "know what you want" demand and for the closing question.
+ */
+interface Props {
+  label?: string;
+}
+
+const { label } = Astro.props;
+---
+
+<aside class="manifesto-demand">
+  {label && <p class="manifesto-demand__label">{label}</p>}
+  <div class="manifesto-demand__body"><slot /></div>
+</aside>
+
+<style>
+  .manifesto-demand {
+    margin: 3rem 0;
+    padding: 1.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg-secondary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .manifesto-demand__label {
+    margin: 0 0 0.75rem;
+    color: var(--color-accent-primary);
+    font-size: var(--text-base);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .manifesto-demand__body {
+    color: var(--color-text-primary);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    line-height: 1.45;
+  }
+
+  .manifesto-demand__body :global(p) {
+    margin: 0;
+  }
+
+  .manifesto-demand__body :global(p + p) {
+    margin-top: 0.85rem;
+  }
+</style>
