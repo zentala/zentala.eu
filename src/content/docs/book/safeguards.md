@@ -5,6 +5,9 @@ title: The Safeguards We Copy Too
 description: "If we copy the Swiss model of direct democracy, we copy its safety mechanisms too. This chapter maps each Swiss safeguard to a European and Polish equivalent."
 tags: direct democracy, safeguards, Switzerland, referendums, European Citizens' Initiative, constitutional design
 author: Paweł Żentała
+layer: path
+kind: proposal
+order: 4
 ---
 
 I have argued that we should copy the Swiss model of direct democracy and not

@@ -5,6 +5,9 @@ title: Cheap Is Wealth
 description: "Wealth is when things are cheap, not when they are expensive. Answer automation by building value nobody could deliver before."
 tags: economics, automation, cooperatives, ownership, work
 author: Paweł Żentała
+layer: path
+kind: argument
+order: 2
 ---
 
 # Cheap Is Wealth

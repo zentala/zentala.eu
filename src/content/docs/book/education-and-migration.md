@@ -5,6 +5,9 @@ title: Education Instead of Import
 description: "Europe answered its labour shortage by moving people and hoping. The alternative is free online education in European languages and published entry criteria."
 tags: migration, education, global south, strategy
 author: Paweł Żentała
+layer: frame
+kind: proposal
+order: 3
 ---
 
 I have written elsewhere that importing labour will not carry an aging

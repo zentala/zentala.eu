@@ -1,24 +1,21 @@
 # Content audit — 2026-09-25
 
 ## TLDR
-Scanned 258 built routes, 69 content files, 440 links (78 unique external).
-Found 20 links to draft pages, 8 links to missing pages, 13 dead external links, 15 orphan pages, 16 drafts, 44 pages missing a meta description, 1 duplicate descriptions.
+Scanned 134 built routes, 88 content files, 459 links (79 unique external).
+Found 17 links to draft pages, 8 links to missing pages, 13 dead external links, 16 orphan pages, 16 drafts, 48 pages missing a meta description, 1 duplicate descriptions.
 
-## Links to draft pages (20) — 404 in production
+## Links to draft pages (17) — 404 in production
 | Link | Where | Draft file |
 |---|---|---|
-| /book/language-integration-administrative-implementation | src/content/docs/book/european-english.mdx:214 | src/content/docs/book/language-integration-administrative-implementation.mdx |
-| /book/media-cultural-integration | src/content/docs/book/european-english.mdx:215 | src/content/docs/book/media-cultural-integration.mdx |
-| /book/economic-growth-language-unity | src/content/docs/book/european-english.mdx:216 | src/content/docs/book/economic-growth-language-unity.mdx |
-| /book/language | src/content/docs/book/european-english.mdx:217 | src/content/docs/book/language.md |
+| /book/language-integration-administrative-implementation | src/content/docs/book/european-english.mdx:216 | src/content/docs/book/language-integration-administrative-implementation.mdx |
+| /book/media-cultural-integration | src/content/docs/book/european-english.mdx:217 | src/content/docs/book/media-cultural-integration.mdx |
+| /book/economic-growth-language-unity | src/content/docs/book/european-english.mdx:218 | src/content/docs/book/economic-growth-language-unity.mdx |
 | /book/language-integration-administrative-implementation | src/content/docs/ideas/culture/language-integration.mdx:166 | src/content/docs/book/language-integration-administrative-implementation.mdx |
 | /book/media-cultural-integration | src/content/docs/ideas/culture/language-integration.mdx:167 | src/content/docs/book/media-cultural-integration.mdx |
 | /book/economic-growth-language-unity | src/content/docs/ideas/culture/language-integration.mdx:168 | src/content/docs/book/economic-growth-language-unity.mdx |
-| /book/language | src/content/docs/ideas/culture/language-integration.mdx:169 | src/content/docs/book/language.md |
 | /book/language-integration-administrative-implementation/ | src/content/docs/index.mdx:30 | src/content/docs/book/language-integration-administrative-implementation.mdx |
 | /book/media-cultural-integration/ | src/content/docs/index.mdx:31 | src/content/docs/book/media-cultural-integration.mdx |
 | /book/economic-growth-language-unity/ | src/content/docs/index.mdx:32 | src/content/docs/book/economic-growth-language-unity.mdx |
-| /book/language/ | src/content/docs/index.mdx:33 | src/content/docs/book/language.md |
 | /book/eGov-challenges | src/content/docs/index.mdx:42 | src/content/docs/book/eGov-challenges.mdx |
 | /book/predictive-healthcare-system/ | src/content/docs/index.mdx:49 | src/content/docs/book/predictive-healthcare-system.mdx |
 | /book/european-elearning-system/ | src/content/docs/index.mdx:50 | src/content/docs/book/european-elearning-system.mdx |
@@ -43,21 +40,21 @@ Found 20 links to draft pages, 8 links to missing pages, 13 dead external links,
 ## Dead external links (13)
 | URL | Status | Where |
 |---|---|---|
-| https://www.sciencedirect.com/science/article/pii/S0261379421000500 | 403 (bot block? check by hand) | src/content/docs/book/choosing-people.md:159 |
-| https://academic.oup.com/book/32249/chapter/268436667 | 403 (bot block? check by hand) | src/content/docs/book/choosing-people.md:165 |
-| https://commission.europa.eu/system/files/2023-11/styleguide_english_dgt_en.pdf | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:37 |
-| https://onlinelibrary.wiley.com/doi/full/10.1111/weng.12646 | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:39 |
-| https://commission.europa.eu/system/files/2023-11/styleguide_english_dgt_en.pdf | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:223 |
-| https://onlinelibrary.wiley.com/doi/full/10.1111/weng.12646 | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:227 |
-| https://journals.sagepub.com/doi/full/10.1177/1023263X18824772 | 403 (bot block? check by hand) | src/content/docs/book/first-move.md:123 |
-| https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2022 | 404 | src/content/docs/book/safeguards.md:166 |
-| https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2022 | 404 | src/content/docs/book/safeguards.md:391 |
-| https://www.lovguiden.dk/en/det-offentlige/den-europaeiske-revisionsret/2026-03-24-eus-raadgivende-organer-leverer-udtalelser-for-sent-og-maaler-ikke-effekt | 429 | src/content/docs/book/steering.md:207 |
+| https://www.sciencedirect.com/science/article/pii/S0261379421000500 | 403 (bot block? check by hand) | src/content/docs/book/choosing-people.md:162 |
+| https://academic.oup.com/book/32249/chapter/268436667 | 403 (bot block? check by hand) | src/content/docs/book/choosing-people.md:168 |
+| https://commission.europa.eu/system/files/2023-11/styleguide_english_dgt_en.pdf | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:39 |
+| https://onlinelibrary.wiley.com/doi/full/10.1111/weng.12646 | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:41 |
+| https://commission.europa.eu/system/files/2023-11/styleguide_english_dgt_en.pdf | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:225 |
+| https://onlinelibrary.wiley.com/doi/full/10.1111/weng.12646 | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:229 |
+| https://journals.sagepub.com/doi/full/10.1177/1023263X18824772 | 403 (bot block? check by hand) | src/content/docs/book/first-move.md:126 |
+| https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2022 | 404 | src/content/docs/book/safeguards.md:169 |
+| https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2022 | 404 | src/content/docs/book/safeguards.md:394 |
+| https://www.lovguiden.dk/en/det-offentlige/den-europaeiske-revisionsret/2026-03-24-eus-raadgivende-organer-leverer-udtalelser-for-sent-og-maaler-ikke-effekt | 429 | src/content/docs/book/steering.md:210 |
 | https://www.patreon.com/c/zentala | 404 | src/pages/support.astro:31 |
 | https://www.patreon.com/c/zentala | 404 | src/pages/support.astro:91 |
 | https://www.linkedin.com/in/zentala/ | 999 | src/components/Author.astro:56 |
 
-## Orphan pages (15) — built, but no page links to them
+## Orphan pages (16) — built, but no page links to them
 - /book/principles
 - /commentary
 - /confirm
@@ -70,6 +67,7 @@ Found 20 links to draft pages, 8 links to missing pages, 13 dead external links,
 - /home-classic
 - /search
 - /ui
+- /ui/content
 - /vision/add/robotic
 - /vision/digital-integration
 - /vision/robotic-reindustrialization
@@ -94,7 +92,8 @@ Found 20 links to draft pages, 8 links to missing pages, 13 dead external links,
 | src/content/docs/ideas/finance/european-cryptocurrency.mdx | European Cryptocurrency Strategy |
 | src/content/docs/ideas/governance/digital-democracy.sidecar.mdx | European Digital Democracy — movement and delivery strategy |
 
-## Pages missing a meta description (44)
+## Pages missing a meta description (48)
+- /book/language
 - /book/principles
 - /commentary
 - /docs/book
@@ -135,10 +134,13 @@ Found 20 links to draft pages, 8 links to missing pages, 13 dead external links,
 - /docs/why
 - /docs/why-reforms
 - /home-classic
+- /tags
+- /ui
+- /ui/content
 - /vision/add/robotic
 - /vision/digital-integration
 - /vision/language-integration
 - /vision/robotic-reindustrialization
 
 ## Duplicate meta descriptions (1)
-- "A comprehensive vision for European integration through technology, language, and infrastructure." — /benefits/baltic-states, /benefits/businesses, /benefits/central-europe, /benefits/citizens, /benefits/ecommerce, /benefits/european-integration, /benefits/european-security, /benefits/france, /benefits/germany, /benefits/information-economy, /benefits/it-startups, /benefits/italy, /benefits/netherlands, /benefits/northern-europe, /benefits/poland, /benefits/regional-development, /benefits/south-eastern-europe, /benefits/southern-europe, /benefits/spain, /benefits/sweden, /benefits/ukraine, /confirm, /docs/articles/blockchain-state, /docs/articles, /docs/articles/learning-from-china, /docs/ideas/finance/european-cryptocurrency, /docs/ideas/governance/blockchain-state, /docs/ideas, /docs/reference, /tags/action, /tags/addressing, /tags/administration, /tags/articles, /tags/artificial-intelligence, /tags/automation, /tags/autonomous, /tags/autonomous-vehicles, /tags/blockchain, /tags/central-europe, /tags/certification, /tags/challenges, /tags/china, /tags/cities, /tags/citizen-participation, /tags/citizen-power, /tags/civic-technology, /tags/clean-energy, /tags/competence, /tags/constitutional-design, /tags/cooperatives, /tags/cryptocurrency, /tags/culture, /tags/cybernetics, /tags/decentralization, /tags/decision-speed, /tags/defence, /tags/democracy, /tags/demographics, /tags/digital, /tags/digital-currency, /tags/digital-government, /tags/digital-identity, /tags/digital-payments, /tags/digital-state, /tags/digital-transformation, /tags/digital-voting, /tags/direct-democracy, /tags/documentation, /tags/eci, /tags/economic-growth, /tags/economic-reform, /tags/economics, /tags/economy, /tags/education, /tags/egovernment, /tags/elections, /tags/english, /tags/environment, /tags/eu, /tags/eu-reform, /tags/euro, /tags/europe, /tags/european-citizens'-initiative, /tags/european-integration, /tags/feedback, /tags/finance, /tags/financial-integration, /tags/future, /tags/germany, /tags/global-south, /tags/government, /tags/health, /tags/housing, /tags/incentives, /tags/index, /tags/industrial-policy, /tags/industry, /tags/infrastructure, /tags/innovation, /tags/institutional-design, /tags/integration, /tags/labour, /tags/land-restoration, /tags/language, /tags/learning, /tags/lifelong-learning, /tags/logistics, /tags/manifesto, /tags/mental-health, /tags/migration, /tags/ministers, /tags/mobility, /tags/navigation, /tags/objections, /tags/open-lists, /tags/open-source, /tags/organising, /tags/ownership, /tags/payments, /tags/pensions, /tags/planning, /tags/poland, /tags/politics, /tags/public-private-partnership, /tags/public-services, /tags/reference, /tags/referendums, /tags/reform, /tags/research, /tags/robotics, /tags/safeguards, /tags/scale-up, /tags/science, /tags/selection, /tags/sidecar, /tags/skills, /tags/smart-contracts, /tags/smes, /tags/social-dialogue, /tags/sortition, /tags/sovereignty, /tags/specs, /tags/standardization, /tags/strategy, /tags/subsidiarity, /tags/surplus, /tags/sustainability, /tags/switzerland, /tags/technology, /tags/transportation, /tags/treaties, /tags/union-of-nations, /tags/urban-planning, /tags/vision, /tags/work, /tags/workforce-mobility, /ui
+- "A comprehensive vision for European integration through technology, language, and infrastructure." — /benefits/baltic-states, /benefits/businesses, /benefits/central-europe, /benefits/citizens, /benefits/ecommerce, /benefits/european-integration, /benefits/european-security, /benefits/france, /benefits/germany, /benefits/information-economy, /benefits/it-startups, /benefits/italy, /benefits/netherlands, /benefits/northern-europe, /benefits/poland, /benefits/regional-development, /benefits/south-eastern-europe, /benefits/southern-europe, /benefits/spain, /benefits/sweden, /benefits/ukraine, /confirm, /docs/articles/blockchain-state, /docs/articles, /docs/articles/learning-from-china, /docs/ideas/finance/european-cryptocurrency, /docs/ideas/governance/blockchain-state, /docs/ideas, /docs/reference

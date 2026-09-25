@@ -5,6 +5,9 @@ title: New Cities
 description: "The state can buy a field and build a town on it under new rules: large flats, a minimum building height rather than a maximum, and the tram in from day one."
 tags: housing, cities, infrastructure, health, planning
 author: Paweł Żentała
+layer: robotics
+kind: proposal
+order: 4
 ---
 
 Capital will not build you a large flat. It has no reason to. Rent is the point

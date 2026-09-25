@@ -5,6 +5,9 @@ title: The Shorter Week
 description: "AI and robots are taking work away. That can end as unemployment and war, or as time: two days a week to study, build, raise children and help govern."
 tags: work, education, automation, direct-democracy, labour
 author: Paweł Żentała
+layer: robotics
+kind: proposal
+order: 3
 ---
 
 In the manifesto I wrote that the work is going away and that this is the time

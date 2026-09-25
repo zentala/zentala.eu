@@ -1,0 +1,57 @@
+---
+/**
+ * TermRef — marks a glossary term explicitly in MDX prose (IA §7, D10;
+ * DESIGN.md "TermRef and Term card"). Data source: the glossary content
+ * collection, nothing else. The card is built at build time from `term`,
+ * `definition`, `href`, `status`; no fetch, no client-side lookup.
+ *
+ * `rehype-glossary-terms.mjs` auto-marks the *first* occurrence per page of
+ * an `autolink: true` term or alias and renders the identical output; use
+ * TermRef by hand only where the author wants a specific phrase marked, or
+ * for a term whose `autolink` is false (§7's "false" list: cheap-is-wealth,
+ * the-frame, the-three-layers, who-captures-the-gains — ordinary words that
+ * would over-match if auto-marked).
+ *
+ * MDX usage. The IA spec calls this `<T slug="...">`; a plain import-rename
+ * gets that spelling without a second component file:
+ *
+ *   import { default as T } from '../../components/TermRef.astro'
+ *   <T slug="optional-referendum">a referendum that can strike a law down</T>
+ *
+ * (`import TermRef from '.../TermRef.astro'` and `<TermRef slug="...">`
+ * works identically — `T` is just the alias the IA document uses.)
+ */
+import { getEntry } from 'astro:content';
+// Both imports are build-time only (this runs in the Astro frontmatter,
+// Node context); TERM_TOOLTIP_SCRIPT is embedded below as inline text, so
+// the browser never sees the plugin module's node:fs import.
+import { cardContent, TERM_TOOLTIP_SCRIPT } from '../plugins/rehype-glossary-terms.mjs';
+
+interface Props {
+  /** Glossary entry slug, e.g. "optional-referendum". */
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const entry = await getEntry('glossary', slug);
+if (!entry) {
+  throw new Error(`TermRef: no glossary entry "${slug}" (src/content/glossary/${slug}.md)`);
+}
+
+const { term, href, status, definition, source } = entry.data;
+const { body, source: sourceLine } = cardContent({ term, href, status, definition, source });
+const cardId = `term-card-${slug}`;
+---
+
+<a class="term" href={href} data-term={slug} aria-describedby={cardId}><slot /></a><div class="term-card" id={cardId} popover="manual" role="status">
+  <h4 class="term-card__term">{term}</h4>
+  {body && <p class="term-card__body">{body}</p>}
+  {sourceLine && <p class="term-card__source">{sourceLine}</p>}
+  <p class="term-card__links">
+    <a class="term-card__read" href={href}>Read where it is argued →</a>
+    {' '}
+    <a class="term-card__all" href="/glossary">All terms</a>
+  </p>
+</div>
+
+<script is:inline set:html={TERM_TOOLTIP_SCRIPT} />

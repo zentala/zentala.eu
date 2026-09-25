@@ -4,6 +4,7 @@ import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
+import rehypeGlossaryTerms from './src/plugins/rehype-glossary-terms.mjs';
 
 // Row 1/2: before E006-T08, docs/[...slug].astro had no namespace filter, so
 // EVERY book chapter got an accidental /docs/book/<slug> twin (entry.slug,
@@ -74,10 +75,16 @@ const redirects = {
   '/vision/language-integration': '/vision#language',
   '/vision/robotic-reindustrialization': '/vision#robotics',
 
-  // E006-T12 rows (not this task) — left as a marker so the next task finds
-  // its place in this table instead of starting a second one:
-  // '/tags': '/glossary',
-  // '/book/language': '/book/one-working-language',
+  // Row 6: /tags retired (IA §9 row 6, glossary replaces it).
+  '/tags': '/glossary',
+
+  // book/language.md merges into the new floor chapter (IA §2.5, D13); that
+  // chapter (book/one-working-language.md) is written in E006-T15 (wave 5)
+  // and does not exist yet in this worktree, so this redirect target 404s
+  // until that wave lands. Left here rather than after T15 because
+  // book/language.md is deleted in this same wave's editorial pass and any
+  // link to it must not dead-end even briefly.
+  '/book/language': '/book/one-working-language',
 };
 
 // https://astro.build/config
@@ -107,6 +114,12 @@ export default defineConfig({
     service: {
       entrypoint: 'astro/assets/services/sharp'
     }
+  },
+  // E006-T12 (IA §7): auto-marks the first occurrence per page of a
+  // glossary term. `mdx()` inherits `markdown` config by default
+  // (extendMarkdownConfig), so this also runs on .mdx chapters.
+  markdown: {
+    rehypePlugins: [rehypeGlossaryTerms],
   },
   vite: {
     server: {

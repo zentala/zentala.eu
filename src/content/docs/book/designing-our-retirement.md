@@ -5,6 +5,9 @@ title: Designing Our Retirement
 description: Europe is aging, the pension model is ending, and we have roughly thirty years of working economy left to build what replaces it.
 tags: demographics, pensions, robotics, strategy
 author: Paweł Żentała
+layer: frame
+kind: argument
+order: 1
 ---
 
 Everyone talks about the demographic crisis. Nobody does anything about it.
