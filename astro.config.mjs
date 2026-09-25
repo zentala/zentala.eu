@@ -51,18 +51,20 @@ const redirects = {
 
   // Row 4: both casings of both eGov slugs, under their legacy /docs/ path,
   // merge into the existing book/european-egovernment.mdx chapter. The
-  // eGov-vison/eGov-challenges content merge itself is E006-T18; here we
-  // only redirect the old /docs/ URLs. The bare /book/eGov-vison and
-  // /book/eGov-challenges paths are deliberately NOT redirected here: both
-  // files are draft:true, so book/[...slug].astro (entry.id keeps case,
-  // per IA §9 row 4) omits them from a production build — no route exists
-  // to collide with — but a SITE_PREVIEW=true build still generates the
-  // real chapter at that exact path, and a redirect entry for the same
-  // path would collide with it and fail the build.
+  // eGov-vison/eGov-challenges content merge landed in E006-T18 (the two
+  // files are deleted); the /docs/ spellings and, below, the bare /book/
+  // spellings all redirect to the merged chapter.
   '/docs/book/eGov-vison': '/book/european-egovernment',
   '/docs/book/egov-vison': '/book/european-egovernment',
   '/docs/book/eGov-challenges': '/book/european-egovernment',
   '/docs/book/egov-challenges': '/book/european-egovernment',
+  // E006-T18: both files are now deleted (merged into european-egovernment),
+  // so the bare /book/ paths no longer collide with a generated chapter and
+  // redirect too, in both spellings (IA §9 row 4).
+  '/book/eGov-vison': '/book/european-egovernment',
+  '/book/egov-vison': '/book/european-egovernment',
+  '/book/eGov-challenges': '/book/european-egovernment',
+  '/book/egov-challenges': '/book/european-egovernment',
 
   // Row 7: the three /vision/<layer> preview pages, replaced by anchors on
   // /vision. Astro 4's static redirects table DOES keep a `#fragment` in the
