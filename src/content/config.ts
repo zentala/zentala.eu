@@ -3,9 +3,11 @@ import { defineCollection, z } from 'astro:content';
 // Define common schema for all content collections
 const baseSchema = z.object({
     title: z.string(),
-    description: z.string(),
+    description: z.string().min(70).max(160),
+    date: z.coerce.date(),
+    updated: z.coerce.date().optional(),
     tags: z.union([z.string(), z.array(z.string())]).optional(),
-    author: z.string().optional(),
+    author: z.string().default('Paweł Żentała'),
     customSlug: z.string().optional(), // Renamed from slug to customSlug to avoid conflict with Astro's reserved slug field
     draft: z.boolean().optional().default(false) // Add draft status option
 });
@@ -36,7 +38,10 @@ const transcriptSchema = baseSchema.extend({
 // Hidden in production until COMMENTARY_PUBLIC=true (see src/lib/commentary.ts).
 const commentarySchema = z.object({
     title: z.string(),
+    description: z.string().min(70).max(160),
     date: z.coerce.date(),
+    updated: z.coerce.date().optional(),
+    author: z.string().default('Paweł Żentała'),
     sourceUrl: z.string().url(),
     sourceTitle: z.string(),
     sourceOutlet: z.string(),

@@ -1,7 +1,8 @@
 ---
+date: 2024-12-28
 draft: true
 title: Near-Zero Transaction Costs
-description: Reducing fees for digital money transfers in the EU.
+description: "Cutting the cost of moving money across the European Union to nearly zero, and what that would unlock for trade."
 ---
 
 ## Near-Zero Transaction Costs

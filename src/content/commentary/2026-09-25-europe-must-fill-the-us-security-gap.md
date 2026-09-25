@@ -1,6 +1,7 @@
 ---
 title: "Europe must fill the US security gap over Ukraine"
 date: 2026-09-25
+description: "As the United States deprioritizes European security while Russia keeps fighting, Europe needs to fund and organise its own defence, not wait for Washington."
 sourceUrl: https://www.youtube.com/watch?v=jE-E1lQunm0
 sourceTitle: "When Europe Falters, America Gains"
 sourceOutlet: Good Times Bad Times (YouTube)

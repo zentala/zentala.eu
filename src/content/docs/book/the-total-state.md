@@ -1,7 +1,8 @@
 ---
+date: 2026-09-25
 draft: false
 title: The Total State
-description: A state built on typewriters wastes people and money, and a state built on software can switch a person off. Both are true, which is why digitalisation and direct democracy have to ship together.
+description: "A state built on typewriters wastes people and money; one built on software can switch a person off. Digitalisation and democracy must ship together."
 tags: digital state, direct democracy, digital identity, administration, Central Europe
 author: Paweł Żentała
 ---

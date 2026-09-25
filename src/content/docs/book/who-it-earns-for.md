@@ -1,7 +1,8 @@
 ---
+date: 2026-09-25
 draft: false
 title: Who It Earns For
-description: Money cannot buy a service nobody supplies. The system we build has to produce a surplus, and that surplus has to reach society rather than only the owners of the machines.
+description: "Money cannot buy a service nobody supplies. The system we build must produce a surplus that reaches society, not only the owners of the machines."
 tags: ownership, public services, surplus, direct democracy, economics
 author: Paweł Żentała
 ---

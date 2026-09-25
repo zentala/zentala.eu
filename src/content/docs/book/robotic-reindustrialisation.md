@@ -1,4 +1,5 @@
 ---
+date: 2026-09-20
 draft: false
 title: Robotic Reindustrialisation
 description: How Europe funds robotics through defence research now, converts it to civilian use after the war, and keeps the machines cheap enough that everyone benefits.
