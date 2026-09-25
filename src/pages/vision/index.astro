@@ -1,133 +1,56 @@
 ---
 /**
- * Vision overview: the demographic frame on top, three layers with a visible
- * dependency below it, the ownership question beside them, and a call to the
- * reader at the end. Content lives here; layout lives in components/vision.
+ * Vision overview: the long form of the argument. The frame on top, the three
+ * layers with every supporting point below it, the ownership question beside
+ * them, and a call to the reader at the end. The text lives in
+ * src/lib/vision-content.ts, shared with the homepage, which renders the same
+ * frame and the short form of the layers.
  */
 import Layout from '../../layouts/Layout.astro';
 import FrameIntro from '../../components/vision/FrameIntro.astro';
 import LayerStack from '../../components/vision/LayerStack.astro';
 import CrossCuttingNote from '../../components/vision/CrossCuttingNote.astro';
 import CallToAction from '../../components/vision/CallToAction.astro';
-import type { Action, FrameStep, Layer } from '../../components/vision/types';
+import {
+  callToAction,
+  crossCuttingNote,
+  ctaActions,
+  frameSteps,
+  layersSection,
+  resolveLayers,
+  visionFrameIntro,
+} from '../../lib/vision-content';
 
-const frameSteps: FrameStep[] = [
-  {
-    label: 'The shared condition',
-    text: 'Europe is aging. Birth rates are below replacement across the continent. This is not a national problem with national fixes; it is the same problem everywhere, which makes it the strongest argument for acting together.',
-  },
-  {
-    label: 'The consequence',
-    text: 'Pensions and public services rest on growth plus generational replacement. Both end within twenty to thirty years. The bill arrives whether or not anyone plans for it.',
-  },
-  {
-    label: 'The window',
-    text: 'We have roughly thirty years of working economy left to build what will carry us. This is the last generation that can pay for it, and the technology arrived in time.',
-  },
-  {
-    label: 'The choice',
-    text: 'Money is a claim on someone else\'s labour. That labour comes from people or from machines. There will not be enough people.',
-  },
-];
-
-const layers: Layer[] = [
-  {
-    level: 1,
-    position: 'Floor',
-    title: 'One economy, one working language',
-    summary: 'A shrinking workforce has to be organised well, because there is no slack left. English as the official working language of European business and administration is the precondition.',
-    points: [
-      'English is the bottleneck of the European information economy: the most capable people cannot work with each other across borders without it.',
-      'No common language is the likely reason Europe has produced no startups or corporations of European scale, ones whose capital cannot be called French, German or Dutch.',
-      'A shared working language produces a European political consciousness, not only a business one.',
-      'A shared interest is what keeps us from the next war. The Union was built so there would be no more war; this is the mechanism for this century.',
-    ],
-    href: '/docs/book/european-english',
-    linkText: 'Read the language proposal',
-    tone: 'indigo',
-  },
-  {
-    level: 2,
-    position: 'Middle',
-    title: 'The digital state',
-    summary: 'With a common working language the state itself can be rebuilt: digital administration, digital public services, and direct democracy in place of representation that serves lobbies.',
-    points: [
-      'Digital administration and public services cut the cost of running a state that will have fewer taxpayers.',
-      'Direct democracy is the route out of dependence on a political class we did not choose and cannot correct between elections.',
-      'Regulation becomes a tool for improving how the state works, not a substitute for it.',
-    ],
-    href: '/docs/book/european-egovernment',
-    linkText: 'Read the digital state proposal',
-    tone: 'blue',
-  },
-  {
-    level: 3,
-    position: 'Ceiling',
-    title: 'Robotics and autonomous systems',
-    summary: 'On top of a digital state, automation becomes possible at scale. The goal, stated plainly: automate as much of old-age provision as possible, so the few young people left are not crushed carrying it.',
-    points: [
-      'Communal and municipal services: the most mechanical, the most staffed, the first to lose workers.',
-      'Food production and delivery: autonomous farming and logistics.',
-      'Predictive medicine and healthcare: the cost that grows fastest as a population ages.',
-      'Military robotics research funded by the war with Russia can be converted to civilian use afterwards. This is the realistic route to funding robotics at European scale.',
-    ],
-    href: '/book/robotic-reindustrialisation',
-    linkText: 'Read the robotics proposal',
-    tone: 'green',
-  },
-];
-
-// The /vision/<pillar> pages redirect to /vision in production (dev-only work),
-// so each layer links to its published chapter instead.
-const crossCuttingParagraphs = [
-  'If automation replaces the labour our pensions depend on and the returns go to a handful of owners, we have solved production and destroyed the distribution that made it worth solving.',
-  'Ownership will be mixed: state, cooperative, private, dividend. Who owns the robots matters less than one thing: robots must not be expensive.',
-];
-
-const crossCuttingPrinciples = [
-  'Cheap to buy and run',
-  'Available to every municipality, farm and clinic',
-  'Built on open standards',
-  'Hard to monopolise',
-];
-
-const ctaActions: Action[] = [
-  { label: 'Why Europe needs this', href: '/why' },
-  { label: 'What your country gains', href: '/benefits' },
-  { label: 'The principles behind it', href: '/principles' },
-];
+const layers = resolveLayers('long');
 ---
 
 <Layout title="European Integration Vision">
   <main class="container mx-auto max-w-6xl px-4 py-8">
     <FrameIntro
-      eyebrow="The frame"
-      title="We are an aging society. We can design what comes next."
+      eyebrow={visionFrameIntro.eyebrow}
+      title={visionFrameIntro.title}
       steps={frameSteps}
-      conclusion="So the plan is to shift our expectations onto robotics, deliberately, as a strategy, not as a hope. Robotics needs the layers beneath it. Build them in order."
+      conclusion={visionFrameIntro.conclusion}
     />
 
     <section aria-labelledby="layers-title" class="mb-16">
-      <h2 id="layers-title" class="text-3xl font-bold mb-2">Three layers, in build order</h2>
-      <p class="layers-lead text-lg mb-8 max-w-3xl">Not three parallel pillars. Each level is what makes the next one possible, and the one running through all of them is the ownership question on the right.</p>
+      <h2 id="layers-title" class="text-3xl font-bold mb-2">{layersSection.title}</h2>
+      <p class="layers-lead text-lg mb-8 max-w-3xl">{layersSection.lead}</p>
 
       <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_20rem] gap-8 items-start">
         <LayerStack layers={layers} />
         <CrossCuttingNote
-          eyebrow="Runs through every layer"
-          title="Who captures the gains?"
-          paragraphs={crossCuttingParagraphs}
-          principles={crossCuttingPrinciples}
+          eyebrow={crossCuttingNote.eyebrow}
+          title={crossCuttingNote.title}
+          paragraphs={crossCuttingNote.paragraphs}
+          principles={crossCuttingNote.principles}
         />
       </div>
     </section>
 
     <CallToAction
-      title="You are not the audience for this. You are the condition of it."
-      paragraphs={[
-        'Nothing here needs permission to begin. Direct democracy, a working common language, automating what an aging society cannot staff: none of it waits for an institution to approve it. It waits for enough people to want it that wanting it becomes a fact politicians have to answer to.',
-        'If you repeat the idea, argue it, send it to someone, or build a piece of it, the probability of it happening goes up. That is the only way such things have ever happened. The work is underway; this is an invitation into it.',
-      ]}
+      title={callToAction.title}
+      paragraphs={callToAction.paragraphs}
       actions={ctaActions}
     />
   </main>

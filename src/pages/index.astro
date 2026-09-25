@@ -21,88 +21,19 @@ import FrameIntro from '../components/vision/FrameIntro.astro';
 import LayerStack from '../components/vision/LayerStack.astro';
 import CrossCuttingNote from '../components/vision/CrossCuttingNote.astro';
 import CallToAction from '../components/vision/CallToAction.astro';
-import type { Action, FrameStep, Layer } from '../components/vision/types';
+import {
+  callToAction,
+  crossCuttingNote,
+  ctaActions,
+  frameSteps,
+  homeFrameIntro,
+  layersSection,
+  resolveLayers,
+} from '../lib/vision-content';
 
-// The frame the whole site hangs on: an aging Europe, and thirty years to prepare.
-const frameSteps: FrameStep[] = [
-  {
-    label: 'Generations no longer replace themselves',
-    text: 'Birth rates are below replacement in every member state. Preparing for a future without generational replacement is not speculation; it is one of the most important decisions our societies and economies face.',
-  },
-  {
-    label: 'Governments already know',
-    text: 'They warn of an economic crisis and of changes that could shake the economy. Their answer is to bring in migrants, so that someone is left to do the work.',
-  },
-  {
-    label: 'That is not the only answer',
-    text: 'The warnings show the problem is real. They do not show that importing workers is the only way to deal with it. The question is open: how do we prepare for pensions that no longer have a next generation behind them?',
-  },
-  {
-    label: 'Set a goal',
-    text: 'We can prepare, and we should name how: build a robotic economy that pays for our retirement. Machines that do the work there will not be enough people to do.',
-  },
-];
-
-const layers: Layer[] = [
-  {
-    level: 1,
-    position: 'Floor',
-    title: 'One economy, one working language',
-    summary: 'A shrinking workforce has to be organised well, because there is no slack left. English as the official working language of European business and administration is the precondition.',
-    points: [
-      'English is the bottleneck of the European information economy: the most capable people cannot work with each other across borders without it.',
-      'No common language is the likely reason Europe has produced no startups or corporations of European scale.',
-      'A shared working language produces a European political consciousness, not only a business one.',
-    ],
-    href: '/docs/book/european-english',
-    linkText: 'Read the language proposal',
-    tone: 'indigo',
-  },
-  {
-    level: 2,
-    position: 'Middle',
-    title: 'The digital state',
-    summary: 'With a common working language the state itself can be rebuilt: digital administration, digital public services, and direct democracy in place of representation that serves lobbies.',
-    points: [
-      'Digital administration and public services cut the cost of running a state that will have fewer taxpayers.',
-      'Direct democracy is the route out of dependence on a political class we did not choose and cannot correct between elections.',
-    ],
-    href: '/docs/book/european-egovernment',
-    linkText: 'Read the digital state proposal',
-    tone: 'blue',
-  },
-  {
-    level: 3,
-    position: 'Ceiling',
-    title: 'Robotics and autonomous systems',
-    summary: 'On top of a digital state, automation becomes possible at scale. The goal, stated plainly: automate as much of old-age provision as possible, so the few young people left are not crushed carrying it.',
-    points: [
-      'Communal services, food production and logistics, and predictive medicine: the most staffed and the first to lose workers as the population ages.',
-      'Military robotics research funded by the war with Russia can be converted to civilian use afterwards — the realistic route to funding robotics at European scale.',
-    ],
-    href: '/book/robotic-reindustrialisation',
-    linkText: 'Read the robotics proposal',
-    tone: 'green',
-  },
-];
-
-const crossCuttingParagraphs = [
-  'If automation replaces the labour our pensions depend on and the returns go to a handful of owners, we have solved production and destroyed the distribution that made it worth solving.',
-  'Ownership will be mixed: state, cooperative, private, dividend. Who owns the robots matters less than one thing: robots must not be expensive.',
-];
-
-const crossCuttingPrinciples = [
-  'Cheap to buy and run',
-  'Available to every municipality, farm and clinic',
-  'Built on open standards',
-  'Hard to monopolise',
-];
-
-const ctaActions: Action[] = [
-  { label: 'Why Europe needs this', href: '/why' },
-  { label: 'What your country gains', href: '/benefits' },
-  { label: 'The principles behind it', href: '/principles' },
-];
+// The frame and the layer text are shared with /vision (src/lib/vision-content.ts);
+// this page renders the short form of the layers.
+const layers = resolveLayers('short');
 ---
 
 <Layout title="Home">
@@ -151,10 +82,10 @@ const ctaActions: Action[] = [
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 my-16">
     <FrameIntro
       as="h2"
-      eyebrow="Why this site exists"
-      title="What should Europe look like when we are old?"
+      eyebrow={homeFrameIntro.eyebrow}
+      title={homeFrameIntro.title}
       steps={frameSteps}
-      conclusion="Let us decide what we want the European Union, and our Europe, to look like when we are older, and use the next thirty years to build it."
+      conclusion={homeFrameIntro.conclusion}
     />
 
     <div class="text-center">
@@ -167,18 +98,18 @@ const ctaActions: Action[] = [
 
   <div class="py-10 mb-16">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <DisplayTitle level={2} class="text-center">Three layers, in build order</DisplayTitle>
+      <DisplayTitle level={2} class="text-center">{layersSection.title}</DisplayTitle>
       <p class="section-lead text-xl leading-relaxed mt-4 mb-16 text-center max-w-4xl mx-auto">
-        Not three parallel pillars. Each level is what makes the next one possible, and the ownership question runs through all of them.
+        {layersSection.lead}
       </p>
 
       <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_20rem] gap-8 items-start">
         <LayerStack layers={layers} />
         <CrossCuttingNote
-          eyebrow="Runs through every layer"
-          title="Who captures the gains?"
-          paragraphs={crossCuttingParagraphs}
-          principles={crossCuttingPrinciples}
+          eyebrow={crossCuttingNote.eyebrow}
+          title={crossCuttingNote.title}
+          paragraphs={crossCuttingNote.paragraphs}
+          principles={crossCuttingNote.principles}
         />
       </div>
     </div>
@@ -258,6 +189,10 @@ const ctaActions: Action[] = [
             question: 'How long would implementation take?',
             answer: 'English language adoption can start now with formal agreements. Robotization and AI projects should launch immediately, both for defense and for the civilian capabilities they build. Rather than waiting for perfect conditions, we should adopt these reforms while they still have thirty years to pay off.',
           },
+          {
+            question: 'What are the main challenges, and what could go wrong?',
+            answer: 'Three things, honestly. Governments may patch the demographic hole with mass immigration because it is the reflex, at a cost we do not need to pay. Treaty change needs unanimity, so the plan has to be built so that every member state wins — and it still has to survive resistance from whoever benefits from the status quo. And the gains from automation may land narrowly: if robots are expensive and easy to monopolise, we solve production and lose the distribution that made it worth solving. The worst outcome is none of these in particular — it is that nobody prepares, retirement arrives, and the money buys nothing because the system still assumes workers who no longer exist.',
+          },
         ]}
       />
     </div>
@@ -277,11 +212,8 @@ const ctaActions: Action[] = [
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
     <CallToAction
-      title="You are not the audience for this. You are the condition of it."
-      paragraphs={[
-        'Nothing here needs permission to begin. Direct democracy, a working common language, automating what an aging society cannot staff: none of it waits for an institution to approve it. It waits for enough people to want it that wanting it becomes a fact politicians have to answer to.',
-        'If you repeat the idea, argue it, send it to someone, or build a piece of it, the probability of it happening goes up. Pick a layer and carry it.',
-      ]}
+      title={callToAction.title}
+      paragraphs={callToAction.paragraphs}
       actions={ctaActions}
     />
   </div>
