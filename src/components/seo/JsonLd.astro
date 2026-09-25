@@ -1,0 +1,18 @@
+---
+/**
+ * Structured data (JSON-LD) for search engines and AI agents (E004-T07).
+ * Renders one <script type="application/ld+json"> block per graph node passed
+ * in. Callers build the plain-object graphs (see helpers below) and this
+ * component only serializes them — it holds no site-specific data itself.
+ */
+interface Props {
+  /** One or more JSON-LD objects; each is serialized as its own script tag. */
+  graphs: Record<string, unknown>[]
+}
+
+const { graphs } = Astro.props
+---
+
+{graphs.map((graph) => (
+  <script type="application/ld+json" set:html={JSON.stringify(graph)} is:inline />
+))}

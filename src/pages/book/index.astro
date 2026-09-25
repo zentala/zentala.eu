@@ -2,6 +2,7 @@
 import { IS_PREVIEW } from '../../lib/preview';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { bookSeriesSchema, breadcrumbSchema, SITE_URL } from '../../lib/jsonld';
 
 // Chapters come from the content collection, so an unpublished draft can never
 // appear here as a link that 404s in production.
@@ -68,9 +69,19 @@ const groupedDocs = GROUPS.map((group) => ({
     .filter((doc): doc is BookDoc => doc !== undefined),
 })).filter((group) => group.docs.length > 0);
 
+const jsonLd = [
+  bookSeriesSchema(
+    groupedDocs.flatMap((group) => group.docs.map((doc) => ({ name: doc.data.title, url: `${SITE_URL}/book/${doc.slug}` })))
+  ),
+  breadcrumbSchema([
+    { name: 'Home', url: SITE_URL },
+    { name: 'Book', url: `${SITE_URL}/book` },
+  ]),
+];
+
 ---
 
-<Layout title="Vision Book" description="The full book: a chapter-by-chapter case for European reform through language, digital government, and industry.">
+<Layout title="Vision Book" description="The full book: a chapter-by-chapter case for European reform through language, digital government, and industry." jsonLd={jsonLd}>
   <div class="min-h-screen">
     <div class="container mx-auto max-w-6xl px-4 py-8">
       <div class="mb-8">

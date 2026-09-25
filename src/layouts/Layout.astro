@@ -2,7 +2,9 @@
 import '../styles/global.scss'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import JsonLd from '../components/seo/JsonLd.astro'
 import { IS_PREVIEW } from '../lib/preview'
+import { siteGraph } from '../lib/jsonld'
 
 interface Props {
   title: string
@@ -12,6 +14,8 @@ interface Props {
   noindex?: boolean
   type?: 'website' | 'article'
   markdownAlternate?: string
+  /** Extra JSON-LD graphs (Article/BlogPosting, BreadcrumbList, series...) beyond the site-wide WebSite + Person. */
+  jsonLd?: Record<string, unknown>[]
 }
 
 const SITE_NAME = 'EU Reform Vision'
@@ -27,6 +31,7 @@ const {
   noindex = false,
   type = 'website',
   markdownAlternate,
+  jsonLd = [],
 } = Astro.props
 
 const canonicalUrl = new URL(canonical ?? Astro.url.pathname, Astro.site)
@@ -72,6 +77,8 @@ const shouldNoindex = noindex || IS_PREVIEW
     <meta name="twitter:title" content={`${title} | ${SITE_NAME}`} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
+
+    <JsonLd graphs={[...siteGraph(), ...jsonLd]} />
 
     <script is:inline>
       // Theme management script
