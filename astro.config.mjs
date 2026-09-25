@@ -18,6 +18,7 @@ export default defineConfig({
           !path.startsWith('/home-classic') &&
           !path.startsWith('/docs/book/') &&
           !path.startsWith('/docs/why') &&
+          !path.startsWith('/docs/for-you') &&
           !path.includes('/drafts/')
         );
       },

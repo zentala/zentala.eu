@@ -32,7 +32,7 @@ export const countries: BenefitEntry[] = [
     ],
     links: [
       { href: '/book/robotic-reindustrialisation', label: 'The robotics proposal' },
-      { href: '/docs/book/european-egovernment', label: 'The digital state proposal' },
+      { href: '/book/european-egovernment', label: 'The digital state proposal' },
     ],
   },
   {
@@ -60,7 +60,7 @@ export const countries: BenefitEntry[] = [
       },
     ],
     links: [
-      { href: '/docs/book/european-english', label: 'The language proposal' },
+      { href: '/book/european-english', label: 'The language proposal' },
       { href: '/why', label: 'Why Europe has to reform' },
     ],
   },
@@ -147,7 +147,7 @@ export const countries: BenefitEntry[] = [
       },
     ],
     links: [
-      { href: '/docs/book/european-english', label: 'The language proposal' },
+      { href: '/book/european-english', label: 'The language proposal' },
       { href: '/benefits/southern-europe', label: 'Southern Europe' },
     ],
   },
@@ -177,7 +177,7 @@ export const countries: BenefitEntry[] = [
     ],
     links: [
       { href: '/benefits/northern-europe', label: 'Northern Europe' },
-      { href: '/docs/book/european-egovernment', label: 'The digital state proposal' },
+      { href: '/book/european-egovernment', label: 'The digital state proposal' },
     ],
   },
   {
@@ -205,7 +205,7 @@ export const countries: BenefitEntry[] = [
       },
     ],
     links: [
-      { href: '/docs/book/european-english', label: 'The language proposal' },
+      { href: '/book/european-english', label: 'The language proposal' },
       { href: '/principles', label: 'How we decide' },
     ],
   },

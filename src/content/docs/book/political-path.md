@@ -195,7 +195,7 @@ the deal, and it works.
 ---
 
 *Part of the [EU Reform Vision](/vision). The [demographic
-frame](/docs/book/designing-our-retirement) explains why any of this is urgent;
+frame](/book/designing-our-retirement) explains why any of this is urgent;
 this chapter is about how it gets done when the people currently in charge would
 rather it were not.*
 

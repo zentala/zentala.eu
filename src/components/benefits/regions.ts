@@ -93,7 +93,7 @@ export const regions: BenefitEntry[] = [
     ],
     links: [
       { href: '/benefits/sweden', label: 'Sweden in detail' },
-      { href: '/docs/book/european-egovernment', label: 'The digital state proposal' },
+      { href: '/book/european-egovernment', label: 'The digital state proposal' },
     ],
   },
   {
@@ -123,7 +123,7 @@ export const regions: BenefitEntry[] = [
     ],
     links: [
       { href: '/benefits/european-security', label: 'European security' },
-      { href: '/docs/book/european-egovernment', label: 'The digital state proposal' },
+      { href: '/book/european-egovernment', label: 'The digital state proposal' },
     ],
   },
   {

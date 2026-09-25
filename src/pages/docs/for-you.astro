@@ -1,8 +1,3 @@
 ---
-export const prerender = false;
+return Astro.redirect('/benefits', 301);
 ---
-
-<meta http-equiv="refresh" content="0;url=/benefits">
-<script>
-  window.location.href = "/benefits";
-</script>

@@ -64,7 +64,7 @@ export const stakeholders: BenefitEntry[] = [
     ],
     links: [
       { href: '/principles', label: 'How we decide' },
-      { href: '/docs/book/european-english', label: 'The language proposal' },
+      { href: '/book/european-english', label: 'The language proposal' },
     ],
   },
   {
@@ -93,7 +93,7 @@ export const stakeholders: BenefitEntry[] = [
       },
     ],
     links: [
-      { href: '/docs/book/european-egovernment', label: 'The digital state proposal' },
+      { href: '/book/european-egovernment', label: 'The digital state proposal' },
       { href: '/why', label: 'Why Europe has to reform' },
     ],
   },
@@ -183,8 +183,8 @@ export const stakeholders: BenefitEntry[] = [
       },
     ],
     links: [
-      { href: '/docs/book/european-english', label: 'The language proposal' },
-      { href: '/docs/book/european-egovernment', label: 'The digital state proposal' },
+      { href: '/book/european-english', label: 'The language proposal' },
+      { href: '/book/european-egovernment', label: 'The digital state proposal' },
     ],
   },
   {
