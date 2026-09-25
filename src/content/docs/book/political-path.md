@@ -195,3 +195,7 @@ the deal, and it works.
 frame](/docs/book/designing-our-retirement) explains why any of this is urgent;
 this chapter is about how it gets done when the people currently in charge would
 rather it were not.*
+
+*[The Total State](/book/the-total-state) is the other half of the same
+question: direct democracy is not only how we get a better government, it is the
+counterweight a digital state needs before we hand it that much reach.*
