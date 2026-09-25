@@ -38,6 +38,10 @@ Make future agents in this repo apply the same rules without searching again.
 
 Vendor copies into the repo vs. install globally in ~/.claude/skills.
 
+## Decision taken (2026-09-25)
+
+Vendor the skills into this repo under `.claude/skills/` with source URL and licence — adopted as the recommended default.
+
 ## Evidence
 
 Review report: `.plan/reports/2026-09-25-ui-seo-review/` (skills shortlist, static inventory, rendered axe audit, content/SEO/GEO review).

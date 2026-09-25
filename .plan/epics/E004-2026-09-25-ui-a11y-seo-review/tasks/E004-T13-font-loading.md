@@ -40,6 +40,10 @@ Fonts come from Google Fonts (third-party request, privacy) in 5+ weights; the r
 
 Keep Inter body + Playfair headings, or move essay body to a text serif (e.g. Source Serif 4) for a more bookish read.
 
+## Decision taken (2026-09-25)
+
+Keep Inter (body) + Playfair Display (headings), self-hosted — adopted as the safe default when Paweł ordered waves 2–4; a text-serif body remains an open option.
+
 ## Evidence
 
 Review report: `.plan/reports/2026-09-25-ui-seo-review/` (skills shortlist, static inventory, rendered axe audit, content/SEO/GEO review).

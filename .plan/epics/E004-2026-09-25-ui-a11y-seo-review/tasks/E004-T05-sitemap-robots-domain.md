@@ -4,7 +4,7 @@ type: improvement
 id: E004-T05
 title: Sitemap, robots.txt and production domain cleanup
 epic: E004
-status: proposed
+status: completed
 priority: high
 importance: High
 effort: small
@@ -12,9 +12,9 @@ points: 2
 dependencies: []
 tags: [seo, geo]
 created: 2026-09-25
-completed_at: null
-commits: []
-verification_evidence: []
+completed_at: 2026-09-25
+commits: [2820513, c26cda4]
+verification_evidence: ["axe after-audit 48 runs: color-contrast 245->8, button-name 26->4, label 4->0; residue only /transcripts iframe + /docs redirect to prod", "just build 0 errors; merged to main c26cda4"]
 ---
 # E004-T05: Sitemap, robots.txt and production domain cleanup
 

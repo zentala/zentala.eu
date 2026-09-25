@@ -40,6 +40,15 @@ Only 2/5 sampled essays state their thesis in the opening; no question-phrased h
 
 Paweł's voice: agent drafts, Paweł approves per essay.
 
+## Scope limit (2026-09-25)
+
+These essays are Paweł's political writing. The implementing agent MUST NOT rewrite essay prose or headings.
+Allowed edits: frontmatter `description` (answer-first, 120–160 chars, restating only what the essay already says),
+curly-quote normalisation, and /docs/book → /book link fixes.
+Answer-first openings and question-phrased headings go ONLY as proposals into
+`.plan/reports/2026-09-25-answer-first-proposals.md` (one section per essay: current opening, proposed opening),
+for Paweł to approve per essay. The criteria about openings/headings are met by that proposals file.
+
 ## Evidence
 
 Review report: `.plan/reports/2026-09-25-ui-seo-review/` (skills shortlist, static inventory, rendered axe audit, content/SEO/GEO review).

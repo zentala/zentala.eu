@@ -43,6 +43,10 @@ Icons are a mix of Font Awesome kit (render-blocking external script), emoji, lo
 
 Icon family: Lucide (recommended; thin editorial stroke), Tabler, or Phosphor.
 
+## Decision taken (2026-09-25)
+
+Lucide via astro-icon / @iconify-json/lucide — adopted as the recommended default when Paweł ordered waves 2–4; to be confirmed.
+
 ## Evidence
 
 Review report: `.plan/reports/2026-09-25-ui-seo-review/` (skills shortlist, static inventory, rendered axe audit, content/SEO/GEO review).

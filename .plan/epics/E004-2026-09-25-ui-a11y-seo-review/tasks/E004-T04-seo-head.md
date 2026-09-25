@@ -4,7 +4,7 @@ type: improvement
 id: E004-T04
 title: Per-page SEO head: description, canonical, Open Graph
 epic: E004
-status: proposed
+status: completed
 priority: high
 importance: High
 effort: small
@@ -12,9 +12,9 @@ points: 3
 dependencies: []
 tags: [seo]
 created: 2026-09-25
-completed_at: null
-commits: []
-verification_evidence: []
+completed_at: 2026-09-25
+commits: [95593d3, c26cda4]
+verification_evidence: ["axe after-audit 48 runs: color-contrast 245->8, button-name 26->4, label 4->0; residue only /transcripts iframe + /docs redirect to prod", "just build 0 errors; merged to main c26cda4"]
 ---
 # E004-T04: Per-page SEO head: description, canonical, Open Graph
 
