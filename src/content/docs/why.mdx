@@ -1,169 +1,288 @@
 ---
-title: "Why Reforms Are Needed"
-description: "Europe is aging, the model that pays for our pensions is ending, and we have about thirty years to build its replacement."
-tags: "EU, Reform, Vision"
+title: "The Objections, Answered"
+description: "If you accept that Europe is aging and the pension model ends with it, the hard questions start here: why machines and not migrants, who owns them, who pays, and how any of it happens politically."
+tags: "EU, Reform, Objections"
 customSlug: "why-reforms"
 ---
 
-import Card from '../../components/Card.astro';
-import WhyCardGrid from '../../components/why/WhyCardGrid.astro';
-import WhyDigitalReform from '../../components/WhyDigitalReform.astro';
+import WhyAnswer from '../../components/why/WhyAnswer.astro';
+import WhyEvidenceNote from '../../components/why/WhyEvidenceNote.astro';
 import WhyLead from '../../components/why/WhyLead.astro';
 import WhySection from '../../components/why/WhySection.astro';
 
 <WhyLead
   paragraphs={[
-    "Generations no longer replace themselves. Birth rates sit below replacement in every member state, and the model that pays for our pensions — growth, plus enough young workers behind us — runs out with them. That is not a forecast about somebody else's country; it is the shared condition of the whole continent.",
-    "We are not old yet. We still have roughly thirty years of a working economy in which to build the thing that will carry us, and this is the last generation able to pay for it. Money is only a claim on labour, so there are exactly two places that labour can come from: people, or machines. There will not be enough people.",
+    "The case for reform is made elsewhere on this site, and it is made at length: Europe is aging, the pension model ends with generational replacement, and the work will have to be done by machines because there will not be enough people. This page does not argue it again.",
+    "This page is for the reader who accepts all of that and still has objections — the same ones I hear every time I explain it, and the ones I would raise myself. They are answered here in my own words, including the places where I am guessing.",
   ]}
-  claim="So the question on this page is not whether Europe should be reformed in the abstract. It is what we have to build, starting now, so that a shrinking Europe can still pay for its own retirement."
+  claim="Where an answer needs evidence I have not attached yet, this page says so instead of quoting a number nobody checked."
 />
 
 <WhySection
-  eyebrow="01 — The pressure"
-  title="What is already pushing against us"
-  lead="Three forces are converging: we are aging, our productivity has stalled, and the resources we would need to fix both are being drawn out of Europe."
+  eyebrow="The claim"
+  title="What is being claimed, in one paragraph"
+  lead="Stated plainly, so you know which sentence you are arguing with."
 >
-  <WhyCardGrid columns={2}>
-    <Card title="The demographic crisis and retirement security" color="red" icon="👵" variant="gradient">
-      **Within fifty years, Europe faces an unprecedented challenge**
-      - Europe is aging rapidly — soon each worker will need to support multiple retirees
-      - This isn't a "European problem" in the abstract — it's YOUR future retirement at stake
-      - Today's 30–40 year olds will retire into a Europe with far fewer workers to support them
-      - These reforms aren't abstract policy — they're your personal retirement insurance
-      - In times of global warming and growing inequality, large-scale migration will be inevitable
-      - Countries with aging populations and weak defence will become targets for aggressive groups seeking their resources
-      - History shows that weak, wealthy societies always fell victim to stronger aggressors — in their position, I would also plunder a weak, rich nation of retirees
-    </Card>
+  <WhyAnswer>
+    Generations no longer replace themselves. Fertility sits below replacement in
+    every member state, no national policy has reversed it anywhere, and the
+    model that pays for pensions — growth, plus enough young workers behind
+    us — ends with generational replacement. Money is only a claim on labour, and
+    there are exactly two sources of labour: people, or machines. There will not
+    be enough people. **So the proposal is to shift our expectations onto
+    robotics deliberately, as a strategy rather than as a hope.** The window for
+    that is roughly thirty years of working economy — enough tax base, enough
+    workers, enough industrial capacity — and this is the last generation able to
+    pay for it.
 
-    <Card title="The Draghi Report and Europe's existential challenge" color="gray" icon="📉" variant="gradient">
-      **The EU could die if it fails to reform**
-      - The Draghi Report (September 2024) diagnosed Europe's critical weakness but stopped short of concrete conclusions
-      - Europe's productivity is in negative territory compared with the United States
-      - "If the EU were to maintain its average productivity growth rate since 2015, it would only be enough to keep GDP constant until 2050" — Draghi Report
-      - Without significant productivity improvement, the EU's GDP will start to shrink
-      - The report warned that Europe faces an "existential challenge" to its competitiveness
-    </Card>
+    Read the whole argument in [Designing Our
+    Retirement](/book/designing-our-retirement). The order the pieces get built
+    in — a common working language, then a digital state, then robotics on top of
+    both — is on [the vision page](/vision). Neither is re-argued here.
 
-    <Card title="Draining of resources and talent" color="gray" icon="🧲" variant="gradient">
-      **The US and China systematically take over our resources and talent**
-      - America drains Europe of know-how and technology — lower taxes, lighter regulation and sanctions push European companies to relocate
-      - China is taking over successive sectors of the European economy, from electronics to the automotive industry
-      - Without a strategy for advantage in key sectors, Europe will only be a market for American and Chinese corporations
-      - Central Europe particularly understands security threats and the principle of respect — that's why it strongly opposes illegal migration. If someone doesn't respect our procedures at entry, they won't respect our principles later either
-    </Card>
-
-    <Card title="Industrial-era administration in a digital economy" color="gray" icon="⚙️" variant="gradient">
-      **We live in a digital economy with industrial-era administration**
-      - Europe faces a paradox: we operate in an information-based economy, but our administrative structures are rooted in the industrial age
-      - Simply digitizing paper processes isn't enough — we need a complete redesign of administration built for technology
-      - Digital reform must treat the state and economy as a software project: optimized, scalable and efficient
-    </Card>
-  </WhyCardGrid>
+    One piece of outside evidence is worth naming, because it is the closest
+    thing Europe has to an official admission. The Draghi report (September 2024)
+    found European productivity in negative territory against the United States,
+    and concluded that at the growth rate held since 2015 the Union would manage
+    only to keep GDP constant until 2050. It diagnosed an existential
+    competitiveness problem and stopped short of saying what to do about it. This
+    site treats that diagnosis as the floor of the argument, not as its headline.
+  </WhyAnswer>
 </WhySection>
 
 <WhySection
-  eyebrow="02 — The answer"
-  title="What we propose instead"
-  lead="If there will not be enough workers, the work has to be done by machines, and the continent has to be organised well enough to build them. That is the whole proposal, in two halves."
+  eyebrow="Objection 01"
+  title="Why not immigration instead?"
+  lead="The obvious answer to a labour shortage is more people. It is also Europe's reflex, and it is failing."
 >
-  <WhyCardGrid columns={2}>
-    <Card title="Robotization as the rescue of the pension system" color="green" icon="🤖" variant="gradient">
-      **Only automation will let us support retirees in an era of low birth rates**
-      - Declining workers + aging society = an unsustainable pension system without massive productivity increases
-      - Robotization is the only realistic answer to the demographic crisis that doesn't involve forcing women to have more children
-      - It's mathematically impossible for future generations to support us without technological transformation
-      - An avalanche of psychological problems is already excluding more and more people from the labour market
-      - Without robotization, Europe is doomed to starvation-level pensions that will force older people into economic euthanasia — many will choose it rather than be a burden
-      - Robotization isn't a luxury; it's a condition for the survival of the pension system and YOUR dignified retirement
-    </Card>
+  <WhyAnswer>
+    The honest version of my answer has three parts, and none of them is
+    comfortable.
 
-    <Card title="Europe as a unified economic organism" color="gray" icon="🇪🇺" variant="gradient">
-      **Only a unified Europe can build at that scale**
-      - The great challenges of our time, from technology to climate change, require continent-scale action
-      - Linguistic and digital integration are the foundations that let Europe function as a single organism
-      - Removing communication and bureaucratic barriers will unleash Europe's immense creative and industrial potential
-    </Card>
+    **It does not add up economically.** Migrants arriving without the skills the
+    economy needs cost more in support than they contribute. The highly skilled
+    ones, who are genuinely scarce everywhere, do not come to Europe to wipe
+    anybody's backside.
 
-    <Card title="The economic imperative" color="gray" icon="💶" variant="gradient">
-      **One system instead of 27 wasteful duplicates**
-      - Optimizing administrative, tax and legal processes through digitization will radically transform the entire economy
-      - Applying economies of scale and IT practice to running a state will bring savings counted in hundreds of billions of euros
-      - One shared, scalable administrative system means better quality at significantly lower cost
-    </Card>
+    **It has not worked at scale anywhere.** I cannot point to a European country
+    where large-scale immigration solved a labour shortage without creating
+    problems that now dominate its politics. And the scale we would need is
+    millions, not thousands.
 
-    <Card title="What the Draghi Report missed" color="gray" icon="🧩" variant="gradient">
-      **Digital reform is the concrete answer to the existential challenge it diagnosed**
-      - Digital integration addresses the fragmentation that hampers Europe's productivity
-      - Robotization provides the productivity boost needed to hold our economic position
-      - Language integration enables the scale that can compete with the US and China
-    </Card>
-  </WhyCardGrid>
+    **And there is something degrading in the premise.** Planning to import
+    people so that they can do the intimate care work we will not do ourselves is
+    not a policy anyone should be proud of.
+
+    Meanwhile the alternative is arriving anyway. The era of machines, humanoid
+    and otherwise, is not a forecast — it is a deployment question. The only open
+    issues are whether Europe deploys at scale and whether ordinary people see
+    the benefit, or whether it lands narrowly and the gains stay with whoever
+    owns it.
+
+    That is also an opening rather than a defensive move. Robotics is a new
+    automotive industry: a way for Europe to reindustrialise while it reforms
+    itself. For Germany, for Poland, and specifically for Polish software — the
+    layer around the machines is where Central Europe can contribute something
+    the rest of Europe needs. It is also the answer to a drain that is already
+    running: the United States pulls European know-how and companies out with
+    lower taxes and lighter regulation, China takes sector after sector from
+    electronics to cars, and a Europe with no advantage in anything strategic
+    ends up a market for other people's corporations rather than a maker of
+    anything.
+
+    I should name my own bias. I am a programmer, so I see a nail everywhere,
+    because I have a hammer. Read the rest of this page knowing that.
+
+    <WhyEvidenceNote>
+      Three numbers would decide this argument, and I do not have defensible
+      versions of them yet:
+
+      - the net fiscal contribution of recent arrivals, by skill level, across a
+        comparable set of member states;
+      - how many care and municipal workers Europe will be short of by 2050,
+        against what migration has actually delivered per decade;
+      - the cost per task of a deployed service robot against the fully loaded
+        cost of the worker it replaces, as a curve rather than as a snapshot.
+
+      If that third cost refuses to fall, the whole strategy weakens, and the
+      argument above is worth less than it sounds.
+    </WhyEvidenceNote>
+  </WhyAnswer>
 </WhySection>
 
 <WhySection
-  eyebrow="03 — Sovereignty"
-  title="Why we cannot buy this from someone else"
-  lead="A Europe that rents its key technologies also rents its foreign policy — and the same machines that secure a pension system also secure a border."
+  eyebrow="Objection 02"
+  title="Who ends up owning the robots?"
+  lead="If automation replaces the labour our pensions depend on and the returns go to a handful of owners, we have solved production and destroyed the distribution that made it worth solving."
 >
-  <WhyCardGrid columns={2}>
-    <Card title="Technological independence is political independence" color="purple" icon="🛰️" variant="gradient">
-      **Without our own technologies, there is no true sovereignty**
-      - The US is turning away from Europe — Trump has already shown that America's interests outweigh alliance commitments
-      - Ukraine faces the risk of losing access to key technologies (Starlink, defence systems) if it doesn't submit to American conditions
-      - The same could happen to Poland or the Scandinavian and Baltic countries — technological dependence means political dependence
-      - Europe must develop its own military and AI technologies to keep the ability to defend its interests
-    </Card>
+  <WhyAnswer>
+    My position is that ownership is the second question, not the first. The
+    models will be mixed and they should be: public or cooperative for municipal
+    services, private where competition works, dividend-based inside some
+    companies. Arguing the ideal structure out in advance is how twenty years get
+    spent.
 
-    <Card title="Defence, security and managing migration" color="gray" icon="🛡️" variant="gradient">
-      **Robotization is essential for modern defence and migration management**
-      - Eastern European and Scandinavian countries, threatened by Russia, need advanced robotics for defensive purposes
-      - Autonomous robotic systems can monitor borders, respond to threats and provide effective deterrence
-      - The same technology helps southern countries manage migration flows humanely and effectively
-      - To address migration at its source, Europe must offer solutions to the countries people are migrating from:
-        - Free online education and knowledge sharing to build local capacity
-        - Robotic solutions to help tackle resource crises and improve quality of life at home
-      - Proactive digital engagement with source countries is cheaper and more effective than reactive border policies
-    </Card>
-  </WhyCardGrid>
+    **What matters more than ownership is that robots are cheap.** Affordable,
+    easy to implement, built on open standards, hard to monopolise. Technology
+    that cannot be enclosed and rented out distributes its benefits almost by
+    default, and then the ownership question largely answers itself. Technology
+    that can be enclosed will be, whatever the ownership law says — and then no
+    ownership model saves us.
+
+    This is also why buying the capability from outside Europe is not a shortcut.
+    A continent that rents its critical technology rents the politics that come
+    with it. Ukraine has spent two years discovering what dependence on somebody
+    else's satellites and somebody else's defence systems costs when their owner
+    changes his mind, and the United States has already shown that its interests
+    outweigh alliance commitments when the two diverge. Owning the machines that
+    will run our old age is the same argument as owning the ones that defend the
+    border. It is one argument, not two.
+
+    <WhyEvidenceNote title="What would settle this — and what it would take">
+      This is the question I would most like to be beaten on in public. What
+      would move it from a position to a plan:
+
+      - a concrete open-standards stack for service robotics, with the
+        interfaces named, so that "hard to monopolise" becomes a specification
+        rather than an adjective;
+      - evidence from an existing market where cheapness really did defeat
+        enclosure, and at least one where it did not;
+      - a legal answer on whether public or cooperative ownership of municipal
+        automation is compatible with the Union's procurement and competition
+        rules.
+    </WhyEvidenceNote>
+  </WhyAnswer>
 </WhySection>
 
 <WhySection
-  eyebrow="04 — The build order"
-  title="Three pillars, and why they come in this order"
-  lead="Each layer is what makes the next one possible: a shared working language lets the state be rebuilt, and a digital state is what robotics at continental scale runs on."
+  eyebrow="Objection 03"
+  title="How would this ever happen politically?"
+  lead="The reflex is to picture twenty-seven governments agreeing at once, which is why the conversation usually ends within a minute."
 >
-  <WhyCardGrid columns={3}>
-    <Card title="1. Language integration" color="indigo" icon="🗣️" variant="bordered">
-      **English as a second official language throughout the EU**
-      - Will enable Europe to develop a unified political voice on the global stage
-      - Essential for turning Europe from 27 separate voices into one geopolitical bloc
-      - Will let European citizens directly communicate, collaborate and build a shared identity
-      - Critical for creating pan-European businesses that can compete with American and Chinese giants
-    </Card>
+  <WhyAnswer>
+    Dissatisfaction with the Union in its present form is already boiling. The
+    missing piece is not anger — there is plenty of anger, and it is being spent
+    on individuals rather than on the arrangement that keeps producing them. The
+    missing piece is **a vision people could agree on.** A proposal built so that
+    everyone wins can earn the unanimity that treaty change requires, and treaty
+    change is then a question of political will, which follows conviction rather
+    than preceding it.
 
-    <Card title="2. Digital integration" color="blue" icon="💻" variant="bordered">
-      **Unified administration for all of Europe**
-      - Digital administration isn't just about efficiency — it's the foundation for European political unity and strength
-      - A single administrative system lets Europe act decisively and quickly in global crises
-      - Predictive healthcare and lifelong e-learning for every citizen create tangible benefits national governments cannot provide alone
-      - Europeans will finally see concrete proof that the EU improves their daily lives, strengthening political legitimacy
-      - A unified digital market will let European tech companies scale rapidly and challenge American and Chinese dominance
-    </Card>
+    I do not expect the current administration to want this. Everything here
+    shortens the distance between a citizen and a decision, and institutions do
+    not usually volunteer to become less necessary. So the route does not start
+    in Brussels. It starts with enough people obviously wanting it that
+    supporting it stops being brave and starts being the safe option.
 
-    <Card title="3. Robotization and reindustrialization" color="green" icon="🤖" variant="bordered">
-      **Autonomous production and logistics systems**
-      - Robotization will increase the efficiency of the European economy
-      - Our own production and defence technologies for security
-      - Sustainable, localized manufacturing reducing import dependency
-    </Card>
-  </WhyCardGrid>
+    The practical unlock is that much of this does not need twenty-seven
+    signatures. English as an official working language can be adopted by one
+    state, or by a group that already behaves as a bloc. A digital state can be
+    built once and copied, because copying a system that visibly works is a far
+    easier political act than legislating one into existence for countries that
+    have not seen it yet.
+
+    The long version, including what I cannot answer, is [The Political
+    Path](/book/political-path). It is the least finished part of the vision, and
+    it says so.
+
+    <WhyEvidenceNote title="What I cannot answer yet">
+      I am not a lawyer, and I will not invent a reassuring legal conclusion for
+      a website. Five things would have to be checked by somebody who is:
+
+      - what a member state may declare as its own official working language,
+        and where that meets the Union's rules on languages and equal treatment;
+      - whether a binding national citizen vote can bind a government's conduct
+        at European level;
+      - which of the existing routes for a subset of states to act together
+        apply here;
+      - whether one state's identity and records system can be adopted by
+        another without a new legal instrument;
+      - what the rules allow when pension contributions are invested in public
+        infrastructure rather than in financial assets.
+
+      If you are a European lawyer and any of that is answerable, that answer is
+      worth more to this project than another chapter of mine.
+    </WhyEvidenceNote>
+  </WhyAnswer>
 </WhySection>
 
 <WhySection
-  eyebrow="05 — In depth"
-  title="Why digital reform is necessary"
-  lead="The same argument at greater length: what changes when the state is treated as a software project rather than a filing system."
+  eyebrow="Objection 04"
+  title="Who pays for it?"
+  lead="Two answers, and both turn the question around."
 >
-  <WhyDigitalReform color="teal" />
+  <WhyAnswer>
+    **We already pay.** Every member state funds its own digitalisation, its own
+    systems, its own procurement and its own mistakes, twenty-seven times over.
+    Doing it once, together, is not a new budget line — it is a less wasteful use
+    of the one we already have. Building one shared administrative system instead
+    of twenty-seven divergent ones is the cheapest money in this entire proposal.
+
+    **And we have already saved.** Pension contributions are money set aside for
+    exactly this future. Part of it can be invested in building the robotics that
+    will serve that future — **so that we own it**, publicly, rather than renting
+    it later from whoever got there first. Unlike most pension investments, this
+    one delivers the service itself: machines paid for by contributions, doing
+    the work those contributions were meant to buy, from the beginning rather
+    than after some distant payoff.
+
+    There is a third source, and it is already flowing. The conflict with Russia
+    is pushing money into robotics for military purposes right now. That research
+    can be stimulated for defence and converted afterwards to civilian use — the
+    same autonomy, sensing and manufacturing capacity, pointed at demographic
+    collapse instead of at an enemy. It is the realistic route to funding
+    robotics at European scale, and unlike the other two it needs no new decision
+    to start.
+
+    <WhyEvidenceNote>
+      The numbers I owe you here:
+
+      - what the twenty-seven states actually spend, separately, on public
+        digitalisation each year, and which part of that is genuinely
+        duplicated;
+      - the legal and prudential limits on investing pension contributions in
+        public infrastructure, member state by member state;
+      - a worked case of military robotics research converted to civilian
+        service use, with its cost and its lag.
+    </WhyEvidenceNote>
+  </WhyAnswer>
+</WhySection>
+
+<WhySection
+  eyebrow="Objection 05"
+  title="What if you are wrong?"
+  lead="The question I take most seriously, because the answer is that parts of this are guesses, and I would rather mark them than defend them."
+>
+  <WhyAnswer>
+    The part I am confident about is the demography. It already happened, in the
+    maternity wards, decades ago: the people who will not be working in 2056 were
+    not born in 1996. Nothing on this page depends on a forecast for that.
+
+    The part that could be wrong is the machines, and specifically their pace. If
+    service robotics stays expensive, fragile and confined to demonstrations,
+    the strategy loses its ceiling, and Europe is left with a shared language and
+    a digital state — worth having anyway, but not enough on their own to staff a
+    care home. That is the real risk, and I would rather hold it openly than
+    hedge it.
+
+    What I am afraid of is more specific than being wrong. That governments patch
+    the demographic hole with mass immigration because it is the reflex, at a
+    cost we did not need to pay. That there is chaos because nobody prepared.
+    That retirement arrives and the money buys nothing, because the system still
+    assumes workers who no longer exist — nobody to care for us, nobody to bring
+    food. And that a generation spends its best years on bullshit jobs instead of
+    on the concrete thing that needed building.
+
+    **That last fear is the reason this project exists.** The cost of being wrong
+    in the direction I am arguing is that Europe ends up with cheap automation,
+    an administration that works, and a common language it can do business in.
+    The cost of being wrong in the other direction is a continent of pensioners
+    holding money that buys nothing. Those two mistakes are not the same size.
+
+    And none of it waits for permission. If you repeat the argument, attack it,
+    send it to someone who can break it, or build one piece of it, the
+    probability of it happening goes up — because that is the only way things
+    like this have ever happened. You are not the audience for this. You are the
+    condition of it.
+  </WhyAnswer>
 </WhySection>

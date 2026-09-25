@@ -1,0 +1,39 @@
+---
+/**
+ * The body of one objection on /why: prose held at a readable measure.
+ *
+ * The page's card sections may run the full column width, but an answer is
+ * argument rather than summary, so it needs a measure. This exists so every
+ * answer shares one instead of each MDX block setting its own.
+ */
+---
+
+<div class="why-answer"><slot /></div>
+
+<style>
+  .why-answer {
+    max-width: 70ch;
+  }
+
+  .why-answer > :global(p) {
+    font-size: var(--text-lg);
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+    margin: 0 0 1.25rem;
+  }
+
+  .why-answer > :global(ul),
+  .why-answer > :global(ol) {
+    margin: 0 0 1.25rem;
+    color: var(--color-text-secondary);
+  }
+
+  .why-answer > :global(p:last-child),
+  .why-answer > :global(ul:last-child) {
+    margin-bottom: 0;
+  }
+
+  .why-answer :global(strong) {
+    color: var(--color-text-primary);
+  }
+</style>
