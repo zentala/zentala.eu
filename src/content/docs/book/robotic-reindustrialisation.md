@@ -154,4 +154,5 @@ and the policy catches up to what is already running. Start with a piece.
 
 *Part of the [EU Reform Vision](/vision). This chapter is the top layer; the
 [demographic frame](/docs/book/designing-our-retirement) explains why it is
-needed at all.*
+needed at all, and [The Political Path](/docs/book/political-path) explains how a
+programme this size gets decided when the institutions would rather it were not.*
