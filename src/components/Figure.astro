@@ -1,0 +1,57 @@
+---
+/**
+ * Figure — a chart or image with a caption and a source, on the `wide` or
+ * `full` track. Wraps any child (an `<img>` or a chart component); chart
+ * adoption (`EUStatisticsChart` inside `Figure`) is E006-T13.
+ *
+ * DESIGN.md → Components → "Figure".
+ */
+interface Props {
+  caption: string;
+  source: string;
+  track?: 'wide' | 'full';
+}
+
+const { caption, source, track = 'wide' } = Astro.props;
+---
+
+<figure class:list={['figure', track === 'full' ? 'span-full' : 'span-wide']}>
+  <p class="figure__caption">{caption}</p>
+  <div class="figure__media">
+    <slot />
+  </div>
+  <figcaption class="figure__source">Source: {source}</figcaption>
+</figure>
+
+<style>
+  .figure {
+    margin: var(--space-xl) 0;
+  }
+
+  .figure__caption {
+    font-family: var(--font-sans);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-sm);
+  }
+
+  .figure__media {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .figure__media :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+  }
+
+  .figure__source {
+    margin-top: var(--space-sm);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+</style>

@@ -1,0 +1,76 @@
+---
+/**
+ * MeansForYou — the chapter's payoff: a blue-hue box with the fixed eyebrow
+ * "What this means for you", two to four short paragraphs (default slot)
+ * or a list of at most three actions.
+ *
+ * DESIGN.md → Components → "MeansForYou — chapter closing". Reuses
+ * `Surface` (hue="blue") for the box instead of re-implementing the
+ * background/border pair.
+ */
+import Surface from './Surface.astro';
+
+interface Props {
+  title?: string;
+  actions?: string[];
+}
+
+const { title = 'What this means for you', actions } = Astro.props;
+---
+
+<Surface as="aside" hue="blue" class="means-for-you">
+  <p class="means-for-you__title">{title}</p>
+  <div class="means-for-you__body"><slot /></div>
+  {actions && actions.length > 0 && (
+    <ul class="means-for-you__actions">
+      {actions.map((action) => <li>{action}</li>)}
+    </ul>
+  )}
+</Surface>
+
+<style>
+  .means-for-you {
+    padding: var(--space-xl);
+    border-radius: var(--radius-md);
+  }
+
+  .means-for-you__title {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    margin: 0 0 var(--space-sm);
+  }
+
+  .means-for-you__body {
+    font-family: var(--font-sans);
+    font-size: var(--article-body-size);
+    line-height: var(--article-lead);
+  }
+
+  .means-for-you__body :global(p) {
+    margin: 0 0 var(--space-sm);
+  }
+
+  .means-for-you__body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .means-for-you__actions {
+    list-style: disc;
+    margin: var(--space-sm) 0 0;
+    padding-left: var(--space-lg);
+  }
+
+  .means-for-you__actions li {
+    margin: 0 0 var(--space-xs);
+    font-family: var(--font-sans);
+    font-size: var(--article-body-size);
+    line-height: var(--article-lead);
+  }
+
+  .means-for-you__actions li:last-child {
+    margin-bottom: 0;
+  }
+</style>

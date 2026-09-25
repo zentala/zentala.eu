@@ -1,0 +1,324 @@
+---
+/**
+ * Style guide for the eleven content components DESIGN.md's Migration step
+ * 8 introduces (E006-T09). Sibling to `ui/index.astro` (the living style
+ * guide for the older component set, owned by E006-T07 this wave) — not
+ * yet linked from anywhere. Preview-only: redirects to `/` in production,
+ * same pattern as `ui/index.astro`.
+ */
+import { IS_PREVIEW } from '../../lib/preview';
+import Layout from '../../layouts/Layout.astro';
+import Objection from '../../components/Objection.astro';
+import ObjectionList from '../../components/ObjectionList.astro';
+import MeansForYou from '../../components/MeansForYou.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import Playbook from '../../components/Playbook.astro';
+import KeyFigure from '../../components/KeyFigure.astro';
+import SideNote from '../../components/SideNote.astro';
+import ProvenanceNote from '../../components/ProvenanceNote.astro';
+import PullQuote from '../../components/PullQuote.astro';
+import SourceList from '../../components/SourceList.astro';
+import Figure from '../../components/Figure.astro';
+
+if (!IS_PREVIEW) {
+  return Astro.redirect('/', 301);
+}
+
+const comparisonColumns3 = [
+  { label: 'Switzerland', kind: 'fact' as const },
+  { label: 'EU', kind: 'proposed' as const },
+  { label: 'Poland', kind: 'proposed' as const },
+];
+
+const comparisonRows3 = [
+  { dimension: 'Electorate', cells: ['5,611,289', '≈ 359,000,000', '29,023,338'] },
+  { dimension: "Citizens' initiative", cells: ['100,000 (1.78%)', '≈ 7,180,000 (2%)', '≈ 580,000 (2%)'] },
+  { dimension: 'Optional referendum', cells: ['50,000 (0.89%)', '≈ 3,590,000 (1%)', '≈ 290,000 (1%)'] },
+];
+
+const comparisonColumns5 = [
+  { label: 'Method', kind: 'fact' as const },
+  { label: 'Instrument' },
+  { label: 'Legal ground' },
+  { label: 'Threshold' },
+  { label: 'Status', kind: 'unknown' as const },
+];
+
+const comparisonRows5 = [
+  { dimension: 'Initiative', cells: ['Citizens propose', 'ECI', 'Art. 11 TEU', '1M signatures', 'Live'] },
+  { dimension: 'Referendum', cells: ['Citizens strike down', 'Optional referendum', 'Proposed', '2%', 'Proposed'] },
+];
+
+const playbookSteps = [
+  {
+    action: 'Find six other people who accept the frame.',
+    why: 'A committee of seven is the ECI minimum; below it nothing can be filed.',
+  },
+  {
+    action: 'Register the initiative in the weakest legal form available.',
+    why: 'It binds nobody, so it cannot be blocked; if it fails, that is the argument.',
+    href: '#',
+  },
+  {
+    action: 'Publish the draft text before collecting a single signature.',
+    why: 'A committee that cannot show the text has nothing to defend.',
+    owner: 'Committee chair',
+  },
+];
+
+const sourceListItems = [
+  { title: 'Swiss Federal Chancellery register', url: 'https://www.bk.admin.ch/', note: 'signature thresholds by canton' },
+  { title: 'Baymard Institute, line-length readability study', url: 'https://baymard.com/blog/line-length-readability' },
+  { title: '2024 European Parliament election turnout figures', url: 'https://europarl.europa.eu/' },
+];
+---
+
+<Layout title="Content components — style guide" noindex={true}>
+  <div class="gallery">
+    <header class="gallery__header">
+      <p class="gallery__eyebrow">Preview only</p>
+      <h1>Content components</h1>
+      <p class="gallery__intro">
+        The eleven components DESIGN.md's Migration step 8 adds, each with sample
+        props in every variant the contract names. Sibling to <code>/ui</code>;
+        gated on <code>IS_PREVIEW</code>, redirects to <code>/</code> in production.
+      </p>
+    </header>
+
+    <section class="gallery__section">
+      <h2>Objection / ObjectionList</h2>
+      <ObjectionList
+        title="The objections, which I am not going to settle for you"
+        intro="Five arguments against the proposal, stated as strongly as anyone else would state them."
+      >
+        <Objection claim="This is technocracy wearing a rosette." verdict="Half an answer, and I know it.">
+          <p>Democracy's point is that people choose their direction, including badly, and a system that only
+            trusts the electorate with a veto still leaves the agenda to whoever drafts the laws.</p>
+        </Objection>
+        <Objection claim="Who defines competent?" verdict="A reduction of the risk, not its elimination.">
+          <p>Whoever holds that pen holds the real power, and every threshold in this proposal is a number
+            someone chose, not a law of nature.</p>
+        </Objection>
+        <Objection claim="This has no verdict line, on purpose.">
+          <p>Not every objection closes on one sentence; some stay open until the chapter that follows answers them.</p>
+        </Objection>
+      </ObjectionList>
+    </section>
+
+    <section class="gallery__section">
+      <h2>MeansForYou</h2>
+      <MeansForYou
+        actions={[
+          'Ask your council what a four-day contract would cost them; the number is smaller than they think.',
+          'If you write scheduling software, the shift pattern in this chapter is a feature request.',
+        ]}
+      >
+        <p>You are not waiting for permission, and there is nobody to ask.</p>
+      </MeansForYou>
+      <MeansForYou title="What this means for a city council">
+        <p>Two paragraphs, no action list — the default title, just prose.</p>
+        <p>Both variants share the same blue-hue box and eyebrow.</p>
+      </MeansForYou>
+    </section>
+
+    <section class="gallery__section">
+      <h2>ComparisonTable</h2>
+      <p class="gallery__note">3 columns — stays in the <code>content</code> track.</p>
+      <ComparisonTable
+        caption="Signature thresholds, scaled"
+        columns={comparisonColumns3}
+        rows={comparisonRows3}
+        numeric
+        source="Swiss Federal Chancellery register; 2024 European Parliament election turnout figures"
+      />
+      <p class="gallery__note">5 columns — moves to the <code>wide</code> track; mixed fact/proposed/unknown kinds.</p>
+      <ComparisonTable
+        caption="Method, instrument and legal ground"
+        columns={comparisonColumns5}
+        rows={comparisonRows5}
+        source="Illustrative sample data for the style guide"
+      />
+    </section>
+
+    <section class="gallery__section">
+      <h2>Playbook</h2>
+      <Playbook title="What you can do this week" steps={playbookSteps} />
+    </section>
+
+    <section class="gallery__section">
+      <h2>KeyFigure</h2>
+      <div class="gallery__row">
+        <KeyFigure
+          value="41%"
+          qualifier="≈"
+          label="more often skipped: copy set wider than 80 characters per line"
+          source="Baymard Institute, line-length readability study"
+          href="https://baymard.com/blog/line-length-readability"
+        />
+        <KeyFigure value="30" label="years between patent and mandate, in the fastest case" source="US federal seatbelt mandate history" />
+      </div>
+      <p class="gallery__note"><code>aside</code> variant — floats beside a paragraph on ≥1024px:</p>
+      <p class="gallery__prose">
+        <KeyFigure aside value="1.78%" label="Swiss federal initiative threshold" source="Swiss Federal Chancellery register" />
+        This paragraph exists only to give the floated KeyFigure something to sit beside in the style guide;
+        on a real chapter this would be the argument the number supports, long enough to wrap past the box.
+      </p>
+    </section>
+
+    <section class="gallery__section">
+      <h2>SideNote</h2>
+      <p class="gallery__prose">
+        <SideNote label="Argued in full">
+          Why cheapness, not ownership, is the target: <a href="#">Cheap Is Wealth</a>.
+        </SideNote>
+        A paragraph with a SideNote floated beside it on wide screens; below 1024px the note stacks
+        underneath as an indented block instead, so it still reads in sequence.
+      </p>
+      <SideNote>A SideNote with no label, only body text.</SideNote>
+    </section>
+
+    <section class="gallery__section">
+      <h2>ProvenanceNote</h2>
+      <ProvenanceNote
+        source="2026-09-25-answers-and-safeguards-dump.md:35-45"
+        dictated="Copy the Swiss model; asked for the safeguards to be mapped, said he does not know them."
+        added={["Swiss articles and thresholds (sourced)", "EU/Polish mappings — proposed", "Rationale for 2%/1% — proposed"]}
+        cut="Dictatorship comparison, at his request (:165)."
+        open={["ASK-2", "ASK-3"]}
+      />
+      <p class="gallery__note">Minimal variant — only the three required fields:</p>
+      <ProvenanceNote
+        source="2026-09-25-direct-democracy-dump.md:1-20"
+        dictated="The chapter's whole argument, dictated in one pass."
+        added="Nothing — the chapter is unedited dictation."
+      />
+    </section>
+
+    <section class="gallery__section">
+      <h2>PullQuote</h2>
+      <PullQuote>Thirty years for a part that costs less than a tyre.</PullQuote>
+      <p class="gallery__note"><code>aside</code> variant:</p>
+      <p class="gallery__prose">
+        <PullQuote aside>The number the reader remembers, floated beside the paragraph it comes from.</PullQuote>
+        A paragraph of running prose so the floated aside PullQuote has something to sit beside in the
+        style guide, long enough to wrap past its edge on a wide screen.
+      </p>
+    </section>
+
+    <section class="gallery__section">
+      <h2>SourceList</h2>
+      <SourceList items={sourceListItems} />
+    </section>
+
+    <section class="gallery__section">
+      <h2>Figure</h2>
+      <p class="gallery__note"><code>wide</code> track (default):</p>
+      <Figure caption="Illustrative placeholder image" source="Unsplash, style-guide sample">
+        <img src="/favicon.svg" width="400" height="400" loading="lazy" alt="" />
+      </Figure>
+      <p class="gallery__note"><code>full</code> track — at most one per real page:</p>
+      <Figure caption="Illustrative placeholder image, full width" source="Unsplash, style-guide sample" track="full">
+        <img src="/favicon.svg" width="400" height="400" loading="lazy" alt="" />
+      </Figure>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .gallery {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-lg) var(--space-3xl);
+  }
+
+  .gallery__header {
+    max-width: var(--article-measure);
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .gallery__eyebrow {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--color-accent-primary);
+    margin: 0 0 var(--space-sm);
+  }
+
+  .gallery__header h1 {
+    font-family: var(--font-serif);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-md);
+  }
+
+  .gallery__intro {
+    font-family: var(--font-sans);
+    font-size: var(--text-lg);
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+  }
+
+  .gallery__intro code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background-color: var(--color-bg-secondary);
+    padding: 0.1em 0.35em;
+    border-radius: var(--radius-sm);
+  }
+
+  .gallery__section {
+    max-width: var(--article-measure);
+    margin: 0 auto var(--space-section);
+  }
+
+  .gallery__section h2 {
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .gallery__section > :global(* + *) {
+    margin-top: var(--space-lg);
+  }
+
+  .gallery__note {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .gallery__note code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+
+  .gallery__prose {
+    font-family: var(--font-sans);
+    font-size: var(--article-body-size);
+    line-height: var(--article-lead);
+    color: var(--color-text-primary);
+  }
+
+  .gallery__prose::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  .gallery__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+  }
+
+  .gallery__row > :global(*) {
+    flex: 1 1 16rem;
+  }
+</style>

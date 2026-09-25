@@ -1,0 +1,91 @@
+---
+/**
+ * KeyFigure — one number with its unit, a one-line label and its source.
+ * The site's rule is that every number has a source; this component makes
+ * the rule visible.
+ *
+ * DESIGN.md → Components → "KeyFigure". `aside` narrows the box and, on
+ * wide screens, floats it beside the preceding paragraph — the same
+ * placement `EvidenceBox` already uses, until `ArticleGrid` grows a named
+ * margin track.
+ */
+interface Props {
+  value: string;
+  label: string;
+  source: string;
+  href?: string;
+  aside?: boolean;
+  /** "≈", "at least" — prefixes the value without joining it to the number. */
+  qualifier?: string;
+}
+
+const { value, label, source, href, aside = false, qualifier } = Astro.props;
+---
+
+<div class="key-figure" data-aside={aside}>
+  <p class="key-figure__value">
+    {qualifier && <span class="key-figure__qualifier">{qualifier}</span>}
+    {value}
+  </p>
+  <p class="key-figure__label">{label}</p>
+  <p class="key-figure__source">
+    {href ? <a href={href}>Source: {source}</a> : <>Source: {source}</>}
+  </p>
+</div>
+
+<style>
+  .key-figure {
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg-secondary);
+  }
+
+  .key-figure[data-aside='true'] {
+    max-width: 20rem;
+  }
+
+  @media (min-width: 1024px) {
+    .key-figure[data-aside='true'] {
+      float: right;
+      margin-left: var(--space-xl);
+    }
+  }
+
+  .key-figure__value {
+    font-family: var(--font-sans);
+    font-size: var(--text-4xl);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  .key-figure__qualifier {
+    font-size: var(--text-lg);
+    font-weight: 400;
+    margin-right: 0.15em;
+  }
+
+  .key-figure__label {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: 1.5;
+    color: var(--color-text-primary);
+    margin: var(--space-xs) 0 0;
+  }
+
+  .key-figure__source {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin: var(--space-sm) 0 0;
+  }
+
+  .key-figure__source a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+</style>

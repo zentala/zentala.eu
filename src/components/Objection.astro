@@ -1,0 +1,64 @@
+---
+/**
+ * Objection — one objection stated as a claim, followed by the answer.
+ * Used standalone inside `ObjectionList`, or (rarely) alone in a chapter.
+ *
+ * DESIGN.md → Components → "Objection and ObjectionList". The claim is set
+ * in H4 sans, the answer is the default slot in body text, and an optional
+ * `verdict` line closes the block ("Reduced, not eliminated."). No box, no
+ * hue: a 1px top rule is the only separator between objections in a list.
+ */
+interface Props {
+  /** The claim stated against the author's own position. */
+  claim: string;
+  /** One short closing line; omit when the answer has no single verdict. */
+  verdict?: string;
+  id?: string;
+}
+
+const { claim, verdict, id } = Astro.props;
+---
+
+<article class="objection" id={id}>
+  <h4 class="objection__claim">{claim}</h4>
+  <div class="objection__answer"><slot /></div>
+  {verdict && <p class="objection__verdict">{verdict}</p>}
+</article>
+
+<style>
+  .objection {
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .objection__claim {
+    font-family: var(--font-sans);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-sm);
+  }
+
+  .objection__answer {
+    font-family: var(--font-sans);
+    font-size: var(--article-body-size);
+    line-height: var(--article-lead);
+    color: var(--color-text-primary);
+  }
+
+  .objection__answer :global(p) {
+    margin: 0 0 var(--space-md);
+  }
+
+  .objection__answer :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .objection__verdict {
+    margin: var(--space-md) 0 0;
+    font-size: var(--text-sm);
+    font-style: italic;
+    color: var(--color-text-secondary);
+  }
+</style>

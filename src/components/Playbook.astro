@@ -1,0 +1,115 @@
+---
+/**
+ * Playbook — numbered steps with one line of rationale each: number badge,
+ * action in H4, "why" in body-ui, optional owner. The "numbered table" for
+ * chapters that are an instruction (`first-move.md`, the playbook in
+ * `direct-democracy.md`).
+ *
+ * DESIGN.md → Components → "Playbook". Deliberately not a rail: a rail says
+ * "time passes" (see `Timeline`), rows say "do these". Stays in the
+ * `content` track; no box around the whole list.
+ */
+interface Step {
+  action: string;
+  why: string;
+  owner?: string;
+  href?: string;
+}
+
+interface Props {
+  steps: Step[];
+  title?: string;
+}
+
+const { steps, title } = Astro.props;
+---
+
+<section class="playbook">
+  {title && <h3 class="playbook__title">{title}</h3>}
+  <ol class="playbook__list">
+    {steps.map((step, index) => (
+      <li class="playbook__step">
+        <span class="playbook__badge" aria-hidden="true">{index + 1}</span>
+        <div class="playbook__content">
+          <p class="playbook__action">
+            {step.href ? <a href={step.href}>{step.action}</a> : step.action}
+          </p>
+          <p class="playbook__why">{step.why}</p>
+          {step.owner && <p class="playbook__owner">{step.owner}</p>}
+        </div>
+      </li>
+    ))}
+  </ol>
+</section>
+
+<style>
+  .playbook__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    font-weight: 400;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-lg);
+  }
+
+  .playbook__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .playbook__step {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-lg) 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .playbook__step:last-child {
+    padding-bottom: 0;
+  }
+
+  .playbook__badge {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent-primary);
+    color: var(--color-bg-primary);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .playbook__action {
+    font-family: var(--font-sans);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 0 0.35rem;
+  }
+
+  .playbook__action a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  .playbook__why {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .playbook__owner {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin: 0.35rem 0 0;
+  }
+</style>
