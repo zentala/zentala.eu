@@ -28,12 +28,14 @@ interface Props {
    * Default false keeps the 62-72ch measure for book/docs/commentary.
    */
   wideBody?: boolean
+  /** Extra JSON-LD graphs (Article/BlogPosting, BreadcrumbList...) for this page. */
+  jsonLd?: Record<string, unknown>[]
 }
 
-const { title, description, canonical, ogImage, noindex, markdownAlternate, backHref, backLabel, wideBody = false } = Astro.props
+const { title, description, canonical, ogImage, noindex, markdownAlternate, backHref, backLabel, wideBody = false, jsonLd = [] } = Astro.props
 ---
 
-<Layout title={title} description={description} canonical={canonical} ogImage={ogImage} noindex={noindex} markdownAlternate={markdownAlternate} type="article">
+<Layout title={title} description={description} canonical={canonical} ogImage={ogImage} noindex={noindex} markdownAlternate={markdownAlternate} type="article" jsonLd={jsonLd}>
   <div class="container mx-auto px-4 py-8">
     <div class:list={['article-measure', { 'article-measure--wide-body': wideBody }]}>
       <a href={backHref} class="back-link transition-colors" style="color: var(--color-accent-secondary);">

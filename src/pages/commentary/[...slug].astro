@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { getCommentary, formatDate } from '../../lib/commentary';
+import { articleSchema, breadcrumbSchema, SITE_URL } from '../../lib/jsonld';
 
 export async function getStaticPaths() {
   const entries = await getCommentary();
@@ -9,6 +10,24 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const pageUrl = `${SITE_URL}/commentary/${entry.slug}`;
+const jsonLd = [
+  articleSchema({
+    type: 'BlogPosting',
+    url: pageUrl,
+    headline: entry.data.title,
+    description: entry.data.description,
+    datePublished: entry.data.date,
+    dateModified: entry.data.updated,
+    authorName: entry.data.author,
+  }),
+  breadcrumbSchema([
+    { name: 'Home', url: SITE_URL },
+    { name: 'Commentary', url: `${SITE_URL}/commentary` },
+    { name: entry.data.title, url: pageUrl },
+  ]),
+];
 ---
 
 <ArticleLayout
@@ -17,6 +36,7 @@ const { Content } = await entry.render();
   markdownAlternate={`/commentary/${entry.slug}.md`}
   backHref="/commentary"
   backLabel="Commentary"
+  jsonLd={jsonLd}
 >
   <Fragment slot="meta">
     <p class="text-sm theme-text-secondary">
