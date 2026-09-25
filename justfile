@@ -23,6 +23,11 @@ audit:
 typecheck:
     corepack yarn typecheck
 
+# design-lint counts DESIGN.md rule violations; non-zero counts do not fail
+# (mid-migration) — pass --strict to fail on any violation.
+lint-design:
+    corepack yarn lint:design
+
 test:
     corepack yarn test
 

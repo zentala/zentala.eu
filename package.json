@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev --port 4333",
     "start": "astro dev --port 4333",
-    "build": "astro check --exclude 'dist/**/*' && astro build && node scripts/sitemap-rename.mjs",
+    "build": "node scripts/link-graph.mjs && astro check --exclude 'dist/**/*' && astro build && node scripts/sitemap-rename.mjs",
     "preview": "astro preview --port 4333",
     "astro": "astro",
     "convert-mdx": "node convertMdxToMd.js",
@@ -20,7 +20,8 @@
     "check-all": "astro check --exclude 'dist/**/*'",
     "pre-commit-check": "astro check --exclude 'dist/**/*'",
     "test:ui": "playwright test --ui",
-    "audit": "astro build && node scripts/content-audit.mjs --out .plan/reports/content-audit.md"
+    "audit": "astro build && node scripts/content-audit.mjs --out .plan/reports/content-audit.md",
+    "lint:design": "node scripts/design-lint.mjs"
   },
   "dependencies": {
     "@algolia/client-search": "^5.20.4",
