@@ -1,5 +1,5 @@
 ---
-updated: 2026-09-25T16:45:00
+updated: 2026-09-25T17:15:00
 branch: main
 planning_epic: E005
 planning_epic_path: .plan/epics/E005-2026-09-25-cloudflare-engagement-platform
@@ -7,6 +7,16 @@ planning_epic_path: .plan/epics/E005-2026-09-25-cloudflare-engagement-platform
 
 ## Epic history
 
+- 2026-09-25 (later): **E004 full-epic close pass run.** All 16 tasks now
+  accounted for: T01–T11, T13, T15, T16 `completed`; T12/T14 `superseded`
+  into E006 (superseding the earlier "T13/T15 still proposed" line below,
+  which predates T13/T15 landing). Verification is **PARTIAL**: `just
+  typecheck`/`build`/`audit`/`a11y` all pass, but the full `yarn test`
+  regression suite did not complete in the session and `review-log status`
+  is `NOT CLEARED`. Not written to a `HISTORY.md` (this repo has none —
+  `.plan/DONE.md` is the closed-epic ledger here). See
+  `.plan/epics/E004-2026-09-25-ui-a11y-seo-review/JOURNAL.md` and the new
+  `.plan/BACKLOG.md` entry "E004 not fully verified at close".
 - 2026-09-25: **E004 (UI/A11y/SEO review) closed.** T01–T11 and T16 done;
   T12/T14 superseded into E006; T13/T15 remain `proposed`, unstarted, carried
   as backlog. See `.plan/epics/E004-2026-09-25-ui-a11y-seo-review/JOURNAL.md`

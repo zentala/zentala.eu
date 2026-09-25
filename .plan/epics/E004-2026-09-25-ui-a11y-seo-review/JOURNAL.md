@@ -160,3 +160,56 @@
 - **Epic status**: E004 is now fully closed — T01-T11, T13, T16 completed,
   T12/T14 superseded by E006, T15 completed this session. No remaining
   proposed tasks.
+
+## Session 2026-09-25 (epic close pass, `done` protocol)
+
+- **Goal**: E004: UI, typography, accessibility, SEO and AI-agent visibility
+  review — close the epic as a whole per the `done` skill protocol, not
+  task-by-task.
+- **Done**: All 16 tasks accounted for — T01-T11, T13, T15, T16 `completed`;
+  T12, T14 `superseded` (folded into E006). No source code changes were made
+  in this closing session; two tracked build/test artifacts
+  (`playwright-report/index.html`, `test-results/.last-run.json`) show as
+  modified from running the test suite but were left uncommitted as
+  generated noise, not epic work.
+- **Verification**: PARTIAL. `just typecheck` — 0 errors (102 files).
+  `just build` — 85 pages built successfully. `just audit` — completed,
+  pre-existing content gaps not diffed against a baseline. `just a11y`
+  (`corepack yarn test:a11y`, the E004-T15 deliverable) — 25/25 Playwright+axe
+  tests passed. The full default Playwright suite (`yarn test`, which also
+  covers `tests/timeline.spec.ts` and the site-wide link crawl) did not
+  complete within the session's time budget — no output after 10+ minutes —
+  so it is **NOT_CHECKED**, not PASS or FAIL. `review-log status`: **NOT
+  CLEARED** (`review` was STALE — 37 commits since the last run — recorded
+  fresh this session as `issues/0` against HEAD `03fb1b33`, still not a
+  clean `/review` pass).
+  Not independently verified in this closing pass: acceptance criteria of
+  E004-T01–T11 and T16 (only indirectly corroborated by the T15 axe/structural
+  gate on 6 key pages); T12/T14 superseded status (per JOURNAL claim only,
+  not re-checked against E006); the optional Lighthouse CI budget for T15
+  (explicitly optional, not implemented).
+- **Decisions**: None new. Confirms the earlier-session finding that this
+  repo has no `.plan/ARCH.md` and no obvious 1:1 replacement — closest
+  analogues (`INFORMATION-ARCHITECTURE.md`, `BUSINESS_CONTEXT.md`,
+  `GOALS.md`, `PURPOSE.md`) cover different scopes. Left as a named gap
+  again rather than inventing a doc as a side effect of this closing task.
+- **Findings this session**: 0 new. Nothing added to `.plan/IMPRO.md` for
+  this epic — no such file exists under this epic directory
+  (`improTriage` = 0 for that reason, not because items were triaged).
+- **Improvements logged**: 0.
+- **Cleanup**: no epic worktree for E004 exists to remove. The repo's other
+  32 worktrees (`feat/cleanups`, `feat/theme-tokens`, `feat/theme-tokens-2`,
+  `feat/vision-layers`, `feat/why-page`, `feat/benefits`, `feat/book-routes`,
+  `feat/cheap`, `feat/choosing-people`, `feat/cities`, `feat/design-md`,
+  `feat/direct-democracy`, `feat/E006-T17`, `feat/eci`,
+  `feat/editorial-standard`, `feat/education`, `feat/fold-answers`,
+  `feat/manifesto`, `feat/open-door`, `feat/political-path`,
+  `feat/principles-support`, `feat/redesign`, `feat/safeguards`, `feat/science`,
+  `feat/shared-frame`, `feat/steering`, `feat/surplus`, `feat/terminology`,
+  `feat/total-state`, `feat/why-objections`, `feat/workweek`) belong to other
+  epics (E005/E006 and free-form content work), out of scope here, left
+  untouched.
+- **Next**: Run the full `yarn test` regression suite to completion (or split
+  it so it fits a session budget) and get a clean `/review` pass against the
+  current tree before treating E004's shipped code as fully verified. See
+  the new `.plan/BACKLOG.md` entry.

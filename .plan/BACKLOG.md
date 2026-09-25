@@ -165,6 +165,25 @@ plus the draft review recorded in this session.
 
 - [ ] **tests/timeline.spec.ts fails against current Timeline.astro/TimelineBlock.astro markup** — selectors like `#timeline h2.text-3xl.text-center.text-white` and `.h-2.bg-blue-700` no longer match current component output; pre-existing before E004-T10 (Timeline.astro untouched by that task). (Importance: Low, Points: 2)
 
+## E004 not fully verified at close (2026-09-25)
+
+- [ ] **E004 closing pass could not run the full regression suite** — every
+  E004 task shows `completed`/`superseded` (all 16 accounted for: T01-T11,
+  T13, T15, T16 completed; T12, T14 superseded into E006) and the epic's own
+  T15 gate (`just a11y` / `corepack yarn test:a11y`) passed 25/25, but the
+  repo's full default Playwright suite (`yarn test` / `npm test`, which also
+  covers `tests/timeline.spec.ts` and the site-wide link crawl) produced no
+  output after 10+ minutes in the closing session and was left NOT_CHECKED
+  rather than PASS or FAIL. `review-log status` is also **NOT CLEARED** — the
+  one `review` run was 37 commits stale; a fresh `review-log record` was
+  logged this session (`issues/0` @ `03fb1b33`) but no actual `/review` pass
+  has run against the current tree. Before treating E004 as fully verified:
+  run the full suite to completion (or split it to fit a session budget) and
+  run `/review` against `HEAD`. See
+  `.plan/epics/E004-2026-09-25-ui-a11y-seo-review/JOURNAL.md` (session
+  "epic close pass, `done` protocol") for the full verification breakdown.
+  (Medium, 2)
+
 ## Found by the E006 reconnaissance (2026-09-25)
 
 - [x] **`src/pages/docs/[...slug].astro` generates a shadow `/docs/<slug>` URL for every non-draft docs entry** — no folder filter, so every chapter, `/why` and `/manifesto` exist twice; this is the generator that keeps recreating the duplicate-route problem the `/docs/book/*` redirects only papered over. Restrict it to the trees that belong under `/docs` (ideas, articles, reference) or redirect. (High, 3) FIXED 2026-09-25, E006-T08 (commit 0b7d8a4): catch-all now filters `entry.id` to `ideas/`, `articles/`, `reference/` only; a 43-row `redirects` table in `astro.config.mjs` (commit 46414df) covers the retired `/docs/book/*`, `/docs/why*` and `/docs/for-you` paths, generated from `src/content/docs/book/` so every chapter — not just the 13 that had a wrapper file — gets a real redirect instead of a 404.

@@ -16,14 +16,20 @@ Closed 2026-09-25. `.plan/epics/E004-2026-09-25-ui-a11y-seo-review/PLAN.md` ·
 - [E004-T09](epics/E004-2026-09-25-ui-a11y-seo-review/tasks/E004-T09-canonical-duplicates.md) — Canonicals and redirects for duplicate route families
 - [E004-T10](epics/E004-2026-09-25-ui-a11y-seo-review/tasks/E004-T10-icon-system.md) — One icon system with an Icon component
 - [E004-T11](epics/E004-2026-09-25-ui-a11y-seo-review/tasks/E004-T11-component-consolidation.md) — Consolidate components into a small, documented set
+- [E004-T13](epics/E004-2026-09-25-ui-a11y-seo-review/tasks/E004-T13-font-loading.md) — Self-hosted Inter + Playfair Display fonts (commit `c74c8f6`)
+- [E004-T15](epics/E004-2026-09-25-ui-a11y-seo-review/tasks/E004-T15-quality-gate.md) — Automated Playwright + axe a11y/SEO regression gate (commit `9816cda`)
 - [E004-T16](epics/E004-2026-09-25-ui-a11y-seo-review/tasks/E004-T16-vendor-agent-skills.md) — Vendor the chosen agent skills into the repo (commit `637500d`)
 
 Not part of this closure's "done" list:
 
 - E004-T12 (token hygiene) and E004-T14 (answer-first editorial pass) —
   **superseded**, folded into E006.
-- E004-T13 (font loading) and E004-T15 (automated a11y/SEO gate) — still
-  `proposed`, unstarted.
+
+Updated 2026-09-25: T13 and T15 landed after the note above was written
+(see JOURNAL.md session "epic close pass, `done` protocol"). All 16 tasks
+are now accounted for, but epic-level verification is **PARTIAL** — the
+full `yarn test` regression suite and a fresh `/review` pass are still
+outstanding; see `.plan/BACKLOG.md` → "E004 not fully verified at close".
 
 ## E006 — Design system, editorial standard, information architecture (epic still `in progress`)
 
