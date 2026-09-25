@@ -4,7 +4,7 @@ type: improvement
 id: E004-T16
 title: Vendor the chosen agent skills into the repo
 epic: E004
-status: proposed
+status: completed
 priority: low
 importance: Low
 effort: small
@@ -12,9 +12,10 @@ points: 1
 dependencies: []
 tags: [agents, tooling]
 created: 2026-09-25
-completed_at: null
-commits: []
+completed_at: 2026-09-25
+commits: [637500d]
 verification_evidence: []
+updated: 2026-09-25
 ---
 # E004-T16: Vendor the chosen agent skills into the repo
 
