@@ -109,9 +109,15 @@ lives at `src/AGENTS.md` (Astro 4 fails the build on any `.md` inside `src/conte
 |---|---|---:|---|
 | 1 (done) | R1 design sources · R2 component/pattern inventory · R3 duplication + concepts + link graph · R4 editorial audit — `.plan/reports/2026-09-25-e006/` | 8 | sonnet ×3, opus ×1 |
 | 2 (done, b13cbd0 c23da70 7a2b06b) | D1 `DESIGN.md` · D2 `src/AGENTS.md` + `src/CLAUDE.md` + repo rule · D3 `.plan/INFORMATION-ARCHITECTURE.md` + `PRES.md` | 13 | fable ×3 |
-| 3 — infrastructure | [T05](tasks/E006-T05.md) schema + glossary + frontmatter sweep (8, editor) · [T06](tasks/E006-T06.md) tokens + ArticleGrid + typography (5) · [T07](tasks/E006-T07.md) component consolidation + /vision anchors (5) · [T08](tasks/E006-T08.md) route cleanup + redirect table (5) · [T09](tasks/E006-T09.md) new content components + gallery (8) · [T10](tasks/E006-T10.md) link-graph + design-lint scripts (3) | 34 | ts-dev ×5, editor ×1 |
-| 4 — pages | [T11](tasks/E006-T11.md) index from `layer`, Chapters label, eyebrow, ChapterFooter (5) · [T12](tasks/E006-T12.md) term tooltips, /glossary, tags retirement (5) · [T13](tasks/E006-T13.md) long pages on ArticleLayout, chart figure, chrome cleanup (5) · [T14](tasks/E006-T14.md) /site-map + shape audit (8) | 23 | ts-dev ×4 |
-| 5 — editorial | [T15](tasks/E006-T15.md) floor chapter (5) · [T16](tasks/E006-T16.md) chapters group 1 (8) · [T17](tasks/E006-T17.md) group 2 (8) · [T18](tasks/E006-T18.md) group 3 + eGov merge (8) · [T19](tasks/E006-T19.md) top-level one-home sweep (8) | 37 | editor ×5 (fable) |
+| 3 — infrastructure (done, run 1) | [T06](tasks/E006-T06.md) tokens + ArticleGrid + typography (5) · [T07](tasks/E006-T07.md) component consolidation + /vision anchors (5) · [T08](tasks/E006-T08.md) route cleanup + redirect table (5) · [T09](tasks/E006-T09.md) new content components + gallery (8) · [T10](tasks/E006-T10.md) link-graph + design-lint scripts (3) — T05's schema/glossary/layer slice landed through T12 (`11af49b`, `25b82df`) | 26 | ts-dev ×5 |
+| 4 — pages (T12–T14 done, run 1) | [T12](tasks/E006-T12.md) term tooltips, /glossary, tags retirement (5) · [T13](tasks/E006-T13.md) long pages on ArticleLayout, chart figure, chrome cleanup (5) · [T14](tasks/E006-T14.md) /site-map + shape audit (8) | 18 | ts-dev ×3 |
+| 4b — remainder (**run 2, pending**) | [T05](tasks/E006-T05.md) re-scoped: tags → concepts sweep (3, editor) · [T11](tasks/E006-T11.md) index from `layer`, Chapters label, eyebrow, ChapterFooter (5) | 8 | editor ×1, ts-dev ×1 |
+| 5 — editorial (**run 2, pending, in scope**) | [T15](tasks/E006-T15.md) floor chapter (5) · [T16](tasks/E006-T16.md) chapters group 1 (8) · [T17](tasks/E006-T17.md) group 2 (8) · [T18](tasks/E006-T18.md) group 3 + eGov merge (8) · [T19](tasks/E006-T19.md) top-level one-home sweep (8) | 37 | editor ×5 (fable) |
+
+**Run 2 (2026-09-25):** the first `/implement` run stopped at waves 3–4 because the `editor`
+agent was not registered when T05 was dispatched, and it treated wave 5 as out of scope. It
+is not: waves 4b and 5 are the remaining queue, in that order, both approved by the same go.
+Wave 4b first (T05 and T11 have disjoint write sets), then all five wave-5 tasks.
 
 Write sets inside a wave are disjoint by construction (each task file lists its files and
 the files it must not touch). Epic total 115 points; the 13-point rule would route this to AO,
