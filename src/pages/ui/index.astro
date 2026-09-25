@@ -1,4 +1,7 @@
 ---
+// Living style guide: every component with real props, for reference during
+// development. Not a public page — gated on IS_PREVIEW like home-classic.
+import { IS_PREVIEW } from '../../lib/preview';
 import Layout from '../../layouts/Layout.astro';
 import Card from '../../components/Card.astro';
 import CardGrid from '../../components/CardGrid.astro';
@@ -6,7 +9,6 @@ import DisplayTitle from '../../components/DisplayTitle.astro';
 import Hero from '../../components/Hero.astro';
 import FAQ from '../../components/FAQ.astro';
 import Author from '../../components/Author.astro';
-import WhyDigitalReform from '../../components/WhyDigitalReform.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import InteractiveSection from '../../components/InteractiveSection.astro';
 import EuropeMap from '../../components/EuropeMap.astro';
@@ -14,6 +16,10 @@ import EUStatisticsChart from '../../components/EUStatisticsChart.astro';
 import Timeline from '../../components/Timeline.astro';
 import Surface from '../../components/Surface.astro';
 import Icon from '../../components/Icon.astro';
+
+if (!IS_PREVIEW) {
+  return Astro.redirect('/', 301);
+}
 
 const iconGallery = [
   'globe', 'languages', 'laptop', 'bot', 'truck', 'banknote', 'microscope',
@@ -70,7 +76,6 @@ const faqItems = [
         <li><a href="#hero" class="text-blue-400 hover:text-blue-300">Hero Section</a></li>
         <li><a href="#faq" class="text-blue-400 hover:text-blue-300">FAQ Component</a></li>
         <li><a href="#author" class="text-blue-400 hover:text-blue-300">Author Profile</a></li>
-        <li><a href="#whyreform" class="text-blue-400 hover:text-blue-300">Why Digital Reform</a></li>
         <li><a href="#testimonials" class="text-blue-400 hover:text-blue-300">Testimonials</a></li>
         <li><a href="#interactive" class="text-blue-400 hover:text-blue-300">Interactive Elements</a>
           <ul class="ml-6 mt-1 list-disc list-inside">
@@ -221,7 +226,6 @@ import FAQ from '../components/FAQ.astro';
             <div class="absolute inset-0 bg-gradient-to-r from-purple-900 to-indigo-900 opacity-10 blur-xl"></div>
             <div class="relative">
               <FAQ 
-                color="indigo"
                 items={[
                   {
                     question: "Why do we need yet another European integration project?",
@@ -252,8 +256,7 @@ import FAQ from '../components/FAQ.astro';
   <div class="relative">
     <div class="absolute inset-0 bg-gradient-to-r from-purple-900 to-indigo-900 opacity-10 blur-xl"></div>
     <div class="relative">
-      <FAQ 
-        color="indigo"
+      <FAQ
         items={[
           {
             question: "Question text?",
@@ -605,17 +608,15 @@ import FAQ from '../components/FAQ.astro';
       <div class="bg-gray-900/30 border border-gray-700/50 rounded-lg p-6">
         <h2 class="text-3xl font-bold text-white mb-8">FAQ Component Example</h2>
         
-        <FAQ 
+        <FAQ
           title="Frequently Asked Questions Example"
-          color="blue"
           items={faqItems}
         />
-        
+
         <h3 class="text-2xl font-bold text-white mt-12 mb-4">FAQ Component Usage</h3>
         <div class="bg-gray-800/50 p-4 rounded-lg mb-4">
-          <pre class="text-gray-300 overflow-auto"><code>{`<FAQ 
+          <pre class="text-gray-300 overflow-auto"><code>{`<FAQ
   title="Frequently Asked Questions"
-  color="blue"
   items={[
     {
       question: "Question text?",
@@ -643,22 +644,6 @@ import FAQ from '../components/FAQ.astro';
         <h3 class="text-2xl font-bold text-white mt-12 mb-4">Author Component Usage</h3>
         <div class="bg-gray-800/50 p-4 rounded-lg mb-4">
           <pre class="text-gray-300 overflow-auto"><code>{`<Author color="purple" />`}</code></pre>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Digital Reform Section -->
-    <section id="whyreform" class="mb-16">
-      <DisplayTitle level={1}>Why Digital Reform</DisplayTitle>
-      
-      <div class="bg-gray-900/30 border border-gray-700/50 rounded-lg p-6">
-        <h2 class="text-3xl font-bold text-white mb-8">WhyDigitalReform Component Example</h2>
-        
-        <WhyDigitalReform color="teal" />
-        
-        <h3 class="text-2xl font-bold text-white mt-12 mb-4">WhyDigitalReform Component Usage</h3>
-        <div class="bg-gray-800/50 p-4 rounded-lg mb-4">
-          <pre class="text-gray-300 overflow-auto"><code>{`<WhyDigitalReform color="teal" />`}</code></pre>
         </div>
       </div>
     </section>

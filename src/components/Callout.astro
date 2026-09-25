@@ -1,0 +1,86 @@
+---
+/**
+ * Callout — one sentence or short passage set apart from the prose in a box:
+ * the thing the section is built around. Three kinds: "demand" (the
+ * manifesto's demands and any chapter's one ask), "definition" (a chapter's
+ * load-bearing term, defined once — registers the anchor TermRef links to),
+ * "claim" (the sentence the reader is arguing with).
+ *
+ * Generalised from manifesto/ManifestoDemand.astro (DESIGN.md Migration
+ * step 4). `kind` defaults to "demand" so existing ManifestoDemand call
+ * sites, which never named a kind, render unchanged.
+ */
+interface Props {
+  kind?: 'demand' | 'definition' | 'claim';
+  /** Eyebrow label; defaults per kind. */
+  label?: string;
+  /** Definition only: the term this Callout defines. Registers the anchor
+   * id (the term's slug) unless `id` is given explicitly. */
+  term?: string;
+  id?: string;
+}
+
+const DEFAULT_LABEL = {
+  demand: 'The demand',
+  definition: 'Definition',
+  claim: 'The claim',
+} as const;
+
+function slugify(value: string): string {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+const { kind = 'demand', label, term, id } = Astro.props;
+const resolvedLabel = label ?? DEFAULT_LABEL[kind];
+const resolvedId = id ?? (kind === 'definition' && term ? slugify(term) : undefined);
+---
+
+<aside class="callout" data-kind={kind} id={resolvedId}>
+  {resolvedLabel && <p class="callout__label">{resolvedLabel}</p>}
+  <div class="callout__body"><slot /></div>
+</aside>
+
+<style>
+  .callout {
+    margin: 3rem 0;
+    padding: 1.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg-secondary);
+  }
+
+  .callout__label {
+    margin: 0 0 0.75rem;
+    color: var(--color-accent-primary);
+    font-size: var(--text-base);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .callout__body {
+    color: var(--color-text-primary);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .callout[data-kind='definition'] .callout__body,
+  .callout[data-kind='claim'] .callout__body {
+    font-size: var(--text-base);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .callout__body :global(p) {
+    margin: 0;
+  }
+
+  .callout__body :global(p + p) {
+    margin-top: 0.85rem;
+  }
+</style>

@@ -1,9 +1,11 @@
 ---
 /**
- * Opening statement of /why: the frame the rest of the page argues from
- * (see .plan/vision/aging-society-frame.md). Kept to a readable measure and
- * set apart from the card sections by a rule rather than a coloured panel, so
- * the page opens quietly instead of with another gradient block.
+ * Lead — the standfirst under a page title: one to three paragraphs at lead
+ * size, plus an optional one-sentence claim set apart from the rest.
+ *
+ * Merges why/WhyLead.astro and manifesto/ManifestoLead.astro (DESIGN.md
+ * Migration step 4); the left accent bar ManifestoLead wrapped its whole
+ * block in is dropped in favour of WhyLead's quieter bottom rule.
  */
 interface Props {
   /** Each entry is one paragraph. */
@@ -15,26 +17,30 @@ interface Props {
 const { paragraphs, claim } = Astro.props;
 ---
 
-<div class="why-lead">
-  {paragraphs.map((p) => <p class="why-lead__p">{p}</p>)}
-  {claim && <p class="why-lead__claim">{claim}</p>}
+<div class="lead">
+  {paragraphs.map((p) => <p class="lead__p">{p}</p>)}
+  {claim && <p class="lead__claim">{claim}</p>}
 </div>
 
 <style>
-  .why-lead {
+  .lead {
     max-width: 70ch;
     padding-bottom: 2.5rem;
     border-bottom: 1px solid var(--color-border);
   }
 
-  .why-lead__p {
+  .lead__p {
     font-size: var(--text-lg);
     line-height: 1.75;
     color: var(--color-text-secondary);
     margin: 0 0 1.25rem;
   }
 
-  .why-lead__claim {
+  .lead__p:last-child {
+    margin-bottom: 0;
+  }
+
+  .lead__claim {
     margin: 1.75rem 0 0;
     padding-left: 1rem;
     border-left: 3px solid var(--color-accent-primary);

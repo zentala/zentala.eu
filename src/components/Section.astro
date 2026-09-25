@@ -1,0 +1,75 @@
+---
+/**
+ * Section — a titled block on a page: eyebrow, H2, optional lead, body.
+ * Exists so every H2-level division on a page shares one vertical rhythm and
+ * one measure instead of each block inventing its own margins.
+ *
+ * Generalised from why/WhySection.astro (DESIGN.md Migration step 4); the
+ * page sets --section-space-* on its own wrapper to control the rhythm.
+ * All colour and spacing comes from the theme tokens in
+ * src/styles/_tokens.scss.
+ */
+interface Props {
+  /** Small label above the heading, e.g. "01 — The pressure". */
+  eyebrow?: string;
+  title: string;
+  /** One sentence framing the content below; capped at a readable measure. */
+  lead?: string;
+  id?: string;
+}
+
+const { eyebrow, title, lead, id } = Astro.props;
+---
+
+<section class="section" id={id}>
+  <header class="section__head">
+    {eyebrow && <p class="section__eyebrow">{eyebrow}</p>}
+    <h2 class="section__title">{title}</h2>
+    {lead && <p class="section__lead">{lead}</p>}
+  </header>
+  <div class="section__body">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .section {
+    margin-block: var(--section-space-section, 5rem);
+  }
+
+  .section__head {
+    margin-bottom: var(--section-space-head, 2rem);
+  }
+
+  .section__eyebrow {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm, 0.8125rem);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent-primary);
+    margin: 0 0 0.75rem;
+  }
+
+  .section__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  .section__lead {
+    /* ~70ch keeps prose readable; the content below may run full width. */
+    max-width: 70ch;
+    margin: 1rem 0 0;
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  .section__body > :global(* + *) {
+    margin-top: var(--section-space-block, 2rem);
+  }
+</style>

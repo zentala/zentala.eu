@@ -6,8 +6,8 @@
  * accepts it and doubts the plan (see .plan/vision/aging-society-frame.md,
  * "Answers to the obvious objections").
  *
- * Layout owns the page's vertical rhythm through the --why-space-* tokens
- * below; the sections themselves consume them (components/why/WhySection).
+ * Layout owns the page's vertical rhythm through the --section-space-*
+ * tokens below; the sections themselves consume them (components/Section).
  */
 import { getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
@@ -42,17 +42,17 @@ const { Content } = await whyEntry.render();
 <style>
   .why-page {
     /* One spacing scale for the whole page — sections, section heads and the
-       blocks inside them. WhySection reads these. */
-    --why-space-section: 4.5rem;
-    --why-space-head: 1.75rem;
-    --why-space-block: 2rem;
+       blocks inside them. Section reads these. */
+    --section-space-section: 4.5rem;
+    --section-space-head: 1.75rem;
+    --section-space-block: 2rem;
     max-width: 68rem;
   }
 
   @media (min-width: 768px) {
     .why-page {
-      --why-space-section: 6rem;
-      --why-space-head: 2rem;
+      --section-space-section: 6rem;
+      --section-space-head: 2rem;
     }
   }
 

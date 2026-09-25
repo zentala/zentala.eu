@@ -8,7 +8,6 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import UeLogo from '../assets/eu.png';
-import GradientSection from '../components/GradientSection.astro';
 import IconLink from '../components/IconLink.astro';
 import Icon from '../components/Icon.astro';
 import DisplayTitle from '../components/DisplayTitle.astro';
@@ -49,7 +48,7 @@ const layers = resolveLayers('short');
     actions={[]}
   />
 
-  <GradientSection variant="primary" padding="md" rounded={true}>
+  <div class="py-8 px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10">
       <IconLink
         href="/why"
@@ -78,7 +77,7 @@ const layers = resolveLayers('short');
         Full Vision Overview
       </IconLink>
     </div>
-  </GradientSection>
+  </div>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 my-16">
     <FrameIntro
@@ -128,7 +127,6 @@ const layers = resolveLayers('short');
           title="For citizens and retirees-to-be"
           color="blue"
           icon="users"
-          variant="gradient"
           href="/why"
           linkText="Why reforms are needed"
         >
@@ -139,7 +137,6 @@ const layers = resolveLayers('short');
           title="For engineers and business"
           color="indigo"
           icon="settings"
-          variant="gradient"
           href="/book/robotic-reindustrialisation"
           linkText="Read the robotics proposal"
         >
@@ -150,7 +147,6 @@ const layers = resolveLayers('short');
           title="For regions and member states"
           color="green"
           icon="globe"
-          variant="gradient"
           href="/benefits"
           linkText="See benefits by country"
         >
@@ -164,7 +160,6 @@ const layers = resolveLayers('short');
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <DisplayTitle level={2}>Common Questions</DisplayTitle>
       <FAQ
-        color="indigo"
         items={[
           {
             question: 'Why do we need yet another European integration project?',

@@ -38,8 +38,16 @@ const layers = resolveLayers('long');
       <p class="layers-lead text-lg mb-8 max-w-3xl">{layersSection.lead}</p>
 
       <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_20rem] gap-8 items-start">
-        <LayerStack layers={layers} />
+        <div>
+          <div class="layers-anchors" aria-hidden="true">
+            <span id="language"></span>
+            <span id="digital"></span>
+            <span id="robotics"></span>
+          </div>
+          <LayerStack layers={layers} />
+        </div>
         <CrossCuttingNote
+          id="who-captures-the-gains"
           eyebrow={crossCuttingNote.eyebrow}
           title={crossCuttingNote.title}
           paragraphs={crossCuttingNote.paragraphs}
@@ -59,5 +67,14 @@ const layers = resolveLayers('long');
 <style>
   .layers-lead {
     color: var(--color-text-secondary);
+  }
+
+  /* language / digital / robotics: same-page anchors the rest of the site
+     links to (IA doc §1, §10). The three layers render in one screen here,
+     so a single jump target above the stack is enough — no per-card offset
+     needed. */
+  .layers-anchors span {
+    display: block;
+    height: 0;
   }
 </style>

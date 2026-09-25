@@ -12,7 +12,7 @@
 import { getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import DisplayTitle from '../components/DisplayTitle.astro';
-import ManifestoLead from '../components/manifesto/ManifestoLead.astro';
+import Lead from '../components/Lead.astro';
 
 const entry = await getEntry('docs', 'manifesto');
 const { Content } = await entry.render();
@@ -25,7 +25,7 @@ const { Content } = await entry.render();
       <DisplayTitle title="Know what you want" marginTop="mt-0" />
     </header>
 
-    <ManifestoLead
+    <Lead
       paragraphs={[
         "I am a positivist. I started writing this because everyone around me could tell me what is broken and nobody could tell me what they wanted instead.",
         "This page is my own voice rather than a proposal — why the site exists, what I am betting on, and the one thing I am asking of you.",
