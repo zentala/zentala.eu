@@ -1,14 +1,20 @@
 # Content audit — 2026-09-25
 
 ## TLDR
-Scanned 263 built routes, 70 content files, 459 links (78 unique external).
-Found 27 links to draft pages, 8 links to missing pages, 13 dead external links, 13 orphan pages, 15 drafts, 19 pages missing a meta description, 22 duplicate descriptions.
+Scanned 263 built routes, 70 content files, 458 links (78 unique external).
+Found 33 links to draft pages, 8 links to missing pages, 13 dead external links, 13 orphan pages, 15 drafts, 19 pages missing a meta description, 22 duplicate descriptions.
 
-## Links to draft pages (27) — 404 in production
+## Links to draft pages (33) — 404 in production
 | Link | Where | Draft file |
 |---|---|---|
-| /docs/book/language | src/content/docs/book/european-english.mdx:217 | src/content/docs/book/language.md |
-| /docs/book/language | src/content/docs/ideas/culture/language-integration.mdx:169 | src/content/docs/book/language.md |
+| /book/language-integration-administrative-implementation | src/content/docs/book/european-english.mdx:214 | src/content/docs/book/language-integration-administrative-implementation.mdx |
+| /book/media-cultural-integration | src/content/docs/book/european-english.mdx:215 | src/content/docs/book/media-cultural-integration.mdx |
+| /book/economic-growth-language-unity | src/content/docs/book/european-english.mdx:216 | src/content/docs/book/economic-growth-language-unity.mdx |
+| /book/language | src/content/docs/book/european-english.mdx:217 | src/content/docs/book/language.md |
+| /book/language-integration-administrative-implementation | src/content/docs/ideas/culture/language-integration.mdx:166 | src/content/docs/book/language-integration-administrative-implementation.mdx |
+| /book/media-cultural-integration | src/content/docs/ideas/culture/language-integration.mdx:167 | src/content/docs/book/media-cultural-integration.mdx |
+| /book/economic-growth-language-unity | src/content/docs/ideas/culture/language-integration.mdx:168 | src/content/docs/book/economic-growth-language-unity.mdx |
+| /book/language | src/content/docs/ideas/culture/language-integration.mdx:169 | src/content/docs/book/language.md |
 | /book/language-integration-administrative-implementation/ | src/content/docs/index.mdx:30 | src/content/docs/book/language-integration-administrative-implementation.mdx |
 | /book/media-cultural-integration/ | src/content/docs/index.mdx:31 | src/content/docs/book/media-cultural-integration.mdx |
 | /book/economic-growth-language-unity/ | src/content/docs/index.mdx:32 | src/content/docs/book/economic-growth-language-unity.mdx |
