@@ -1,0 +1,198 @@
+---
+import { benefitGroups } from './entries'
+
+interface Props {
+  /** Slug highlighted on the server-rendered page. */
+  activeSlug?: string
+  /**
+   * `true` on /benefits, where clicking swaps the section in place;
+   * `false` on an entry page, where every item is plain navigation.
+   */
+  swapInPlace?: boolean
+}
+
+const { activeSlug, swapInPlace = false } = Astro.props
+---
+
+<nav class="benefit-picker" data-swap-in-place={swapInPlace ? 'true' : 'false'} aria-label="Choose a country, region or role">
+  <div
+    class="p-4 rounded-t-xl"
+    style="background-color: var(--color-bg-secondary); border-bottom: 1px solid var(--color-border);"
+  >
+    <label class="sr-only" for="benefit-search">Find your country or role</label>
+    <input
+      type="text"
+      id="benefit-search"
+      placeholder="Find your country or role..."
+      autocomplete="off"
+      class="w-full p-3 rounded-lg focus:outline-none"
+      style="background-color: var(--color-bg-primary); color: var(--color-text-primary); border: 1px solid var(--color-border); font-size: var(--text-base);"
+    />
+    <p class="mt-2 hidden" id="benefit-search-empty" style="color: var(--color-text-secondary);">
+      No match. Every option below leads to a page that exists.
+    </p>
+  </div>
+
+  <div class="p-3 rounded-b-xl" style="background-color: var(--color-bg-secondary);">
+    {
+      benefitGroups.map((group) => (
+        <div class="benefit-group mb-4" data-group={group.kind}>
+          <p
+            class="px-2 pb-2 font-semibold uppercase tracking-wide"
+            style="color: var(--color-text-secondary); font-size: var(--text-base);"
+          >
+            {group.label}
+          </p>
+          <ul class="benefit-list">
+            {group.entries.map((entry) => (
+              <li
+                class:list={['benefit-option', { active: entry.slug === activeSlug }]}
+                data-slug={entry.slug}
+                data-search={[entry.name, ...(entry.members ?? [])].join(' ').toLowerCase()}
+              >
+                <a href={`/benefits/${entry.slug}`} class="benefit-option-link">
+                  {entry.icon ? (
+                    <span class="benefit-mark" aria-hidden="true">{entry.icon}</span>
+                  ) : (
+                    <img
+                      class="benefit-mark benefit-flag"
+                      src={`https://flagcdn.com/w20/${entry.flag.toLowerCase()}.png`}
+                      srcset={`https://flagcdn.com/w40/${entry.flag.toLowerCase()}.png 2x`}
+                      alt=""
+                      width="20"
+                      height="15"
+                    />
+                  )}
+                  <span class="benefit-name">{entry.name}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</nav>
+
+<style>
+  .benefit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .benefit-option-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .benefit-option-link:hover {
+    background-color: var(--color-bg-primary);
+    border-color: var(--color-border);
+  }
+
+  .benefit-option.active .benefit-option-link {
+    background-color: var(--color-bg-primary);
+    border-color: var(--color-accent-primary);
+    font-weight: 600;
+  }
+
+  .benefit-option.filtered-out {
+    display: none;
+  }
+
+  .benefit-mark {
+    flex: 0 0 auto;
+    width: 1.25rem;
+    text-align: center;
+  }
+
+  .benefit-flag {
+    height: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 2px;
+  }
+
+  .benefit-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+
+<script>
+  import { languageToSlug } from './entries'
+
+  const picker = document.querySelector<HTMLElement>('.benefit-picker')
+  if (picker) {
+    const options = Array.from(picker.querySelectorAll<HTMLLIElement>('.benefit-option'))
+    const search = picker.querySelector<HTMLInputElement>('#benefit-search')
+    const emptyNote = picker.querySelector<HTMLElement>('#benefit-search-empty')
+    const swapInPlace = picker.dataset.swapInPlace === 'true'
+    const sections = Array.from(document.querySelectorAll<HTMLElement>('.benefit-section'))
+
+    const markActive = (slug: string) => {
+      options.forEach((option) => option.classList.toggle('active', option.dataset.slug === slug))
+    }
+
+    const showSection = (slug: string) => {
+      const target = sections.find((section) => section.dataset.entrySlug === slug)
+      if (!target) return false
+      sections.forEach((section) => section.classList.toggle('hidden', section !== target))
+      markActive(slug)
+      return true
+    }
+
+    if (swapInPlace && sections.length > 0) {
+      picker.addEventListener('click', (event) => {
+        const link = (event.target as HTMLElement).closest<HTMLAnchorElement>('.benefit-option-link')
+        const slug = link?.closest<HTMLElement>('.benefit-option')?.dataset.slug
+        if (!slug) return
+        // The link stays a real link: without this script it navigates to the
+        // entry's own page, which exists. Here we swap in place instead.
+        if (showSection(slug)) {
+          event.preventDefault()
+          history.replaceState(null, '', `#${slug}`)
+        }
+      })
+
+      const fromHash = window.location.hash.replace('#', '')
+      const suggested = languageToSlug[(navigator.language || 'en').split('-')[0].toLowerCase()]
+      if (!(fromHash && showSection(fromHash))) {
+        if (suggested) showSection(suggested)
+      }
+    }
+
+    search?.addEventListener('input', () => {
+      const term = search.value.trim().toLowerCase()
+      let matches = 0
+      options.forEach((option) => {
+        const hit = term === '' || (option.dataset.search ?? '').includes(term)
+        option.classList.toggle('filtered-out', !hit)
+        if (hit) matches += 1
+      })
+      emptyNote?.classList.toggle('hidden', term === '' || matches > 0)
+    })
+  }
+</script>
