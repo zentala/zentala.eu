@@ -102,8 +102,12 @@ power has to be balanced at the same time as the capability is built.
 The balance I want is direct democracy, at every level where a decision is made:
 the school, the municipality, the region, the nation, the Union.
 
-Not as a mood, and not as consultation. As a mechanism with teeth: citizens
-decide specific questions, often, and the result binds. Then the relationship
+Not as a mood, and not as consultation. As two mechanisms with teeth: a
+**citizens' initiative** to propose a change and force a vote on it, and an
+**optional referendum** to strike down a law parliament has passed. The
+accelerator and the brake. Parliaments carry on — the proper name for the
+arrangement is semi-direct democracy — but citizens decide specific questions,
+often, and the result binds. Then the relationship
 inverts. A state with total reach and citizens who can overrule it between
 elections is a tool. A state with total reach and citizens who can only complain
 for four years is something else, and we should say the word out loud rather
@@ -126,6 +130,31 @@ lives. Declining that trade is not superstition. It is arithmetic.
 
 I would rather the demand were the other one: give us the vote and we will help
 you build the system.
+
+## Keep the paper
+
+There is a cheap way to take most of the fear out of this, and I do not know why
+it is not the default position.
+
+**Keep paper as the emergency layer of the state.** Not only for voting — for
+the basic functions generally. The procedures we run today on paper stay in
+place, simplified if you like, as the fallback that works when the systems are
+down, when somebody has been switched off by mistake, or when a government has
+to be shown that the old route still exists. A state that cannot operate without
+its database has handed whoever holds the database a power nobody voted to give
+them.
+
+Voting is the clearest case. We already vote in one room in a school; a town
+hall can do the same. Real votes on an initiative or a law will not draw crowds so large that a
+school hall cannot hold them, and if the cost of running frequent votes is the
+objection, then the honest response is to work out how to run them cheaply, in
+public, with the arguments on the table. That is a discussion we should be
+having rather than a reason to postpone.
+
+**Digital gets built in parallel, as learning.** We start now, we make mistakes
+in places where mistakes are survivable, and the digital layer earns its way up
+to anything important. It should carry something serious only once it has
+proved, in the open, that it deserves to.
 
 Build it as Europeans, together. One set of systems for identity, for records,
 for voting, designed jointly, with each country deploying and running its own.

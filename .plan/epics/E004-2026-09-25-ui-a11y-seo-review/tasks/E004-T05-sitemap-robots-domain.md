@@ -45,3 +45,8 @@ Confirm zentala.eu as the canonical domain, and decide whether to allow AI train
 ## Evidence
 
 Review report: `.plan/reports/2026-09-25-ui-seo-review/` (skills shortlist, static inventory, rendered axe audit, content/SEO/GEO review).
+
+## Decisions (Paweł, 2026-09-25)
+
+- Canonical domain: **zentala.eu**. `eu.zentala.io` is dead — remove it from the repo, no redirect needed.
+- robots.txt: **allow all AI bots**, including training bots (GPTBot, ClaudeBot, Google-Extended, CCBot), plus search/citation bots.

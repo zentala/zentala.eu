@@ -70,6 +70,18 @@ I find two.
 questions ourselves, often, with a result that binds. It changes every other
 fight at once, because it changes who has to be persuaded.
 
+One piece of precision before I go on, because the honest name for this matters
+and teaching it is part of the job. What Switzerland has, and what I am
+proposing, is **semi-direct democracy**: parliament and government carry on
+doing their work, and citizens hold instruments to intervene in it. Nothing is
+abolished, something is added. There are two instruments and they are worth
+learning by name. A **citizens' initiative** lets citizens propose a change and
+force a vote on it — that is the accelerator. An **optional referendum** lets
+citizens strike down a law parliament has already passed — that is the brake. I
+will go on saying "direct democracy" through the rest of this, because it is
+the phrase everyone uses and it names the thing we are adding. Now you know
+what sits underneath it.
+
 **The second lever is English as a working language.** That one is economic —
 the floor under a European digital economy, European media, European companies
 whose capital is not French or German but simply European. I make that argument
@@ -102,10 +114,13 @@ the public, the reflex is to demand a reversal of that one thing. Fine — but t
 wave passes and the machine is unchanged. On the wave of that anger, demand
 direct democracy itself. Every scandal is an argument for it.
 
-**2. Back whoever supports it, from any side.** Whoever is for direct democracy,
-push them and vote for them, left or right, national or European. This is not a
-party position and I refuse to let it become one. The point of the mechanism is
-that it does not belong to a camp.
+**2. Treat this as the real dividing line.** The division that matters is no
+longer left against right. It is whether a person is willing to give power to
+people or not. Demanding direct democracy is the test that shows who is actually
+a democrat — and everyone in public life will have to answer it, because
+refusing to answer is itself an answer. So push and vote for whoever is for it,
+from any camp, and take note of who suddenly finds reasons why the public cannot
+be trusted with decisions.
 
 **3. Demand it of everyone.** Of the government, of the opposition, of the ones
 you like and the ones you do not. Make it the question every politician is asked
@@ -132,6 +147,46 @@ it is proven, it is European, and it is documented. **Adopt it broadly. Do not
 reinvent it.** Every hour spent designing a novel mechanism is an hour not spent
 demanding one that already runs.
 
+Two things follow from copying rather than inventing, and I want them stated
+rather than left to interpretation. **The votes are binding** — both the
+citizens' initiative and the optional referendum. A vote that the government may
+read as advice is the instrument we already have, and it is the instrument that
+failed. And **the thresholds are shaped by Switzerland's** — the number of
+signatures that puts a question on the ballot, the majorities that carry it —
+worked out from their share of the electorate rather than guessed at, and then
+rounded to something more demanding: **2% of the electorate to launch an
+initiative, 1% to force an optional referendum.** The safeguards that make this
+survivable come from the same place and are set out in
+[safeguards](/book/safeguards).
+
+### The safeguards we copy too
+
+Copying the model means copying its safety mechanisms, not just its ballot
+papers. Switzerland has spent well over a century building these, and they are
+the answer to "what stops a crowd voting something terrible into the
+constitution":
+
+- **A double majority of people and cantons** for constitutional change, so a
+  populous core cannot outvote the periphery on the rules themselves.
+- **Unity of subject** — an initiative may not bundle unrelated matters, which
+  kills the rider that carries an unpopular clause through on a popular one.
+- **A validity check against binding international law**, so an initiative that
+  would breach the non-derogable core is void before it reaches a ballot.
+- **A parliamentary counter-proposal on the same ballot**, so the choice is
+  between two real options rather than a forced yes or no.
+- **No turnout quorum**, which sounds like a missing safeguard and is the
+  opposite: a quorum makes a boycott campaign cheaper than an argument.
+- **Cantonal and communal layers**, where an electorate learns the instrument on
+  questions where a mistake is cheap.
+- **Fixed voting dates, a few times a year**, which caps the cost and means no
+  single vote is ever the last word.
+
+[**The Safeguards We Copy Too**](/book/safeguards) maps each of these against
+the thing it protects against, proposes the European and Polish equivalent with
+the arithmetic shown — including where my 2% and 1% part company with the Swiss
+numbers — and sets out honestly what the Swiss model costs and where it is
+criticised.
+
 **7. Demand it across the whole Union at once.** This is the part people get
 wrong, and the cost of getting it wrong is historical. A single country that
 reforms itself into something better while its neighbours do not is a country
@@ -141,6 +196,18 @@ did not exist. **One state reforming alone is a target. A continent reforming
 together is a fact.** So the demand is European from the first day — school
 councils, municipalities, regions, national parliaments, the Union — everywhere
 at once, by peoples who have understood that they have the same problem.
+
+And if some countries do not want it? Then they do not want it. Nothing happens
+to them. We aim at doing it together anyway, the same way we should aim at a
+common working language: by making it obviously worth joining rather than by
+compelling anyone.
+
+**8. Understand that doing it together is part of the point.** A demand made
+across the continent at the same time is itself an act of European identity —
+Europeans changing something together, by their own decision. I can think of few
+things that would build a political sense of Europe faster, and it is something
+even a Europe of nations can own, because it takes nothing away from any nation.
+It would show us how much we already have in common.
 
 ## Build something to vote for
 
@@ -165,8 +232,11 @@ economy left to build it. Nobody currently in charge is building it.
 To be clear about what I am not proposing: I am not proposing that we abolish
 parliaments or stop voting for governments.
 
-We keep electing representatives. We keep having parties. **Direct democracy is
-how citizens force things through in between.** It is the correction mechanism,
+We keep electing representatives. We keep having parties. That is what makes
+this semi-direct democracy rather than a replacement of the institutions.
+**Direct democracy is how citizens force things through in between** — the
+initiative to push something on, the optional referendum to stop something
+passing. It is the correction mechanism,
 not the replacement — and the presence of a correction mechanism changes how
 representatives behave long before it is used, which is most of its value.
 
@@ -209,6 +279,10 @@ integration so hard to sell.
 
 Self-steering nations, common infrastructure. That is the shape.
 
+One thing this is not: a replacement for the Union we have. The Union of Nations
+rebuilds the present Union from the inside. Nobody has to leave anything, and
+nothing has to be dissolved first.
+
 ## What I cannot settle, and what would settle it
 
 I would rather name the holes than paper over them.
@@ -233,6 +307,44 @@ I would rather name the holes than paper over them.
 
 If you can close any of those, that answer is worth more to this argument than
 another chapter of mine. I would like to be corrected in public.
+
+## The words, in one place
+
+These terms come up across this chapter, [the
+safeguards](/book/safeguards) and [the first move](/book/first-move). They are
+the standard vocabulary of the field, and using them precisely is part of what
+this site is for.
+
+- **Semi-direct democracy** — a system where parliament and government keep
+  working as they do now, and citizens hold instruments to propose law and to
+  overturn it. Switzerland's system, and what this site proposes.
+- **Citizens' initiative** — citizens collect signatures to propose a change
+  and force a national vote on it, whether or not parliament wants one. In
+  Switzerland: 100,000 signatures within 18 months, for a change to the federal
+  constitution. The accelerator.
+- **Optional referendum** — citizens collect signatures to put a law parliament
+  has already passed to a national vote, which can strike it down. In
+  Switzerland: 50,000 voters or eight cantons within 100 days of publication.
+  The brake.
+- **Mandatory referendum** — a vote that happens automatically, with no
+  signatures collected, because the subject requires it. In Switzerland: every
+  amendment to the federal constitution, accession to a collective-security
+  organisation or a supranational community, and emergency federal acts without
+  a constitutional basis lasting over a year.
+- **Double majority** — a proposal passes only with a majority of the votes
+  cast *and* a majority of the cantons. It applies to constitutional change and
+  to joining supranational communities, not to the ordinary citizen veto.
+- **Unity of subject** — an initiative may not bundle unrelated matters
+  together, and may not mix a general proposal with a specific draft. Breach it
+  and the Federal Assembly declares the initiative invalid. It kills the rider.
+- **Turnout quorum** — a rule making a result valid only if a set share of the
+  electorate takes part. Switzerland has none; Poland requires over half of
+  those entitled to vote, which is why Polish referendums keep producing
+  nothing. A quorum makes a boycott cheaper than an argument.
+- **European Citizens' Initiative (ECI)** — the Union's existing instrument: 1
+  million signatures from at least 7 member states within 12 months, after
+  which the Commission must formally respond and is not obliged to propose
+  anything. A citizens' initiative in name, with no binding force.
 
 ## We are the sovereign
 

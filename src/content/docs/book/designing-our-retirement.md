@@ -128,6 +128,13 @@ whoever got there first. Unlike most pension investments, this one delivers the
 service itself: machines paid for by contributions doing the work those
 contributions were meant to buy.
 
+**And ordinary life during the transition is paid for the way it is paid for
+now.** People asking who funds thirty years of daily living are asking a
+question that already has an answer: we live on what was paid for earlier, and
+nothing about that changes. What changes is whether there is anything to buy at
+the end of it. There will be, if we spent those thirty years building rather
+than destroying, and if we built cheaply rather than expensively.
+
 ## Who ends up owning it
 
 This question decides whether any of the above is worth doing.
