@@ -37,13 +37,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
+          cache: 'yarn'
+
+      - name: Enable Corepack (yarn from package.json packageManager)
+        run: corepack enable
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
 
       - name: Build project
-        run: npm run build
+        run: yarn build
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
