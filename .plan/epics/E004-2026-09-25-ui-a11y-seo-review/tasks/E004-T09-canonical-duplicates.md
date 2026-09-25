@@ -4,7 +4,7 @@ type: improvement
 id: E004-T09
 title: Canonicals and redirects for duplicate route families
 epic: E004
-status: proposed
+status: completed
 priority: medium
 importance: Medium
 effort: medium
@@ -12,9 +12,10 @@ points: 3
 dependencies: [E001-T01]
 tags: [seo, navigation]
 created: 2026-09-25
-completed_at: null
-commits: []
+completed_at: 2026-09-25
+commits: [960d4e2]
 verification_evidence: []
+updated: 2026-09-25
 ---
 # E004-T09: Canonicals and redirects for duplicate route families
 

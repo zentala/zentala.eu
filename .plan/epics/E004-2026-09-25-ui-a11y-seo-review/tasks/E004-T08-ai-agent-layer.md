@@ -4,7 +4,7 @@ type: improvement
 id: E004-T08
 title: Visibility for AI agents: llms.txt and Markdown twins
 epic: E004
-status: proposed
+status: completed
 priority: medium
 importance: Medium
 effort: medium
@@ -12,9 +12,10 @@ points: 3
 dependencies: [E004-T05]
 tags: [geo, agents]
 created: 2026-09-25
-completed_at: null
-commits: []
+completed_at: 2026-09-25
+commits: [e3767dc]
 verification_evidence: []
+updated: 2026-09-25
 ---
 # E004-T08: Visibility for AI agents: llms.txt and Markdown twins
 

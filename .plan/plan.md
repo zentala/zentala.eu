@@ -11,6 +11,17 @@ Build the information architecture and working system before expanding the volum
 - Define the internal `ue_internal` and `plan_ue_internal` surfaces without exposing planning material in the public menu.
 - Add a repeatable public-document/sidecar pattern.
 
+## Proposed pillar correction — 2026-09-15
+
+The existing three-pillar model overloads Digital Integration. The working structure to test is:
+
+1. a shared European language and public sphere;
+2. direct democracy and citizen control of institutions;
+3. shared digital public infrastructure;
+4. robotic reindustrialisation and strategic resilience.
+
+The delivery strategy is a peaceful pan-European reform movement initiated by Poland. Polish software engineers participate by building open, auditable civic technology and shared public infrastructure. New theses and research gaps are recorded in src/content/docs/ideas/governance/digital-democracy.sidecar.mdx; they remain private until reviewed.
+
 ## Phase 2 — define each pillar
 
 For each pillar create:
@@ -23,6 +34,7 @@ For each pillar create:
 ## Phase 3 — deepen the content
 
 - European English: charter, 60-item pilot method and administrative implementation;
+- Direct democracy: binding participation between elections, institutional control and a pan-European movement;
 - Digital integration: European software institution, reusable public software and voluntary adoption blocs;
 - Robotic reindustrialisation: dual-use research frame, agricultural automation and defence-related questions;
 - Benefits: citizens, businesses, regions and institutions.

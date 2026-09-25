@@ -4,7 +4,7 @@ type: improvement
 id: E004-T02
 title: One ArticleLayout with an editorial reading measure
 epic: E004
-status: proposed
+status: completed
 priority: high
 importance: High
 effort: medium
@@ -12,9 +12,10 @@ points: 5
 dependencies: []
 tags: [typography, components]
 created: 2026-09-25
-completed_at: null
-commits: []
+completed_at: 2026-09-25
+commits: [58613c4]
 verification_evidence: []
+updated: 2026-09-25
 ---
 # E004-T02: One ArticleLayout with an editorial reading measure
 
