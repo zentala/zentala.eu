@@ -34,6 +34,8 @@ mentioned once and not yet written. Nothing lives only in a chat log. Linked fro
 | **Migration answered by education and selection** | [`2026-09-25-education-migration-workweek-dump.md`](2026-09-25-education-migration-workweek-dump.md) | free online education in European languages, published criteria, remote European degrees, selection by demonstrated effort |
 | **Taking responsibility for the global south** | same dump | machine-translated practical education into hundreds of languages; tools for self-organisation; a deliberate return path |
 | **The shorter working week as lifelong learning** | same dump | cut the week where AI and robots take the work; minimum wage as four days; weekend work priced higher |
+| **Who the machines earn for** | [`2026-09-25-surplus-and-steering-dump.md`](2026-09-25-surplus-and-steering-dump.md) | money cannot buy a service nobody supplies; the surplus must reach society; free school meals as the worked example |
+| **Steering, and why slow decisions make us fall** | same dump | balance as continuous correction; decision speed; the electric-car reversal; what to take from China about representation |
 | **Nationalists vs globalists** | [`2026-09-25-answers-and-safeguards-dump.md`](2026-09-25-answers-and-safeguards-dump.md) | the GAL-TAN / open-closed divide; why it argues FOR direct democracy; contested claims about named governments, needs care |
 | **Energy** | Paweł, 2026-09-22 (chat) | his position: nuclear is on the table, current policy is Brussels' and would probably not survive a citizens' vote; one section, not a chapter |
 | **Defence** | Paweł, 2026-09-22 (chat) | his position: a common army needs real power handed to citizens first; not central to the retirement frame; keep short |
