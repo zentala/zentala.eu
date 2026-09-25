@@ -20,6 +20,10 @@ PAGES=$(find dist -name '*.html' | wc -l)
 [ "$PAGES" -gt 50 ] || { echo "DEPLOY_FAILED: only $PAGES pages built" >&2; exit 1; }
 echo "built $PAGES pages -> release $REL"
 
+# a11y/SEO gate (E004-T15): run against the dist/ just built, before publishing it.
+echo "running a11y/SEO gate against dist/..."
+npx playwright test --config=playwright.a11y.config.ts
+
 ssh "$HOST" "mkdir -p $ROOT/releases/$REL"
 tar -czf - -C dist . | ssh "$HOST" "tar -xzf - -C $ROOT/releases/$REL"
 
