@@ -70,6 +70,18 @@ I find two.
 questions ourselves, often, with a result that binds. It changes every other
 fight at once, because it changes who has to be persuaded.
 
+One piece of precision before I go on, because the honest name for this matters
+and teaching it is part of the job. What Switzerland has, and what I am
+proposing, is **semi-direct democracy**: parliament and government carry on
+doing their work, and citizens hold instruments to intervene in it. Nothing is
+abolished, something is added. There are two instruments and they are worth
+learning by name. A **citizens' initiative** lets citizens propose a change and
+force a vote on it — that is the accelerator. An **optional referendum** lets
+citizens strike down a law parliament has already passed — that is the brake. I
+will go on saying "direct democracy" through the rest of this, because it is
+the phrase everyone uses and it names the thing we are adding. Now you know
+what sits underneath it.
+
 **The second lever is English as a working language.** That one is economic —
 the floor under a European digital economy, European media, European companies
 whose capital is not French or German but simply European. I make that argument
@@ -136,13 +148,16 @@ reinvent it.** Every hour spent designing a novel mechanism is an hour not spent
 demanding one that already runs.
 
 Two things follow from copying rather than inventing, and I want them stated
-rather than left to interpretation. **The referendums are binding.** A vote that
-the government may read as advice is the instrument we already have, and it is
-the instrument that failed. And **the thresholds come from Switzerland too** —
-the number of signatures that puts a question on the ballot, the majorities that
-carry it — scaled in proportion to population rather than guessed at. The
-safeguards that make this survivable come from the same place and are set out
-in [safeguards](/book/safeguards).
+rather than left to interpretation. **The votes are binding** — both the
+citizens' initiative and the optional referendum. A vote that the government may
+read as advice is the instrument we already have, and it is the instrument that
+failed. And **the thresholds are shaped by Switzerland's** — the number of
+signatures that puts a question on the ballot, the majorities that carry it —
+worked out from their share of the electorate rather than guessed at, and then
+rounded to something more demanding: **2% of the electorate to launch an
+initiative, 1% to force an optional referendum.** The safeguards that make this
+survivable come from the same place and are set out in
+[safeguards](/book/safeguards).
 
 ### The safeguards we copy too
 
@@ -167,9 +182,10 @@ constitution":
   single vote is ever the last word.
 
 [**The Safeguards We Copy Too**](/book/safeguards) maps each of these against
-the thing it protects against, proposes the European and Polish equivalent
-scaled to population — with the arithmetic shown — and sets out honestly what
-the Swiss model costs and where it is criticised.
+the thing it protects against, proposes the European and Polish equivalent with
+the arithmetic shown — including where my 2% and 1% part company with the Swiss
+numbers — and sets out honestly what the Swiss model costs and where it is
+criticised.
 
 **7. Demand it across the whole Union at once.** This is the part people get
 wrong, and the cost of getting it wrong is historical. A single country that
@@ -216,8 +232,11 @@ economy left to build it. Nobody currently in charge is building it.
 To be clear about what I am not proposing: I am not proposing that we abolish
 parliaments or stop voting for governments.
 
-We keep electing representatives. We keep having parties. **Direct democracy is
-how citizens force things through in between.** It is the correction mechanism,
+We keep electing representatives. We keep having parties. That is what makes
+this semi-direct democracy rather than a replacement of the institutions.
+**Direct democracy is how citizens force things through in between** — the
+initiative to push something on, the optional referendum to stop something
+passing. It is the correction mechanism,
 not the replacement — and the presence of a correction mechanism changes how
 representatives behave long before it is used, which is most of its value.
 
@@ -288,6 +307,44 @@ I would rather name the holes than paper over them.
 
 If you can close any of those, that answer is worth more to this argument than
 another chapter of mine. I would like to be corrected in public.
+
+## The words, in one place
+
+These terms come up across this chapter, [the
+safeguards](/book/safeguards) and [the first move](/book/first-move). They are
+the standard vocabulary of the field, and using them precisely is part of what
+this site is for.
+
+- **Semi-direct democracy** — a system where parliament and government keep
+  working as they do now, and citizens hold instruments to propose law and to
+  overturn it. Switzerland's system, and what this site proposes.
+- **Citizens' initiative** — citizens collect signatures to propose a change
+  and force a national vote on it, whether or not parliament wants one. In
+  Switzerland: 100,000 signatures within 18 months, for a change to the federal
+  constitution. The accelerator.
+- **Optional referendum** — citizens collect signatures to put a law parliament
+  has already passed to a national vote, which can strike it down. In
+  Switzerland: 50,000 voters or eight cantons within 100 days of publication.
+  The brake.
+- **Mandatory referendum** — a vote that happens automatically, with no
+  signatures collected, because the subject requires it. In Switzerland: every
+  amendment to the federal constitution, accession to a collective-security
+  organisation or a supranational community, and emergency federal acts without
+  a constitutional basis lasting over a year.
+- **Double majority** — a proposal passes only with a majority of the votes
+  cast *and* a majority of the cantons. It applies to constitutional change and
+  to joining supranational communities, not to the ordinary citizen veto.
+- **Unity of subject** — an initiative may not bundle unrelated matters
+  together, and may not mix a general proposal with a specific draft. Breach it
+  and the Federal Assembly declares the initiative invalid. It kills the rider.
+- **Turnout quorum** — a rule making a result valid only if a set share of the
+  electorate takes part. Switzerland has none; Poland requires over half of
+  those entitled to vote, which is why Polish referendums keep producing
+  nothing. A quorum makes a boycott cheaper than an argument.
+- **European Citizens' Initiative (ECI)** — the Union's existing instrument: 1
+  million signatures from at least 7 member states within 12 months, after
+  which the Commission must formally respond and is not obliged to propose
+  anything. A citizens' initiative in name, with no binding force.
 
 ## We are the sovereign
 
