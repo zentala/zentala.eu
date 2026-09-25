@@ -132,6 +132,33 @@ it is proven, it is European, and it is documented. **Adopt it broadly. Do not
 reinvent it.** Every hour spent designing a novel mechanism is an hour not spent
 demanding one that already runs.
 
+### The safeguards we copy too
+
+Copying the model means copying its safety mechanisms, not just its ballot
+papers. Switzerland has spent well over a century building these, and they are
+the answer to "what stops a crowd voting something terrible into the
+constitution":
+
+- **A double majority of people and cantons** for constitutional change, so a
+  populous core cannot outvote the periphery on the rules themselves.
+- **Unity of subject** — an initiative may not bundle unrelated matters, which
+  kills the rider that carries an unpopular clause through on a popular one.
+- **A validity check against binding international law**, so an initiative that
+  would breach the non-derogable core is void before it reaches a ballot.
+- **A parliamentary counter-proposal on the same ballot**, so the choice is
+  between two real options rather than a forced yes or no.
+- **No turnout quorum**, which sounds like a missing safeguard and is the
+  opposite: a quorum makes a boycott campaign cheaper than an argument.
+- **Cantonal and communal layers**, where an electorate learns the instrument on
+  questions where a mistake is cheap.
+- **Fixed voting dates, a few times a year**, which caps the cost and means no
+  single vote is ever the last word.
+
+[**The Safeguards We Copy Too**](/book/safeguards) maps each of these against
+the thing it protects against, proposes the European and Polish equivalent
+scaled to population — with the arithmetic shown — and sets out honestly what
+the Swiss model costs and where it is criticised.
+
 **7. Demand it across the whole Union at once.** This is the part people get
 wrong, and the cost of getting it wrong is historical. A single country that
 reforms itself into something better while its neighbours do not is a country
