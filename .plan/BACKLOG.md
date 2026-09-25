@@ -1,5 +1,8 @@
 # BACKLOG — zentala.eu
 
+**Chapter ideas and unwritten subjects: [`vision/CHAPTER-IDEAS.md`](vision/CHAPTER-IDEAS.md)** — the
+map of everything started, cut or only said. Add a row there whenever a subject appears.
+
 Open ideas and future improvements not yet assigned to an epic.
 
 ---

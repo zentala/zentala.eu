@@ -1,0 +1,3 @@
+
+# Agent worktrees live here; they are separate checkouts, never content.
+worktrees/
