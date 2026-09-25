@@ -47,12 +47,30 @@ const { title = 'What would settle this' } = Astro.props;
     margin: 0 0 0.75rem;
   }
 
-  .why-evidence__body > :global(ul) {
-    margin: 0;
+  /* The note sits inside .prose, which sets a larger type scale for lists.
+     An aside whose bullets outweigh its own sentences reads as the main
+     argument, so the list is pulled back to the note's own size. */
+  .why-evidence__body :global(ul) {
+    margin: 0 0 0.75rem;
     padding-left: 1.25rem;
+    list-style: disc;
+  }
+
+  .why-evidence__body :global(li) {
     font-size: var(--text-base);
     line-height: 1.7;
     color: var(--color-text-secondary);
+    margin: 0 0 0.35rem;
+    padding-left: 0;
+  }
+
+  .why-evidence__body :global(li::marker) {
+    color: var(--color-accent-primary);
+  }
+
+  .why-evidence__body > :global(ul:last-child),
+  .why-evidence__body > :global(li:last-child) {
+    margin-bottom: 0;
   }
 
   .why-evidence__body > :global(p:last-child) {
