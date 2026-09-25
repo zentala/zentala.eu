@@ -1,0 +1,403 @@
+---
+/**
+ * /site-map — the wayfinding tool + link-graph companion.
+ * .plan/INFORMATION-ARCHITECTURE.md §8; DESIGN.md → Components → "SiteMap
+ * page pattern"; DESIGN.md → Page templates → "Site map".
+ *
+ * Two parts, in the order IA §8 gives: a static multi-column list built
+ * from the collections (§8.1), then the link graph as a companion static
+ * SVG built at build time from src/data/link-graph.json (§8.2). Replaces
+ * the footer's dead `/sitemap.xml` link (IA §9 row 9).
+ */
+import Layout from '../layouts/Layout.astro';
+import ArticleGrid from '../components/ArticleGrid.astro';
+import Lead from '../components/Lead.astro';
+import { breadcrumbSchema, SITE_URL } from '../lib/jsonld';
+import { buildSiteMapColumns, buildSiteGraph } from '../lib/site-map';
+
+const columns = await buildSiteMapColumns();
+const graph = await buildSiteGraph();
+
+const NODE_HALF_WIDTH: Record<'sm' | 'md' | 'lg', number> = { sm: 26, md: 34, lg: 42 };
+function nodeHalfWidth(size: 'sm' | 'md' | 'lg'): number {
+  return NODE_HALF_WIDTH[size];
+}
+function truncate(text: string, max: number): string {
+  return text.length > max ? `${text.slice(0, max - 1)}…` : text;
+}
+
+const jsonLd = [
+  breadcrumbSchema([
+    { name: 'Home', url: SITE_URL },
+    { name: 'Site Map', url: `${SITE_URL}/site-map` },
+  ]),
+];
+---
+
+<Layout
+  title="Site Map"
+  description="Every public page on the site, grouped by the frame it belongs to, plus a link graph showing how the chapters connect."
+  jsonLd={jsonLd}
+>
+  <div class="container mx-auto px-4 py-8">
+    <ArticleGrid>
+      <h1 class="site-map-title">Site Map</h1>
+      <Lead
+        paragraphs={[
+          'Every public page, grouped the way the argument is built: start here, then the frame, then the three layers, then how we get there. The graph below is a companion for exploring the shape of the corpus — the list above it is the tool for finding a page.',
+        ]}
+      />
+
+      <section class="span-full site-map-list" aria-label="Site map, by section">
+        {
+          columns.map((column) => (
+            <div class="site-map-column">
+              <h3 class="site-map-column__title">{column.label}</h3>
+              {column.entries.length === 0 ? (
+                <p class="site-map-column__empty">Nothing here yet.</p>
+              ) : (
+                <ul class="site-map-column__list">
+                  {column.entries.map((entry) => (
+                    <li>
+                      <a href={entry.href}>{entry.title}</a>
+                      <span class="site-map-column__kind">{entry.kind}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))
+        }
+      </section>
+
+      <section class="span-full site-map-graph-section" aria-label="Link graph">
+        <h2 class="site-map-graph-heading">How the pages connect</h2>
+        {
+          graph ? (
+            <>
+              <style set:html={graph.hoverCss} />
+              <figure aria-hidden="true" class="site-map-graph-figure">
+                <svg
+                  class="site-graph"
+                  viewBox={`0 0 ${graph.width} ${graph.height}`}
+                  role="img"
+                  width="100%"
+                  preserveAspectRatio="xMidYMin meet"
+                >
+                  <g class="site-graph-columns">
+                    {graph.columns.map((c) => (
+                      <text x={c.x} y={18} class="site-graph-column-label" text-anchor="middle">
+                        {c.label}
+                      </text>
+                    ))}
+                  </g>
+                  <g class="site-graph-edges">
+                    {graph.edges.map((e) => (
+                      <path
+                        class="site-graph-edge"
+                        data-from={e.from}
+                        data-to={e.to}
+                        d={e.path}
+                        marker-end="url(#site-graph-arrow)"
+                      />
+                    ))}
+                  </g>
+                  <g class="site-graph-nodes">
+                    {graph.nodes.map((n) => (
+                      <a
+                        class="site-graph-node"
+                        data-id={n.href}
+                        data-kind={n.kind}
+                        data-size={n.size}
+                        data-hue={n.hue}
+                        data-orphan={n.orphan ? 'true' : 'false'}
+                        href={n.href}
+                      >
+                        <title>{n.title}</title>
+                        <rect
+                          class="site-graph-node-shape"
+                          x={n.x - nodeHalfWidth(n.size)}
+                          y={n.y - 10}
+                          width={nodeHalfWidth(n.size) * 2}
+                          height={20}
+                          rx="4"
+                        />
+                        {n.kind === 'playbook' && (
+                          <rect
+                            class="site-graph-node-shape-inner"
+                            x={n.x - nodeHalfWidth(n.size) + 3}
+                            y={n.y - 7}
+                            width={nodeHalfWidth(n.size) * 2 - 6}
+                            height={14}
+                            rx="2"
+                          />
+                        )}
+                        <text x={n.x} y={n.y + 4} class="site-graph-node-label" text-anchor="middle">
+                          {truncate(n.title, 16)}
+                        </text>
+                      </a>
+                    ))}
+                  </g>
+                  <defs>
+                    <marker
+                      id="site-graph-arrow"
+                      viewBox="0 0 10 10"
+                      refX="8"
+                      refY="5"
+                      markerWidth="6"
+                      markerHeight="6"
+                      orient="auto-start-reverse"
+                    >
+                      <path d="M 0 0 L 10 5 L 0 10 z" class="site-graph-arrow-head" />
+                    </marker>
+                  </defs>
+                </svg>
+                <figcaption class="site-map-graph-caption">
+                  Nodes are pages, grouped by column; edge thickness on hover/focus shows one
+                  page's links. Node size steps with how many pages link to it.
+                  {graph.showOrphanLegend && (
+                    <span class="site-map-graph-legend"> Preview only: a red outline marks a page nothing links to.</span>
+                  )}
+                </figcaption>
+              </figure>
+            </>
+          ) : (
+            <p class="site-map-graph-missing">
+              The link graph is unavailable — <code>src/data/link-graph.json</code> was not
+              found. Run <code>node scripts/link-graph.mjs</code> before building.
+            </p>
+          )
+        }
+
+        <details class="site-map-connections">
+          <summary>Connections as text</summary>
+          {graph && graph.connections.length > 0 ? (
+            <ul>
+              {graph.connections.map((c) => (
+                <li>
+                  <a href={c.href}>{c.title}</a> links to: {c.links.join(', ')}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No link data available.</p>
+          )}
+        </details>
+      </section>
+    </ArticleGrid>
+  </div>
+</Layout>
+
+<style>
+  .site-map-title {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: var(--text-4xl);
+    color: var(--color-text-primary);
+    margin: 0 0 1rem;
+  }
+
+  .site-map-list {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem 1.5rem;
+    margin: var(--space-xl, 2.5rem) 0;
+  }
+
+  @media (min-width: 640px) {
+    .site-map-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .site-map-list {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .site-map-list {
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+  }
+
+  .site-map-column__title {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm, 0.8125rem);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-accent-primary);
+    margin: 0 0 0.75rem;
+  }
+
+  .site-map-column__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .site-map-column__list li {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.35;
+  }
+
+  .site-map-column__list a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  .site-map-column__list a:hover,
+  .site-map-column__list a:focus {
+    color: var(--color-accent-primary);
+    text-decoration: underline;
+  }
+
+  .site-map-column__kind {
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--color-text-secondary);
+    text-transform: lowercase;
+  }
+
+  .site-map-column__empty {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm, 0.8125rem);
+    font-style: italic;
+    margin: 0;
+  }
+
+  .site-map-graph-section {
+    margin-top: var(--space-2xl, 3rem);
+    padding-top: var(--space-xl, 2.5rem);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .site-map-graph-heading {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    color: var(--color-text-primary);
+    margin: 0 0 1rem;
+  }
+
+  .site-map-graph-figure {
+    margin: 0;
+    overflow-x: auto;
+  }
+
+  .site-graph {
+    display: block;
+    min-width: 40rem;
+  }
+
+  .site-graph-column-label {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    fill: var(--color-text-secondary);
+  }
+
+  .site-graph-edge {
+    fill: none;
+    stroke: var(--color-border);
+    stroke-width: 1px;
+    opacity: 0.6;
+    transition: stroke 0.15s, stroke-width 0.15s, opacity 0.15s;
+  }
+
+  .site-graph-arrow-head {
+    fill: var(--color-border);
+  }
+
+  .site-graph-node {
+    cursor: pointer;
+  }
+
+  .site-graph-node-shape {
+    stroke-width: 1.5px;
+  }
+
+  .site-graph-node[data-hue='blue'] .site-graph-node-shape { fill: var(--card-blue-bg); stroke: var(--card-blue-border); }
+  .site-graph-node[data-hue='green'] .site-graph-node-shape { fill: var(--card-green-bg); stroke: var(--card-green-border); }
+  .site-graph-node[data-hue='teal'] .site-graph-node-shape { fill: var(--card-teal-bg); stroke: var(--card-teal-border); }
+  .site-graph-node[data-hue='purple'] .site-graph-node-shape { fill: var(--card-purple-bg); stroke: var(--card-purple-border); }
+  .site-graph-node[data-hue='indigo'] .site-graph-node-shape { fill: var(--card-indigo-bg); stroke: var(--card-indigo-border); }
+  .site-graph-node[data-hue='yellow'] .site-graph-node-shape { fill: var(--card-yellow-bg); stroke: var(--card-yellow-border); }
+  .site-graph-node[data-hue='gray'] .site-graph-node-shape { fill: var(--card-gray-bg); stroke: var(--card-gray-border); }
+
+  /* Border style by kind: solid (argument/default), dashed (proposal),
+     double (playbook — an inset second rect approximates a double
+     border; SVG `stroke` has no native `double` style). */
+  .site-graph-node[data-kind='proposal'] .site-graph-node-shape {
+    stroke-dasharray: 4 3;
+  }
+  .site-graph-node-shape-inner {
+    fill: none;
+    stroke-width: 1px;
+  }
+  .site-graph-node[data-hue='blue'] .site-graph-node-shape-inner { stroke: var(--card-blue-border); }
+  .site-graph-node[data-hue='green'] .site-graph-node-shape-inner { stroke: var(--card-green-border); }
+  .site-graph-node[data-hue='teal'] .site-graph-node-shape-inner { stroke: var(--card-teal-border); }
+  .site-graph-node[data-hue='purple'] .site-graph-node-shape-inner { stroke: var(--card-purple-border); }
+  .site-graph-node[data-hue='indigo'] .site-graph-node-shape-inner { stroke: var(--card-indigo-border); }
+  .site-graph-node[data-hue='yellow'] .site-graph-node-shape-inner { stroke: var(--card-yellow-border); }
+  .site-graph-node[data-hue='gray'] .site-graph-node-shape-inner { stroke: var(--card-gray-border); }
+
+  .site-graph-node[data-orphan='true'] .site-graph-node-shape {
+    stroke: var(--card-red-border);
+    stroke-width: 2px;
+  }
+
+  .site-graph-node-label {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    fill: var(--color-text-primary);
+    pointer-events: none;
+  }
+
+  .site-map-graph-caption {
+    margin-top: 0.75rem;
+    font-size: var(--text-sm, 0.8125rem);
+    color: var(--color-text-secondary);
+  }
+
+  .site-map-graph-legend {
+    color: var(--card-red-text);
+  }
+
+  .site-map-graph-missing {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm, 0.8125rem);
+  }
+
+  .site-map-connections {
+    margin-top: 1.5rem;
+  }
+
+  .site-map-connections summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-accent-primary);
+  }
+
+  .site-map-connections ul {
+    margin: 0.75rem 0 0;
+    padding-left: 1.25rem;
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm, 0.8125rem);
+  }
+
+  .site-map-connections li {
+    margin-bottom: 0.4rem;
+  }
+
+  .site-map-connections a {
+    color: var(--color-text-primary);
+  }
+</style>

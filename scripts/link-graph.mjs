@@ -52,8 +52,8 @@ if (chapterFiles.length === 0) {
 
 const nodes = new Map(); // id -> { id, title, layer, kind, route, inbound, outbound, _source }
 
-function addNode({ id, title, layer = null, kind = null, route, source }) {
-  nodes.set(route, { id, title, layer, kind, route, inbound: 0, outbound: 0, _source: source });
+function addNode({ id, title, layer = null, kind = null, order = null, route, source }) {
+  nodes.set(route, { id, title, layer, kind, order, route, inbound: 0, outbound: 0, _source: source });
 }
 
 let publishedChapterCount = 0;
@@ -74,6 +74,7 @@ for (const file of chapterFiles) {
     title: data.title ?? slug,
     layer: data.layer ?? null,
     kind: data.kind ?? null,
+    order: typeof data.order === 'number' ? data.order : null,
     route,
     source: file,
   });
