@@ -12,6 +12,14 @@ import InteractiveSection from '../../components/InteractiveSection.astro';
 import EuropeMap from '../../components/EuropeMap.astro';
 import EUStatisticsChart from '../../components/EUStatisticsChart.astro';
 import Timeline from '../../components/Timeline.astro';
+import Icon from '../../components/Icon.astro';
+
+const iconGallery = [
+  'globe', 'languages', 'laptop', 'bot', 'truck', 'banknote', 'microscope',
+  'settings', 'euro', 'shield', 'circle-help', 'book', 'arrow-right',
+  'users', 'sparkles', 'triangle-alert', 'file-text', 'rocket', 'lightbulb',
+  'search', 'bar-chart', 'smartphone', 'brain', 'heart', 'star', 'handshake',
+] as const;
 
 // Sample data for examples
 const cardColors = ["blue", "indigo", "green", "yellow", "red", "purple", "teal"] as const;
@@ -471,6 +479,34 @@ import FAQ from '../components/FAQ.astro';
 </Card>`}</code></pre>
         </div>
         <p class="text-gray-300 mb-2">Available colors: blue, indigo, green, yellow, red, purple, teal</p>
+      </div>
+    </section>
+
+    <!-- Icons Section -->
+    <section id="icons" class="mb-16">
+      <DisplayTitle level={1}>Icons</DisplayTitle>
+
+      <div class="bg-gray-900/30 border border-gray-700/50 rounded-lg p-6">
+        <h2 class="text-3xl font-bold text-white mb-4">Icon Component</h2>
+        <p class="text-gray-300 mb-8">
+          One icon family (Lucide, via astro-icon), inlined at build time. Sizes are
+          constrained to 16 / 20 / 24 / 32 px, colour follows <code>currentColor</code>,
+          and icons default to <code>aria-hidden</code> unless a <code>label</code> is set.
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6 mb-8">
+          {iconGallery.map((name) => (
+            <div class="flex flex-col items-center gap-2 text-gray-300">
+              <Icon name={name} size={32} />
+              <span class="text-xs text-gray-500">{name}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-gray-800/50 p-4 rounded-lg mb-4">
+          <pre class="text-gray-300 overflow-auto"><code>{`<Icon name="globe" size={24} />
+<Icon name="triangle-alert" size={20} label="Warning" />`}</code></pre>
+        </div>
       </div>
     </section>
 
