@@ -1,8 +1,17 @@
 ---
-updated: 2026-09-25T15:30:22
+updated: 2026-09-25T16:05:00
 planning_epic: E005
 planning_epic_path: .plan/epics/E005-2026-09-25-cloudflare-engagement-platform
 ---
+
+## Epic history
+
+- 2026-09-25: **E004 (UI/A11y/SEO review) closed.** T01–T11 and T16 done;
+  T12/T14 superseded into E006; T13/T15 remain `proposed`, unstarted, carried
+  as backlog. See `.plan/epics/E004-2026-09-25-ui-a11y-seo-review/JOURNAL.md`
+  and `.plan/DONE.md`. Review readiness for this repo is `NOT CLEARED`
+  (`review-log status` → never run) — recommend `/review` before treating
+  E004's shipped code as reviewed.
 
 ## Status
 
