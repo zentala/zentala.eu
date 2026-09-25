@@ -1,0 +1,47 @@
+---
+/**
+ * Card grid for /why. Same idea as CardGrid, with one difference that matters
+ * on this page: cards align to the top instead of stretching to the tallest in
+ * the row. The arguments here differ a lot in length, and stretching turned
+ * every short card into a half-empty coloured slab.
+ */
+interface Props {
+  columns?: 2 | 3;
+}
+
+const { columns = 2 } = Astro.props;
+---
+
+<div class="why-grid" data-columns={columns}><slot /></div>
+
+<style>
+  .why-grid {
+    display: grid;
+    /* minmax(0, …) even in the single-column case: an implicit `auto` track is
+       sized by content, and a long unbreakable line pushes the card past the
+       viewport on mobile. */
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+    align-items: start;
+  }
+
+  .why-grid > :global(*) {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    /* Card.astro sets h-full; without this the top alignment has no effect. */
+    height: auto !important;
+  }
+
+  @media (min-width: 768px) {
+    .why-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .why-grid[data-columns="3"] {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>

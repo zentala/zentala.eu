@@ -1,33 +1,89 @@
 ---
+/**
+ * /why — the argument for reform, sitting under the site's top frame: Europe
+ * is aging, the pension model ends with generational replacement, and we have
+ * about thirty years to build what replaces it
+ * (see .plan/vision/aging-society-frame.md).
+ *
+ * Layout owns the page's vertical rhythm through the --why-space-* tokens
+ * below; the sections themselves consume them (components/why/WhySection).
+ */
 import { getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import DisplayTitle from '../components/DisplayTitle.astro';
 
-// Get the entry directly from content collection
 const whyEntry = await getEntry('docs', 'why');
 const { Content } = await whyEntry.render();
 ---
 
 <Layout title={whyEntry.data.title}>
-  <main class="container mx-auto max-w-6xl px-4 py-8">
-    <div class="mb-8">
-      <a href="/vision" class="flex items-center gap-2 mb-4 hover:underline" style="color: var(--color-accent-primary);">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-        </svg>
-        Back to Vision Overview
-      </a>
-      <DisplayTitle title={whyEntry.data.title} />
-      <p class="text-xl mb-8" style="color: var(--color-text-secondary);">{whyEntry.data.description}</p>
-    </div>
+  <main class="why-page container mx-auto px-4 sm:px-6 py-10 md:py-16">
+    <a href="/vision" class="why-back">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+      </svg>
+      Back to Vision Overview
+    </a>
 
-    <div class="relative">
-      <div class="absolute inset-0 bg-gradient-to-b from-blue-200/30 dark:from-blue-900/20 to-transparent opacity-50 blur-xl"></div>
-      <!-- Heading/paragraph/link colours come from the .prose token rules in
-           src/styles/global.scss (theme-aware); no per-page overrides here. -->
-      <article class="relative prose prose-lg max-w-none">
-        <Content />
-      </article>
-    </div>
+    <header class="why-header">
+      <DisplayTitle title="Securing our retirement in a changing world" />
+      <p class="why-header__sub">{whyEntry.data.description}</p>
+    </header>
+
+    <!-- Heading/paragraph/link colours come from the .prose token rules in
+         src/styles/global.scss (theme-aware); no per-page overrides here. -->
+    <article class="why-body prose prose-lg max-w-none">
+      <Content />
+    </article>
   </main>
 </Layout>
+
+<style>
+  .why-page {
+    /* One spacing scale for the whole page — sections, section heads and the
+       blocks inside them. WhySection reads these. */
+    --why-space-section: 4.5rem;
+    --why-space-head: 1.75rem;
+    --why-space-block: 2rem;
+    max-width: 68rem;
+  }
+
+  @media (min-width: 768px) {
+    .why-page {
+      --why-space-section: 6rem;
+      --why-space-head: 2rem;
+    }
+  }
+
+  .why-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    color: var(--color-accent-primary);
+  }
+  .why-back:hover {
+    text-decoration: underline;
+  }
+
+  .why-header {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .why-header__sub {
+    max-width: 70ch;
+    margin-top: 1rem;
+    font-size: var(--text-xl);
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+  }
+
+  /* The first section provides its own top margin; collapse the duplicate. */
+  .why-body > :global(section:first-child) {
+    margin-top: 0;
+  }
+  .why-body > :global(section:last-child) {
+    margin-bottom: 0;
+  }
+</style>
