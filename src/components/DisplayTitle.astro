@@ -10,25 +10,29 @@ const { level = 1, class: className = "", title, marginTop = null } = Astro.prop
 
 const Tag = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
+// Margins come from the --space-* tokens (DESIGN.md Typography → Details:
+// "DisplayTitle.astro's mt-20/mt-16 defaults are replaced by these values").
+// H2 and H3 use the article rule exactly (3rem/1rem, 2rem/0.75rem); the
+// other levels are mapped proportionally onto the same named scale.
 let defaultClasses = "";
 switch (level) {
   case 1:
-    defaultClasses = `text-5xl font-bold ${marginTop ?? 'mt-20'} mb-10`;
+    defaultClasses = `text-5xl font-bold ${marginTop ?? 'mt-[var(--space-3xl)]'} mb-[var(--space-2xl)]`;
     break;
   case 2:
-    defaultClasses = `text-4xl font-bold ${marginTop ?? 'mt-16'} mb-8`;
+    defaultClasses = `text-4xl font-bold ${marginTop ?? 'mt-[var(--space-2xl)]'} mb-[var(--space-md)]`;
     break;
   case 3:
-    defaultClasses = `text-3xl font-bold ${marginTop ?? 'mt-12'} mb-6`;
+    defaultClasses = `text-3xl font-bold ${marginTop ?? 'mt-[var(--space-xl)]'} mb-[var(--space-sm)]`;
     break;
   case 4:
-    defaultClasses = `text-2xl font-bold ${marginTop ?? 'mt-10'} mb-4`;
+    defaultClasses = `text-2xl font-bold ${marginTop ?? 'mt-[var(--space-xl)]'} mb-[var(--space-md)]`;
     break;
   case 5:
-    defaultClasses = `text-xl font-bold ${marginTop ?? 'mt-8'} mb-3`;
+    defaultClasses = `text-xl font-bold ${marginTop ?? 'mt-[var(--space-lg)]'} mb-[var(--space-sm)]`;
     break;
   case 6:
-    defaultClasses = `text-lg font-bold ${marginTop ?? 'mt-6'} mb-2`;
+    defaultClasses = `text-lg font-bold ${marginTop ?? 'mt-[var(--space-lg)]'} mb-[var(--space-xs)]`;
     break;
 }
 
