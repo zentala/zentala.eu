@@ -1,0 +1,112 @@
+---
+/**
+ * EvidenceBox — "what would settle this": a bordered aside that names the
+ * falsifiable claim and the evidence that would confirm or deny it. The
+ * site's signature device.
+ *
+ * Renamed from why/WhyEvidenceNote.astro (DESIGN.md Migration step 4), with
+ * two additions from the Components contract: `variant="against"` for the
+ * strongest fact against the author (red hue, solid border instead of
+ * dashed), and `aside` for the 2/3-1/3 margin placement once a page adopts
+ * ArticleGrid (E006-T06). Until then `aside` narrows the box and, on wide
+ * screens, floats it beside the paragraph that precedes it.
+ */
+interface Props {
+  /** Heading of the aside; defaults to the common case. */
+  title?: string;
+  /** "against" marks the strongest fact against the author's own claim. */
+  variant?: 'open' | 'against';
+  /** Renders in the margin next to the preceding paragraph on wide screens. */
+  aside?: boolean;
+}
+
+const { title = 'What would settle this', variant = 'open', aside = false } = Astro.props;
+---
+
+<aside class="evidence-box" data-variant={variant} data-aside={aside}>
+  <p class="evidence-box__title">{title}</p>
+  <div class="evidence-box__body"><slot /></div>
+</aside>
+
+<style>
+  .evidence-box {
+    max-width: 70ch;
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-secondary);
+  }
+
+  .evidence-box[data-variant='against'] {
+    border-style: solid;
+    border-color: var(--card-red-border);
+    background: var(--card-red-bg);
+  }
+
+  .evidence-box[data-aside='true'] {
+    max-width: 24rem;
+  }
+
+  @media (min-width: 1024px) {
+    .evidence-box[data-aside='true'] {
+      float: right;
+      margin-left: 2rem;
+    }
+  }
+
+  .evidence-box__title {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm, 0.8125rem);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent-primary);
+    margin: 0 0 0.75rem;
+  }
+
+  .evidence-box[data-variant='against'] .evidence-box__title {
+    color: var(--card-red-text);
+  }
+
+  .evidence-box__body > :global(p) {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin: 0 0 0.75rem;
+  }
+
+  /* The note sits inside .prose, which sets a larger type scale for lists.
+     An aside whose bullets outweigh its own sentences reads as the main
+     argument, so the list is pulled back to the note's own size. */
+  .evidence-box__body :global(ul) {
+    margin: 0 0 0.75rem;
+    padding-left: 1.25rem;
+    list-style: disc;
+  }
+
+  .evidence-box__body :global(li) {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin: 0 0 0.35rem;
+    padding-left: 0;
+  }
+
+  .evidence-box__body :global(li::marker) {
+    color: var(--color-accent-primary);
+  }
+
+  .evidence-box[data-variant='against'] .evidence-box__body :global(li::marker) {
+    color: var(--card-red-text);
+  }
+
+  .evidence-box__body > :global(ul:last-child),
+  .evidence-box__body > :global(li:last-child) {
+    margin-bottom: 0;
+  }
+
+  .evidence-box__body > :global(p:last-child) {
+    margin-bottom: 0;
+  }
+</style>
