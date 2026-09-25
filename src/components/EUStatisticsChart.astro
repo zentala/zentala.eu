@@ -1,7 +1,18 @@
 ---
+/**
+ * EUStatisticsChart — the chart body `Figure` wraps (DESIGN.md → Components →
+ * "Figure"). Series colours are the card-hue text tokens, read from
+ * `_tokens.scss` at render time via `getComputedStyle`, in the order the
+ * spec names: blue, teal, indigo, green, yellow, purple, red, gray — the
+ * same order in both themes, since the token values themselves flip under
+ * `.dark` (E006-T13, DESIGN.md Migration step 10). No hex or rgba literal
+ * lives in this component; grid lines, ticks and the tooltip surface reuse
+ * `--color-border` / `--color-text-*` / `--color-bg-secondary`.
+ */
 interface DataPoint {
   label: string;
   value: number;
+  /** Overrides the series colour for this one point; still a token name, not a literal. */
   color?: string;
 }
 
@@ -28,16 +39,18 @@ const {
 // Generate a unique ID for this chart
 const chartId = `chart-${Math.random().toString(36).substring(2, 9)}`;
 
-// Default chart colors palette
-const defaultColors = [
-  'rgba(75, 192, 192, 0.8)',
-  'rgba(54, 162, 235, 0.8)',
-  'rgba(153, 102, 255, 0.8)',
-  'rgba(255, 159, 64, 0.8)',
-  'rgba(255, 99, 132, 0.8)',
-  'rgba(255, 206, 86, 0.8)',
-  'rgba(231, 233, 237, 0.8)',
-  'rgba(131, 193, 91, 0.8)'
+// Card-hue text tokens, in the order DESIGN.md's Figure spec fixes. Read as
+// custom-property NAMES here and resolved to values in the browser, so the
+// chart always matches whichever theme is active when it renders.
+const seriesTokens = [
+  '--card-blue-text',
+  '--card-teal-text',
+  '--card-indigo-text',
+  '--card-green-text',
+  '--card-yellow-text',
+  '--card-purple-text',
+  '--card-red-text',
+  '--card-gray-text',
 ];
 ---
 
@@ -47,7 +60,7 @@ const defaultColors = [
     {description && <p class="chart-description mt-2">{description}</p>}
   </div>
 
-  <div class="chart-card border rounded-xl p-6 shadow-lg">
+  <div class="chart-card border p-6">
     <div style={`height: ${height}; width: 100%;`}>
       <canvas id={chartId}></canvas>
     </div>
@@ -62,58 +75,52 @@ const defaultColors = [
     color: var(--color-text-secondary);
   }
   .chart-card {
+    /* Radius/shadow from tokens, not a raw Tailwind utility class
+       (DESIGN.md Shapes: charts take --radius-lg like figure images;
+       Elevation: --shadow-sm on a resting card-like surface). */
     background-color: var(--color-bg-secondary);
     border-color: var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
   }
 </style>
 
-<script is:inline define:vars={{ canvas_id: chartId, chartType, data, xAxisLabel, yAxisLabel, defaultColors }}>
+<script is:inline define:vars={{ canvas_id: chartId, chartType, data, xAxisLabel, yAxisLabel, seriesTokens }}>
   document.addEventListener('DOMContentLoaded', async () => {
     // Dynamically import Chart.js
     const { Chart, registerables } = await import('chart.js');
     Chart.register(...registerables);
-    
+
+    // Resolve every colour from the live theme's custom properties — never a
+    // literal — so light/dark and any future palette edit stay in sync with
+    // the rest of the site (DESIGN.md Do's and Don'ts rule 1).
+    const rootStyle = getComputedStyle(document.documentElement);
+    const readToken = (name) => rootStyle.getPropertyValue(name).trim();
+    const seriesColors = seriesTokens.map(readToken);
+    const gridColor = readToken('--color-border');
+    const tickColor = readToken('--color-text-secondary');
+    const tooltipBg = readToken('--color-bg-secondary');
+    const tooltipTitle = readToken('--color-text-primary');
+    const tooltipBody = readToken('--color-text-secondary');
+
     // Prepare the data
     const labels = data.map(item => item.label);
     const values = data.map(item => item.value);
-    const colors = data.map((item, index) => item.color || defaultColors[index % defaultColors.length]);
-    
-    // Set up chart options — detect the live theme instead of a static prop,
-    // so the chart is readable regardless of which theme the page loaded in.
-    const darkMode = document.documentElement.classList.contains('dark');
-    const theme = darkMode ? {
-      color: 'rgba(255, 255, 255, 0.7)',
-      backgroundColor: 'transparent',
-      grid: {
-        color: 'rgba(255, 255, 255, 0.1)'
-      },
-      text: {
-        color: 'rgba(255, 255, 255, 0.7)'
-      }
-    } : {
-      color: 'rgba(0, 0, 0, 0.7)',
-      backgroundColor: 'transparent',
-      grid: {
-        color: 'rgba(0, 0, 0, 0.1)'
-      },
-      text: {
-        color: 'rgba(0, 0, 0, 0.7)'
-      }
-    };
-    
+    const colors = data.map((item, index) => item.color ? readToken(item.color) : seriesColors[index % seriesColors.length]);
+
     // Use the ID passed through define:vars from the Astro component
     const chartElement = document.getElementById(canvas_id);
     if (!chartElement) {
       console.error(`Chart element with ID ${canvas_id} not found`);
       return;
     }
-    
+
     const ctx = chartElement.getContext('2d');
     if (!ctx) {
       console.error(`Could not get 2d context for chart ${canvas_id}`);
       return;
     }
-    
+
     const chartConfig = {
       type: chartType,
       data: {
@@ -122,7 +129,7 @@ const defaultColors = [
           label: yAxisLabel,
           data: values,
           backgroundColor: colors,
-          borderColor: colors.map(color => color.replace('0.8', '1')),
+          borderColor: colors,
           borderWidth: 1,
         }]
       },
@@ -133,13 +140,15 @@ const defaultColors = [
           legend: {
             display: chartType === 'pie' || chartType === 'radar',
             labels: {
-              color: theme.color
+              color: tickColor
             }
           },
           tooltip: {
-            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-            titleColor: 'rgba(255, 255, 255, 0.9)',
-            bodyColor: 'rgba(255, 255, 255, 0.9)',
+            backgroundColor: tooltipBg,
+            titleColor: tooltipTitle,
+            bodyColor: tooltipBody,
+            borderColor: gridColor,
+            borderWidth: 1,
             displayColors: true
           }
         },
@@ -147,34 +156,34 @@ const defaultColors = [
           y: {
             beginAtZero: true,
             grid: {
-              color: theme.grid.color
+              color: gridColor
             },
             ticks: {
-              color: theme.color
+              color: tickColor
             },
             title: {
               display: !!yAxisLabel,
               text: yAxisLabel,
-              color: theme.color
+              color: tickColor
             }
           },
           x: {
             grid: {
-              color: theme.grid.color
+              color: gridColor
             },
             ticks: {
-              color: theme.color
+              color: tickColor
             },
             title: {
               display: !!xAxisLabel,
               text: xAxisLabel,
-              color: theme.color
+              color: tickColor
             }
           }
         } : {}
       }
     };
-    
+
     new Chart(ctx, chartConfig);
   });
 </script>
