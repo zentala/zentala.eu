@@ -60,11 +60,17 @@ repository's package manager.
 
 ## Content guidelines
 
-- Store documentation in MDX with the required frontmatter: `title`,
-  `description`, `tags`, and `author`.
-- Public content is written in English.
-- `index.mdx` files serve as tables of contents for subdirectories.
-- Use Astro content collections for structured content.
+- The editorial standard lives in `src/AGENTS.md` (voice, provenance, the
+  dictation-to-chapter procedure, one-argument-one-home, the checklist). Read it before
+  touching anything under `src/content/`; `src/CLAUDE.md` only imports it. It cannot sit
+  inside `src/content/`: Astro 4 fails the build on any `.md` there outside a collection.
+- A chapter is not finished until it uses the visual grammar in `DESIGN.md` — tables,
+  timelines, evidence boxes, objection blocks — not prose alone.
+- The audit against the dictation dump (`src/AGENTS.md` §4 step 10) is mandatory
+  before a chapter leaves `draft: true`. First person only for what he dictated.
+- Frontmatter: `title`, `description` (70–160 characters, enforced by
+  `src/content/config.ts`), `tags`, `author`. Public content is in English; `index.mdx`
+  files are tables of contents; content goes through Astro content collections.
 
 ## Commentary (EU reform news and Paweł's comment)
 
