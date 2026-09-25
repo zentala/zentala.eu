@@ -12,6 +12,7 @@ import InteractiveSection from '../../components/InteractiveSection.astro';
 import EuropeMap from '../../components/EuropeMap.astro';
 import EUStatisticsChart from '../../components/EUStatisticsChart.astro';
 import Timeline from '../../components/Timeline.astro';
+import Surface from '../../components/Surface.astro';
 import Icon from '../../components/Icon.astro';
 
 const iconGallery = [
@@ -23,7 +24,6 @@ const iconGallery = [
 
 // Sample data for examples
 const cardColors = ["blue", "indigo", "green", "yellow", "red", "purple", "teal"] as const;
-type CardColor = typeof cardColors[number];
 
 const sampleChartData = [
   { label: 'Category A', value: 65, color: 'rgba(75, 192, 192, 0.8)' },
@@ -816,35 +816,95 @@ import FAQ from '../components/FAQ.astro';
       <h2 class="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Timeline Component</h2>
       
       <div class="bg-gray-900/30 border border-gray-700/50 rounded-xl p-6 mb-6">
-        <DisplayTitle level={3}>Vision Timeline</DisplayTitle>
-        
+        <DisplayTitle level={3}>Timeline — compact variant</DisplayTitle>
+
         <div class="relative">
           <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-indigo-900 opacity-10 blur-xl"></div>
           <div class="relative">
-            <Timeline 
+            <Timeline
+              variant="compact"
               title="Vision Timeline"
-              items={[
+              hue="blue"
+              compactItems={[
                 { period: "2025-2030", title: "Infrastructure\n& Foundation" },
                 { period: "2030-2035", title: "System\nIntegration" },
                 { period: "2035-2045", title: "Cultural\nTransformation" }
               ]}
-              color="blue"
             />
           </div>
         </div>
-        
+
         <div class="bg-gray-800/50 p-4 rounded-lg mt-8">
           <p class="text-gray-400 mb-2">Usage example:</p>
-          <pre class="text-gray-300 overflow-auto"><code>{`<Timeline 
+          <pre class="text-gray-300 overflow-auto"><code>{`<Timeline
+  variant="compact"
   title="Vision Timeline"
-  items={[
+  hue="blue"
+  compactItems={[
     { period: "2025-2030", title: "Infrastructure\\n& Foundation" },
     { period: "2030-2035", title: "System\\nIntegration" },
-    { period: "2035-2045", title: "Cultural\\nTransformation" }
   ]}
-  color="blue"
 />`}</code></pre>
         </div>
+      </div>
+
+      <div class="bg-gray-900/30 border border-gray-700/50 rounded-xl p-6 mb-6">
+        <DisplayTitle level={3}>Timeline — numbered variant</DisplayTitle>
+        <p class="text-gray-400 mb-4">Same component powers WhyDigitalReform below.</p>
+        <Timeline
+          variant="numbered"
+          hue="teal"
+          numberedItems={[
+            {
+              icon: "rocket",
+              title: "Numbered step one",
+              paragraphs: ["Body copy for the first numbered block."],
+              highlight: "An optional highlighted callout."
+            },
+            {
+              icon: "lightbulb",
+              title: "Numbered step two",
+              paragraphs: ["Body copy for the second numbered block."]
+            }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Surface / Card base section -->
+    <section id="surface" class="mb-12">
+      <h2 class="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Surface (base for Card, LayerCard, FAQ)</h2>
+      <div class="bg-gray-900/30 border border-gray-700/50 rounded-xl p-6 mb-6">
+        <p class="text-gray-400 mb-4">
+          <code>Surface</code> owns the <code>--card-&lt;hue&gt;</code> colour lookup and the
+          <code>flat</code> / <code>bordered</code> / <code>gradient</code> treatments. Card, LayerCard and the FAQ item all render through it.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {(["flat", "bordered", "gradient"] as const).map((variant) => (
+            <div class="space-y-2">
+              <p class="text-gray-400 text-sm uppercase tracking-wide">{variant}</p>
+              <div class="grid grid-cols-4 gap-2">
+                {cardColors.map((hue) => (
+                  <Surface hue={hue} variant={variant} class="rounded-lg p-3 text-sm font-medium text-center">
+                    {hue}
+                  </Surface>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive states: hover / focus / disabled -->
+    <section id="states" class="mb-12">
+      <h2 class="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Interactive states (hover / focus / disabled)</h2>
+      <div class="bg-gray-900/30 border border-gray-700/50 rounded-xl p-6 mb-6 flex flex-wrap gap-4 items-center">
+        <button class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg">Default</button>
+        <button class="px-6 py-3 bg-blue-500 text-white font-medium rounded-lg">Hover (simulated)</button>
+        <button class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg ring-2 ring-offset-2 ring-blue-400">Focus (simulated)</button>
+        <button disabled class="px-6 py-3 bg-blue-600 opacity-50 cursor-not-allowed text-white font-medium rounded-lg">Disabled</button>
+        <p class="text-gray-500 text-sm w-full mt-2">Try Tab + hover on any button/link/summary on this page for the real focus ring and hover states defined per component.</p>
       </div>
     </section>
 

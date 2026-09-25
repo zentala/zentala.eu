@@ -1,86 +1,152 @@
 ---
-// Timeline component for displaying a chronological roadmap
-interface TimelineItem {
+/**
+ * Timeline — the single timeline component (replaces the former Timeline,
+ * TimelineBlock+TimelineContainer trio and WhyDigitalReform's inline markup).
+ *
+ * - `compact`: short period/title chips in a row (roadmap-style).
+ * - `numbered`: a vertical stack of numbered blocks with icon, title,
+ *   paragraphs and an optional highlight, connected by a rail.
+ */
+import Icon from './Icon.astro';
+import Surface, { type SurfaceHue } from './Surface.astro';
+
+export interface CompactItem {
   period: string;
   title: string;
 }
 
-export type TimelineColor = 'blue' | 'indigo' | 'purple' | 'green' | 'teal' | 'red' | 'yellow';
+export interface NumberedItem {
+  icon: string;
+  title: string;
+  paragraphs: string[];
+  highlight?: string;
+}
 
-export interface Props {
+interface Props {
+  variant?: 'compact' | 'numbered';
   title?: string;
-  items: TimelineItem[];
-  color?: TimelineColor;
+  hue?: SurfaceHue;
+  /** Required when variant="compact". */
+  compactItems?: CompactItem[];
+  /** Required when variant="numbered". */
+  numberedItems?: NumberedItem[];
 }
 
 const {
-  title = "Vision Timeline",
-  items = [
-    { period: "2025-2030", title: "Infrastructure\n& Foundation" },
-    { period: "2030-2035", title: "System\nIntegration" },
-    { period: "2035-2045", title: "Cultural\nTransformation" }
-  ],
-  color = "blue"
+  variant = 'compact',
+  title,
+  hue = 'blue',
+  compactItems = [],
+  numberedItems = [],
 } = Astro.props;
 ---
 
-<div class="flex justify-center my-16">
-  <div class="timeline-container max-w-6xl w-full p-10 rounded-xl shadow-lg" data-color={color}>
-    <h2 class="timeline-title text-3xl font-bold mb-8 text-center">{title}</h2>
-    <div class="flex items-center justify-between relative">
-      <div class="timeline-line absolute top-1/2 left-0 right-0 h-2 transform -translate-y-1/2"></div>
-      {items.map((item) => (
-        <div class="timeline-item relative z-10 px-5 py-4 rounded-xl shadow-md border-2">
-          <p class="font-bold text-xl">{item.period}</p>
-          <p class="text-lg whitespace-pre-line">{item.title}</p>
+{variant === 'compact' ? (
+  <div class="flex justify-center my-16">
+    <Surface hue={hue} class="timeline-compact max-w-6xl w-full p-10 rounded-xl shadow-lg">
+      {title && <h2 class="text-3xl font-bold mb-8 text-center">{title}</h2>}
+      <div class="flex items-center justify-between relative flex-wrap gap-4">
+        <div class="timeline-line absolute top-1/2 left-0 right-0 h-2 transform -translate-y-1/2"></div>
+        {compactItems.map((item) => (
+          <div class="timeline-chip relative z-10 px-5 py-4 rounded-xl shadow-md border-2">
+            <p class="font-bold text-xl">{item.period}</p>
+            <p class="text-lg whitespace-pre-line">{item.title}</p>
+          </div>
+        ))}
+      </div>
+    </Surface>
+  </div>
+) : (
+  <div class="timeline-numbered rounded-xl p-6 md:p-8">
+    <div class="timeline-track">
+      {numberedItems.map((item, index) => (
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8 relative timeline-block">
+          <div class="flex-shrink-0 flex items-start">
+            <div class="number-badge w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold text-white shadow-md z-10">{index + 1}</div>
+          </div>
+          <Surface hue={hue} class="block-body flex-grow backdrop-blur-sm rounded-lg p-6 border transition-all shadow-sm">
+            <h3 class="block-title text-2xl font-bold mb-4 flex items-center">
+              <span class="mr-3 inline-flex"><Icon name={item.icon} size={24} /></span>
+              {item.title}
+            </h3>
+            {item.paragraphs.map((paragraph) => (
+              <p class="block-text mb-4 leading-relaxed">{paragraph}</p>
+            ))}
+            {item.highlight && (
+              <div class="highlight-box p-4 rounded-md border-l-4">
+                <p class="block-text leading-relaxed">
+                  <span class="highlight-text font-semibold">{item.highlight}</span>
+                </p>
+              </div>
+            )}
+          </Surface>
         </div>
       ))}
     </div>
   </div>
-</div>
+)}
 
 <style>
-  /* Colours come from the --card-<hue>-{bg,border,text} tokens in
-     src/styles/_tokens.scss — the same triplets Card.astro uses. */
-  .timeline-container {
-    background-color: var(--card-blue-bg);
-  }
-  .timeline-container[data-color="indigo"] { background-color: var(--card-indigo-bg); }
-  .timeline-container[data-color="purple"] { background-color: var(--card-purple-bg); }
-  .timeline-container[data-color="green"] { background-color: var(--card-green-bg); }
-  .timeline-container[data-color="teal"] { background-color: var(--card-teal-bg); }
-  .timeline-container[data-color="red"] { background-color: var(--card-red-bg); }
-  .timeline-container[data-color="yellow"] { background-color: var(--card-yellow-bg); }
-
-  .timeline-title {
-    color: var(--card-blue-text);
-  }
-  .timeline-container[data-color="indigo"] .timeline-title { color: var(--card-indigo-text); }
-  .timeline-container[data-color="purple"] .timeline-title { color: var(--card-purple-text); }
-  .timeline-container[data-color="green"] .timeline-title { color: var(--card-green-text); }
-  .timeline-container[data-color="teal"] .timeline-title { color: var(--card-teal-text); }
-  .timeline-container[data-color="red"] .timeline-title { color: var(--card-red-text); }
-  .timeline-container[data-color="yellow"] .timeline-title { color: var(--card-yellow-text); }
-
-  .timeline-line {
-    background-color: var(--card-blue-border);
-  }
-  .timeline-container[data-color="indigo"] .timeline-line { background-color: var(--card-indigo-border); }
-  .timeline-container[data-color="purple"] .timeline-line { background-color: var(--card-purple-border); }
-  .timeline-container[data-color="green"] .timeline-line { background-color: var(--card-green-border); }
-  .timeline-container[data-color="teal"] .timeline-line { background-color: var(--card-teal-border); }
-  .timeline-container[data-color="red"] .timeline-line { background-color: var(--card-red-border); }
-  .timeline-container[data-color="yellow"] .timeline-line { background-color: var(--card-yellow-border); }
-
-  .timeline-item {
+  /* Compact variant */
+  .timeline-chip {
     background-color: var(--color-bg-primary);
     border-color: var(--card-blue-text);
     color: var(--color-text-primary);
   }
-  .timeline-container[data-color="indigo"] .timeline-item { border-color: var(--card-indigo-text); }
-  .timeline-container[data-color="purple"] .timeline-item { border-color: var(--card-purple-text); }
-  .timeline-container[data-color="green"] .timeline-item { border-color: var(--card-green-text); }
-  .timeline-container[data-color="teal"] .timeline-item { border-color: var(--card-teal-text); }
-  .timeline-container[data-color="red"] .timeline-item { border-color: var(--card-red-text); }
-  .timeline-container[data-color="yellow"] .timeline-item { border-color: var(--card-yellow-text); }
+  .timeline-line {
+    background-color: var(--card-blue-border);
+  }
+
+  /* Numbered variant */
+  .timeline-numbered {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    --timeline-gap: 3rem;
+    --timeline-badge-center: 1.5rem;
+    --timeline-line-x: 1.39rem;
+  }
+  .timeline-track {
+    display: flex;
+    flex-direction: column;
+    gap: var(--timeline-gap);
+  }
+  @media (min-width: 768px) {
+    .timeline-track > .timeline-block {
+      position: relative;
+    }
+    .timeline-track > .timeline-block:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: var(--timeline-line-x);
+      top: var(--timeline-badge-center);
+      bottom: calc(-1 * (var(--timeline-gap) + var(--timeline-badge-center)));
+      width: 2px;
+      border-radius: var(--radius-full);
+      background-color: var(--color-border);
+    }
+  }
+  .number-badge {
+    background-image: linear-gradient(to bottom right, var(--color-accent-primary), var(--card-blue-text));
+  }
+  .block-body:hover {
+    filter: brightness(0.97);
+  }
+  :global(.dark) .block-body:hover {
+    filter: brightness(1.12);
+  }
+  .block-title {
+    color: inherit;
+  }
+  .block-text {
+    color: inherit;
+    opacity: 0.9;
+  }
+  .highlight-box {
+    background-color: var(--color-bg-primary);
+    border-color: currentColor;
+  }
+  .highlight-text {
+    color: inherit;
+  }
 </style>

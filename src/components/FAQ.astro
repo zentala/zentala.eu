@@ -1,4 +1,6 @@
 ---
+import Surface, { type SurfaceHue } from './Surface.astro';
+
 interface FAQItem {
   question: string;
   answer: string;
@@ -7,13 +9,13 @@ interface FAQItem {
 interface Props {
   items: FAQItem[];
   title?: string;
-  color?: 'gray' | 'blue' | 'indigo' | 'purple';
+  color?: SurfaceHue;
 }
 
 const { items, title = "Frequently Asked Questions", color = "blue" } = Astro.props;
 ---
 
-<div class="faq-container border rounded-xl p-6 shadow-lg my-8" data-color={color}>
+<Surface hue={color} class="faq-container rounded-xl p-6 shadow-lg my-8">
   {title && <h2 class="faq-title text-3xl font-bold mb-6">{title}</h2>}
 
   <div class="space-y-4">
@@ -35,22 +37,9 @@ const { items, title = "Frequently Asked Questions", color = "blue" } = Astro.pr
       </div>
     ))}
   </div>
-</div>
+</Surface>
 
 <style>
-  /* Colours come from the --card-<hue>-{bg,border,text} tokens in
-     src/styles/_tokens.scss — the same triplets Card.astro uses — so FAQ
-     reads at AA contrast in both themes instead of hardcoding Tailwind's
-     dark-palette shades. */
-  .faq-container {
-    background-color: var(--card-gray-bg);
-    border-color: var(--card-gray-border);
-    color: var(--card-gray-text);
-  }
-  .faq-container[data-color="blue"] { background-color: var(--card-blue-bg); border-color: var(--card-blue-border); color: var(--card-blue-text); }
-  .faq-container[data-color="indigo"] { background-color: var(--card-indigo-bg); border-color: var(--card-indigo-border); color: var(--card-indigo-text); }
-  .faq-container[data-color="purple"] { background-color: var(--card-purple-bg); border-color: var(--card-purple-border); color: var(--card-purple-text); }
-
   .faq-title,
   .faq-question {
     color: inherit;
@@ -65,6 +54,10 @@ const { items, title = "Frequently Asked Questions", color = "blue" } = Astro.pr
   }
   :global(.dark) .faq-question:hover {
     filter: brightness(1.15);
+  }
+  .faq-question:focus-visible {
+    outline: 2px solid var(--color-accent-primary);
+    outline-offset: 2px;
   }
 
   .faq-answer {

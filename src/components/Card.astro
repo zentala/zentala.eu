@@ -1,16 +1,16 @@
 ---
 import Icon from './Icon.astro';
+import Surface, { type SurfaceHue, type SurfaceVariant } from './Surface.astro';
 
-type CardColor = 'gray' | 'blue' | 'green' | 'red' | 'yellow' | 'indigo' | 'purple' | 'teal';
 type CardAlignment = 'center' | 'left';
 
 interface Props {
 	icon?: string;
 	title: string;
-	color?: CardColor;
+	color?: SurfaceHue;
 	href?: string;
 	linkText?: string;
-	variant?: 'default' | 'gradient' | 'bordered';
+	variant?: SurfaceVariant;
 	align?: CardAlignment;
 }
 
@@ -20,11 +20,10 @@ const {
 	color = 'gray',
 	href,
 	linkText = 'Learn more',
-	variant = 'default',
+	variant = 'flat',
 	align = 'left'
 } = Astro.props;
 
-// Dodajemy klasy wyrównania
 const alignmentClasses = {
 	center: 'text-center',
 	left: 'text-left'
@@ -37,17 +36,14 @@ const cardClass = `
 	${alignmentClasses[align]}
 `;
 
-// Klasy dla nagłówka - zmieniamy sposób wyświetlania ikony w zależności od wyrównania
 const titleClass = `title font-bold text-2xl leading-snug gap-2 mb-4 ${align === 'center' ? 'flex-col' : ''} flex ${align === 'center' ? 'justify-center' : 'justify-start'} items-center`;
 
-// Klasy dla ikony
 const iconClass = `inline-flex ${align === 'center' ? 'mb-2' : ''}`;
 
-// Klasy dla linku
 const linkClass = `text-current hover:opacity-80 font-medium flex items-center group mt-4 ${align === 'center' ? 'justify-center' : 'justify-start'}`;
 ---
 
-<article class={cardClass} data-color={color} data-variant={variant} data-align={align}>
+<Surface as="article" hue={color} variant={variant} class={cardClass} data-align={align}>
 	<h3 class={titleClass}>
 		{icon && <span class={iconClass}><Icon name={icon} size={32} /></span>}
 		<span set:html={title} />
@@ -65,28 +61,9 @@ const linkClass = `text-current hover:opacity-80 font-medium flex items-center g
 			</span>
 		</a>
 	)}
-</article>
+</Surface>
 
 <style>
-  /* Card colours come from the --card-<hue>-{bg,border,text} tokens in
-     src/styles/_tokens.scss, one calmer triplet per hue, defined once for
-     light and once for .dark — the component itself never hardcodes a shade. */
-  .card {
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.3s;
-    background-color: var(--card-gray-bg);
-    border: 1px solid var(--card-gray-border);
-    color: var(--card-gray-text);
-  }
-
-  .card[data-color="gray"] { background-color: var(--card-gray-bg); border-color: var(--card-gray-border); color: var(--card-gray-text); }
-  .card[data-color="blue"] { background-color: var(--card-blue-bg); border-color: var(--card-blue-border); color: var(--card-blue-text); }
-  .card[data-color="green"] { background-color: var(--card-green-bg); border-color: var(--card-green-border); color: var(--card-green-text); }
-  .card[data-color="red"] { background-color: var(--card-red-bg); border-color: var(--card-red-border); color: var(--card-red-text); }
-  .card[data-color="yellow"] { background-color: var(--card-yellow-bg); border-color: var(--card-yellow-border); color: var(--card-yellow-text); }
-  .card[data-color="indigo"] { background-color: var(--card-indigo-bg); border-color: var(--card-indigo-border); color: var(--card-indigo-text); }
-  .card[data-color="purple"] { background-color: var(--card-purple-bg); border-color: var(--card-purple-border); color: var(--card-purple-text); }
-  .card[data-color="teal"] { background-color: var(--card-teal-bg); border-color: var(--card-teal-border); color: var(--card-teal-text); }
-
   .card:hover {
     filter: brightness(0.97);
   }
@@ -94,9 +71,8 @@ const linkClass = `text-current hover:opacity-80 font-medium flex items-center g
     filter: brightness(1.12);
   }
 
-  /* Body text inherits the card's own hue-text token (set by the
-     data-color rules above) instead of the site-wide secondary grey, so
-     contrast stays correct against every hue's background, not just gray. */
+  /* Body text inherits the surface's own hue-text token instead of the
+     site-wide secondary grey, so contrast stays correct against every hue. */
   .card .body {
     color: inherit;
     opacity: 0.92;
@@ -106,36 +82,17 @@ const linkClass = `text-current hover:opacity-80 font-medium flex items-center g
     color: inherit;
   }
 
-  .card[data-variant="bordered"] {
-    border-width: 2px;
-  }
-
-  /* Gradient variant: fade the hue's background token into its border token,
-     so the gradient stays inside the same calmer palette as the flat cards. */
-  .card[data-variant="gradient"] {
-    background-image: linear-gradient(to bottom right, var(--card-hue-bg), var(--card-hue-border));
-    background-color: transparent;
-  }
-  .card[data-color="gray"][data-variant="gradient"] { --card-hue-bg: var(--card-gray-bg); --card-hue-border: var(--card-gray-border); }
-  .card[data-color="blue"][data-variant="gradient"] { --card-hue-bg: var(--card-blue-bg); --card-hue-border: var(--card-blue-border); }
-  .card[data-color="green"][data-variant="gradient"] { --card-hue-bg: var(--card-green-bg); --card-hue-border: var(--card-green-border); }
-  .card[data-color="red"][data-variant="gradient"] { --card-hue-bg: var(--card-red-bg); --card-hue-border: var(--card-red-border); }
-  .card[data-color="yellow"][data-variant="gradient"] { --card-hue-bg: var(--card-yellow-bg); --card-hue-border: var(--card-yellow-border); }
-  .card[data-color="indigo"][data-variant="gradient"] { --card-hue-bg: var(--card-indigo-bg); --card-hue-border: var(--card-indigo-border); }
-  .card[data-color="purple"][data-variant="gradient"] { --card-hue-bg: var(--card-purple-bg); --card-hue-border: var(--card-purple-border); }
-  .card[data-color="teal"][data-variant="gradient"] { --card-hue-bg: var(--card-teal-bg); --card-hue-border: var(--card-teal-border); }
-
-  /* Link styles */
   .card a {
-    @apply mt-auto; /* Push link to bottom */
+    margin-top: auto;
   }
 
-  /* Dodajemy style dla różnych wyrównań */
   .card[data-align="center"] .title {
-    @apply flex-col text-center;
+    flex-direction: column;
+    text-align: center;
   }
 
   .card[data-align="left"] .title {
-    @apply flex-row text-left;
+    flex-direction: row;
+    text-align: left;
   }
 </style>
