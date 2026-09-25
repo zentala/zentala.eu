@@ -28,11 +28,27 @@ tar -czf - -C dist . | ssh "$HOST" "tar -xzf - -C $ROOT/releases/$REL"
 ssh "$HOST" "cd $ROOT && ln -sfn releases/$REL current"
 
 # nginx resolves 'current' per request, so switching the link is the whole deploy.
-for path in / /vision/ /book/ /commentary/; do
-  code=$(curl -s -k -o /dev/null -w '%{http_code}' "https://eu.internal$path")
-  [ "$code" = "200" ] || { echo "DEPLOY_FAILED: $path -> $code" >&2; exit 1; }
-  echo "  $path $code"
-done
+# Check CONTENT, not just the status code: a redirect stub answers 200 too, which is
+# exactly how a commentary page that silently fell back to the public build passed
+# this gate on 2026-09-25. Each path must serve a real page and its own marker.
+check() {
+  path=$1; marker=$2
+  body=$(curl -s -k "https://eu.internal$path")
+  case "$body" in
+    *"Redirecting to"*) echo "DEPLOY_FAILED: $path serves a redirect stub" >&2; exit 1 ;;
+  esac
+  case "$body" in
+    *"$marker"*) echo "  $path ok" ;;
+    *) echo "DEPLOY_FAILED: $path does not contain '$marker'" >&2; exit 1 ;;
+  esac
+}
+
+check / "Design the Europe"
+check /vision/ "Three layers"
+check /book/ "designing-our-retirement"
+check /commentary/ "Short, dated comments"
+check /manifesto/ "Know what you want"
+check /sitemap.xml "<urlset"
 
 echo "live: https://eu.internal  (release $REL)"
 ssh "$HOST" "cd $ROOT/releases && ls -1t | tail -n +6 | xargs -r rm -rf"
