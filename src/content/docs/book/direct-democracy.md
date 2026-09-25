@@ -102,10 +102,13 @@ the public, the reflex is to demand a reversal of that one thing. Fine — but t
 wave passes and the machine is unchanged. On the wave of that anger, demand
 direct democracy itself. Every scandal is an argument for it.
 
-**2. Back whoever supports it, from any side.** Whoever is for direct democracy,
-push them and vote for them, left or right, national or European. This is not a
-party position and I refuse to let it become one. The point of the mechanism is
-that it does not belong to a camp.
+**2. Treat this as the real dividing line.** The division that matters is no
+longer left against right. It is whether a person is willing to give power to
+people or not. Demanding direct democracy is the test that shows who is actually
+a democrat — and everyone in public life will have to answer it, because
+refusing to answer is itself an answer. So push and vote for whoever is for it,
+from any camp, and take note of who suddenly finds reasons why the public cannot
+be trusted with decisions.
 
 **3. Demand it of everyone.** Of the government, of the opposition, of the ones
 you like and the ones you do not. Make it the question every politician is asked
@@ -131,6 +134,15 @@ costs — turnout varies, campaigns can be bought, and some results age badly. B
 it is proven, it is European, and it is documented. **Adopt it broadly. Do not
 reinvent it.** Every hour spent designing a novel mechanism is an hour not spent
 demanding one that already runs.
+
+Two things follow from copying rather than inventing, and I want them stated
+rather than left to interpretation. **The referendums are binding.** A vote that
+the government may read as advice is the instrument we already have, and it is
+the instrument that failed. And **the thresholds come from Switzerland too** —
+the number of signatures that puts a question on the ballot, the majorities that
+carry it — scaled in proportion to population rather than guessed at. The
+safeguards that make this survivable come from the same place and are set out
+in [safeguards](/book/safeguards).
 
 ### The safeguards we copy too
 
@@ -168,6 +180,18 @@ did not exist. **One state reforming alone is a target. A continent reforming
 together is a fact.** So the demand is European from the first day — school
 councils, municipalities, regions, national parliaments, the Union — everywhere
 at once, by peoples who have understood that they have the same problem.
+
+And if some countries do not want it? Then they do not want it. Nothing happens
+to them. We aim at doing it together anyway, the same way we should aim at a
+common working language: by making it obviously worth joining rather than by
+compelling anyone.
+
+**8. Understand that doing it together is part of the point.** A demand made
+across the continent at the same time is itself an act of European identity —
+Europeans changing something together, by their own decision. I can think of few
+things that would build a political sense of Europe faster, and it is something
+even a Europe of nations can own, because it takes nothing away from any nation.
+It would show us how much we already have in common.
 
 ## Build something to vote for
 
@@ -235,6 +259,10 @@ being itself — which is exactly the trade that has made the last twenty years 
 integration so hard to sell.
 
 Self-steering nations, common infrastructure. That is the shape.
+
+One thing this is not: a replacement for the Union we have. The Union of Nations
+rebuilds the present Union from the inside. Nobody has to leave anything, and
+nothing has to be dissolved first.
 
 ## What I cannot settle, and what would settle it
 
