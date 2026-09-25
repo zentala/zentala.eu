@@ -31,8 +31,13 @@ lint-design:
 test:
     corepack yarn test
 
+# a11y/SEO regression gate: builds dist/, serves it, runs axe (WCAG 2.2 AA)
+# plus SEO/structural checks on key pages in both themes (E004-T15).
+a11y:
+    corepack yarn test:a11y
+
 # gate before commit
-check: typecheck audit
+check: typecheck audit a11y
 
 clean:
     rm -rf dist
