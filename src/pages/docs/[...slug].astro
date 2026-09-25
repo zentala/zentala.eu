@@ -4,51 +4,18 @@ import { getCollection } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { breadcrumbSchema, SITE_URL } from '../../lib/jsonld';
 
+const PUBLISHED_PREFIXES = ['ideas/', 'articles/', 'reference/'];
+
 export async function getStaticPaths() {
-  try {
-    // Get all docs from the collection
-    const allDocs = await getCollection('docs', (doc) => {
-      // Filter out drafts in production
-      return IS_PREVIEW || !doc.data.draft;
-    });
+  const allDocs = await getCollection('docs', (doc) => {
+    const isPublishedNamespace = PUBLISHED_PREFIXES.some((prefix) => doc.id.startsWith(prefix));
+    return isPublishedNamespace && (IS_PREVIEW || !doc.data.draft);
+  });
 
-    // Create a mapping for easy lookup
-    type PathItem = {
-      params: { slug: string };
-      props: { entry: any };
-    };
-
-    const allPaths: PathItem[] = [];
-
-    // Log all documents for debugging purposes
-    console.log("All documents in docs collection:");
-
-    // Add all documents to the paths array
-    allDocs.forEach(entry => {
-      console.log(`- ${entry.slug} (${entry.id})`);
-
-      // Generate a path for this document based on its file slug
-      allPaths.push({
-        params: { slug: entry.slug },
-        props: { entry }
-      });
-
-      // If document has a customSlug, generate an additional path
-      if (entry.data.customSlug && entry.data.customSlug !== entry.slug) {
-        console.log(`  - Custom slug: ${entry.data.customSlug}`);
-        allPaths.push({
-          params: { slug: entry.data.customSlug },
-          props: { entry }
-        });
-      }
-    });
-
-    console.log(`Generated ${allPaths.length} paths`);
-    return allPaths;
-  } catch (error) {
-    console.error("Error generating static paths:", error);
-    return [];
-  }
+  return allDocs.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
 }
 
 const { entry } = Astro.props;
