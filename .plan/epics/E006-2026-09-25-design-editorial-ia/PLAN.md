@@ -1,8 +1,8 @@
 ---
 formatVersion: 1
 type: epic
-status: in-progress
-readiness: ready
+status: done
+readiness: done
 points: 115
 agent: mixed (research: sonnet · code: ts-dev · chapters, glossary, page copy: editor (fable))
 wave: 3

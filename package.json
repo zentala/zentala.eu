@@ -1,4 +1,5 @@
 {
+  "packageManager": "yarn@1.22.22",
   "name": "eu",
   "type": "module",
   "version": "0.0.1",
@@ -10,7 +11,7 @@
     "astro": "astro",
     "convert-mdx": "node convertMdxToMd.js",
     "test": "playwright test",
-    "test:a11y": "astro build && playwright test --config=playwright.a11y.config.ts",
+    "test:a11y": "node scripts/link-graph.mjs && astro build && playwright test --config=playwright.a11y.config.ts",
     "test:urls": "node url-checker.js",
     "test:crawl": "node site-crawler.js",
     "test:links": "node check-links.js",
@@ -21,7 +22,7 @@
     "check-all": "astro check --exclude 'dist/**/*'",
     "pre-commit-check": "astro check --exclude 'dist/**/*'",
     "test:ui": "playwright test --ui",
-    "audit": "astro build && node scripts/content-audit.mjs --out .plan/reports/content-audit.md",
+    "audit": "node scripts/link-graph.mjs && astro build && node scripts/content-audit.mjs --out .plan/reports/content-audit.md",
     "lint:design": "node scripts/design-lint.mjs"
   },
   "dependencies": {

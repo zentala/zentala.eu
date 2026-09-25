@@ -1,6 +1,6 @@
 # E004: UI, typography, accessibility, SEO and AI-agent visibility review
 
-**Status:** proposed — every task awaits Paweł's go / no-go.
+**Status:** done 2026-09-25 — 14 tasks completed, T12 and T14 superseded by E006 (tokens, chapter rewrites).
 **Total:** 16 tasks, 54 points → route: Agent Orchestrator (> 13 points), or approve a subset as waves.
 
 ## Objective

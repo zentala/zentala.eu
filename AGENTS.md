@@ -130,6 +130,47 @@ condensed checklists vendored under `.claude/skills/`: `frontend-design`,
 sources listed in `.plan/reports/2026-09-25-ui-seo-review/00-skills-shortlist.md`,
 which also covers SEO/GEO and design-system checks not yet vendored as skills.
 
+## Content model (E006, 2026-09-25)
+
+- Chapters live in `src/content/docs/book/` and are labelled **Chapters** for readers;
+  `book` is a URL segment, not a label. Each chapter declares `layer` (frame, language,
+  digital, robotics, path), `kind` (argument, proposal, playbook, objections, manifesto),
+  `order` (reading order inside its layer) and `concepts` (slugs of glossary entries).
+  `LAYERS` and `KINDS` are exported from `src/content/config.ts`; the index, `/vision`,
+  `/site-map`, `llms.txt` and `ChapterFooter` all derive from these fields — there is no
+  hand-kept list of chapters anywhere.
+- `src/content/glossary/` is the governed vocabulary: one file per concept with `term`,
+  `aliases`, `definition` (the tooltip text), `href` (the canonical home), `status`,
+  `autolink`. A misspelled `concepts` entry fails the build. Term tooltips come from
+  `TermRef.astro` (explicit) and `src/plugins/rehype-glossary-terms.mjs` (first
+  occurrence per page); `/glossary` lists everything.
+- `tags` is dead on docs entries (the `/tags` pages are gone, `/tags` redirects to
+  `/glossary`). `provenance` marks a chapter as dictated, researched or proposed; every
+  rewritten chapter carries a `ProvenanceNote`. Legacy routes are one `redirects` table
+  in `astro.config.mjs`.
+- Content components (Objection, ObjectionList, EvidenceBox, KeyFigure, ComparisonTable,
+  Playbook, MeansForYou, SideNote, PullQuote, SourceList, Figure, Callout, Lead, Section)
+  are specified in `DESIGN.md`; their gallery is `/ui/content`, the base style guide is
+  `/ui` (both preview-only). A chapter that uses components is `.mdx`.
+- Chapter, glossary and page-copy work runs on the repo-local `editor` agent
+  (`.claude/agents/editor.md`, best model); code runs on `ts-dev`.
+
+## Build pipeline
+
+- `corepack yarn build` is the only build path: `scripts/link-graph.mjs` (writes
+  `src/data/link-graph.json`, fails on an empty graph) → `astro check` → `astro build` →
+  `scripts/sitemap-rename.mjs`. `just deploy-internal`, `yarn run audit` and `yarn test:a11y`
+  all go through the same steps; do not call `astro build` directly anywhere new.
+- `scripts/content-audit.mjs` also checks the information architecture: two-click depth,
+  `layer`/`kind` on chapters, glossary anchors, `/docs/` links, links into the redirect
+  table, canonical-home links. `scripts/design-lint.mjs` counts violations of the testable
+  `DESIGN.md` rules (`--strict` fails on any).
+- `just deploy-internal` runs the Playwright a11y/SEO gate (`playwright.a11y.config.ts`)
+  against `dist/` before publishing; a failing gate stops the deploy.
+- Package manager is yarn 1 through Corepack (`packageManager` in `package.json`); there is
+  no `package-lock.json`. GitHub Pages deploys from `.github/workflows/deploy.yml` on every
+  push to `main` — a push is a production release.
+
 ## Instruction-file convention
 
 - `AGENTS.md` is the canonical repository instruction source.
