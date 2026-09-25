@@ -14,6 +14,7 @@ const links = [
   { href: '/vision', text: 'Vision' },
   { href: '/benefits', text: 'Benefits' },
   { href: '/support', text: 'Support' },
+  { href: '/commentary', text: 'Commentary', devOnly: true },
 ]
 
 const visibleLinks = isDev ? links : links.filter(l => !(l as any).devOnly);
