@@ -4,7 +4,7 @@ type: improvement
 id: E004-T13
 title: Self-host fonts with Polish glyphs and fewer weights
 epic: E004
-status: proposed
+status: completed
 priority: medium
 importance: Medium
 effort: small
@@ -12,9 +12,10 @@ points: 2
 dependencies: []
 tags: [typography, performance]
 created: 2026-09-25
-completed_at: null
-commits: []
+completed_at: 2026-09-25
+commits: [c74c8f6]
 verification_evidence: []
+updated: 2026-09-25
 ---
 # E004-T13: Self-host fonts with Polish glyphs and fewer weights
 
@@ -31,10 +32,10 @@ Fonts come from Google Fonts (third-party request, privacy) in 5+ weights; the r
 
 ## Acceptance criteria
 
-- [ ] Fonts self-hosted, variable where available, latin + latin-ext subsets
-- [ ] Preload of the body font; font-display: swap
-- [ ] Unused weights dropped (Inter 300 etc.)
-- [ ] No request to fonts.googleapis.com in the built pages
+- [x] Fonts self-hosted, variable where available, latin + latin-ext subsets
+- [x] Preload of the body font; font-display: swap
+- [x] Unused weights dropped (Inter 300 etc.)
+- [x] No request to fonts.googleapis.com in the built pages
 
 ## Decision for Paweł
 

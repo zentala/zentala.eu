@@ -107,3 +107,24 @@
 - **Findings this session**: 0.
 - **Improvements logged**: 0.
 - **Next**: See "Next" above.
+
+## Session 2026-09-25 (ts-dev: T13 font self-hosting)
+
+- **Goal**: E004-T13 — self-host Inter + Playfair Display with Polish
+  glyph subsets, drop unused weights, remove the Google Fonts request.
+- **Done**: `src/styles/fonts.scss` (explicit @font-face rules, latin +
+  latin-ext, font-display: swap), `src/layouts/Layout.astro` (Google Fonts
+  `<link>` tags replaced with a preload of the body font),
+  `src/styles/_tokens.scss` (`--font-sans` now `'Inter Variable'`),
+  `public/fonts/*.woff2` (copied from `@fontsource-variable/inter` and
+  `@fontsource/playfair-display`), `package.json`/`yarn.lock` (new deps).
+  Merged to `main` at `c74c8f6` (worktree `.plan/worktrees/E004-T13`,
+  removed after merge).
+- **Verification**: `just typecheck` (0 errors), `just build` then
+  `grep -rl fonts.googleapis.com dist/` (empty), preload `<link>` and
+  `font-display: swap` present in build output, `just audit`, `just test`
+  (6/6 Playwright pass) — all run in the worktree and again on `main`
+  after merge.
+- **Findings this session**: 0.
+- **Next**: E004-T15 (a11y/SEO Playwright+axe gate) is the only remaining
+  task under this epic.
