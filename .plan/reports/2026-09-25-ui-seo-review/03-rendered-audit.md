@@ -2,7 +2,7 @@
 
 Origin: local static server of `dist/` (built 2026-09-25 06:56) on mATX, headless Chromium via Playwright.
 Matrix: 12 pages × light/dark × 375/1280 px = 48 runs. Screenshots (selection): `shots/<slug>_<theme>_<width>.png`.
-Lighthouse: NOT_CHECKED (run did not complete within the audit window).
+Lighthouse: FAILED — one attempt on `/` ended with CHROME_INTERSTITIAL_ERROR (page never loaded in headless Chrome on Windows); not retried, no scores.
 
 ## axe-core (WCAG 2.0/2.1/2.2 A+AA)
 

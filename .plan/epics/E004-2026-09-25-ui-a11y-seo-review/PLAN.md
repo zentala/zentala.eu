@@ -17,7 +17,7 @@ documented component and icon set.
 2. Static inventory of source and `dist/` (`01-inventory.md`).
 3. Content, SEO and GEO review of frontmatter and 5 essays (`02-content-seo-geo.md`).
 4. Rendered audit: 12 pages × light/dark × 375/1280 px on a local static server of `dist/` on mATX,
-   axe-core WCAG 2.2 AA plus computed typography (`03-rendered-audit.md`). Lighthouse: NOT_CHECKED.
+   axe-core WCAG 2.2 AA plus computed typography (`03-rendered-audit.md`). Lighthouse: failed (CHROME_INTERSTITIAL_ERROR), no scores.
 
 ## Headline findings
 
