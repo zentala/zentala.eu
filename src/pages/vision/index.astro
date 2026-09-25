@@ -5,12 +5,26 @@
  * them, and a call to the reader at the end. The text lives in
  * src/lib/vision-content.ts, shared with the homepage, which renders the same
  * frame and the short form of the layers.
+ *
+ * Layer chapter lists (IA §6 rule 6, "layer pages link down"): each layer
+ * anchor lists its published chapters, in order, linking `/book/<slug>`.
+ * `layer`/`order`/`kind` frontmatter does not exist yet — E006-T05 (content
+ * schema + frontmatter sweep) is still pending, so `book/index.astro`'s own
+ * `GROUPS` array is still hand-authored too. `CHAPTER_ORDER` below mirrors
+ * that same pattern and the classification IA §2.5 already settled: the
+ * ordered slug/kind pairs are authored here, but title and publish status
+ * (draft filtering) come live from the collection, so a chapter never links
+ * to a 404 or shows a stale title. Once T05 lands the real fields this block
+ * is replaced by a `layer`/`order` query, matching `book/index.astro`'s own
+ * planned migration (DESIGN.md Migration step 11) — see .plan/BACKLOG.md.
  */
+import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import FrameIntro from '../../components/vision/FrameIntro.astro';
 import LayerStack from '../../components/vision/LayerStack.astro';
 import CrossCuttingNote from '../../components/vision/CrossCuttingNote.astro';
 import CallToAction from '../../components/vision/CallToAction.astro';
+import { IS_PREVIEW } from '../../lib/preview';
 import {
   callToAction,
   crossCuttingNote,
@@ -22,6 +36,51 @@ import {
 } from '../../lib/vision-content';
 
 const layers = resolveLayers('long');
+
+type ChapterKind = 'argument' | 'proposal' | 'playbook';
+type LayerKey = 'frame' | 'language' | 'digital' | 'robotics';
+
+const CHAPTER_ORDER: Record<LayerKey, Array<{ slug: string; kind: ChapterKind }>> = {
+  frame: [
+    { slug: 'designing-our-retirement', kind: 'argument' },
+    { slug: 'redesigning-the-state', kind: 'argument' },
+    { slug: 'education-and-migration', kind: 'proposal' },
+  ],
+  language: [{ slug: 'european-english', kind: 'proposal' }],
+  digital: [
+    { slug: 'the-total-state', kind: 'argument' },
+    { slug: 'european-egovernment', kind: 'proposal' },
+  ],
+  robotics: [
+    { slug: 'robotic-reindustrialisation', kind: 'argument' },
+    { slug: 'european-science', kind: 'argument' },
+    { slug: 'the-shorter-week', kind: 'proposal' },
+    { slug: 'new-cities', kind: 'proposal' },
+  ],
+};
+
+const publishedChapters = await getCollection('docs', (entry: CollectionEntry<'docs'>) => {
+  const isBook = entry.id.startsWith('book/') && !entry.id.includes('.sidecar');
+  return isBook && (IS_PREVIEW || !entry.data.draft);
+});
+
+const titleBySlug = new Map<string, string>(
+  publishedChapters.map((entry: CollectionEntry<'docs'>) => [entry.id.replace(/^book\//, '').replace(/\.mdx?$/, ''), entry.data.title])
+);
+
+function chaptersFor(layer: LayerKey) {
+  return CHAPTER_ORDER[layer]
+    .map(({ slug, kind }) => {
+      const title = titleBySlug.get(slug);
+      return title ? { slug, kind, title } : null;
+    })
+    .filter((chapter): chapter is { slug: string; kind: ChapterKind; title: string } => chapter !== null);
+}
+
+const frameChapters = chaptersFor('frame');
+const languageChapters = chaptersFor('language');
+const digitalChapters = chaptersFor('digital');
+const roboticsChapters = chaptersFor('robotics');
 ---
 
 <Layout title="European Integration Vision" description="The three layers of European reform: a shared language, a digital government, and a reindustrialized economy.">
@@ -33,18 +92,66 @@ const layers = resolveLayers('long');
       conclusion={visionFrameIntro.conclusion}
     />
 
+    {frameChapters.length > 0 && (
+      <section aria-labelledby="frame-chapters-title" class="chapter-list-section">
+        <h3 id="frame-chapters-title" class="chapter-list-title">Chapters in the frame</h3>
+        <ol class="chapter-list">
+          {frameChapters.map((chapter) => (
+            <li>
+              <a href={`/book/${chapter.slug}`}>{chapter.title}</a>
+              <span class="chapter-list__kind">{chapter.kind}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+
     <section aria-labelledby="layers-title" class="mb-16">
       <h2 id="layers-title" class="text-3xl font-bold mb-2">{layersSection.title}</h2>
       <p class="layers-lead text-lg mb-8 max-w-3xl">{layersSection.lead}</p>
 
       <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_20rem] gap-8 items-start">
         <div>
-          <div class="layers-anchors" aria-hidden="true">
-            <span id="language"></span>
-            <span id="digital"></span>
-            <span id="robotics"></span>
-          </div>
           <LayerStack layers={layers} />
+
+          <!-- Layer anchors: the rest of the site links to /vision#language,
+               #digital, #robotics (IA §1, §10). Each anchor now lists that
+               layer's published chapters in order (IA §6 rule 6). -->
+          <section id="language" aria-labelledby="language-chapters-title" class="chapter-list-section">
+            <h3 id="language-chapters-title" class="chapter-list-title">Chapters in this layer</h3>
+            <ol class="chapter-list">
+              {languageChapters.map((chapter) => (
+                <li>
+                  <a href={`/book/${chapter.slug}`}>{chapter.title}</a>
+                  <span class="chapter-list__kind">{chapter.kind}</span>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          <section id="digital" aria-labelledby="digital-chapters-title" class="chapter-list-section">
+            <h3 id="digital-chapters-title" class="chapter-list-title">Chapters in this layer</h3>
+            <ol class="chapter-list">
+              {digitalChapters.map((chapter) => (
+                <li>
+                  <a href={`/book/${chapter.slug}`}>{chapter.title}</a>
+                  <span class="chapter-list__kind">{chapter.kind}</span>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          <section id="robotics" aria-labelledby="robotics-chapters-title" class="chapter-list-section">
+            <h3 id="robotics-chapters-title" class="chapter-list-title">Chapters in this layer</h3>
+            <ol class="chapter-list">
+              {roboticsChapters.map((chapter) => (
+                <li>
+                  <a href={`/book/${chapter.slug}`}>{chapter.title}</a>
+                  <span class="chapter-list__kind">{chapter.kind}</span>
+                </li>
+              ))}
+            </ol>
+          </section>
         </div>
         <CrossCuttingNote
           id="who-captures-the-gains"
@@ -69,12 +176,51 @@ const layers = resolveLayers('long');
     color: var(--color-text-secondary);
   }
 
-  /* language / digital / robotics: same-page anchors the rest of the site
-     links to (IA doc §1, §10). The three layers render in one screen here,
-     so a single jump target above the stack is enough — no per-card offset
-     needed. */
-  .layers-anchors span {
-    display: block;
-    height: 0;
+  .chapter-list-section {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .chapter-list-title {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-sm);
+  }
+
+  .chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .chapter-list li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+  }
+
+  .chapter-list a {
+    color: var(--color-accent-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .chapter-list a:hover {
+    text-decoration: underline;
+  }
+
+  .chapter-list__kind {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-eyebrow);
   }
 </style>

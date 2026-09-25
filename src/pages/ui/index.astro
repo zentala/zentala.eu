@@ -9,9 +9,7 @@ import DisplayTitle from '../../components/DisplayTitle.astro';
 import Hero from '../../components/Hero.astro';
 import FAQ from '../../components/FAQ.astro';
 import Author from '../../components/Author.astro';
-import Testimonials from '../../components/Testimonials.astro';
-import InteractiveSection from '../../components/InteractiveSection.astro';
-import EuropeMap from '../../components/EuropeMap.astro';
+import Figure from '../../components/Figure.astro';
 import EUStatisticsChart from '../../components/EUStatisticsChart.astro';
 import Timeline from '../../components/Timeline.astro';
 import Surface from '../../components/Surface.astro';
@@ -31,11 +29,13 @@ const iconGallery = [
 // Sample data for examples
 const cardColors = ["blue", "indigo", "green", "yellow", "red", "purple", "teal"] as const;
 
+// No per-point `color` — the chart assigns the card-hue text tokens in
+// order (DESIGN.md → Components → Figure); this page shows that default.
 const sampleChartData = [
-  { label: 'Category A', value: 65, color: 'rgba(75, 192, 192, 0.8)' },
-  { label: 'Category B', value: 45, color: 'rgba(54, 162, 235, 0.8)' },
-  { label: 'Category C', value: 85, color: 'rgba(153, 102, 255, 0.8)' },
-  { label: 'Category D', value: 30, color: 'rgba(255, 159, 64, 0.8)' }
+  { label: 'Category A', value: 65 },
+  { label: 'Category B', value: 45 },
+  { label: 'Category C', value: 85 },
+  { label: 'Category D', value: 30 },
 ];
 
 const faqItems = [
@@ -66,8 +66,6 @@ const faqItems = [
       <h2 class="text-2xl font-bold text-white mb-4">Contents</h2>
       <ul class="list-disc list-inside text-gray-300 space-y-1">
         <li><a href="#ready-sections" class="text-green-400 hover:text-green-300 font-bold">🌟 Ready-to-Use Page Sections</a></li>
-        <li><a href="#testimonials-section" class="text-green-400 hover:text-green-300 ml-6">Expert Insights Section</a></li>
-        <li><a href="#interactive-insights" class="text-green-400 hover:text-green-300 ml-6">Interactive Data Insights Section</a></li>
         <li><a href="#faq-section" class="text-green-400 hover:text-green-300 ml-6">FAQ Section</a></li>
         <li class="mt-3"><a href="#typography" class="text-blue-400 hover:text-blue-300">Typography</a></li>
         <li><a href="#buttons" class="text-blue-400 hover:text-blue-300">Buttons</a></li>
@@ -76,11 +74,9 @@ const faqItems = [
         <li><a href="#hero" class="text-blue-400 hover:text-blue-300">Hero Section</a></li>
         <li><a href="#faq" class="text-blue-400 hover:text-blue-300">FAQ Component</a></li>
         <li><a href="#author" class="text-blue-400 hover:text-blue-300">Author Profile</a></li>
-        <li><a href="#testimonials" class="text-blue-400 hover:text-blue-300">Testimonials</a></li>
         <li><a href="#interactive" class="text-blue-400 hover:text-blue-300">Interactive Elements</a>
           <ul class="ml-6 mt-1 list-disc list-inside">
-            <li><a href="#maps" class="text-blue-400 hover:text-blue-300">Maps</a></li>
-            <li><a href="#charts" class="text-blue-400 hover:text-blue-300">Charts</a></li>
+            <li><a href="#charts" class="text-blue-400 hover:text-blue-300">Charts (Figure)</a></li>
             <li><a href="#timeline" class="text-blue-400 hover:text-blue-300">Timeline</a></li>
           </ul>
         </li>
@@ -98,8 +94,6 @@ const faqItems = [
         
         <div class="bg-gray-800/50 p-4 rounded-lg mb-4">
           <pre class="text-gray-300 overflow-auto"><code>{`// In your page's frontmatter
-import InteractiveSection from '../components/InteractiveSection.astro';
-import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
 
 // In your page body
@@ -115,105 +109,6 @@ import FAQ from '../components/FAQ.astro';
 </div>`}</code></pre>
         </div>
       </div>
-      
-      <!-- Expert Insights Section -->
-      <section id="testimonials-section" class="mb-12">
-        <h2 class="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Expert Insights Section</h2>
-        
-        <div class="bg-gray-900/30 border border-gray-700/50 rounded-xl p-6 mb-6">
-          <DisplayTitle level={3}>Expert Insights</DisplayTitle>
-          
-          <div class="relative">
-            <div class="absolute inset-0 bg-gradient-to-r from-purple-900 to-blue-900 opacity-10 blur-xl"></div>
-            <div class="relative">
-              <Testimonials 
-                color="purple"
-                items={[
-                  {
-                    quote: "The EU's administrative fragmentation is a critical weakness in the digital age. This vision's emphasis on unified digital infrastructure and a common language could transform Europe into a true economic powerhouse, removing the hidden tax of complexity that currently hampers innovation.",
-                    author: "Prof. Anna Kowalska",
-                    title: "Professor of Digital Economics",
-                    organization: "Technical University of Warsaw"
-                  },
-                  {
-                    quote: "As someone who's worked on cross-border EU projects for decades, I can attest that language barriers remain the single biggest obstacle to European integration. Making English an official second language everywhere would be transformative for collaboration and mobility.",
-                    author: "Dr. Marco Rossi",
-                    title: "Former EU Commissioner for Education",
-                    organization: "European Institute for Innovation"
-                  },
-                  {
-                    quote: "The vision's focus on robotic reindustrialization represents the most viable path for Europe to maintain manufacturing competitiveness while addressing demographic challenges. This is particularly crucial for Eastern European economies.",
-                    author: "Dr. Elisa Schmidt",
-                    title: "Director of Robotics Research",
-                    organization: "German Institute for Automation"
-                  },
-                  {
-                    quote: "What makes this approach unique is how it leverages economies of scale across the entire Union. Building shared digital systems would save billions in redundant development costs while delivering better services to citizens.",
-                    author: "Jean-Michel Dupont",
-                    title: "Chief Digital Officer",
-                    organization: "French Ministry of Economy"
-                  }
-                ]}
-              />
-            </div>
-          </div>
-          
-          <div class="bg-gray-800/50 p-4 rounded-lg mt-8">
-            <p class="text-gray-400 mb-2">Usage example:</p>
-            <pre class="text-gray-300 overflow-auto"><code>{`<div class="container mx-auto px-4 sm:px-6 lg:px-8 my-16">
-  <DisplayTitle level={1}>Expert Insights</DisplayTitle>
-  
-  <div class="relative">
-    <div class="absolute inset-0 bg-gradient-to-r from-purple-900 to-blue-900 opacity-10 blur-xl"></div>
-    <div class="relative">
-      <Testimonials 
-        color="purple"
-        items={[
-          {
-            quote: "Quote text here...",
-            author: "Author Name",
-            title: "Author Title",
-            organization: "Organization Name"
-          },
-          // More testimonials...
-        ]}
-      />
-    </div>
-  </div>
-</div>`}</code></pre>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Interactive Data Insights Section -->
-      <section id="interactive-insights" class="mb-12">
-        <h2 class="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Interactive Data Insights Section</h2>
-        
-        <div class="bg-gray-900/30 border border-gray-700/50 rounded-xl p-6 mb-6">
-          <DisplayTitle level={3}>Interactive Data Insights</DisplayTitle>
-          
-          <div class="relative">
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-green-900 opacity-10 blur-xl"></div>
-            <div class="relative">
-              <InteractiveSection color="blue" />
-            </div>
-          </div>
-          
-          <div class="bg-gray-800/50 p-4 rounded-lg mt-8">
-            <p class="text-gray-400 mb-2">Usage example:</p>
-            <pre class="text-gray-300 overflow-auto"><code>{`<div class="container mx-auto px-4 sm:px-6 lg:px-8 my-16">
-  <DisplayTitle level={1}>Interactive Data Insights</DisplayTitle>
-  
-  <div class="relative">
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-green-900 opacity-10 blur-xl"></div>
-    <div class="relative">
-      <InteractiveSection color="blue" />
-    </div>
-  </div>
-</div>`}</code></pre>
-          </div>
-        </div>
-      </section>
       
       <!-- FAQ Section -->
       <section id="faq-section" class="mb-12">
@@ -648,106 +543,20 @@ import FAQ from '../components/FAQ.astro';
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="mb-16">
-      <DisplayTitle level={1}>Testimonials</DisplayTitle>
-      
-      <div class="bg-gray-900/30 border border-gray-700/50 rounded-lg p-6">
-        <h2 class="text-3xl font-bold text-white mb-8">Testimonials Component Example</h2>
-        
-        <Testimonials 
-          color="purple"
-          items={[
-            {
-              quote: "This is an example testimonial quote to demonstrate the component functionality.",
-              author: "John Doe",
-              title: "Example Title",
-              organization: "Example Organization"
-            },
-            {
-              quote: "Another example testimonial quote with different styling and formatting.",
-              author: "Jane Smith",
-              title: "Another Title",
-              organization: "Another Organization"
-            }
-          ]}
-        />
-        
-        <h3 class="text-2xl font-bold text-white mt-12 mb-4">Testimonials Component Usage</h3>
-        <div class="bg-gray-800/50 p-4 rounded-lg mb-4">
-          <pre class="text-gray-300 overflow-auto"><code>{`<Testimonials 
-  color="purple"
-  items={[
-    {
-      quote: "Testimonial text here.",
-      author: "Author Name",
-      title: "Author Title",
-      organization: "Organization Name"
-    },
-    // More testimonials...
-  ]}
-/>`}</code></pre>
-        </div>
-      </div>
-    </section>
-
     <!-- Interactive Elements Section -->
     <section id="interactive" class="mb-16">
       <DisplayTitle level={1}>Interactive Elements</DisplayTitle>
-      
-      <!-- Maps Subsection -->
-      <section id="maps" class="mb-8">
-        <h2 class="text-3xl font-bold text-white my-8">Interactive Maps</h2>
-        
-        <div class="bg-gray-900/30 border border-gray-700/50 rounded-lg p-6 mb-8">
-          <h3 class="text-2xl font-bold text-white mb-6">EuropeMap Component Example</h3>
-          
-          <EuropeMap 
-            title="European Countries Map"
-            countries={[
-              {
-                code: "DE",
-                name: "Germany",
-                benefits: ["Sample benefit 1", "Sample benefit 2", "Sample benefit 3"]
-              },
-              {
-                code: "FR",
-                name: "France",
-                benefits: ["Sample benefit 1", "Sample benefit 2", "Sample benefit 3"]
-              },
-              {
-                code: "PL",
-                name: "Poland",
-                benefits: ["Sample benefit 1", "Sample benefit 2", "Sample benefit 3"]
-              }
-            ]}
-          />
-          
-          <h3 class="text-2xl font-bold text-white mt-12 mb-4">EuropeMap Component Usage</h3>
-          <div class="bg-gray-800/50 p-4 rounded-lg mb-4">
-            <pre class="text-gray-300 overflow-auto"><code>{`<EuropeMap 
-  title="Map Title"
-  countries={[
-    {
-      code: "DE",
-      name: "Germany",
-      benefits: ["Benefit 1", "Benefit 2", "Benefit 3"]
-    },
-    // More countries...
-  ]}
-/>`}</code></pre>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Charts Subsection -->
+
+      <!-- Charts Subsection: EUStatisticsChart wrapped in Figure, its DESIGN.md
+           "adopts" partner (Migration step 10, E006-T13). Series colours come
+           from the card-hue text tokens, not per-point literals. -->
       <section id="charts">
-        <h2 class="text-3xl font-bold text-white my-8">Charts and Graphs</h2>
-        
+        <h2 class="text-3xl font-bold text-white my-8">Charts (Figure + EUStatisticsChart)</h2>
+
         <div class="bg-gray-900/30 border border-gray-700/50 rounded-lg p-6">
-          <h3 class="text-2xl font-bold text-white mb-6">EUStatisticsChart Component Examples</h3>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <h3 class="text-2xl font-bold text-white mb-6">Figure Component Example</h3>
+
+          <Figure caption="Example chart — illustrative data, not a published figure" source="ui/index.astro sample data">
             <EUStatisticsChart
               title="Bar Chart Example"
               description="This is a sample bar chart"
@@ -756,41 +565,24 @@ import FAQ from '../components/FAQ.astro';
               yAxisLabel="Value"
               xAxisLabel="Category"
             />
-            
-            <EUStatisticsChart
-              title="Pie Chart Example"
-              description="This is a sample pie chart"
-              chartType="pie"
-              data={sampleChartData}
-              height="350px"
-            />
-          </div>
-          
-          <div class="mb-8">
-            <EUStatisticsChart
-              title="Line Chart Example"
-              description="This is a sample line chart"
-              chartType="line"
-              data={sampleChartData}
-              yAxisLabel="Value"
-              xAxisLabel="Category"
-            />
-          </div>
-          
-          <h3 class="text-2xl font-bold text-white mt-12 mb-4">EUStatisticsChart Component Usage</h3>
+          </Figure>
+
+          <h3 class="text-2xl font-bold text-white mt-12 mb-4">Figure + EUStatisticsChart Usage</h3>
           <div class="bg-gray-800/50 p-4 rounded-lg mb-4">
-            <pre class="text-gray-300 overflow-auto"><code>{`<EUStatisticsChart
-  title="Chart Title"
-  description="Chart description"
-  chartType="bar" // bar, line, pie, radar
-  data={[
-    { label: 'Category A', value: 65, color: 'rgba(75, 192, 192, 0.8)' },
-    { label: 'Category B', value: 45, color: 'rgba(54, 162, 235, 0.8)' }
-  ]}
-  yAxisLabel="Y-Axis Label"
-  xAxisLabel="X-Axis Label"
-  height="400px" // Optional
-/>`}</code></pre>
+            <pre class="text-gray-300 overflow-auto"><code>{`<Figure caption="What the chart shows, as a finding" source="Eurostat, 2026">
+  <EUStatisticsChart
+    title="Chart Title"
+    description="Chart description"
+    chartType="bar" // bar, line, pie, radar
+    data={[
+      { label: 'Category A', value: 65 },
+      { label: 'Category B', value: 45 }
+    ]}
+    yAxisLabel="Y-Axis Label"
+    xAxisLabel="X-Axis Label"
+    height="400px" // Optional
+  />
+</Figure>`}</code></pre>
           </div>
         </div>
       </section>
@@ -893,21 +685,6 @@ import FAQ from '../components/FAQ.astro';
       </div>
     </section>
 
-    <!-- Full Interactive Section Example -->
-    <section id="full-interactive" class="mb-16">
-      <DisplayTitle level={1}>Complete Interactive Section</DisplayTitle>
-      
-      <div class="bg-gray-900/30 border border-gray-700/50 rounded-lg p-6">
-        <h2 class="text-3xl font-bold text-white mb-8">InteractiveSection Component Example</h2>
-        
-        <InteractiveSection color="blue" />
-        
-        <h3 class="text-2xl font-bold text-white mt-12 mb-4">InteractiveSection Component Usage</h3>
-        <div class="bg-gray-800/50 p-4 rounded-lg mb-4">
-          <pre class="text-gray-300 overflow-auto"><code>{`<InteractiveSection color="blue" />`}</code></pre>
-        </div>
-      </div>
-    </section>
   </div>
 </Layout>
 

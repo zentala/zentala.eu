@@ -47,7 +47,7 @@ const description = Array.isArray(rawDescription) ? rawDescription : [rawDescrip
                 color: "var(--color-text-primary)",
                 borderColor: "var(--color-border)",
                 borderWidth: action.variant !== 'primary' ? "1px" : "0",
-                boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+                boxShadow: "var(--shadow-md)"
               }}
             >
               {action.text}
@@ -63,11 +63,11 @@ const description = Array.isArray(rawDescription) ? rawDescription : [rawDescrip
         <div class="w-full md:w-2/5 mt-8 md:mt-0">
           <div class="relative">
             <div class="absolute -inset-1 rounded-full opacity-30 blur-xl" style={{ backgroundColor: "var(--color-accent-primary)" }}></div>
-            <img 
-              src={image.file} 
-              alt={title || 'EU Reform Vision'} 
-              class="relative rounded-full shadow-2xl max-w-full h-auto object-cover transform hover:rotate-3 transition-transform duration-700"
-              style={{ borderWidth: "4px", borderColor: "var(--color-accent-primary)", borderStyle: "solid" }}
+            <img
+              src={image.file}
+              alt={title || 'EU Reform Vision'}
+              class="relative rounded-full max-w-full h-auto object-cover transform hover:rotate-3 transition-transform duration-700"
+              style={{ borderWidth: "4px", borderColor: "var(--color-accent-primary)", borderStyle: "solid", boxShadow: "var(--shadow-lg)" }}
             />
           </div>
         </div>
