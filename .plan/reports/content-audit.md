@@ -1,10 +1,10 @@
-# Content audit — 2026-09-20
+# Content audit — 2026-09-25
 
 ## TLDR
-Scanned 162 built routes, 58 content files, 243 links (18 unique external).
-Found 18 links to draft pages, 9 links to missing pages, 6 dead external links, 9 orphan pages, 19 drafts.
+Scanned 185 built routes, 56 content files, 305 links (17 unique external).
+Found 17 links to draft pages, 7 links to missing pages, 7 dead external links, 12 orphan pages, 15 drafts.
 
-## Links to draft pages (18) — 404 in production
+## Links to draft pages (17) — 404 in production
 | Link | Where | Draft file |
 |---|---|---|
 | /docs/book/language | src/content/docs/book/european-english.mdx:218 | src/content/docs/book/language.md |
@@ -19,14 +19,13 @@ Found 18 links to draft pages, 9 links to missing pages, 6 dead external links, 
 | /book/unified-payment-zone/ | src/content/docs/index.mdx:69 | src/content/docs/book/unified-payment-zone.mdx |
 | /book/near-zero-transaction-costs/ | src/content/docs/index.mdx:70 | src/content/docs/book/near-zero-transaction-costs.md |
 | /book/digital-receipts/ | src/content/docs/index.mdx:71 | src/content/docs/book/digital-receipts.mdx |
-| /docs/reference/example | src/content/docs/reference/index.mdx:13 | src/content/docs/reference/example.md |
 | /docs/book/egov-vison | src/pages/docs/all.astro:151 | src/content/docs/book/eGov-vison.mdx |
-| /book/language-integration-administrative-implementation | src/pages/vision/language-integration.astro:206 | src/content/docs/book/language-integration-administrative-implementation.mdx |
-| /book/media-cultural-integration | src/pages/vision/language-integration.astro:207 | src/content/docs/book/media-cultural-integration.mdx |
-| /book/economic-growth-language-unity | src/pages/vision/language-integration.astro:208 | src/content/docs/book/economic-growth-language-unity.mdx |
-| /book/language | src/pages/vision/language-integration.astro:209 | src/content/docs/book/language.md |
+| /book/language-integration-administrative-implementation | src/pages/vision/language-integration.astro:207 | src/content/docs/book/language-integration-administrative-implementation.mdx |
+| /book/media-cultural-integration | src/pages/vision/language-integration.astro:208 | src/content/docs/book/media-cultural-integration.mdx |
+| /book/economic-growth-language-unity | src/pages/vision/language-integration.astro:209 | src/content/docs/book/economic-growth-language-unity.mdx |
+| /book/language | src/pages/vision/language-integration.astro:210 | src/content/docs/book/language.md |
 
-## Links to missing pages (9)
+## Links to missing pages (7)
 | Link | Where |
 |---|---|
 | /docs/ideas/technology/autonomous-robotics-system | src/content/docs/ideas/index.mdx:86 |
@@ -36,10 +35,8 @@ Found 18 links to draft pages, 9 links to missing pages, 6 dead external links, 
 | /docs/ideas/all | src/content/docs/ideas/index.mdx:324 |
 | /book/language-integration-european-politics/ | src/content/docs/index.mdx:33 |
 | /book/language-integration-national-states/ | src/content/docs/index.mdx:34 |
-| /benefits/european-integration | src/pages/index.astro:165 |
-| /benefits/germany | src/pages/index.astro:174 |
 
-## Dead external links (6)
+## Dead external links (7)
 | URL | Status | Where |
 |---|---|---|
 | https://commission.europa.eu/system/files/2023-11/styleguide_english_dgt_en.pdf | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:38 |
@@ -48,19 +45,23 @@ Found 18 links to draft pages, 9 links to missing pages, 6 dead external links, 
 | https://onlinelibrary.wiley.com/doi/full/10.1111/weng.12646 | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:228 |
 | https://www.patreon.com/c/zentala | 404 | src/pages/support.astro:31 |
 | https://www.patreon.com/c/zentala | 404 | src/pages/support.astro:103 |
+| https://www.linkedin.com/in/zentala/ | 999 | src/components/Author.astro:56 |
 
-## Orphan pages (9) — built, but no page links to them
+## Orphan pages (12) — built, but no page links to them
 - /commentary
 - /confirm
 - /docs/european-english
 - /docs/for-you
 - /docs/index
 - /docs/why-reforms
+- /home-classic
 - /search
 - /ui
 - /vision/add/robotic
+- /vision/digital-integration
+- /vision/robotic-reindustrialization
 
-## Drafts (19) — not published
+## Drafts (15) — not published
 | File | Title |
 |---|---|
 | src/content/docs/articles/learning-from-china.mdx | Learning from China - A Vision for EU Integration and Economic Reform |
@@ -75,10 +76,6 @@ Found 18 links to draft pages, 9 links to missing pages, 6 dead external links, 
 | src/content/docs/book/media-cultural-integration.mdx | Need for European Media and Cultural Integration |
 | src/content/docs/book/near-zero-transaction-costs.md | Near-Zero Transaction Costs |
 | src/content/docs/book/predictive-healthcare-system.mdx | Predictive Healthcare System |
-| src/content/docs/book/summary.mdx | EU Integration Summary |
 | src/content/docs/book/unified-payment-zone.mdx | Unified Payment Zone |
 | src/content/docs/ideas/finance/european-cryptocurrency.mdx | European Cryptocurrency Strategy |
 | src/content/docs/ideas/governance/digital-democracy.sidecar.mdx | European Digital Democracy — movement and delivery strategy |
-| src/content/docs/reference/example.md | Example Reference |
-| src/content/transcripts/europe-should-take-over-ukrainian-sky.mdx | Europe Should Take Over Ukrainian Skies and War Leadership. |
-| src/content/transcripts/when-europe-falters-america-gains.mdx | When Europe Falters, America Gains |
