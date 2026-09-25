@@ -1,0 +1,101 @@
+---
+import type { BenefitEntry } from './entries'
+
+interface Props {
+  entry: BenefitEntry
+  /** `true` renders the section hidden, for the picker on /benefits to reveal. */
+  hidden?: boolean
+  /** Heading level: h2 inside the picker, h1 on the entry's own page. */
+  headingLevel?: 2 | 1
+  /** Shows a "read the full page" link; off on the entry's own page. */
+  permalink?: boolean
+}
+
+const { entry, hidden = false, headingLevel = 2, permalink = true } = Astro.props
+const Heading = headingLevel === 1 ? 'h1' : 'h2'
+const flagSrc = `https://flagcdn.com/w40/${entry.flag.toLowerCase()}.png`
+---
+
+<div
+  id={`${entry.slug}-benefits`}
+  class:list={['benefit-section', { hidden }]}
+  data-entry-slug={entry.slug}
+>
+  <div
+    class="flex items-center gap-4 px-6 py-5 rounded-t-xl"
+    style="background-color: var(--color-bg-secondary); border-bottom: 1px solid var(--color-border);"
+  >
+    {
+      entry.icon ? (
+        <span class="text-3xl leading-none" aria-hidden="true">{entry.icon}</span>
+      ) : (
+        <img
+          src={flagSrc}
+          alt=""
+          width="40"
+          height="30"
+          class="w-10 h-auto rounded"
+          style="border: 1px solid var(--color-border);"
+        />
+      )
+    }
+    <Heading class="font-bold" style="color: var(--color-text-primary); font-size: var(--text-3xl);">
+      Benefits for {entry.name}
+    </Heading>
+  </div>
+
+  <div class="p-6 rounded-b-xl" style="background-color: var(--color-bg-secondary);">
+    <p class="mb-6" style="color: var(--color-text-secondary); font-size: var(--text-lg);">
+      {entry.lead}
+    </p>
+
+    {
+      entry.members && (
+        <p class="mb-6" style="color: var(--color-text-secondary);">
+          Covers: {entry.members.join(', ')}.
+        </p>
+      )
+    }
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {
+        entry.tiles.map((tile) => (
+          <div
+            class="p-6 rounded-xl"
+            style="background-color: var(--color-bg-primary); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);"
+          >
+            <h3 class="font-bold mb-3" style="color: var(--color-text-primary); font-size: var(--text-xl);">
+              {tile.title}
+            </h3>
+            <p style="color: var(--color-text-secondary);">{tile.body}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    {
+      (entry.links?.length || permalink) && (
+        <div class="mt-6 flex flex-wrap gap-4">
+          {entry.links?.map((link) => (
+            <a
+              href={link.href}
+              class="underline underline-offset-4"
+              style="color: var(--color-accent-primary);"
+            >
+              {link.label}
+            </a>
+          ))}
+          {permalink && (
+            <a
+              href={`/benefits/${entry.slug}`}
+              class="underline underline-offset-4"
+              style="color: var(--color-accent-primary);"
+            >
+              Open the {entry.name} page
+            </a>
+          )}
+        </div>
+      )
+    }
+  </div>
+</div>

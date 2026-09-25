@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import BenefitPicker from '../../components/benefits/BenefitPicker.astro'
+import BenefitSection from '../../components/benefits/BenefitSection.astro'
+import { benefitEntries } from '../../components/benefits/entries'
+import type { BenefitEntry } from '../../components/benefits/entries'
+
+export function getStaticPaths() {
+  return benefitEntries.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }))
+}
+
+interface Props {
+  entry: BenefitEntry
+}
+
+const { entry } = Astro.props
+---
+
+<Layout title={`Benefits for ${entry.name}`}>
+  <main class="container mx-auto max-w-6xl px-4 py-8">
+    <a
+      href="/benefits"
+      class="underline underline-offset-4"
+      style="color: var(--color-accent-primary);">← All countries and roles</a
+    >
+
+    <div class="mt-8 flex flex-col md:flex-row gap-6 md:gap-8">
+      <div class="w-full md:w-72 flex-shrink-0 order-2 md:order-1">
+        <div class="md:sticky md:top-4">
+          <BenefitPicker activeSlug={entry.slug} />
+        </div>
+      </div>
+
+      <div class="flex-grow order-1 md:order-2">
+        <BenefitSection entry={entry} headingLevel={1} permalink={false} />
+
+        <p class="mt-6" style="color: var(--color-text-secondary);">
+          This page is one answer to a question the whole continent shares: who does the work
+          when there are not enough working people left, and who owns the machines that do it.
+          <a href="/vision" class="underline underline-offset-4" style="color: var(--color-accent-primary);"
+            >Read the full vision</a
+          >, or
+          <a href="/support" class="underline underline-offset-4" style="color: var(--color-accent-primary);"
+            >take a part of it further</a
+          >.
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>
