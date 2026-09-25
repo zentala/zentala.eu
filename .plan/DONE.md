@@ -33,18 +33,31 @@ outstanding; see `.plan/BACKLOG.md` → "E004 not fully verified at close".
 
 ## E006 — Design system, editorial standard, information architecture (epic still `in progress`)
 
-Waves 3–4 tasks completed as of 2026-09-25; epic itself is **not** closed
-(E006-T05 in-progress, E006-T11 blocked, wave 5 not started — see
-`.plan/BACKLOG.md`). Listing only the tasks whose own status is `completed`;
-do not read this section as the epic being done.
+Updated 2026-09-25 (epic interrupt pass): all 15 tasks (T05–T19) are now
+individually `status: completed` and merged to `main`. The epic itself is
+still **not** closed — epic-level verification is **PARTIAL** (the
+`Footer.astro:106` `/tags` link keeps `content-audit.mjs`'s redirect-table
+count off zero; wave 5's changes have not been pushed to `origin`/redeployed
+to `eu.internal`) and `review-log status` is **NOT CLEARED** for every review
+kind but `review`. See `.plan/BACKLOG.md` → "E006 not closed after wave 5"
+and `.plan/epics/E006-2026-09-25-design-editorial-ia/JOURNAL.md` (session
+"epic interrupt, `done` protocol"). Listing only the tasks whose own status
+is `completed`; do not read this section as the epic being done.
 `.plan/epics/E006-2026-09-25-design-editorial-ia/PLAN.md` ·
 `.plan/epics/E006-2026-09-25-design-editorial-ia/JOURNAL.md`
 
+- [E006-T05](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T05.md) — Content schema: `tags` → `concepts` frontmatter sweep, re-scoped (`93873a7`, `2662801`)
 - [E006-T06](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T06.md) — Design tokens, ArticleGrid, article typography (`7f7fc79`)
 - [E006-T07](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T07.md) — Component consolidation, /vision anchors
 - [E006-T08](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T08.md) — Route cleanup and the redirect table (`ea95981`)
 - [E006-T09](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T09.md) — DESIGN.md content components + /ui/content gallery
 - [E006-T10](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T10.md) — Link-graph and design-lint scripts (`61d55f5`)
+- [E006-T11](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T11.md) — Chapters index from `layer`/`order`, `ChapterFooter` (merged with T19's `40e5618`-family commits)
 - [E006-T12](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T12.md) — Term tooltips, /glossary, tags retirement
 - [E006-T13](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T13.md) — Long pages onto ArticleLayout, chart tokens, chrome cleanup (`ce6bd88`)
 - [E006-T14](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T14.md) — /site-map page and IA shape audits
+- [E006-T15](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T15.md) — `one-working-language` chapter; retire `language.md` with redirect (`915a975`)
+- [E006-T16](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T16.md) — Five chapters to editorial standard: choosing-people, the-total-state, new-cities, cheap-is-wealth, the-shorter-week (`55be61f`)
+- [E006-T17](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T17.md) — Five chapters to editorial standard: direct-democracy, safeguards, political-path, designing-our-retirement, robotic-reindustrialisation (`d1d431b`)
+- [E006-T18](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T18.md) — Seven chapters to editorial standard; eGov drafts merged into european-egovernment (`43eab99`)
+- [E006-T19](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T19.md) — Top-level "one argument, one home": /why, /manifesto, /principles (`40e5618`, plan `3691a33`)

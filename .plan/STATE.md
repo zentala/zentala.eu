@@ -1,5 +1,5 @@
 ---
-updated: 2026-09-25T17:15:00
+updated: 2026-09-25T18:00:00
 branch: main
 planning_epic: E005
 planning_epic_path: .plan/epics/E005-2026-09-25-cloudflare-engagement-platform
@@ -7,6 +7,18 @@ planning_epic_path: .plan/epics/E005-2026-09-25-cloudflare-engagement-platform
 
 ## Epic history
 
+- 2026-09-25 (latest): **E006 wave 5 landed; epic still not closed.** All 15
+  tasks (T05, T06–T14, T15–T19) are now `status: completed` and merged to
+  `main`. Epic-level verification stays **PARTIAL**: `Footer.astro:106`'s
+  `/tags` link keeps `content-audit.mjs`'s redirect-table count off zero, and
+  local `main` (`3691a331`) is 23 commits ahead of `origin/main` — wave 5,
+  including the new `one-working-language` chapter, has not been pushed or
+  redeployed to `eu.internal`. Review readiness is **NOT CLEARED**
+  (`review-log status` — only `review` is `CURRENT`; `plan-eng-review`,
+  `plan-design-review`, `plan-ceo-review`, `outside-voice`, `qa` all
+  `NEVER RUN`). Not written to `.plan/HISTORY.md`. See
+  `.plan/epics/E006-2026-09-25-design-editorial-ia/JOURNAL.md` and
+  `.plan/BACKLOG.md` → "E006 not closed after wave 5".
 - 2026-09-25 (later): **E004 full-epic close pass run.** All 16 tasks now
   accounted for: T01–T11, T13, T15, T16 `completed`; T12/T14 `superseded`
   into E006 (superseding the earlier "T13/T15 still proposed" line below,

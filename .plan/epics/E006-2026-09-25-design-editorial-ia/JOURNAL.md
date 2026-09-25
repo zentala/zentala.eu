@@ -119,3 +119,117 @@
 - **Next**: land the rest of E006-T05 (full frontmatter sweep + exported `LAYERS`/`KINDS`),
   which unblocks E006-T11; then resume wave 5. Run `/review` before treating any of this
   wave's shipped code as reviewed — the board has never run against this tree.
+
+## Session 2026-09-25 (epic interrupt, `done` protocol — whole-epic close pass)
+
+- **Goal**: E006: Design system, editorial standard, information architecture — close-out
+  pass over the whole epic per the session-close protocol, after all 15 tasks were closed
+  individually (their own task files, JOURNAL entries and PM commits).
+- **Done**: All 15 tasks (`T05`–`T19`, minus the never-created T01–T04 slots) are
+  `status: completed` in their task files and merged to `main`:
+  - **E006-T05** (re-scoped: tags → concepts) — 19 classified `book/*` chapters had
+    `tags:` replaced by `concepts: [...]` per IA §3 rule 5; frontmatter only, chapter
+    bodies/`config.ts`/`glossary/*` untouched. 7 chapters end with `concepts: []`
+    (no tag mapped to a listed concept, by design, not a gap). Merge `93873a7`
+    (branch `feat/E006-T05`), follow-up on `main` `2662801`.
+  - **E006-T11** — `/book` index derived from `layer`/`order` (dropped the hand-kept
+    `GROUPS` allowlist); reader label renamed to "Chapters" everywhere; new generated
+    `ChapterFooter.astro` (prev/next, Up to `/vision#<layer>`, concepts-based Related,
+    Carry-this line). Merge referenced `40e5618`-family commits; deviation: the eyebrow
+    renders inside the existing post-h1 `meta` slot, not literally "above the h1"
+    (`ArticleLayout.astro` was outside T11's write set) — filed in BACKLOG.
+  - **E006-T15** — new chapter `one-working-language.mdx` (layer `language`) built only
+    from dumps; `language.md` retired with a working `/book/language` redirect;
+    `language-integration-administrative-implementation.mdx` kept `draft: true` with two
+    open ASKs; `european-english.mdx` re-voiced and re-sourced (98.3%→97.6% Eurostat).
+    Merge `915a975`.
+  - **E006-T16** — five chapters (`choosing-people`, `the-total-state`, `new-cities`,
+    `cheap-is-wealth`, `the-shorter-week`) migrated `.md`→`.mdx`, audited sentence-by-
+    sentence against the dumps, each with a `ProvenanceNote`. Merge `55be61f`.
+  - **E006-T17** — five more chapters (`direct-democracy`, `safeguards`, `political-path`,
+    `designing-our-retirement`, `robotic-reindustrialisation`) migrated the same way, two
+    sidecars added (`safeguards`, `political-path`). Merge `d1d431b`.
+  - **E006-T18** — seven chapters (`first-move`, `education-and-migration`,
+    `who-it-earns-for`, `steering`, `redesigning-the-state`, `european-science`,
+    `european-egovernment`) rewritten to standard; `eGov-vison.mdx`/`eGov-challenges.mdx`
+    retired into `european-egovernment.mdx` with 4 redirects added. Merge `43eab99`.
+  - **E006-T19** — top-level "one argument, one home" pass on `/why`, `/manifesto`,
+    `/principles.astro`, plus `vision-content.ts` and `index.astro` FAQ trim. Merge
+    `40e5618`, plan commit `3691a33`.
+  - Cross-task pattern: every task left its own `ProvenanceNote`/dump-line mapping,
+    `ASK-n` comments for Paweł where a claim's authorship was unclear, and a BACKLOG
+    entry for anything found outside its own write set — none of that is repeated here.
+- **Decisions**: no new architectural decision requiring an ADR surfaced in this
+  close pass — see "Architecture check" below.
+- **Findings this session**: 0 new (browser-verification sub-session flagged one
+  deploy-pipeline gap, not a code defect — see Weryfikacja).
+- **Improvements logged**: 0 — this epic has no `IMPRO.md` (never created); nothing
+  queued for Paweł's triage from this epic.
+- **Weryfikacja (epic-level, this session)**: **PARTIAL**. Tooling-level checks are
+  clean: `npm run build` (astro check + build) exit 0, 86 pages; `astro
+  check`/`just typecheck` 0 errors/0 warnings; `just audit` exit 0
+  (`.plan/reports/content-audit.md` refreshed); `node scripts/design-lint.mjs`
+  non-strict (121 total site-wide violations by design; 0/0 for the epic's own
+  `consecutive-paragraphs` rule across the 23 built chapters); `node
+  scripts/link-graph.mjs` clean (29 nodes, 132 edges). Both epic-wide greps pass:
+  `grep -L "^layer:" src/content/docs/book/*` and `grep -l "^tags:" src/content/docs/book/*`
+  are both empty. One real, already-filed gap keeps this PARTIAL rather than clean:
+  `content-audit.mjs` still counts 109 built links to retired redirect-table paths,
+  traced to `Footer.astro:106` linking `/tags` on every page (outside every wave-5
+  write set; BACKLOG entry already filed by T19). A separate browser-verification
+  pass explicitly stayed out of the browser (per its own task scope) and found the
+  rest of the deploy gap: local `main` is 23 commits ahead of `origin/main`, so none
+  of wave 5 (including the T15 chapter) has reached the `eu.internal` build yet —
+  a deploy-pipeline gap, not a regression; per the repo's push+pull deploy rule this
+  session did not push or trigger a deploy itself.
+- **Nie sprawdzono** (still open at epic close): Playwright/e2e (`npm test`,
+  `npm run test:a11y`) against the fully merged tree; an exhaustive sitewide
+  "no passage duplicated" audit beyond T19's own named targets; the 39
+  concept-canonical-href misses `content-audit.mjs` reports (taken on the
+  BACKLOG-documented explanation that the checker's canonical-href table is stale,
+  not re-verified item-by-item); light-mode/mobile-width screenshots for the new
+  `one-working-language` chapter (page not yet on `eu.internal`); whether pushing
+  to `origin/main` and redeploying resolves the deploy gap above.
+- **Review readiness**: **NOT CLEARED**. `review-log record review --status issues
+  --findings 0` recorded this session; `review-log status` now shows `review`
+  `CURRENT/issues` (3 runs, last 2026-09-25 17:43, same working tree, HEAD
+  `3691a331`), but `plan-eng-review`, `plan-design-review`, `plan-ceo-review`,
+  `outside-voice` and `qa` are all still `NEVER RUN`. Overall verdict stays
+  **NOT CLEARED** — run `/review` (full kind coverage) before treating this
+  epic's shipped code as reviewed end to end.
+- **Worktree cleanup**: 0 removed this session. All 7 task branches for this wave
+  (`feat/E006-T05/T11/T15/T16/T17/T18/T19`) are already gone from `git branch -a`
+  — merged and removed by their own closing agents; 0 unmerged commits on any of
+  them. 30 unrelated worktrees remain on the machine (`.plan/worktrees/*`,
+  `.claude/worktrees/*`) with no E006-named entry and no commit-message tie to
+  `E006-T*`; left untouched, out of this epic's scope. 32 worktrees existed at
+  session start.
+- **Uncommitted files found at close, not this epic's**: `.plan/epics/E005-2026-09-25-cloudflare-engagement-platform/`
+  (a different epic's working tree, untracked), `playwright-report/index.html` and
+  `test-results/.last-run.json` (ambient local test-run artifacts, not source
+  changes), `.plan/sessions/*.md` (session transcripts), and a set of untracked
+  screenshot folders/files under `.plan/reports/` (`2026-09-21-home-frame.png`,
+  `2026-09-22-home-v2/`, `2026-09-22-theme/`, `2026-09-22-theme-2/`,
+  `2026-09-25-book-routes/`, `2026-09-25-final-*`, `2026-09-25-fold-answers/`,
+  `2026-09-25-manifesto/`, `2026-09-25-principles-support/`,
+  `2026-09-25-shared-frame/`, `2026-09-25-why-objections/`, `2026-09-25-why/`,
+  `2026-09-25-site-structure.md`) whose owning task/session could not be
+  established (identical filesystem mtimes on all of them, consistent with a bulk
+  worktree merge rather than per-task authorship) — left unstaged rather than
+  guessed into this epic's commit. Only `.plan/reports/content-audit.md` (the
+  audit re-run this session) was staged and committed, plus the PM bookkeeping
+  files this session wrote.
+- **Blockers preventing epic close**: none functionally block the work itself —
+  all 15 tasks are `completed` and merged — but `.plan/HISTORY.md` still cannot
+  receive this epic per the close protocol while (a) review readiness is
+  `NOT CLEARED` for every review kind but `review`, and (b) the redirect-link
+  and deploy-lag gaps above are unresolved. Recorded as an epic interrupt, not
+  a completion.
+- **Next**: (1) fix `Footer.astro:106` (`/tags` → `/glossary`, 1 point) so
+  `content-audit.mjs`'s redirect-table count can reach 0; (2) `git push` `main`
+  to `origin` and redeploy so `eu.internal` reflects wave 5 (per the repo's
+  push+pull deploy rule — not done in this session); (3) run `/review` across
+  the remaining kinds (`plan-eng-review`, `plan-design-review`, `plan-ceo-review`,
+  `outside-voice`, `qa`) before the epic can be marked closed; (4) once the above
+  land, move this epic from `.plan/BACKLOG.md` into `.plan/HISTORY.md` and
+  `.plan/DONE.md` in full.

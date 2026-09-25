@@ -3,7 +3,7 @@
 ## TLDR
 Scanned 138 built routes, 89 content files, 459 links (75 unique external).
 Found 13 links to draft pages, 8 links to missing pages, 12 dead external links, 21 orphan pages, 16 drafts, 50 pages missing a meta description, 1 duplicate descriptions.
-IA shape checks: ran — 11 pages over two clicks from /, 0 entries missing layer/kind, 0/0 broken glossary hrefs, 0 /docs/ links in chapters, 109 built links to a retired redirect path, 39/18 concepts missing their canonical link.
+IA shape checks: ran — 10 pages over two clicks from /, 0 entries missing layer/kind, 0/0 broken glossary hrefs, 0 /docs/ links in chapters, 109 built links to a retired redirect path, 39/18 concepts missing their canonical link.
 
 ## Links to draft pages (13) — 404 in production
 | Link | Where | Draft file |
@@ -150,15 +150,14 @@ IA shape checks: ran — 11 pages over two clicks from /, 0 entries missing laye
 
 ## IA shape checks (E006-T14)
 
-### Two-click depth from / (11 of 29 pages)
+### Two-click depth from / (10 of 29 pages)
 | Route | Clicks from / |
 |---|---|
-| /book/choosing-people | 4 |
-| /book/direct-democracy | 3 |
+| /book/choosing-people | 3 |
 | /book/european-science | 3 |
-| /book/first-move | 4 |
+| /book/first-move | 3 |
 | /book/new-cities | unreachable |
-| /book/safeguards | 4 |
+| /book/safeguards | 3 |
 | /book/steering | 3 |
 | /book/the-shorter-week | 3 |
 | /book | unreachable |
