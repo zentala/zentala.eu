@@ -3,7 +3,7 @@ date: 2026-09-25
 draft: false
 title: Direct Democracy
 description: "Representative democracy has failed Europe for twenty years. Direct democracy is the highest-leverage change, and this chapter is the playbook for demanding it."
-tags: direct democracy, referendums, strategy, sovereignty, Union of Nations
+concepts: [semi-direct-democracy, union-of-nations]
 author: Paweł Żentała
 layer: path
 kind: argument

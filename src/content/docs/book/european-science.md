@@ -3,7 +3,7 @@ date: 2026-09-25
 draft: false
 title: European Science
 description: Why there is no European AI, what a European science would work on, and why mental health is the first large test of whether it works.
-tags: science, research, health, artificial intelligence, mental health
+concepts: []
 author: Paweł Żentała
 layer: robotics
 kind: argument
