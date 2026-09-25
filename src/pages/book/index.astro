@@ -1,34 +1,79 @@
 ---
 import { IS_PREVIEW } from '../../lib/preview';
 import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
 // Chapters come from the content collection, so an unpublished draft can never
 // appear here as a link that 404s in production.
-const chapters = await getCollection('docs', (entry) => {
+const chapters = await getCollection('docs', (entry: CollectionEntry<'docs'>) => {
   const isBook = entry.id.startsWith('book/') && !entry.id.includes('.sidecar');
   return isBook && (IS_PREVIEW || !entry.data.draft);
 });
 
-// The frame chapter opens the book; the rest follow alphabetically.
-const FIRST_SLUG = 'designing-our-retirement';
-const sortedDocs = chapters
-  .map((entry) => ({
-    slug: entry.slug.replace(/^book\//, ''),
-    data: { title: entry.data.title, description: entry.data.description }
-  }))
-  .sort((a, b) => {
-    if (a.slug === FIRST_SLUG) return -1;
-    if (b.slug === FIRST_SLUG) return 1;
-    return a.data.title.localeCompare(b.data.title);
-  });
+// Groups mirror the three-layer frame from the homepage (`/`, `index.astro`):
+// language is the floor, the digital state is the middle, robotics is the
+// ceiling. The frame chapter opens the book; "how we get there" closes it.
+const GROUPS = [
+  { key: 'frame', title: 'The Frame', slugs: ['designing-our-retirement', 'principles'] },
+  {
+    key: 'language',
+    title: 'Layer 1 — One Economy, One Working Language',
+    slugs: [
+      'european-english',
+      'economic-growth-language-unity',
+      'language-integration-administrative-implementation',
+      'media-cultural-integration',
+      'language',
+    ],
+  },
+  {
+    key: 'digital',
+    title: 'Layer 2 — The Digital State',
+    slugs: [
+      'european-egovernment',
+      'eGov-vison',
+      'eGov-challenges',
+      'unified-payment-zone',
+      'near-zero-transaction-costs',
+      'digital-receipts',
+      'european-blockchain-archives',
+      'european-elearning-system',
+    ],
+  },
+  {
+    key: 'robotics',
+    title: 'Layer 3 — Robotics and Autonomous Systems',
+    slugs: ['robotic-reindustrialisation', 'predictive-healthcare-system'],
+  },
+  { key: 'path', title: 'How We Get There', slugs: ['political-path'] },
+];
+
+interface BookDoc {
+  slug: string;
+  data: { title: string; description?: string };
+}
+
+const docsBySlug = new Map<string, BookDoc>(
+  chapters.map((entry: CollectionEntry<'docs'>): [string, BookDoc] => {
+    const slug = entry.slug.replace(/^book\//, '');
+    return [slug, { slug, data: { title: entry.data.title, description: entry.data.description } }];
+  })
+);
+
+const groupedDocs = GROUPS.map((group) => ({
+  title: group.title,
+  docs: group.slugs
+    .map((slug) => docsBySlug.get(slug))
+    .filter((doc): doc is BookDoc => doc !== undefined),
+})).filter((group) => group.docs.length > 0);
+
 ---
 
 <Layout title="Vision Book">
-  <div class="bg-gray-900 min-h-screen">
+  <div class="min-h-screen">
     <main class="container mx-auto max-w-6xl px-4 py-8">
       <div class="mb-8">
-        <a href="/vision" class="text-blue-400 hover:text-blue-300 flex items-center gap-2 mb-4">
+        <a href="/vision" class="flex items-center gap-2 mb-4 transition-colors" style="color: var(--color-accent-secondary);">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
@@ -37,13 +82,13 @@ const sortedDocs = chapters
         <h1 class="text-4xl md:text-5xl font-bold mb-6" style="color: var(--color-text-primary);">Vision Book</h1>
         <p class="text-xl" style="color: var(--color-text-secondary);">Detailed chapters explaining the EU Reform Vision framework for integration.</p>
       </div>
-      
+
       <div class="relative mb-12">
         <div class="absolute inset-0 opacity-50 blur-xl transition-colors duration-300" style="background: linear-gradient(to right, var(--color-accent-primary), var(--color-accent-secondary));"></div>
         <div class="relative rounded-xl p-8 shadow-lg transition-colors duration-300" style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
           <h2 class="text-2xl font-bold mb-4" style="color: var(--color-text-primary);">About This Book</h2>
-          <p class="mb-6" style="color: var(--color-text-secondary);">The EU Reform Vision Book provides a comprehensive framework for European integration through technological innovation, language unity, and administrative reform. Each chapter addresses specific aspects of this vision, providing detailed proposals and implementation strategies.</p>
-          
+          <p class="mb-6" style="color: var(--color-text-secondary);">Europe is aging, and its pension model was built on generational replacement that no longer happens. This book lays out a thirty-year window to build what replaces it: one working language, a digital state, and robotics on top of both — three layers stacked so the fewer working-age people left are not crushed carrying the rest.</p>
+
           <div class="flex flex-wrap gap-3">
             <a href="/book/designing-our-retirement" class="px-4 py-2 rounded-lg text-sm transition-colors" style="background-color: var(--color-accent-primary); color: var(--color-bg-primary);">
               Start with the frame: Designing Our Retirement
@@ -54,35 +99,40 @@ const sortedDocs = chapters
           </div>
         </div>
       </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {sortedDocs.map(doc => (
-            <a href={`/book/${doc.slug}`} class="group">
-            <div class="bg-gray-800 hover:bg-gray-700 rounded-lg p-6 transition-all duration-300 h-full border border-gray-700 hover:border-blue-600 flex flex-col">
-              <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-blue-400">{doc.data.title}</h3>
-              {doc.data.description && (
-                <p class="text-gray-400 text-sm mb-4 flex-grow">{doc.data.description}</p>
-              )}
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-blue-400 text-sm">Read chapter</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-400 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
-      
-      <div class="mt-16 flex justify-between items-center">
-        <a href="/vision" class="text-blue-400 hover:text-blue-300 flex items-center gap-2">
+
+      {groupedDocs.map((group) => (
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold mb-6" style="color: var(--color-text-primary);">{group.title}</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {group.docs.map(doc => (
+              <a href={`/book/${doc.slug}`} class="group">
+                <div class="rounded-lg p-6 transition-all duration-300 h-full border flex flex-col" style="background-color: var(--color-bg-secondary); border-color: var(--color-border);">
+                  <h3 class="text-xl font-semibold mb-2 transition-colors" style="color: var(--color-text-primary);">{doc.data.title}</h3>
+                  {doc.data.description && (
+                    <p class="text-sm mb-4 flex-grow" style="color: var(--color-text-secondary);">{doc.data.description}</p>
+                  )}
+                  <div class="flex justify-between items-center mt-2">
+                    <span class="text-sm" style="color: var(--color-accent-secondary);">Read chapter</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" style="color: var(--color-accent-secondary);" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <div class="mt-8 flex justify-between items-center">
+        <a href="/vision" class="flex items-center gap-2 transition-colors" style="color: var(--color-accent-secondary);">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
           </svg>
           Vision Overview
         </a>
-        
-        <a href="/why" class="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded-lg transition-all">
+
+        <a href="/why" class="inline-flex items-center gap-2 font-medium px-4 py-2 rounded-lg transition-all" style="background-color: var(--color-accent-primary); color: var(--color-bg-primary);">
           Why Reform EU?
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
