@@ -51,6 +51,10 @@ const muted = {
 }
 
 export default {
+  // The theme is the .dark class on <html> (src/layouts/Layout.astro), not the OS
+  // setting. Without this, every `dark:` utility follows prefers-color-scheme and
+  // renders dark blocks inside the light theme.
+  darkMode: 'class',
   content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
   theme: {
     extend: {
