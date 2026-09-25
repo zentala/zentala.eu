@@ -1,7 +1,8 @@
 ---
+date: 2026-09-25
 draft: false
 title: Steering
-description: A state that decides slowly falls over. Balance is not standing still — it is leaning one way, then the other, while moving forward. This chapter argues that our decision loop is too slow to correct in time, and that the fix is more frequent correction plus channels that carry information both ways between the state and the people who run the economy.
+description: "A state that decides slowly falls over. This chapter argues our decision loop is too slow, and the fix is faster feedback between state and economy."
 tags: direct democracy, decision speed, feedback, social dialogue, cybernetics, industrial policy
 author: Paweł Żentała
 ---

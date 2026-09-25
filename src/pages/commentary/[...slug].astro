@@ -11,11 +11,13 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={`${entry.data.title} - Commentary`} description={`${entry.data.title} — commentary on ${entry.data.sourceOutlet}.`}>
+<Layout title={`${entry.data.title} - Commentary`} description={entry.data.description}>
   <div class="container mx-auto max-w-3xl px-4 py-8">
     <a href="/commentary" class="underline" style="color: var(--color-accent-secondary);">&larr; Commentary</a>
     <p class="text-sm theme-text-secondary mt-6">
-      <time datetime={formatDate(entry.data.date)}>{formatDate(entry.data.date)}</time> · {entry.data.topic}
+      By {entry.data.author} · <time datetime={formatDate(entry.data.date)}>{formatDate(entry.data.date)}</time>
+      {entry.data.updated && <> · Updated <time datetime={formatDate(entry.data.updated)}>{formatDate(entry.data.updated)}</time></>}
+      · {entry.data.topic}
     </p>
     <h1 class="text-4xl font-bold theme-text-primary mt-2 mb-6">{entry.data.title}</h1>
     <article class="prose max-w-none">

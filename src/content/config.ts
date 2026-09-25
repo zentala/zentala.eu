@@ -10,6 +10,15 @@ const baseSchema = z.object({
     draft: z.boolean().optional().default(false) // Add draft status option
 });
 
+// Docs (book, articles, ideas, why...): every entry needs a real date, author
+// and an SEO/GEO-sized description for Article JSON-LD and freshness signals.
+const docsSchema = baseSchema.extend({
+    description: z.string().min(70).max(160),
+    date: z.coerce.date(),
+    updated: z.coerce.date().optional(),
+    author: z.string().default('Paweł Żentała')
+});
+
 // Define schema for transcripts collection
 const transcriptSchema = baseSchema.extend({
     // YouTube specific information
@@ -36,7 +45,10 @@ const transcriptSchema = baseSchema.extend({
 // Hidden in production until COMMENTARY_PUBLIC=true (see src/lib/commentary.ts).
 const commentarySchema = z.object({
     title: z.string(),
+    description: z.string().min(70).max(160),
     date: z.coerce.date(),
+    updated: z.coerce.date().optional(),
+    author: z.string().default('Paweł Żentała'),
     sourceUrl: z.string().url(),
     sourceTitle: z.string(),
     sourceOutlet: z.string(),
@@ -50,7 +62,7 @@ export const collections = {
         schema: commentarySchema
     }),
     docs: defineCollection({
-        schema: baseSchema
+        schema: docsSchema
     }),
     ideas: defineCollection({
         schema: baseSchema

@@ -1,7 +1,8 @@
 ---
+date: 2026-09-25
 draft: false
 title: The First Move
-description: The European Citizens' Initiative is the one instrument that lets ordinary people put a demand on the Commission's desk. Here is exactly how it works, what it cannot do, and why it is still the right first move.
+description: "The European Citizens' Initiative lets ordinary people put a demand on the Commission's desk, and this chapter explains how to use it."
 tags: European Citizens' Initiative, direct democracy, strategy, organising, ECI
 author: Paweł Żentała
 ---

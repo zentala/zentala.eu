@@ -1,6 +1,7 @@
 ---
 title: "Euro-Office: Europe starts cutting the US cord where it is cheapest"
 date: 2026-09-19
+description: "Euro-Office ships native Windows, Linux and macOS apps, giving European institutions a real alternative to Microsoft 365 for the first time."
 sourceUrl: https://spidersweb.pl/2026/09/euro-office-windows.html
 sourceTitle: "Europejski Office coraz bliżej. Będzie aplikacja"
 sourceOutlet: Spider's Web

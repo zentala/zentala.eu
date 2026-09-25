@@ -1,7 +1,8 @@
 ---
+date: 2026-09-25
 draft: false
 title: Choosing People
-description: I am not against politicians. I am against a way of choosing them that cannot tell competence from popularity, and that hands defence to a farmer and the economy to a teacher. This chapter argues for voting by portfolio — and for a procedure that admits the competent and excludes the incompetent, enforced by the system rather than by anybody's goodwill.
+description: "I am not against politicians. I am against a way of choosing them that cannot tell competence from popularity, and hands defence to a farmer."
 tags: direct democracy, elections, competence, ministers, open lists, sortition, selection
 author: Paweł Żentała
 ---
