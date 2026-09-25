@@ -55,7 +55,7 @@
   },
   "lint-staged": {
     "*.{ts,js,astro,tsx,jsx}": [
-      "npm run pre-commit-check"
+      "node scripts/precommit-typecheck.mjs"
     ],
     "package.json": [
       "npm run pre-commit-check"
