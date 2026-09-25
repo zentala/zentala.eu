@@ -67,7 +67,11 @@ the second one out in front.
 ## The offer is a mechanism, not a mood
 
 The offer is direct democracy — the ability to decide specific questions
-yourself, often, at low cost, with a result that binds.
+yourself, often, at low cost, with a result that binds. Precisely, it is
+**semi-direct democracy**: parliament and government stay, and citizens get two
+instruments to intervene. A **citizens' initiative** lets us propose a change
+and force a vote on it, and an **optional referendum** lets us strike down a law
+parliament has passed. The accelerator and the brake.
 
 This is the part where the rest of the site stops being a wish list. A digital
 state with real identity, verifiable records and receipts is not a convenience
@@ -142,9 +146,9 @@ piece of work somebody can pick up:
 - **The language question.** What a member state may declare as its own official
   working language, and where that runs into the Union's rules on languages and
   on equal treatment.
-- **Binding citizen votes.** Whether a national referendum result can bind a
-  government's conduct at European level, and what the existing citizens'
-  initiative instrument can and cannot do today.
+- **Binding citizen votes.** Whether the result of a citizens' initiative or an
+  optional referendum can bind a government's conduct at European level, and
+  what the existing European Citizens' Initiative can and cannot do today.
 - **Coalitions of the willing.** Which of the existing routes for a subset of
   states to act together apply here, what they permit, and what they forbid.
 - **Shared digital infrastructure.** Whether one state's identity and records

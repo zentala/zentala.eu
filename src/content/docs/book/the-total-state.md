@@ -102,8 +102,12 @@ power has to be balanced at the same time as the capability is built.
 The balance I want is direct democracy, at every level where a decision is made:
 the school, the municipality, the region, the nation, the Union.
 
-Not as a mood, and not as consultation. As a mechanism with teeth: citizens
-decide specific questions, often, and the result binds. Then the relationship
+Not as a mood, and not as consultation. As two mechanisms with teeth: a
+**citizens' initiative** to propose a change and force a vote on it, and an
+**optional referendum** to strike down a law parliament has passed. The
+accelerator and the brake. Parliaments carry on — the proper name for the
+arrangement is semi-direct democracy — but citizens decide specific questions,
+often, and the result binds. Then the relationship
 inverts. A state with total reach and citizens who can overrule it between
 elections is a tool. A state with total reach and citizens who can only complain
 for four years is something else, and we should say the word out loud rather
@@ -141,7 +145,7 @@ its database has handed whoever holds the database a power nobody voted to give
 them.
 
 Voting is the clearest case. We already vote in one room in a school; a town
-hall can do the same. Real referendums will not draw crowds so large that a
+hall can do the same. Real votes on an initiative or a law will not draw crowds so large that a
 school hall cannot hold them, and if the cost of running frequent votes is the
 objection, then the honest response is to work out how to run them cheaply, in
 public, with the arguments on the table. That is a discussion we should be
