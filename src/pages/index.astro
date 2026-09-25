@@ -13,6 +13,7 @@ import IconLink from '../components/IconLink.astro';
 import DisplayTitle from '../components/DisplayTitle.astro';
 import CardGrid from '../components/CardGrid.astro';
 import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
 import FAQ from '../components/FAQ.astro';
 import Author from '../components/Author.astro';
 import Newsletter from '../components/Newsletter.astro';
@@ -38,7 +39,7 @@ const frameSteps: FrameStep[] = [
   },
   {
     label: 'Set a goal',
-    text: 'We can prepare, and we should name how: build a robotic economy that pays for our retirement. Machines do the work there will not be enough people to do.',
+    text: 'We can prepare, and we should name how: build a robotic economy that pays for our retirement. Machines that do the work there will not be enough people to do.',
   },
 ];
 
@@ -155,6 +156,13 @@ const ctaActions: Action[] = [
       steps={frameSteps}
       conclusion="Let us decide what we want the European Union, and our Europe, to look like when we are older, and use the next thirty years to build it."
     />
+
+    <div class="text-center">
+      <Button href="/book/designing-our-retirement" variant="primary" size="lg">
+        Read the full argument
+        <i class="fa-solid fa-arrow-right ml-2"></i>
+      </Button>
+    </div>
   </div>
 
   <div class="py-10 mb-16">
