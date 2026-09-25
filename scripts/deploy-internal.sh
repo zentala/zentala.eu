@@ -14,6 +14,7 @@ REL=$(date +%Y%m%d-%H%M%S)
 
 echo "building preview (SITE_PREVIEW=true: drafts, commentary and dev-only links visible)..."
 SITE_PREVIEW=true node node_modules/astro/astro.js build >/dev/null
+node scripts/sitemap-rename.mjs
 
 PAGES=$(find dist -name '*.html' | wc -l)
 [ "$PAGES" -gt 50 ] || { echo "DEPLOY_FAILED: only $PAGES pages built" >&2; exit 1; }
