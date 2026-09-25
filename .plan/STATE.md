@@ -1,5 +1,6 @@
 ---
-updated: 2026-09-25T16:05:00
+updated: 2026-09-25T16:45:00
+branch: main
 planning_epic: E005
 planning_epic_path: .plan/epics/E005-2026-09-25-cloudflare-engagement-platform
 ---
@@ -12,6 +13,15 @@ planning_epic_path: .plan/epics/E005-2026-09-25-cloudflare-engagement-platform
   and `.plan/DONE.md`. Review readiness for this repo is `NOT CLEARED`
   (`review-log status` → never run) — recommend `/review` before treating
   E004's shipped code as reviewed.
+- 2026-09-25: **E006 waves 3–4 interrupted, epic NOT closed.** T06/T07/T08/T09/
+  T10/T12/T13/T14 done and merged to `main`; T05 (content schema, glossary,
+  frontmatter sweep) only partially landed and is `in-progress`; T11 stays
+  `blocked` on T05; wave 5 (T15–T19) never dispatched. Not written to
+  `.plan/HISTORY.md` (that file is for finished epics only). See
+  `.plan/epics/E006-2026-09-25-design-editorial-ia/JOURNAL.md` and the new
+  `.plan/BACKLOG.md` entry "E006 not closed after waves 3–4". Review readiness
+  for this repo is still `NOT CLEARED` (`review-log status` → every review kind
+  `NEVER RUN` against `HEAD e4ad71b4`).
 
 ## Status
 

@@ -24,3 +24,21 @@ Not part of this closure's "done" list:
   **superseded**, folded into E006.
 - E004-T13 (font loading) and E004-T15 (automated a11y/SEO gate) — still
   `proposed`, unstarted.
+
+## E006 — Design system, editorial standard, information architecture (epic still `in progress`)
+
+Waves 3–4 tasks completed as of 2026-09-25; epic itself is **not** closed
+(E006-T05 in-progress, E006-T11 blocked, wave 5 not started — see
+`.plan/BACKLOG.md`). Listing only the tasks whose own status is `completed`;
+do not read this section as the epic being done.
+`.plan/epics/E006-2026-09-25-design-editorial-ia/PLAN.md` ·
+`.plan/epics/E006-2026-09-25-design-editorial-ia/JOURNAL.md`
+
+- [E006-T06](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T06.md) — Design tokens, ArticleGrid, article typography (`7f7fc79`)
+- [E006-T07](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T07.md) — Component consolidation, /vision anchors
+- [E006-T08](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T08.md) — Route cleanup and the redirect table (`ea95981`)
+- [E006-T09](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T09.md) — DESIGN.md content components + /ui/content gallery
+- [E006-T10](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T10.md) — Link-graph and design-lint scripts (`61d55f5`)
+- [E006-T12](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T12.md) — Term tooltips, /glossary, tags retirement
+- [E006-T13](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T13.md) — Long pages onto ArticleLayout, chart tokens, chrome cleanup (`ce6bd88`)
+- [E006-T14](epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T14.md) — /site-map page and IA shape audits
