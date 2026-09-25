@@ -165,12 +165,16 @@ export const crossCuttingNote = {
   ],
 };
 
-/** The closing call, identical on both pages. */
+/**
+ * The closing call, identical on both pages. The short form only: the
+ * "you are the condition of it" close is written out once, on /manifesto
+ * (IA §5 row 7), and this block points there instead of repeating it.
+ */
 export const callToAction = {
-  title: 'You are not the audience for this. You are the condition of it.',
+  title: 'Pick a layer and carry it.',
   paragraphs: [
-    'Nothing here needs permission to begin. Direct democracy, a working common language, automating what an aging society cannot staff: none of it waits for an institution to approve it. It waits for enough people to want it that wanting it becomes a fact politicians have to answer to.',
-    'If you repeat the idea, argue it, send it to someone, or build a piece of it, the probability of it happening goes up. That is the only way such things have ever happened. Pick a layer and carry it.',
+    'This is a plan for the thirty working years Europe has left, written to be carried rather than admired: each of the three layers above is something a reader can argue for, vote for, or build.',
+    'Every person who repeats it, argues it, or builds a piece of it moves it closer. The manifesto says what that asks of you; the chapters say what to build, and in what order.',
   ],
 };
 
