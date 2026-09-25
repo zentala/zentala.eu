@@ -10,18 +10,21 @@ concepts: [semi-direct-democracy, citizens-initiative, optional-referendum, the-
 
 import Callout from '../../components/Callout.astro';
 import Playbook from '../../components/Playbook.astro';
+import Section from '../../components/Section.astro';
 import { default as T } from '../../components/TermRef.astro';
 
 {/* SPINE: complaint without a programme leaves the agenda to whoever else has one, so know what you want. */}
 
 {/* Sources, all dictated 2026-09-25: direct-democracy-dump.md:66-125 (parts 3-4: know what you want; the positivist and the bet), :254-300 (part 8: one plus one makes three, since 2016, "may a word and a thought change anything"); answers-and-safeguards-dump.md:175-200 (AI takes the work, seven months, print the money, we get as much as we expect, business incentives, war); open-door-and-choosing-people-dump.md (the method as a named value, agent reading :91); redesigning-the-state-dump.md:73-76 ("I am a positivist — I ask how we solve it so that you and I are both satisfied"). */}
 
-<Playbook title="The four demands, together" steps={[
-  { action: "Know what you want.", why: "Complaint without a programme hands the agenda to whoever turns up with one.", href: "#know-what-you-want" },
-  { action: "Print the money to pay people to build the robotics and the digital state.", why: "The work is going away and the time it frees is the time this needs.", href: "#print-the-money" },
-  { action: "Start from what we already agree on.", why: "Work it out deeply, present it — instead of hunting for the line that divides.", href: "#the-method" },
-  { action: "Say how you would want to live.", why: "The question this page exists to ask, answered rather than admired.", href: "#the-question" },
-]} />
+<Section eyebrow="The demands" title="The four demands, together" lead="Each one is made once, below, where its reason is. Here they are side by side.">
+  <Playbook steps={[
+    { action: "Know what you want.", why: "Complaint without a programme hands the agenda to whoever turns up with one.", href: "#know-what-you-want" },
+    { action: "Print the money to pay people to build the robotics and the digital state.", why: "The work is going away and the time it frees is the time this needs.", href: "#print-the-money" },
+    { action: "Start from what we already agree on.", why: "Work it out deeply, present it — instead of hunting for the line that divides.", href: "#the-method" },
+    { action: "Say how you would want to live.", why: "The question this page exists to ask, answered rather than admired.", href: "#the-question" },
+  ]} />
+</Section>
 
 ## I am a positivist, and complaint was all I could find
 
@@ -80,12 +83,11 @@ Maybe English should have become an official working language of the Union
 after the crisis of 2008. Maybe we should have built the railways then, while
 the workforce was still young enough to build them. I do not know that those
 were the right calls. I know we never made them, because we never discussed
-them — and so we cannot now demand what was never asked for.
-
-And I notice what the surplus of human capital is being pointed at instead. We
-are being organised toward war rather than toward building. Toward destruction
-rather than construction. That is a choice somebody is making while we argue
-about the last press conference.
+them — and so we cannot now demand what was never asked for. And I notice what
+the surplus of human capital is being pointed at instead: we are being
+organised toward war rather than toward building, toward destruction rather
+than construction. That is a choice somebody is making while we argue about
+the last press conference.
 
 The same question, brought close to home: what do we actually want our
 retirement to look like? The pension system is widely expected to buckle under
