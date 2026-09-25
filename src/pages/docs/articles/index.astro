@@ -1,13 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../../../layouts/Layout.astro';
 
-const articleDocs = await getCollection('docs', (entry) => {
+const articleDocs = await getCollection('docs', (entry: CollectionEntry<'docs'>) => {
   return entry.slug.startsWith('articles/');
 });
 
 // Sort by title
-articleDocs.sort((a, b) => a.data.title.localeCompare(b.data.title));
+articleDocs.sort((a: CollectionEntry<'docs'>, b: CollectionEntry<'docs'>) => a.data.title.localeCompare(b.data.title));
 ---
 
 <Layout title="Articles">
@@ -26,7 +26,7 @@ articleDocs.sort((a, b) => a.data.title.localeCompare(b.data.title));
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         {articleDocs.length > 0 ? (
-          articleDocs.map(doc => (
+          articleDocs.map((doc: CollectionEntry<'docs'>) => (
             <a href={`/docs/${doc.slug}`} class="group">
               <div class="bg-gray-800 hover:bg-gray-700 rounded-lg p-6 transition-all duration-300 h-full border border-gray-700 hover:border-blue-600 flex flex-col">
                 <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-blue-400">{doc.data.title}</h3>
@@ -57,7 +57,7 @@ articleDocs.sort((a, b) => a.data.title.localeCompare(b.data.title));
           <p class="text-gray-300 mb-6">These articles provide detailed insights into specific aspects of the EU Reform Vision, exploring implications, implementation challenges, and opportunities that go beyond the core framework.</p>
           
           <div class="flex gap-4">
-            <a href="/docs/book" class="bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm transition-colors">
+            <a href="/book" class="bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm transition-colors">
               Explore Vision Book
             </a>
             <a href="/docs/all" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm transition-colors">

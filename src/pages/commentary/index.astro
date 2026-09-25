@@ -1,4 +1,5 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { COMMENTARY_PUBLIC, getCommentary, formatDate } from '../../lib/commentary';
 
@@ -8,19 +9,19 @@ const entries = await getCommentary();
 
 <Layout title="Commentary - EU Reform">
   <main class="container mx-auto max-w-3xl px-4 py-8">
-    <h1 class="text-4xl font-bold text-white mb-4">Commentary</h1>
-    <p class="text-xl text-gray-300 mb-10">
+    <h1 class="text-4xl font-bold mb-4" style="color: var(--color-text-primary);">Commentary</h1>
+    <p class="text-xl mb-10" style="color: var(--color-text-secondary);">
       Short, dated comments by Paweł Żentała on where the European Union is heading.
     </p>
     <ul class="space-y-8">
-      {entries.map((e) => (
-        <li class="border-b border-gray-800 pb-6">
-          <time class="text-sm text-gray-400" datetime={formatDate(e.data.date)}>{formatDate(e.data.date)}</time>
-          <span class="text-sm text-blue-400 ml-3">{e.data.topic}</span>
-          <h2 class="text-2xl font-semibold text-white mt-1">
-            <a href={`/commentary/${e.slug}`} class="hover:text-blue-400">{e.data.title}</a>
+      {entries.map((e: CollectionEntry<'commentary'>) => (
+        <li class="pb-6" style="border-bottom: 1px solid var(--color-border);">
+          <time class="text-sm" style="color: var(--color-text-secondary);" datetime={formatDate(e.data.date)}>{formatDate(e.data.date)}</time>
+          <span class="text-sm ml-3" style="color: var(--color-accent-secondary);">{e.data.topic}</span>
+          <h2 class="text-2xl font-semibold mt-1" style="color: var(--color-text-primary);">
+            <a href={`/commentary/${e.slug}`} class="transition-colors">{e.data.title}</a>
           </h2>
-          <p class="text-gray-400 mt-1">Source: <a href={e.data.sourceUrl} class="underline" rel="noopener">{e.data.sourceOutlet}</a></p>
+          <p class="mt-1" style="color: var(--color-text-secondary);">Source: <a href={e.data.sourceUrl} class="underline" rel="noopener">{e.data.sourceOutlet}</a></p>
         </li>
       ))}
     </ul>
