@@ -728,6 +728,16 @@
   dependencies:
     "@expressive-code/core" "^0.35.3"
 
+"@fontsource-variable/inter@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/inter/-/inter-5.3.0.tgz#351dd1e02dab63a6cf66d57ec36dcfd10c07f07b"
+  integrity sha512-OupL48va4JNofb97w6NYeF9S7W/kHNKM0Er8Dem5nqi4jeOLrVJDoE8tZEpnMJmtkvNbB1EIPPwHcdkF6b1oUA==
+
+"@fontsource/playfair-display@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/playfair-display/-/playfair-display-5.3.0.tgz#9861f70ae44f2f5899b5a907b127969f18714701"
+  integrity sha512-uJSABalvdWc10fEPppQjQocamT21LEyRfzzWfRfqbkPz+sRv+kKpYDKyluBUskvJREkJTos9epj1WjQROGu99Q==
+
 "@iconify-json/lucide@^1.2.136":
   version "1.2.136"
   resolved "https://registry.yarnpkg.com/@iconify-json/lucide/-/lucide-1.2.136.tgz#ce959870e4e11cb43db5b22b5572cc78932ff728"
