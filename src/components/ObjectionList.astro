@@ -1,0 +1,53 @@
+---
+/**
+ * ObjectionList — groups `Objection` blocks under one heading, for chapters
+ * where the author sets out several arguments against himself in a row
+ * (`choosing-people.md`, `new-cities.md`, `the-total-state.md`) and for
+ * `/why`, whose sections are objections.
+ *
+ * DESIGN.md → Components → "Objection and ObjectionList".
+ */
+interface Props {
+  title?: string;
+  intro?: string;
+}
+
+const { title, intro } = Astro.props;
+---
+
+<section class="objection-list">
+  {title && <h2 class="objection-list__title">{title}</h2>}
+  {intro && <p class="objection-list__intro">{intro}</p>}
+  <div class="objection-list__items">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .objection-list {
+    margin: var(--space-2xl) 0;
+  }
+
+  .objection-list__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-md);
+  }
+
+  .objection-list__intro {
+    font-family: var(--font-sans);
+    font-size: var(--text-xl);
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-xl);
+  }
+
+  .objection-list__items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+</style>

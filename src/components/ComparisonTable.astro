@@ -1,0 +1,150 @@
+---
+/**
+ * ComparisonTable — a table whose columns are the things compared and whose
+ * first column is the dimension, with column semantics marked: which
+ * columns are fact, which are proposal.
+ *
+ * DESIGN.md → Components → "ComparisonTable". Moves to the `wide` track at
+ * four or more columns (DESIGN.md → Typography → "Breaking the measure").
+ * The table never scrolls the page (Do's and Don'ts #21): the wrapper, not
+ * the page, gets `overflow-x: auto`.
+ */
+interface Column {
+  label: string;
+  kind?: 'fact' | 'proposed' | 'unknown';
+}
+
+interface Row {
+  dimension: string;
+  cells: (string | number)[];
+}
+
+interface Props {
+  caption: string;
+  columns: Column[];
+  rows: Row[];
+  source?: string;
+  numeric?: boolean;
+}
+
+const { caption, columns, rows, source, numeric = false } = Astro.props;
+const wide = columns.length >= 4;
+
+const KIND_LABEL: Record<'fact' | 'proposed' | 'unknown', string> = {
+  fact: 'Fact',
+  proposed: 'Proposed',
+  unknown: 'Unknown',
+};
+---
+
+<div class:list={['comparison-table', { 'span-wide': wide }]}>
+  <p class="comparison-table__caption">{caption}</p>
+  <div class="comparison-table__scroll">
+    <table class="comparison-table__table" data-numeric={numeric}>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          {columns.map((column) => (
+            <th scope="col" data-kind={column.kind}>
+              {column.kind && <span class="comparison-table__kind">{KIND_LABEL[column.kind]}</span>}
+              <span class="comparison-table__label">{column.label}</span>
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr>
+            <th scope="row">{row.dimension}</th>
+            {row.cells.map((cell) => <td>{cell}</td>)}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  {source && <p class="comparison-table__source">Source: {source}</p>}
+</div>
+
+<style>
+  .comparison-table {
+    margin: var(--space-xl) 0;
+  }
+
+  .comparison-table__caption {
+    font-family: var(--font-sans);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-sm);
+  }
+
+  .comparison-table__scroll {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+
+  .comparison-table__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+  }
+
+  .comparison-table__table[data-numeric='true'] td {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+
+  .comparison-table__table thead th {
+    background-color: var(--color-bg-secondary);
+    text-align: left;
+    padding: var(--space-sm) var(--space-md);
+    vertical-align: bottom;
+  }
+
+  .comparison-table__table[data-numeric='true'] thead th:not(:first-child) {
+    text-align: right;
+  }
+
+  .comparison-table__kind {
+    display: block;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.2em;
+  }
+
+  thead th[data-kind='fact'] .comparison-table__kind {
+    color: var(--card-green-text);
+  }
+
+  thead th[data-kind='proposed'] .comparison-table__kind {
+    color: var(--card-blue-text);
+  }
+
+  .comparison-table__label {
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .comparison-table__table tbody th,
+  .comparison-table__table tbody td {
+    padding: var(--space-sm) var(--space-md);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+  }
+
+  .comparison-table__table tbody th {
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .comparison-table__source {
+    margin-top: var(--space-sm);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+</style>

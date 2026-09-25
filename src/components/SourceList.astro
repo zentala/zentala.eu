@@ -1,0 +1,76 @@
+---
+/**
+ * SourceList — a "## Sources" block: title, link, one-line note per source.
+ * Used when a chapter cites more than five sources; chapters with fewer
+ * keep inline links.
+ *
+ * DESIGN.md → Components → "SourceList".
+ */
+interface SourceItem {
+  title: string;
+  url: string;
+  note?: string;
+}
+
+interface Props {
+  items: SourceItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="source-list">
+  <h2 class="source-list__title">Sources</h2>
+  <ol class="source-list__items">
+    {items.map((item) => (
+      <li>
+        <a href={item.url}>{item.title}</a>
+        {item.note && <span class="source-list__note"> — {item.note}</span>}
+      </li>
+    ))}
+  </ol>
+</section>
+
+<style>
+  .source-list {
+    margin: var(--space-2xl) 0 0;
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .source-list__title {
+    font-family: var(--font-sans);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-sm);
+  }
+
+  .source-list__items {
+    list-style: decimal;
+    margin: 0;
+    padding-left: var(--space-lg);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+
+  .source-list__items li {
+    margin: 0 0 0.35rem;
+  }
+
+  .source-list__items li:last-child {
+    margin-bottom: 0;
+  }
+
+  .source-list__items a {
+    color: var(--color-accent-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  .source-list__note {
+    color: var(--color-text-secondary);
+  }
+</style>
