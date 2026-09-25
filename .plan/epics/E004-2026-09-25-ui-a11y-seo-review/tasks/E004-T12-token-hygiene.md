@@ -4,7 +4,7 @@ type: improvement
 id: E004-T12
 title: Token hygiene and an automated guard
 epic: E004
-status: proposed
+status: superseded
 priority: medium
 importance: Medium
 effort: medium
@@ -16,6 +16,8 @@ completed_at: null
 commits: []
 verification_evidence: []
 ---
+
+> **Superseded 2026-09-25** by E006-T06 (tokens) and E006-T13 (hard-coded colours and sizes to tokens, InteractiveSection/EuropeMap/Testimonials retired). Running this task in parallel would edit the same files; E006 absorbs its scope. See `.plan/epics/E006-2026-09-25-design-editorial-ia/PLAN.md`.
 # E004-T12: Token hygiene and an automated guard
 
 **Importance:** Medium · **Points:** 5

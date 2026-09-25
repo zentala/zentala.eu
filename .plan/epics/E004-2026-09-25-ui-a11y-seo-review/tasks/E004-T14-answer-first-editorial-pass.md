@@ -4,7 +4,7 @@ type: improvement
 id: E004-T14
 title: Answer-first editorial pass on the book essays
 epic: E004
-status: proposed
+status: superseded
 priority: medium
 importance: Medium
 effort: large
@@ -16,6 +16,8 @@ completed_at: null
 commits: []
 verification_evidence: []
 ---
+
+> **Superseded 2026-09-25** by E006-T16, E006-T17, E006-T18 (chapter rewrites under src/AGENTS.md, the editorial standard that did not exist when this task was written). Running this task in parallel would edit the same files; E006 absorbs its scope. See `.plan/epics/E006-2026-09-25-design-editorial-ia/PLAN.md`.
 # E004-T14: Answer-first editorial pass on the book essays
 
 **Importance:** Medium · **Points:** 5
