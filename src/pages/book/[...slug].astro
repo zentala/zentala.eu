@@ -1,8 +1,10 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ChapterFooter from '../../components/ChapterFooter.astro';
 import { IS_PREVIEW } from '../../lib/preview';
 import { articleSchema, breadcrumbSchema, SITE_URL } from '../../lib/jsonld';
+import type { Layer } from '../../content/config';
 
 export async function getStaticPaths() {
   const documents = await getCollection('docs', (entry: CollectionEntry<'docs'>) => IS_PREVIEW || !entry.data.draft);
@@ -33,14 +35,39 @@ const jsonLd = [
   }),
   breadcrumbSchema([
     { name: 'Home', url: SITE_URL },
-    { name: 'Book', url: `${SITE_URL}/book` },
+    { name: 'Chapters', url: `${SITE_URL}/book` },
     { name: entry.data.title, url: pageUrl },
   ]),
 ];
+
+// Eyebrow above the h1 (IA §2.1): the two axes, "layer · kind" — e.g.
+// "How we get there · Playbook". Omitted when layer is missing.
+const LAYER_LABELS: Record<Layer, string> = {
+  frame: 'The frame',
+  language: 'Floor — one working language',
+  digital: 'Middle — the digital state',
+  robotics: 'Ceiling — robotics',
+  path: 'How we get there',
+};
+
+const KIND_LABELS: Record<string, string> = {
+  argument: 'Argument',
+  proposal: 'Proposal',
+  playbook: 'Playbook',
+  objections: 'Objections',
+  manifesto: 'Manifesto',
+};
+
+const eyebrow = entry.data.layer
+  ? [LAYER_LABELS[entry.data.layer], entry.data.kind ? KIND_LABELS[entry.data.kind] ?? entry.data.kind : undefined]
+      .filter(Boolean)
+      .join(' · ')
+  : undefined;
 ---
 
-<ArticleLayout title={entry.data.title} description={entry.data.description} markdownAlternate={`/book/${slug}.md`} backHref="/book" backLabel="Back to the Vision Book" jsonLd={jsonLd}>
+<ArticleLayout title={entry.data.title} description={entry.data.description} markdownAlternate={`/book/${slug}.md`} backHref="/book" backLabel="Back to Chapters" jsonLd={jsonLd}>
   <Fragment slot="meta">
+    {eyebrow && <p class="chapter-eyebrow">{eyebrow}</p>}
     <p class="text-sm mb-4" style="color: var(--color-text-secondary);">
       By {entry.data.author} · <time datetime={entry.data.date.toISOString()}>{publishedDate}</time>
       {updatedDate && <> · Updated <time datetime={entry.data.updated!.toISOString()}>{updatedDate}</time></>}
@@ -48,4 +75,23 @@ const jsonLd = [
     <p class="text-lg" style="color: var(--color-text-secondary);">{entry.data.description}</p>
   </Fragment>
   <Content />
+  <Fragment slot="footer">
+    <ChapterFooter entry={entry} />
+  </Fragment>
 </ArticleLayout>
+
+<style>
+  /* ArticleLayout renders the meta slot immediately after the h1 (E006-T11:
+     an eyebrow slot ahead of the h1 would need a change to the shared
+     layout, which is outside this task's write set); this renders the
+     eyebrow as the first line of that slot, directly under the title. */
+  .chapter-eyebrow {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-eyebrow);
+    color: var(--color-accent-secondary);
+    margin: 0 0 0.75rem;
+  }
+</style>
