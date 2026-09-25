@@ -4,8 +4,8 @@ import AlgoliaSearch from '../components/AlgoliaSearch.astro';
 import { searchClient, searchIndex } from '../lib/algoliaClient.ts';
 ---
 
-<Layout title="Search - EU Reform Vision">
-  <main class="container mx-auto px-4 py-12 max-w-6xl">
+<Layout title="Search - EU Reform Vision" description="Search articles, book chapters, and commentary on European integration reform.">
+  <div class="container mx-auto px-4 py-12 max-w-6xl">
     <h1 class="text-4xl font-bold text-white mb-8 text-center">Search</h1>
     
     <div class="mb-12 max-w-3xl mx-auto">
@@ -33,7 +33,7 @@ import { searchClient, searchIndex } from '../lib/algoliaClient.ts';
         <p class="mt-2">Try different keywords or check your spelling</p>
       </div>
     </div>
-  </main>
+  </div>
 </Layout>
 
 <style>

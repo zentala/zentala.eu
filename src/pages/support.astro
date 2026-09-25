@@ -5,8 +5,8 @@ import Card from '../components/Card.astro';
 import TimeIsRunningOut from '../content/docs/support/time-is-running-out.mdx';
 ---
 
-<Layout title="Support the EU Vision">
-  <main class="container mx-auto max-w-6xl px-4 py-8">
+<Layout title="Support the EU Vision" description="Support the research, writing, and outreach behind this vision for European integration.">
+  <div class="container mx-auto max-w-6xl px-4 py-8">
     <DisplayTitle title="Support the EU Vision" />
     
     <div class="mb-10 text-xl text-center" style="color: var(--color-text-secondary);">
@@ -165,12 +165,13 @@ import TimeIsRunningOut from '../content/docs/support/time-is-running-out.mdx';
         
         <div class="text-center p-4 rounded-lg transition-colors duration-300 mb-4" 
              style="background-color: var(--color-bg-primary); border: 1px solid var(--color-border);">
-          <p class="mb-2" style="color: var(--color-text-primary);">Share this direct link:</p>
+          <label for="share-link" class="mb-2 block" style="color: var(--color-text-primary);">Share this direct link:</label>
           <div class="flex items-center justify-center">
-            <input 
-              type="text" 
-              value="https://zentala.eu" 
-              readonly 
+            <input
+              id="share-link"
+              type="text"
+              value="https://zentala.eu"
+              readonly
               class="px-4 py-2 rounded-lg mr-2 text-sm w-full max-w-md transition-colors duration-300"
               style="background-color: var(--color-bg-secondary); color: var(--color-text-primary); border: 1px solid var(--color-border);"
               onclick="this.select();"
@@ -265,13 +266,15 @@ import TimeIsRunningOut from '../content/docs/support/time-is-running-out.mdx';
         </p>
         
         <form class="flex flex-col md:flex-row gap-4" action="/confirm" method="POST">
-          <input 
-            type="email" 
-            name="email" 
-            placeholder="Your email address" 
+          <label for="support-newsletter-email" class="sr-only">Email address</label>
+          <input
+            id="support-newsletter-email"
+            type="email"
+            name="email"
+            placeholder="Your email address"
             required
-            class="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 transition-colors duration-300"
-            style="background-color: var(--color-bg-primary); color: var(--color-text-primary); border: 1px solid var(--color-border); focus-ring-color: var(--color-accent-primary);"
+            class="flex-grow px-4 py-3 rounded-lg transition-colors duration-300"
+            style="background-color: var(--color-bg-primary); color: var(--color-text-primary); border: 1px solid var(--color-border);"
           />
           <button 
             type="submit"
@@ -310,7 +313,7 @@ import TimeIsRunningOut from '../content/docs/support/time-is-running-out.mdx';
       </div>
     </Card>
 
-  </main>
+  </div>
 </Layout>
 
 <script>

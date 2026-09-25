@@ -10,12 +10,14 @@
       <p class="newsletter-text mb-6">Join our community of forward-thinking Europeans. Get updates on the latest developments and be part of shaping Europe's digital future.</p>
 
       <form class="flex flex-col sm:flex-row gap-4 justify-center mb-4" id="newsletter-form">
+        <label for="newsletter-email" class="sr-only">Email address</label>
         <input
+          id="newsletter-email"
           type="email"
           name="email"
           required
           placeholder="Your email address"
-          class="newsletter-input px-4 py-3 rounded-lg border focus:outline-none w-full sm:w-auto sm:flex-1 max-w-md"
+          class="newsletter-input px-4 py-3 rounded-lg border w-full sm:w-auto sm:flex-1 max-w-md"
         />
         <button
           type="submit"

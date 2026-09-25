@@ -5,7 +5,8 @@
 <button
   id="theme-toggle"
   aria-label="Toggle theme"
-  class="flex items-center justify-center p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+  aria-pressed="false"
+  class="flex items-center justify-center p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
   style="color: var(--color-text-secondary);"
 >
   <!-- Sun icon (for dark mode) -->
@@ -15,6 +16,7 @@
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
+    aria-hidden="true"
   >
     <path
       stroke-linecap="round"
@@ -31,6 +33,7 @@
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
+    aria-hidden="true"
   >
     <path 
       stroke-linecap="round" 
@@ -45,11 +48,14 @@
   // Client-side script to handle theme toggle functionality
   document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
-    
+
     if (themeToggle) {
+      themeToggle.setAttribute('aria-pressed', String(document.documentElement.classList.contains('dark')));
+
       themeToggle.addEventListener('click', () => {
         // Toggle the dark class on the document element
         const isDark = document.documentElement.classList.toggle('dark');
+        themeToggle.setAttribute('aria-pressed', String(isDark));
         
         // Save the theme preference using the global themeUtils or fallback methods
         try {
