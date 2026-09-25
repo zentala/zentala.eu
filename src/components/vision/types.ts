@@ -34,3 +34,32 @@ export interface Action {
   label: string;
   href: string;
 }
+
+/**
+ * How much of the argument a page renders. The homepage hands the reader the
+ * frame and one route into each layer (`short`); /vision carries every
+ * supporting point (`long`).
+ */
+export type FrameForm = 'short' | 'long';
+
+/**
+ * One supporting point of a layer, authored once and rendered in both forms.
+ * The long form is the canonical text; the short form may compress it or drop
+ * it, but never says anything the long form does not.
+ */
+export interface LayerPoint {
+  /** Canonical, long-form text. Rendered on /vision. */
+  text: string;
+  /** Compressed wording for the short form. Omit to reuse `text`. */
+  shortText?: string;
+  /** Leave this point out of the short form entirely. */
+  longOnly?: boolean;
+}
+
+/**
+ * A layer as authored in the shared content module: same as {@link Layer} but
+ * with form-aware points. Resolved into a `Layer` by `resolveLayers`.
+ */
+export interface LayerContent extends Omit<Layer, 'points'> {
+  points: LayerPoint[];
+}
