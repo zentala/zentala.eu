@@ -2,13 +2,12 @@
 formatVersion: 1
 type: epic
 status: in-progress
-readiness: blocked
-points: 34
-agent: mixed (research: sonnet · design, editorial standard, AI instructions: fable)
-wave: 1
+readiness: ready
+points: 115
+agent: mixed (research: sonnet · code: ts-dev · chapters, glossary, page copy: editor (fable))
+wave: 3
 depends-on: [E004]
 parallel: []
-blocked-by: "Paweł approves PRES.md: DESIGN.md, src/AGENTS.md, INFORMATION-ARCHITECTURE.md; answers Q1/Q3/Q4/Q5/Q9"
 ---
 
 # E006: Design system, editorial standard, information architecture
@@ -82,10 +81,38 @@ Public deployment; E004's a11y/SEO tasks; new content subjects.
 New standards documents; a term-tooltip component and a sitemap data build step in wave 3.
 Update `.plan/ARCH.md` when wave 3 lands.
 
+## The go, and the decisions taken with it (2026-09-25)
+
+Paweł answered the PRES with `/implement w3 i w4`. That is the gate opening and a repeat of
+the "swarm, I orchestrate" instruction: waves 3–5 run through `/implement` as direct
+subagents (recorded in `epics/INDEX.md`). He did not answer the numbered questions, so the
+defaults from the PRES apply and every editorial task file repeats them verbatim:
+
+- D3 label **Chapters**, D4/D6 `layer`/`kind`/`concepts` + governed glossary, D11 static
+  site-map list first with the graph as companion — as proposed.
+- Q1 communism: his own framing from the surplus dump, once, in `who-it-earns-for`.
+- Q3 thresholds: 2 % / 1 % as dictated, stated once in `direct-democracy`.
+- Q4/Q6: the military argument for English — the position is his, the arguments are offered.
+- Q5 register: image stays, vulgarity goes, strength of the verdict stays.
+- Q9: eGov chapters merge into `european-egovernment`; `the-total-state` wins contradictions.
+- Rights floor: non-derogable ECHR core only. "Economic euthanasia" and the personal
+  emotional-isolation passage stay unpublished. School meals and services as dictated; a
+  citizens' dividend is an offered option.
+
+He asked for "w3 and w4"; the work is split into three waves because the chapter rewrites
+need the components and the tooltips from the two waves before them. The editorial standard
+lives at `src/AGENTS.md` (Astro 4 fails the build on any `.md` inside `src/content/`).
+
 ## Waves
 
 | Wave | Tasks | Points | Agent |
 |---|---|---:|---|
-| 1 | R1 design sources · R2 component/pattern inventory · R3 duplication + concepts + link graph · R4 editorial audit | 8 | sonnet ×3, opus ×1 |
-| 2 | D1 DESIGN.md · D2 editorial AGENTS.md + CLAUDE.md pointer + repo rule · D3 IA document | 13 | fable ×3 |
-| 3 | after go: reskin, components, chapter rewrites, tooltips, sitemap page | 13+ | fable (text), ts-dev (code) |
+| 1 (done) | R1 design sources · R2 component/pattern inventory · R3 duplication + concepts + link graph · R4 editorial audit — `.plan/reports/2026-09-25-e006/` | 8 | sonnet ×3, opus ×1 |
+| 2 (done, b13cbd0 c23da70 7a2b06b) | D1 `DESIGN.md` · D2 `src/AGENTS.md` + `src/CLAUDE.md` + repo rule · D3 `.plan/INFORMATION-ARCHITECTURE.md` + `PRES.md` | 13 | fable ×3 |
+| 3 — infrastructure | [T05](tasks/E006-T05.md) schema + glossary + frontmatter sweep (8, editor) · [T06](tasks/E006-T06.md) tokens + ArticleGrid + typography (5) · [T07](tasks/E006-T07.md) component consolidation + /vision anchors (5) · [T08](tasks/E006-T08.md) route cleanup + redirect table (5) · [T09](tasks/E006-T09.md) new content components + gallery (8) · [T10](tasks/E006-T10.md) link-graph + design-lint scripts (3) | 34 | ts-dev ×5, editor ×1 |
+| 4 — pages | [T11](tasks/E006-T11.md) index from `layer`, Chapters label, eyebrow, ChapterFooter (5) · [T12](tasks/E006-T12.md) term tooltips, /glossary, tags retirement (5) · [T13](tasks/E006-T13.md) long pages on ArticleLayout, chart figure, chrome cleanup (5) · [T14](tasks/E006-T14.md) /site-map + shape audit (8) | 23 | ts-dev ×4 |
+| 5 — editorial | [T15](tasks/E006-T15.md) floor chapter (5) · [T16](tasks/E006-T16.md) chapters group 1 (8) · [T17](tasks/E006-T17.md) group 2 (8) · [T18](tasks/E006-T18.md) group 3 + eGov merge (8) · [T19](tasks/E006-T19.md) top-level one-home sweep (8) | 37 | editor ×5 (fable) |
+
+Write sets inside a wave are disjoint by construction (each task file lists its files and
+the files it must not touch). Epic total 115 points; the 13-point rule would route this to AO,
+Paweł's repeated instruction routes it through `/implement` — recorded deviation.
