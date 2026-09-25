@@ -127,6 +127,31 @@ lives. Declining that trade is not superstition. It is arithmetic.
 I would rather the demand were the other one: give us the vote and we will help
 you build the system.
 
+## Keep the paper
+
+There is a cheap way to take most of the fear out of this, and I do not know why
+it is not the default position.
+
+**Keep paper as the emergency layer of the state.** Not only for voting — for
+the basic functions generally. The procedures we run today on paper stay in
+place, simplified if you like, as the fallback that works when the systems are
+down, when somebody has been switched off by mistake, or when a government has
+to be shown that the old route still exists. A state that cannot operate without
+its database has handed whoever holds the database a power nobody voted to give
+them.
+
+Voting is the clearest case. We already vote in one room in a school; a town
+hall can do the same. Real referendums will not draw crowds so large that a
+school hall cannot hold them, and if the cost of running frequent votes is the
+objection, then the honest response is to work out how to run them cheaply, in
+public, with the arguments on the table. That is a discussion we should be
+having rather than a reason to postpone.
+
+**Digital gets built in parallel, as learning.** We start now, we make mistakes
+in places where mistakes are survivable, and the digital layer earns its way up
+to anything important. It should carry something serious only once it has
+proved, in the open, that it deserves to.
+
 Build it as Europeans, together. One set of systems for identity, for records,
 for voting, designed jointly, with each country deploying and running its own.
 The engineering gets done once. The sovereignty stays where it is. And nobody
