@@ -149,6 +149,70 @@ poor country cannot spare.
 Some will want to stay. Fine — we needed workers, that was the point. But the
 default relationship should be an exchange, not a drain.
 
+## An open door for Japan and Korea
+
+Here is a specific case where Europe has the opposite problem. Not "how do we
+choose among people who want to come", but "why are we making it hard for people
+we should be actively inviting".
+
+I think it is a scandal that there is no easy route into Europe for Japanese and
+Korean people who want to work and settle here. The Union could make this simple
+and has not. Let me be clear that what follows is my opinion and not a finding:
+the Japanese and Koreans I have met are creative and hard-working, many of them
+are looking for a way out of a work culture at home that grinds people down, and
+I think they would bring a great deal to any country that took them in. I would
+like us to be that country.
+
+What I want is not complicated. Work visas that are easy to get. A settlement
+path that a person can actually plan a life around. And on top of that, the
+thing Canada already does: a working-holiday route where you simply come, look
+around for a year, take casual work or a permanent job, and are told plainly
+that you are welcome.
+
+**We already have a thin version of this, which is the good news and also the
+point.** Canada's [International Experience
+Canada](https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/iec/eligibility.html)
+scheme admits Japanese and South Korean citizens under Working Holiday, with two
+further categories — Young Professionals and International Co-op — open to
+Koreans. Poland, for its part, signed a working-holiday agreement with
+[Japan](https://www.gov.pl/web/family/working-holiday-scheme-poland-japan) in
+2015 and one with South Korea in 2018; they sit alongside six others on the
+ministry's [list](https://www.gov.pl/web/family/working-holiday-agreements).
+Other EU states have their own — Germany, France, Italy, Ireland, Austria,
+Denmark and more are among the [thirty-odd
+partners](https://japan-visa.com/visas/working-holiday) Japan deals with.
+
+So the argument is not "we have nothing". It is: what we have is tiny and
+deliberately kept that way. These schemes are bilateral, capped in the hundreds
+— Poland's Japanese scheme runs to 500 places a year on the Polish side — open
+only to people aged 18 to 30, good for a single year, and written so that the
+work is incidental to a holiday rather than the point of the trip. They are a
+cultural-exchange gesture. They are not a door.
+
+Widen it. Raise or drop the caps. Lift the age ceiling. Let the work be the
+reason you came rather than a footnote to it. Make the year convertible into a
+residence permit for anyone who found something worth staying for. None of this
+requires a new theory of migration; it requires taking an instrument that
+already exists and stopping being timid with it.
+
+And Poland could do most of it alone. Admission rules are largely national, and
+a bilateral scheme is a bilateral scheme — we signed the last two without asking
+anyone's permission.
+
+**Which brings me to the part I will not skip.** I would put this to a citizens'
+vote, and I would abide by the answer. This is a national decision, and each
+country should be free to make it separately. I do not accept having decisions
+of this kind imposed on me from above, and I am not going to argue for imposing
+them on anybody else — not on other Poles, and not on other member states. If I
+want the mechanism in [Direct Democracy](/book/direct-democracy) to be real, it
+has to be real on the questions I care about most, including this one. I will
+make the case and try to win the vote. That is the whole of my claim.
+
+It is also the same principle as the rest of this chapter. Decide openly who you
+are inviting, say so out loud, and build the route. The alternative is not
+neutrality — it is having no policy and then describing whatever happens as
+though somebody chose it.
+
 ## What I do not know
 
 I am not going to invent numbers for a website, so here is the honest list of
