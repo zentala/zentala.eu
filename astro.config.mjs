@@ -1,25 +1,36 @@
+import { readdirSync } from 'node:fs';
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 
+// Row 1/2: before E006-T08, docs/[...slug].astro had no namespace filter, so
+// EVERY book chapter got an accidental /docs/book/<slug> twin (entry.slug,
+// lowercased) alongside its real /book/<slug> page — not just the 13 chapters
+// that got an explicit Astro.redirect() wrapper file. Anyone who bookmarked
+// or linked to any of those accidental twins needs a real redirect, so this
+// entry is generated from the same directory the content collection reads,
+// rather than hand-listing the previously-wrapped subset. Excludes sidecars
+// (never had a /docs/ twin) and the two eGov chapters (row 4, redirected to
+// the merged chapter instead of to themselves).
+const bookChapterRedirects = Object.fromEntries(
+  readdirSync(new URL('./src/content/docs/book/', import.meta.url))
+    .filter((name) => /\.mdx?$/.test(name) && !name.includes('.sidecar.'))
+    .map((name) => name.replace(/\.mdx?$/, ''))
+    .filter((slug) => !['eGov-vison', 'eGov-challenges'].includes(slug))
+    .map((slug) => [`/docs/book/${slug}`, `/book/${slug}`])
+);
+
 // Legacy /docs/* URLs, retired in E006-T08 (see
 // .plan/epics/E006-2026-09-25-design-editorial-ia/tasks/E006-T08.md and
 // .plan/INFORMATION-ARCHITECTURE.md §9). Grouped by the row in that table.
 const redirects = {
-  // Row 2: the book index and its 9 straightforward wrapper slugs.
+  // Row 2: the book index, plus every chapter slug (see bookChapterRedirects
+  // above) — this covers the 9 previously-wrapped slugs and every other
+  // chapter that had the same accidental twin.
   '/docs/book': '/book',
-  '/docs/book/digital-receipts': '/book/digital-receipts',
-  '/docs/book/economic-growth-language-unity': '/book/economic-growth-language-unity',
-  '/docs/book/european-blockchain-archives': '/book/european-blockchain-archives',
-  '/docs/book/european-elearning-system': '/book/european-elearning-system',
-  '/docs/book/language-integration-administrative-implementation':
-    '/book/language-integration-administrative-implementation',
-  '/docs/book/media-cultural-integration': '/book/media-cultural-integration',
-  '/docs/book/near-zero-transaction-costs': '/book/near-zero-transaction-costs',
-  '/docs/book/predictive-healthcare-system': '/book/predictive-healthcare-system',
-  '/docs/book/unified-payment-zone': '/book/unified-payment-zone',
+  ...bookChapterRedirects,
 
   // Row 2: /why and its old customSlug spelling.
   '/docs/why': '/why',
