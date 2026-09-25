@@ -32,6 +32,14 @@ const { columns = 2 } = Astro.props;
     height: auto !important;
   }
 
+  /* Card.astro's p-8 is generous for a 375px screen, where it costs a third
+     of the line length. */
+  @media (max-width: 480px) {
+    .why-grid > :global(.card) {
+      padding: 1.5rem;
+    }
+  }
+
   @media (min-width: 768px) {
     .why-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
