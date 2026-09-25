@@ -401,3 +401,69 @@ Quoted so they can be put back. Items 1, 2 and 5 are on no page today.
    choose it rather than be a burden" and "An avalanche of psychological problems is already
    excluding more and more people from the labour market". Cut rather than softened; the same
    register survives in src/content/docs/support/time-is-running-out.mdx. Paweł decides.
+
+## WhyDigitalReform.astro — deleted by E006-T07, prose quoted verbatim (2026-09-25)
+
+`DESIGN.md` Migration step 6 retires `WhyDigitalReform.astro` (its four timeline blocks
+were hardcoded content that belongs in a chapter, not in a component). It was rendered on
+`/why` (`why.mdx:197-199`, already noted in Block 7 above) and in `home-classic.astro` and
+`ui/index.astro` as examples, both removed by this task. Nobody had moved its prose into a
+chapter before the component's deletion, so it is quoted here in full — four numbered
+blocks, each with an icon, a title, two paragraphs and a highlight line — so it can still be
+placed once a home is chosen (most likely `european-egovernment` for 1–3, and
+`robotic-reindustrialisation` or the defence/robotics chapter for block 4).
+
+1. **Adapting to a New Economic Era** (icon `settings`):
+   > "We already live in a digital and information-based economy, yet our administrative and
+   > state structures still operate with industrial-era logic. This fundamental misalignment
+   > hampers our potential."
+   >
+   > "Instead of merely translating outdated administrative processes into technological
+   > solutions, we must redesign administrative processes from the ground up, optimizing for
+   > technology."
+   >
+   > Highlight: "Digital reform is not just digitization - it's a profound shift in how we
+   > think about the state and economy, treating them as a software project built from
+   > scratch with efficiency and modernity in mind."
+
+2. **Europe as a Unified Economic Organism** (icon `globe`):
+   > "To meet the great engineering and industrial challenges of our time, Europe must
+   > function as a unified economic organism. Only by working together at scale can we be
+   > competitive in the global economy."
+   >
+   > "Linguistic and digital integration are the foundations that will enable functioning as
+   > a single organism - allowing us to effectively communicate and collaborate across
+   > borders."
+   >
+   > Highlight: "When we remove communication and bureaucratic barriers, we'll unleash
+   > Europe's immense creative and industrial potential, enabling ambitious continent-scale
+   > projects."
+
+3. **The Economic Imperative** (icon `euro`):
+   > "Optimizing administrative, tax, and legal processes through digitization will radically
+   > transform the entire economy. Applying economies of scale and IT approaches to state
+   > management will bring enormous savings."
+   >
+   > "Instead of 27 different administrative systems, we can build one shared system, pooling
+   > development and maintenance costs. This means better systems at lower costs."
+   >
+   > Highlight: "Transitioning from paper-based to digital processes is not just about
+   > convenience, but a fundamental shift in the efficiency of the entire economy."
+
+4. **Defense and Security** (icon `shield`):
+   > "Robotization is an essential element of modern defense. Eastern European and
+   > Scandinavian countries, threatened by Russia, have a vital interest in deeply developing
+   > robotics for defensive purposes."
+   >
+   > "Autonomous robotic systems can monitor borders, respond to threats, and provide
+   > effective deterrence, increasing the security of the entire Union."
+   >
+   > Highlight: "The same technology can help southern countries manage migration flows,
+   > offering humane and effective solutions for border patrol and monitoring."
+
+**Verdict:** blocks 1–3 restate the eGovernment argument already made at more length in
+`european-egovernment.mdx` (and that chapter carries invented figures flagged for rewrite in
+`src/AGENTS.md` §8, Q9) — worth checking for duplication before reusing rather than pasting
+in as-is. Block 4's defence framing does not exist anywhere else on the site today; it is
+the closest thing to a citation for the "military robotics research … converted to civilian
+use" line in `src/lib/vision-content.ts` and `/vision#robotics`, and is worth keeping.
