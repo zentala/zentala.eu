@@ -35,8 +35,8 @@ Article pages hard-code dark-theme utilities, so in light theme the h1 is white 
 
 ## Acceptance criteria
 
-- [ ] No `text-white`, `prose-invert` or literal `text-gray-*` on article routes; colours come from tokens / theme-* classes
-- [ ] axe color-contrast = 0 on /book/<slug>, /book, /commentary/<slug>, /vision/digital-integration in both themes
+- [x] No `text-white`, `prose-invert` or literal `text-gray-*` on article routes; colours come from tokens / theme-* classes
+- [x] axe color-contrast = 0 on /book/<slug>, /book, /commentary/<slug>, /vision/digital-integration in both themes
 - [ ] Light-theme screenshots of those pages attached (before/after)
 
 ## Evidence

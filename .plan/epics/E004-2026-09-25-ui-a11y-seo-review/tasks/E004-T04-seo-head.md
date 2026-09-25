@@ -33,11 +33,11 @@ Layout takes only `title`; every page ships the same hard-coded description (Lay
 
 ## Acceptance criteria
 
-- [ ] Layout props: title, description, canonical (derived from Astro.site + path), ogImage, noindex, type
-- [ ] `site` set in astro.config.mjs (see T05 decision)
-- [ ] Collection routes pass entry.data.description; static pages pass their own
-- [ ] OG + Twitter card tags, `theme-color` light/dark, `color-scheme` on <html>
-- [ ] Content audit reports duplicate or missing descriptions (extend scripts/content-audit.mjs)
+- [x] Layout props: title, description, canonical (derived from Astro.site + path), ogImage, noindex, type
+- [x] `site` set in astro.config.mjs (see T05 decision)
+- [x] Collection routes pass entry.data.description; static pages pass their own
+- [x] OG + Twitter card tags, `theme-color` light/dark, `color-scheme` on <html>
+- [x] Content audit reports duplicate or missing descriptions (extend scripts/content-audit.mjs)
 
 ## Evidence
 

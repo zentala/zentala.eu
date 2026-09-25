@@ -33,9 +33,9 @@ public/sitemap.xml is hand-written: 21 URLs on the wrong domain eu.zentala.io, w
 
 ## Acceptance criteria
 
-- [ ] @astrojs/sitemap generates the sitemap for https://zentala.eu; excludes /ui, /home-classic, /docs/book/*, /docs/why, drafts
-- [ ] robots.txt with Sitemap line; explicitly allows search/citation bots (Googlebot, Bingbot, OAI-SearchBot, Claude-SearchBot, PerplexityBot)
-- [ ] Training bots (GPTBot, ClaudeBot, Google-Extended, CCBot) handled per Paweł's decision
+- [x] @astrojs/sitemap generates the sitemap for https://zentala.eu; excludes /ui, /home-classic, /docs/book/*, /docs/why, drafts
+- [x] robots.txt with Sitemap line; explicitly allows search/citation bots (Googlebot, Bingbot, OAI-SearchBot, Claude-SearchBot, PerplexityBot)
+- [x] Training bots (GPTBot, ClaudeBot, Google-Extended, CCBot) handled per Paweł's decision
 - [ ] No `eu.zentala.io` left in the repo
 
 ## Decision for Paweł

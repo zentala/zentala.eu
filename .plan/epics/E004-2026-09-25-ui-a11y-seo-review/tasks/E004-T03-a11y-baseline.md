@@ -35,13 +35,13 @@ Close the WCAG 2.2 AA gaps found on every page by axe and keyboard walk.
 
 ## Acceptance criteria
 
-- [ ] Skip link to `#main`; Layout renders a single `<main id="main">` (pages stop adding their own)
-- [ ] Mobile menu button: aria-label, aria-expanded kept in sync, aria-controls
-- [ ] ThemeToggle: aria-pressed or state in label; decorative SVGs aria-hidden
-- [ ] Global `:focus-visible` ring from a token (no bare outline-none)
-- [ ] Logo alt="" when text sits next to it
-- [ ] `scroll-behavior: smooth` only under `prefers-reduced-motion: no-preference`
-- [ ] Inline links in text underlined (link-in-text-block); /support input has a label
+- [x] Skip link to `#main`; Layout renders a single `<main id="main">` (pages stop adding their own)
+- [x] Mobile menu button: aria-label, aria-expanded kept in sync, aria-controls
+- [x] ThemeToggle: aria-pressed or state in label; decorative SVGs aria-hidden
+- [x] Global `:focus-visible` ring from a token (no bare outline-none)
+- [x] Logo alt="" when text sits next to it
+- [x] `scroll-behavior: smooth` only under `prefers-reduced-motion: no-preference`
+- [x] Inline links in text underlined (link-in-text-block); /support input has a label
 - [ ] axe: button-name, label, link-in-text-block = 0 across the 12 audited pages
 
 ## Evidence
