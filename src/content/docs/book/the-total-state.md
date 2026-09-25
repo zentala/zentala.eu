@@ -5,6 +5,9 @@ title: The Total State
 description: "A state built on typewriters wastes people and money; one built on software can switch a person off. Digitalisation and democracy must ship together."
 tags: digital state, direct democracy, digital identity, administration, Central Europe
 author: Paweł Żentała
+layer: digital
+kind: argument
+order: 1
 ---
 
 I want to argue two things in one chapter, and they cut against each other.

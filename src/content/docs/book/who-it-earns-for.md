@@ -5,6 +5,9 @@ title: Who It Earns For
 description: "Money cannot buy a service nobody supplies. The system we build must produce a surplus that reaches society, not only the owners of the machines."
 tags: ownership, public services, surplus, direct democracy, economics
 author: Paweł Żentała
+layer: path
+kind: argument
+order: 1
 ---
 
 You can print as much money as you like. It will not make a nurse appear.

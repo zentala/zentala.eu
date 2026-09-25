@@ -5,6 +5,9 @@ title: European Science
 description: Why there is no European AI, what a European science would work on, and why mental health is the first large test of whether it works.
 tags: science, research, health, artificial intelligence, mental health
 author: Paweł Żentała
+layer: robotics
+kind: argument
+order: 2
 ---
 
 Ask why Europe has no AI company of its own and you will get answers about

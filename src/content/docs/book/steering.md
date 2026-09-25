@@ -5,6 +5,9 @@ title: Steering
 description: "A state that decides slowly falls over. This chapter argues our decision loop is too slow, and the fix is faster feedback between state and economy."
 tags: direct democracy, decision speed, feedback, social dialogue, cybernetics, industrial policy
 author: Paweł Żentała
+layer: path
+kind: argument
+order: 5
 ---
 
 Watch anyone ride a bicycle. They are never upright. They lean left, correct,

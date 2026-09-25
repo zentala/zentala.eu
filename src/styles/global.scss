@@ -217,4 +217,89 @@ body {
         border-top: 1px solid var(--color-border);
       }
     }
+
+    // Term (E006-T12, IA §7 / DESIGN.md "TermRef and Term card"): a link
+    // first, a tooltip second — dotted underline distinguishes it from a
+    // regular prose link without any extra colour.
+    a.term {
+      text-decoration-line: underline;
+      text-decoration-style: dotted;
+      text-decoration-color: var(--color-accent-primary);
+      text-underline-offset: 3px;
+    }
   }
+
+// Term card (E006-T12, IA §7 / DESIGN.md "TermRef and Term card"): a
+// `popover="manual"` element, opened/positioned by TERM_TOOLTIP_SCRIPT.
+// Reset the UA popover default box (centred, auto inset) before applying
+// the card's own look.
+.term-card {
+  position: fixed;
+  margin: 0;
+  padding: 1.25rem;
+  width: 22rem;
+  max-width: calc(100vw - 1rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-primary);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+
+  &::backdrop {
+    display: none;
+  }
+
+  &:popover-open {
+    @media not (prefers-reduced-motion: reduce) {
+      animation: term-card-in 0.12s ease-out;
+    }
+  }
+}
+
+.term-card__term {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+}
+
+.term-card__body,
+.term-card__source {
+  margin: 0 0 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.term-card__links {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.term-card__read,
+.term-card__all {
+  color: var(--color-accent-primary);
+  text-decoration: underline;
+
+  &:hover {
+    color: var(--color-accent-secondary);
+  }
+}
+
+.term-card__all {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+@keyframes term-card-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
