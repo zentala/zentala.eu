@@ -1,214 +1,139 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import DisplayTitle from '../components/DisplayTitle.astro';
+/**
+ * /principles — how this site decides what to propose: the four principles
+ * and the four ownership rules, each as a first-class item with the chapter
+ * that argues it (IA §1.1). It does not retell the demographic story
+ * (IA §5 row 11: the frame stays a pointer) and it does not restate the
+ * ownership argument (§5 row 2: the four rules as a list plus links to the
+ * two canonical homes).
+ *
+ * Moved onto ArticleLayout (DESIGN.md Migration step 3, E006-T19): the
+ * 52rem frame and the card grids are gone; the page consumes the
+ * 66ch `--article-measure` column through ArticleGrid like every other
+ * long-form route.
+ *
+ * Every sentence below traces to .plan/vision/aging-society-frame.md
+ * (dictated 2026-09-20): the layers :39-42, :85-86; the language floor
+ * :53-57, :67-70; old-age provision :96-98; who captures the gains
+ * :113-120, :155-162; how it happens :166-169; who pays :175-177; the
+ * political position :211-226. The 2024-25 principles prose ("empathetic
+ * cooperation over egocentric competition", "blockchain-based contracts",
+ * "a testament to the power of innovation") had no dictation behind it and
+ * is retired (src/AGENTS.md §2, "Corporate register").
+ */
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import Lead from '../components/Lead.astro';
+import Section from '../components/Section.astro';
 ---
 
-<Layout title="Guiding Principles for European Integration" description="The principles guiding this vision for European reform: subsidiarity, transparency, and reform that keeps the EU accountable to its citizens.">
-  <div class="container mx-auto max-w-6xl px-4 py-8">
-    <DisplayTitle title="Guiding Principles" />
-    
-    <div class="mb-10 text-xl" style="color: var(--color-text-secondary);">
-      Our framework for European integration is built on core principles that ensure reforms benefit all member states while making Europe stronger and more competitive globally.
-    </div>
+<ArticleLayout
+  title="Principles"
+  description="How this site decides what to propose: four principles and four ownership rules, each with the chapter that argues it, once the demographic frame is accepted."
+  backHref="/vision"
+  backLabel="Back to Vision Overview"
+>
+  <Fragment slot="meta">
+    <Lead
+      paragraphs={[
+        'Every proposal on this site is tested against the same few rules. This page states them, in the order the frame sets — a working language, then a digital state, then robotics — and points at the chapter where each one is argued.',
+      ]}
+      claim="Nothing here is the argument itself. It is the ruler the arguments are measured with."
+    />
+  </Fragment>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-      <!-- Principle 1 -->
-      <div class="principle p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <div class="flex items-center mb-4">
-          <div class="flex-shrink-0 bg-gradient-to-br rounded-full w-10 h-10 flex items-center justify-center mr-3" 
-               style="background: linear-gradient(to bottom right, var(--color-accent-primary), var(--color-accent-secondary));">
-            <span class="text-xl font-bold text-white">1</span>
-          </div>
-          <h3 class="font-bold" style="color: var(--color-text-primary);">Seeking Mutual Benefit</h3>
-        </div>
-        <p style="color: var(--color-text-secondary);">Focus on reforms that provide clear advantages to all member states, fostering a spirit of collective progress rather than zero-sum competition.</p>
-      </div>
-      
-      <!-- Principle 2 -->
-      <div class="principle p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <div class="flex items-center mb-4">
-          <div class="flex-shrink-0 bg-gradient-to-br rounded-full w-10 h-10 flex items-center justify-center mr-3" 
-               style="background: linear-gradient(to bottom right, var(--color-accent-primary), var(--color-accent-secondary));">
-            <span class="text-xl font-bold text-white">2</span>
-          </div>
-          <h3 class="font-bold" style="color: var(--color-text-primary);">Leveraging Economies of Scale</h3>
-        </div>
-        <p style="color: var(--color-text-secondary);">Develop solutions collectively that would be too expensive or complex for individual nations to create independently.</p>
-      </div>
-      
-      <!-- Principle 3 -->
-      <div class="principle p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <div class="flex items-center mb-4">
-          <div class="flex-shrink-0 bg-gradient-to-br rounded-full w-10 h-10 flex items-center justify-center mr-3" 
-               style="background: linear-gradient(to bottom right, var(--color-accent-primary), var(--color-accent-secondary));">
-            <span class="text-xl font-bold text-white">3</span>
-          </div>
-          <h3 class="font-bold" style="color: var(--color-text-primary);">Building a Common Culture</h3>
-        </div>
-        <p style="color: var(--color-text-secondary);">Foster a European identity alongside national cultures through shared systems, language, and infrastructure.</p>
-      </div>
-      
-      <!-- Principle 4 -->
-      <div class="principle p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <div class="flex items-center mb-4">
-          <div class="flex-shrink-0 bg-gradient-to-br rounded-full w-10 h-10 flex items-center justify-center mr-3" 
-               style="background: linear-gradient(to bottom right, var(--color-accent-primary), var(--color-accent-secondary));">
-            <span class="text-xl font-bold text-white">4</span>
-          </div>
-          <h3 class="font-bold" style="color: var(--color-text-primary);">Improving Quality of Life</h3>
-        </div>
-        <p style="color: var(--color-text-secondary);">Address challenges too big for individual nations through radical reforms and shifting appropriate competencies to the EU level.</p>
-      </div>
-    </div>
+  <Section eyebrow="The frame" title="Why now">
+    <p>
+      The demographic case for acting now — the shared condition, the window of roughly
+      thirty years we still have to build the systems that will carry us, and the shift
+      from relying on more workers to relying on automation — is laid out in full in
+      <a href="/book/designing-our-retirement">Designing Our Retirement</a>. What follows
+      is not that argument again; it is the rules we apply once we accept it.
+    </p>
+  </Section>
 
-    <!-- Extended Principles Section -->
-    <DisplayTitle level={2} title="Applying Our Principles" class="mt-12 mb-6" />
-    
-    <div class="grid md:grid-cols-2 gap-8 mb-12">
-      <div class="p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <h3 class="text-xl font-bold mb-4" style="color: var(--color-text-primary);">Economic Integration</h3>
-        <p class="mb-4" style="color: var(--color-text-secondary);">
-          Our approach to economic integration focuses on reducing transaction costs and administrative barriers, enabling businesses of all sizes to operate seamlessly across the European market.
+  <Section eyebrow="How we decide" title="The four principles" lead="Each one is a sentence from the frame, and each has a chapter that carries it.">
+    <ol>
+      <li>
+        <p>
+          <strong>Everyone wins, or it does not pass.</strong> A proposal built so that
+          everyone wins can earn the unanimity that treaty change requires; treaty change is
+          then a question of political will, which follows conviction. The way to find such
+          proposals is to start from what almost all of us already agree on and work that
+          out properly, instead of hunting for the line that divides.
+          <a href="/book/political-path">The Political Path</a> argues the first half;
+          <a href="/manifesto#the-method">the manifesto</a> names the second as a method.
         </p>
-        <p style="color: var(--color-text-secondary);">
-          By implementing unified digital payment systems, standardized administrative procedures, and blockchain-based contracts, we can eliminate millions of hours wasted on redundant paperwork and create true economic efficiency.
+      </li>
+      <li>
+        <p>
+          <strong>Pay once, together.</strong> Every member state funds its own
+          digitalisation separately. Doing it together is not a new budget; it is a less
+          wasteful use of the one we have.
+          <a href="/book/designing-our-retirement#who-pays-for-it">Who pays for it</a>, in
+          the frame chapter.
         </p>
-      </div>
-      
-      <div class="p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <h3 class="text-xl font-bold mb-4" style="color: var(--color-text-primary);">Cultural Approach</h3>
-        <p class="mb-4" style="color: var(--color-text-secondary);">
-          Rather than forcing artificial cultural integration, our vision relies on building shared infrastructure and systems that naturally bring Europeans together through daily interactions and collaboration.
+      </li>
+      <li>
+        <p>
+          <strong>One working language makes one public.</strong> European political
+          consciousness cannot exist without a shared language: the awareness people build
+          working together in business becomes, over time, the awareness they bring to
+          European politics. A shared interest is what keeps us from turning on each
+          other; the Union was built so there would be no more war, and a common venture
+          that stays worth more than any quarrel is how that works in this century.
+          <a href="/book/one-working-language">One Working Language</a> is the floor of
+          the whole plan.
         </p>
-        <p style="color: var(--color-text-secondary);">
-          Language integration serves as the foundation, enabling Europeans to communicate directly while preserving linguistic diversity and national cultural identities.
+      </li>
+      <li>
+        <p>
+          <strong>Automate old-age provision so the few young people left are not crushed
+          carrying it.</strong> Robotics is the top of the stack, not the starting point; it
+          needs the layers beneath it, and the targets come in the order they are ready —
+          municipal services, food production and delivery, predictive medicine.
+          <a href="/book/robotic-reindustrialisation">Robotic Reindustrialisation</a>
+          argues where the machines go first.
         </p>
-      </div>
-      
-      <div class="p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <h3 class="text-xl font-bold mb-4" style="color: var(--color-text-primary);">Technological Leadership</h3>
-        <p class="mb-4" style="color: var(--color-text-secondary);">
-          European integration must position the continent as a technological leader, particularly in fields where we have existing strengths: industrial automation, precision engineering, and sustainable technologies.
-        </p>
-        <p style="color: var(--color-text-secondary);">
-          By establishing unified robotics standards, shared research initiatives, and continent-wide manufacturing policies, we can create a new European industrial renaissance.
-        </p>
-      </div>
-      
-      <div class="p-6 rounded-lg shadow-md transition-colors duration-300" 
-           style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-        <h3 class="text-xl font-bold mb-4" style="color: var(--color-text-primary);">Pragmatic Implementation</h3>
-        <p class="mb-4" style="color: var(--color-text-secondary);">
-          Our vision embraces a pragmatic approach to implementation, starting with willing member states and expanding as benefits become apparent to others.
-        </p>
-        <p style="color: var(--color-text-secondary);">
-          This allows for faster experimentation, adaptation based on real-world feedback, and avoids the paralysis that can occur when trying to achieve unanimous agreement among all member states simultaneously.
-        </p>
-      </div>
-    </div>
+      </li>
+    </ol>
+  </Section>
 
-    <!-- Comprehensive Principles Section -->
-    <div class="relative mt-16 p-8 rounded-xl shadow-lg transition-colors duration-300" 
-         style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border);">
-      <div class="absolute top-0 right-0 left-0 h-2 rounded-t-xl" 
-           style="background: linear-gradient(to right, var(--color-accent-primary), var(--color-accent-secondary));"></div>
-      
-      <DisplayTitle level={2} title="Vision for European Cooperation and Integration" class="mb-8" />
-      
-      <div class="prose prose-lg max-w-none transition-colors duration-300" 
-           style="color: var(--color-text-secondary);">
-        
-        <h3 style="color: var(--color-text-primary);">Principles of Mutual Benefit</h3>
-        <p>
-          The proposed reforms are designed with a fundamental principle: creating value for all member states through strategic cooperation. This vision isn't about compromise - it's about identifying and developing areas where cooperation naturally generates greater value than individual action.
-        </p>
-        
-        <h3 style="color: var(--color-text-primary);">Nothing unites people more than common business.</h3>
-        <p>
-          The proposed reforms aren't just about integration - they're about reaching for extraordinary opportunities that emerge when we work together. This vision is futuristic and pragmatic at the same time: it identifies futuristic areas where cooperation can generate significant economic growth and quality of life improvements for all Europeans. By working together, we can achieve things that would be impossible to reach separately. This proposal outlines specific areas of cooperation and ways to organize them to maximize our collective potential.
-        </p>
-        
-        <h3 style="color: var(--color-text-primary);">Why this urgency</h3>
-        <p>
-          The demographic case for acting now — the shared condition, the window of roughly thirty
-          years we still have to build the systems that will carry us, and the shift from relying on
-          more workers to relying on automation — is laid out in full in
-          <a href="/book/designing-our-retirement" style="color: var(--color-accent-primary); text-decoration: underline;">Designing Our Retirement</a>.
-          What follows here is not that argument again; it is the rules we apply once we accept it.
-        </p>
+  <Section eyebrow="Runs through every proposal" title="Who captures the gains" lead="Private capital, or everyone. Every proposal on this site has to answer it.">
+    <p>
+      If automation replaces the labour our pensions depend on and the returns go to a
+      handful of owners, we have solved production and destroyed the distribution that made
+      it worth solving. Settling ownership first is the wrong order; the models will be
+      mixed. What matters more is that the technology stays cheap enough that it cannot be
+      enclosed:
+    </p>
+    <ul>
+      <li>cheap to buy and run;</li>
+      <li>available to every municipality, farm and clinic;</li>
+      <li>built on open standards;</li>
+      <li>hard to monopolise.</li>
+    </ul>
+    <p>
+      Why cheapness, not ownership, is the goal is argued in
+      <a href="/book/cheap-is-wealth">Cheap Is Wealth</a>. Who the surplus has to reach is
+      argued in
+      <a href="/book/who-it-earns-for#it-has-to-earn-for-society-not-only-for-capital">Who It Earns For</a>.
+    </p>
+  </Section>
 
-        <h3 style="color: var(--color-text-primary);">Who captures the gains</h3>
-        <p>
-          Every proposal on this site has to answer who benefits from automating what an aging
-          society can no longer staff — private capital, or everyone. Settling ownership first is
-          the wrong order. What matters more is that the technology stays cheap enough that
-          ownership cannot be enclosed:
-        </p>
-        <ul class="space-y-2">
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Cheap to buy and run</span>
-          </li>
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Available to every municipality, farm and clinic</span>
-          </li>
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Built on open standards</span>
-          </li>
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Hard to monopolise</span>
-          </li>
-        </ul>
-
-        <h3 style="color: var(--color-text-primary);">A Win-Win Cooperation Model</h3>
-        <p>
-          The success of this vision depends on member states' willingness to embrace empathetic cooperation over egocentric competition. While concerns and fears are natural, the proposed framework deliberately focuses on areas where integration benefits all participants. The goal is to create a cooperation model where:
-        </p>
-        <ul class="space-y-2">
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Every member state gains more than they invest.</span>
-          </li>
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Collective efficiency increases through integration.</span>
-          </li>
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Shared solutions address common challenges.</span>
-          </li>
-          <li class="flex items-start">
-            <span class="mr-2 mt-1" style="color: var(--color-accent-primary);">✓</span>
-            <span>Innovation and progress benefit all participants.</span>
-          </li>
-        </ul>
-        
-        <p class="mt-8">
-          We have roughly thirty years of working economy left to build the systems that will carry
-          us through the decades after — not as a burden managed in decline, but as a testament to
-          the power of innovation and cooperation applied in time. The ultimate goal is to design
-          systems that allow Europeans to live dignified, enjoyable lives, supported by the fruits of
-          their collective work and technological advancements.
-        </p>
-      </div>
-    </div>
-    
-    <!-- Call to Action Section -->
-    <div class="mt-12 text-center">
-      <a href="/vision" class="inline-block px-8 py-4 rounded-lg font-medium transition-colors duration-300" 
-         style="background: linear-gradient(to right, var(--color-accent-primary), var(--color-accent-secondary)); color: white;">
-        Explore the Full Vision
-      </a>
-    </div>
-  </div>
-</Layout>
+  <Section eyebrow="Where this stands" title="Pro-European, not attached to the present shape">
+    <p>
+      The current administration is rejected by a large part of the public, and it is not
+      the point. What is worth defending is the project underneath: free nations with enough
+      shared interest that war stays unthinkable. If the institutions have to change form to
+      do that, they change form — the shape proposed here is
+      <a href="/book/direct-democracy#the-union-of-nations">a Union of Nations</a>, rebuilt
+      from the inside.
+    </p>
+    <p>
+      This is a manifesto and a programme, not a party platform, and it does not need to be
+      politically correct. It needs to be worth reading. The demand it makes of you is on
+      <a href="/manifesto">the manifesto</a>; the full plan is on
+      <a href="/vision">the vision page</a>.
+    </p>
+  </Section>
+</ArticleLayout>
