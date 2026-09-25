@@ -180,4 +180,6 @@ Start by carrying the argument. Then pick a piece and build it.
 it — [a common economy with English as its working
 language](/docs/book/european-english), [a digital
 state](/docs/book/european-egovernment), and robotics on top of both — are each a
-precondition for the next.*
+precondition for the next. For who decides any of it, and why the route runs
+through citizens rather than through Brussels, see [The Political
+Path](/docs/book/political-path).*
