@@ -3,13 +3,20 @@ import { defineCollection, z } from 'astro:content';
 // Define common schema for all content collections
 const baseSchema = z.object({
     title: z.string(),
+    description: z.string(),
+    tags: z.union([z.string(), z.array(z.string())]).optional(),
+    author: z.string().optional(),
+    customSlug: z.string().optional(), // Renamed from slug to customSlug to avoid conflict with Astro's reserved slug field
+    draft: z.boolean().optional().default(false) // Add draft status option
+});
+
+// Docs (book, articles, ideas, why...): every entry needs a real date, author
+// and an SEO/GEO-sized description for Article JSON-LD and freshness signals.
+const docsSchema = baseSchema.extend({
     description: z.string().min(70).max(160),
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),
-    tags: z.union([z.string(), z.array(z.string())]).optional(),
-    author: z.string().default('Paweł Żentała'),
-    customSlug: z.string().optional(), // Renamed from slug to customSlug to avoid conflict with Astro's reserved slug field
-    draft: z.boolean().optional().default(false) // Add draft status option
+    author: z.string().default('Paweł Żentała')
 });
 
 // Define schema for transcripts collection
@@ -55,7 +62,7 @@ export const collections = {
         schema: commentarySchema
     }),
     docs: defineCollection({
-        schema: baseSchema
+        schema: docsSchema
     }),
     ideas: defineCollection({
         schema: baseSchema
