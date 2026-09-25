@@ -8,6 +8,8 @@ kind: proposal
 order: 2
 ---
 
+import ProvenanceNote from '../../../components/ProvenanceNote.astro';
+
 ## TLDR
 
 English is already the most useful common second language in continental Europe. The practical opportunity is not to invent a new dialect, but to build a **European English Standard (EES)**: a shared layer for administration, education, science, business and cross-border public life.
@@ -18,7 +20,14 @@ The first deliverable should be a tested 60-item vocabulary and usage pilot. Onl
 
 ## The proposal
 
-The original idea was to make English an additional official language across the EU and create a European English council able to settle questions such as `chips` or `fries`. This article turns that idea into a buildable proposal.
+The case for a working language, why English, why now and what it is for, is made in [One economy, one working language](/book/one-working-language). This chapter assumes it and asks only how a standard would be built. The original idea was a European English council able to settle questions such as `chips` or `fries`; the sections below turn that into a buildable proposal.
+
+<ProvenanceNote
+  source="book/language.md:12 (his 2024-06-22 draft, deleted in E006-T15; text at git d2e092a); the argument itself: /book/one-working-language"
+  dictated="A council for European English that settles questions such as chips or fries; English as an additional official language in every member state."
+  added={["The European English Standard, its decisions, phases, scaling plan, 60-item pilot and governance: research, proposed, not adopted", "Eurobarometer, Eurostat, EU language policy, Style Guide and ELF sources (sourced)"]}
+  open="ASK-2 in /book/one-working-language (second official language, or working language of administration and business)"
+/>
 
 The council should not decide which accent is correct. It should maintain a **public interoperability standard** for situations in which Europeans with different first languages need to understand one another:
 
@@ -32,7 +41,7 @@ The national language remains the primary language of each country. EES is an ad
 
 ## Why this is plausible
 
-The 2024 Eurobarometer reported that 47% of Europeans speak English as a foreign language, around seven in ten young Europeans can converse in English, and 98.3% of lower-secondary students learn it. English is therefore the strongest candidate for a shared operational language, even though proficiency and access remain uneven. [European Commission — language Eurobarometer](https://ec.europa.eu/commission/presscorner/api/files/document/print/fen/ip_24_2686/IP_24_2686_EN.pdf)
+The 2024 Eurobarometer reported that 47% of Europeans speak English as a foreign language and that seven in ten young Europeans can hold a conversation in it ([European Commission, Europeans and their languages](https://ec.europa.eu/commission/presscorner/detail/en/ip_24_2686)); 97.6% of lower-secondary pupils in the EU were learning English in 2024 ([Eurostat](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Foreign_language_learning_statistics)). English is therefore the strongest candidate for a shared operational language, even though proficiency and access remain uneven.
 
 English is still one of the EU's 24 official and working languages, including after the United Kingdom left the Union. The EU already has language rules, professional translation services and IATE, its shared terminology database. EES would build on that infrastructure. [EU language policy](https://european-union.europa.eu/principles-countries-history/languages_en), [IATE](https://iate.europa.eu/home)
 
@@ -42,7 +51,7 @@ Research on English as a Lingua Franca describes European accents, grammatical t
 
 ## Architectural decisions
 
-These are the decisions I would make before building the system.
+These are the decisions to take before building the system. They are the research behind the proposal, not a position the author has adopted.
 
 | Decision | Proposal | Why |
 |---|---|---|
@@ -57,7 +66,7 @@ These are the decisions I would make before building the system.
 | 9. How is change handled? | Every decision has evidence, confidence, owner, date and review date. | Language changes; the standard must be reversible. |
 | 10. How is fairness handled? | Publish uncertainty and country-level results; do not treat native-speaker intuition as the sole authority. | The users of EES are predominantly multilingual Europeans. |
 
-## How I would test it
+## How it would be tested
 
 ### Phase 0 — define the target
 
@@ -210,13 +219,10 @@ It should not impose one national accent, treat native-speaker intuition as the 
 6. Test it in one public form, one travel notice and one business workflow.
 7. Decide whether the evidence supports scaling to 200 items.
 
-## Related documents
+## Related
 
-- [Language Integration overview](/vision/language-integration)
-- [Administrative implementation](/book/language-integration-administrative-implementation)
-- [European media and cultural integration](/book/media-cultural-integration)
-- [Economic growth through language unity](/book/economic-growth-language-unity)
-- [Earlier EU Language Integration draft](/book/language)
+- [One economy, one working language](/book/one-working-language): the argument this standard serves.
+- [The language layer](/vision#language) in the frame.
 
 ## Sources
 
