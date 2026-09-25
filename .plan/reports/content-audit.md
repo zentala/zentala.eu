@@ -1,9 +1,9 @@
 # Content audit — 2026-09-25
 
 ## TLDR
-Scanned 135 built routes, 88 content files, 450 links (75 unique external).
+Scanned 135 built routes, 88 content files, 439 links (70 unique external).
 Found 17 links to draft pages, 8 links to missing pages, 13 dead external links, 16 orphan pages, 16 drafts, 48 pages missing a meta description, 1 duplicate descriptions.
-IA shape checks: ran — 16 pages over two clicks from /, 0 entries missing layer/kind, 0/0 broken glossary hrefs, 0 /docs/ links in chapters, 112 built links to a retired redirect path, 19/12 concepts missing their canonical link.
+IA shape checks: ran — 16 pages over two clicks from /, 0 entries missing layer/kind, 0/0 broken glossary hrefs, 0 /docs/ links in chapters, 112 built links to a retired redirect path, 20/13 concepts missing their canonical link.
 
 ## Links to draft pages (17) — 404 in production
 | Link | Where | Draft file |
@@ -41,13 +41,13 @@ IA shape checks: ran — 16 pages over two clicks from /, 0 entries missing laye
 ## Dead external links (13)
 | URL | Status | Where |
 |---|---|---|
-| https://www.sciencedirect.com/science/article/pii/S0261379421000500 | 403 (bot block? check by hand) | src/content/docs/book/choosing-people.md:162 |
-| https://academic.oup.com/book/32249/chapter/268436667 | 403 (bot block? check by hand) | src/content/docs/book/choosing-people.md:168 |
+| https://www.sciencedirect.com/science/article/pii/S0261379421000500 | 403 (bot block? check by hand) | src/content/docs/book/choosing-people.mdx:157 |
 | https://commission.europa.eu/system/files/2023-11/styleguide_english_dgt_en.pdf | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:39 |
 | https://onlinelibrary.wiley.com/doi/full/10.1111/weng.12646 | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:41 |
 | https://commission.europa.eu/system/files/2023-11/styleguide_english_dgt_en.pdf | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:225 |
 | https://onlinelibrary.wiley.com/doi/full/10.1111/weng.12646 | 403 (bot block? check by hand) | src/content/docs/book/european-english.mdx:229 |
 | https://journals.sagepub.com/doi/full/10.1177/1023263X18824772 | 403 (bot block? check by hand) | src/content/docs/book/first-move.md:126 |
+| https://doi.org/10.1001/jama.2015.10803 | 403 (bot block? check by hand) | src/content/docs/book/new-cities.mdx:86 |
 | https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2022 | 404 | src/content/docs/book/safeguards.md:169 |
 | https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2022 | 404 | src/content/docs/book/safeguards.md:394 |
 | https://www.lovguiden.dk/en/det-offentlige/den-europaeiske-revisionsret/2026-03-24-eus-raadgivende-organer-leverer-udtalelser-for-sent-og-maaler-ikke-effekt | 429 | src/content/docs/book/steering.md:210 |
@@ -153,17 +153,17 @@ IA shape checks: ran — 16 pages over two clicks from /, 0 entries missing laye
 |---|---|
 | /book/cheap-is-wealth | unreachable |
 | /book/choosing-people | unreachable |
-| /book/direct-democracy | unreachable |
+| /book/direct-democracy | 3 |
 | /book/education-and-migration | unreachable |
 | /book/european-science | unreachable |
-| /book/first-move | unreachable |
+| /book/first-move | 4 |
 | /book/new-cities | unreachable |
 | /book/redesigning-the-state | unreachable |
-| /book/safeguards | unreachable |
+| /book/safeguards | 4 |
 | /book/steering | unreachable |
 | /book/the-shorter-week | unreachable |
 | /book/who-it-earns-for | unreachable |
-| /manifesto | unreachable |
+| /manifesto | 5 |
 | /book | unreachable |
 | /glossary | unreachable |
 | /site-map | unreachable |
@@ -293,12 +293,13 @@ _none_
 | /tags | /vision | dist/vision/index.html |
 | /tags | /why | dist/why/index.html |
 
-### Concepts link their canonical href (19 of 12 concept declarations missing one)
+### Concepts link their canonical href (20 of 13 concept declarations missing one)
 | File | Concept | Expected canonical href |
 |---|---|---|
-| src/content/docs/book/cheap-is-wealth.md:1 | who-captures-the-gains | /book/cheap-is-wealth |
-| src/content/docs/book/choosing-people.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
-| src/content/docs/book/choosing-people.md:1 | sortition | /glossary#sortition |
+| src/content/docs/book/cheap-is-wealth.mdx:1 | who-captures-the-gains | /book/cheap-is-wealth |
+| src/content/docs/book/cheap-is-wealth.mdx:1 | cheap-is-wealth | /glossary#cheap-is-wealth |
+| src/content/docs/book/choosing-people.mdx:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
+| src/content/docs/book/choosing-people.mdx:1 | sortition | /glossary#sortition |
 | src/content/docs/book/direct-democracy.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
 | src/content/docs/book/direct-democracy.md:1 | union-of-nations | /glossary#union-of-nations |
 | src/content/docs/book/european-egovernment.mdx:1 | the-digital-state | /glossary#the-digital-state |
@@ -310,8 +311,8 @@ _none_
 | src/content/docs/book/safeguards.md:1 | european-citizens-initiative | /glossary#european-citizens-initiative |
 | src/content/docs/book/steering.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
 | src/content/docs/book/steering.md:1 | requisite-variety | /glossary#requisite-variety |
-| src/content/docs/book/the-shorter-week.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
-| src/content/docs/book/the-total-state.md:1 | the-digital-state | /glossary#the-digital-state |
-| src/content/docs/book/the-total-state.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
+| src/content/docs/book/the-shorter-week.mdx:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
+| src/content/docs/book/the-total-state.mdx:1 | the-digital-state | /glossary#the-digital-state |
+| src/content/docs/book/the-total-state.mdx:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
 | src/content/docs/book/who-it-earns-for.md:1 | who-captures-the-gains | /book/cheap-is-wealth |
 | src/content/docs/book/who-it-earns-for.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |

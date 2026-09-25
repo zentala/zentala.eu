@@ -1,0 +1,294 @@
+---
+date: 2026-09-25
+updated: 2026-09-25
+draft: false
+title: Choosing People
+description: "I am not against politicians. I am against a way of choosing them that cannot tell competence from popularity, and hands defence to a farmer."
+concepts: [semi-direct-democracy, sortition]
+author: Paweł Żentała
+layer: path
+kind: proposal
+order: 6
+provenance: dictated
+---
+
+import Callout from '../../../components/Callout.astro';
+import ComparisonTable from '../../../components/ComparisonTable.astro';
+import MeansForYou from '../../../components/MeansForYou.astro';
+import Objection from '../../../components/Objection.astro';
+import ObjectionList from '../../../components/ObjectionList.astro';
+import Playbook from '../../../components/Playbook.astro';
+import ProvenanceNote from '../../../components/ProvenanceNote.astro';
+import PullQuote from '../../../components/PullQuote.astro';
+import SideNote from '../../../components/SideNote.astro';
+import SourceList from '../../../components/SourceList.astro';
+
+{/* SPINE: we have no procedure that admits the competent and excludes the incompetent, and the ballot should ask about the job. */}
+
+I am not against politicians. I do not think they are a worse class of human
+being than the rest of us; I have met decent ones, and there are many more doing
+the job quietly whom nobody writes about. My argument is about the machine we use
+to pick them.
+
+That machine has one measurable flaw: **it cannot tell competence from
+popularity.** It was never built to. Ask it to sort people by how much they are
+liked in a district and it does that superbly. Ask it which of them understands
+energy pricing, how an army is supplied, or what a hospital's finances look
+like, and it has no opinion, because nothing in it ever asks.
+
+[Steering](/book/steering) is about how information reaches a representative
+once they hold the seat. This chapter comes one step earlier in the chain: how
+they were selected, and for what.
+
+## A teacher gets the economy, a farmer gets defence
+
+A teacher in a small town is popular, because he is a good man and everybody's
+children passed through his classroom. He goes on a list, collects preference
+votes, and enters parliament. A doctor does the same, because people trust
+doctors. A farmer does the same, because the countryside sends someone.
+
+Then a government is assembled and the portfolios are handed out by negotiation
+between parties. The doctor may get health, which is at least a coincidence in
+the right direction. The teacher may get the economy and the farmer defence —
+not because anyone judged them the best available person for the job, but
+because their party needed the seats filled and they were the people it had.
+Those are people who should not be there.
+
+I voted for that man because he is from my district and I like him. I did not
+vote for him to run defence procurement. Nobody asked me that question, and
+there was no answer I could have given.
+
+<PullQuote>I did not vote for him to run defence procurement. Nobody asked me that question.</PullQuote>
+
+## The missing thing is a procedure
+
+Two separate things were decided in that sequence — *who is popular* and *who
+runs what* — and there is no connection between them. The first is decided by
+millions of people. The second is decided by a handful in a room over a weekend.
+My vote enters the first and never reaches the second.
+
+<Callout kind="demand" label="The demand">
+  A procedure that admits competent people to an office and keeps incompetent
+  ones out — enforced by the system, not by anybody's goodwill.
+</Callout>
+
+We do not have one. People hear this argument and answer with examples of good
+ministers, as if a good outcome proved a good mechanism. It does not. **A system
+that sometimes produces the right person by accident is not a selection
+procedure. It is a lottery with a good story attached.**
+
+Two things are missing, and they are different:
+
+- **No path from the vote to the office.** If I identify the person in this
+  country who best understands defence and vote for them, nothing in the system
+  carries that judgement to the defence ministry. The vote becomes a seat, and
+  the seat becomes a bargaining chip.
+- **No floor.** Nothing stops a person with no background in a field from taking
+  charge of it — not a hearing they can fail, not a qualification they must hold,
+  not a body that can say no. Goodwill is expected to handle it: the prime
+  minister's judgement, the party's sense of shame, the press noticing. Goodwill
+  is not a mechanism. It works on the days it works.
+
+The system has to do this, because everything that depends on people behaving
+well eventually meets people who do not.
+
+## Vote by portfolio
+
+Stop electing an undifferentiated pool of people and dividing the state between
+them afterwards. **Elect by field.** This is a shape, not a costed draft; the
+parts of it that already exist somewhere are listed further down.
+
+<Playbook title="The mechanism" steps={[
+  { action: "Divide the ballot by field, not by district alone.", why: "Ten ministries, or thirty fields — the number should follow how the state is actually divided, not a round figure." },
+  { action: "Give each field its own seats.", why: "Twenty people in one field, five in another, whatever the work requires." },
+  { action: "Vote within each field, for the people judged best in it.", why: "Defence candidates stand against defence candidates; health against health. The question on the ballot becomes the question that matters." },
+  { action: "Let the government form from that pool.", why: "Those elected still have to negotiate a coalition that can work together. That part is not automated away." },
+]} />
+
+What comes out is not a government. It is a pool of people, each chosen *for
+the thing they will be doing*. The difference from today is not that experts
+appear — some are already in the building. The difference is that the ballot
+stops asking "do you like this person" and starts asking "is this the person
+you want running this".
+
+{/* ASK-1 (open-door-and-choosing-people-dump.md:59): "A w demokracji bezpośredniej byśmy wybrali sobie ludzi" — is vote-by-portfolio part of the direct-democracy programme, or a separate proposal beside it? direct-democracy.md "Elections do not stop" does not mention it (R4 Q10). */}
+
+This sits beside [Direct Democracy](/book/direct-democracy#elections-do-not-stop),
+which keeps parliaments and elections and adds the initiative and the
+referendum. This chapter changes what the election asks.
+
+## Which parts of this already exist
+
+The author asked for prior art rather than a new institution invented on the
+page. What follows is the research that request produced, offered for his
+judgement and not yet adopted as his; the sources are listed at the end.
+
+<ComparisonTable
+  caption="Prior art for each piece of the proposal"
+  columns={[
+    { label: "Where it runs", kind: "fact" },
+    { label: "What it does" },
+    { label: "What it does not do" },
+  ]}
+  rows={[
+    { dimension: "Hearings a candidate can fail", cells: ["EU: Commissioner-designates", "Public hearing; three stopped since 2004", "Not applied to national ministers"] },
+    { dimension: "Confirmation of ministers", cells: ["Kenya, South Korea, USA", "Parliament vets each nominee", "Does not change who is nominated"] },
+    { dimension: "Voting for a named person", cells: ["Poland, open lists", "Preference votes fill the seats", "No link to a portfolio"] },
+    { dimension: "Written qualifications for office", cells: ["Almost nowhere", "Informal norms only", "The rare piece — the one asked for here"] },
+    { dimension: "Selection by lot", cells: ["Ostbelgien, Ireland", "Removes the popularity contest", "Removes the competence filter too"] },
+  ]}
+  source="European Parliament, LSE EUROPP, Parliament of Kenya, Korea Times, Electoral Studies, Oxford University Press, Duke Judicature, OIDP — full list below"
+/>
+
+Three of the five rows deserve a sentence more:
+
+- The Union already applies to its own executive a filter most member states do
+  not apply to theirs. Every Commissioner-designate is questioned in public by
+  the Parliament's committees, the scrutiny [has been strengthened
+  repeatedly](https://www.europarl.europa.eu/topics/en/article/20240910STO23870/how-parliament-s-scrutiny-of-commissioners-designate-has-evolved),
+  and candidates have actually been withdrawn or rejected — Buttiglione in 2004,
+  Bratušek in 2014, Goulard in 2019 ([LSE's summary of the
+  record](https://blogs.lse.ac.uk/europpblog/2024/11/04/what-to-expect-from-this-weeks-eu-commissioner-hearings/)).
+- Poland's [open list](https://en.wikipedia.org/wiki/Open_list) means the
+  "choose a person, not a party" part is already ours, and it comes with a
+  documented defect: on Finnish open lists, candidates near the top of the
+  ballot paper collect disproportionately more preference votes, because
+  [ballot position works as a shortcut for less informed
+  voters](https://www.sciencedirect.com/science/article/pii/S0261379421000500).
+  Choosing a person is not automatically choosing well.
+- Sortition — Ostbelgien's [permanent citizens'
+  council](https://oidp.net/en/practice.php?id=1237) of twenty-four people drawn
+  by lot, Ireland's assembly of ninety-nine — answers "how do we get people who
+  were not selected for popularity" in the opposite direction: it removes the
+  selection contest altogether.
+
+So what is new here is not hearings, open lists, vetting or rejecting an unfit
+candidate. Those are all in use. The new part is the combination: the
+electorate votes per field, and a floor of competence is a condition of standing
+in that field rather than a courtesy extended afterwards. The research found no
+country that elects its executive by portfolio. That counts against the idea as
+well as for it — either nobody has thought of it, which is unlikely, or it has
+problems not yet met.
+
+<ObjectionList title="The objections, which this chapter does not settle" intro="The strongest arguments against the proposal, stated so that a reader does not have to find them and conclude they were hidden. The answers are the editor's; the author has not adopted them.">
+  <Objection claim="This is technocracy wearing a rosette." verdict="Half an answer, at best.">
+    Democracy's point is that people choose their direction, including badly,
+    including against expert advice — and "only the competent may stand" is how
+    you get a state run by credentialled people who went to the same schools and
+    agree about everything. Expertise answers *how*; it has no special authority
+    about *what for*. A defence expert can tell you what an army costs, not
+    whether you should have one. The answer available on this site is that
+    direction is set by everybody, through the [binding
+    votes](/book/direct-democracy) the author demands, and execution handed to
+    people who can execute. But the line between a direction and its execution
+    is not clean, and anyone who says it is has not tried to draw it.
+  </Objection>
+  <Objection claim="Who defines competent?" verdict="A reduction of the risk, not its elimination.">
+    Whoever holds that pen holds the real power, and can exclude opponents while
+    calling it a standard. "Relevant experience" is soft enough to fit a friend
+    and exclude an enemy. One safeguard, offered here: criteria that are public,
+    written in advance, hard to change quickly — and a refusal that requires a
+    reasoned decision with a name on it, in daylight.
+  </Objection>
+  <Objection claim="It could create a closed profession of governing." verdict="A real failure mode, seen before.">
+    If the entry conditions are formal, the route into them becomes a career
+    track, and the track becomes a caste that reproduces itself. That is roughly
+    what happened to the senior civil service in several European countries. A
+    system meant to keep out the unqualified can end up keeping out the
+    unconnected.
+  </Objection>
+  <Objection claim="The competent are not automatically honest, nor democratic." verdict="Conceded.">
+    Competence and integrity are different properties. This buys a filter
+    against one kind of failure and not against the other.
+  </Objection>
+  <Objection claim="The popular teacher might be right." verdict="Unpriced.">
+    Somebody from outside a field can see what those inside it stopped seeing;
+    every field builds its own blind spots and outsiders have broken real ones.
+    A hard filter costs you those people, and nobody has said what that costs.
+  </Objection>
+</ObjectionList>
+
+{/* ASK-2 (open-door-and-choosing-people-dump.md:68-77): the five objections and their answers were composed by the editor around your demand. Adopt them as yours, or keep them marked as offered? */}
+
+None of these is resolved here. The present arrangement does not resolve them
+either — it hides them, by never asking the question, and then hands defence to
+whoever was available on the day.
+
+## Why I read the fifty-fifty split as evidence
+
+This is my reading, not a measured fact. Look at how many democracies end up
+split roughly down the middle, election after election. People call it balance.
+I read it as the output of a machine that optimises for votes rather than for
+results: a party's survival depends on being elected, not on being right, so it
+positions itself where the votes are, its opponent does the same from the other
+side, and two mirrored centres fall out of the arrangement almost mechanically.
+In an age when a party can test in advance which sentence moves which group, the
+thing being answered may no longer be what people need but what they can be
+brought to want. A democracy of that kind divides people by construction,
+because it has to manufacture two sides in order to run.
+
+<SideNote label="Argued in full">
+  The method that follows from this — find what nearly all of us already agree
+  on and work it out properly — is set out in the
+  [manifesto](/manifesto#my-method-start-from-what-we-already-agree-on).
+</SideNote>
+
+{/* ASK-3 (open-door-and-choosing-people-dump.md:40-47): R4 reads the fifty-fifty passage as a second chapter bolted on. Keep it here, move it to the manifesto's method section, or give it its own page? */}
+
+## Peacefully, democratically, and not by me
+
+This has to be done by democratic means. I want the political system redesigned
+so that it admits the right people to power, and I want that done through votes,
+argument and persuasion — nothing else. A system taken by any other route is
+worth nothing, because the next people will take it the same way.
+
+**We are the sovereign, and this is owed to us.** We are not asking a favour of
+anybody.
+
+And I am not proposing to do this myself. I am not a candidate for anything and
+I am not building a party. I am trying to persuade you that it is worth doing —
+that how we select the people who run things matters more than which of them we
+are arguing about this month, and that it is a question with answers, some of
+which are already running somewhere in the world.
+
+<MeansForYou actions={[
+  "Next time a government is formed, count the ministers who were ever assessed for the portfolio they hold. The number is the argument.",
+  "If you think the design sketched here is wrong, work out a better one. That is also winning.",
+]}>
+  The question is not whether this minister is good. It is whether anything in
+  the system would have stopped a bad one.
+</MeansForYou>
+
+<SourceList items={[
+  { title: "How Parliament's scrutiny of Commissioners-designate has evolved", url: "https://www.europarl.europa.eu/topics/en/article/20240910STO23870/how-parliament-s-scrutiny-of-commissioners-designate-has-evolved", note: "European Parliament, 2024" },
+  { title: "What to expect from this week's EU Commissioner hearings", url: "https://blogs.lse.ac.uk/europpblog/2024/11/04/what-to-expect-from-this-weeks-eu-commissioner-hearings/", note: "LSE EUROPP — the record of candidates withdrawn or rejected" },
+  { title: "Committee on Appointments", url: "https://www.parliament.go.ke/the-national-assembly/committees/committee-on-appointments", note: "Parliament of Kenya — constitutional vetting of Cabinet Secretary nominees" },
+  { title: "Decision on appointments of justice, gender ministers to be made after confirmation hearings", url: "https://www.koreatimes.co.kr/southkorea/politics/20260910/decision-on-appointments-of-justice-gender-ministers-to-be-made-after-confirmation-hearings-official", note: "Korea Times, 2026 — confirmation hearings as a standard step" },
+  { title: "Open list", url: "https://en.wikipedia.org/wiki/Open_list", note: "Poland's open-list proportional representation" },
+  { title: "Ballot position and preference votes on Finnish open lists", url: "https://www.sciencedirect.com/science/article/pii/S0261379421000500", note: "Electoral Studies — ballot position as a voter shortcut" },
+  { title: "The selection of ministers: rules of eligibility", url: "https://academic.oup.com/book/32249/chapter/268436667", note: "Oxford University Press — eligibility rules are largely informal" },
+  { title: "The U.S. Constitution and judicial qualifications: a curious omission", url: "https://judicature.duke.edu/articles/the-u-s-constitution-and-judicial-qualifications-a-curious-omission/", note: "Duke Judicature" },
+  { title: "Permanent citizens' council of the German-speaking Community of Belgium", url: "https://oidp.net/en/practice.php?id=1237", note: "OIDP — twenty-four people drawn by lot, since 2019" },
+]} />
+
+<ProvenanceNote
+  source="2026-09-25-open-door-and-choosing-people-dump.md:49-77 (the argument), :40-47 (the fifty-fifty reading), :32-38 (the method, argued in the manifesto)"
+  dictated={[
+    "Not against politicians; I vote for someone on a matter and want that person in that ministry, not a district favourite with no background made minister (:51-54)",
+    "The popular teacher, the doctor given health, the teacher or farmer given the economy or defence — people who should not be there (:56-59)",
+    "We elect mediocrities because we do not vote for people for specific tasks; ten ministries, seats per field, twenty per field or thirty fields, vote within each, the government negotiated from those elected (:61-66)",
+    "No procedure ensures the competent are admitted and the incompetent kept out; it must be forced by the system; redesign the political system so it admits the right people (:68-74)",
+    "Democratic means, peacefully; we are the sovereign and it is owed to us; not me doing it — encouraging and inspiring others (:74-77)",
+    "The fifty-fifty split as the output of parties positioning for votes, hedged by him as 'być może' (:40-47)",
+  ]}
+  added={[
+    "Prior art (EP hearings, Kenyan and Korean confirmation, Polish open lists, ballot-position research, eligibility rules, Ostbelgien and Ireland) and the table — proposed, at his request (:95-100 of the dump's agent notes record the request)",
+    "The five objections and their answers — proposed (ASK-2)",
+    "'The system has to do this, because everything that depends on people behaving well eventually meets people who do not' and the 'two things are missing' analysis — editor's elaboration of :68-73, proposed",
+  ]}
+  cut={[
+    "'The arrangement was designed by people who are dead, for a world with no telephones' — not in the dump; removed",
+    "'I went looking for prior art before publishing' and 'I will not pretend I have costed this' — first person for work the editor did; re-voiced",
+  ]}
+  open={["ASK-1", "ASK-2", "ASK-3"]}
+/>
