@@ -458,7 +458,7 @@ import FAQ from '../components/FAQ.astro';
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {cardColors.map((color, index) => (
-            <Card title={`${color.charAt(0).toUpperCase() + color.slice(1)} Card`} color={color} icon={["🚀", "💡", "🔧", "📊", "🔍", "⚙️", "📱"][index]}>
+            <Card title={`${color.charAt(0).toUpperCase() + color.slice(1)} Card`} color={color} icon={["rocket", "lightbulb", "wrench", "bar-chart", "search", "settings", "smartphone"][index]}>
               <p>This is an example of a card with {color} styling. Cards are used throughout the site to display content in organized sections.</p>
             </Card>
           ))}
@@ -466,7 +466,7 @@ import FAQ from '../components/FAQ.astro';
         
         <h3 class="text-2xl font-bold text-white mb-4">Card Component Usage</h3>
         <div class="bg-gray-800/50 p-4 rounded-lg mb-4">
-          <pre class="text-gray-300 overflow-auto"><code>{`<Card title="Card Title" color="blue" icon="🚀">
+          <pre class="text-gray-300 overflow-auto"><code>{`<Card title="Card Title" color="blue" icon="rocket">
   <p>Card content goes here.</p>
 </Card>`}</code></pre>
         </div>
@@ -483,29 +483,29 @@ import FAQ from '../components/FAQ.astro';
         
         <h3 class="text-2xl font-bold text-white mb-4">2-Column Grid</h3>
         <CardGrid columns={2} gap="2rem">
-          <Card title="Card One" color="blue" icon="📘">
+          <Card title="Card One" color="blue" icon="book-open">
             <p>This is the first card in a 2-column grid layout.</p>
           </Card>
-          <Card title="Card Two" color="indigo" icon="📗">
+          <Card title="Card Two" color="indigo" icon="book-open">
             <p>This is the second card in a 2-column grid layout.</p>
           </Card>
-          <Card title="Card Three" color="teal" icon="📙">
+          <Card title="Card Three" color="teal" icon="book-open">
             <p>This is the third card in a 2-column grid layout.</p>
           </Card>
-          <Card title="Card Four" color="green" icon="📕">
+          <Card title="Card Four" color="green" icon="book-open">
             <p>This is the fourth card in a 2-column grid layout.</p>
           </Card>
         </CardGrid>
         
         <h3 class="text-2xl font-bold text-white mt-12 mb-4">3-Column Grid</h3>
         <CardGrid columns={3} gap="1.5rem">
-          <Card title="Card One" color="purple" icon="🧠">
+          <Card title="Card One" color="purple" icon="brain">
             <p>This is the first card in a 3-column grid layout.</p>
           </Card>
-          <Card title="Card Two" color="red" icon="❤️">
+          <Card title="Card Two" color="red" icon="heart">
             <p>This is the second card in a 3-column grid layout.</p>
           </Card>
-          <Card title="Card Three" color="yellow" icon="⭐">
+          <Card title="Card Three" color="yellow" icon="star">
             <p>This is the third card in a 3-column grid layout.</p>
           </Card>
         </CardGrid>
@@ -513,10 +513,10 @@ import FAQ from '../components/FAQ.astro';
         <h3 class="text-2xl font-bold text-white mt-12 mb-4">CardGrid Usage</h3>
         <div class="bg-gray-800/50 p-4 rounded-lg mb-4">
           <pre class="text-gray-300 overflow-auto"><code>{`<CardGrid columns={2} gap="2rem">
-  <Card title="Card One" color="blue" icon="📘">
+  <Card title="Card One" color="blue" icon="book-open">
     <p>Card content here.</p>
   </Card>
-  <Card title="Card Two" color="indigo" icon="📗">
+  <Card title="Card Two" color="indigo" icon="book-open">
     <p>More card content here.</p>
   </Card>
 </CardGrid>`}</code></pre>

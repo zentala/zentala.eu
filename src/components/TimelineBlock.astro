@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro';
+
 interface Props {
   number: number;
   icon: string;
@@ -23,7 +25,7 @@ const accent = (["blue", "indigo", "teal"].includes(accentColor) ? accentColor :
   </div>
   <div class="block-body flex-grow backdrop-blur-sm rounded-lg p-6 border transition-all shadow-sm">
     <h3 class="block-title text-2xl font-bold mb-4 flex items-center">
-      <span class="mr-3 text-2xl">{icon}</span>
+      <span class="mr-3 inline-flex"><Icon name={icon} size={24} /></span>
       {title}
     </h3>
     {paragraphs.map((paragraph) => (

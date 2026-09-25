@@ -1,13 +1,14 @@
 ---
-// IconLink.astro - A reusable component for creating links with icons
+// IconLink.astro - A reusable component for creating links with a Lucide icon.
+import Icon from './Icon.astro'
 
 interface Props {
-  href: string;
-  icon: string; // FontAwesome class name (e.g., "fa-solid fa-arrow-right")
-  iconPosition?: 'left' | 'right';
-  class?: string;
-  ariaLabel?: string;
-  target?: string;
+  href: string
+  icon: string // Lucide icon name, e.g. "globe", "book"
+  iconPosition?: 'left' | 'right'
+  class?: string
+  ariaLabel?: string
+  target?: string
 }
 
 const {
@@ -17,13 +18,13 @@ const {
   class: className = '',
   ariaLabel,
   target,
-} = Astro.props;
+} = Astro.props
 
 // Base classes
-let classes = "inline-flex items-center gap-2 transition-colors duration-200";
+let classes = 'inline-flex items-center gap-2 transition-colors duration-200'
 
 // Apply custom classes
-classes = `${classes} ${className}`;
+classes = `${classes} ${className}`
 ---
 
 <a
@@ -33,13 +34,9 @@ classes = `${classes} ${className}`;
   target={target}
   rel={target === '_blank' ? 'noopener noreferrer' : undefined}
 >
-  {iconPosition === 'left' && (
-    <i class={icon}></i>
-  )}
-  
+  {iconPosition === 'left' && <Icon name={icon} size={20} />}
+
   <span><slot /></span>
-  
-  {iconPosition === 'right' && (
-    <i class={icon}></i>
-  )}
+
+  {iconPosition === 'right' && <Icon name={icon} size={20} />}
 </a>
