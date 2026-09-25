@@ -11,18 +11,18 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={`${entry.data.title} - Commentary`}>
-  <main class="container mx-auto max-w-3xl px-4 py-8">
+<Layout title={`${entry.data.title} - Commentary`} description={`${entry.data.title} — commentary on ${entry.data.sourceOutlet}.`}>
+  <div class="container mx-auto max-w-3xl px-4 py-8">
     <a href="/commentary" class="text-blue-400 hover:underline">&larr; Commentary</a>
-    <p class="text-sm text-gray-400 mt-6">
+    <p class="text-sm theme-text-secondary mt-6">
       <time datetime={formatDate(entry.data.date)}>{formatDate(entry.data.date)}</time> · {entry.data.topic}
     </p>
-    <h1 class="text-4xl font-bold text-white mt-2 mb-6">{entry.data.title}</h1>
-    <article class="prose prose-invert max-w-none">
+    <h1 class="text-4xl font-bold theme-text-primary mt-2 mb-6">{entry.data.title}</h1>
+    <article class="prose max-w-none">
       <Content />
     </article>
-    <p class="mt-10 text-gray-400">
+    <p class="mt-10 theme-text-secondary">
       Source: <a href={entry.data.sourceUrl} class="underline" rel="noopener">{entry.data.sourceTitle}</a> ({entry.data.sourceOutlet})
     </p>
-  </main>
+  </div>
 </Layout>
