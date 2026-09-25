@@ -10,6 +10,7 @@ import Hero from '../components/Hero.astro';
 import UeLogo from '../assets/eu.png';
 import GradientSection from '../components/GradientSection.astro';
 import IconLink from '../components/IconLink.astro';
+import Icon from '../components/Icon.astro';
 import DisplayTitle from '../components/DisplayTitle.astro';
 import CardGrid from '../components/CardGrid.astro';
 import Card from '../components/Card.astro';
@@ -52,7 +53,7 @@ const layers = resolveLayers('short');
     <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10">
       <IconLink
         href="/why"
-        icon="fa-solid fa-question-circle"
+        icon="circle-help"
         class="text-xl hover:text-blue-300 transition-colors"
         ariaLabel="Learn why EU needs reform"
       >
@@ -61,7 +62,7 @@ const layers = resolveLayers('short');
 
       <IconLink
         href="/benefits"
-        icon="fa-solid fa-globe"
+        icon="globe"
         class="text-xl hover:text-blue-300 transition-colors"
         ariaLabel="See benefits for your country"
       >
@@ -70,7 +71,7 @@ const layers = resolveLayers('short');
 
       <IconLink
         href="/vision"
-        icon="fa-solid fa-book"
+        icon="book"
         class="text-xl hover:text-blue-300 transition-colors"
         ariaLabel="See the full vision overview"
       >
@@ -91,7 +92,7 @@ const layers = resolveLayers('short');
     <div class="text-center">
       <Button href="/book/designing-our-retirement" variant="primary" size="lg">
         Read the full argument
-        <i class="fa-solid fa-arrow-right ml-2"></i>
+        <Icon name="arrow-right" size={20} class="ml-2" />
       </Button>
     </div>
   </div>
@@ -126,7 +127,7 @@ const layers = resolveLayers('short');
         <Card
           title="For citizens and retirees-to-be"
           color="blue"
-          icon="👨‍👩‍👧‍👦"
+          icon="users"
           variant="gradient"
           href="/why"
           linkText="Why reforms are needed"
@@ -137,7 +138,7 @@ const layers = resolveLayers('short');
         <Card
           title="For engineers and business"
           color="indigo"
-          icon="⚙️"
+          icon="settings"
           variant="gradient"
           href="/book/robotic-reindustrialisation"
           linkText="Read the robotics proposal"
@@ -148,7 +149,7 @@ const layers = resolveLayers('short');
         <Card
           title="For regions and member states"
           color="green"
-          icon="🇪🇺"
+          icon="globe"
           variant="gradient"
           href="/benefits"
           linkText="See benefits by country"

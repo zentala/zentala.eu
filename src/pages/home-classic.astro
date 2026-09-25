@@ -6,6 +6,7 @@ import Hero from '../components/Hero.astro';
 import UeLogo from '../assets/eu.png';
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro';
+import Icon from '../components/Icon.astro';
 import CardGrid from '../components/CardGrid.astro';
 import DisplayTitle from '../components/DisplayTitle.astro';
 import FAQ from '../components/FAQ.astro';
@@ -45,13 +46,6 @@ const frameSteps: FrameStep[] = [
 ];
 
 // Import SVG icons
-import LanguageIcon from '../assets/icons/language.svg';
-import DigitalIcon from '../assets/icons/digital.svg';
-import RobotIcon from '../assets/icons/robot.svg';
-import ArrowRightIcon from '../assets/icons/arrow-right.svg';
-import GlobeIcon from '../assets/icons/globe.svg';
-import QuestionIcon from '../assets/icons/question.svg';
-import BookIcon from '../assets/icons/book.svg';
 ---
 
 <Layout title="Home (classic, preview only)" noindex={true}>
@@ -72,7 +66,7 @@ import BookIcon from '../assets/icons/book.svg';
     <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10">
       <IconLink 
         href="/why" 
-        icon="fa-solid fa-question-circle" 
+        icon="circle-help" 
         class="text-xl hover:text-blue-300 transition-colors"
         ariaLabel="Learn why EU needs reform"
       >
@@ -81,7 +75,7 @@ import BookIcon from '../assets/icons/book.svg';
       
       <IconLink 
         href="/benefits" 
-        icon="fa-solid fa-globe" 
+        icon="globe" 
         class="text-xl hover:text-blue-300 transition-colors"
         ariaLabel="See benefits for your country"
       >
@@ -90,7 +84,7 @@ import BookIcon from '../assets/icons/book.svg';
       
       <IconLink 
         href="/vision" 
-        icon="fa-solid fa-book" 
+        icon="book" 
         class="text-xl hover:text-blue-300 transition-colors"
         ariaLabel="See the full vision overview"
       >
@@ -111,7 +105,7 @@ import BookIcon from '../assets/icons/book.svg';
     <div class="text-center">
       <Button href="/book/designing-our-retirement" variant="primary" size="lg">
         Read the full argument
-        <i class="fa-solid fa-arrow-right ml-2"></i>
+        <Icon name="arrow-right" size={20} class="ml-2" />
       </Button>
     </div>
   </div>
@@ -127,7 +121,7 @@ import BookIcon from '../assets/icons/book.svg';
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <Card
           title="I. Language Integration"
-          icon="🗣️"
+          icon="languages"
           color="green"
           variant="gradient"
           href="/book/european-english"
@@ -138,7 +132,7 @@ import BookIcon from '../assets/icons/book.svg';
     
         <Card
           title="II. Digital Integration"
-          icon="💻"
+          icon="laptop"
           color="red"
           variant="gradient"
           href="/book/european-egovernment"
@@ -149,7 +143,7 @@ import BookIcon from '../assets/icons/book.svg';
     
         <Card
           title="III. Robotic Reindustrialization"
-          icon="🤖"
+          icon="bot"
           color="indigo"
           variant="gradient"
           href="/book/robotic-reindustrialisation"
@@ -186,7 +180,7 @@ import BookIcon from '../assets/icons/book.svg';
           class="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-500 hover:to-blue-500 shadow-md hover:shadow-lg"
         >
           Learn more about why reform is needed
-          <i class="fa-solid fa-arrow-right ml-2"></i>
+          <Icon name="arrow-right" size={20} class="ml-2" />
         </Button>
       </div>
     </div>
@@ -202,7 +196,7 @@ import BookIcon from '../assets/icons/book.svg';
             <Card 
               title="Benefits for European Integration" 
               color="blue" 
-              icon="🇪🇺"
+              icon="globe"
               href="/benefits/european-integration"
             >
               Highlighting the advantages of a more unified Europe, fostering collaboration and shared growth across all member states.
@@ -211,49 +205,49 @@ import BookIcon from '../assets/icons/book.svg';
             <Card 
               title="Benefits for Germany" 
               color="indigo" 
-              icon="🇩🇪"
+              icon="landmark"
               href="/benefits/germany"
             >
               Exploring how Germany can leverage its industrial strength to lead in robotics and digital transformation, enhancing its economic position.
             </Card>
 
-            <Card title="Benefits for France" color="blue" icon="🇫🇷">
+            <Card title="Benefits for France" color="blue" icon="landmark">
               Discussing France's role in cultural integration and leadership in digital governance, strengthening its influence in the EU.
             </Card>
 
-            <Card title="Benefits for Southern Europe" color="indigo" icon="🏛️">
+            <Card title="Benefits for Southern Europe" color="indigo" icon="landmark">
               Addressing economic disparities and promoting sustainable development through enhanced logistics and digital services.
             </Card>
 
-            <Card title="Benefits for Scandinavia" color="blue" icon="❄️">
+            <Card title="Benefits for Scandinavia" color="blue" icon="snowflake">
               Leveraging technological advancements and environmental initiatives to drive innovation and sustainability.
             </Card>
 
-            <Card title="Benefits for Central Europe" color="indigo" icon="🏭">
+            <Card title="Benefits for Central Europe" color="indigo" icon="factory">
               Utilizing the region's skilled workforce to spearhead robotics and software development, boosting economic growth.
             </Card>
 
-            <Card title="Benefits for Businesses" color="blue" icon="💼">
+            <Card title="Benefits for Businesses" color="blue" icon="briefcase">
               Facilitating seamless operations across borders, reducing costs, and opening new markets for European enterprises.
             </Card>
 
-            <Card title="Benefits for Citizens" color="indigo" icon="👨‍👩‍👧‍👦">
+            <Card title="Benefits for Citizens" color="indigo" icon="users">
               Improving quality of life through streamlined services, enhanced mobility, and increased opportunities for personal growth.
             </Card>
 
-            <Card title="Benefits for eCommerce" color="blue" icon="🛒">
+            <Card title="Benefits for eCommerce" color="blue" icon="shopping-cart">
               Enabling faster, more reliable logistics and payment systems, fostering a thriving online marketplace.
             </Card>
 
-            <Card title="Benefits for IT Startups" color="indigo" icon="💻">
+            <Card title="Benefits for IT Startups" color="indigo" icon="laptop">
               Providing a supportive ecosystem for innovation, with access to a unified market and collaborative development opportunities.
             </Card>
 
-            <Card title="Benefits for European Security" color="blue" icon="🛡️">
+            <Card title="Benefits for European Security" color="blue" icon="shield">
               Strengthening collective defense and cybersecurity measures, ensuring a safer environment for all Europeans.
             </Card>
 
-            <Card title="Benefits for the Information Economy" color="indigo" icon="📊">
+            <Card title="Benefits for the Information Economy" color="indigo" icon="bar-chart">
               Positioning Europe as a leader in data-driven industries, harnessing the power of big data and AI for economic growth.
             </Card>
           </CardGrid>
@@ -270,19 +264,19 @@ import BookIcon from '../assets/icons/book.svg';
         <div class="absolute inset-0 bg-gradient-to-r from-purple-900 to-indigo-900 opacity-10 blur-xl"></div>
         <div class="relative">
           <CardGrid columns={2} gap="2rem">
-            <Card title="Seeking Mutual Benefit" color="purple" icon="🤝">
+            <Card title="Seeking Mutual Benefit" color="purple" icon="handshake">
               Focusing on reforms and initiatives that provide clear advantages to all member states, fostering a spirit of collective progress.
             </Card>
 
-            <Card title="Leveraging Economies of Scale" color="indigo" icon="📈">
+            <Card title="Leveraging Economies of Scale" color="indigo" icon="trending-up">
               Prioritizing European-wide digital solutions that are more cost-effective when developed collectively, nurturing a new generation of technocrats coding for the EU.
             </Card>
 
-            <Card title="Building a Common Culture" color="purple" icon="🌍">
+            <Card title="Building a Common Culture" color="purple" icon="globe">
               Using a shared language and media landscape to foster a truly European identity alongside national cultures.
             </Card>
 
-            <Card title="Quality of Life Through Reform" color="indigo" icon="✨">
+            <Card title="Quality of Life Through Reform" color="indigo" icon="sparkles">
               Pursuing radical reforms and shifting competencies to the EU level to address challenges too big for individual nations, focusing on improving life for all Europeans rather than austerity.
             </Card>
           </CardGrid>

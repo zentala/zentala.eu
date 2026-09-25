@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro';
+
 type CardColor = 'gray' | 'blue' | 'green' | 'red' | 'yellow' | 'indigo' | 'purple' | 'teal';
 type CardAlignment = 'center' | 'left';
 
@@ -39,7 +41,7 @@ const cardClass = `
 const titleClass = `title font-bold text-2xl leading-snug gap-2 mb-4 ${align === 'center' ? 'flex-col' : ''} flex ${align === 'center' ? 'justify-center' : 'justify-start'} items-center`;
 
 // Klasy dla ikony
-const iconClass = `text-3xl ${align === 'center' ? 'mb-2' : ''}`;
+const iconClass = `inline-flex ${align === 'center' ? 'mb-2' : ''}`;
 
 // Klasy dla linku
 const linkClass = `text-current hover:opacity-80 font-medium flex items-center group mt-4 ${align === 'center' ? 'justify-center' : 'justify-start'}`;
@@ -47,7 +49,7 @@ const linkClass = `text-current hover:opacity-80 font-medium flex items-center g
 
 <article class={cardClass} data-color={color} data-variant={variant} data-align={align}>
 	<h3 class={titleClass}>
-		{icon && <span class={iconClass}>{icon}</span>}
+		{icon && <span class={iconClass}><Icon name={icon} size={32} /></span>}
 		<span set:html={title} />
 	</h3>
 
@@ -58,7 +60,9 @@ const linkClass = `text-current hover:opacity-80 font-medium flex items-center g
 	{href && (
 		<a href={href} class={linkClass}>
 			{linkText}
-			<span class="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform inline-flex items-center">→</span>
+			<span class="ml-1 group-hover:translate-x-1 transition-transform inline-flex items-center">
+				<Icon name="arrow-right" size={20} />
+			</span>
 		</a>
 	)}
 </article>
