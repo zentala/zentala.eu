@@ -3,7 +3,7 @@ date: 2026-09-25
 draft: false
 title: Redesigning the State
 description: "Political systems expire: conditions change and incentives get used up or hacked. Then you restart the game — and who designs the new one decides everything."
-tags: institutional design, incentives, digital state, European integration, subsidiarity, Germany
+concepts: [the-digital-state]
 author: Paweł Żentała
 layer: frame
 kind: argument

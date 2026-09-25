@@ -3,7 +3,7 @@ date: 2026-09-25
 draft: false
 title: New Cities
 description: "The state can buy a field and build a town on it under new rules: large flats, a minimum building height rather than a maximum, and the tram in from day one."
-tags: housing, cities, infrastructure, health, planning
+concepts: []
 author: Paweł Żentała
 layer: robotics
 kind: proposal

@@ -3,7 +3,7 @@ date: 2026-09-20
 draft: false
 title: Designing Our Retirement
 description: Europe is aging, the pension model is ending, and we have roughly thirty years of working economy left to build what replaces it.
-tags: demographics, pensions, robotics, strategy
+concepts: []
 author: Paweł Żentała
 layer: frame
 kind: argument

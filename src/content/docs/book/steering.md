@@ -3,7 +3,7 @@ date: 2026-09-25
 draft: false
 title: Steering
 description: "A state that decides slowly falls over. This chapter argues our decision loop is too slow, and the fix is faster feedback between state and economy."
-tags: direct democracy, decision speed, feedback, social dialogue, cybernetics, industrial policy
+concepts: [semi-direct-democracy, requisite-variety]
 author: Paweł Żentała
 layer: path
 kind: argument

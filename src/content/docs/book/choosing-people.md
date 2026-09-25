@@ -3,7 +3,7 @@ date: 2026-09-25
 draft: false
 title: Choosing People
 description: "I am not against politicians. I am against a way of choosing them that cannot tell competence from popularity, and hands defence to a farmer."
-tags: direct democracy, elections, competence, ministers, open lists, sortition, selection
+concepts: [semi-direct-democracy, sortition]
 author: Paweł Żentała
 layer: path
 kind: proposal

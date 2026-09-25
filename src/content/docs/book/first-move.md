@@ -3,7 +3,7 @@ date: 2026-09-25
 draft: false
 title: The First Move
 description: "The European Citizens' Initiative lets ordinary people put a demand on the Commission's desk, and this chapter explains how to use it."
-tags: European Citizens' Initiative, direct democracy, strategy, organising, ECI
+concepts: [european-citizens-initiative, semi-direct-democracy]
 author: Paweł Żentała
 layer: path
 kind: playbook

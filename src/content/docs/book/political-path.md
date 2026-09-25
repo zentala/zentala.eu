@@ -3,7 +3,7 @@ date: 2026-09-25
 draft: false
 title: The Political Path
 description: "How this gets carried out when the people currently in charge do not want it, through citizens, a coalition of the willing, and direct democracy as the offer."
-tags: politics, direct democracy, strategy, treaties
+concepts: [semi-direct-democracy]
 author: Paweł Żentała
 layer: path
 kind: argument
