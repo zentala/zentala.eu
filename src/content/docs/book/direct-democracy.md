@@ -7,8 +7,6 @@ tags: direct democracy, referendums, strategy, sovereignty, Union of Nations
 author: Paweł Żentała
 ---
 
-# Direct Democracy
-
 We vote every four years. For twenty years it has got worse.
 
 That is not a mood, it is a record. Start at the crash of 2008 and follow the

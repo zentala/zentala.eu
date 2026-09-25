@@ -7,8 +7,6 @@ tags: politics, direct democracy, strategy, treaties
 author: Paweł Żentała
 ---
 
-# The Political Path
-
 Every chapter here ends the same way, and I have been getting away with it. A
 phased approach. Pilot countries first. Policy catches up to what is already
 running. All of it true, and all of it silent on the question anybody serious

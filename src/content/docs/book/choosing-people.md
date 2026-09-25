@@ -7,8 +7,6 @@ tags: direct democracy, elections, competence, ministers, open lists, sortition,
 author: Paweł Żentała
 ---
 
-# Choosing People
-
 I want to start by clearing away the thing people will assume I am saying.
 
 **I am not against politicians.** I do not think they are a worse class of

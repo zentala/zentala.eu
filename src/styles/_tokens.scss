@@ -32,6 +32,13 @@
   --text-4xl: 2.5rem;
   --text-5xl: 3rem;
 
+  /* Editorial reading measure — long-form article body (ArticleLayout.astro).
+     18px body / 1.6 leading / 66ch measure sits inside the 62-72ch,
+     18-19px target from the E004-T02 rendered audit. */
+  --article-body-size: 1.125rem;
+  --article-lead: 1.6;
+  --article-measure: 66ch;
+
   /* Radius */
   --radius-sm: 0.375rem;
   --radius-md: 0.75rem;

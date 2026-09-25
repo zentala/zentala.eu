@@ -7,8 +7,6 @@ tags: demographics, pensions, robotics, strategy
 author: Paweł Żentała
 ---
 
-# Designing Our Retirement
-
 Everyone talks about the demographic crisis. Nobody does anything about it.
 
 That sentence is the reason this site exists. We have known the numbers for

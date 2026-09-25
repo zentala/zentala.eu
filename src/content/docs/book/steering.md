@@ -7,8 +7,6 @@ tags: direct democracy, decision speed, feedback, social dialogue, cybernetics, 
 author: Paweł Żentała
 ---
 
-# Steering
-
 Watch anyone ride a bicycle. They are never upright. They lean left, correct,
 lean right, correct, and the correcting never stops — and that is what holds
 them up. Stand the same bicycle still and it falls over in two seconds.

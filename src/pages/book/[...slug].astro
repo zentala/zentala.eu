@@ -1,6 +1,6 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { IS_PREVIEW } from '../../lib/preview';
 
 export async function getStaticPaths() {
@@ -19,17 +19,13 @@ const publishedDate = entry.data.date.toLocaleDateString('en-GB', { year: 'numer
 const updatedDate = entry.data.updated?.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 
-<Layout title={entry.data.title} description={entry.data.description}>
-  <div class="container mx-auto max-w-6xl px-4 py-8">
-    <a href="/book" class="transition-colors" style="color: var(--color-accent-secondary);">← Back to the Vision Book</a>
-    <h1 class="text-4xl md:text-5xl font-bold mt-8 mb-4" style="color: var(--color-text-primary);">{entry.data.title}</h1>
+<ArticleLayout title={entry.data.title} description={entry.data.description} backHref="/book" backLabel="Back to the Vision Book">
+  <Fragment slot="meta">
     <p class="text-sm mb-4" style="color: var(--color-text-secondary);">
       By {entry.data.author} · <time datetime={entry.data.date.toISOString()}>{publishedDate}</time>
       {updatedDate && <> · Updated <time datetime={entry.data.updated!.toISOString()}>{updatedDate}</time></>}
     </p>
-    <p class="text-xl mb-8" style="color: var(--color-text-secondary);">{entry.data.description}</p>
-    <article class="prose prose-lg max-w-none">
-      <Content />
-    </article>
-  </div>
-</Layout>
+    <p class="text-lg" style="color: var(--color-text-secondary);">{entry.data.description}</p>
+  </Fragment>
+  <Content />
+</ArticleLayout>

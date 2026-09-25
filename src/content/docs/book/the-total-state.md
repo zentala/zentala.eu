@@ -7,8 +7,6 @@ tags: digital state, direct democracy, digital identity, administration, Central
 author: Paweł Żentała
 ---
 
-# The Total State
-
 I want to argue two things in one chapter, and they cut against each other.
 
 The first is that our public administration still runs on the habits of the

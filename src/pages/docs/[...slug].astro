@@ -1,7 +1,7 @@
 ---
 import { IS_PREVIEW } from '../../lib/preview';
 import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
 
 export async function getStaticPaths() {
   try {
@@ -10,28 +10,28 @@ export async function getStaticPaths() {
       // Filter out drafts in production
       return IS_PREVIEW || !doc.data.draft;
     });
-    
+
     // Create a mapping for easy lookup
     type PathItem = {
       params: { slug: string };
       props: { entry: any };
     };
-    
+
     const allPaths: PathItem[] = [];
-    
+
     // Log all documents for debugging purposes
     console.log("All documents in docs collection:");
-    
+
     // Add all documents to the paths array
     allDocs.forEach(entry => {
       console.log(`- ${entry.slug} (${entry.id})`);
-      
+
       // Generate a path for this document based on its file slug
       allPaths.push({
         params: { slug: entry.slug },
         props: { entry }
       });
-      
+
       // If document has a customSlug, generate an additional path
       if (entry.data.customSlug && entry.data.customSlug !== entry.slug) {
         console.log(`  - Custom slug: ${entry.data.customSlug}`);
@@ -41,7 +41,7 @@ export async function getStaticPaths() {
         });
       }
     });
-    
+
     console.log(`Generated ${allPaths.length} paths`);
     return allPaths;
   } catch (error) {
@@ -54,42 +54,27 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={entry.data.title} description={entry.data.description}>
-  <div class="theme-bg-primary min-h-screen">
-    <div class="container mx-auto max-w-6xl px-4 py-8">
-      <div class="mb-8">
-        <a href="/docs/all" class="flex items-center gap-2 mb-4 transition-colors" style="color: var(--color-accent-secondary);">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Back to Overview
-        </a>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 theme-text-primary">{entry.data.title}</h1>
-        {entry.data.description && <p class="text-xl mb-8" style="color: var(--color-text-secondary);">{entry.data.description}</p>}
-      </div>
+<ArticleLayout title={entry.data.title} description={entry.data.description} backHref="/docs/all" backLabel="Back to Overview">
+  <Fragment slot="meta">
+    {entry.data.description && <p class="text-lg" style="color: var(--color-text-secondary);">{entry.data.description}</p>}
+  </Fragment>
+  <Content />
+  <Fragment slot="footer">
+    <div class="mt-16 pt-8" style="border-top: 1px solid var(--color-border);">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <p class="text-sm" style="color: var(--color-text-secondary);">
+          Tags: {entry.data.tags || "None"}
+        </p>
 
-      <div class="relative">
-        <article class="relative prose prose-lg max-w-none">
-          <Content />
-        </article>
-      </div>
-
-      <div class="mt-16 pt-8" style="border-top: 1px solid var(--color-border);">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <p class="text-sm" style="color: var(--color-text-secondary);">
-            Tags: {entry.data.tags || "None"}
-          </p>
-
-          <div class="flex items-center gap-4">
-            <a href="/docs/all" class="flex items-center gap-2 transition-colors" style="color: var(--color-accent-secondary);">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-              All Topics
-            </a>
-          </div>
+        <div class="flex items-center gap-4">
+          <a href="/docs/all" class="flex items-center gap-2 transition-colors" style="color: var(--color-accent-secondary);">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+            All Topics
+          </a>
         </div>
       </div>
     </div>
-  </div>
-</Layout>
+  </Fragment>
+</ArticleLayout>

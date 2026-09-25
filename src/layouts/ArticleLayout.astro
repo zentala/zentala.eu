@@ -1,0 +1,103 @@
+---
+/**
+ * Shared long-form article shell for book, docs, commentary and transcripts
+ * `[...slug].astro` routes (E004-T02). Wraps the site Layout and constrains
+ * the prose column to an editorial reading measure (62-72ch at 18-19px body
+ * text), instead of every route inventing its own container width.
+ *
+ * The route still renders its own single `<h1>{title}</h1>` here; markdown
+ * source files must not repeat the title as a `# Heading` (E004-T02
+ * acceptance: exactly one h1 per rendered page).
+ */
+import Layout from './Layout.astro'
+
+interface Props {
+  title: string
+  description?: string
+  canonical?: string
+  ogImage?: string
+  noindex?: boolean
+  /** Link back to the collection index, e.g. "/book". */
+  backHref: string
+  backLabel: string
+  /**
+   * Transcripts pair the body with a sticky sidebar (video info, key
+   * points): the body column there is wider than the editorial measure.
+   * Default false keeps the 62-72ch measure for book/docs/commentary.
+   */
+  wideBody?: boolean
+}
+
+const { title, description, canonical, ogImage, noindex, backHref, backLabel, wideBody = false } = Astro.props
+---
+
+<Layout title={title} description={description} canonical={canonical} ogImage={ogImage} noindex={noindex} type="article">
+  <div class="container mx-auto px-4 py-8">
+    <div class:list={['article-measure', { 'article-measure--wide-body': wideBody }]}>
+      <a href={backHref} class="back-link transition-colors" style="color: var(--color-accent-secondary);">
+        &larr; {backLabel}
+      </a>
+      <header class="article-header">
+        <h1 class="article-title">{title}</h1>
+        <slot name="meta" />
+      </header>
+      <div class="article-body-wrap">
+        <article class="prose prose-lg max-w-none article-body">
+          <slot />
+        </article>
+      </div>
+      <slot name="footer" />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  /* One measure for the whole article shell: back-link, header and body
+     all sit inside the same 62-72ch column instead of the body text alone
+     being capped while the header stretches full width. */
+  .article-measure {
+    max-width: var(--article-measure);
+    margin-inline: auto;
+  }
+
+  /* Wide-body pages (transcripts) keep the title/meta at the editorial
+     measure, but let the slotted body (its own two-column layout with a
+     sticky sidebar) use the full container width. */
+  .article-measure--wide-body {
+    max-width: none;
+  }
+
+  .article-measure--wide-body .back-link,
+  .article-measure--wide-body .article-header {
+    max-width: var(--article-measure);
+  }
+
+  .article-measure--wide-body .article-body-wrap {
+    max-width: none;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+
+  .article-header {
+    margin-bottom: 2rem;
+  }
+
+  .article-title {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: var(--text-4xl);
+    line-height: 1.15;
+    color: var(--color-text-primary);
+    text-wrap: balance;
+    margin: 0 0 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .article-title {
+      font-size: var(--text-5xl);
+    }
+  }
+</style>

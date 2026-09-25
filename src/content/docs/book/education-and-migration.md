@@ -7,8 +7,6 @@ tags: migration, education, global south, strategy
 author: Paweł Żentała
 ---
 
-# Education Instead of Import
-
 I have written elsewhere that importing labour will not carry an aging
 continent, and that machines will have to do most of the work instead. That
 argument is in [Designing Our Retirement](/book/designing-our-retirement), and I
