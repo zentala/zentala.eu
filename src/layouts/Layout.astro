@@ -11,6 +11,7 @@ interface Props {
   ogImage?: string
   noindex?: boolean
   type?: 'website' | 'article'
+  markdownAlternate?: string
 }
 
 const SITE_NAME = 'EU Reform Vision'
@@ -25,10 +26,12 @@ const {
   ogImage = DEFAULT_OG_IMAGE,
   noindex = false,
   type = 'website',
+  markdownAlternate,
 } = Astro.props
 
 const canonicalUrl = new URL(canonical ?? Astro.url.pathname, Astro.site)
 const ogImageUrl = new URL(ogImage, Astro.site)
+const markdownAlternateUrl = markdownAlternate ? new URL(markdownAlternate, Astro.site) : undefined
 // Preview (eu.internal) must never be indexed, whatever the page asks for.
 const shouldNoindex = noindex || IS_PREVIEW
 ---
@@ -44,6 +47,7 @@ const shouldNoindex = noindex || IS_PREVIEW
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121419" />
     {shouldNoindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalUrl} />
+    {markdownAlternateUrl && <link rel="alternate" type="text/markdown" href={markdownAlternateUrl} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
