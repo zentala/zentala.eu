@@ -128,3 +128,35 @@
 - **Findings this session**: 0.
 - **Next**: E004-T15 (a11y/SEO Playwright+axe gate) is the only remaining
   task under this epic.
+
+## Session 2026-09-25 (ts-dev: T15 a11y/SEO regression gate)
+
+- **Goal**: E004-T15 — turn the manual 48-run audit (12 pages x 2 themes x
+  2 widths) into an automated Playwright + axe gate that fails the build on
+  regressions.
+- **Done**: `tests/a11y.spec.ts` (new — axe-core WCAG 2.2 AA scan on 6 key
+  pages x 2 themes, fails on serious/critical violations; plus SEO/structural
+  asserts: unique meta description, canonical present, exactly one `<h1>`,
+  skip link, no horizontal overflow at 375px), `playwright.a11y.config.ts`
+  (new — separate config that serves the production `dist/` via
+  `astro preview`, not the dev server), `package.json` (`test:a11y` script,
+  `@axe-core/playwright` dependency), `justfile` (`a11y` target wired into
+  `check`), `scripts/deploy-internal.sh` (runs the a11y gate against the
+  freshly built `dist/` before pushing to server.lan — this repo has no
+  `.gitea/workflows/deploy.yaml`; deploy is the script per CLAUDE.md's
+  push/pull rule, so that script is the "before publish" gate). Lighthouse
+  CI budget was **skipped** (optional per the task) — axe + structural
+  checks cover the measurable criteria.
+  Merged to `main` at `9816cda` (worktree `.plan/worktrees/E004-T15`,
+  removed after merge).
+- **Verification**: `corepack yarn test:a11y` — 25/25 pass (both on the
+  worktree and again on `main` after merge, `corepack yarn install
+  --frozen-lockfile` first). `just check` (typecheck + audit + a11y) green
+  on `main`: 0 typecheck errors, audit report generated (pre-existing findings
+  unrelated to this task), 25/25 a11y tests pass. `just test` (existing
+  Playwright suite) still 31/31 pass, unaffected.
+- **Findings this session**: 0 new a11y/SEO regressions — all 6 key pages
+  pass axe in both themes on the first run, confirming T01-T14 fixes hold.
+- **Epic status**: E004 is now fully closed — T01-T11, T13, T16 completed,
+  T12/T14 superseded by E006, T15 completed this session. No remaining
+  proposed tasks.

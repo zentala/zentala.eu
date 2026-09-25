@@ -4,7 +4,7 @@ type: improvement
 id: E004-T15
 title: Automated a11y/SEO gate: Playwright + axe + Lighthouse
 epic: E004
-status: proposed
+status: completed
 priority: medium
 importance: Medium
 effort: medium
@@ -12,9 +12,10 @@ points: 3
 dependencies: [E004-T01, E004-T03]
 tags: [testing, a11y, seo]
 created: 2026-09-25
-completed_at: null
-commits: []
+completed_at: 2026-09-25
+commits: [9816cda]
 verification_evidence: []
+updated: 2026-09-25
 ---
 # E004-T15: Automated a11y/SEO gate: Playwright + axe + Lighthouse
 
