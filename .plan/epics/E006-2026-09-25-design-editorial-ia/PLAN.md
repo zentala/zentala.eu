@@ -2,13 +2,13 @@
 formatVersion: 1
 type: epic
 status: in-progress
-readiness: drafting
+readiness: blocked
 points: 34
 agent: mixed (research: sonnet · design, editorial standard, AI instructions: fable)
 wave: 1
 depends-on: [E004]
 parallel: []
-blocked-by: ""
+blocked-by: "Paweł approves PRES.md: DESIGN.md, src/AGENTS.md, INFORMATION-ARCHITECTURE.md; answers Q1/Q3/Q4/Q5/Q9"
 ---
 
 # E006: Design system, editorial standard, information architecture
