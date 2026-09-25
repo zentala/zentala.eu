@@ -1,8 +1,8 @@
 # Content audit — 2026-09-25
 
 ## TLDR
-Scanned 136 built routes, 88 content files, 459 links (79 unique external).
-Found 17 links to draft pages, 7 links to missing pages, 13 dead external links, 17 orphan pages, 16 drafts, 48 pages missing a meta description, 1 duplicate descriptions.
+Scanned 135 built routes, 88 content files, 450 links (76 unique external).
+Found 17 links to draft pages, 8 links to missing pages, 13 dead external links, 17 orphan pages, 16 drafts, 48 pages missing a meta description, 1 duplicate descriptions.
 IA shape checks: ran — 16 pages over two clicks from /, 0 entries missing layer/kind, 0/0 broken glossary hrefs, 0 /docs/ links in chapters, 112 built links to a retired redirect path, 0/0 concepts missing their canonical link.
 
 ## Links to draft pages (17) — 404 in production
@@ -26,7 +26,7 @@ IA shape checks: ran — 16 pages over two clicks from /, 0 entries missing laye
 | /book/digital-receipts/ | src/content/docs/index.mdx:72 | src/content/docs/book/digital-receipts.mdx |
 | /book/predictive-healthcare-system | src/components/Footer.astro:43 | src/content/docs/book/predictive-healthcare-system.mdx |
 
-## Links to missing pages (7)
+## Links to missing pages (8)
 | Link | Where |
 |---|---|
 | /docs/ideas/technology/autonomous-robotics-system | src/content/docs/ideas/index.mdx:87 |
@@ -36,6 +36,7 @@ IA shape checks: ran — 16 pages over two clicks from /, 0 entries missing laye
 | /docs/ideas/all | src/content/docs/ideas/index.mdx:325 |
 | /book/language-integration-european-politics/ | src/content/docs/index.mdx:34 |
 | /book/language-integration-national-states/ | src/content/docs/index.mdx:35 |
+| /sitemap.xml | src/components/Footer.astro:31 |
 
 ## Dead external links (13)
 | URL | Status | Where |
