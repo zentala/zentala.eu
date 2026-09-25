@@ -1,10 +1,28 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), mdx()],
+  site: 'https://zentala.eu',
+  integrations: [
+    tailwind(),
+    mdx(),
+    sitemap({
+      filter: (page) => {
+        const url = new URL(page);
+        const path = url.pathname;
+        return (
+          !path.startsWith('/ui') &&
+          !path.startsWith('/home-classic') &&
+          !path.startsWith('/docs/book/') &&
+          !path.startsWith('/docs/why') &&
+          !path.includes('/drafts/')
+        );
+      },
+    }),
+  ],
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp'
@@ -21,41 +39,3 @@ export default defineConfig({
     }
   }
 });
-
-// import { defineConfig } from 'astro/config';
-// import starlight from '@astrojs/starlight';
-
-// // https://astro.build/config
-// export default defineConfig({
-// 	site: 'https://eu.zentala.io',
-// 	integrations: [
-// 		starlight({
-// 			title: 'EU Reforms',
-// 			social: {
-// 				github: 'https://github.com/zentala/eu.zentala.io',
-// 			},
-// 			sidebar: [
-// 				{
-// 					label: 'Book',
-// 					items: [
-// 						// Each item here is one entry in the navigation menu.
-// 						{ label: 'Principles', link: '/book/principles/' },
-
-// 					],
-// 				},
-// 				{
-// 					label: 'Language Integration',
-// 					items: [
-// 					  { label: 'Administrative Implementation', link: '/book/language-integration-administrative-implementation/' },
-// 					  { label: 'Media and Cultural Integration', link: '/book/media-cultural-integration/' },
-// 					  { label: 'Economic Growth Through Language Unity', link: '/book/economic-growth-language-unity/' },
-// 					],
-// 				  },
-// 				{
-// 					label: 'Reference',
-// 					autogenerate: { directory: 'reference' },
-// 				},
-// 			],
-// 		}),
-// 	],
-// });

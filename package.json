@@ -25,6 +25,7 @@
   "dependencies": {
     "@algolia/client-search": "^5.20.4",
     "@astrojs/check": "^0.7.0",
+    "@astrojs/sitemap": "3.2.1",
     "@astrojs/starlight": "^0.24.4",
     "@astrojs/tailwind": "^5.1.4",
     "algoliasearch": "^5.20.4",
