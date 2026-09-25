@@ -101,6 +101,18 @@ async function mapLimit(items, limit, fn) {
   return results;
 }
 
+/** Meta description per built HTML page, for duplicate/missing detection (E004-T04). */
+function metaDescriptions() {
+  const byRoute = new Map();
+  for (const f of walk(DIST, ['.html'])) {
+    const route = normalize('/' + relative(DIST, f).split(sep).join('/'));
+    const html = readFileSync(f, 'utf8');
+    const m = html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i);
+    byRoute.set(route, m ? m[1].trim() : '');
+  }
+  return byRoute;
+}
+
 async function main() {
   const routes = builtRoutes();
   const entries = contentEntries();
@@ -141,6 +153,16 @@ async function main() {
   }
   const drafts = entries.filter((e) => e.draft);
 
+  const descByRoute = metaDescriptions();
+  const missingDescriptions = [...descByRoute].filter(([, d]) => !d).map(([route]) => route).sort();
+  const byDescription = new Map();
+  for (const [route, d] of descByRoute) {
+    if (!d) continue;
+    if (!byDescription.has(d)) byDescription.set(d, []);
+    byDescription.get(d).push(route);
+  }
+  const duplicateDescriptions = [...byDescription.entries()].filter(([, rs]) => rs.length > 1);
+
   if (routes.size === 0 || entries.length === 0 || links.length === 0) {
     console.error(`CHECK_FAILED: nothing scanned (routes=${routes.size}, entries=${entries.length}, links=${links.length})`);
     process.exit(1);
@@ -152,7 +174,7 @@ async function main() {
     '',
     '## TLDR',
     `Scanned ${routes.size} built routes, ${entries.length} content files, ${links.length} links (${uniqueExternal.length} unique external${CHECK_EXTERNAL ? '' : ', NOT checked'}).`,
-    `Found ${toDraft.length} links to draft pages, ${missing.length} links to missing pages, ${CHECK_EXTERNAL ? deadExternal.length : 'unknown'} dead external links, ${orphans.length} orphan pages, ${drafts.length} drafts.`,
+    `Found ${toDraft.length} links to draft pages, ${missing.length} links to missing pages, ${CHECK_EXTERNAL ? deadExternal.length : 'unknown'} dead external links, ${orphans.length} orphan pages, ${drafts.length} drafts, ${missingDescriptions.length} pages missing a meta description, ${duplicateDescriptions.length} duplicate descriptions.`,
     '',
     `## Links to draft pages (${toDraft.length}) — 404 in production`,
     table(toDraft, ['Link', 'Where', 'Draft file'], (l) => [l.href, l.at, l.draft]),
@@ -168,6 +190,14 @@ async function main() {
     '',
     `## Drafts (${drafts.length}) — not published`,
     table(drafts, ['File', 'Title'], (e) => [e.file, e.title || '?']),
+    '',
+    `## Pages missing a meta description (${missingDescriptions.length})`,
+    missingDescriptions.length ? missingDescriptions.map((r) => `- ${r}`).join('\n') : '_none_',
+    '',
+    `## Duplicate meta descriptions (${duplicateDescriptions.length})`,
+    duplicateDescriptions.length
+      ? duplicateDescriptions.map(([d, rs]) => `- "${d}" — ${rs.join(', ')}`).join('\n')
+      : '_none_',
     '',
   ].join('\n');
 
