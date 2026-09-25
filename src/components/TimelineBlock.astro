@@ -15,7 +15,9 @@ const accent = (["blue", "indigo", "teal"].includes(accentColor) ? accentColor :
   "blue" | "indigo" | "teal";
 ---
 
-<div class="mb-12 md:mb-16 flex flex-col md:flex-row gap-4 md:gap-8 relative timeline-block" data-accent={accent}>
+<!-- Spacing between blocks is owned by TimelineContainer's `gap`, which the
+     connector-line maths depends on — do not re-add a margin here. -->
+<div class="flex flex-col md:flex-row gap-4 md:gap-8 relative timeline-block" data-accent={accent}>
   <div class="flex-shrink-0 flex items-start">
     <div class="number-badge w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold text-white shadow-md z-10">{number}</div>
   </div>

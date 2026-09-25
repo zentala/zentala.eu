@@ -1,199 +1,169 @@
 ---
 title: "Why Reforms Are Needed"
-description: "Can't we just continue doing what we did before?"
+description: "Europe is aging, the model that pays for our pensions is ending, and we have about thirty years to build its replacement."
 tags: "EU, Reform, Vision"
 customSlug: "why-reforms"
 ---
 
-import DisplayTitle from '../../components/DisplayTitle.astro';
 import Card from '../../components/Card.astro';
-import CardGrid from '../../components/CardGrid.astro';
-import Timeline from '../../components/Timeline.astro';
+import WhyCardGrid from '../../components/why/WhyCardGrid.astro';
 import WhyDigitalReform from '../../components/WhyDigitalReform.astro';
-import ArrowRight from '../../assets/icons/arrow-right.svg';
+import WhyLead from '../../components/why/WhyLead.astro';
+import WhySection from '../../components/why/WhySection.astro';
 
-# Securing Our Retirement in a Changing World
-**How digital reforms today will ensure a dignified future for all Europeans**
+<WhyLead
+  paragraphs={[
+    "Generations no longer replace themselves. Birth rates sit below replacement in every member state, and the model that pays for our pensions — growth, plus enough young workers behind us — runs out with them. That is not a forecast about somebody else's country; it is the shared condition of the whole continent.",
+    "We are not old yet. We still have roughly thirty years of a working economy in which to build the thing that will carry us, and this is the last generation able to pay for it. Money is only a claim on labour, so there are exactly two places that labour can come from: people, or machines. There will not be enough people.",
+  ]}
+  claim="So the question on this page is not whether Europe should be reformed in the abstract. It is what we have to build, starting now, so that a shrinking Europe can still pay for its own retirement."
+/>
 
-
-  <Card 
-    title="Adapting to the New Economic Era" 
-    color="blue" 
-    icon="1️⃣"
-    variant="gradient"
-    style={{marginBottom: '2em'}}
-  >
-    **We live in a digital economy with industrial-era administration**
-    - Europe faces a paradox: we operate in an information-based economy, but our administrative structures are rooted in the industrial age
-    - Simply digitizing paper processes isn't enough - we need a complete redesign of administration built for technology
-    - Digital reform must treat the state and economy as a software project - optimized, scalable, and efficient
-  </Card>
-
-  <Card 
-    title="Europe as a Unified Economic Organism" 
-    color="indigo" 
-    icon="2️⃣"
-    variant="gradient"
-    style={{marginBottom: '2em'}}
-  >
-    **Only a unified Europe can compete globally**
-    - The great challenges of our time (from technology to climate change) require continent-scale action
-    - Linguistic and digital integration are the foundations that will enable Europe to function as a single organism
-    - Removing communication and bureaucratic barriers will unleash Europe's immense creative and industrial potential
-  </Card>
-
-  <Card 
-    title="The Economic Imperative" 
-    color="teal" 
-    icon="3️⃣"
-    variant="gradient"
-    style={{marginBottom: '2em'}}
-  >
-    **One system instead of 27 wasteful duplicates**
-    - Optimizing administrative, tax, and legal processes through digitization will radically transform the entire economy
-    - Applying economies of scale and IT approaches to state management will bring savings counted in hundreds of billions of euros
-    - One shared, scalable administrative system means better quality at significantly lower costs
-  </Card>
-
-  <Card 
-    title="The Demographic Crisis and Retirement Security" 
-    color="red" 
-    icon="4️⃣"
-    variant="gradient"
-  >
-    **In 50 years, Europe will face an unprecedented challenge**
-    - Europe is aging rapidly - soon, each worker will need to support multiple retirees
-    - This isn't just a "European problem" - it's YOUR future retirement at stake
-    - Today's 30-40 year olds will retire into a Europe with far fewer workers to support them
-    - These reforms aren't abstract policy - they're your personal retirement insurance
-
-    - In times of global warming and growing inequalities, large-scale migration will be inevitable
-    - Countries with aging populations and weak defense systems will become targets for aggressive groups seeking to take over their resources
-    - History shows that weak, wealthy societies always fell victim to stronger aggressors - in their position, I would also plunder a weak, rich nation of retirees
-  </Card>
-
-
-<CardGrid columns={2} gap="2rem">
-  <Card 
-    title="Technological Independence Is Political Independence" 
-    color="purple" 
-    icon="5️⃣"
-    variant="gradient"
-  >
-    **Without our own technologies, there is no true sovereignty**
-    - The US is turning away from Europe - Trump has already shown that America's interests outweigh alliance commitments
-    - Ukraine faces the risk of losing access to key technologies (Starlink, defense systems) if it doesn't submit to American conditions
-    - The same could happen to Poland, Scandinavian or Baltic countries - technological dependence means political dependence
-    - Europe must develop its own military and AI technologies to maintain the ability to defend its interests
-  </Card>
-
-  <Card 
-    title="Draining of Resources and Talents" 
-    color="yellow" 
-    icon="6️⃣"
-    variant="gradient"
-  >
-    **The US and China systematically take over our resources and talents**
-    - America drains Europe of know-how and technology - lower taxes, regulations, and sanctions force European companies to relocate
-    - China is taking over successive sectors of the European economy - from electronics to the automotive industry
-    - Without a strategy for advantage in key sectors, Europe will only be a market for American and Chinese corporations
-    - Central Europe particularly understands security threats and the principle of respect - that's why it strongly opposes illegal migration. If someone doesn't respect our procedures at entry, they won't respect our principles later either
-  </Card>
-
-  <Card 
-    title="Robotization as the Salvation for the Retirement System" 
-    color="green" 
-    icon="7️⃣"
-    variant="gradient"
-  >
-    **Only automation will allow us to support retirees in an era of low birth rates**
-    - Declining workers + aging society = unsustainable pension system without massive productivity increases
-    - Robotization is the ONLY realistic solution to the demographic crisis that doesn't involve forcing women to have more children
-    - It's mathematically impossible for future generations to support us without technological transformation
-    - An avalanche of psychological problems is already excluding more and more people from the labor market
-    - Without robotization, Europe is doomed to starvation-level pensions that will force older people into economic euthanasia - many will choose this option to avoid being a burden
-    - Robotization isn't a luxury, it's a condition for the survival of the pension system and YOUR dignified retirement
-  </Card>
-
-  <Card 
-    title="Defense, Security and Managing Migration" 
-    color="blue" 
-    icon="8️⃣"
-    variant="gradient"
-  >
-    **Robotization is essential for modern defense and migration management**
-    - Eastern European and Scandinavian countries, threatened by Russia, need advanced robotics for defensive purposes
-    - Autonomous robotic systems can monitor borders, respond to threats, and provide effective deterrence
-    - The same technology helps southern countries manage migration flows humanely and effectively
-    - To address migration at its source, Europe must offer solutions to countries people are migrating from:
-      - Free online education and knowledge sharing to build local capacity
-      - Robotic solutions to help tackle resource crises and improve quality of life in home countries
-    - Proactive digital engagement with source countries is cheaper and more effective than reactive border policies
-  </Card>
-</CardGrid>
-
-<Card 
-  title="The Draghi Report and Europe's Existential Challenge" 
-  color="red" 
-  icon="9️⃣"
-  variant="gradient"
+<WhySection
+  eyebrow="01 — The pressure"
+  title="What is already pushing against us"
+  lead="Three forces are converging: we are aging, our productivity has stalled, and the resources we would need to fix both are being drawn out of Europe."
 >
-  **The EU could die if it fails to reform**
-  - The Draghi Report (September 2024) diagnosed Europe's critical weakness but lacked concrete conclusions
-  - Europe's productivity is in negative territory compared to the United States
-  - "If the EU were to maintain its average productivity growth rate since 2015, it would only be enough to keep GDP constant until 2050" - Draghi Report
-  - Without significant productivity improvement, the EU's GDP will start to shrink
-  - The report warned that Europe faces an "existential challenge" to its competitiveness
+  <WhyCardGrid columns={2}>
+    <Card title="The demographic crisis and retirement security" color="red" icon="👵" variant="gradient">
+      **Within fifty years, Europe faces an unprecedented challenge**
+      - Europe is aging rapidly — soon each worker will need to support multiple retirees
+      - This isn't a "European problem" in the abstract — it's YOUR future retirement at stake
+      - Today's 30–40 year olds will retire into a Europe with far fewer workers to support them
+      - These reforms aren't abstract policy — they're your personal retirement insurance
+      - In times of global warming and growing inequality, large-scale migration will be inevitable
+      - Countries with aging populations and weak defence will become targets for aggressive groups seeking their resources
+      - History shows that weak, wealthy societies always fell victim to stronger aggressors — in their position, I would also plunder a weak, rich nation of retirees
+    </Card>
 
-  **What the Draghi Report missed: Our digital reform is the concrete solution to these existential challenges.**
-  - Digital integration addresses the fragmentation that hampers Europe's productivity
-  - Robotization provides the productivity boost needed to maintain our economic position
-  - Language integration enables the scale that can compete with the US and China
-</Card>
+    <Card title="The Draghi Report and Europe's existential challenge" color="gray" icon="📉" variant="gradient">
+      **The EU could die if it fails to reform**
+      - The Draghi Report (September 2024) diagnosed Europe's critical weakness but stopped short of concrete conclusions
+      - Europe's productivity is in negative territory compared with the United States
+      - "If the EU were to maintain its average productivity growth rate since 2015, it would only be enough to keep GDP constant until 2050" — Draghi Report
+      - Without significant productivity improvement, the EU's GDP will start to shrink
+      - The report warned that Europe faces an "existential challenge" to its competitiveness
+    </Card>
 
-<DisplayTitle level={2}>Three Pillars of European Integration Reform</DisplayTitle>
+    <Card title="Draining of resources and talent" color="gray" icon="🧲" variant="gradient">
+      **The US and China systematically take over our resources and talent**
+      - America drains Europe of know-how and technology — lower taxes, lighter regulation and sanctions push European companies to relocate
+      - China is taking over successive sectors of the European economy, from electronics to the automotive industry
+      - Without a strategy for advantage in key sectors, Europe will only be a market for American and Chinese corporations
+      - Central Europe particularly understands security threats and the principle of respect — that's why it strongly opposes illegal migration. If someone doesn't respect our procedures at entry, they won't respect our principles later either
+    </Card>
 
-<CardGrid columns={3} gap="1.5rem">
-  <Card 
-    title="Language Integration" 
-    color="blue" 
-    icon="🗣️"
-    variant="bordered"
-  >
-    **English as a second official language throughout the EU**
-    - Will enable Europe to develop a unified political voice on the global stage
-    - Essential for transforming Europe from 27 separate voices into one powerful geopolitical bloc
-    - Will allow European citizens to directly communicate, collaborate, and build a shared identity
-    - Critical for creating pan-European businesses that can compete with American and Chinese giants
-  </Card>
+    <Card title="Industrial-era administration in a digital economy" color="gray" icon="⚙️" variant="gradient">
+      **We live in a digital economy with industrial-era administration**
+      - Europe faces a paradox: we operate in an information-based economy, but our administrative structures are rooted in the industrial age
+      - Simply digitizing paper processes isn't enough — we need a complete redesign of administration built for technology
+      - Digital reform must treat the state and economy as a software project: optimized, scalable and efficient
+    </Card>
+  </WhyCardGrid>
+</WhySection>
 
-  <Card 
-    title="Digital Integration" 
-    color="indigo" 
-    icon="💻"
-    variant="bordered"
-  >
-    **Unified administration for all of Europe**
-    - Digital administration isn't just about efficiency – it's the foundation for European political unity and strength
-    - A single administrative system will give Europe the ability to act decisively and quickly in global crises
-    - Predictive healthcare and lifelong e-learning for every citizen will create tangible benefits that national governments cannot provide alone
-    - Europeans will finally see concrete proof that the EU improves their daily lives, strengthening political legitimacy
-    - A unified digital market will enable European tech companies to scale rapidly and challenge American and Chinese dominance
-  </Card>
+<WhySection
+  eyebrow="02 — The answer"
+  title="What we propose instead"
+  lead="If there will not be enough workers, the work has to be done by machines, and the continent has to be organised well enough to build them. That is the whole proposal, in two halves."
+>
+  <WhyCardGrid columns={2}>
+    <Card title="Robotization as the rescue of the pension system" color="green" icon="🤖" variant="gradient">
+      **Only automation will let us support retirees in an era of low birth rates**
+      - Declining workers + aging society = an unsustainable pension system without massive productivity increases
+      - Robotization is the only realistic answer to the demographic crisis that doesn't involve forcing women to have more children
+      - It's mathematically impossible for future generations to support us without technological transformation
+      - An avalanche of psychological problems is already excluding more and more people from the labour market
+      - Without robotization, Europe is doomed to starvation-level pensions that will force older people into economic euthanasia — many will choose it rather than be a burden
+      - Robotization isn't a luxury; it's a condition for the survival of the pension system and YOUR dignified retirement
+    </Card>
 
-  <Card 
-    title="Robotization and Reindustrialization" 
-    color="green" 
-    icon="🤖"
-    variant="bordered"
-  >
-    **Autonomous production and logistics systems**
-    - Robotization will increase the efficiency of the European economy
-    - Our own production and defense technologies for security
-    - Sustainable, localized manufacturing reducing import dependency
-  </Card>
-</CardGrid>
+    <Card title="Europe as a unified economic organism" color="gray" icon="🇪🇺" variant="gradient">
+      **Only a unified Europe can build at that scale**
+      - The great challenges of our time, from technology to climate change, require continent-scale action
+      - Linguistic and digital integration are the foundations that let Europe function as a single organism
+      - Removing communication and bureaucratic barriers will unleash Europe's immense creative and industrial potential
+    </Card>
 
-<DisplayTitle level={2}>Why Digital Reform Is Necessary</DisplayTitle>
+    <Card title="The economic imperative" color="gray" icon="💶" variant="gradient">
+      **One system instead of 27 wasteful duplicates**
+      - Optimizing administrative, tax and legal processes through digitization will radically transform the entire economy
+      - Applying economies of scale and IT practice to running a state will bring savings counted in hundreds of billions of euros
+      - One shared, scalable administrative system means better quality at significantly lower cost
+    </Card>
 
-<WhyDigitalReform color="teal" />
+    <Card title="What the Draghi Report missed" color="gray" icon="🧩" variant="gradient">
+      **Digital reform is the concrete answer to the existential challenge it diagnosed**
+      - Digital integration addresses the fragmentation that hampers Europe's productivity
+      - Robotization provides the productivity boost needed to hold our economic position
+      - Language integration enables the scale that can compete with the US and China
+    </Card>
+  </WhyCardGrid>
+</WhySection>
+
+<WhySection
+  eyebrow="03 — Sovereignty"
+  title="Why we cannot buy this from someone else"
+  lead="A Europe that rents its key technologies also rents its foreign policy — and the same machines that secure a pension system also secure a border."
+>
+  <WhyCardGrid columns={2}>
+    <Card title="Technological independence is political independence" color="purple" icon="🛰️" variant="gradient">
+      **Without our own technologies, there is no true sovereignty**
+      - The US is turning away from Europe — Trump has already shown that America's interests outweigh alliance commitments
+      - Ukraine faces the risk of losing access to key technologies (Starlink, defence systems) if it doesn't submit to American conditions
+      - The same could happen to Poland or the Scandinavian and Baltic countries — technological dependence means political dependence
+      - Europe must develop its own military and AI technologies to keep the ability to defend its interests
+    </Card>
+
+    <Card title="Defence, security and managing migration" color="gray" icon="🛡️" variant="gradient">
+      **Robotization is essential for modern defence and migration management**
+      - Eastern European and Scandinavian countries, threatened by Russia, need advanced robotics for defensive purposes
+      - Autonomous robotic systems can monitor borders, respond to threats and provide effective deterrence
+      - The same technology helps southern countries manage migration flows humanely and effectively
+      - To address migration at its source, Europe must offer solutions to the countries people are migrating from:
+        - Free online education and knowledge sharing to build local capacity
+        - Robotic solutions to help tackle resource crises and improve quality of life at home
+      - Proactive digital engagement with source countries is cheaper and more effective than reactive border policies
+    </Card>
+  </WhyCardGrid>
+</WhySection>
+
+<WhySection
+  eyebrow="04 — The build order"
+  title="Three pillars, and why they come in this order"
+  lead="Each layer is what makes the next one possible: a shared working language lets the state be rebuilt, and a digital state is what robotics at continental scale runs on."
+>
+  <WhyCardGrid columns={3}>
+    <Card title="1. Language integration" color="indigo" icon="🗣️" variant="bordered">
+      **English as a second official language throughout the EU**
+      - Will enable Europe to develop a unified political voice on the global stage
+      - Essential for turning Europe from 27 separate voices into one geopolitical bloc
+      - Will let European citizens directly communicate, collaborate and build a shared identity
+      - Critical for creating pan-European businesses that can compete with American and Chinese giants
+    </Card>
+
+    <Card title="2. Digital integration" color="blue" icon="💻" variant="bordered">
+      **Unified administration for all of Europe**
+      - Digital administration isn't just about efficiency — it's the foundation for European political unity and strength
+      - A single administrative system lets Europe act decisively and quickly in global crises
+      - Predictive healthcare and lifelong e-learning for every citizen create tangible benefits national governments cannot provide alone
+      - Europeans will finally see concrete proof that the EU improves their daily lives, strengthening political legitimacy
+      - A unified digital market will let European tech companies scale rapidly and challenge American and Chinese dominance
+    </Card>
+
+    <Card title="3. Robotization and reindustrialization" color="green" icon="🤖" variant="bordered">
+      **Autonomous production and logistics systems**
+      - Robotization will increase the efficiency of the European economy
+      - Our own production and defence technologies for security
+      - Sustainable, localized manufacturing reducing import dependency
+    </Card>
+  </WhyCardGrid>
+</WhySection>
+
+<WhySection
+  eyebrow="05 — In depth"
+  title="Why digital reform is necessary"
+  lead="The same argument at greater length: what changes when the state is treated as a software project rather than a filing system."
+>
+  <WhyDigitalReform color="teal" />
+</WhySection>

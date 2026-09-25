@@ -1,0 +1,73 @@
+---
+/**
+ * One argument block on /why: eyebrow, heading, optional lead paragraph, then
+ * content. Exists so every section on the page shares one vertical rhythm and
+ * one measure instead of each MDX block inventing its own margins.
+ *
+ * All colour and spacing comes from the theme tokens in
+ * src/styles/_tokens.scss.
+ */
+interface Props {
+  /** Small label above the heading, e.g. "01 — The pressure". */
+  eyebrow?: string;
+  title: string;
+  /** One sentence framing the cards below; capped at a readable measure. */
+  lead?: string;
+  id?: string;
+}
+
+const { eyebrow, title, lead, id } = Astro.props;
+---
+
+<section class="why-section" id={id}>
+  <header class="why-section__head">
+    {eyebrow && <p class="why-section__eyebrow">{eyebrow}</p>}
+    <h2 class="why-section__title">{title}</h2>
+    {lead && <p class="why-section__lead">{lead}</p>}
+  </header>
+  <div class="why-section__body">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .why-section {
+    margin-block: var(--why-space-section, 5rem);
+  }
+
+  .why-section__head {
+    margin-bottom: var(--why-space-head, 2rem);
+  }
+
+  .why-section__eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent-primary);
+    margin: 0 0 0.75rem;
+  }
+
+  .why-section__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  .why-section__lead {
+    /* ~70ch keeps prose readable; the cards below may run full width. */
+    max-width: 70ch;
+    margin: 1rem 0 0;
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  .why-section__body > :global(* + *) {
+    margin-top: var(--why-space-block, 2rem);
+  }
+</style>
