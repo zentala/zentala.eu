@@ -2,6 +2,7 @@
 import { IS_PREVIEW } from '../lib/preview';
 import { Image } from 'astro:assets';
 import EuFlagLogo from '../assets/eu-flag.svg';
+import { homeFrameIntro } from '../lib/vision-content';
 
 const currentYear = new Date().getFullYear();
 const isDev = IS_PREVIEW;
@@ -24,11 +25,11 @@ const footerSections: FooterSection[] = [
   {
     title: "Resources",
     links: [
-      { text: "Vision Book", href: "/book", devOnly: true },
+      { text: "Chapters", href: "/book" },
       { text: "Commentary", href: "/commentary", devOnly: true },
       { text: "Transcripts", href: "/transcripts" },
       { text: "Support Us", href: "/support" },
-      { text: "Sitemap", href: "/sitemap.xml" },
+      { text: "Site Map", href: "/site-map" },
       { text: "UI Demo", href: "/ui", devOnly: true },
     ]
   },
@@ -69,7 +70,7 @@ const footerLinks = footerSections
           </span>
         </div>
         <p class="text-lg pr-4" style={{ color: "var(--color-text-secondary)" }}>
-          A comprehensive vision for European integration through technological innovation, language unity, and administrative reform.
+          {homeFrameIntro.conclusion}
         </p>
         <div class="mt-6">
           <p style={{ color: "var(--color-text-secondary)" }}>

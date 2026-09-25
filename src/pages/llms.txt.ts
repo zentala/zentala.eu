@@ -2,6 +2,22 @@ import type { APIRoute } from 'astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { IS_PREVIEW } from '../lib/preview';
 import { getCommentary } from '../lib/commentary';
+import { LAYERS } from '../content/config';
+
+// Reading-order manifest (IA §10): layer, then order inside the layer, then
+// title for entries that still lack `order`. `LAYERS` fixes the layer
+// sequence (frame first, path last); an entry with no layer sorts last.
+function byReadingOrder(a: CollectionEntry<'docs'>, b: CollectionEntry<'docs'>): number {
+  const layerRank = (entry: CollectionEntry<'docs'>) => {
+    const index = entry.data.layer ? LAYERS.indexOf(entry.data.layer) : -1;
+    return index === -1 ? LAYERS.length : index;
+  };
+  return (
+    layerRank(a) - layerRank(b) ||
+    (a.data.order ?? Infinity) - (b.data.order ?? Infinity) ||
+    a.data.title.localeCompare(b.data.title)
+  );
+}
 
 // Machine-readable index for AI agents (the llms.txt convention). Absolute
 // URLs so an agent that only fetches this one file can still cite pages
@@ -11,7 +27,7 @@ export const GET: APIRoute = async ({ site }) => {
 
   const chapters = (await getCollection('docs', (entry: CollectionEntry<'docs'>) => {
     return entry.id.startsWith('book/') && !entry.id.includes('.sidecar') && (IS_PREVIEW || !entry.data.draft);
-  })).sort((a, b) => a.data.title.localeCompare(b.data.title));
+  })).sort(byReadingOrder);
 
   const commentary = await getCommentary();
 
@@ -28,7 +44,7 @@ export const GET: APIRoute = async ({ site }) => {
   lines.push(`- [Vision](${absolute('/vision')}): the three-layer framework`);
   lines.push(`- [Why Reform EU?](${absolute('/why')}): the case for reform`);
   lines.push('');
-  lines.push('## The book');
+  lines.push('## Chapters');
   lines.push('');
   for (const entry of chapters) {
     const slug = entry.slug.replace(/^book\//, '');

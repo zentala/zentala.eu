@@ -1,9 +1,9 @@
 # Content audit — 2026-09-25
 
 ## TLDR
-Scanned 135 built routes, 88 content files, 448 links (75 unique external).
-Found 17 links to draft pages, 9 links to missing pages, 13 dead external links, 17 orphan pages, 16 drafts, 48 pages missing a meta description, 1 duplicate descriptions.
-IA shape checks: ran — 16 pages over two clicks from /, 0 entries missing layer/kind, 0/0 broken glossary hrefs, 0 /docs/ links in chapters, 112 built links to a retired redirect path, 19/12 concepts missing their canonical link.
+Scanned 135 built routes, 88 content files, 452 links (76 unique external).
+Found 17 links to draft pages, 7 links to missing pages, 13 dead external links, 16 orphan pages, 16 drafts, 48 pages missing a meta description, 1 duplicate descriptions.
+IA shape checks: ran — 16 pages over two clicks from /, 0 entries missing layer/kind, 0/0 broken glossary hrefs, 0 /docs/ links in chapters, 112 built links to a retired redirect path, 0/0 concepts missing their canonical link.
 
 ## Links to draft pages (17) — 404 in production
 | Link | Where | Draft file |
@@ -24,9 +24,9 @@ IA shape checks: ran — 16 pages over two clicks from /, 0 entries missing laye
 | /book/unified-payment-zone/ | src/content/docs/index.mdx:70 | src/content/docs/book/unified-payment-zone.mdx |
 | /book/near-zero-transaction-costs/ | src/content/docs/index.mdx:71 | src/content/docs/book/near-zero-transaction-costs.md |
 | /book/digital-receipts/ | src/content/docs/index.mdx:72 | src/content/docs/book/digital-receipts.mdx |
-| /book/predictive-healthcare-system | src/components/Footer.astro:43 | src/content/docs/book/predictive-healthcare-system.mdx |
+| /book/predictive-healthcare-system | src/components/Footer.astro:44 | src/content/docs/book/predictive-healthcare-system.mdx |
 
-## Links to missing pages (9)
+## Links to missing pages (7)
 | Link | Where |
 |---|---|
 | /docs/ideas/technology/autonomous-robotics-system | src/content/docs/ideas/index.mdx:87 |
@@ -36,8 +36,6 @@ IA shape checks: ran — 16 pages over two clicks from /, 0 entries missing laye
 | /docs/ideas/all | src/content/docs/ideas/index.mdx:325 |
 | /book/language-integration-european-politics/ | src/content/docs/index.mdx:34 |
 | /book/language-integration-national-states/ | src/content/docs/index.mdx:35 |
-| /sitemap.xml | src/components/Footer.astro:31 |
-| /fonts/inter-latin-standard-normal.woff2 | src/layouts/Layout.astro:64 |
 
 ## Dead external links (13)
 | URL | Status | Where |
@@ -56,7 +54,7 @@ IA shape checks: ran — 16 pages over two clicks from /, 0 entries missing laye
 | https://www.patreon.com/c/zentala | 404 | src/pages/support.astro:91 |
 | https://www.linkedin.com/in/zentala/ | 999 | src/components/Author.astro:56 |
 
-## Orphan pages (17) — built, but no page links to them
+## Orphan pages (16) — built, but no page links to them
 - /book/principles
 - /commentary
 - /confirm
@@ -68,7 +66,6 @@ IA shape checks: ran — 16 pages over two clicks from /, 0 entries missing laye
 - /docs/why-reforms
 - /home-classic
 - /search
-- /site-map
 - /ui
 - /ui/content
 - /vision/add/robotic
@@ -295,25 +292,5 @@ _none_
 | /tags | /vision | dist/vision/index.html |
 | /tags | /why | dist/why/index.html |
 
-### Concepts link their canonical href (19 of 12 concept declarations missing one)
-| File | Concept | Expected canonical href |
-|---|---|---|
-| src/content/docs/book/cheap-is-wealth.md:1 | who-captures-the-gains | /book/cheap-is-wealth |
-| src/content/docs/book/choosing-people.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
-| src/content/docs/book/choosing-people.md:1 | sortition | /glossary#sortition |
-| src/content/docs/book/direct-democracy.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
-| src/content/docs/book/direct-democracy.md:1 | union-of-nations | /glossary#union-of-nations |
-| src/content/docs/book/european-egovernment.mdx:1 | the-digital-state | /glossary#the-digital-state |
-| src/content/docs/book/first-move.md:1 | european-citizens-initiative | /glossary#european-citizens-initiative |
-| src/content/docs/book/first-move.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
-| src/content/docs/book/political-path.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
-| src/content/docs/book/redesigning-the-state.md:1 | the-digital-state | /glossary#the-digital-state |
-| src/content/docs/book/safeguards.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
-| src/content/docs/book/safeguards.md:1 | european-citizens-initiative | /glossary#european-citizens-initiative |
-| src/content/docs/book/steering.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
-| src/content/docs/book/steering.md:1 | requisite-variety | /glossary#requisite-variety |
-| src/content/docs/book/the-shorter-week.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
-| src/content/docs/book/the-total-state.md:1 | the-digital-state | /glossary#the-digital-state |
-| src/content/docs/book/the-total-state.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
-| src/content/docs/book/who-it-earns-for.md:1 | who-captures-the-gains | /book/cheap-is-wealth |
-| src/content/docs/book/who-it-earns-for.md:1 | semi-direct-democracy | /glossary#semi-direct-democracy |
+### Concepts link their canonical href (0 of 0 concept declarations missing one)
+_none_
