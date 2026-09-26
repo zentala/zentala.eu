@@ -1,0 +1,232 @@
+---
+title: The Political Path
+description: How this gets done when those in charge do not want it: citizens first, a coalition of the willing, direct democracy as the offer, and five legal questions.
+date: 2026-09-25
+url: https://zentala.eu/book/political-path
+---
+import ComparisonTable from '../../../components/ComparisonTable.astro';
+import MeansForYou from '../../../components/MeansForYou.astro';
+import Objection from '../../../components/Objection.astro';
+import ObjectionList from '../../../components/ObjectionList.astro';
+import ProvenanceNote from '../../../components/ProvenanceNote.astro';
+import SideNote from '../../../components/SideNote.astro';
+
+{/* SPINE: the bottleneck is not Brussels and it is not the treaties; it is the number of people who have heard the argument and found it sensible. */}
+
+Every chapter here ends the same way, and I have been getting away with it. A
+phased approach. Pilot countries first. Policy catches up to what is already
+running. All of it true, and all of it silent on the question anybody serious
+asks first: **who decides?**
+
+This chapter is my answer. It is the least finished part of the vision, and I
+would rather publish it half-built than keep pretending the plan has no hole in
+it.
+
+## Start from the assumption that they say no
+
+I do not expect the current European administration to want this. Not because
+the people in it are bad: because everything here shortens the distance
+between a citizen and a decision, and an institution does not usually
+volunteer to become less necessary. Direct democracy takes votes away from
+parliaments. A shared working language reduces the value of twenty-four-language
+machinery. A digital state built once removes twenty-seven procurement budgets.
+Read the proposals from inside Brussels and they look less like reform and more
+like a demotion.
+
+So the route does not start in Brussels. **If you plan a reform that requires
+the enthusiasm of the people it demotes, you have not made a plan, you have
+made a wish.** It starts with citizens, as the actual order of operations: the
+idea gets promoted until enough people agree with it, and then it becomes
+something politicians campaign on rather than something they concede. The
+missing piece is not anger; it is a vision people could agree on. A proposal
+built so that everyone wins can earn the unanimity that treaty change
+requires — and treaty change is then a question of political will, which
+follows conviction.
+
+## The discontent is already here. It has nowhere to go.
+
+Europeans are angry at their governments, and they are right to be. That anger
+is the largest political resource on the continent and it is being spent badly:
+on individuals. This commissioner, that prime minister, this coalition. You
+throw them out, the replacement behaves the same way within a year, and the
+lesson people draw is that nothing can be changed by anyone. That conclusion
+is corrosive, and it is not even correct. The politicians are mostly behaving
+rationally inside the machine they were elected into.
+
+**So my move is to point the discontent at the machine instead: at
+representative democracy itself.** Not at a party. At the arrangement where you
+pick a person once every four or five years, hand them everything, and have no
+instrument between elections but complaint. A system where a lobbyist gets a
+meeting and you get a mailing list.
+
+That redirection is dangerous on its own. Discontent without an offer turns
+into nationalism; discontent plus a mechanism turns into reform — [argued in
+full here](/book/direct-democracy#it-is-also-the-democratic-answer-to-the-anger).
+The whole weight of this chapter rests on getting the mechanism out in front.
+
+## The offer is a mechanism, not a mood
+
+The offer is direct democracy: the right to decide specific questions
+yourself, often, at low cost, with a result that binds. Precisely, semi-direct
+democracy — parliament stays, and citizens gain the initiative and the
+referendum, the accelerator and the brake, [defined
+once](/book/direct-democracy#the-words-in-one-place) on this site.
+
+<SideNote label="Why now, and not in 1990">
+  Asking everybody anything was slow and expensive for two centuries. A digital
+  state with real identity and verifiable records is what makes frequent,
+  trustworthy voting cheap — and why the instrument has to ship alongside
+  digitalisation, not after it: [The Total State](/book/the-total-state#the-counterweight).
+</SideNote>
+
+That is an offer. It is concrete, it is buildable, and it answers the anger
+with something other than a new face.
+
+## Unanimity is not needed for everything
+
+Here is the practical unlock, and it is the most useful thing in this chapter.
+The reflex when talking about European reform is to imagine twenty-seven
+governments agreeing at once, which is why the conversation usually stops
+within a minute. A large part of this does not need twenty-seven signatures. It
+needs one government willing to go first, and a few more copying what visibly
+worked. That is what I mean by a **coalition of the willing**: the countries
+that do not want it are left alone — if they do not want it, they do not want
+it — and we aim at doing it together anyway, the way we should with the
+language, by making it obviously worth joining.
+
+**English as an official working language can be adopted by a single state.**
+Poland could do it. A group could do it together — Central Europe, the states
+that live next to Russian aggression and already know they are one bloc whether
+or not anyone drew the line. It is an organisational decision, taken from
+below, about what language your administration and your business work in. It
+does not need anybody in Brussels to approve the idea of Europeans
+understanding each other.
+
+**A digital state can be built by one country and copied.** One state builds
+identity, records and services that work; its citizens stop standing in queues;
+the neighbours' citizens notice. Copying a running system is a far easier
+political act than legislating one into existence for twenty-seven countries
+that have not seen it. Build the demonstration. The demonstration does the
+arguing.
+
+**Direct democracy is the exception.** A language and a digital state can be
+adopted by one state and copied; a country that hands power to its citizens
+while its neighbours do not is a target — the argument, and the year 1791, are
+[here](/book/direct-democracy#the-whole-union-at-once). So that one is demanded
+across the Union at once, even if it is delivered one country at a time.
+
+### The military argument, as offered
+
+My position is that English belongs in the armed forces as well as in business
+and administration. The deterrence argument for that — that the region's
+armies already plan, train and buy in English with the Anglosphere, and that
+making it official ties Central Europe tighter to the alliance it would call if
+the shooting started — is offered here as the reasoning, not dictated, and it
+is a substantive political claim that deserves to be attacked on its own.
+
+{/* ASK-1 (R4 Q4; PLAN default 2026-09-25 "the position is his, the arguments are offered"): the military/deterrence argument for English is in no dump. Is it yours, or should it go? */}
+
+## Above parties, probably
+
+People ask whether this needs a party. I do not know. Perhaps above parties,
+perhaps a party; probably above parties, because I see no sense in building a
+party from scratch. What I am surer of is the test: the real divide is not left
+against right but whether a person is willing to give power to people, and
+demanding the instrument of everyone shows who is actually a democrat. The
+Union of Nations this leads to does not replace the present Union; it rebuilds
+it from the inside.
+
+## The treaty question I cannot answer
+
+I do not know whether the full version of this requires changing the European
+treaties. It may be that new treaties can simply be written, the way the Union
+has always added instruments alongside the ones it had. It may be that parts of
+this collide with commitments already made. I am not a lawyer, and I am not
+going to invent a reassuring legal conclusion for a website. What I can do is
+name what would have to be checked, because that is a real piece of work
+somebody can pick up.
+
+<ComparisonTable
+  caption="The five legal questions this plan cannot answer for itself"
+  columns={[
+    { label: "What has to be checked", kind: "unknown" },
+    { label: "Where it bites", kind: "fact" },
+    { label: "Who could close it", kind: "proposed" },
+  ]}
+  rows={[
+    { dimension: "The language", cells: ["What a member state may declare as its own official working language, and where that meets the Union's language and equal-treatment rules", "A single state adopting English", "A public-law scholar; a member state's legal service"] },
+    { dimension: "Binding citizen votes", cells: ["Whether an initiative or referendum result can bind a government's conduct at Union level, and what the ECI can do today", "The whole direct-democracy demand", "A constitutional lawyer; the first move is built to test it"] },
+    { dimension: "Coalitions of the willing", cells: ["Which existing routes for a subset of states to act together apply, and what they forbid", "Doing it one country at a time", "An EU-law specialist"] },
+    { dimension: "Shared digital infrastructure", cells: ["Whether one state's identity and records system can be adopted by another without a new instrument, and who is liable", "Copying a running digital state", "A data-protection and procurement lawyer"] },
+    { dimension: "Pension money as investment", cells: ["What the rules allow when contributions build public infrastructure rather than buy financial assets", "Who pays for the robots", "A pensions regulator; an actuary"] },
+  ]}
+  source="The five questions as named in this chapter; the objections page links here rather than restating them"
+/>
+
+<ObjectionList title="Three things people ask, and my short answers">
+  <Objection claim="You need a party to do any of this." verdict="Probably not a party. Certainly a test.">
+    Above parties is the working answer, because the point is to sort every
+    existing politician by one question — will you give this power to people —
+    rather than to add one more name to the ballot. If a party turns out to be
+    needed, it will be the last step, not the first.
+  </Objection>
+  <Objection claim="What about energy?" verdict="Nuclear is on the table; the citizens decide.">
+    My position is that nuclear power belongs on the table. The current energy
+    policy is Brussels' policy, and I doubt it would survive a citizens' vote.
+    That is not a chapter here; it is an example of the kind of question the
+    instrument exists to put to people.
+  </Objection>
+  <Objection claim="What about a common army?" verdict="Citizen power first, then the army.">
+    A common army needs real power handed to citizens first. An army
+    answerable to an administration that citizens cannot correct between
+    elections is not something I would sign for. It is not central to the
+    retirement frame, so it stays short here.
+  </Objection>
+</ObjectionList>
+
+## Critical mass is the mechanism
+
+I want to say plainly what I think the causal chain is, so it can be attacked.
+This becomes politically possible when enough people obviously want it. Not a
+majority in one poll — obvious, visible, sustained want. At that point
+politicians do not need convincing, because supporting it stops being brave and
+starts being the safe option. Every large change I can think of happened that
+way: the position became popular first and respectable second.
+
+Which means the bottleneck is not Brussels, and it is not the treaties. It is
+the number of people who have heard the argument and found it sensible. That
+is a number you and I can move this year. The institutions will not start
+this. They will join once it is already happening, and say they were in favour
+all along. That is the deal, and it works.
+
+<MeansForYou actions={["If you are a European lawyer, take one row of the table above and close it in public. That memo is worth more to this project than another chapter of mine.", "Carry the version you believe — in your company, your town, your union, your party — including the parts where I am guessing. Nothing here belongs to one political side, and I have kept it that way on purpose."]}>
+  You are not waiting for permission, and there is nobody to ask.
+</MeansForYou>
+
+<ProvenanceNote
+  source={[
+    "aging-society-frame.md:164-169 (how this happens politically), :211-226 (the political position), :228-252 (critical mass)",
+    "2026-09-25-answers-and-safeguards-dump.md:13-16 and :32-33 (countries that refuse; coalition of the willing, as with English), :25-27 (party or above parties), :29-30 (Union of Nations rebuilds from within), :153-164 (the real divide)",
+    "Political-path dictation, 2026-09-25 — not filed as a dump; the sentences the R4 audit verified as his are listed under Dictated. .plan/vision/CHAPTER-IDEAS.md:40-41 records the energy and defence positions (chat, 2026-09-22).",
+  ]}
+  dictated={[
+    "\"Every chapter here ends the same way, and I have been getting away with it\"; \"if you plan a reform that requires the enthusiasm of the people it demotes, you have made a wish\"; \"a lobbyist gets a meeting and you get a mailing list\"; \"I am not a lawyer, and I am not going to invent a reassuring legal conclusion for a website\" (R4 audit, political-path rows).",
+    "The missing piece is a vision people could agree on; a proposal where everyone wins can earn unanimity; treaty change follows conviction; critical mass as the mechanism.",
+    "Countries that refuse are left alone, aim at together anyway, as with English; probably above parties, no sense building one from scratch; the Union of Nations rebuilds the present Union; the real divide is whether one gives power to people.",
+    "Energy: nuclear on the table, current policy is Brussels' and would probably not survive a citizens' vote. Defence: a common army needs real citizen power first; keep short (2026-09-22).",
+  ]}
+  added={[
+    "The deterrence argument for English in the armed forces — offered, not adopted (ASK-1).",
+    "The five legal questions as a table with a proposed 'who could close it' column — editorial structure; the questions themselves are the chapter's, the owners are suggestions.",
+    "The reconciliation of 'one state can adopt English' with 'one state reforming alone is a target' — editorial, resting on his 'as with English' (answers dump :32-33).",
+    "Chronology of the 2026-09-25 political-path dictation — not filed; see Open.",
+  ]}
+  cut={[
+    "The full definition of the two instruments and 'I am not proposing that every question goes to a vote' — one home, direct-democracy.",
+    "The full discontent-to-nationalism passage — one home, direct-democracy.",
+    "The generic closing (carry the argument, build a piece) — the generated footer's line.",
+  ]}
+  open={["ASK-1 (military argument for English)", "ASK-2 (the political-path dictation of 2026-09-25 is not in .plan/vision/; file it so this chapter's first person can be checked line by line)"]}
+/>
+
+{/* ASK-2 (CHAPTER-IDEAS.md:23 "dictation, 2026-09-25"): the dictation this chapter was written from is not filed in .plan/vision/. The first-person sentences above are those the R4 audit verified; please file the dump so the rest can be checked. */}

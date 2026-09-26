@@ -1,0 +1,31 @@
+# EU Reform Vision
+
+> Europe is aging and its pension model is running out of workers to pay for it. This site lays out a thirty-year plan to replace generational support with one working language, a digital state, and robotics — three layers stacked so the fewer working-age people left are not crushed carrying the rest.
+
+## Start here
+
+- [Home](https://zentala.eu/): overview and the case in brief
+- [Vision](https://zentala.eu/vision): the three-layer framework
+- [Why Reform EU?](https://zentala.eu/why): the case for reform
+
+## Chapters
+
+- [Designing Our Retirement](https://zentala.eu/book/designing-our-retirement): Europe is aging, the pension model is ending, and we have roughly thirty years of working economy left to build what replaces it.
+- [Redesigning the State](https://zentala.eu/book/redesigning-the-state): Political systems expire: conditions change and incentives get used up or hacked. Then you restart the game, and who writes the design brief decides everything.
+- [Education Instead of Import](https://zentala.eu/book/education-and-migration): Europe met its labour shortage by moving people and hoping. The alternative: free online education, published entry criteria, an open door for those we want.
+- [One economy, one working language](https://zentala.eu/book/one-working-language): English is the bottleneck of Europe's information economy. Making it the working language of business and administration is a formality we already live by.
+- [European English: a proposal for a shared European standard](https://zentala.eu/book/european-english): How the EU could develop a clear, neutral and testable English standard without replacing national languages or prescribing one accent.
+- [The Total State](https://zentala.eu/book/the-total-state): A state built on typewriters wastes people and money; one built on software can switch a person off. Digitalisation and democracy must ship together.
+- [European eGovernment](https://zentala.eu/book/european-egovernment): One digital core for the state, built once by Europeans, deployed and run by each country, with paper as the emergency layer and citizens who can overrule it.
+- [Robotic Reindustrialisation](https://zentala.eu/book/robotic-reindustrialisation): How Europe funds robotics through defence research now, converts it to civilian use after the war, and keeps the machines cheap enough that everyone benefits.
+- [European Science](https://zentala.eu/book/european-science): Why there is no European AI, what a European science would work on, and why mental health is the first large test of whether it works.
+- [The Shorter Week](https://zentala.eu/book/the-shorter-week): AI and robots are taking work away. That can end as unemployment and war, or as time: two days a week to study, build, raise children and help govern.
+- [New Cities](https://zentala.eu/book/new-cities): The state can buy a field and build a town on it under new rules: large flats, a minimum building height rather than a maximum, and the tram in from day one.
+- [Who It Earns For](https://zentala.eu/book/who-it-earns-for): Money cannot buy a service nobody supplies. The system we build must produce a surplus that reaches society, not only the owners of the machines.
+- [Cheap Is Wealth](https://zentala.eu/book/cheap-is-wealth): Wealth is when things are cheap, not when they are expensive. Answer automation by building value nobody could deliver before.
+- [Direct Democracy](https://zentala.eu/book/direct-democracy): Representative democracy has failed Europe for twenty years. Direct democracy is the highest-leverage demand, and this is the playbook for making it.
+- [The Safeguards We Copy Too](https://zentala.eu/book/safeguards): Copying the Swiss model means copying its safety mechanisms. A proposed mapping of each Swiss safeguard onto the Union and Poland, with the facts sourced.
+- [Steering](https://zentala.eu/book/steering): A state that decides slowly falls over. Our decision loop is too slow; the fix is faster correction: frequent citizens' votes and a state-economy channel.
+- [Choosing People](https://zentala.eu/book/choosing-people): I am not against politicians. I am against a way of choosing them that cannot tell competence from popularity, and hands defence to a farmer.
+- [The Political Path](https://zentala.eu/book/political-path): How this gets done when those in charge do not want it: citizens first, a coalition of the willing, direct democracy as the offer, and five legal questions.
+- [The First Move](https://zentala.eu/book/first-move): The European Citizens' Initiative lets ordinary people put a demand on the Commission's desk. It binds nobody, and that is why it is the right first move.

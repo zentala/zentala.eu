@@ -1,0 +1,173 @@
+---
+title: European eGovernment
+description: One digital core for the state, built once by Europeans, deployed and run by each country, with paper as the emergency layer and citizens who can overrule it.
+date: 2025-03-09
+url: https://zentala.eu/book/european-egovernment
+---
+
+import Callout from '../../../components/Callout.astro';
+import ComparisonTable from '../../../components/ComparisonTable.astro';
+import ObjectionList from '../../../components/ObjectionList.astro';
+import Objection from '../../../components/Objection.astro';
+import EvidenceBox from '../../../components/EvidenceBox.astro';
+import ProvenanceNote from '../../../components/ProvenanceNote.astro';
+
+{/* SPINE: build the core once, deploy it nationally, and the governance question decides whether it is worth building. */}
+
+This chapter is the shape of a system, not the argument for it. The argument
+is in [The Total State](/book/the-total-state#why-a-digital-state-is-a-total-state):
+a state becomes total as it becomes digital, so the capability and the
+counterweight have to be built in the same decade. What follows is a proposal,
+assembled from the author's dictation on how he would build the thing, and it
+has not been adopted as a programme.
+
+A **digital state** and the **total state** are the same system seen from two
+sides. Everything below is the first side. The second side, who can overrule
+it and how often, is not a later phase; it is the condition on which the first
+side is worth building at all.
+
+<Callout kind="claim" label="The condition, from The Total State">
+  The governance question is the harder half, and it has to be settled first,
+  in public, by the people whose lives run through the thing. Digital identity
+  arrives together with universal direct democracy across the Union: same
+  package, same decade.
+</Callout>
+
+## One core, twenty-seven deployments
+
+Build it as Europeans, together. One set of systems for identity, for records,
+for voting, designed jointly, with each country deploying and running its own.
+The engineering gets done once. The sovereignty stays where it is. And nobody
+ends up dependent on a platform they cannot inspect.
+
+The author's own picture of it, in
+[Redesigning the State](/book/redesigning-the-state#a-shared-core-your-own-deployment),
+is closer to how large software is already built than to how administrations
+are: every country and region gets its own deployment and decides how to
+customise it, while the core, where the members have an enormous amount in
+common, is shared. European digital startups then get built on top of it, on
+European digital infrastructure, which today does not exist for them to build
+on.
+
+<ComparisonTable
+  caption="What is shared, what is national, what stays on paper"
+  columns={[
+    { label: "Built once, shared", kind: "proposed" },
+    { label: "Deployed and run nationally", kind: "proposed" },
+    { label: "Kept on paper as the emergency layer", kind: "proposed" },
+  ]}
+  rows={[
+    { dimension: "Identity", cells: ["The credential, its standards, the signature", "Who issues it, on what documents, who can suspend it and under what law", "A document that proves who you are when the credential is switched off"] },
+    { dimension: "Registers and records", cells: ["Data model, interfaces, the audit trail that records what the state did and in what order", "The registers themselves, on national soil, under national law", "The basic civil acts, so that a life is not undone by a lost row"] },
+    { dimension: "Voting", cells: ["The counting and audit machinery, built in the open", "The roll, the questions, the thresholds and safeguards", "Paper ballots in a school hall or town hall, always available, never a fallback that has to be argued for"] },
+    { dimension: "Case handling", cells: ["The workflow engine, the citizen's view of their own case", "Language, branding, the local administrative structure and its exceptions", "Simplified paper procedures for the basic functions of the state"] },
+    { dimension: "Rules", cells: ["Open standards for anything that extends the core", "Legal and administrative arrangements, which may differ by region and by function", "The old route, kept so a government can be shown it still exists"] },
+  ]}
+  source="Assembled from the author's dictation (direct-democracy dump, answers-and-safeguards dump, redesigning-the-state dump); the row contents are proposed, not adopted"
+/>
+
+Two rules run through every row. The core has to be cheap to run and hard to
+monopolise, or it will be captured by whoever supplies it; that is the design
+goal argued in [Cheap Is Wealth](/book/cheap-is-wealth), and this proposal is
+one of the things it applies to. And the digital layer is built in parallel, as
+learning: it starts now, makes its mistakes where mistakes are survivable, and
+carries something serious only once it has proved, in the open, that it
+deserves to.
+
+## Systems by function, not by border
+
+The more interesting part of the author's picture is that digital systems would
+be distributed where they are needed, rather than along administrative borders.
+An old Italian hill village, a Portuguese one and a town in Albania may be best
+served by the same city system; a Scandinavian port city needs another; mountain
+tourist towns and industrial towns another again. Different systems, deployed
+where they fit, built and shared in common. The same could go for legal and
+administrative arrangements, which may differ between regions according to the
+function a region performs. The catalogue of such systems is what this chapter
+would grow into; the two paragraphs above are all that has been dictated.
+
+## Paper is the emergency layer
+
+Keep paper as the emergency layer of the state. Not only for voting: for the
+basic functions generally. The procedures that run today on paper stay in
+place, simplified if you like, as the fallback that works when the systems are
+down, when somebody has been switched off by mistake, or when a government has
+to be shown that the old route still exists. A state that cannot operate
+without its database has handed whoever holds the database a power nobody voted
+to give them. The argument for this is in
+[The Total State](/book/the-total-state#keep-the-paper); here it is a row in
+the table, on purpose.
+
+## What Central Europe puts in
+
+Poland and Central Europe have the software engineers; that is a labour-market
+fact anyone in the industry recognises, and the author's own claim about what
+his part of Europe contributes. If the Union needs a digital administration, an
+autonomous health service, digital courts and offices and a voting system
+nobody can quietly rig, that is work we can do, and it is what we should put
+into the common system. Germany's complex administration, carried into the
+digital world with its complexity intact, is the role the author would offer
+Germany; that offer is labelled as his idea, not an agreed plan, in
+[Redesigning the State](/book/redesigning-the-state#an-offer-to-germany).
+
+<ObjectionList title="The objections that survived the merge">
+  <Objection claim="Shared infrastructure means one central operator with a switch." verdict="Answered on paper; not yet answered in practice.">
+    The design answer is that the core is code and standards, and every
+    deployment is national: nobody outside the country runs the country's
+    registers. Whether a jointly built identity system can in fact be deployed
+    nationally without creating one central operator is one of the three things
+    The Total State says would settle its own argument, and it is not settled.
+  </Objection>
+  <Objection claim="Twenty-seven legacy systems will not migrate to one core." verdict="Probably right, and no timeline is offered.">
+    The earlier drafts of this chapter promised phases and years. They are gone,
+    because nothing behind them was more than a guess. What can be said is that
+    a core deployed in parallel, as learning, does not require anyone to
+    migrate on a date; it requires one function to work in two countries.
+  </Objection>
+  <Objection claim="Digital divides: the people the state most needs to reach are the least online." verdict="This is what the paper layer is for.">
+    A state that keeps its paper procedures as a permanent layer, not a
+    transition, does not have a digital-divide problem in the sense the
+    objection means. It has two routes, and the slow one still works.
+  </Objection>
+</ObjectionList>
+
+<EvidenceBox title="What would show the core can exist">
+
+One function, a birth registration or a business registration, built once and
+deployed in two member states with different administrative law, running for a
+year, with the code and the audit trail public. If it works, the shared core is
+real and the rest is scope. If it cannot be done for one function, the whole
+proposal is a diagram.
+
+</EvidenceBox>
+
+Want the digital state; demand the counterweight in the same breath. That
+sentence belongs to [The Total State](/book/the-total-state); this chapter
+exists so that when somebody asks what the digital state would actually be,
+there is one page that says so, and it says so on the total state's terms.
+
+<ProvenanceNote
+  source={[
+    "2026-09-25-direct-democracy-dump.md:15-41 (digitalisation, Central Europe's engineers, build the systems together, each country deploys its own)",
+    "2026-09-25-answers-and-safeguards-dump.md:49-58 (paper as fallback for the basic functions; voting in schools and town halls)",
+    "2026-09-25-redesigning-the-state-dump.md:110-141 (shared core, own deployment; systems by function; Germany's administration)",
+  ]}
+  dictated={[
+    "Enormous potential in digitalisation; Poland's programmers as Central Europe's contribution to a common Union with digital administration and an autonomous health service (direct-democracy dump :15-30)",
+    "Digitalising requires the discussion of who governs the data first; build the systems together as Europeans, each country deploys its own (:31-41, part 2)",
+    "Paper as the fallback for the basic functions of the state; voting in a school or town hall (answers dump :49-58)",
+    "One shared core, own deployments; startups on European infrastructure; systems where they are needed, not by border; Germany's complex administration as an offered role (redesigning dump :112-141)",
+  ]}
+  added={[
+    "The three-column table of what is shared, national and on paper: the author's sentences arranged into rows; the row contents are proposed, not adopted",
+    "The three objections and the one-function test: proposed",
+    "The chapter's voice: third person about the author throughout, because nothing here was dictated for this chapter specifically; every argument lives in The Total State or Redesigning the State and is linked, not restated",
+  ]}
+  cut={[
+    "From the 2025 eGovernment file: '65–75 % savings', '40–50 % reduction', '30 % productivity improvement', a four-phase ten-year timeline, 'citizen advisory boards' as governance, blockchain-based records: none dictated, none sourced; all removed",
+    "From eGov-vison: 'life-event based organisation', 'proactive service delivery', 'the EU leads the world', a 15–20 year vision: not dictated; removed (the file is deleted, both URL spellings redirect here)",
+    "From eGov-challenges: the technical, organisational, political and economic challenge lists: kept only as the three objections above; the rest was generic and unsourced (the file is deleted, both URL spellings redirect here)",
+    "The 2025 'Governance Model' section: contradicted The Total State (governance settled first, in public, by citizens); The Total State wins",
+  ]}
+  open="none; the open questions on this system are The Total State's three"
+/>
